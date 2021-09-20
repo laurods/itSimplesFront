@@ -1,0 +1,10 @@
+https://github.com/mui-org/material-ui/tree/master/examples
+
+https://github.com/mui-org/material-ui/tree/next/docs/src/pages/getting-started/templates/dashboard
+
+https://mui.com/pt/components/material-icons/
+
+Instalações
+npm install nookies
+npm install jsonwebtoken
+npm install axios
