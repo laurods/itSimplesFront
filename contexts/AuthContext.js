@@ -7,8 +7,10 @@ const jwt = require('jsonwebtoken');
 export const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
+    const [reportCNPJ, setReportCNPJ] = useState('');
+    const [activeCNPJ, setActiveCNPJ] = useState('');    
     const [CNPJsByUsers, setCNPJsByUsers] = useState([]);
-    const [movimentosCNPJ, setMovimentosCNPJ] = useState(null);
+    const [movimentosCNPJ, setMovimentosCNPJ] = useState([]);
     const [userEmail, setUserEmail] = useState(null);
     const [userId, setUserId] = useState(null);
     const [loginMessage, setloginMessage] = useState('');
@@ -85,6 +87,18 @@ export function AuthProvider({ children }) {
           });   
     }
 
+    async function updateActiveCNPJ(cnpj) {      
+        setReportCNPJ(cnpj)
+    }
+
+    async function reportByMovimentoAndCNPJ(movimento) {
+        Router.push({
+            pathname:'http://localhost:3001/report',
+            query: { movimento, cnpj: reportCNPJ =='' ? activeCNPJ : reportCNPJ},
+
+        })
+}
+
 
     return (
         <AuthContext.Provider value={{ 
@@ -95,10 +109,15 @@ export function AuthProvider({ children }) {
             isAuthenticated,
             movimentosCNPJ,
             CNPJsByUsers,
+            activeCNPJ,
             signIn,
             addCNPJ,
             setCNPJsByUsers,
             getMovimentosByCNPJ,
+            setActiveCNPJ,
+            updateActiveCNPJ,
+            setMovimentosCNPJ,
+            reportByMovimentoAndCNPJ,
             
              }}>
             {children}

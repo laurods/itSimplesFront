@@ -3,11 +3,19 @@ import api from '/services/api';
 import nookies from 'nookies';
 import { AuthContext } from '../contexts/AuthContext';
 import Top from '../components/dashboard/top.js';
+import Content from '../components/dashboard/content.js';
 
-export default function Dashboard({empresas}) {
-    const { userId, isAuthenticated, setCNPJsByUsers } = useContext(AuthContext);
-    setCNPJsByUsers(empresas)    
-    return <Top />;
+export default function Dashboard({empresas, activeCNPJ, movimentos}) {
+    const { userId, isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
+    setCNPJsByUsers(empresas)
+    setActiveCNPJ(activeCNPJ)
+    setMovimentosCNPJ(movimentos)
+    return (
+      <>
+      <Top />
+      <Content />
+      </>
+    );
     
   }
 
@@ -21,12 +29,24 @@ export async function getServerSideProps(ctx){
     const cnpjByUser = await api.post('cnpjbyuser', objUser).then(res => {  
       return (res.data);            
     });
+
+    const objCNPJ = {
+      cnpj: cnpjByUser[0].cnpj
+    }
+
+    const movimentosByCNPJ = await api.post('dashboard/movimentosbycnpj', objCNPJ).then(res => {  
+      return (res.data);            
+    });
+
+    
    
     
     
     return{
       props: {
         empresas: cnpjByUser,
+        activeCNPJ:cnpjByUser[0].cnpj,
+        movimentos: movimentosByCNPJ
       }
     }
   }
