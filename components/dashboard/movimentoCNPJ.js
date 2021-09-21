@@ -9,11 +9,9 @@ import Paper from '@mui/material/Paper';
 import PrintIcon from '@material-ui/icons/Print';
 import { AuthContext } from '../../contexts/AuthContext';
 
-
-
-
 export default function MovimentoCNPJ() {
     const { movimentosCNPJ, reportByMovimentoAndCNPJ } = useContext(AuthContext);
+    console.log(movimentosCNPJ)
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
     }
@@ -23,6 +21,7 @@ export default function MovimentoCNPJ() {
         <TableHead>
           <TableRow>
             <TableCell>Mês</TableCell>
+            <TableCell>Redução</TableCell>
             <TableCell align="right">Relatorio</TableCell>
           </TableRow>
         </TableHead>
@@ -34,6 +33,9 @@ export default function MovimentoCNPJ() {
             >
               <TableCell component="th" scope="row">
                 {row.movimento}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {row.diferenca}
               </TableCell>
               <TableCell align="right">
                   <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>

@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import MovimentoCNPJ from './movimentoCNPJ';
+import FormEmpresa from './formEmpresa';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -26,7 +27,7 @@ export default function Content() {
           <Item>xs=4</Item>
         </Grid>
         <Grid item xs={3}>
-          <Item>xs=3</Item>
+          <FormEmpresa />
         </Grid>
       </Grid>
     </Box>

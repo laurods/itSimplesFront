@@ -63,7 +63,7 @@ export function AuthProvider({ children }) {
           });        
     }
 
-    async function addCNPJ(values) {        
+    async function addEmpresa(values) {        
         values.user = userId;
         console.log(values);
         
@@ -111,7 +111,7 @@ export function AuthProvider({ children }) {
             CNPJsByUsers,
             activeCNPJ,
             signIn,
-            addCNPJ,
+            addEmpresa,
             setCNPJsByUsers,
             getMovimentosByCNPJ,
             setActiveCNPJ,

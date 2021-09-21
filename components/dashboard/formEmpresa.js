@@ -3,57 +3,53 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
+import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const theme = createTheme();
-
-export default function Login() {
-    const { showMessage, loginMessage, signIn } = useContext(AuthContext);
+export default function FormEmpresa() {
+    const { addEmpresa } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     const values = {
-        email: data.get('email'),
-        password: data.get('password'),
+        nome: data.get('nome'),
+        cnpj: data.get('cnpj'),
     }
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    
     console.log(values);
-    signIn(values);
+    addEmpresa(values);
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component={Paper} maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 2,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <AccountBalanceWalletIcon sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          </AccountBalanceWalletIcon>
-          <Typography component="h1" variant="h5">
-            DoSimples
+    
+          <Typography variant="h6" gutterBottom component="div">
+            Nova Empresa
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email"
-              name="email"
+              id="nome"
+              label="Nome"
+              name="nome"
               autoComplete="none"
               autoFocus
             />
@@ -61,10 +57,10 @@ export default function Login() {
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Senha"
-              type="password"
-              id="password"
+              name="cnpj"
+              label="CNPJ"
+              type="cnpj"
+              id="cnpj"
               autoComplete="none"
             />
             
@@ -74,7 +70,7 @@ export default function Login() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Entrar
+              Salvar
             </Button>
             
           </Box>
