@@ -18,7 +18,9 @@
     "npm-git-install": "^0.3.0",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-dropzone": "^11.4.2",
+    "styled-components": "^5.3.1"
   },
   "scripts": {
     "dev": "next",

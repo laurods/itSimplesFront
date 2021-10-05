@@ -2,6 +2,7 @@ import { createContext, useState, useEffect} from 'react';
 import { setCookie, parseCookies } from 'nookies';
 import Router from 'next/router';
 import api from '/services/api';
+
 const jwt = require('jsonwebtoken');
 
 export const AuthContext = createContext({});
@@ -16,6 +17,7 @@ export function AuthProvider({ children }) {
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
     const isAuthenticated = !!userId;
+
     const verifyToken = () =>{
         console.log('aki');
         console.log(userId);
@@ -31,8 +33,7 @@ export function AuthProvider({ children }) {
     }
 
     useEffect(() => {
-        verifyToken();
-        
+        verifyToken();      
         
     }, []);
 
@@ -64,13 +65,11 @@ export function AuthProvider({ children }) {
     }
 
     async function addEmpresa(values) {        
-        values.user = userId;
-        console.log(values);
-        
+        values.user = userId;      
         api.post('cnpj', values).then(res => {
-            //const {message, token, _id}  = res.data;            
-            console.log(res.status);                
-          });   
+            console.log(res.data)                      
+          });      
+           
     }
 
     async function getMovimentosByCNPJ(value) {
@@ -98,6 +97,8 @@ export function AuthProvider({ children }) {
 
         })
 }
+
+    
 
 
     return (

@@ -18,7 +18,7 @@ export default function FormEmpresa() {
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     const values = {
-        nome: data.get('nome'),
+        name: data.get('nome'),
         cnpj: data.get('cnpj'),
     }
     

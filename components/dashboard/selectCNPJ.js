@@ -8,7 +8,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 export default function SelectCNPJ() {
   const { activeCNPJ, CNPJsByUsers, updateActiveCNPJ } = useContext(AuthContext);
-  const [cnpj, setCNPJ] = useState('');  
+  const [cnpj, setCNPJ] = useState('');
   const handleChange = (event) => {
     setCNPJ(event.target.value);
     updateActiveCNPJ(event.target.value)
@@ -27,7 +27,7 @@ export default function SelectCNPJ() {
         >
           {
                     CNPJsByUsers.map(
-                        item => (<MenuItem key={item.cnpj} value={item.cnpj} fullWidth>{item.cnpj}</MenuItem>)
+                        item => (<MenuItem key={item.cnpj} value={item.cnpj}>{item.cnpj}</MenuItem>)
                     )
           }
         </Select>
