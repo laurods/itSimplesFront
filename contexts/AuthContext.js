@@ -56,7 +56,7 @@ export function AuthProvider({ children }) {
                     path: '/',
                 });
                 setUserId(_id);
-                Router.push('/dashboard');
+                Router.push('/dashboardMain');
 
 
             }
