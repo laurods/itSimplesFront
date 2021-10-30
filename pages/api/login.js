@@ -1,4 +1,4 @@
-//import peopleDAO from '../../models/login';
+import peopleDAO from '../../models/login';
 const HTTP200 = 200;
 const HTTP500 = 500;
 export default async (req, res) => {
