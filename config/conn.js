@@ -1,8 +1,8 @@
 import { MongoClient } from 'mongodb';
 
 // const MONGO_DB_URL = 'mongodb://127.0.0.1:27017';
-const MONGO_DB_URL = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/dosimples';
-
+//const MONGO_DB_URL = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/dosimples';
+const MONGO_DB_URL = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/itsimples';
 connection = () =>
   MongoClient
     .connect(MONGO_DB_URL, {
