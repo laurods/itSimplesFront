@@ -1,18 +1,8 @@
-import { MongoClient } from 'mongodb';
-
-// const MONGO_DB_URL = 'mongodb://127.0.0.1:27017';
-//const MONGO_DB_URL = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/dosimples';
-const MONGO_DB_URL = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/itsimples?retryWrites=true&w=majority';
-connection = () =>
-  MongoClient
-    .connect(MONGO_DB_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then((conn) => conn.db('itsimples'))
-    .catch((err) => {
-      console.error(err);
-      process.exit(1);
-    });
-
-module.exports = connection;
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/itsimples?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("itsimples").collection("people");
+  // perform actions on the collection object
+  client.close();
+});
