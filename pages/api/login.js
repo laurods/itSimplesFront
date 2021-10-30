@@ -6,8 +6,9 @@ const loginPeople = async (req, res) => {
      
     try {
       const { email, password } = req.body;      
-      const authPeople = await peopleDAO.findOne(email, password);
-      return res.status(HTTP200).json(authPeople);
+      //const authPeople = await peopleDAO.findOne(email, password);
+      //return res.status(HTTP200).json(authPeople);
+      return res.status(HTTP200).json({ message: 'login efetuado' });
       
     } catch (err) {
       return res.status(HTTP500).json({ message: err.message });
