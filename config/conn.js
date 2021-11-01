@@ -1,7 +1,7 @@
 
 import { MongoClient } from 'mongodb'
 
-let uri = 'dosimples:it23102021@cluster0.7cclw.mongodb.net/itsimples?retryWrites=true&w=majority'
+let uri = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/itsimples?retryWrites=true&w=majority'
 let dbName = 'itsimples'
 
 let cachedClient = null
