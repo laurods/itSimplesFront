@@ -1,4 +1,4 @@
-import connectToDatabase from '../../config/conn';
+const { connectToDatabase } = require('../../config/conn');
 export default async (req, res) => {
 	const email = req.body.email;
 	const { db, client } = await connectToDatabase();
