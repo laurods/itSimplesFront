@@ -1,6 +1,6 @@
 //import connectToDatabase from '../../config/conn';
 export default async (req, res) => {
-
-	return res.status(200).json({msg: 'teste'})	
+	const email = req.body.email; 
+	return res.status(200).json({msg: email})	
 
 }
