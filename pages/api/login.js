@@ -1,18 +1,13 @@
-const { MongoClient } = require("mongodb");
- 
-// Replace the following with your Atlas connection string                                                                                                                                        
-const url = "mongodb+srv://youtube:youtube@cluster0.7cclw.mongodb.net/news?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true";
-
-const client = new MongoClient(url);
- 
- // The database to use
- const dbName = "news";
+"use strict";
+// Import the dependency.
+const clientPromise = require('../../config/mongodb-client');
                       
  async function run() {
     try {
-         await client.connect();
+       const client = await clientPromise; 
+        await client.connect();
          console.log("Connected correctly to server");
-         const db = client.db(dbName);
+         const db = client.db().databaseName;
 
          // Use the collection "people"
          const col = db.collection("people");
