@@ -7,7 +7,7 @@ const clientPromise = require('../../config/mongodb-client');
        const client = await clientPromise; 
         await client.connect();
          console.log("Connected correctly to server");
-         const db = client.db().databaseName;
+         const db = client.db();
 
          // Use the collection "people"
          const col = db.collection("people");
