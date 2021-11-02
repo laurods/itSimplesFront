@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb'
+import { MongoClient, Db } from 'mongodb'
 let cachedDb = null;
 
 async function connectToDatabase(uri) {
