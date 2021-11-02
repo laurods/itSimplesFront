@@ -1,18 +1,45 @@
-"use strict";
-// Import the dependency.
-const clientPromise = require('../../config/mongodb-client');
-// Handler
-module.exports = async (req, res) => {
-   // Get the MongoClient by calling await on the promise.
-   // Because it is a promise, it will only resolve once.
-   const client = await clientPromise;
-   const { email } = req.body;
-   // Use the client to return the name of the connected database.
-   const collection = client.collection('subscribers');
-   await collection.insertOne({
-    email,
-    subscribedAt: new Date(),
-  })
+const { MongoClient } = require("mongodb");
+ 
+// Replace the following with your Atlas connection string                                                                                                                                        
+const url = "mongodb+srv://youtube:youtube@cluster0.7cclw.mongodb.net/news?retryWrites=true&w=majority&useNewUrlParser=true&useUnifiedTopology=true";
 
-   res.status(200).json({ dbName: client.db().databaseName });
+const client = new MongoClient(url);
+ 
+ // The database to use
+ const dbName = "news";
+                      
+ async function run() {
+    try {
+         await client.connect();
+         console.log("Connected correctly to server");
+         const db = client.db(dbName);
+
+         // Use the collection "people"
+         const col = db.collection("people");
+
+         // Construct a document                                                                                                                                                              
+         let personDocument = {
+             "name": { "first": "Alan", "last": "Turing" },
+             "birth": new Date(1912, 5, 23), // June 23, 1912                                                                                                                                 
+             "death": new Date(1954, 5, 7),  // June 7, 1954                                                                                                                                  
+             "contribs": [ "Turing machine", "Turing test", "Turingery" ],
+             "views": 1250000
+         }
+
+         // Insert a single document, wait for promise so we can read it back
+         const p = await col.insertOne(personDocument);
+         // Find one document
+         const myDoc = await col.findOne();
+         // Print to the console
+         console.log(myDoc);
+
+        } catch (err) {
+         console.log(err.stack);
+     }
+ 
+     finally {
+        await client.close();
+    }
 }
+
+run().catch(console.dir);
