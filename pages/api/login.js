@@ -1,19 +1,11 @@
 "use strict";
 // Import the dependency.
 const clientPromise = require('../../config/mongodb-client');
-                      
- async function run() {
-    try {
-       const client = await clientPromise; 
-        await client.connect();
-         console.log("Connected correctly to server");         
-        } catch (err) {
-         console.log(err.stack);
-     }
- 
-     finally {
-        await client.close();
-    }
+// Handler
+module.exports = async (req, res) => {
+   // Get the MongoClient by calling await on the promise.
+   // Because it is a promise, it will only resolve once.
+   const client = await clientPromise;
+   // Use the client to return the name of the connected database.
+   res.status(200).json({ dbName: client.db().databaseName });
 }
-
-run().catch(console.dir);
