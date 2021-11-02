@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../contexts/AuthContext';
+import axios from 'axios';
 
 const theme = createTheme();
 
@@ -26,7 +27,8 @@ export default function Login() {
       password: data.get('password'),
     });
     console.log(values);
-    signIn(values);
+    axios.post('/api/login', { email: data.get('email')})
+    //signIn(values);
   };
 
   return (
