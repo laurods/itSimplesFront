@@ -1,11 +1,34 @@
-const { connectToDatabase } = require('../../config/conn');
-export default async (req, res) => {
-	const email = req.body.email;
-	const { db, client } = await connectToDatabase();
-	if(client.isConnected()) {
-		return res.status(200).json({msg: 'conectou'})
-	}
+import { MongoClient, Db } from 'mongodb'
+let cachedDb = null;
 
-	return res.status(200).json({msg:'erro'})	
+async function connectToDatabase(uri) {
+  if (cachedDb) {
+    return cachedDb;
+  }
 
+  const client = await MongoClient.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });  
+
+  const db = process.env.MONGODB_DB
+
+  cachedDb = db;
+
+  return db;
+}
+
+export default async (request, response) => {
+  const { email } = request.body;
+
+  const db = await connectToDatabase(process.env.MONGODB_URI);
+
+  const collection = db.collection('subscribers');
+
+  await collection.insertOne({
+    email,
+    subscribedAt: new Date(),
+  })
+
+  return response.status(201).json({ ok: true });
 }
