@@ -31,6 +31,7 @@ const client = new MongoClient(url);
          const myDoc = await col.findOne();
          // Print to the console
          console.log(myDoc);
+         res.status(200).json(personDocument);
 
         } catch (err) {
          console.log(err.stack);
