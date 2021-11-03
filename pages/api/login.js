@@ -1,3 +1,8 @@
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const saltRounds = 5;
+const secret = 'abcdefg';
+
 const { MongoClient } = require("mongodb");
  
 // Replace the following with your Atlas connection string                                                                                                                                        
@@ -12,14 +17,17 @@ const client = new MongoClient(url);
         const { email, password } = req.body; 
          await client.connect();         
          const db = client.db(dbName);
-
-         // Use the collection "people"
-         const col = db.collection("people");         
-         // Find one document
-         const myDoc = await col.findOne({ email });
-         if(!myDoc) return res.status(500).json({ message: 'Email incorreto!' });
-
-         res.status(200).json({ myDoc });
+         const col = db.collection("people");
+         const people = await col.findOne({ email });         
+         if(!people) return res.status(200).json({ message: 'Email incorreto!' });
+         const match = await bcrypt.compare(password, people.password);
+         if(match) {
+            const jwtConfig = { expiresIn: 60 * 60, algorithm: 'HS256' };    
+            const { _id, email } = people;
+            const token = jwt.sign({ id: _id, email: email }, secret, jwtConfig);
+            return res.status(500).json({ token, _id });     
+        }
+         res.status(200).json({ message: 'Senha incorreta!' });
 
         } catch (err) {
          console.log(err.stack);
