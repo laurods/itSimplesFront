@@ -20,12 +20,13 @@ const client = new MongoClient(url);
          const col = db.collection("people");
          const people = await col.findOne({ email });         
          if(!people) return res.status(200).json({ message: 'Email incorreto!' });
+
          const match = await bcrypt.compare(password, people.password);
          if(match) {
             const jwtConfig = { expiresIn: 60 * 60, algorithm: 'HS256' };    
             const { _id, email } = people;
             const token = jwt.sign({ id: _id, email: email }, secret, jwtConfig);
-            return res.status(500).json({ token, _id });     
+            return res.status(200).json({ token, _id });     
         }
          res.status(200).json({ message: 'Senha incorreta!' });
 
