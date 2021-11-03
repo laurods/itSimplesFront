@@ -1,7 +1,8 @@
 import { createContext, useState, useEffect} from 'react';
 import { setCookie, parseCookies } from 'nookies';
 import Router from 'next/router';
-import api from '/services/api';
+//import api from '/services/api';
+import axios from 'axios';
 
 const jwt = require('jsonwebtoken');
 
@@ -38,7 +39,8 @@ export function AuthProvider({ children }) {
     }, []);
 
     async function signIn(values) {
-        api.post('login', values).then(res => {
+        axios.post('/api/login', values).then(res => {
+        //api.post('login', values).then(res => {
             const {message, token, _id}  = res.data;
 
             if(message) {
