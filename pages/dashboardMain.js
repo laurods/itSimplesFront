@@ -48,7 +48,7 @@ export async function getServerSideProps(ctx){
         // empresas: cnpjByUser,
         // activeCNPJ:cnpjByUser[0].cnpj,
         // movimentos: movimentosByCNPJ
-        empresas: '12345',
+        empresas: [],
         activeCNPJ:'354254',
         movimentos: []
       }
