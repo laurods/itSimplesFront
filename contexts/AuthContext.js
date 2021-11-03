@@ -41,28 +41,29 @@ export function AuthProvider({ children }) {
     async function signIn(values) {
         axios.post('/api/login', values).then(res => {
         //api.post('login', values).then(res => {
-            const {message, token, _id}  = res.data;
+            //const {message, token, _id}  = res.data;
 
-            if(message) {
-                setloginMessage(message)
-                setshowMessage(true);
-            }
-            if(token){
-                setshowMessage(false); 
-                setCookie(undefined, 'itToken', token, { // id e e-mail
-                    maxAge: 60 * 60 * 24, // 24 hours
-                    path: '/',
-                });
-                setCookie(undefined, 'idUser', _id, { // id
-                    maxAge: 60 * 60 * 24, // 24 hours
-                    path: '/',
-                });
-                setUserId(_id);
-                Router.push('/dashboardMain');
+            // if(message) {
+            //     setloginMessage(message)
+            //     setshowMessage(true);
+            // }
+            // if(token){
+            //     setshowMessage(false); 
+            //     setCookie(undefined, 'itToken', token, { // id e e-mail
+            //         maxAge: 60 * 60 * 24, // 24 hours
+            //         path: '/',
+            //     });
+            //     setCookie(undefined, 'idUser', _id, { // id
+            //         maxAge: 60 * 60 * 24, // 24 hours
+            //         path: '/',
+            //     });
+            //     setUserId(_id);
+            //     Router.push('/dashboardMain');
 
 
-            }
-            console.log(res.status);                
+            // }
+            //console.log(res.status);
+            console.log(res.data);                
           });        
     }
 
