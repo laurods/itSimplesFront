@@ -27,7 +27,9 @@ export default function Login() {
       password: data.get('password'),
     });
     console.log(values);
-    axios.post('/api/login', { email: data.get('email')})
+    axios.post('/api/login', { email: data.get('email')}).then(res => {      
+      console.log(res.data);
+    })
     //signIn(values);
   };
 
