@@ -9,7 +9,8 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-        const { user } = req.body; 
+        const { user } = req.body;
+        console.log(user); 
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("cnpj");
