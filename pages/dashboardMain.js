@@ -27,10 +27,10 @@ export async function getServerSideProps(ctx){
       user: cookies.idUser
     }
     
-    const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {
-      console.log(res.data);  
-      return (res.data);            
-    });
+    // const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {
+    //   console.log(res.data);  
+    //   return (res.data);            
+    // });
 
     // const objCNPJ = {
     //   cnpj: cnpjByUser[0].cnpj
