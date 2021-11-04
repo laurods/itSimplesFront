@@ -1,16 +1,24 @@
 import React, { useContext, useEffect } from 'react';
-//import api from '/services/api';
 import axios from 'axios';
 import nookies from 'nookies';
 import { AuthContext } from '../contexts/AuthContext';
 import Top from '../components/dashboard/top.js';
 import Content from '../components/dashboard/content.js';
 
-export default function Dashboard({empresas, activeCNPJ, movimentos}) {
+export default function Dashboard() {
     const { userId, isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
-    setCNPJsByUsers(empresas)
-    setActiveCNPJ(activeCNPJ)
-    setMovimentosCNPJ(movimentos)
+    console.log(userId);
+    useEffect(() => {
+      const loadAll = async() =>{
+        let empresas = await axios.post('/api/cnpjbyuser', { user: userId }); 
+        console.log(empresas)
+      } 
+      loadAll();   
+      
+    }, []);
+    setCNPJsByUsers([])
+    setActiveCNPJ('354254')
+    setMovimentosCNPJ([])
     return (
       <>
       <Top />
@@ -18,37 +26,4 @@ export default function Dashboard({empresas, activeCNPJ, movimentos}) {
       </>
     );
     
-  }
-
-export async function getServerSideProps(ctx){
-    const cookies = nookies.get(ctx)
-  
-    const objUser = {
-      user: cookies.idUser    
-    }
-    
-    // const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {      
-    //   return (res.data);            
-    // });
-
-    // const objCNPJ = {
-    //   cnpj: cnpjByUser[0].cnpj
-    // }
-
-    // const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', objCNPJ).then(res => {  
-    //   return (res.data);            
-    // });
-
-    
-   
-    
-    
-    return{
-      props: {
-        empresas: [],      
-        // movimentos: movimentosByCNPJ       
-        activeCNPJ:'354254',
-        movimentos: []
-      }
-    }
-  }
+}
