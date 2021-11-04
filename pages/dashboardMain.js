@@ -46,7 +46,7 @@ export async function getServerSideProps(ctx){
     
     return{
       props: {
-        empresas: [c],      
+        empresas: [],      
         // movimentos: movimentosByCNPJ       
         activeCNPJ:'354254',
         movimentos: []
