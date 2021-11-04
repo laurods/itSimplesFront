@@ -28,7 +28,7 @@ export async function getServerSideProps(ctx){
     }
     
     const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {
-      console.log('aki');  
+      console.log(res.data);  
       return (res.data);            
     });
 
@@ -46,7 +46,7 @@ export async function getServerSideProps(ctx){
     
     return{
       props: {
-        empresas: cnpjByUser,      
+        empresas: [c],      
         // movimentos: movimentosByCNPJ       
         activeCNPJ:'354254',
         movimentos: []
