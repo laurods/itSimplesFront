@@ -24,13 +24,12 @@ export async function getServerSideProps(ctx){
     const cookies = nookies.get(ctx)
   
     const objUser = {
-      // user: cookies.idUser
-      user:"60a50545bf62f51177b28d56"
+      user: cookies.idUser    
     }
     
-    const cnpjByUser = await axios.post('/api/cnpjbyuser', {user: "60a50545bf62f51177b28d56"}).then(res => {      
-      return (res.data);            
-    });
+    // const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {      
+    //   return (res.data);            
+    // });
 
     // const objCNPJ = {
     //   cnpj: cnpjByUser[0].cnpj
@@ -46,7 +45,7 @@ export async function getServerSideProps(ctx){
     
     return{
       props: {
-        empresas: cnpjByUser,      
+        empresas: [],      
         // movimentos: movimentosByCNPJ       
         activeCNPJ:'354254',
         movimentos: []
