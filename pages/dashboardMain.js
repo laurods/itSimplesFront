@@ -28,7 +28,7 @@ export async function getServerSideProps(ctx){
       user:"60a50545bf62f51177b28d56"
     }
     
-    const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {      
+    const cnpjByUser = await axios.post('/api/cnpjbyuser', {user: "60a50545bf62f51177b28d56"}).then(res => {      
       return (res.data);            
     });
 
