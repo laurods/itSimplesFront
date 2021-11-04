@@ -8,14 +8,12 @@ import Content from '../components/dashboard/content.js';
 export default function Dashboard() {
     const { userId, isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
     console.log(userId);
-    useEffect(() => {
-      const loadAll = async() =>{
-        let empresas = await axios.post('/api/cnpjbyuser', { user: userId }); 
-        console.log(empresas)
-      } 
-      loadAll();   
-      
-    }, []);
+    const loadAll = async() =>{
+      const empresas = await axios.post('/api/cnpjbyuser', { user: userId });
+      const { data } = empresas;
+      console.log(data);
+    } 
+    loadAll();
     setCNPJsByUsers([])
     setActiveCNPJ('354254')
     setMovimentosCNPJ([])
