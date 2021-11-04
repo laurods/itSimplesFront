@@ -17,19 +17,10 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
     const values = {
         email: data.get('email'),
         password: data.get('password'),
-    }
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    console.log(values);
-    // axios.post('/api/login', { email: data.get('email')}).then(res => {      
-    //   console.log(res.data);
-    // })
+    }    
     signIn(values);
   };
 

@@ -27,15 +27,15 @@ export async function getServerSideProps(ctx){
       user: cookies.idUser
     }
     
-    // const cnpjByUser = await axios.post('cnpjbyuser', objUser).then(res => {  
-    //   return (res.data);            
-    // });
+    const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {  
+      return (res.data);            
+    });
 
-    // const objCNPJ = {
-    //   cnpj: cnpjByUser[0].cnpj
-    // }
+    const objCNPJ = {
+      cnpj: cnpjByUser[0].cnpj
+    }
 
-    // const movimentosByCNPJ = await axios.post('dashboard/movimentosbycnpj', objCNPJ).then(res => {  
+    // const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', objCNPJ).then(res => {  
     //   return (res.data);            
     // });
 
@@ -45,11 +45,9 @@ export async function getServerSideProps(ctx){
     
     return{
       props: {
-        // empresas: cnpjByUser,
-        // activeCNPJ:cnpjByUser[0].cnpj,
-        // movimentos: movimentosByCNPJ
-        empresas: [],
-        activeCNPJ:'354254',
+        empresas: cnpjByUser,
+        activeCNPJ:cnpjByUser[0].cnpj,
+        // movimentos: movimentosByCNPJ    
         movimentos: []
       }
     }

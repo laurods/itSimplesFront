@@ -40,7 +40,6 @@ export function AuthProvider({ children }) {
 
     async function signIn(values) {
         axios.post('/api/login', values).then(res => {
-        //api.post('login', values).then(res => {
             const {message, token, _id}  = res.data;
 
             if(message) {
