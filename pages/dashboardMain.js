@@ -8,13 +8,13 @@ import Content from '../components/dashboard/content.js';
 export default function Dashboard() {
      const { userId, isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
      const [clients, setClients] = useState([]);
-     console.log(`clientes ${clients}`);
+     console.log(clients);
     
     useEffect(() => {
       const loadAll = async() =>{
         const clients = await axios.post('/api/cnpjbyuser', { user: userId });
         const list = clients.data;
-        console.log(`lista ${list}`); 
+        console.log(list); 
         setClients(list)        
       }
       loadAll();
