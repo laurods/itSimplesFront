@@ -13,9 +13,9 @@ export default function Dashboard() {
       console.log(listClients);  
     } 
     loadAll();
-    setCNPJsByUsers([])
-    setActiveCNPJ('354254')
-    setMovimentosCNPJ([])
+    // setCNPJsByUsers([])
+    // setActiveCNPJ('354254')
+    // setMovimentosCNPJ([])
     return (
       <>
       <Top />
