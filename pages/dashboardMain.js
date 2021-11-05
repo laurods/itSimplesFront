@@ -13,7 +13,6 @@ export default function Dashboard() {
       const list = clients.data; 
     } 
     loadAll();
-    console.log(list);
     
     // setCNPJsByUsers([])
     // setActiveCNPJ('354254')
