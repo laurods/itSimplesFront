@@ -19,7 +19,7 @@ export default function Dashboard() {
       }
       loadAll();
     }, []);
-    // setCNPJsByUsers([])
+    setCNPJsByUsers(clients)
     // setActiveCNPJ('354254')
     // setMovimentosCNPJ([])
  
