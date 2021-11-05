@@ -36,13 +36,7 @@ export function AuthProvider({ children }) {
     useEffect(() => {
         verifyToken();
     }, []);
-
-    const loadAll = async() =>{
-        const clients = await axios.post('/api/cnpjbyuser', { user: userId });
-        console.log('clients');
-        console.log(clients.data);
-        setCNPJsByUsers(clients.data)          
-      }  
+    
     async function signIn(values) {
         axios.post('/api/login', values).then(res => {
             const {message, token, _id}  = res.data;
@@ -126,7 +120,7 @@ export function AuthProvider({ children }) {
             updateActiveCNPJ,
             setMovimentosCNPJ,
             reportByMovimentoAndCNPJ,
-            loadAll,
+       
             
              }}>
             {children}
