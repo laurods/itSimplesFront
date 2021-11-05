@@ -40,6 +40,8 @@ export function AuthProvider({ children }) {
 
     const loadAll = async() =>{
         const clients = await axios.post('/api/cnpjbyuser', { user: userId });
+        console.log('clients');
+        console.log(clients.data);
         setCNPJsByUsers(clients.data)          
       }
     async function signIn(values) {
