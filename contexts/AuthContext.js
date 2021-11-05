@@ -35,9 +35,13 @@ export function AuthProvider({ children }) {
 
     useEffect(() => {
         verifyToken();      
-        
+        loadAll();
     }, []);
 
+    const loadAll = async() =>{
+        const clients = await axios.post('/api/cnpjbyuser', { user: userId });
+        setCNPJsByUsers(clients.data)          
+      }
     async function signIn(values) {
         axios.post('/api/login', values).then(res => {
             const {message, token, _id}  = res.data;

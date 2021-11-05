@@ -6,13 +6,13 @@ import Top from '../components/dashboard/top.js';
 import Content from '../components/dashboard/content.js';
 
 export default function Dashboard() {
-    const { userId, isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
-    const loadAll = async() =>{
-      const clients = await axios.post('/api/cnpjbyuser', { user: userId });
-      return clients.data;    
-    } 
-    loadAll();
-    console.log(clients);
+    // const { userId, isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
+    // const loadAll = async() =>{
+    //   const clients = await axios.post('/api/cnpjbyuser', { user: userId });
+    //   return clients.data;    
+    // } 
+    // loadAll();
+    // console.log(clients);
     // setCNPJsByUsers([])
     // setActiveCNPJ('354254')
     // setMovimentosCNPJ([])
