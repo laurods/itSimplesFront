@@ -10,6 +10,7 @@ export default function Dashboard() {
     const loadAll = async() =>{
       const clients = await axios.post('/api/cnpjbyuser', { user: userId });
       const listClients = await clients.data;
+      setCNPJsByUsers(listClients)
       console.log(listClients);  
     } 
     loadAll();
