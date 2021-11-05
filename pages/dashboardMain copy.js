@@ -6,9 +6,9 @@ import { AuthContext } from '../contexts/AuthContext';
 import Top from '../components/dashboard/top.js';
 import Content from '../components/dashboard/content.js';
 
-export default function Dashboard({empresas, activeCNPJ, movimentos, cnpjByUser}) {
+export default function Dashboard({empresas, activeCNPJ, movimentos}) {
     const { userId, isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
-    console.log(cnpjByUser);
+    
     setCNPJsByUsers(empresas)
     setActiveCNPJ(activeCNPJ)
     setMovimentosCNPJ(movimentos)
@@ -21,16 +21,16 @@ export default function Dashboard({empresas, activeCNPJ, movimentos, cnpjByUser}
     
   }
 
-export async function getStaticProps(ctx){
+export async function getServerSideProps(ctx){
     const cookies = nookies.get(ctx)
   
     const objUser = {
       user: cookies.idUser    
     }
     
-     const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {      
-       return (res.data);            
-     });
+    // const cnpjByUser = await axios.post('/api/cnpjbyuser', objUser).then(res => {      
+    //   return (res.data);            
+    // });
 
     // const objCNPJ = {
     //   cnpj: cnpjByUser[0].cnpj
@@ -49,8 +49,7 @@ export async function getStaticProps(ctx){
         empresas: [],      
         // movimentos: movimentosByCNPJ       
         activeCNPJ:'354254',
-        movimentos: [],
-        cnpjByUser: cnpjByUser
+        movimentos: []
       }
     }
   }
