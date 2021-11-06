@@ -11,14 +11,15 @@ export default function Dashboard() {
     useEffect(() => {
       const loadAll = async() =>{
         const clients = await axios.post('/api/cnpjbyuser', { user: userId });
-        const list = clients.data;
-        const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', { cnpj: list[0].cnpj });
-        console.log(list[0].cnpj);
-        console.log(list);        
-        console.log(movimentosByCNPJ);
-        setCNPJsByUsers(list)
-        setActiveCNPJ(list[0])
-        setMovimentosCNPJ([])        
+        const listClients = clients.data;
+        const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', { cnpj: listClients[0].cnpj });
+        const listMovimentos = movimentosByCNPJ.data;
+        console.log(listClients[0].cnpj);
+        console.log(listClients);        
+        console.log(listMovimentos);
+        setCNPJsByUsers(listClients)
+        setActiveCNPJ(listClients[0])
+        setMovimentosCNPJ(listMovimentos)        
       }
       loadAll();
     }, []);
