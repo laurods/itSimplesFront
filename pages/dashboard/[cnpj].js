@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { AuthContext } from '../../contexts/AuthContext';
 import axios from 'axios';
 import Top from '../../components/dashboard/top.js';
 import Content from '../../components/dashboard/content.js';
