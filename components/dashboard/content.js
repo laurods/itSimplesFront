@@ -19,10 +19,10 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 async function uploadServiceXML(files) {
-  console.log(files);
+  console.log(files[0]);
   
   const data = new FormData();
-  data.append('file', files);
+  data.append('file', files[0]);
   console.log(data);
   // axios.post('/api/xmlcompras', data).then(res => {
   //   console.log(res);
