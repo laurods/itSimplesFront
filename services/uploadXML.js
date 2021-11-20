@@ -14,7 +14,7 @@ const handleUpload = (files) => {
 /* Inicio processXML*/  
 const processXML = (uploadedFile) => {   
   console.log('aki 2')
-  console.log(uploadedFile)
+  console.log(uploadedFile.preview)
 };
 
 /* Fim processXML*/
