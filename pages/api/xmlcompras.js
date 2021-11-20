@@ -21,19 +21,9 @@ const client = new MongoClient(url);
               });
             });
           };
-
-
-          (async () => {
-            const data = await parseFromXML(xml);
-            
-            res.status(200).json(data); 
-          })();
-
-
-
-
-
-
+          const data = await parseFromXML(xml);
+          console.log(data);
+          res.status(200).json(data);
         //xxxxxxxxxxxxxxxxxxxxxx
         // const { user } = req.body;
         // console.log(user); 
