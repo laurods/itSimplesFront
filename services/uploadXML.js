@@ -16,7 +16,7 @@ const handleUpload = (files) => {
 const processXML = async (uploadedFile) => {   
   console.log('aki 2')
   console.log(uploadedFile);
-  const xml = uploadedFile;
+  const xml = uploadedFile.preview;
   const parseFromXML = (xml) => {
     return new Promise((resolve, reject) => {
       parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
@@ -27,11 +27,9 @@ const processXML = async (uploadedFile) => {
   };
 
   const data = await parseFromXML(xml);
-  const processProductsXML = async (data) => {
-    const nf = await data.nfeProc.NFe.infNFe.ide.nNF;
-    console.log(nf);
-  }
-  processProductsXML();
+  const nf = await data.nfeProc.NFe.infNFe.ide.nNF;
+  console.log(nf);
+
 
 };
 
