@@ -14,8 +14,8 @@ const handleUpload = (files) => {
   };
 /* Inicio processXML*/  
 const processXML = (uploadedFile) => {
-  //const xml = uploadedFile;
-  const xml = fs.readFileSync(uploadedFile);
+  const xml = uploadedFile;
+  //const xml = fs.readFileSync(uploadedFile);
   console.log('aki 2')
   console.log(xml)
 
