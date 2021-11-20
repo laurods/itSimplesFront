@@ -19,7 +19,7 @@ const processXML = async (uploadedFile) => {
   const xml = uploadedFile;
   const parseFromXML = (xml) => {
     return new Promise((resolve, reject) => {
-      parseString(xml, { trim: true, mergeAttrs: true, explicitArray: false}, function (err, ok) {
+      parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
         if (err) return resolve(err);
         return resolve(ok);
       });
@@ -27,7 +27,9 @@ const processXML = async (uploadedFile) => {
   };
 
   const data = await parseFromXML(xml);
-  console.log(data);
+  
+  const nf = data.nfeProc.NFe.infNFe.ide.nNF;
+  console.log(nf);
 };
 
 /* Fim processXML*/
