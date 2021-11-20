@@ -12,18 +12,8 @@ const handleUpload = (files) => {
   };
 /* Inicio processXML*/  
 const processXML = (uploadedFile) => {
-  const data = new FormData();
-  data.append('file', uploadedFile.file);
-  //api.post('upload/xml', data).then(res => {
-    axios.post('/api/xmlcompras', data).then(res => {
-    console.log(res);
-    console.log(res.data)                      
-  })
-  .catch((error) => {
-    console.log(error.res.data);
-    console.log(error.res.status);
-    console.log(error.res.headers);
-  });
+ console.log(uploadedFile);
+ 
 };
 
 /* Fim processXML*/
