@@ -1,4 +1,5 @@
-import api from './api';
+//import api from './api';
+import axios from 'axios';
 
 const handleUpload = (files) => {
     const uploadedFiles = files.map((file) => ({
@@ -13,7 +14,8 @@ const handleUpload = (files) => {
 const processXML = (uploadedFile) => {
   const data = new FormData();
   data.append('file', uploadedFile.file);
-  api.post('upload/xml', data).then(res => {
+  //api.post('upload/xml', data).then(res => {
+    axios.post('/api/xmlcompras', data).then(res => {
     console.log(res);
     console.log(res.data)                      
   })
