@@ -35,7 +35,6 @@ async function uploadServiceXML(files) {
   //   console.log(error.res.status);
   //   console.log(error.res.headers);
   // });
-  console.log('aki 1')
 
   UploadServiceXML.handleUpload(files)
 }

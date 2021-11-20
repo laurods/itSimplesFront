@@ -15,9 +15,9 @@ const processXML = (uploadedFile) => {
   const xml = uploadedFile;
   console.log('aki 2')
   console.log(xml)
-  // parseString(xml, {trim: true}, function (err, result) {
-  //   console.dir(result);
-  // });
+  parseString(xml, {trim: true}, function (err, result) {
+     console.dir(result);
+   });
 
 
 
