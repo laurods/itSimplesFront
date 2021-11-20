@@ -25,10 +25,10 @@ async function uploadServiceXML(files) {
   fileData.append('file', files[0]);  
   axios.post('/api/xmlcompras', fileData).then(res => {
     console.log(res);
-    console.log(res.data)                      
+    //console.log(res.data)                      
   })
   .catch((error) => {
-    console.log(error.res.data);
+    //console.log(error.res.data);
     console.log(error.res.status);
     console.log(error.res.headers);
   });
