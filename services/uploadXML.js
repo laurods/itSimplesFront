@@ -13,7 +13,7 @@ const handleUpload = (files) => {
     
   };
 /* Inicio processXML*/  
-const processXML = (uploadedFile) => {   
+const processXML = async (uploadedFile) => {   
   console.log('aki 2')
   console.log(uploadedFile);
   const xml = uploadedFile;
