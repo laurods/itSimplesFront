@@ -13,10 +13,8 @@ const handleUpload = (files) => {
 /* Inicio processXML*/  
 const processXML = (uploadedFile) => {   
   console.log('aki 2')
-  console.log(uploadedFile)
-
-
-
+  const xml = URL.createObjectURL(uploadedFile)
+  console.log(xml)
 };
 
 /* Fim processXML*/
