@@ -1,7 +1,7 @@
 //import api from './api';
 import axios from 'axios';
 const parseString = require('xml2js').parseString;
-const fs = require('file-system');
+const XMLParser = require('react-xml-parser');
 
 const handleUpload = (files) => {
     const uploadedFiles = files.map((file) => ({
@@ -13,15 +13,10 @@ const handleUpload = (files) => {
     
   };
 /* Inicio processXML*/  
-const processXML = (uploadedFile) => {
-  const xml = uploadedFile;
-  const xml = fs.readFileSync(uploadedFile);
+const processXML = (uploadedFile) => {  
+  const xml = new XMLParser().parseFromString(uploadedFile);
   console.log('aki 2')
   console.log(xml)
-
-  parseString(xml, {trim: true}, function (err, result) {
-     console.dir(result);
-   });
 
 
 
