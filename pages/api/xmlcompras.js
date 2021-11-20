@@ -12,7 +12,7 @@ const client = new MongoClient(url);
     try {
         //xxxxxxxxxxxxxxxxxxxxxx
         const xml = req.file.buffer;
-
+        console.log(xml)
         const parseFromXML = (xml) => {
             return new Promise((resolve, reject) => {
               parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
@@ -22,8 +22,8 @@ const client = new MongoClient(url);
             });
           };
           const data = await parseFromXML(xml);
-          console.log(data);
-          res.status(200).json(data);
+          console.log('aki data');
+          res.status(200).json({msg: 'teste'});
         //xxxxxxxxxxxxxxxxxxxxxx
         // const { user } = req.body;
         // console.log(user); 
