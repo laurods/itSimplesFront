@@ -23,16 +23,16 @@ async function uploadServiceXML(files) {
   
   const data = new FormData();
   data.append('file', files);
-
-  axios.post('/api/xmlcompras', data).then(res => {
-    console.log(res);
-    console.log(res.data)                      
-  })
-  .catch((error) => {
-    console.log(error.res.data);
-    console.log(error.res.status);
-    console.log(error.res.headers);
-  });
+  console.log(data);
+  // axios.post('/api/xmlcompras', data).then(res => {
+  //   console.log(res);
+  //   console.log(res.data)                      
+  // })
+  // .catch((error) => {
+  //   console.log(error.res.data);
+  //   console.log(error.res.status);
+  //   console.log(error.res.headers);
+  // });
 
   //UploadServiceXML.handleUpload(files)
 }
