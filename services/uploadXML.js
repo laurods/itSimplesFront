@@ -1,6 +1,7 @@
 //import api from './api';
 import axios from 'axios';
 const parseString = require('xml2js').parseString;
+const fs = require('fs');
 
 const handleUpload = (files) => {
     const uploadedFiles = files.map((file) => ({
@@ -16,7 +17,7 @@ const handleUpload = (files) => {
 const processXML = async (uploadedFile) => {   
   console.log('aki 2')
   console.log(uploadedFile);
-  const xml = uploadedFile.file.buffer;
+  const xml = fs.readFileSync(uploadedFile.preview);
   const parseFromXML = (xml) => {
     return new Promise((resolve, reject) => {
       parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
