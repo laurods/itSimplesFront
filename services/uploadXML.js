@@ -1,7 +1,7 @@
 //import api from './api';
 import axios from 'axios';
 const parseString = require('xml2js').parseString;
-const fs = require('fs');
+//const fs = require('fs');
 
 const handleUpload = (files) => {
     const uploadedFiles = files.map((file) => ({
