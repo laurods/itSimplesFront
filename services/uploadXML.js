@@ -13,9 +13,10 @@ const handleUpload = (files) => {
 /* Inicio processXML*/  
 const processXML = (uploadedFile) => {
   const xml = uploadedFile;
-  parseString(xml, {trim: true}, function (err, result) {
-    console.dir(result);
-  });
+  console.log(xml)
+  // parseString(xml, {trim: true}, function (err, result) {
+  //   console.dir(result);
+  // });
 
 
 
