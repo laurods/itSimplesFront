@@ -9,6 +9,7 @@ import UploadXML from './uploadXML';
 import UploadXLS from './uploadXLS';
 import UploadServiceXML from '../../services/uploadXML';
 import UploadServiceXLS from '../../services/uploadXLS';
+import axios from 'axios';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -19,7 +20,21 @@ const Item = styled(Paper)(({ theme }) => ({
 
 async function uploadServiceXML(files) {
   console.log(files);
-  UploadServiceXML.handleUpload(files)
+  
+  const data = new FormData();
+  data.append('file', files);
+
+  axios.post('/api/xmlcompras', data).then(res => {
+    console.log(res);
+    console.log(res.data)                      
+  })
+  .catch((error) => {
+    console.log(error.res.data);
+    console.log(error.res.status);
+    console.log(error.res.headers);
+  });
+
+  //UploadServiceXML.handleUpload(files)
 }
 
 async function uploadServiceXLS(files) {
