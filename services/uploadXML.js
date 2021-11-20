@@ -31,7 +31,7 @@ const processXML = async (uploadedFile) => {
     const nf = await data.nfeProc.NFe.infNFe.ide.nNF;
     console.log(nf);
   }
-  
+  processProductsXML();
 
 };
 
