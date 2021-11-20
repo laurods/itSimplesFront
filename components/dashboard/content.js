@@ -21,18 +21,17 @@ const Item = styled(Paper)(({ theme }) => ({
 async function uploadServiceXML(files) {
   console.log(files[0]);
   
-  const data = new FormData();
-  data.append('file', files[0]);
-  console.log(data);
-  // axios.post('/api/xmlcompras', data).then(res => {
-  //   console.log(res);
-  //   console.log(res.data)                      
-  // })
-  // .catch((error) => {
-  //   console.log(error.res.data);
-  //   console.log(error.res.status);
-  //   console.log(error.res.headers);
-  // });
+  const fileData = new FormData();
+  fileData.append('file', files[0]);  
+  axios.post('/api/xmlcompras', fileData).then(res => {
+    console.log(res);
+    console.log(res.data)                      
+  })
+  .catch((error) => {
+    console.log(error.res.data);
+    console.log(error.res.status);
+    console.log(error.res.headers);
+  });
 
   //UploadServiceXML.handleUpload(files)
 }
