@@ -4,6 +4,7 @@ import axios from 'axios';
 const handleUpload = (files) => {
     const uploadedFiles = files.map((file) => ({
       file,
+      preview:URL.createObjectURL(file)
       
     }));
 
@@ -13,8 +14,7 @@ const handleUpload = (files) => {
 /* Inicio processXML*/  
 const processXML = (uploadedFile) => {   
   console.log('aki 2')
-  const xml = URL.createObjectURL(uploadedFile)
-  console.log(xml)
+  console.log(uploadedFile)
 };
 
 /* Fim processXML*/
