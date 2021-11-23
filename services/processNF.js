@@ -103,7 +103,7 @@ const allIcms = products.map((item) => { // Padronizando os dados dos valores de
         nf,
         cnpjEmitente,    
         cnpjDestinatario,
-        sitTrib: sitTrib[index].code,
+        //sitTrib: sitTrib[index].code,
         cfop: allProducts[index].cfop,
         cst: allIcms[index].CST,
         ncm: allProducts[index].ncm,
