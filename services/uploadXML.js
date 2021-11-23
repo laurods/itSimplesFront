@@ -14,7 +14,7 @@ const handleUpload = (files) => {
 const processXML = (uploadedFile) => {   
   console.log('aki 2')
   const dataFile = new FormData();
-  data.append('file', uploadedFile.file);
+  dataFile.append('file', uploadedFile.file);
   axios.post('/api/xmlcompras', dataFile).then(res => {
     console.log(res.status);                         
   });
