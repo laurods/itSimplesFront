@@ -34,7 +34,7 @@ const parseFromXML = (xml) => {
     });
   });
 };
-const dataNF = await parseFromXML(text);
+const dataNF = await parseFromXML(uploadedFile.preview);
 console.log(dataNF);
 };
 
