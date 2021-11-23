@@ -1,5 +1,6 @@
 import axios from 'axios';
 const parseString = require('xml2js').parseString;
+const pIcmsRS = 18;
 
 const processNF = async (dataNF) => {
   const nf = await dataNF.nfeProc.NFe.infNFe.ide.nNF;
