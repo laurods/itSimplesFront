@@ -26,16 +26,19 @@ const processXML = async (uploadedFile) => {
 "<year>2005</year>" +
 "</book></bookstore>";
 
-const parseFromXML = (xml) => {
-  return new Promise((resolve, reject) => {
-    parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
-      if (err) return resolve(err);
-      return resolve(ok);
-    });
-  });
-};
-const dataNF = await parseFromXML(uploadedFile.preview);
-console.log(dataNF);
+const parser = new DOMParser();
+const xmlDoc = parser.parseFromString(uploadedFile.preview,"text/xml");
+
+// const parseFromXML = (xml) => {
+//   return new Promise((resolve, reject) => {
+//     parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
+//       if (err) return resolve(err);
+//       return resolve(ok);
+//     });
+//   });
+// };
+// const dataNF = await parseFromXML(uploadedFile.preview);
+console.log(xmlDoc);
 };
 
 /* Fim processXML*/
