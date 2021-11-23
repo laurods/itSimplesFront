@@ -1,4 +1,5 @@
 import axios from 'axios';
+const processNFService = require('./processNF');
 const parseString = require('xml2js').parseString;
 /* Inicio processXML*/  
 const processXML = async (data) => {
@@ -15,10 +16,7 @@ const processXML = async (data) => {
   };
 
   const dataNF = await parseFromXML(xml);
-  console.log('aki 4')
-  console.log(dataNF)
-  
-  
+  processNFService.processNF(dataNF);  
   
 };
 
