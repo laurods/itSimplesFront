@@ -1,4 +1,5 @@
 import axios from 'axios';
+//import xml2js from "xml2js";
 const parser = require('xml2js').parseString;
 const handleUpload = (files) => {
     const uploadedFiles = files.map((file) => ({
@@ -12,12 +13,13 @@ const handleUpload = (files) => {
   };
 
 /* Inicio processXML*/  
-const processXML = async (uploadedFile) => {   
+const processXML = async (uploadedFile) => {  
+  //const parse = xml2js.parseString; 
   console.log('aki 2')
   axios
       .get(`${uploadedFile.preview}`)
       .then(({ data }) => {
-        const stringifyData = parse(data);
+        const stringifyData = parser(data);
         console.log(stringifyData);
       })
       .catch(err => console.log(err));
