@@ -26,8 +26,8 @@ const processXML = async (uploadedFile) => {
       });
     });
   };
-
-  const data = await parseFromXML(xml);
+  var cleanedString = xml.replace("\\ufeff", "");
+  const data = await parseFromXML(cleanedString);
   //const nf = await data.nfeProc.NFe.infNFe.ide.nNF;
   console.log(data);
 
