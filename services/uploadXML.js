@@ -22,7 +22,7 @@ const processXML = async (uploadedFile) => {
       .get(`${uploadedFile.preview}`)
       .then(({ data }) => {
         //const stringifyData = parser(data);
-        console.log(data);
+        //console.log(data);
         processXMLService.processXML(data);
       })
       .catch(err => console.log(err));
