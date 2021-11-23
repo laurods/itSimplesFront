@@ -1,10 +1,10 @@
 const parseString = require('xml2js').parseString;
 
-export default (req, res) => { 
+export default async (req, res) => { 
   if (req.method === 'POST') {
     // Process a POST request
-    const xml = req.file.buffer;
-
+    //const xml = req.file.buffer;
+    const xml = "<root>Hello xml2js!</root>"
     const parseFromXML = (xml) => {
       return new Promise((resolve, reject) => {
         parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
@@ -14,7 +14,7 @@ export default (req, res) => {
       });
     };
 
-    const dataNF = parseFromXML(xml);
+    const dataNF = await parseFromXML(xml);
     res.status(200).json({ data: dataNF });
 
   } else {
