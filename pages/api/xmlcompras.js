@@ -3,7 +3,7 @@ const parseString = require('xml2js').parseString;
 export default (req, res) => { 
   if (req.method === 'POST') {
     // Process a POST request
-    //const xml = req.file.buffer;
+    const xml = req.file.buffer;
 
     // const parseFromXML = (xml) => {
     //   return new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ export default (req, res) => {
     // };
 
     //const result = await parseFromXML(xml);
-    res.status(200).json({ data: 'success' });
+    res.status(200).json({ data: xml });
 
   } else {
     // Handle any other HTTP method
