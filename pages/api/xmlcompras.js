@@ -15,8 +15,8 @@ export default (req, res) => {
     // };
 
     //const result = await parseFromXML(xml);
-    //res.status(200).json({ data: 'success' });
-    res.status(200).json('success');
+    res.status(200).json({ data: 'success' });
+
   } else {
     // Handle any other HTTP method
     res.status(405).json({ error: `Method '${req.method}' Not Allowed` });
