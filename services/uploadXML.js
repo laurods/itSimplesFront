@@ -14,7 +14,7 @@ const handleUpload = (files) => {
     
   };
 /* Inicio processXML*/  
-const processXML = async (uploadedFile) => {   
+const processXML = (uploadedFile) => {   
   console.log('aki 2')
   console.log(uploadedFile);
   const xml = uploadedFile.preview;
@@ -26,8 +26,8 @@ const processXML = async (uploadedFile) => {
       });
     });
   };
-  var cleanedString = xml.replace("\\ufeff", "");
-  const data = await parseFromXML(cleanedString);
+  
+  const data = parseFromXML(xml);
   //const nf = await data.nfeProc.NFe.infNFe.ide.nNF;
   console.log(data);
 
