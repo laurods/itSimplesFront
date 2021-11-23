@@ -21,23 +21,23 @@ const processNF = async (dataNF) => {
         total: (parseFloat(product.prod.vProd).toFixed(2)),
     }
    });
-   console.log(allProducts);
+   
 
-// const sitTrib = products.map((item) => { // Definindo a Situação Tributária dos produtos
-//   let code = 999;
-//   if(item.imposto.ICMS.ICMS00) return {code:00};
-//   if(item.imposto.ICMS.ICMS10) return {code:10};
-//   if(item.imposto.ICMS.ICMS20) return {code:20};
-//   if(item.imposto.ICMS.ICMS30) return {code:30};
-//   if(item.imposto.ICMS.ICMS40) return {code:40};
-//   if(item.imposto.ICMS.ICMS41) return {code:41};
-//   if(item.imposto.ICMS.ICMS50) return {code:50};
-//   if(item.imposto.ICMS.ICMS51) return {code:51};
-//   if(item.imposto.ICMS.ICMS60) return {code:60};
-//   if(item.imposto.ICMS.ICMS70) return {code:70};
-//   if(item.imposto.ICMS.ICMS90) return {code:90};
-//   return code;
-// });
+const sitTrib = products.map((item) => { // Definindo a Situação Tributária dos produtos
+  let code = 999;
+  if(item.imposto.ICMS.ICMS00) return {code:00};
+  if(item.imposto.ICMS.ICMS10) return {code:10};
+  if(item.imposto.ICMS.ICMS20) return {code:20};
+  if(item.imposto.ICMS.ICMS30) return {code:30};
+  if(item.imposto.ICMS.ICMS40) return {code:40};
+  if(item.imposto.ICMS.ICMS41) return {code:41};
+  if(item.imposto.ICMS.ICMS50) return {code:50};
+  if(item.imposto.ICMS.ICMS51) return {code:51};
+  if(item.imposto.ICMS.ICMS60) return {code:60};
+  if(item.imposto.ICMS.ICMS70) return {code:70};
+  if(item.imposto.ICMS.ICMS90) return {code:90};
+  return code;
+});
 
 // const allIcms = products.map((item) => { // Padronizando os dados dos valores de ICMS
 //     if(!item.imposto.ICMS.ICMS10){ 
