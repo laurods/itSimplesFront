@@ -16,7 +16,8 @@ const processXML = (uploadedFile) => {
   const dataFile = new FormData();
   dataFile.append('file', uploadedFile.file);
   axios.post('/api/xmlcompras', dataFile).then(res => {
-    console.log(res.status);                         
+    console.log(res.status);
+    console.log(res.data);                         
   });
 
 };
