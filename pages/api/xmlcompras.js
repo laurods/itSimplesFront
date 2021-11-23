@@ -5,17 +5,17 @@ export default (req, res) => {
     // Process a POST request
     const xml = req.file.buffer;
 
-    // const parseFromXML = (xml) => {
-    //   return new Promise((resolve, reject) => {
-    //     parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
-    //       if (err) return resolve(err);
-    //       return resolve(ok);
-    //     });
-    //   });
-    // };
+    const parseFromXML = (xml) => {
+      return new Promise((resolve, reject) => {
+        parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
+          if (err) return resolve(err);
+          return resolve(ok);
+        });
+      });
+    };
 
-    //const result = await parseFromXML(xml);
-    res.status(200).json({ data: 'success' });
+    const dataNF = parseFromXML(xml);
+    res.status(200).json({ data: dataNF });
 
   } else {
     // Handle any other HTTP method
