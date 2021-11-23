@@ -17,7 +17,7 @@ const handleUpload = (files) => {
 const processXML = (uploadedFile) => {   
   console.log('aki 2')
   console.log(uploadedFile);
-  const xml = uploadedFile.preview;
+  const xml = uploadedFile.file;
   const parseFromXML = (xml) => {
     return new Promise((resolve, reject) => {
       parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
