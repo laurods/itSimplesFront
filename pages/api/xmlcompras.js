@@ -15,7 +15,7 @@ export default async (req, res) => {
     };
 
     const dataNF = await parseFromXML(xml);
-    res.status(200).json({ data: dataNF });
+    res.status(200).json({ data: dataNF.nfeProc.NFe.infNFe.ide.nNF });
 
   } else {
     // Handle any other HTTP method
