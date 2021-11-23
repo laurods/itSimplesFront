@@ -23,41 +23,41 @@ const processNF = async (dataNF) => {
    });
    
 
-const sitTrib = products.map((item) => { // Definindo a Situação Tributária dos produtos
-  let code = 999;
-  if(item.imposto.ICMS.ICMS00) return {code:00};
-  if(item.imposto.ICMS.ICMS10) return {code:10};
-  if(item.imposto.ICMS.ICMS20) return {code:20};
-  if(item.imposto.ICMS.ICMS30) return {code:30};
-  if(item.imposto.ICMS.ICMS40) return {code:40};
-  if(item.imposto.ICMS.ICMS41) return {code:41};
-  if(item.imposto.ICMS.ICMS50) return {code:50};
-  if(item.imposto.ICMS.ICMS51) return {code:51};
-  if(item.imposto.ICMS.ICMS60) return {code:60};
-  if(item.imposto.ICMS.ICMS70) return {code:70};
-  if(item.imposto.ICMS.ICMS90) return {code:90};
-  return code;
-});
-
-// const allIcms = products.map((item) => { // Padronizando os dados dos valores de ICMS
-//     if(!item.imposto.ICMS.ICMS10){ 
-//       const tributos = {
-//           orig: '0',
-//           CST: '0',
-//           modBC: '0',
-//           vBC: '0',
-//           pICMS: '0',
-//           vICMS: '0',
-//           modBCST: '0',
-//           pMVAST: '0',
-//           vBCST: '0',
-//           pICMSST: '0',
-//           vICMSST: '0',
-//       }
-//       return tributos;
-//     }
-//     return item.imposto.ICMS.ICMS10;
+// const sitTrib = products.map((item) => { // Definindo a Situação Tributária dos produtos
+//   let code = 999;
+//   if(item.imposto.ICMS.ICMS00) return {code:00};
+//   if(item.imposto.ICMS.ICMS10) return {code:10};
+//   if(item.imposto.ICMS.ICMS20) return {code:20};
+//   if(item.imposto.ICMS.ICMS30) return {code:30};
+//   if(item.imposto.ICMS.ICMS40) return {code:40};
+//   if(item.imposto.ICMS.ICMS41) return {code:41};
+//   if(item.imposto.ICMS.ICMS50) return {code:50};
+//   if(item.imposto.ICMS.ICMS51) return {code:51};
+//   if(item.imposto.ICMS.ICMS60) return {code:60};
+//   if(item.imposto.ICMS.ICMS70) return {code:70};
+//   if(item.imposto.ICMS.ICMS90) return {code:90};
+//   return code;
 // });
+
+const allIcms = products.map((item) => { // Padronizando os dados dos valores de ICMS
+    if(!item.imposto.ICMS.ICMS10){ 
+      const tributos = {
+          orig: '0',
+          CST: '0',
+          modBC: '0',
+          vBC: '0',
+          pICMS: '0',
+          vICMS: '0',
+          modBCST: '0',
+          pMVAST: '0',
+          vBCST: '0',
+          pICMSST: '0',
+          vICMSST: '0',
+      }
+      return tributos;
+    }
+    return item.imposto.ICMS.ICMS10;
+});
 
 //  const allIPI = products.map((item) => {
 //     if(!item.imposto.IPI.IPITrib){ // Padronizando os dados dos valores de IPI
