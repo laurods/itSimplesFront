@@ -29,7 +29,7 @@ const processXML = async (uploadedFile) => {
 
   const data = await parseFromXML(xml);
   //const nf = await data.nfeProc.NFe.infNFe.ide.nNF;
-  console.log(nf);
+  console.log(data);
 
 
 };
