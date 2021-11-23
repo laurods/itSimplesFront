@@ -1,11 +1,8 @@
-import axios from 'axios';
 const processNFService = require('./processNF');
 const parseString = require('xml2js').parseString;
-/* Inicio processXML*/  
+
 const processXML = async (data) => {
   const xml = data;
-  console.log('aki 3')
-  console.log(xml);
   const parseFromXML = (xml) => {
     return new Promise((resolve, reject) => {
       parseString(xml, { mergeAttrs: true, explicitArray: false}, function (err, ok) {
@@ -19,8 +16,6 @@ const processXML = async (data) => {
   processNFService.processNF(dataNF);  
   
 };
-
-/* Fim processXML*/
 
 module.exports = {
   processXML,
