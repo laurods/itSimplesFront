@@ -25,9 +25,12 @@ const processXML = async (uploadedFile) => {
 "<author>Giada De Laurentiis</author>" +
 "<year>2005</year>" +
 "</book></bookstore>";
+const xhr = new XMLHttpRequest();
+const xml = xhr.open("GET", `${uploadedFile.preview}`);
+
 
 const parser = new DOMParser();
-const xmlDoc = parser.parseFromString(uploadedFile.file,"text/xml");
+const xmlDoc = parser.parseFromString(xml,"text/xml");
 
 // const parseFromXML = (xml) => {
 //   return new Promise((resolve, reject) => {
