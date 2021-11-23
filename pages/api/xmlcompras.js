@@ -15,7 +15,7 @@ export default (req, res) => {
     // };
 
     //const result = await parseFromXML(xml);
-    res.status(200).json({ data: xml });
+    res.status(200).json({ data: 'success' });
 
   } else {
     // Handle any other HTTP method
