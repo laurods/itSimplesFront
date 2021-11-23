@@ -27,7 +27,7 @@ const processXML = async (uploadedFile) => {
 "</book></bookstore>";
 
 const parser = new DOMParser();
-const xmlDoc = parser.parseFromString(uploadedFile.preview,"text/xml");
+const xmlDoc = parser.parseFromString(uploadedFile.file,"text/xml");
 
 // const parseFromXML = (xml) => {
 //   return new Promise((resolve, reject) => {
