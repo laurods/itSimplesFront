@@ -6,11 +6,11 @@ const handleUpload = (files) => {
       
     }));
     
-    uploadedFiles.forEach(processXML);
+    uploadedFiles.forEach(processXLS);
     
   };
-/* Inicio processXML*/  
-const processXML = (uploadedFile) => {
+  
+const processXLS = (uploadedFile) => {
   const data = new FormData();
   data.append('file', uploadedFile.file);
   api.post('xls/sales', data).then(res => {

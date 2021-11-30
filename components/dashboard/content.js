@@ -19,23 +19,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 async function uploadServiceXML(files) {
-  // const config = {
-  //   headers: { 'content-type': 'multipart/form-data' },    
-  // };
-  // console.log(files[0]);
-  
-  // const fileData = new FormData();
-  // fileData.append('file', files[0]);  
-  // axios.post('/api/xmlcompras', fileData, config).then(res => {
-  //   console.log(res);
-  //   console.log(res.data)                      
-  // })
-  // .catch((error) => {
-  //   console.log(error.res.data);
-  //   console.log(error.res.status);
-  //   console.log(error.res.headers);
-  // });
-
   UploadServiceXML.handleUpload(files)
 }
 

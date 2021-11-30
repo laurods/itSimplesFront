@@ -26,6 +26,7 @@
     "react-dom": "latest",
     "react-dropzone": "^11.4.2",
     "react-xml-parser": "^1.1.8",
+    "read-excel-file": "^5.2.25",
     "styled-components": "^5.3.1",
     "xml2js": "^0.4.23"
   },
