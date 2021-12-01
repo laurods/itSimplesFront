@@ -6,7 +6,7 @@ export default async (req, res) => {
     //   return res.status(400).send("Please upload an excel file!");
     // }
     
-    return res.status(200).json({msg:'teste'});
+    return res.status(200).send({msg:'teste' + req.file.originalname});
   } catch (error) {
     console.log(error);
     res.status(500).send({
