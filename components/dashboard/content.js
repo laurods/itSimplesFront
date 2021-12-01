@@ -24,7 +24,7 @@ async function uploadServiceXML(files) {
 
 async function uploadServiceXLS(files) {
   console.log(files);
-  UploadServiceXLS.handleUpload(files)
+  //UploadServiceXLS.handleUpload(files)
 }
 
 export default function Content() {
