@@ -11,7 +11,7 @@ const client = new MongoClient(url);
     try {
          await client.connect();         
          const db = client.db(dbName);
-         const col = db.collection("produtcsST");
+         const col = db.collection("productsST");
          const products = await col.find().toArray();     
          
          res.status(200).json(products);
