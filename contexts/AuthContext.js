@@ -10,8 +10,7 @@ export const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
     const [reportCNPJ, setReportCNPJ] = useState('');
-    const [activeCNPJ, setActiveCNPJ] = useState('');
-    const [produtcsST, setProdutcsST] = useState([]);    
+    const [activeCNPJ, setActiveCNPJ] = useState('');   
     const [CNPJsByUsers, setCNPJsByUsers] = useState([]);
     const [movimentosCNPJ, setMovimentosCNPJ] = useState([]);
     const [userEmail, setUserEmail] = useState(null);
@@ -34,19 +33,9 @@ export function AuthProvider({ children }) {
         }
     }
 
-    const getProductsST = () => { 
-        axios
-            .get('/api/productsst')
-            .then(({ data }) => {
-              setProdutcsST(data);
-            })
-            .catch(err => console.log(err));
-      
-      };
 
     useEffect(() => {
-        verifyToken();
-        //getProductsST();
+        verifyToken();      
     }, []);
     
     async function signIn(values) {
@@ -123,7 +112,7 @@ export function AuthProvider({ children }) {
             isAuthenticated,
             movimentosCNPJ,
             CNPJsByUsers,
-            activeCNPJ,
+            activeCNPJ,         
             signIn,
             addEmpresa,
             setCNPJsByUsers,
