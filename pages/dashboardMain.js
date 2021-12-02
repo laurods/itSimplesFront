@@ -9,9 +9,7 @@ export default function Dashboard() {
      
     useEffect(() => {
       const loadAll = async() =>{
-        const clients = await axios.post('/api/cnpjbyuser', { user: userId });
-        const productsST = await axios.get('/api/productsst');
-        console.log(productsST.data);
+        const clients = await axios.post('/api/cnpjbyuser', { user: userId });        
         const listClients = clients.data;
         const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', { cnpj: listClients[0].cnpj });
         const listMovimentos = movimentosByCNPJ.data;

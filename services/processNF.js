@@ -1,8 +1,8 @@
-import axios from 'axios';
+const processProductsService = require('./processProducts');
 const parseString = require('xml2js').parseString;
 const pIcmsRS = 18;
 
-const processNF = async (dataNF) => {
+const processNF = async (dataNF) => {  
   const nf = await dataNF.nfeProc.NFe.infNFe.ide.nNF;
   const cnpjEmitente = await dataNF.nfeProc.NFe.infNFe.emit.CNPJ;
   const cnpjDestinatario = await dataNF.nfeProc.NFe.infNFe.dest.CNPJ;
@@ -129,6 +129,7 @@ const allIcms = products.map((item) => { // Padronizando os dados dos valores de
   
   //return calculateTax;
   console.log(calculateTax)
+  processProductsService.processProducts(calculateTax);
 }
 
 module.exports = {
