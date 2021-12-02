@@ -14,13 +14,14 @@ const client = new MongoClient(url);
          const col = db.collection("productsST");
          const products = await col.find(
             { },
-            {projection: { 
+            {projection: {
+                cest: 1,
                 _id: 0, 
                 destino: 0,
                 origem: 0,
                 descricao: 0,
-                segmento: 0, 
-                cest: 1 
+                segmento: 0,
+                 
             }
         }
             ).toArray();     
