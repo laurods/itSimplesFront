@@ -9,7 +9,7 @@ const processProducts = async (dataProducts) => {
     return dataProducts.filter(product => allCest.includes(product.cest));
   }
 
-  const filterProductdSubstitutes = await productsSubstitutes(allCest); // chama a função
+  const filterProductdSubstitutes = await productsSubstitutes(allCest); // chama a função   
   console.log('lista cest');
   console.log(listCest)
   console.log('all cest');
@@ -18,6 +18,7 @@ const processProducts = async (dataProducts) => {
   console.log(dataProducts)
   console.log('lista filtro');
   console.log(filterProductdSubstitutes);
+  await axios.post('/api/productsSubstitutes', filterProductdSubstitutes);
 
   
 };
