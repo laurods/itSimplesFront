@@ -17,7 +17,6 @@ const processProducts = async (dataProducts) => {
   console.log(allCest)
   console.log('lista produtos');
   console.log(dataProducts)
-  console.log('lista filtro');
   console.log(filterProductdSubstitutes);
  
   
