@@ -9,7 +9,7 @@ const processProducts = async (dataProducts) => {
     return dataProducts.filter(product => allCest.includes(product.cest));
   }
 
-  const filterProductdSubstitutes = productsSubstitutes(listCest); // chama a função
+  const filterProductdSubstitutes = await productsSubstitutes(listCest); // chama a função
   console.log('lista cest');
   console.log(listCest)
   console.log('all cest');
