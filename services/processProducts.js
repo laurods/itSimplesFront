@@ -7,7 +7,9 @@ const processProducts = async (dataProducts) => {
   const productsSubstitutes = ([...listCest]) => { // compara todos os CEST dos produtos COMPRADOS com a tabela de produtos CEST
     return dataProducts.filter(product => listCest.includes(product.cest));
   }
-  console.log(productsSubstitutes);
+
+  const filterProductdSubstitutes = productsSubstitutes(listCest); // chama a função
+  console.log(filterProductdSubstitutes);
 
   
 };
