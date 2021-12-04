@@ -13,7 +13,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("productsST");
          const products = await col.find(
-            { },
+            { origem: "rs" },
             {projection: {
                 cest: 1,
                 _id: 0, 
