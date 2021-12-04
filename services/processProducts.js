@@ -19,7 +19,7 @@ const processProducts = async (dataProducts) => {
   console.log(dataProducts)
   console.log('lista filtro');
   console.log(filterProductdSubstitutes);
-  productsServiceModel.addProducts(filterProductdSubstitutes);
+ 
   
 };
 
