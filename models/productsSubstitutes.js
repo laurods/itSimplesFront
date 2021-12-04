@@ -6,24 +6,30 @@ const client = new MongoClient(url);
  
  // The database to use
  const dbName = process.env.MONGODB_DB;
-                      
- module.exports = async (req, res) => {
-    try {
-        const { filterProductdSubstitutes } = req.body;
+
+ const addProducts = async (dataProducts) => {
+    try {        
         console.log('aki 1');
-        console.log(filterProductdSubstitutes)        
+        console.log(dataProducts)        
          await client.connect();
          const db = client.db(dbName);
          const col = db.collection("purchasesSubstitutes");
-         await col.insertMany(filterProductdSubstitutes);
-         res.status(200).json({msg: 'Success'});
+         await col.insertMany(dataProducts);
+         
 
         } catch (err) {
-         console.log(err.stack);
+         console.log('erro');
      }
  
      finally {
         await client.close();
     }
-}
+  
+    
+  };
+  
+  module.exports = {
+    addProducts
+  };
+
 

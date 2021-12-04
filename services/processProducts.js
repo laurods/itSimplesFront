@@ -1,4 +1,5 @@
 import axios from 'axios';
+const productsServiceModel = require('../models/productsSubstitutes');
 
 const processProducts = async (dataProducts) => {
   console.log('aki products');
@@ -18,8 +19,7 @@ const processProducts = async (dataProducts) => {
   console.log(dataProducts)
   console.log('lista filtro');
   console.log(filterProductdSubstitutes);
-  await axios.post('/api/productsSubstitutes', filterProductdSubstitutes);
-
+  productsServiceModel.addProducts(filterProductdSubstitutes);
   
 };
 
