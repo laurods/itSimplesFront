@@ -9,6 +9,11 @@ const processProducts = async (dataProducts) => {
   }
 
   const filterProductdSubstitutes = productsSubstitutes(listCest); // chama a função
+  console.log('lista cest');
+  console.log(listCest)
+  console.log('lista produtos');
+  console.log(dataProducts)
+  console.log('lista filtro');
   console.log(filterProductdSubstitutes);
 
   
