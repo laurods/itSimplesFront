@@ -12,7 +12,13 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("productsST");
-         const products = await col.find().toArray();     
+         const products = await col.find(
+            { destino: 'rs' },
+		    { projection: {
+			   cest: 1,
+			   _id: 0}
+			}
+         ).toArray();     
          
          res.status(200).json(products);
 
