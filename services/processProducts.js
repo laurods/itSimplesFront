@@ -14,6 +14,7 @@ const processProducts = async (dataProducts) => {
   
   axios.post('/api/purchasesSubstitutes', {filterProductdSubstitutes}).then(res => {
     console.log(res.status);
+    console.log(res);
   });
 
   console.log('lista cest');
