@@ -45,7 +45,7 @@ const client = new MongoClient(url);
     //    });
 
          
-         res.status(200).json({ msg:"success" });
+         res.status(200).json({ msg: filterProductdSubstitutes });
 
         } catch (err) {
          console.log(err.stack);
