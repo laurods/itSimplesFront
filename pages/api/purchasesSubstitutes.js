@@ -17,7 +17,7 @@ const client = new MongoClient(url);
          // Use the collection "people"
          const col = db.collection("purchasesSubstitutes");        
          filterProductdSubstitutes.forEach(e => {
-            await col.updateOne(
+            col.updateOne(
                 { cean: e.cean },
             {
                $set: { 
