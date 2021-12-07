@@ -6,7 +6,7 @@ const { MongoClient } = require("mongodb");
 //let dbName = 'itsimples'
 // Replace the following with your Atlas connection string                                                                                                                                        
 const uri = process.env.MONGODB_URI
-const client = new MongoClient(url);
+const client = new MongoClient(uri);
  
  // The database to use
  const dbName = process.env.MONGODB_DB;
