@@ -1,8 +1,15 @@
 
-import { MongoClient } from 'mongodb'
+const { MongoClient } = require("mongodb");
+// import { MongoClient } from 'mongodb'
 
-let uri = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/itsimples?retryWrites=true&w=majority'
-let dbName = 'itsimples'
+//let uri = 'mongodb+srv://dosimples:it23102021@cluster0.7cclw.mongodb.net/itsimples?retryWrites=true&w=majority'
+//let dbName = 'itsimples'
+// Replace the following with your Atlas connection string                                                                                                                                        
+const uri = process.env.MONGODB_URI
+const client = new MongoClient(url);
+ 
+ // The database to use
+ const dbName = process.env.MONGODB_DB;
 
 let cachedClient = null
 let cachedDb = null
