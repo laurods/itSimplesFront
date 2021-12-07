@@ -18,7 +18,7 @@ const client = new MongoClient(url);
          //const p = await col.insertOne({ filterProductdSubstitutes });
          
          filterProductdSubstitutes.forEach(e => {
-            const p = await col.updateOne(
+            const p = col.updateOne(
                 { cean: e.cean },
                     {
                        $set: { 
