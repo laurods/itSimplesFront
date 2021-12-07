@@ -18,31 +18,29 @@ const client = new MongoClient(url);
          //const p = await col.insertOne({ filterProductdSubstitutes });
          
          filterProductdSubstitutes.forEach(e => {
-             console.log(e.cean);
-            
-        //    col.updateOne(
-        //         { cean: e.cean },
-        //             {
-        //                $set: { 
-        //                  cean: e.cean,
-        //                 //  cest: e.cest,
-        //                 //  cfop: e.cfop,
-        //                 //  cnpjDestinatario: e.cnpjDestinatario,
-        //                 //  cnpjEmitente: e.cnpjEmitente,
-        //                 //  cofins: e.cofins,
-        //                 //  cst: e.cst,
-        //                 //  name: e.name,
-        //                 //  ncm: e.ncm,
-        //                 //  nf: e.nf, 
-        //                 //  pis: e.pis,
-        //                 //  vICMSST: e.vICMSST
+            const p = await col.updateOne(
+                { cean: e.cean },
+                    {
+                       $set: { 
+                         cean: e.cean,
+                        //  cest: e.cest,
+                        //  cfop: e.cfop,
+                        //  cnpjDestinatario: e.cnpjDestinatario,
+                        //  cnpjEmitente: e.cnpjEmitente,
+                        //  cofins: e.cofins,
+                        //  cst: e.cst,
+                        //  name: e.name,
+                        //  ncm: e.ncm,
+                        //  nf: e.nf, 
+                        //  pis: e.pis,
+                        //  vICMSST: e.vICMSST
                         
-        //                 },				
+                        },				
                        
-        //             },
-        //             { upsert: true }
+                    },
+                    { upsert: true }
                
-        //    )  
+           )  
        });
 
          
