@@ -14,39 +14,35 @@ const client = new MongoClient(url);
 
          await client.connect();
          const db = client.db(dbName);
-         // Use the collection "people"
-         const col = db.collection("purchasesSubstitutes");
-         const p = await col.insertOne({ filterProductdSubstitutes });
+         //const col = db.collection("purchasesSubstitutes");
+         //const p = await col.insertOne({ filterProductdSubstitutes });
          
-    //      filterProductdSubstitutes.forEach(e => {
-    //         connection().then((db) =>
-    //        db
-    //            .collection("purchasesSubstitutes")
-    //            .updateOne(
-    //             { cean: e.cean },
-    //                 {
-    //                    $set: { 
-    //                      cean: e.cean,
-    //                      cest: e.cest,
-    //                      cfop: e.cfop,
-    //                      cnpjDestinatario: e.cnpjDestinatario,
-    //                      cnpjEmitente: e.cnpjEmitente,
-    //                      cofins: e.cofins,
-    //                      cst: e.cst,
-    //                      name: e.name,
-    //                      ncm: e.ncm,
-    //                      nf: e.nf, 
-    //                      pis: e.pis,
-    //                      vICMSST: e.vICMSST
+         filterProductdSubstitutes.forEach(e => {
+            
+           db.collection("purchasesSubstitutes").updateOne(
+                { cean: e.cean },
+                    {
+                       $set: { 
+                         cean: e.cean,
+                         cest: e.cest,
+                         cfop: e.cfop,
+                         cnpjDestinatario: e.cnpjDestinatario,
+                         cnpjEmitente: e.cnpjEmitente,
+                         cofins: e.cofins,
+                         cst: e.cst,
+                         name: e.name,
+                         ncm: e.ncm,
+                         nf: e.nf, 
+                         pis: e.pis,
+                         vICMSST: e.vICMSST
                         
-    //                     },				
+                        },				
                        
-    //                 },
-    //                 { upsert: true }
-    //            )
-    //    );	
-           
-    //    });
+                    },
+                    { upsert: true }
+               
+           )  
+       });
 
          
          res.status(200).json({ msg: filterProductdSubstitutes });
