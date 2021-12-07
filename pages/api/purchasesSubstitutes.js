@@ -16,7 +16,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          // Use the collection "people"
          const col = db.collection("purchasesSubstitutes");
-         const p = await col.insertOne(filterProductdSubstitutes);
+         const p = await col.insertOne({ filterProductdSubstitutes });
          
         //  filterProductdSubstitutes.forEach(e => {
         //     col.updateOne(
