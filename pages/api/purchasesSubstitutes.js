@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-
+ 
 // Replace the following with your Atlas connection string                                                                                                                                        
 const url = process.env.MONGODB_URI
 const client = new MongoClient(url);
@@ -13,7 +13,7 @@ const client = new MongoClient(url);
         const { filterProductdSubstitutes } = req.body; 
 
          await client.connect();
-         //const db = client.db(dbName);
+         const db = client.db(dbName);
          // Use the collection "people"
          const col = db.collection("purchasesSubstitutes");
          const p = await col.insertOne({ filterProductdSubstitutes });
