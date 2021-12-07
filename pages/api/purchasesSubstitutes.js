@@ -10,13 +10,13 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
 
-        const { insertOne } = req.body; 
+        const { filterProductdSubstitutes } = req.body; 
 
          await client.connect();
          const db = client.db(dbName);
          // Use the collection "people"
          const col = db.collection("purchasesSubstitutes");
-         const p = await col.insertOne(insertOne);
+         const p = await col.insertOne(filterProductdSubstitutes);
          
         //  filterProductdSubstitutes.forEach(e => {
         //     col.updateOne(
