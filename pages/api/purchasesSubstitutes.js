@@ -21,7 +21,7 @@ const client = new MongoClient(url);
          const p = await col.updateOne(
              { cean: product.cean },
              {
-                set: { 
+                $set: { 
                     cean: product.cean,
                     cest: product.cest,
         //             cfop: cfop,
