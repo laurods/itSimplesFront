@@ -17,21 +17,21 @@ const client = new MongoClient(url);
          const col = db.collection("purchasesSubstitutes");
          //const p = await col.insertOne(item);
          const p = await col.updateOne(
-             { cean: item.cean },
+             { cean: item[0].cean },
              {
                 set: { 
-                    cean: item.cean,
-                    cest: item.cest,
-                    cfop: item.cfop,
-                    cnpjDestinatario: item.cnpjDestinatario,
-                    cnpjEmitente: item.cnpjEmitente,
-                    cofins: item.cofins,
-                    cst: item.cst,
-                    name: item.name,
-                    ncm: item.ncm,
-                    nf: item.nf, 
-                    pis: item.pis,
-                    vICMSST: item.vICMSST
+                    cean: item[0].cean,
+                    cest: item[0].cest,
+                    cfop: item[0].cfop,
+                    cnpjDestinatario: item[0].cnpjDestinatario,
+                    cnpjEmitente: item[0].cnpjEmitente,
+                    cofins: item[0].cofins,
+                    cst: item[0].cst,
+                    name: item[0].name,
+                    ncm: item[0].ncm,
+                    nf: item[0].nf, 
+                    pis: item[0].pis,
+                    vICMSST: item[0].vICMSST
                 },				
                                    
             },
