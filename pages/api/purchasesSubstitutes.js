@@ -24,16 +24,16 @@ const client = new MongoClient(url);
                 $set: { 
                     cean: product.cean,
                     cest: product.cest,
-        //             cfop: cfop,
-        //             cnpjDestinatario: cnpjDestinatario,
-        //             cnpjEmitente: cnpjEmitente,
-        //             cofins: cofins,
-        //             cst: cst,
-        //             name: item[0].name,
-        //             ncm: item[0].ncm,
-        //             nf: item[0].nf, 
-        //             pis: item[0].pis,
-        //             vICMSST: item[0].vICMSST
+                    cfop: product.cfop,
+                    cnpjDestinatario: product.cnpjDestinatario,
+                    cnpjEmitente: product.cnpjEmitente,
+                    cofins: product.cofins,
+                    cst: product.cst,
+                    name: product.name,
+                    ncm: product.ncm,
+                    nf: product.nf, 
+                    pis: product.pis,
+                    vICMSST: product.vICMSST
                 },				
                                    
             },
