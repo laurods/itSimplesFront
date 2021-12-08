@@ -10,23 +10,24 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
 
-        const { item } = req.body; 
+        //const { item } = req.body;
+        const  item = req.body;  
 
          await client.connect();
          const db = client.db(dbName);
          const col = db.collection("purchasesSubstitutes");
          //const p = await col.insertOne(item);
         //  const p = await col.updateOne(
-        //      { cean: item[0].cean },
+        //      { cean: cean },
         //      {
         //         set: { 
-        //             cean: item[0].cean,
-        //             cest: item[0].cest,
-        //             cfop: item[0].cfop,
-        //             cnpjDestinatario: item[0].cnpjDestinatario,
-        //             cnpjEmitente: item[0].cnpjEmitente,
-        //             cofins: item[0].cofins,
-        //             cst: item[0].cst,
+        //             cean: cean,
+        //             cest: cest,
+        //             cfop: cfop,
+        //             cnpjDestinatario: cnpjDestinatario,
+        //             cnpjEmitente: cnpjEmitente,
+        //             cofins: cofins,
+        //             cst: cst,
         //             name: item[0].name,
         //             ncm: item[0].ncm,
         //             nf: item[0].nf, 
