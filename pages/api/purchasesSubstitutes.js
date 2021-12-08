@@ -15,7 +15,28 @@ const client = new MongoClient(url);
          await client.connect();
          const db = client.db(dbName);
          const col = db.collection("purchasesSubstitutes");
-         const p = await col.insertOne(item);
+         //const p = await col.insertOne(item);
+         const p = await col.updateOne(
+             { cean: item.cean },
+             {
+                set: { 
+                    cean: item.cean,
+                    cest: item.cest,
+                    cfop: item.cfop,
+                    cnpjDestinatario: item.cnpjDestinatario,
+                    cnpjEmitente: item.cnpjEmitente,
+                    cofins: item.cofins,
+                    cst: item.cst,
+                    name: item.name,
+                    ncm: item.ncm,
+                    nf: item.nf, 
+                    pis: item.pis,
+                    vICMSST: item.vICMSST
+                },				
+                                   
+            },
+            { upsert: true }             
+        );
          
     //      filterProductdSubstitutes.forEach(e => {
     //         const p = col.updateOne(
