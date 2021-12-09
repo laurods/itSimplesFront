@@ -13,25 +13,8 @@ const processProducts = async (dataProducts) => {
   const filterProductdSubstitutes = await productsSubstitutes(allCest); // chama a função
 
   filterProductdSubstitutes.forEach(item => {
-    axios.post('/api/purchasesSubstitutes', { item }).then(res => {
-      console.log(res.data);
-    });
-  });
-  
-  // axios.post('/api/purchasesSubstitutes', {filterProductdSubstitutes}).then(res => {
-  //   console.log(res);
-  //   console.log(res.data);
-  // });
-
-  console.log('lista cest');
-  console.log(listCest)
-  console.log('all cest');
-  console.log(allCest)
-  console.log('lista produtos');
-  console.log(dataProducts)
-  console.log('lista substitutos');
-  console.log(filterProductdSubstitutes);
- 
+    axios.post('/api/purchasesSubstitutes', { item })
+  });  
   
 };
 

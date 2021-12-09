@@ -9,7 +9,6 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-
         //const { item } = req.body;
         const  { item } = req.body;
         const product = item;  
@@ -39,10 +38,7 @@ const client = new MongoClient(url);
             },
             { upsert: true }             
         );
-         
-
-
-         
+        
          res.status(200).json({ msg: item });
 
         } catch (err) {
