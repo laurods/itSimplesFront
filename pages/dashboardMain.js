@@ -13,6 +13,8 @@ export default function Dashboard() {
         const listClients = clients.data;
         const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', { cnpj: listClients[0].cnpj });
         const listMovimentos = movimentosByCNPJ.data;
+
+        
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0])
         setMovimentosCNPJ(listMovimentos)        

@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import MovimentoCNPJ from './movimentoCNPJ';
+import EntradasByCNPJ from './entradasByCNPJ';
 import FormEmpresa from './formEmpresa';
 import UploadXML from './uploadXML';
 import UploadXLS from './uploadXLS';
@@ -39,6 +40,7 @@ export default function Content() {
         </Grid>
         <Grid item xs={4}>
           <UploadXML uploadXML={uploadServiceXML}/>
+          <EntradasByCNPJ />
           <UploadXLS uploadXLS={uploadServiceXLS}/>
         </Grid>
         <Grid item xs={3}>
