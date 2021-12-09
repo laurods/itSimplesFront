@@ -17,11 +17,11 @@ export default function EntradasByCNPJ() {
   return (
     <ThemeProvider theme={theme}>
         <Typography variant="h6" gutterBottom component="div" align='center'>
-            Créditos Entradas Substitutos Tributários
+            Créditos 
         </Typography>    
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
-        <Table sx={{ minWidth: 200 }} aria-label="simple table">
+        <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Mês</TableCell>
