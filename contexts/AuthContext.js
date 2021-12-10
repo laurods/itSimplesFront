@@ -13,6 +13,7 @@ export function AuthProvider({ children }) {
     const [activeCNPJ, setActiveCNPJ] = useState('');   
     const [CNPJsByUsers, setCNPJsByUsers] = useState([]);
     const [movimentosCNPJ, setMovimentosCNPJ] = useState([]);
+    const [entradasByCNPJ, setEntradasByCNPJ] = useState([]);
     const [userEmail, setUserEmail] = useState(null);
     const [userId, setUserId] = useState(null);
     const [loginMessage, setloginMessage] = useState('');
@@ -112,7 +113,8 @@ export function AuthProvider({ children }) {
             isAuthenticated,
             movimentosCNPJ,
             CNPJsByUsers,
-            activeCNPJ,         
+            activeCNPJ,
+            entradasByCNPJ,         
             signIn,
             addEmpresa,
             setCNPJsByUsers,
@@ -121,6 +123,7 @@ export function AuthProvider({ children }) {
             updateActiveCNPJ,
             setMovimentosCNPJ,
             reportByMovimentoAndCNPJ,
+            setEntradasByCNPJ,
        
             
              }}>

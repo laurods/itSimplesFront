@@ -13,6 +13,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function EntradasByCNPJ() {
+    const { entradasByCNPJ } = useContext(AuthContext);
+    console.log('componet entradas cnpj')
+    console.log(entradasByCNPJ)
     const movimentosCNPJ = [];
   return (
     <ThemeProvider theme={theme}>
