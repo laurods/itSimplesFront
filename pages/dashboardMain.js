@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
+import { parseCookies } from 'nookies'
 import Top from '../components/dashboard/top.js';
 import Content from '../components/dashboard/content.js';
 
@@ -9,6 +10,8 @@ export default function Dashboard() {
      
     useEffect(() => {
       const loadAll = async() =>{
+        const cookies = parseCookies()
+        console.log({ cookies })
         const clients = await axios.post('/api/cnpjbyuser', { user: userId });        
         const listClients = clients.data;
         console.log('list client')
