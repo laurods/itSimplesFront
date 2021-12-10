@@ -12,7 +12,9 @@ export default function Dashboard() {
       const loadAll = async() =>{
         const cookies = parseCookies()
         console.log({ cookies })
-        const clients = await axios.post('/api/cnpjbyuser', { user: cookies.userId });        
+        console.log('cooks id')
+        console.log(cookies.idUser)
+        const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
         const listClients = clients.data;
         console.log('list client')
         console.log(listClients)
