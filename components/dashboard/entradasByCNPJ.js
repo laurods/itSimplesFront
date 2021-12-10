@@ -17,19 +17,30 @@ export default function EntradasByCNPJ() {
     const { entradasByCNPJ } = useContext(AuthContext);
     console.log('componet entradas cnpj')
     console.log(entradasByCNPJ)
+    function groupBy(arr, criteria) {
+        const newObj = arr.reduce(function (acc, currentValue) {
+          if (!acc[currentValue[criteria]]) {
+            acc[currentValue[criteria]] = [];
+          }
+          acc[currentValue[criteria]].push(currentValue);
+          return acc;
+        }, {});
+        return newObj;
+      }
+    
+    const entradasByNF = groupBy(entradasByCNPJ, "nf");
+    console.log('group nf')
+    console.log(entradasByNF)
     const movimentosCNPJ = [];
   return (
     <ThemeProvider theme={theme}>
-        <Typography variant="h6" gutterBottom component="div" align='center'>
-            Créditos 
-        </Typography>    
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Mês</TableCell>
-              <TableCell>Valor</TableCell>
+              <TableCell>Crédito</TableCell>
               <TableCell align="right">Relatório</TableCell>
             </TableRow>
           </TableHead>
