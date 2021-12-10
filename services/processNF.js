@@ -4,6 +4,14 @@ const pIcmsRS = 18;
 
 const processNF = async (dataNF) => {  
   const nf = await dataNF.nfeProc.NFe.infNFe.ide.nNF;
+  const dtEmissao = await dataNF.nfeProc.NFe.infNFe.ide.dhEmi;
+  const anoMovimento = dtEmissao.slice(0, 3);
+  const mesMovimento = dtEmissao.slice(8, 9);
+  console.log('anoMovimento');
+  console.log(anoMovimento);
+  console.log('mesMovimento');
+  console.log(mesMovimento);
+
   const cnpjEmitente = await dataNF.nfeProc.NFe.infNFe.emit.CNPJ;
   const cnpjDestinatario = await dataNF.nfeProc.NFe.infNFe.dest.CNPJ;
   let products = await dataNF.nfeProc.NFe.infNFe.det;
