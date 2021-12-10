@@ -20,7 +20,8 @@ const client = new MongoClient(url);
          const p = await col.updateOne(
              { cean: product.cean },
              {
-                $set: { 
+                $set: {
+                    movimento: product.movimento,
                     cean: product.cean,
                     cest: product.cest,
                     cfop: product.cfop,
@@ -38,7 +39,7 @@ const client = new MongoClient(url);
             },
             { upsert: true }             
         );
-        
+
          res.status(200).json({ msg: item });
 
         } catch (err) {

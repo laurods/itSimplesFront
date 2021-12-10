@@ -8,12 +8,7 @@ const processNF = async (dataNF) => {
   const anoMovimento = dtEmissao.slice(0, 4);
   const mesMovimento = dtEmissao.slice(5, 7);
   const movimento = `${mesMovimento}@${anoMovimento}`;
-  console.log('anoMovimento');
-  console.log(anoMovimento);
-  console.log('mesMovimento');
-  console.log(mesMovimento);
-  console.log('Movimento');
-  console.log(movimento);
+
 
   const cnpjEmitente = await dataNF.nfeProc.NFe.infNFe.emit.CNPJ;
   const cnpjDestinatario = await dataNF.nfeProc.NFe.infNFe.dest.CNPJ;
@@ -112,6 +107,7 @@ const allIcms = products.map((item) => { // Padronizando os dados dos valores de
 
   const calculateTax = products.map((item, index) => {
         return {
+        movimento,
         nf,
         cnpjEmitente,    
         cnpjDestinatario,

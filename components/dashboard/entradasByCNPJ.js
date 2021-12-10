@@ -28,9 +28,9 @@ export default function EntradasByCNPJ() {
         return newObj;
       }
     
-    const entradasByNF = groupBy(entradasByCNPJ, "nf");
-    console.log('group nf')
-    console.log(entradasByNF)
+    const entradasByMovimento = groupBy(entradasByCNPJ, "movimento");
+    console.log('group movimento')
+    console.log(entradasByMovimento)
     const movimentosCNPJ = [];
   return (
     <ThemeProvider theme={theme}>
