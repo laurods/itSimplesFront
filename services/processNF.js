@@ -5,12 +5,15 @@ const pIcmsRS = 18;
 const processNF = async (dataNF) => {  
   const nf = await dataNF.nfeProc.NFe.infNFe.ide.nNF;
   const dtEmissao = await dataNF.nfeProc.NFe.infNFe.ide.dhEmi;
-  const anoMovimento = dtEmissao.slice(0, 3);
-  const mesMovimento = dtEmissao.slice(8, 9);
+  const anoMovimento = dtEmissao.slice(0, 4);
+  const mesMovimento = dtEmissao.slice(8, 10);
+  const movimento = `${mesMovimento}@${anoMovimento}`;
   console.log('anoMovimento');
   console.log(anoMovimento);
   console.log('mesMovimento');
   console.log(mesMovimento);
+  console.log('Movimento');
+  console.log(movimento);
 
   const cnpjEmitente = await dataNF.nfeProc.NFe.infNFe.emit.CNPJ;
   const cnpjDestinatario = await dataNF.nfeProc.NFe.infNFe.dest.CNPJ;
