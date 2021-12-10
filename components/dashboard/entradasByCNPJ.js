@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import PrintIcon from '@material-ui/icons/Print';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const theme = createTheme();
 
