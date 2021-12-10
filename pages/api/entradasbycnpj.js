@@ -14,7 +14,7 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("purchasesSubstitutes");
-         const movimentos = await col.find({ cnpj: cnpj}).toArray();
+         const movimentos = await col.find({ cnpjDestinatario: cnpj}).toArray();
          res.status(200).json(movimentos);
 
         } catch (err) {
