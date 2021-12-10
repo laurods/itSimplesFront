@@ -6,7 +6,7 @@ const processNF = async (dataNF) => {
   const nf = await dataNF.nfeProc.NFe.infNFe.ide.nNF;
   const dtEmissao = await dataNF.nfeProc.NFe.infNFe.ide.dhEmi;
   const anoMovimento = dtEmissao.slice(0, 4);
-  const mesMovimento = dtEmissao.slice(8, 10);
+  const mesMovimento = dtEmissao.slice(6, 8);
   const movimento = `${mesMovimento}@${anoMovimento}`;
   console.log('anoMovimento');
   console.log(anoMovimento);
