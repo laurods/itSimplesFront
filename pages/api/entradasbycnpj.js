@@ -16,7 +16,7 @@ const client = new MongoClient(url);
          const col = db.collection("purchasesSubstitutes");
          const movimentos = await col.aggregate(
             [
-                { $match : { cnpjDestinatario: "$$cnpj" } },
+                { $match : { cnpjDestinatario: "04921325000168" } },
                 {
                     $addFields: {
                         vlrST: {$toDouble: "$vICMSST"}
