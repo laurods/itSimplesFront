@@ -12,8 +12,6 @@ const client = new MongoClient(url);
         //const { item } = req.body;
         const  { item } = req.body;
         const product = item;
-        const vICMSST =  parseFloat(product.vICMSST).toFixed(2);
-     
 
          await client.connect();
          const db = client.db(dbName);
@@ -36,8 +34,7 @@ const client = new MongoClient(url);
                     ncm: product.ncm,
                     nf: product.nf, 
                     pis: product.pis,
-                    vICMSST,
-                    //vICMSST: product.vICMSST,
+                    vICMSST: product.vICMSST,
                 },				
                                    
             },
