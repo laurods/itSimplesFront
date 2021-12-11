@@ -39,7 +39,7 @@ export default function EntradasByCNPJ() {
                   {row._id}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {row.total}
+                  {row.total.toFixed(2)}
                 </TableCell>                
               </TableRow>
             ))}
