@@ -21,7 +21,7 @@ const client = new MongoClient(url);
                 _id: "$movimento",
                  total: {$sum: "$vlrST"}   
               }}]
-         );
+         ).toArray();
          //const movimentos = await col.find({ cnpjDestinatario: cnpj}).toArray();
          
          res.status(200).json(movimentos);
