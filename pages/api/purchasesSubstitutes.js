@@ -35,7 +35,7 @@ const client = new MongoClient(url);
                     ncm: product.ncm,
                     nf: product.nf, 
                     pis: product.pis,
-                    vICMSST: NumberDecimal(product.vICMSST),
+                    vICMSST: product.vICMSST,
                 },				
                                    
             },
