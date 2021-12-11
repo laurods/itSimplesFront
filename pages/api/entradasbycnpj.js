@@ -10,7 +10,6 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const { cnpj } = req.body;
-        console.log(cnpj); 
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("purchasesSubstitutes");
@@ -32,7 +31,6 @@ const client = new MongoClient(url);
                 }
             ]
          ).toArray();
-         //const movimentos = await col.find({ cnpjDestinatario: cnpj}).toArray();
          
          res.status(200).json(movimentos);
 

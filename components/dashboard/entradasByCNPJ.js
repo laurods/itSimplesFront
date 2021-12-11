@@ -16,22 +16,8 @@ const theme = createTheme();
 export default function EntradasByCNPJ() {
     const { entradasByCNPJ } = useContext(AuthContext);
     console.log('componet entradas cnpj')
-    console.log(entradasByCNPJ)
-    // function groupBy(arr, criteria) {
-    //     const newObj = arr.reduce(function (acc, currentValue) {
-    //       if (!acc[currentValue[criteria]]) {
-    //         acc[currentValue[criteria]] = [];
-    //       }
-    //       acc[currentValue[criteria]].push(currentValue);
-    //       return acc;
-    //     }, {});
-    //     return newObj;
-    //   }
-    
-    // const entradasByMovimento = groupBy(entradasByCNPJ, "movimento");
-    // console.log('group movimento')
-    // console.log(entradasByMovimento)
-    const movimentosCNPJ = [];
+    console.log(entradasByCNPJ) 
+    //const movimentosCNPJ = [];
   return (
     <ThemeProvider theme={theme}>
       <TableContainer component={Paper} sx={{ mt: 2 }}>
@@ -41,24 +27,20 @@ export default function EntradasByCNPJ() {
             <TableRow>
               <TableCell>Mês</TableCell>
               <TableCell>Crédito</TableCell>
-              <TableCell align="right">Relatório</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {movimentosCNPJ.map((row) => (
+            {entradasByCNPJ.map((row) => (
               <TableRow
-                key={row.movimento}
+                key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.movimento}
+                  {row._id}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {row.diferenca}
-                </TableCell>
-                <TableCell align="right">
-                    <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
-                </TableCell>
+                  {row.total}
+                </TableCell>                
               </TableRow>
             ))}
           </TableBody>
