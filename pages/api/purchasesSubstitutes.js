@@ -33,7 +33,7 @@ const client = new MongoClient(url);
                     ncm: product.ncm,
                     nf: product.nf, 
                     pis: product.pis,
-                    vICMSST: product.vICMSST
+                    vICMSST: parseFloat(product.vICMSST).toFixed(2),
                 },				
                                    
             },

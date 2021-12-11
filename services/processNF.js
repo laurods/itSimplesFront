@@ -126,7 +126,7 @@ const allIcms = products.map((item) => { // Padronizando os dados dos valores de
         cofins: allCOFINS[index].vCOFINS,
         pDifICMS: parseInt(pIcmsRS - (allIcms[index].pICMS)), // percentual diferença ICMS (RS - 18% BASE)
         vDifICMS: ((parseInt(pIcmsRS - (allIcms[index].pICMS))/100) * parseFloat(allProducts[index].total)).toFixed(2),  // valor diferença ICMS
-        vICMSST: parseInt(allIcms[index].vICMSST).toFixed(2), //valor icms sustituição tributária
+        vICMSST: parseFloat(allIcms[index].vICMSST).toFixed(2), //valor icms sustituição tributária
         //..............valor total dos produtos............+...valor do IPI ..................+..........................diferençao de icms interestadual ..............................+............ sustituição tributária
         custoTotal: ((parseFloat(allProducts[index].total)) + (parseFloat(allIPI[index].vIPI)) + (parseInt(pIcmsRS - (allIcms[index].pICMS))/100) * parseFloat(allProducts[index].total) + (parseFloat(allIcms[index].vICMSST))).toFixed(2),
         custoUnitario: (((parseFloat(allProducts[index].total)) + (parseFloat(allIPI[index].vIPI)) + (parseInt(pIcmsRS - (allIcms[index].pICMS))/100) * parseFloat(allProducts[index].total) + (parseFloat(allIcms[index].vICMSST))) / parseFloat(allProducts[index].quant)).toFixed(2),
