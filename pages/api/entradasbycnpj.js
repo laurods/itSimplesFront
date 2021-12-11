@@ -15,12 +15,22 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("purchasesSubstitutes");
          const movimentos = await col.aggregate(
-            [{$addFields: {
-                vlrST: {$toDouble: "$vICMSST"}
-              }}, {$group: {
-                _id: "$movimento",
-                 total: {$sum: "$vlrST"}   
-              }}]
+            [
+                { $match : { cnpjDestinatario: "$cnpj" } },
+                {
+                    $addFields: {
+                        vlrST: {$toDouble: "$vICMSST"}
+                    }            
+                }, 
+                {
+                    $group: {
+                    _id: "$movimento",
+                    total: {
+                        $sum: "$vlrST"
+                        }   
+                    }
+                }
+            ]
          ).toArray();
          //const movimentos = await col.find({ cnpjDestinatario: cnpj}).toArray();
          
