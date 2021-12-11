@@ -17,18 +17,18 @@ export default function EntradasByCNPJ() {
     const { entradasByCNPJ } = useContext(AuthContext);
     console.log('componet entradas cnpj')
     console.log(entradasByCNPJ)
-    function groupBy(arr, criteria) {
-        const newObj = arr.reduce(function (acc, currentValue) {
-          if (!acc[currentValue[criteria]]) {
-            acc[currentValue[criteria]] = [];
-          }
-          acc[currentValue[criteria]].push(currentValue);
-          return acc;
-        }, {});
-        return newObj;
-      }
+    // function groupBy(arr, criteria) {
+    //     const newObj = arr.reduce(function (acc, currentValue) {
+    //       if (!acc[currentValue[criteria]]) {
+    //         acc[currentValue[criteria]] = [];
+    //       }
+    //       acc[currentValue[criteria]].push(currentValue);
+    //       return acc;
+    //     }, {});
+    //     return newObj;
+    //   }
     
-    const entradasByMovimento = groupBy(entradasByCNPJ, "movimento");
+    // const entradasByMovimento = groupBy(entradasByCNPJ, "movimento");
     console.log('group movimento')
     console.log(entradasByMovimento)
     const movimentosCNPJ = [];
