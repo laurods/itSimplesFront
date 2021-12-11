@@ -11,34 +11,17 @@ const client = new MongoClient(url);
     try {
         //const { item } = req.body;
         const  { item } = req.body;
-        const product = item;  
-        const schema = {            
-                "title": "purchasesSubstitutes",
-                "properties": {
-                  "_id": { "bsonType": "objectId" },
-                  "movimento": { "bsonType": "string" },
-                  "cean": { "bsonType": "number" },
-                  "cest": { "bsonType": "string" },
-                  "cfop": { "bsonType": "number" },
-                  "cnpjDestinatario": { "bsonType": "string" },
-                  "cnpjEmitente": { "bsonType": "string" },
-                  "cofins": { "bsonType": "number" },
-                  "cst": { "bsonType": "number" },
-                  "name": { "bsonType": "string" },
-                  "ncm": { "bsonType": "string" },
-                  "nf": { "bsonType": "string" },
-                  "pis": { "bsonType": "string" },
-                  "vICMSST": { "bsonType": "number" },
-                }              
-        }
+        const product = item; 
+     
 
          await client.connect();
          const db = client.db(dbName);
-         const col = db.collection("purchasesSubstitutes", schema);
+         const col = db.collection("purchasesSubstitutes");
          //const p = await col.insertOne(item);
          const p = await col.updateOne(
              { cean: product.cean },
              {
+                
                 $set: {
                     movimento: product.movimento,
                     cean: product.cean,
@@ -52,7 +35,7 @@ const client = new MongoClient(url);
                     ncm: product.ncm,
                     nf: product.nf, 
                     pis: product.pis,
-                    vICMSST: product.vICMSST,
+                    vICMSST: NumberDecimal(product.vICMSST),
                 },				
                                    
             },
