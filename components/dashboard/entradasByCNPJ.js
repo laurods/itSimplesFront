@@ -29,8 +29,8 @@ export default function EntradasByCNPJ() {
     //   }
     
     // const entradasByMovimento = groupBy(entradasByCNPJ, "movimento");
-    console.log('group movimento')
-    console.log(entradasByMovimento)
+    // console.log('group movimento')
+    // console.log(entradasByMovimento)
     const movimentosCNPJ = [];
   return (
     <ThemeProvider theme={theme}>
