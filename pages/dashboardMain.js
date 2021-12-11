@@ -13,6 +13,8 @@ export default function Dashboard() {
         const cookies = parseCookies()
         const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
         const listClients = clients.data;
+        console.log('cnpj');
+        console.log(listClients[0].cnpj);
         const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', { cnpj: listClients[0].cnpj });
         const listMovimentos = movimentosByCNPJ.data;
         const entradasByCNPJ = await axios.post('/api/entradasbycnpj', { cnpj: listClients[0].cnpj });        
