@@ -1,5 +1,6 @@
 import axios from 'axios';
 const productsServiceModel = require('../models/productsSubstitutes');
+const updateEntradasByCNPJ = require('../helpers/updateEntradasByCNPJ')
 
 const processProducts = async (dataProducts) => {
   console.log('aki products');
@@ -14,7 +15,9 @@ const processProducts = async (dataProducts) => {
 
   filterProductdSubstitutes.forEach(item => {
     axios.post('/api/purchasesSubstitutes', { item })
-  });  
+  });
+  
+  updateEntradasByCNPJ.update(); // atualiza a variável entradasByCNPJ do AutContext. Atualiza a lista de entradas no dashboard 
   
 };
 
