@@ -17,7 +17,7 @@ const processProducts = async (dataProducts) => {
     axios.post('/api/purchasesSubstitutes', { item })
   });
   
-  updateEntradasByCNPJ(); // atualiza a variável entradasByCNPJ do AutContext. Atualiza a lista de entradas no dashboard 
+  updateEntradasByCNPJ.Update(); // atualiza a variável entradasByCNPJ do AutContext. Atualiza a lista de entradas no dashboard 
   
 };
 
