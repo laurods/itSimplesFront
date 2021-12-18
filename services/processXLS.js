@@ -2,12 +2,14 @@ import readXlsxFile from 'read-excel-file'
 
 const processXLS = async (data) => {
     console.log("aki 1")
-  arrayXLS = await readXlsxFile(data[0]).then((rows) => {
-    console.log("aki 2")
-      console.log(rows)
-    // `rows` is an array of rows
-    // each row being an array of cells.    
-  })
+    console.log(data)
+    
+//   arrayXLS = await readXlsxFile(data[0]).then((rows) => {
+//     console.log("aki 2")
+//       console.log(rows)
+//     // `rows` is an array of rows
+//     // each row being an array of cells.    
+//   })
  
  
 };
