@@ -6,25 +6,16 @@ const handleUpload = (files) => {
       
     }));
     
-    uploadedFiles.forEach(processXLS);
+    uploadedFiles.forEach(processFile);
     
   };
   
-const processXLS = (uploadedFile) => {
-  const data = new FormData();
-  data.append('file', uploadedFile.file);
-  api.post('xls/sales', data).then(res => {
-    console.log(res);
-    console.log(res.data)                      
-  })
-  .catch((error) => {
-    console.log(error.res.data);
-    console.log(error.res.status);
-    console.log(error.res.headers);
-  });
+const processFile = (uploadedFile) => {
+  console.log(uploadedFile.file);
+  
 };
 
-/* Fim processXML*/
+
 
 module.exports = {
     handleUpload,
