@@ -9,9 +9,7 @@ const handleUpload = (files) => {
     
   };
   
-const processFile = (uploadedFile) => {
-  console.log(uploadedFile.file)
-  console.log("aki 4");  
+const processFile = (uploadedFile) => {  
   processXLSService.processXLS(uploadedFile.file)
 };
 

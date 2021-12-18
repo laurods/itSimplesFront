@@ -4,10 +4,23 @@ const processXLS = async (data) => {
     console.log("aki 1")
     console.log(data)
     
-  arrayXLS = await readXlsxFile(data).then((rows) => {
-    console.log("aki 2")
-      console.log(rows)
+  const arrayXLS = await readXlsxFile(data).then((rows) => {
    
+      const productSold = [];
+      rows.forEach((row) => {
+        let products = {
+          id: row[0],
+          name: row[1],
+          NCM: row[2],
+          CST: row[3],
+          CFOP: row[4],
+          total: row[5],
+        };
+        productSold.push(products);
+
+        
+    });
+    console.log(productSold)
   })
  
  
