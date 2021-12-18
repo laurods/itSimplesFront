@@ -23,8 +23,7 @@ async function uploadServiceXML(files) {
   UploadServiceXML.handleUpload(files)
 }
 
-async function uploadServiceXLS(files) {
-  //console.log(files);
+async function uploadServiceXLS(files) {  
   UploadServiceXLS.handleUpload(files)
 }
 
