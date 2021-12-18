@@ -1,5 +1,4 @@
-import api from './api';
-
+const processXLSService = require('./processXLS');
 const handleUpload = (files) => {
     const uploadedFiles = files.map((file) => ({
       file,
@@ -10,9 +9,8 @@ const handleUpload = (files) => {
     
   };
   
-const processFile = (uploadedFile) => {
-  console.log(uploadedFile.file);
-  
+const processFile = (uploadedFile) => {  
+  processXLSService.processXLS(uploadedFile.file)
 };
 
 

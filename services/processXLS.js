@@ -1,7 +1,7 @@
 
 const processXLS = async (data) => {
-  const xls = data;
-  console.log(xls)  
+  const arrayXLS = data;
+  console.log(arrayXLS)  
   
 };
 
