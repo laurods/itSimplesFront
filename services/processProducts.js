@@ -1,8 +1,7 @@
 import axios from 'axios';
 const productsServiceModel = require('../models/productsSubstitutes');
 
-const processProducts = async (dataProducts) => {
-  console.log('aki products');
+const processProducts = async (dataProducts) => {  
   const cest = await axios.get('/api/productscest');
   const listCest = cest.data;  
   const allCest = listCest.map((item) => item.cest); // cest dos produtos substitutos, conforme site da sefaz rs
@@ -14,6 +13,10 @@ const processProducts = async (dataProducts) => {
 
   filterProductdSubstitutes.forEach(item => {
     axios.post('/api/purchasesSubstitutes', { item })
+  });
+
+  dataProducts.forEach(item => {
+    axios.post('/api/products', { item })
   });
 
   window.location.reload() // atualiza a pagina
