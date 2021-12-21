@@ -13,6 +13,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("purchasesSubstitutes");
          const products = await col.find(
+             { },
 		    { projection: {
                 cean: 1,
                 cest: 0,
