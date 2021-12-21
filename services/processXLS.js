@@ -9,14 +9,13 @@ const processXLS = async (data) => {
       const header = rows[0];
       const movimento = header[3];
       const cnpj = header[4];
-      console.log(movimento);
-      console.log(cnpj);
-      // console.log(rows[0]);
       // skip header
       rows.shift();
       const productSold = [];
       rows.forEach((row) => {
         let products = {
+          movimento,
+          cnpj,
           cean: String(row[0]),
           name: row[1],
           total: row[2],
