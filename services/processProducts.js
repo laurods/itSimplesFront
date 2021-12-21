@@ -22,6 +22,30 @@ const processProducts = async (dataProducts) => {
   window.location.reload() // atualiza a pagina
 };
 
+const processProductsXLS = async (dataProducts) => {  
+  const cean = await axios.get('/api/getPurchasesSubstitutes');
+  const listCean = cean.data;  
+  const allCean = listCean.map((item) => item.cean); // cean dos produtos substitutos comprados
+  const productsSubstitutes = ([...allCean]) => { // compara todos os CEST dos produtos COMPRADOS com a tabela de produtos CEST
+    return dataProducts.filter(product => allCean.includes(product.cean));
+  }
+
+  const filterProductdSubstitutes = await productsSubstitutes(allCean); // chama a função
+  console.log('xls filtered')
+  console.log(filterProductdSubstitutes)
+
+  // filterProductdSubstitutes.forEach(item => {
+  //   axios.post('/api/purchasesSubstitutes', { item })
+  // });
+
+  // dataProducts.forEach(item => {
+  //   axios.post('/api/products', { item })
+  // });
+
+  // window.location.reload() // atualiza a pagina
+};
+
 module.exports = {
-  processProducts
+  processProducts,
+  processProductsXLS
 };
