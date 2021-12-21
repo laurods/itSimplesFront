@@ -17,7 +17,7 @@ const processXLS = async (data) => {
       const productSold = [];
       rows.forEach((row) => {
         let products = {
-          cean: row[0],
+          cean: String(row[0]),
           name: row[1],
           total: row[2],
         };
