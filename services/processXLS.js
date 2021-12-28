@@ -19,6 +19,7 @@ const processXLS = async (data) => {
           cean: String(row[0]),
           name: row[1],
           total: row[2],
+          control: `${movimento}.${String(row[0])}`
         };
         productSold.push(products);
 
