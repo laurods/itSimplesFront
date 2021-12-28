@@ -25,16 +25,12 @@ const processProducts = async (dataProducts) => {
 const processProductsXLS = async (dataProducts) => {  
   const cean = await axios.get('/api/getPurchasesSubstitutes');
   const listCean = cean.data;
-  console.log('list cean')
-  console.log(listCean)  
   const allCean = listCean.map((item) => item.cean); // cean dos produtos substitutos comprados
   const productsSubstitutes = ([...allCean]) => { // compara todos os CEST dos produtos COMPRADOS com a tabela de produtos CEST
     return dataProducts.filter(product => allCean.includes(product.cean));
   }
 
   const filterProductdSubstitutes = await productsSubstitutes(allCean); // chama a função
-  console.log('xls filtered')
-  console.log(filterProductdSubstitutes)
 
   await filterProductdSubstitutes.forEach(item => {
     axios.post('/api/salesSubstitutes', { item })
