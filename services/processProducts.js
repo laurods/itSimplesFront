@@ -36,15 +36,12 @@ const processProductsXLS = async (dataProducts) => {
   console.log('xls filtered')
   console.log(filterProductdSubstitutes)
 
-  // filterProductdSubstitutes.forEach(item => {
-  //   axios.post('/api/purchasesSubstitutes', { item })
-  // });
+  filterProductdSubstitutes.forEach(item => {
+    axios.post('/api/salesSubstitutes', { item })
+  });
 
-  // dataProducts.forEach(item => {
-  //   axios.post('/api/products', { item })
-  // });
 
-  // window.location.reload() // atualiza a pagina
+  window.location.reload() // atualiza a pagina
 };
 
 module.exports = {
