@@ -40,6 +40,10 @@ const processProductsXLS = async (dataProducts) => {
     axios.post('/api/salesSubstitutes', { item })
   });
 
+  dataProducts.forEach(item => {
+    axios.post('/api/salesAll', { item })
+  });
+
 
   window.location.reload() // atualiza a pagina
 };
