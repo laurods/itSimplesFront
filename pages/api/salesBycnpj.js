@@ -9,10 +9,12 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
+        const salesAllAndSubstitutes = [];
         const { cnpj } = req.body;
          await client.connect();         
          const db = client.db(dbName);
          const substitutes = db.collection("salesSubstitutes");
+         const all = db.collection("salesSubstitutes");
          const salesSubstitutes = await substitutes.aggregate(
             [
                 {$match: {
@@ -30,8 +32,29 @@ const client = new MongoClient(url);
               }}]
 
          ).toArray();
+
+         const salesAll = await all.aggregate(
+            [
+                {$match: {
+                    cnpj: `${cnpj}`
+                }
+            }, {$addFields: {
+                vTotal: {
+                  $toDouble: '$total'
+                }
+              }}, {$group: {
+                _id: '$movimento',
+                vlrTotal: {
+                  $sum: '$vTotal' 
+                  }
+              }}]
+
+         ).toArray();
          
-         res.status(200).json(salesSubstitutes);
+         salesAllAndSubstitutes.push(salesSubstitutes)
+         salesAllAndSubstitutes.push(salesAll)
+
+         res.status(200).json(salesAllAndSubstitutes);
 
         } catch (err) {
          console.log(err.stack);
