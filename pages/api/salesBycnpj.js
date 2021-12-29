@@ -9,7 +9,7 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-        const salesAllAndSubstitutes = [];
+        const salesAllAndSubstitutes = {};
         const { cnpj } = req.body;
          await client.connect();         
          const db = client.db(dbName);
@@ -50,9 +50,12 @@ const client = new MongoClient(url);
               }}]
 
          ).toArray();
+         salesAllAndSubstitutes['substitutes'] = salesSubstitutes;
+         salesAllAndSubstitutes['all'] = salesAll;
+
          
-         salesAllAndSubstitutes.push(salesSubstitutes)
-         salesAllAndSubstitutes.push(salesAll)
+        //  salesAllAndSubstitutes.push(salesSubstitutes)
+        //  salesAllAndSubstitutes.push(salesAll)
 
          res.status(200).json(salesAllAndSubstitutes);
 
