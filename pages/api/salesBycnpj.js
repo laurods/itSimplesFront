@@ -14,22 +14,19 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const substitutes = db.collection("salesSubstitutes");
          const salesSubstitutes = await substitutes.aggregate(
-            [
-                { $match : { cnpj: `${cnpj}` } },
-                {
-                    $addFields: {
-                        vTotal: {$toDouble: "$total"}
-                    }            
-                },
-                {
-                    $group: {
-                    _id: "$movimento",
-                    vlrTotal: {
-                        $sum: "$vTotal"
-                        }   
-                    }
+            [{$match: {
+                cnpj:'04921325000168'
+              }}, {$addFields: {
+                vTotal: {
+                  $toDouble: '$total'
                 }
-            ]
+              }}, {$group: {
+                _id: '$movimento',
+                vlrTotal: {
+                  $sum: '$vTotal' 
+                  }
+              }}]
+              
          ).toArray();
          
          res.status(200).json(salesSubstitutes);
