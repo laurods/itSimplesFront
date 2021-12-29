@@ -14,10 +14,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function EntradasByCNPJ() {
-    const { entradasByCNPJ } = useContext(AuthContext);
-    console.log('componet entradas cnpj')
-    console.log(entradasByCNPJ) 
-    //const movimentosCNPJ = [];
+    const { entradasByCNPJ } = useContext(AuthContext); 
   return (
     <ThemeProvider theme={theme}>
       <TableContainer component={Paper} sx={{ mt: 2 }}>
