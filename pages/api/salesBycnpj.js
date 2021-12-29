@@ -14,7 +14,7 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const substitutes = db.collection("salesSubstitutes");
-         const all = db.collection("salesSubstitutes");
+         const all = db.collection("salesAll");
          const salesSubstitutes = await substitutes.aggregate(
             [
                 {$match: {
