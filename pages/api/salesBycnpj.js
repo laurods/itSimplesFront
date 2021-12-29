@@ -16,12 +16,16 @@ const client = new MongoClient(url);
          const salesSubstitutes = await substitutes.aggregate(
             [
                 { $match : { cnpj: `${cnpj}` } },
-                
+                {
+                    $addFields: {
+                        vTotal: {$toDouble: "$total"}
+                    }            
+                },
                 {
                     $group: {
                     _id: "$movimento",
-                    total: {
-                        $sum: "$total"
+                    vlrTotal: {
+                        $sum: "$vTotal"
                         }   
                     }
                 }
