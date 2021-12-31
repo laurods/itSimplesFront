@@ -27,9 +27,9 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
 
     
     const DASsemDeducoes = (totalSales * aliquotaSimples).toFixed(2);
-    const ICMSindevidoReferenteProdutosST = (((totalSales - totalSalesST) * aliquotaSimples) * percentualICMSnoDAS).toFixed(2);
-    const COFINSindevidaReferenteProdutosMonofasicos = (((totalSales - totalMonophasic) * aliquotaSimples) * pencentualdaCOFINSnoDAS).toFixed(2);
-    const PISindevidoReferenteProdutosMonofasicos = (((totalSales - totalMonophasic) * aliquotaSimples) * percentualdoPISnaDAS).toFixed(2);
+    const ICMSindevidoReferenteProdutosST = ((totalSalesST * aliquotaSimples) * percentualICMSnoDAS).toFixed(2);
+    const COFINSindevidaReferenteProdutosMonofasicos = ((totalMonophasic * aliquotaSimples) * pencentualdaCOFINSnoDAS).toFixed(2);
+    const PISindevidoReferenteProdutosMonofasicos = ((totalMonophasic * aliquotaSimples) * percentualdoPISnaDAS).toFixed(2);
     const DAScomDeducoes = (DASsemDeducoes - ICMSindevidoReferenteProdutosST - COFINSindevidaReferenteProdutosMonofasicos - PISindevidoReferenteProdutosMonofasicos).toFixed(2);
 
     const dataDAS = {
