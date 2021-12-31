@@ -14,7 +14,7 @@ const theme = createTheme();
 
 export default function DasCNPJ() {
     const { dasByCNPJ } = useContext(AuthContext);
-    const teste = [];
+    
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
     }
@@ -31,7 +31,7 @@ export default function DasCNPJ() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {teste.map((row) => (
+            {dasByCNPJ.map((row) => (
               <TableRow
                 key={row.movimento}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
