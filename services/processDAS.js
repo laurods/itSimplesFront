@@ -7,12 +7,15 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const deducaoPis = 0.0276;
     const allProducts = await axios.get('/api/getAllProducts');
     const listAllProducts = allProducts.data; // lista de todos os produtos
-
-    const monophasic = listAllProducts.map((item) => {
-        if(item.cst == "04"){
-            return item
-        }
-    }) // produtos monofásicos
+    const productsSubstitutes = ([...allCean]) => { // compara todos os CEST dos produtos COMPRADOS com a tabela de produtos CEST
+        return dataProducts.filter(product => allCean.includes(product.cean));
+      }
+    const filteredMonophasic = listAllProducts.filter(product => includes(product.cst == "04"));// produtos monofásicos
+    // const monophasic = listAllProducts.map((item) => {
+    //     if(item.cst == "04"){
+    //         return item
+    //     }
+    // }) // produtos monofásicos
 
      const totalSalesST = filterProductdSubstitutes.reduce((sum, product) => { // total dos produtos ST vendidos
         return sum + parseFloat(product.total);
@@ -45,7 +48,7 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     console.log(listAllProducts)
 
     console.log('monophasic')
-    console.log(monophasic)
+    console.log(filteredMonophasic)
 
     //window.location.reload() // atualiza a pagina
   }
