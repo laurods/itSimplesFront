@@ -1,6 +1,11 @@
 import axios from 'axios';
 
 const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
+    const aliquotaSimples = 0.0901;
+    const deducaoICMS = 0.3350;
+    const deducaoCofins = 0.1274;
+    const deducaoPis = 0.0276;
+
      const totalSalesST = filterProductdSubstitutes.reduce((sum, product) => { // total dos produtos ST vendidos
         return sum + parseFloat(product.total);
       }, 0);
@@ -8,11 +13,17 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
         return sum + parseFloat(product.total);
     }, 0);
 
+    const simplesSemDeducoes = ((totalSales) * aliquotaSimples).toFixed(2);
+    const baseCalculoSubstitutosTributariosParaDeducoes = (totalSalesST * aliquotaSimples).toFixed(2);
+    const valorDeducaoICMS = baseCalculoSubstitutosTributariosParaDeducoes * deducaoICMS;
+    const simplesComDeducoes = ((totalSales - totalSalesST) * aliquotaSimples).toFixed(2);
 
     const dataDAS = {
-        movimento: dataProducts[0].movimento,
-        totalSalesST: totalSalesST.toFixed(2), 
-        totalSales: totalSales.toFixed(2)
+        movimento: dataProducts[0].movimento,         
+        totalSales: totalSales.toFixed(2),
+        totalSalesST: totalSalesST.toFixed(2),
+        simplesSemDeducoes,
+        simplesComDeducoes,
     }
     console.log('total sales')
     console.log(totalSales)
