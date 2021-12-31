@@ -2,20 +2,21 @@ import axios from 'axios';
 
 const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const aliquotaSimples = 0.0901;
-    const deducaoICMS = 0.3350;
-    const deducaoCofins = 0.1274;
-    const deducaoPis = 0.0276;
+    const percentualICMSnoDAS = 0.3350;
+    const pencentualdaCOFINSnoDAS = 0.1274;
+    const percentualdoPISnaDAS = 0.0276;
     const allProducts = await axios.get('/api/getAllProducts');
     const listAllProducts = allProducts.data; // lista de todos os produtos
-    const productsSubstitutes = ([...allCean]) => { // compara todos os CEST dos produtos COMPRADOS com a tabela de produtos CEST
-        return dataProducts.filter(product => allCean.includes(product.cean));
+    const listMonophasic = listAllProducts.filter(product => product.cst == "04");// produtos monofásicos 
+
+    const productsMonophasics = ([...listMonophasic]) => { // compara todos os cean dos produtos COMPRADOS que são monofásicos, com o cean da tabela de produtos vendidos
+        return dataProducts.filter(product => listMonophasic.includes(product.cean));
       }
-    const filteredMonophasic = listAllProducts.filter(product => product.cst == "04");// produtos monofásicos
-    // const monophasic = listAllProducts.map((item) => {
-    //     if(item.cst == "04"){
-    //         return item
-    //     }
-    // }) // produtos monofásicos
+     const filterProductdMonophasic = await productsMonophasics(allCean); // chama a função
+     
+     const totalMonophasic = filterProductdMonophasic.reduce((sum, product) => { // total dos produtos monofásicos vendidos
+        return sum + parseFloat(product.total);
+      }, 0);
 
      const totalSalesST = filterProductdSubstitutes.reduce((sum, product) => { // total dos produtos ST vendidos
         return sum + parseFloat(product.total);
@@ -24,16 +25,20 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
         return sum + parseFloat(product.total);
     }, 0);
 
-    const simplesSemDeducoes = ((totalSales) * aliquotaSimples).toFixed(2);
-    const simplesComDeducoes = ((totalSales - totalSalesST) * aliquotaSimples).toFixed(2);
+    
+    const DASsemDeducoes = (totalSales * aliquotaSimples).toFixed(2);
+    const ICMSindevidoReferenteProdutosST = (((totalSales - totalSalesST) * aliquotaSimples) * percentualICMSnoDAS).toFixed(2);
+    const COFINSindevidaReferenteProdutosMonofasicos = (((totalSales - totalMonophasic) * aliquotaSimples) * pencentualdaCOFINSnoDAS).toFixed(2);
+    const PISindevidoReferenteProdutosMonofasicos = (((totalSales - totalMonophasic) * aliquotaSimples) * percentualdoPISnaDAS).toFixed(2);
+    const DAScomDeducoes = (DASsemDeducoes - ICMSindevidoReferenteProdutosST - COFINSindevidaReferenteProdutosMonofasicos - PISindevidoReferenteProdutosMonofasicos).toFixed(2);
 
     const dataDAS = {
         movimento: dataProducts[0].movimento,         
         totalSales: totalSales.toFixed(2),
         totalSalesST: totalSalesST.toFixed(2),
-        simplesSemDeducoes,
-        simplesComDeducoes,
-        reducao: (simplesSemDeducoes - simplesComDeducoes).toFixed(2)
+        DASsemDeducoes,
+        DAScomDeducoes,
+        reducao: (DASsemDeducoes - DAScomDeducoes).toFixed(2)
     }
     console.log('total sales')
     console.log(totalSales)
@@ -48,7 +53,7 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     console.log(listAllProducts)
 
     console.log('monophasic')
-    console.log(filteredMonophasic)
+    console.log(listMonophasic)
 
     //window.location.reload() // atualiza a pagina
   }
