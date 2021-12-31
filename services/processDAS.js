@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
-    
-    const totalSalesST = filterProductdSubstitutes.reduce((sum, product) => { // total dos produtos ST vendidos
+     const totalSalesST = filterProductdSubstitutes.reduce((sum, product) => { // total dos produtos ST vendidos
         return sum + parseFloat(product.total);
       }, 0);
       const totalSales = dataProducts.reduce((sum, product) => { // total de todos os produtos vendidos
         return sum + parseFloat(product.total);
     }, 0);
 
+
     const dataDAS = {
-        movimento: this.dataProduct[0].movimento,
+        movimento: dataProducts[0].movimento,
         totalSalesST: totalSalesST.toFixed(2), 
         totalSales: totalSales.toFixed(2)
     }
