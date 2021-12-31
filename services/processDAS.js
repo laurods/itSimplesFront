@@ -8,7 +8,11 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const allProducts = await axios.get('/api/getAllProducts');
     const listAllProducts = allProducts.data; // lista de todos os produtos
 
-    const monophasic = listAllProducts.map((item) => item.cst === "04") // produtos monofásicos
+    const monophasic = listAllProducts.map((item) => {
+        if(item.cst == "04"){
+            return item
+        }
+    }) // produtos monofásicos
 
      const totalSalesST = filterProductdSubstitutes.reduce((sum, product) => { // total dos produtos ST vendidos
         return sum + parseFloat(product.total);
