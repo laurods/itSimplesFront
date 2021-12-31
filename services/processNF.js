@@ -135,7 +135,7 @@ const allIcms = products.map((item) => { // Padronizando os dados dos valores de
   })             
   
   //return calculateTax; 
-  processProductsService.processProducts(calculateTax);
+  processProductsService.processProductsXML(calculateTax);
 }
 
 module.exports = {

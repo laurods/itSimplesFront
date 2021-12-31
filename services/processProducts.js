@@ -1,7 +1,7 @@
 import axios from 'axios';
-const productsServiceModel = require('../models/productsSubstitutes');
+const processDASService = require('./processDAS');
 
-const processProducts = async (dataProducts) => {  
+const processProductsXML = async (dataProducts) => {  
   const cest = await axios.get('/api/productscest');
   const listCest = cest.data;  
   const allCest = listCest.map((item) => item.cest); // cest dos produtos substitutos, conforme site da sefaz rs
@@ -40,11 +40,10 @@ const processProductsXLS = async (dataProducts) => {
     axios.post('/api/salesAll', { item })
   });
 
-
-  window.location.reload() // atualiza a pagina
+  processDASService.calculateDAS(dataProducts, filterProductdSubstitutes)
 };
 
 module.exports = {
-  processProducts,
+  processProductsXML,
   processProductsXLS
 };
