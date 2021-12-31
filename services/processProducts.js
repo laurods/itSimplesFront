@@ -40,6 +40,9 @@ const processProductsXLS = async (dataProducts) => {
     axios.post('/api/salesAll', { item })
   });
 
+  console.log('substitutes 00')
+  console.log(filterProductdSubstitutes)
+
   processDASService.calculateDAS(dataProducts, filterProductdSubstitutes)
 };
 
