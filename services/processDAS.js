@@ -12,7 +12,7 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const productsMonophasics = ([...listMonophasic]) => { // compara todos os cean dos produtos COMPRADOS que são monofásicos, com o cean da tabela de produtos vendidos
         return dataProducts.filter(product => listMonophasic.includes(product.cean));
       }
-     const filterProductdMonophasic = await productsMonophasics(allCean); // chama a função
+     const filterProductdMonophasic = await productsMonophasics(listMonophasic); // chama a função
      
      const totalMonophasic = filterProductdMonophasic.reduce((sum, product) => { // total dos produtos monofásicos vendidos
         return sum + parseFloat(product.total);
