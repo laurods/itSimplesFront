@@ -12,8 +12,8 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 const theme = createTheme();
 
-export default function MovimentoCNPJ() {
-    const { movimentosCNPJ, reportByMovimentoAndCNPJ } = useContext(AuthContext);
+export default function VendasCNPJ() {
+    const { dasByCNPJ } = useContext(AuthContext);
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
     }
@@ -30,7 +30,7 @@ export default function MovimentoCNPJ() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {movimentosCNPJ.map((row) => (
+            {dasByCNPJ.map((row) => (
               <TableRow
                 key={row.movimento}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -39,7 +39,7 @@ export default function MovimentoCNPJ() {
                   {row.movimento}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  {row.diferenca}
+                  {row.reducao}
                 </TableCell>
                 <TableCell align="right">
                     <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
