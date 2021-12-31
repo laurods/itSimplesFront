@@ -6,7 +6,7 @@ import Top from '../components/dashboard/top.js';
 import Content from '../components/dashboard/content.js';
 
 export default function Dashboard() {
-     const {setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ, setEntradasByCNPJ } = useContext(AuthContext);
+     const {setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ } = useContext(AuthContext);
      
     useEffect(() => {
       const loadAll = async() =>{
@@ -21,11 +21,14 @@ export default function Dashboard() {
         const listEntradasByCNPJ = entradasByCNPJ.data;
         const vendasByCNPJ = await axios.post('/api/salesBycnpj', { cnpj: listClients[0].cnpj });              
         const listVendasByCNPJ = vendasByCNPJ.data;
-        console.log(listVendasByCNPJ)
+        const dasByCNPJ = await axios.post('/api/dasBycnpj', { cnpj: listClients[0].cnpj });              
+        const listDasByCNPJ = dasByCNPJ.data;
+        console.log(listDasByCNPJ)
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0])
         setMovimentosCNPJ(listMovimentos)
-        setEntradasByCNPJ(listEntradasByCNPJ)        
+        setEntradasByCNPJ(listEntradasByCNPJ)
+        setDasByCNPJ(listDasByCNPJ)        
       }
       loadAll();
     }, []);

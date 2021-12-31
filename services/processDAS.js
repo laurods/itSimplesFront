@@ -48,14 +48,11 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
         control: `${dataProducts[0].movimento}.${dataProducts[0].cnpj}`
 
     }
-    console.log('total monofasico')
-    console.log(totalMonophasic)
-    console.log('filtro')
-    console.log(filterProductdMonophasic)
+    
     
     await axios.post('/api/das', { dataDAS })
     
-    //window.location.reload() // atualiza a pagina
+    window.location.reload() // atualiza a pagina
   }
 
   

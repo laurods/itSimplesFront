@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
     const [reportCNPJ, setReportCNPJ] = useState('');
     const [activeCNPJ, setActiveCNPJ] = useState('');   
     const [CNPJsByUsers, setCNPJsByUsers] = useState([]);
+    const [dasByCNPJ, setDasByCNPJ] = useState([]);
     const [movimentosCNPJ, setMovimentosCNPJ] = useState([]);
     const [entradasByCNPJ, setEntradasByCNPJ] = useState([]);
     const [userEmail, setUserEmail] = useState(null);
@@ -124,6 +125,7 @@ export function AuthProvider({ children }) {
             setMovimentosCNPJ,
             reportByMovimentoAndCNPJ,
             setEntradasByCNPJ,
+            setDasByCNPJ,
        
             
              }}>

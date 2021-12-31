@@ -11,11 +11,11 @@ const processProductsXML = async (dataProducts) => {
 
   const filterProductdSubstitutes = await productsSubstitutes(allCest); // chama a função
 
-  filterProductdSubstitutes.forEach(item => {
+  await filterProductdSubstitutes.forEach(item => {
     axios.post('/api/purchasesSubstitutes', { item })
   });
 
-  dataProducts.forEach(item => {
+  await dataProducts.forEach(item => {
     axios.post('/api/products', { item })
   });
 
