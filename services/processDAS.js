@@ -10,7 +10,7 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const productsSubstitutes = ([...allCean]) => { // compara todos os CEST dos produtos COMPRADOS com a tabela de produtos CEST
         return dataProducts.filter(product => allCean.includes(product.cean));
       }
-    const filteredMonophasic = listAllProducts.filter(product => includes(product.cst == "04"));// produtos monofásicos
+    const filteredMonophasic = listAllProducts.filter(product => product.cst == "04");// produtos monofásicos
     // const monophasic = listAllProducts.map((item) => {
     //     if(item.cst == "04"){
     //         return item
