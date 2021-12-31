@@ -7,12 +7,13 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const percentualdoPISnaDAS = 0.0276;
     const allProducts = await axios.get('/api/getAllProducts');
     const listAllProducts = allProducts.data; // lista de todos os produtos
-    const listMonophasic = await listAllProducts.filter(product => product.cst == "04");// produtos monofásicos     
+    const listMonophasic = listAllProducts.filter(product => product.cst == "04");// produtos monofásicos
+    const ceanMonophasic = listMonophasic.map((item) => item.cean); // cest dos produtos substitutos, conforme site da sefaz rs     
 
-    const productsMonophasics = ([...listMonophasic]) => { // compara todos os cean dos produtos COMPRADOS que são monofásicos, com o cean da tabela de produtos vendidos
-        return dataProducts.filter(product => listMonophasic.includes(product.cean));
+    const productsMonophasics = ([...ceanMonophasic]) => { // compara todos os cean dos produtos COMPRADOS que são monofásicos, com o cean da tabela de produtos vendidos
+        return dataProducts.filter(product => ceanMonophasic.includes(product.cean));
       }
-     const filterProductdMonophasic = await productsMonophasics(listMonophasic); // chama a função
+     const filterProductdMonophasic = await productsMonophasics(ceanMonophasic); // chama a função
      
  
      const totalMonophasic = filterProductdMonophasic.reduce((sum, product) => { // total dos produtos monofásicos vendidos
@@ -51,10 +52,6 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     console.log(totalMonophasic)
     console.log('filtro')
     console.log(filterProductdMonophasic)
-    console.log('lista')
-    console.log(listMonophasic)
-    console.log('vendas')
-    console.log(dataProducts)
     
     await axios.post('/api/das', { dataDAS })
     
