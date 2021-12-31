@@ -24,6 +24,7 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
         totalSalesST: totalSalesST.toFixed(2),
         simplesSemDeducoes,
         simplesComDeducoes,
+        reducao: (simplesSemDeducoes - simplesComDeducoes).toFixed(2)
     }
     console.log('total sales')
     console.log(totalSales)
