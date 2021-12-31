@@ -5,6 +5,10 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const deducaoICMS = 0.3350;
     const deducaoCofins = 0.1274;
     const deducaoPis = 0.0276;
+    const allProducts = await axios.get('/api/getAllProducts');
+    const listAllProducts = allProducts.data; // lista de todos os produtos
+
+    const monophasic = listAllProducts.map((item) => item.cst === "04") // produtos monofásicos
 
      const totalSalesST = filterProductdSubstitutes.reduce((sum, product) => { // total dos produtos ST vendidos
         return sum + parseFloat(product.total);
@@ -14,8 +18,6 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     }, 0);
 
     const simplesSemDeducoes = ((totalSales) * aliquotaSimples).toFixed(2);
-    const baseCalculoSubstitutosTributariosParaDeducoes = (totalSalesST * aliquotaSimples).toFixed(2);
-    const valorDeducaoICMS = baseCalculoSubstitutosTributariosParaDeducoes * deducaoICMS;
     const simplesComDeducoes = ((totalSales - totalSalesST) * aliquotaSimples).toFixed(2);
 
     const dataDAS = {
@@ -34,6 +36,12 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
 
     console.log('dataDAS')
     console.log(dataDAS)
+
+    console.log('all products')
+    console.log(listAllProducts)
+
+    console.log('monophasic')
+    console.log(monophasic)
 
     //window.location.reload() // atualiza a pagina
   }
