@@ -7,31 +7,10 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const percentualdoPISnaDAS = 0.0276;
     const allProducts = await axios.get('/api/getAllProducts');
     const listAllProducts = allProducts.data; // lista de todos os produtos
-    const listMonophasic = listAllProducts.filter(product => product.cst == "04");// produtos monofásicos 
-
-    const testedataProducts = [
-        {
-        cean: "7891521661978",
-        cnpj: "04921325000168",
-        control: "09@2021.7891521661978",
-        movimento: "09@2021",
-        name: "FITA METALIZADA M007-015 15MM COR 203 OURO CAIXA COM 12 ROLOS DE 10 metros",
-        total: 1023.06
-    },
-    
-    {
-        cean: "7891521661979",
-        cnpj: "04921325000168",
-        control: "09@2021.7891521661978",
-        movimento: "09@2021",
-        name: "FITA METALIZADA M007-015 15MM COR 203 OURO CAIXA COM 12 ROLOS DE 10 metros",
-        total: 1023.06
-    },
-
-    ]
+    const listMonophasic = await listAllProducts.filter(product => product.cst == "04");// produtos monofásicos     
 
     const productsMonophasics = ([...listMonophasic]) => { // compara todos os cean dos produtos COMPRADOS que são monofásicos, com o cean da tabela de produtos vendidos
-        return testedataProducts.filter(product => listMonophasic.includes(product.cean));
+        return dataProducts.filter(product => listMonophasic.includes(product.cean));
       }
      const filterProductdMonophasic = await productsMonophasics(listMonophasic); // chama a função
      
