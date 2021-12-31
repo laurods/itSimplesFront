@@ -33,28 +33,22 @@ const calculateDAS = async (dataProducts, filterProductdSubstitutes) => {
     const DAScomDeducoes = (DASsemDeducoes - ICMSindevidoReferenteProdutosST - COFINSindevidaReferenteProdutosMonofasicos - PISindevidoReferenteProdutosMonofasicos).toFixed(2);
 
     const dataDAS = {
-        movimento: dataProducts[0].movimento,         
+        movimento: dataProducts[0].movimento,
+        cnpj: dataProducts[0].cnpj,          
         totalSales: totalSales.toFixed(2),
         totalSalesST: totalSalesST.toFixed(2),
         DASsemDeducoes,
         DAScomDeducoes,
-        reducao: (DASsemDeducoes - DAScomDeducoes).toFixed(2)
+        reducao: (DASsemDeducoes - DAScomDeducoes).toFixed(2),
+        ICMSindevidoReferenteProdutosST,
+        COFINSindevidaReferenteProdutosMonofasicos,
+        PISindevidoReferenteProdutosMonofasicos,
+        control: `${dataProducts[0].movimento}.${dataProducts[0].cnpj}`
+
     }
-    console.log('total sales')
-    console.log(totalSales)
     
-    console.log('total substitutes')
-    console.log(totalSalesST)
-
-    console.log('dataDAS')
-    console.log(dataDAS)
-
-    console.log('all products')
-    console.log(listAllProducts)
-
-    console.log('monophasic')
-    console.log(listMonophasic)
-
+    await axios.post('/api/das', { dataDAS })
+    
     //window.location.reload() // atualiza a pagina
   }
 

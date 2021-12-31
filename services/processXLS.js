@@ -25,8 +25,7 @@ const processXLS = async (data) => {
 
         
     });
-    console.log('xls not filtered')
-    console.log(productSold)
+   
     processProductsService.processProductsXLS(productSold);
   })
  
