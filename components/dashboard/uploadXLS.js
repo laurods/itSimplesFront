@@ -3,7 +3,8 @@ import Dropzone from 'react-dropzone';
 import { DropContainer, UploadMessage } from './styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
+import Container from '@mui/material/Container';
+import Paper from '@mui/material/Paper';
 export default class Upload extends Component {
     
   renderDragMessage = (isDragActive, isDragReject) => {
@@ -18,6 +19,7 @@ export default class Upload extends Component {
   render() {
     const { uploadXLS } = this.props;    
     return (
+      <Container component={Paper} maxWidth="xs">      
       <Box
       sx={{
         marginTop: 2,
@@ -40,6 +42,7 @@ export default class Upload extends Component {
           )}
         </Dropzone>
       </Box>
+      </Container>
     );
   }
 }

@@ -35,7 +35,7 @@ export default function Content() {
     <Box sx={{ flexGrow: 1 }}>
       {/* UPLOADS */}
       <Grid container spacing={2}>
-        <Grid item xs={1}>
+        <Grid item xs={2}>
           {/* vazio */}
         </Grid>
         <Grid item xs={4}>
@@ -44,7 +44,7 @@ export default function Content() {
         <Grid item xs={4}>
           <UploadXML uploadXML={uploadServiceXML}/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           {/* vazio */}
         </Grid>               
         
