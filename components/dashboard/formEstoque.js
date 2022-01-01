@@ -40,7 +40,7 @@ export default function FormEmpresa() {
         >
     
           <Typography variant="h6" gutterBottom component="div">
-            Despesa
+            Estoque
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }}>
             <TextField
@@ -48,7 +48,7 @@ export default function FormEmpresa() {
               required
               fullWidth
               id="nome"
-              label="Nome"
+              label="Codigo de Barras"
               name="nome"
               autoComplete="none"
               autoFocus
@@ -58,7 +58,7 @@ export default function FormEmpresa() {
               required
               fullWidth
               name="cnpj"
-              label="VALOR"
+              label="QUANT."
               type="cnpj"
               id="cnpj"
               autoComplete="none"

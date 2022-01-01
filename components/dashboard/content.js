@@ -8,6 +8,7 @@ import DasCNPJ from './dasCNPJ';
 import EntradasByCNPJ from './entradasByCNPJ';
 import FormEmpresa from './formEmpresa';
 import FormDespesa from './formDespesa';
+import FormEstoque from './formEstoque';
 import UploadXML from './uploadXML';
 import UploadXLS from './uploadXLS';
 import UploadServiceXML from '../../services/uploadXML';
@@ -55,6 +56,9 @@ export default function Content() {
         </Grid>
         <Grid item xs={3}>
           <FormDespesa />
+        </Grid>
+        <Grid item xs={3}>
+          <FormEstoque />
         </Grid>        
         <Grid item xs={3}>
           <FormEmpresa />
