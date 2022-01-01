@@ -6,21 +6,24 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { AuthContext } from '../../contexts/AuthContext';
 import Router from 'next/router'; 
+import axios from 'axios';
 
 export default function SelectCNPJ() {
-  const { activeCNPJ, CNPJsByUsers, updateActiveCNPJ, setActiveCNPJ, } = useContext(AuthContext);
+  const { setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ } = useContext(AuthContext);
   const [cnpj, setCNPJ] = useState('');
   const handleChange = (event) => {
     // setCNPJ(event.target.value);
     // updateActiveCNPJ(event.target.value)
     // Router.push(`/dashboard/${event.target.value}`);
-    setActiveCNPJ(event.target.value)
-    console.log('cnpj ativo')
-    console.log(activeCNPJ)
-    console.log('mudou cnpj')
-    console.log(event.target.value)
-    console.log('novo cnpj ativo')
-    console.log(activeCNPJ)
+        const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', { cnpj: event.target.value });
+        const listMovimentos = movimentosByCNPJ.data;
+        const entradasByCNPJ = await axios.post('/api/entradasbycnpj', { cnpj: event.target.value });        
+        const listEntradasByCNPJ = entradasByCNPJ.data;
+        const dasByCNPJ = await axios.post('/api/dasBycnpj', { cnpj: event.target.value });              
+        const listDasByCNPJ = dasByCNPJ.data;
+        setMovimentosCNPJ(listMovimentos)
+        setEntradasByCNPJ(listEntradasByCNPJ)
+        setDasByCNPJ(listDasByCNPJ)
   };
   
   return (    
