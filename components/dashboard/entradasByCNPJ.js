@@ -21,7 +21,9 @@ export default function EntradasByCNPJ() {
   return (
     <ThemeProvider theme={theme}>
       <TableContainer component={Paper} sx={{ mt: 2 }}>
-      
+      <Typography variant="h6" gutterBottom component="div" align='center'>
+            Créditos Tributários
+        </Typography>
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableHead>
             <TableRow>

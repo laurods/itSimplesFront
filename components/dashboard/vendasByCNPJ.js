@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import PrintIcon from '@material-ui/icons/Print';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -21,7 +22,9 @@ export default function DasCNPJ() {
   return (
     <ThemeProvider theme={theme}>    
       <TableContainer component={Paper} sx={{ mt: 2 }}>
-      
+      <Typography variant="h6" gutterBottom component="div" align='center'>
+            Imposto Simples
+        </Typography>
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
