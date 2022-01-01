@@ -25,13 +25,15 @@ export default function DasCNPJ() {
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Mês</TableCell>
+              <TableCell>
+                <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+              </TableCell>
               <TableCell>Vendas</TableCell>
               <TableCell>Simples Normal</TableCell>
               <TableCell>Simples Deduções</TableCell>
               <TableCell>Redução Simples</TableCell>
               <TableCell align="right">
-                  <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+                  
                 </TableCell>
             </TableRow>
           </TableHead>

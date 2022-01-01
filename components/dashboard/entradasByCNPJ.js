@@ -25,7 +25,9 @@ export default function EntradasByCNPJ() {
         <Table sx={{ minWidth: 150 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Mês</TableCell>
+              <TableCell>
+                  <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+              </TableCell>
               <TableCell>Crédito</TableCell>
             </TableRow>
           </TableHead>
@@ -40,10 +42,7 @@ export default function EntradasByCNPJ() {
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {row.total.toFixed(2)}
-                </TableCell>
-                <TableCell align="right">
-                    <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
-                </TableCell>                
+                </TableCell>                                
               </TableRow>
             ))}
           </TableBody>
