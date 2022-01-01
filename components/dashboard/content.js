@@ -54,9 +54,19 @@ export default function Content() {
         <Grid item xs={5}>
           <VendasByCNPJ />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <EntradasByCNPJ />          
+        </Grid>              
+        
+      </Grid>
+
+      <Grid container spacing={2}>
+        <Grid item xs={1}>
+          {/* vazio */}
         </Grid>
+        <Grid item xs={8}>
+          {/* vazio */}
+        </Grid>        
         <Grid item xs={3}>
           <FormEmpresa />
         </Grid>        
