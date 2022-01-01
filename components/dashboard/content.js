@@ -37,10 +37,24 @@ export default function Content() {
         </Grid>
         <Grid item xs={4}>
           <UploadXLS uploadXLS={uploadServiceXLS}/>
-          <VendasByCNPJ />
+        </Grid>
+        <Grid item xs={4}>
+          <UploadXML uploadXML={uploadServiceXML}/>
         </Grid>
         <Grid item xs={3}>
-          <UploadXML uploadXML={uploadServiceXML}/>
+          <FormEmpresa />
+        </Grid>        
+        
+      </Grid>
+
+      <Grid container spacing={2}>
+        <Grid item xs={1}>
+          {/* vazio */}
+        </Grid>
+        <Grid item xs={5}>
+          <VendasByCNPJ />
+        </Grid>
+        <Grid item xs={2}>
           <EntradasByCNPJ />          
         </Grid>
         <Grid item xs={3}>
