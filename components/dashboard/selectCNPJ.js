@@ -8,13 +8,19 @@ import { AuthContext } from '../../contexts/AuthContext';
 import Router from 'next/router'; 
 
 export default function SelectCNPJ() {
-  const { activeCNPJ, CNPJsByUsers, updateActiveCNPJ } = useContext(AuthContext);
+  const { activeCNPJ, CNPJsByUsers, updateActiveCNPJ, setActiveCNPJ, } = useContext(AuthContext);
   const [cnpj, setCNPJ] = useState('');
   const handleChange = (event) => {
     // setCNPJ(event.target.value);
     // updateActiveCNPJ(event.target.value)
     // Router.push(`/dashboard/${event.target.value}`);
+    setActiveCNPJ(event.target.value)
+    console.log('cnpj ativo')
+    console.log(activeCNPJ)
+    console.log('mudou cnpj')
     console.log(event.target.value)
+    console.log('novo cnpj ativo')
+    console.log(activeCNPJ)
   };
   
   return (    
