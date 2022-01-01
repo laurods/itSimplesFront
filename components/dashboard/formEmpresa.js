@@ -25,7 +25,7 @@ export default function FormEmpresa() {
 
     }
     await axios.post('/api/addEmpresa', { values })
-    //window.location.reload() // atualiza a pagina
+    window.location.reload() // atualiza a pagina
   };
 
   return (

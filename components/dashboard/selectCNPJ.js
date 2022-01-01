@@ -11,9 +11,10 @@ export default function SelectCNPJ() {
   const { activeCNPJ, CNPJsByUsers, updateActiveCNPJ } = useContext(AuthContext);
   const [cnpj, setCNPJ] = useState('');
   const handleChange = (event) => {
-    setCNPJ(event.target.value);
-    updateActiveCNPJ(event.target.value)
-    Router.push(`/dashboard/${event.target.value}`);
+    // setCNPJ(event.target.value);
+    // updateActiveCNPJ(event.target.value)
+    // Router.push(`/dashboard/${event.target.value}`);
+    console.log(event.target.value)
   };
   
   return (    
