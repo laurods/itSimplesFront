@@ -27,7 +27,12 @@ export default function DasCNPJ() {
             <TableRow>
               <TableCell>Mês</TableCell>
               <TableCell>Vendas</TableCell>
-              <TableCell align="right">Relatorio</TableCell>
+              <TableCell>Simples Normal</TableCell>
+              <TableCell>Simples Deduções</TableCell>
+              <TableCell>Redução Simples</TableCell>
+              <TableCell align="right">
+                  <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+                </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -42,9 +47,16 @@ export default function DasCNPJ() {
                 <TableCell component="th" scope="row">
                   {row.totalSales}
                 </TableCell>
-                <TableCell align="right">
-                    <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+                <TableCell component="th" scope="row">
+                  {row.DASsemDeducoes}
                 </TableCell>
+                <TableCell component="th" scope="row">
+                  {row.DAScomDeducoes}
+                </TableCell>
+                <TableCell component="th" scope="row">
+                  {row.reducao}
+                </TableCell>
+                
               </TableRow>
             ))}
           </TableBody>

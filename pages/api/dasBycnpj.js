@@ -19,7 +19,9 @@ const client = new MongoClient(url);
 			   movimento: 1,
 			   reducao: 1,
                totalSales: 1,
-               totalSalesST: 1, 
+               totalSalesST: 1,
+               DASsemDeducoes: 1,
+               DAScomDeducoes: 1,
 			   _id: 0}
 			}
             ).toArray();     
