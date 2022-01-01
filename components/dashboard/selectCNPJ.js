@@ -9,7 +9,7 @@ import Router from 'next/router';
 import axios from 'axios';
 
 export default function SelectCNPJ() {
-  const { setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ } = useContext(AuthContext);
+  const { setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ, activeCNPJ } = useContext(AuthContext);
   const [cnpj, setCNPJ] = useState('');
   const handleChange = async (event) => {
     // setCNPJ(event.target.value);
