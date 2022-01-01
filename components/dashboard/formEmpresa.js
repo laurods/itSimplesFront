@@ -9,21 +9,23 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
+import axios from 'axios';
 
 const theme = createTheme();
 export default function FormEmpresa() {
-    const { addEmpresa } = useContext(AuthContext);
-  const handleSubmit = (event) => {
+    const { userId } = useContext(AuthContext);
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
     const values = {
         name: data.get('nome'),
         cnpj: data.get('cnpj'),
+        user: userId,
+        control: `${userId}.${data.get('cnpj')}`
+
     }
-    
-    console.log(values);
-    addEmpresa(values);
+    await axios.post('/api/addEmpresa', { values })
+    //window.location.reload() // atualiza a pagina
   };
 
   return (
