@@ -11,7 +11,7 @@ import axios from 'axios';
 export default function SelectCNPJ() {
   const { setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ } = useContext(AuthContext);
   const [cnpj, setCNPJ] = useState('');
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
     // setCNPJ(event.target.value);
     // updateActiveCNPJ(event.target.value)
     // Router.push(`/dashboard/${event.target.value}`);
