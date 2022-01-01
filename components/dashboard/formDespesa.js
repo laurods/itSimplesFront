@@ -40,7 +40,7 @@ export default function FormEmpresa() {
         >
     
           <Typography variant="h6" gutterBottom component="div">
-            Empresa
+            Despesa
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }}>
             <TextField

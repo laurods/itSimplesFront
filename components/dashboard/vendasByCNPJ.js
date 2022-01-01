@@ -31,7 +31,7 @@ export default function DasCNPJ() {
               <TableCell>Vendas</TableCell>
               <TableCell>Simples Normal</TableCell>
               <TableCell>Simples Deduções</TableCell>
-              <TableCell>Redução Simples</TableCell>
+              <TableCell>Simples Redução</TableCell>
               <TableCell align="right">
                   
                 </TableCell>

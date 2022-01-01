@@ -7,6 +7,7 @@ import VendasByCNPJ from './vendasByCNPJ';
 import DasCNPJ from './dasCNPJ';
 import EntradasByCNPJ from './entradasByCNPJ';
 import FormEmpresa from './formEmpresa';
+import FormDespesa from './formDespesa';
 import UploadXML from './uploadXML';
 import UploadXLS from './uploadXLS';
 import UploadServiceXML from '../../services/uploadXML';
@@ -31,6 +32,7 @@ async function uploadServiceXLS(files) {
 export default function Content() {
   return (
     <Box sx={{ flexGrow: 1 }}>
+      {/* UPLOADS */}
       <Grid container spacing={2}>
         <Grid item xs={1}>
           {/* vazio */}
@@ -43,11 +45,23 @@ export default function Content() {
         </Grid>
         <Grid item xs={3}>
           {/* vazio */}
-        </Grid>
-               
+        </Grid>               
         
       </Grid>
-
+       {/* CADASTROS */}
+      <Grid container spacing={2}>
+        <Grid item xs={1}>
+          {/* vazio */}
+        </Grid>
+        <Grid item xs={3}>
+          <FormDespesa />
+        </Grid>        
+        <Grid item xs={3}>
+          <FormEmpresa />
+        </Grid>        
+        
+      </Grid>
+    {/* RELATORIOS */}
       <Grid container spacing={2}>
         <Grid item xs={1}>
           {/* vazio */}
@@ -62,23 +76,6 @@ export default function Content() {
           {/* vazio */}
         </Grid>
       </Grid>
-
-      <Grid container spacing={2}>
-        <Grid item xs={1}>
-          {/* vazio */}
-        </Grid>
-        <Grid item xs={3}>
-          <FormEmpresa />
-        </Grid>        
-        <Grid item xs={3}>
-          <FormEmpresa />
-        </Grid>        
-        
-      </Grid>
-
-
-
-
     </Box>
 
     
