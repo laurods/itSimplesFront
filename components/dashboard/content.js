@@ -39,13 +39,13 @@ export default function Content() {
           {/* vazio */}
         </Grid>
         <Grid item xs={4}>
-          <UploadXLS uploadXLS={uploadServiceXLS}/>
+          <UploadXML uploadXML={uploadServiceXML}/>          
         </Grid>
         <Grid item xs={1}>
           {/* vazio */}
         </Grid>
         <Grid item xs={4}>
-          <UploadXML uploadXML={uploadServiceXML}/>
+        <UploadXLS uploadXLS={uploadServiceXLS}/>
         </Grid>
         <Grid item xs={2}>
           {/* vazio */}
@@ -76,10 +76,13 @@ export default function Content() {
         <Grid item xs={5}>
           <VendasByCNPJ />
         </Grid>
+        <Grid item xs={1}>
+          {/* vazio */}
+        </Grid>
         <Grid item xs={3}>
           <EntradasByCNPJ />          
         </Grid>              
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           {/* vazio */}
         </Grid>
       </Grid>
