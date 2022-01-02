@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
+import Alert from '../alert.js'
 
 const theme = createTheme();
 export default function FormLancamento() {
@@ -20,6 +21,7 @@ export default function FormLancamento() {
     const [tipo, setTipo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
+    const [isAlert, setIsAlert] = useState(false);
 
     const handleChangeTipo = (event) => {
         setTipo(event.target.value);
@@ -39,7 +41,8 @@ export default function FormLancamento() {
       //  setDescricao(data.get('descricao'))   
       //  setValor(data.get('valor'))
     if (descricao =='' || valor == '' || tipo == ''){
-        alert('Todos os campos devem ser preenchidos')
+        setIsAlert(true)
+        //alert('Todos os campos devem ser preenchidos')
         return
     }
     let situacao = '';
@@ -130,6 +133,7 @@ export default function FormLancamento() {
             fontSize: 40, }, }}label="Patrimonio" />
           </RadioGroup>
           
+          {isAlert && <Alert/>}
 
             <TextField
               margin="normal"
