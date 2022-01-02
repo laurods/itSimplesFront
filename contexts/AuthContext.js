@@ -19,7 +19,8 @@ export function AuthProvider({ children }) {
     const [userId, setUserId] = useState(null);
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
-    const isAuthenticated = !!userId;
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    //const isAuthenticated = !!userId;
 
     const verifyToken = () =>{
         console.log('aki');
@@ -59,7 +60,8 @@ export function AuthProvider({ children }) {
                     path: '/',
                 });
                 setUserId(_id);
-                Router.push('/dashboardMain');
+                setIsAuthenticated(true);
+                //Router.push('/dashboardMain');
 
 
             }
