@@ -25,15 +25,20 @@ export default function FormLancamento() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const descricao = data.get('descricao');
-    const valor = data.get('valor');   
+    const data = new FormData(event.currentTarget);    
+    const descricao = data.get('descricao');    
+    const valor = data.get('valor');
+    if (descricao =='' || valor == '' || tipo == ''){
+        alert('Todos os campos devem ser preenchidos')
+        return
+    }   
         const values = {
             descricao,
             valor,
             tipo,
             }        
         console.log(values);
+    
         //addEmpresa(values);
   };
 
