@@ -34,7 +34,7 @@ export default function FormLancamento() {
     }   
         const values = {
             descricao,
-            valor,
+            valor : valor.replace(",", "."),
             tipo,
             }        
         console.log(values);
