@@ -16,14 +16,13 @@ export default function FormLancamento() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
     const values = {
-        name: data.get('nome'),
-        cnpj: data.get('cnpj'),
+        descricao: data.get('descricao'),
+        valor: data.get('valor'),
     }
     
     console.log(values);
-    addEmpresa(values);
+    //addEmpresa(values);
   };
 
   return (
@@ -40,28 +39,30 @@ export default function FormLancamento() {
         >
     
           <Typography variant="h6" gutterBottom component="div">
-            Despesa
+            Lançamento
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
-              id="nome"
-              label="Nome"
-              name="nome"
+              id="descricao"
+              label="Descrição"
+              name="descricao"
               autoComplete="none"
+              variant="standard"
               autoFocus
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="cnpj"
-              label="VALOR"
-              type="cnpj"
-              id="cnpj"
+              name="valor"
+              label="Valor"
+              type="number"
+              id="valor"              
               autoComplete="none"
+              variant="standard"
             />
             
             <Button
