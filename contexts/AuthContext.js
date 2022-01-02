@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
     const [userId, setUserId] = useState(null);
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
-    const [isAuthenticated, setIsAuthenticated] = useState(!!userId);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     //const isAuthenticated = !!userId;
 
     const verifyToken = () =>{
@@ -32,7 +32,7 @@ export function AuthProvider({ children }) {
             console.log(decoded.id);
             setUserId(decoded.id);
             setUserEmail(decoded.email);
-            
+            setIsAuthenticated(true);
         }
     }
 
