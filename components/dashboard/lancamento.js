@@ -56,11 +56,12 @@ export default function FormLancamento() {
           
           
           >
-          <RadioGroup row aria-label="lancamento" name="radio-buttons-group"
+          <RadioGroup aria-label="lancamento" name="radio-buttons-group"
+          required
           value={tipo}
           onChange={handleChangeTipo}
           >
-            <FormControlLabel value="comida" control={<Radio />} label="Comida" />
+            <FormControlLabel value="comida" control={<Radio />} sx={{ fontSize: 30 }} label="Comida" />
             <FormControlLabel value="bebida" control={<Radio />} label="Bebida" />
             <FormControlLabel value="sorvete" control={<Radio />} label="Sorvete" />
             <FormControlLabel value="pagamento" control={<Radio />} label="Pagamento" />
