@@ -12,9 +12,8 @@ export default function Dashboard() {
     useEffect(() => {
       const loadAll = async() =>{
         console.log('is autenticad')
-        console.log(isAuthenticated)
-        if(isAuthenticated){
-          console.log('is autenticad 2')
+        console.log(isAuthenticated)        
+        console.log('is autenticad 2')
         console.log(isAuthenticated)
 
         const cookies = parseCookies()
@@ -33,7 +32,7 @@ export default function Dashboard() {
         setMovimentosCNPJ(listMovimentos)
         setEntradasByCNPJ(listEntradasByCNPJ)
         setDasByCNPJ(listDasByCNPJ)
-        } 
+        
                 
       }
       loadAll();
