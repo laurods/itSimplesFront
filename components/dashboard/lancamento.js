@@ -13,7 +13,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
-import Alert from '../alert.js'
+import Alert from '@mui/material/Alert';
+//import Alert from '../alert.js'
 
 const theme = createTheme();
 export default function FormLancamento() {
@@ -132,8 +133,8 @@ export default function FormLancamento() {
             <FormControlLabel value="patrimonio" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
             fontSize: 40, }, }}label="Patrimonio" />
           </RadioGroup>
+          {isAlert && <Alert severity="warning" onClose={() => {}}>Todos os campos devem ser preenchidos!</Alert>}
           
-          {isAlert && <Alert/>}
 
             <TextField
               margin="normal"
