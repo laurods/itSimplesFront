@@ -62,19 +62,23 @@ export default function FormLancamento() {
           onChange={handleChangeTipo}
           >
             <FormControlLabel value="lanche" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 50,
-          }, }} label="Lanche" />
-            <FormControlLabel value="bebida" control={<Radio />} label="Bebida" />
-            <FormControlLabel value="sorvete" control={<Radio />} label="Sorvete" />
-            <FormControlLabel value="pagamento" control={<Radio />} label="Pagamento" />
-            <FormControlLabel value="particular" control={<Radio />} label="Particular" />
-            <FormControlLabel value="patrimonio" control={<Radio />} label="Patrimonio" />
+            fontSize: 40, }, }} label="Lanche" />
+            <FormControlLabel value="bebida" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
+            fontSize: 40, }, }}label="Bebida" />
+            <FormControlLabel value="sorvete" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
+            fontSize: 40, }, }}label="Sorvete" />
+            <FormControlLabel value="pagamento" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
+            fontSize: 40, }, }}label="Pagamento" />
+            <FormControlLabel value="particular" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
+            fontSize: 40, }, }}label="Particular" />
+            <FormControlLabel value="patrimonio" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
+            fontSize: 40, }, }}label="Patrimonio" />
           </RadioGroup>
           
 
             <TextField
               margin="normal"
-              required
+              inputProps={{style: {fontSize: 40}}}
               fullWidth
               id="descricao"
               label="Descrição"
@@ -86,6 +90,7 @@ export default function FormLancamento() {
             <TextField
               margin="normal"
               required
+              inputProps={{style: {fontSize: 40}}}
               fullWidth
               name="valor"
               label="Valor"
