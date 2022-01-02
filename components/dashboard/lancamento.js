@@ -133,7 +133,7 @@ export default function FormLancamento() {
             <FormControlLabel value="patrimonio" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
             fontSize: 40, }, }}label="Patrimonio" />
           </RadioGroup>
-          {isAlert && <Alert severity="warning" onClose={() => {}}>Todos os campos devem ser preenchidos!</Alert>}
+          {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
           
 
             <TextField
