@@ -38,9 +38,9 @@ export default function Dashboard() {
 
     return (
       <>
-      <Login />
-      <Top />
-      <Content />
+      {!isAuthenticated && <Login />}
+      {isAuthenticated && <Top />}
+      {isAuthenticated && <Content />}       
       </>
     );
     
