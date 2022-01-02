@@ -3,8 +3,9 @@ import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
 import { parseCookies } from 'nookies';
 import Login from '../components/login/login.js'
+import Top from '../components/dashboard/top.js';
 import Lancamento from '../components/dashboard/lancamento.js';
-import Content from '../components/dashboard/content.js';
+
 
 export default function Dashboard() {
      const {setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ, isAuthenticated } = useContext(AuthContext);
@@ -36,6 +37,7 @@ export default function Dashboard() {
     return (
       <>
       {!isAuthenticated && <Login />}
+      {isAuthenticated && <Top />}
       {isAuthenticated && <Lancamento />}   
       </>
     );
