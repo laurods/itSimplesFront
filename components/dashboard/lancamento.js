@@ -92,7 +92,7 @@ export default function FormLancamento() {
         
         setDescricao('');
         setValor('');
-        isAlertSave(true)
+        setIsAlertSave(true)
         //addEmpresa(values);
   };
 
@@ -134,7 +134,7 @@ export default function FormLancamento() {
             fontSize: 40, }, }}label="Patrimonio" />
           </RadioGroup>
           {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
-          {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salavo com Sucesso!</Alert>}
+          {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
 
             <TextField
               margin="normal"
