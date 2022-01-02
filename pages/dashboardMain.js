@@ -11,6 +11,9 @@ export default function Dashboard() {
      
     useEffect(() => {
       const loadAll = async() =>{
+        console.log('is autenticad')
+        console.log(isAuthenticated)
+        if(isAuthenticated == true){
         const cookies = parseCookies()
         const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
         const listClients = clients.data;
@@ -21,14 +24,14 @@ export default function Dashboard() {
         const vendasByCNPJ = await axios.post('/api/salesBycnpj', { cnpj: listClients[0].cnpj });              
         const listVendasByCNPJ = vendasByCNPJ.data;
         const dasByCNPJ = await axios.post('/api/dasBycnpj', { cnpj: listClients[0].cnpj });              
-        const listDasByCNPJ = dasByCNPJ.data;
-        console.log('is autenticad')
-        console.log(isAuthenticated)
+        const listDasByCNPJ = dasByCNPJ.data;        
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0])
         setMovimentosCNPJ(listMovimentos)
         setEntradasByCNPJ(listEntradasByCNPJ)
-        setDasByCNPJ(listDasByCNPJ)        
+        setDasByCNPJ(listDasByCNPJ)
+        } 
+                
       }
       loadAll();
     }, []);
