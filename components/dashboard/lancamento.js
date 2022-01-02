@@ -18,16 +18,26 @@ const theme = createTheme();
 export default function FormLancamento() {
     const { addEmpresa } = useContext(AuthContext);
     const [tipo, setTipo] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [valor, setValor] = useState('');
 
     const handleChangeTipo = (event) => {
         setTipo(event.target.value);
     };
 
+    const handleChangeDescricao = (event) => {
+        setDescricao(event.target.value);
+    };
+
+    const handleChangeValor = (event) => {
+        setValor(event.target.value);
+    };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);    
-    const descricao = data.get('descricao');    
-    const valor = data.get('valor');
+    //const data = new FormData(event.currentTarget);    
+      //  setDescricao(data.get('descricao'))   
+      //  setValor(data.get('valor'))
     if (descricao =='' || valor == '' || tipo == ''){
         alert('Todos os campos devem ser preenchidos')
         return
@@ -60,11 +70,12 @@ export default function FormLancamento() {
             conta = 'caixa';
         break;
         case 'patrimonio':
-            situacao = "saida";
+            situacao = "entrada";
             conta = 'bens';
         break;
         default:
-          text = "No value found";
+            situacao = "";
+            conta = '';
       }
 
         const values = {
@@ -99,8 +110,7 @@ export default function FormLancamento() {
           
           
           >
-          <RadioGroup aria-label="lancamento" name="radio-buttons-group"
-          defaultValue="lanche"
+          <RadioGroup aria-label="lancamento" name="radio-buttons-group"          
           value={tipo}
           onChange={handleChangeTipo}
           >
@@ -127,6 +137,8 @@ export default function FormLancamento() {
               id="descricao"
               label="Descrição"
               name="descricao"
+              value={descricao}
+              onChange={handleChangeDescricao}
               autoComplete="none"
               variant="standard"
               autoFocus
@@ -139,7 +151,9 @@ export default function FormLancamento() {
               name="valor"
               label="Valor"
               type="number"
-              id="valor"              
+              id="valor" 
+              value={valor}
+              onChange={handleChangeValor}             
               autoComplete="none"
               variant="standard"
             />
