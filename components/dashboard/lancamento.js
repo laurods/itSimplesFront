@@ -86,7 +86,9 @@ export default function FormLancamento() {
             conta
             }        
         console.log(values);
-    
+        
+        setDescricao('');
+        setValor('');
         //addEmpresa(values);
   };
 
