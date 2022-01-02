@@ -19,7 +19,7 @@ export default function FormLancamento() {
     const { addEmpresa } = useContext(AuthContext);
     const [tipo, setTipo] = useState('');
 
-    const handleChangeRadio = (event) => {
+    const handleChangeTipo = (event) => {
         setTipo(event.target.value);
     };
 
@@ -30,7 +30,7 @@ export default function FormLancamento() {
         descricao: data.get('descricao'),
         valor: data.get('valor'),
         tipo,
-    }
+        }
     
     console.log(values);
     //addEmpresa(values);
@@ -56,14 +56,18 @@ export default function FormLancamento() {
           
           
           >
-          <FormLabel component="legend">Tipo</FormLabel>
-          <RadioGroup row aria-label="lancamento" name="row-radio-buttons-group"
+          <RadioGroup row aria-label="lancamento" name="radio-buttons-group"
           value={tipo}
-          onChange={handleChangeRadio}
+          onChange={handleChangeTipo}
           >
-            <FormControlLabel value="entrada" control={<Radio />} label="Entrada" />
-            <FormControlLabel value="saida" control={<Radio />} label="Saida" />
+            <FormControlLabel value="comida" control={<Radio />} label="Comida" />
+            <FormControlLabel value="bebida" control={<Radio />} label="Bebida" />
+            <FormControlLabel value="sorvete" control={<Radio />} label="Sorvete" />
+            <FormControlLabel value="pagamento" control={<Radio />} label="Pagamento" />
+            <FormControlLabel value="particular" control={<Radio />} label="Particular" />
+            <FormControlLabel value="patrimonio" control={<Radio />} label="Patrimonio" />
           </RadioGroup>
+          
 
             <TextField
               margin="normal"
