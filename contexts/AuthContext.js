@@ -52,11 +52,11 @@ export function AuthProvider({ children }) {
             if(token){
                 setshowMessage(false); 
                 setCookie(undefined, 'itToken', token, { // id e e-mail
-                    maxAge: 60 * 60 * 24, // 24 hours
+                    maxAge: 60 * 60 * 24 * 360, // 1 ano
                     path: '/',
                 });
                 setCookie(undefined, 'idUser', _id, { // id
-                    maxAge: 60 * 60 * 24, // 24 hours
+                    maxAge: 60 * 60 * 24 * 360, // 1 ano
                     path: '/',
                 });
                 setUserId(_id);
