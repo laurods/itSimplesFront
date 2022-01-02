@@ -26,14 +26,21 @@ export default function FormLancamento() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const values = {
-        descricao: data.get('descricao'),
-        valor: data.get('valor'),
-        tipo,
-        }
-    
-    console.log(values);
-    //addEmpresa(values);
+    const descricao = data.get('descricao');
+    const valor = data.get('valor'),
+    if(tipo !='' || descricao !='' || valor != '' ){
+        const values = {
+            descricao,
+            valor,
+            tipo,
+            }
+        
+        console.log(values);
+        //addEmpresa(values);
+    }else{
+        alert('Informe todos os dados')
+    }
+   
   };
 
   return (
@@ -57,7 +64,7 @@ export default function FormLancamento() {
           
           >
           <RadioGroup aria-label="lancamento" name="radio-buttons-group"
-          required
+          defaultValue="female"
           value={tipo}
           onChange={handleChangeTipo}
           >
