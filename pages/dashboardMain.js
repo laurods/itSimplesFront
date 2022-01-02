@@ -11,11 +11,6 @@ export default function Dashboard() {
      
     useEffect(() => {
       const loadAll = async() =>{
-        console.log('is autenticad')
-        console.log(isAuthenticated)        
-        console.log('is autenticad 2')
-        console.log(isAuthenticated)
-
         const cookies = parseCookies()
         const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
         const listClients = clients.data;

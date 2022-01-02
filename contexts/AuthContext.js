@@ -61,8 +61,7 @@ export function AuthProvider({ children }) {
                 });
                 setUserId(_id);
                 setIsAuthenticated(true);
-                //Router.push('/dashboardMain');
-
+                window.location.reload() // atualiza a pagina
 
             }
             console.log(res.status);
