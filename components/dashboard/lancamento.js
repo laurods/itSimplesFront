@@ -31,11 +31,48 @@ export default function FormLancamento() {
     if (descricao =='' || valor == '' || tipo == ''){
         alert('Todos os campos devem ser preenchidos')
         return
-    }   
+    }
+    let situacao = '';
+    let conta = ''
+    switch (tipo) {
+        case 'lanche':
+          situacao = "entrada";
+          conta = 'caixa';
+          break;
+        case 'bebida':
+            situacao = "entrada";
+            conta = 'caixa';
+          break;
+        case 'bebida':
+            situacao = "entrada";
+            conta = 'caixa';
+          break;
+        case 'sorvete':
+            situacao = "entrada";
+            conta = 'caixa';
+          break;
+        case 'pagamento':
+            situacao = "saida";
+            conta = 'caixa';
+        break;
+        case 'particular':
+            situacao = "saida";
+            conta = 'caixa';
+        break;
+        case 'patrimonio':
+            situacao = "saida";
+            conta = 'bens';
+        break;
+        default:
+          text = "No value found";
+      }
+
         const values = {
             descricao,
             valor : valor.replace(",", "."),
             tipo,
+            situacao,
+            conta
             }        
         console.log(values);
     
