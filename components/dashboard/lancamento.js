@@ -17,12 +17,19 @@ import { AuthContext } from '../../contexts/AuthContext';
 const theme = createTheme();
 export default function FormLancamento() {
     const { addEmpresa } = useContext(AuthContext);
+    const [tipo, setTipo] = useState('');
+
+    const handleChangeRadio = (event) => {
+        setTipo(event.target.value);
+    };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const values = {
         descricao: data.get('descricao'),
         valor: data.get('valor'),
+        tipo,
     }
     
     console.log(values);
@@ -45,9 +52,15 @@ export default function FormLancamento() {
           <Typography variant="h6" gutterBottom component="div">
             Lançamento
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }}
+          
+          
+          >
           <FormLabel component="legend">Tipo</FormLabel>
-          <RadioGroup row aria-label="lancamento" name="row-radio-buttons-group">
+          <RadioGroup row aria-label="lancamento" name="row-radio-buttons-group"
+          value={tipo}
+          onChange={handleChangeRadio}
+          >
             <FormControlLabel value="entrada" control={<Radio />} label="Entrada" />
             <FormControlLabel value="saida" control={<Radio />} label="Saida" />
           </RadioGroup>
