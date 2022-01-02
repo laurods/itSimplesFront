@@ -27,7 +27,7 @@ export default function FormLancamento() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const descricao = data.get('descricao');
-    const valor = data.get('valor'),    
+    const valor = data.get('valor');   
         const values = {
             descricao,
             valor,
