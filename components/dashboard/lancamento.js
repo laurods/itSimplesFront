@@ -14,8 +14,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
 import Alert from '@mui/material/Alert';
-//import Alert from '../alert.js'
-
 const theme = createTheme();
 export default function FormLancamento() {
     const { addEmpresa } = useContext(AuthContext);
@@ -23,6 +21,7 @@ export default function FormLancamento() {
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
     const [isAlert, setIsAlert] = useState(false);
+    const [isAlertSave, setIsAlertSave] = useState(false);
 
     const handleChangeTipo = (event) => {
         setTipo(event.target.value);
@@ -93,6 +92,7 @@ export default function FormLancamento() {
         
         setDescricao('');
         setValor('');
+        isAlertSave(true)
         //addEmpresa(values);
   };
 
@@ -134,7 +134,7 @@ export default function FormLancamento() {
             fontSize: 40, }, }}label="Patrimonio" />
           </RadioGroup>
           {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
-          
+          {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salavo com Sucesso!</Alert>}
 
             <TextField
               margin="normal"
