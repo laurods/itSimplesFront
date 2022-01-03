@@ -14,6 +14,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
 import Alert from '@mui/material/Alert';
+import Calendar from './calendar.js'
+import axios from 'axios';
+
 const theme = createTheme();
 export default function FormLancamento() {
     const { addEmpresa } = useContext(AuthContext);
@@ -89,7 +92,7 @@ export default function FormLancamento() {
             conta
             }        
         console.log(values);
-        
+        await axios.post('/api/addFinanceiro', { values })
         setDescricao('');
         setValor('');
         setIsAlertSave(true)
@@ -112,10 +115,8 @@ export default function FormLancamento() {
           <Typography variant="h6" gutterBottom component="div">
             Lançamento
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }}
-          
-          
-          >
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
+            < Calendar />
           <RadioGroup aria-label="lancamento" name="radio-buttons-group"          
           value={tipo}
           onChange={handleChangeTipo}
