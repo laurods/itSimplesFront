@@ -14,7 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
 import Alert from '@mui/material/Alert';
-import Calendar from './calendar.js'
+
 import axios from 'axios';
 
 const theme = createTheme();
@@ -116,7 +116,7 @@ export default function FormLancamento() {
             Lançamento
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
-            < Calendar />
+           
           <RadioGroup aria-label="lancamento" name="radio-buttons-group"          
           value={tipo}
           onChange={handleChangeTipo}
