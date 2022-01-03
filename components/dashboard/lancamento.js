@@ -120,19 +120,21 @@ export default function FormLancamento() {
             Lançamento
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
-          <Box sx={{ minWidth: 120 }}>
-          <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
+          <Box component="form"
+              sx={{
+                '& > :not(style)': { m: 1, width: '25ch' },
+               }}
+              noValidate
+              autoComplete="off"
+            >
+          <TextField              
               id="dia"
               label="dia"
               name="dia"
               value={day}
               onChange={handleChangeDay}
-              autoComplete="none"
-              variant="standard"
+              autoComplete="off"
+              variant="outlined"
             />
           </Box>
           <RadioGroup aria-label="lancamento" name="radio-buttons-group"          
@@ -165,7 +167,7 @@ export default function FormLancamento() {
               name="descricao"
               value={descricao}
               onChange={handleChangeDescricao}
-              autoComplete="none"
+              autoComplete="off"
               variant="standard"
               autoFocus
             />
@@ -180,7 +182,7 @@ export default function FormLancamento() {
               id="valor" 
               value={valor}
               onChange={handleChangeValor}             
-              autoComplete="none"
+              autoComplete="off"
               variant="standard"
             />
             
