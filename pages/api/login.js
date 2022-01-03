@@ -23,7 +23,7 @@ const client = new MongoClient(url);
 
          const match = await bcrypt.compare(password, people.password);
          if(match) {
-            const jwtConfig = { expiresIn: 60 * 60, algorithm: 'HS256' };    
+            const jwtConfig = { expiresIn: 60 * 60 * 24 * 360, algorithm: 'HS256' };    
             const { _id, email } = people;
             const token = jwt.sign({ id: _id, email: email }, secret, jwtConfig);
             return res.status(200).json({ token, _id });     
