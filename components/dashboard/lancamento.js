@@ -12,14 +12,14 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AuthContext } from '../../contexts/AuthContext';
 import Alert from '@mui/material/Alert';
 
 import axios from 'axios';
 
 const theme = createTheme();
 export default function FormLancamento() {
-    const { addEmpresa } = useContext(AuthContext);
+    const dataAtual = new Date();
+    const [day, setDay] = useState(dataAtual.getDate());
     const [tipo, setTipo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
@@ -37,6 +37,10 @@ export default function FormLancamento() {
     const handleChangeValor = (event) => {
         setValor(event.target.value);
     };
+
+    const handleChangeDay = (event) => {
+      setDay(event.target.value);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -116,7 +120,21 @@ export default function FormLancamento() {
             Lançamento
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
-           
+          <Box sx={{ minWidth: 120 }}>
+          <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              id="dia"
+              label="dia"
+              name="dia"
+              value={day}
+              onChange={handleChangeDay}
+              autoComplete="none"
+              variant="standard"
+            />
+          </Box>
           <RadioGroup aria-label="lancamento" name="radio-buttons-group"          
           value={tipo}
           onChange={handleChangeTipo}
