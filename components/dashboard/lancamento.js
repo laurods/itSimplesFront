@@ -122,14 +122,9 @@ const handleChangeYear = (event) => {
             alignItems: 'center',
           }}
         >
-    
-          <Typography variant="h6" gutterBottom component="div">
-            Lançamento
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
-          <Box component="form"
+        <Box component="form"
               sx={{
-                '& > :not(style)': { m: 1, width: '5ch' },
+                '& > :not(style)': { m: 1, width: '25ch' },
                }, { display: 'inline' }}
               noValidate
               autoComplete="off"
@@ -144,15 +139,7 @@ const handleChangeYear = (event) => {
               autoComplete="off"
               variant="outlined"
             />
-          </Box>
-          <Box component="form"
-              sx={{
-                '& > :not(style)': { m: 1, width: '5ch' }, 
-               }, { display: 'inline' }}
-              noValidate
-              autoComplete="off"
-            >
-          <TextField              
+            <TextField              
               id="mes"
               label="mes"
               name="mes"
@@ -162,15 +149,7 @@ const handleChangeYear = (event) => {
               autoComplete="off"
               variant="outlined"
             />
-          </Box>
-          <Box component="form"
-              sx={{
-                '& > :not(style)': { m: 1, width: '5ch' }, 
-               }, { display: 'inline' }}
-              noValidate
-              autoComplete="off"
-            >
-          <TextField              
+            <TextField              
               id="ano"
               label="ano"
               name="ano"
@@ -181,6 +160,10 @@ const handleChangeYear = (event) => {
               variant="outlined"
             />
           </Box>
+          
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
+          
+          
           <RadioGroup aria-label="lancamento" name="radio-buttons-group"          
           value={tipo}
           onChange={handleChangeTipo}
