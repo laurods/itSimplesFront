@@ -23,7 +23,6 @@ export function AuthProvider({ children }) {
     //const isAuthenticated = !!userId;
 
     const verifyToken = () =>{
-        console.log('aki');
         console.log(userId);
         const { 'itToken': token} = parseCookies();
       

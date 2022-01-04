@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import SelectCNPJ from './selectCNPJ';
+import SelectMenu from './selectMenu';
 import { AuthContext } from '../../contexts/AuthContext';
 
 
@@ -30,7 +30,7 @@ export default function TopDashboard() {
           {userEmail}
           </Typography>         
           <Typography variant="h6">          
-          <SelectCNPJ />
+          <SelectMenu />
           </Typography>
           <Button color="inherit">Sair</Button>
         </Toolbar>

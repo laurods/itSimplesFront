@@ -12,12 +12,14 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AuthContext } from '../contexts/AuthContext';
 import Alert from '@mui/material/Alert';
 
 import axios from 'axios';
 
 const theme = createTheme();
 export default function FormLancamento() {
+  const {activeCNPJ } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -100,7 +102,11 @@ const handleChangeYear = (event) => {
             valor : valor.replace(",", "."),
             tipo,
             situacao,
-            conta
+            conta, 
+            day,
+            month,
+            year, 
+            cnpj: activeCNPJ
             }        
         console.log(values);
         await axios.post('/api/addFinanceiro', { values })
