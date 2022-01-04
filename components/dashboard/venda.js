@@ -79,19 +79,7 @@ const handleChangeYear = (event) => {
         case 'sorvete':
             situacao = "entrada";
             conta = 'caixa';
-          break;
-        case 'pagamento':
-            situacao = "saida";
-            conta = 'caixa';
-        break;
-        case 'particular':
-            situacao = "saida";
-            conta = 'caixa';
-        break;
-        case 'patrimonio':
-            situacao = "entrada";
-            conta = 'bens';
-        break;
+          break;        
         default:
             situacao = "";
             conta = '';
@@ -113,7 +101,6 @@ const handleChangeYear = (event) => {
         setDescricao('');
         setValor('');
         setIsAlertSave(true)
-        //addEmpresa(values);
   };
 
   return (
@@ -192,13 +179,7 @@ const handleChangeYear = (event) => {
             <FormControlLabel value="bebida" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
             fontSize: 40, }, }}label="Bebida" />
             <FormControlLabel value="sorvete" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 40, }, }}label="Sorvete" />
-            <FormControlLabel value="pagamento" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 40, }, }}label="Pagamento" />
-            <FormControlLabel value="particular" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 40, }, }}label="Particular" />
-            <FormControlLabel value="patrimonio" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 40, }, }}label="Patrimonio" />
+            fontSize: 40, }, }}label="Sorvete" />            
           </RadioGroup>
           {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
           {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
@@ -215,7 +196,6 @@ const handleChangeYear = (event) => {
               onChange={handleChangeDescricao}
               autoComplete="off"
               variant="standard"
-              autoFocus
             />
             <TextField
               margin="normal"
@@ -236,6 +216,7 @@ const handleChangeYear = (event) => {
               type="submit"
               fullWidth
               variant="contained"
+              size="large"
               sx={{ mt: 3, mb: 2 }}
             >
               Salvar
