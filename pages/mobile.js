@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
 import { parseCookies } from 'nookies';
 import Login from '../components/login/login.js'
-import Top from '../components/dashboard/topMobile.js';
+import TopMobile from '../components/dashboard/topMobile';
 
 
 export default function Dashboard() {
@@ -36,7 +36,7 @@ export default function Dashboard() {
     return (
       <>
       {!isAuthenticated && <Login />}
-      {isAuthenticated && <Top />}  
+      {isAuthenticated && <TopMobile />}  
       </>
     );
     

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { AuthContext } from '../../contexts/AuthContext';
-import Top from '../../components/dashboard/topMobile';
+import TopMobile from '../../components/dashboard/topMobile';
 import Venda from '../../components/dashboard/venda';
 
 export default function Dashboard() {
@@ -12,7 +12,7 @@ export default function Dashboard() {
 
     return (
       <>
-      <Top />
+      <TopMobile />
       <Venda />
       </>
     );
