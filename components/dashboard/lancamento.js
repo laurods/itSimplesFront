@@ -118,6 +118,7 @@ const handleChangeYear = (event) => {
               sx={{
                 width: '25ch',
                fexDirection: 'row',
+               marginTop: 2,
             }}
             >
           <TextField              
@@ -129,6 +130,10 @@ const handleChangeYear = (event) => {
               onChange={handleChangeDay}
               autoComplete="off"
               variant="outlined"
+              size="small"
+              sx={{                
+                maxWidth: '30%',
+              }}
             />
             <TextField              
               id="mes"
@@ -139,6 +144,10 @@ const handleChangeYear = (event) => {
               onChange={handleChangeMonth}
               autoComplete="off"
               variant="outlined"
+              size="small"
+              sx={{                
+                maxWidth: '30%',
+              }}
             />
             <TextField              
               id="ano"
@@ -149,6 +158,10 @@ const handleChangeYear = (event) => {
               onChange={handleChangeYear}
               autoComplete="off"
               variant="outlined"
+              size="small"
+              sx={{                
+                maxWidth: '30%',
+              }}
             />
           </Box>
         <Box
