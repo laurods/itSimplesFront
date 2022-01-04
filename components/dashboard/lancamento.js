@@ -99,7 +99,7 @@ const handleChangeYear = (event) => {
 
         const values = {
             descricao,
-            valor : valor.replace(",", "."),
+            valor : parseFloat(valor.replace(",", ".")),
             tipo,
             situacao,
             conta, 
