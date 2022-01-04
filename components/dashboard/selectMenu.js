@@ -9,7 +9,7 @@ import Router from 'next/router';
 export default function SelectMenu() {
   const handleChange = (event) => {
       console.log(event.target.value)
-    // Router.push(`/dashboard/${event.target.value}`);
+    Router.push(`/dashboard/${event.target.value}`);
   };
   
   const listMenu = [{id: 10, name: 'Principal'}, {id: 20, name: 'Vendas'}, {id: 30, name: 'Financeiro'}, {id: 40, name:'Resultado'}]
@@ -26,7 +26,7 @@ export default function SelectMenu() {
         >
           {
                     listMenu.map(
-                        item => (<MenuItem key={item.id} value={item.name}>{item.name}</MenuItem>)
+                        item => (<MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>)
                     )
           }
         </Select>
