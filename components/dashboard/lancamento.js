@@ -21,6 +21,7 @@ export default function FormLancamento() {
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
+    const [year, setYear] = useState(dataAtual.getFullYear());
     const [tipo, setTipo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
@@ -47,14 +48,15 @@ export default function FormLancamento() {
     setMonth(event.target.value);
 };
 
+const handleChangeYear = (event) => {
+  setYear(event.target.value);
+};
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //const data = new FormData(event.currentTarget);    
-      //  setDescricao(data.get('descricao'))   
-      //  setValor(data.get('valor'))
     if (descricao =='' || valor == '' || tipo == ''){
         setIsAlert(true)
-        //alert('Todos os campos devem ser preenchidos')
         return
     }
     let situacao = '';
@@ -127,7 +129,7 @@ export default function FormLancamento() {
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
           <Box component="form"
               sx={{
-                '& > :not(style)': { m: 1, width: '15ch' },
+                '& > :not(style)': { m: 1, width: '5ch' },
                }, { display: 'inline' }}
               noValidate
               autoComplete="off"
@@ -145,7 +147,7 @@ export default function FormLancamento() {
           </Box>
           <Box component="form"
               sx={{
-                '& > :not(style)': { m: 1, width: '15ch' }, 
+                '& > :not(style)': { m: 1, width: '5ch' }, 
                }, { display: 'inline' }}
               noValidate
               autoComplete="off"
@@ -157,6 +159,24 @@ export default function FormLancamento() {
               type="number"
               value={month}
               onChange={handleChangeMonth}
+              autoComplete="off"
+              variant="outlined"
+            />
+          </Box>
+          <Box component="form"
+              sx={{
+                '& > :not(style)': { m: 1, width: '5ch' }, 
+               }, { display: 'inline' }}
+              noValidate
+              autoComplete="off"
+            >
+          <TextField              
+              id="ano"
+              label="ano"
+              name="ano"
+              type="number"
+              value={year}
+              onChange={handleChangeYear}
               autoComplete="off"
               variant="outlined"
             />
