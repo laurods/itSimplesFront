@@ -8,7 +8,7 @@ import Router from 'next/router';
 
 export default function SelectMenu() {
   const handleChange = (event) => {
-      console.log({event.target.value)
+      console.log(event.target.value)
     // Router.push(`/dashboard/${event.target.value}`);
   };
   
