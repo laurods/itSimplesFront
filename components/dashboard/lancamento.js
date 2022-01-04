@@ -118,7 +118,6 @@ const handleChangeYear = (event) => {
               sx={{
                 width: '25ch',
                fexDirection: 'row',
-              autoComplete="off"
             }}
             >
           <TextField              
