@@ -114,20 +114,12 @@ const handleChangeYear = (event) => {
     <ThemeProvider theme={theme}>
       <Container component={Paper} maxWidth="xs">
         <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
         <Box component="form"
               sx={{
-                '& > :not(style)': { m: 1, width: '25ch' },
-               }, { display: 'inline' }}
-              noValidate
+                width: '25ch',
+               fexDirection: 'row',
               autoComplete="off"
+            }}
             >
           <TextField              
               id="dia"
@@ -160,7 +152,16 @@ const handleChangeYear = (event) => {
               variant="outlined"
             />
           </Box>
-          
+        <Box
+          sx={{
+            marginTop: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+        
+
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
           
           
