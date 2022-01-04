@@ -20,7 +20,7 @@ const theme = createTheme();
 export default function FormLancamento() {
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
-    const [month, setMonth] = useState(dataAtual.getMonth());
+    const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [tipo, setTipo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
@@ -128,7 +128,7 @@ export default function FormLancamento() {
           <Box component="form"
               sx={{
                 '& > :not(style)': { m: 1, width: '15ch' },
-               }}
+               }, { display: 'inline' }}
               noValidate
               autoComplete="off"
             >
@@ -145,8 +145,8 @@ export default function FormLancamento() {
           </Box>
           <Box component="form"
               sx={{
-                '& > :not(style)': { m: 1, width: '15ch' },
-               }}
+                '& > :not(style)': { m: 1, width: '15ch' }, 
+               }, { display: 'inline' }}
               noValidate
               autoComplete="off"
             >
