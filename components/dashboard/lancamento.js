@@ -20,6 +20,7 @@ const theme = createTheme();
 export default function FormLancamento() {
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
+    const [month, setMonth] = useState(dataAtual.getMonth());
     const [tipo, setTipo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
@@ -41,6 +42,10 @@ export default function FormLancamento() {
     const handleChangeDay = (event) => {
       setDay(event.target.value);
   };
+
+  const handleChangeMonth = (event) => {
+    setMonth(event.target.value);
+};
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -122,7 +127,7 @@ export default function FormLancamento() {
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
           <Box component="form"
               sx={{
-                '& > :not(style)': { m: 1, width: '25ch' },
+                '& > :not(style)': { m: 1, width: '15ch' },
                }}
               noValidate
               autoComplete="off"
@@ -131,8 +136,27 @@ export default function FormLancamento() {
               id="dia"
               label="dia"
               name="dia"
+              type="number"
               value={day}
               onChange={handleChangeDay}
+              autoComplete="off"
+              variant="outlined"
+            />
+          </Box>
+          <Box component="form"
+              sx={{
+                '& > :not(style)': { m: 1, width: '15ch' },
+               }}
+              noValidate
+              autoComplete="off"
+            >
+          <TextField              
+              id="mes"
+              label="mes"
+              name="mes"
+              type="number"
+              value={month}
+              onChange={handleChangeMonth}
               autoComplete="off"
               variant="outlined"
             />
