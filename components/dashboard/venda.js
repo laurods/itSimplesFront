@@ -73,6 +73,7 @@ const handleChangeYear = (event) => {
         await axios.post('/api/addFinanceiro', { values })
         setDescricao('');
         setValor('');
+        setQuantidade('1');
         setIsAlertSave(true)
   };
 

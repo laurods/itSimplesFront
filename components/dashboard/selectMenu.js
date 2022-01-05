@@ -9,10 +9,10 @@ import Router from 'next/router';
 export default function SelectMenu() {
   const handleChange = (event) => {
       console.log(event.target.value)
-    Router.push(`/tela/${event.target.value}`);
+    Router.push(`${event.target.value}`);
   };
   
-  const listMenu = [{id: 10, name: 'Principal'}, {id: 20, name: 'Vendas'}, {id: 30, name: 'Financeiro'}, {id: 40, name:'Resultado'}]
+  const listMenu = [{id: '../mobile', name: 'Principal'}, {id: '/tela/20', name: 'Vendas'}, {id: 30, name: 'Financeiro'}, {id: 40, name:'Resultado'}]
   return (    
     <Box sx={{ minWidth: 120 }}>
      
