@@ -42,8 +42,7 @@ export default function DasCNPJ() {
               id="saldo"
               label="saldo"
               fullWidth
-              inputProps={{style: {fontSize: 40}}}
-              value = {anual[0].vlrTotal}
+              inputProps={{style: {fontSize: 40}}}             
               name="saldo"             
               variant="outlined"
             />     
