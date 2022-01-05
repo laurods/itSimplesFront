@@ -82,7 +82,7 @@ const handleChangeYear = (event) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component={Paper} maxWidth="xs">      
+      <Container>      
       <Box sx={{ flexGrow: 1 }}>
       <Grid>
         <Grid item xs={8}>
@@ -130,7 +130,7 @@ const handleChangeYear = (event) => {
               }}
             />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           {/* botão salvar */}
             <Button
               type="submit"
