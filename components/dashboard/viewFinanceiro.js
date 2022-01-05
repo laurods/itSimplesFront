@@ -38,8 +38,7 @@ export default function DasCNPJ() {
         <TextField              
               id="saldo"
               label="saldo"
-              name="saldo"
-              value={anual[0].vlrTotal}
+              name="saldo"             
               variant="outlined"
               size="small"
             />         
@@ -61,7 +60,7 @@ export default function DasCNPJ() {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.valor}
+                  {row.vlrTotal}
                 </TableCell>
               </TableRow>
             ))}
