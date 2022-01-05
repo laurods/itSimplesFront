@@ -11,7 +11,10 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
     const [reportCNPJ, setReportCNPJ] = useState('');
     const [activeCNPJ, setActiveCNPJ] = useState('');
-    const [financeiroByCNPJ, setFinanceiroByCNPJ] = useState([]);   
+    const [anual, setAnual] = useState([]);
+    const [mensal, setMensal] = useState([]);
+    const [diario, setDiario] = useState([]);
+    const [saldos, setSaldos] = useState([]);
     const [CNPJsByUsers, setCNPJsByUsers] = useState([]);
     const [dasByCNPJ, setDasByCNPJ] = useState([]);
     const [movimentosCNPJ, setMovimentosCNPJ] = useState([]);
@@ -103,8 +106,6 @@ export function AuthProvider({ children }) {
         })
 }
 
-    
-
 
     return (
         <AuthContext.Provider value={{ 
@@ -118,7 +119,10 @@ export function AuthProvider({ children }) {
             activeCNPJ,
             entradasByCNPJ,
             dasByCNPJ,
-            financeiroByCNPJ,         
+            anual,
+            mensal,
+            diario,
+            saldos,         
             signIn,
             addEmpresa,
             setCNPJsByUsers,
@@ -129,8 +133,10 @@ export function AuthProvider({ children }) {
             reportByMovimentoAndCNPJ,
             setEntradasByCNPJ,
             setDasByCNPJ,
-            setFinanceiroByCNPJ,
-       
+            setAnual,
+            setMensal,
+            setDiario,
+            setSaldos,      
             
              }}>
             {children}

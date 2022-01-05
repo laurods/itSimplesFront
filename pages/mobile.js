@@ -8,7 +8,18 @@ import ViewMain from '../components/dashboard/viewMainBasic';
 
 
 export default function Dashboard() {
-     const {setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ, setFinanceiroByCNPJ, isAuthenticated } = useContext(AuthContext);
+     const {
+       setCNPJsByUsers, 
+       setActiveCNPJ, 
+       setMovimentosCNPJ, 
+       setEntradasByCNPJ, 
+       setDasByCNPJ,
+       setAnual,
+       setMensal,
+       setDiario,
+       setSaldos, 
+       isAuthenticated
+       } = useContext(AuthContext);
      
     useEffect(() => {
       const loadAll = async() =>{
@@ -26,13 +37,17 @@ export default function Dashboard() {
         const financeiro = await axios.post('/api/getFinanceiro', { cnpj: listClients[0].cnpj });              
         const listFinanceiro = financeiro.data;
         console.log('objFinanceiro');
-        console.log(listFinanceiro);        
+        console.log(listFinanceiro);
+        const {anual, diario, mensal, saldos } = listFinanceiro;         
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         setMovimentosCNPJ(listMovimentos)
         setEntradasByCNPJ(listEntradasByCNPJ)
         setDasByCNPJ(listDasByCNPJ)
-        setFinanceiroByCNPJ(listFinanceiro)                
+        setAnual(anual)
+        setMensal(mensal)
+        setDiario(diario)
+        setSaldos(saldos)               
       }
       loadAll();
     }, []);
