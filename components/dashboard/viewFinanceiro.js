@@ -20,7 +20,7 @@ export default function DasCNPJ() {
     const { all, saldos, anual, mensal, diario } = financeiroByCNPJ;
     console.log('all ');
     console.log(all);
-    
+    const teste = [];
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
     }
@@ -54,7 +54,7 @@ export default function DasCNPJ() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {diario.map((row) => (
+            {teste.map((row) => (
               <TableRow
                 key={row.dia}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
