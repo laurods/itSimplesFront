@@ -1,9 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -24,14 +19,14 @@ export default function FormLancamento() {
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
-    const [tipo, setTipo] = useState('');
+    const [quantidade, setQuantidade] = useState('1');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
     const [isAlert, setIsAlert] = useState(false);
     const [isAlertSave, setIsAlertSave] = useState(false);
 
-    const handleChangeTipo = (event) => {
-        setTipo(event.target.value);
+    const handleChangeQuantidade = (event) => {
+        setQuantidade(event.target.value);
     };
 
     const handleChangeDescricao = (event) => {
@@ -61,40 +56,18 @@ const handleChangeYear = (event) => {
         setIsAlert(true)
         return
     }
-    let situacao = '';
-    let conta = ''
-    switch (tipo) {
-        case 'lanche':
-          situacao = "entrada";
-          conta = 'caixa';
-          break;
-        case 'bebida':
-            situacao = "entrada";
-            conta = 'caixa';
-          break;
-        case 'bebida':
-            situacao = "entrada";
-            conta = 'caixa';
-          break;
-        case 'sorvete':
-            situacao = "entrada";
-            conta = 'caixa';
-          break;        
-        default:
-            situacao = "";
-            conta = '';
-      }
+    
 
         const values = {
+            quantidade: parseFloat(quantidade.replace(",", ".")),
             descricao,
             valor : parseFloat(valor.replace(",", ".")),
-            tipo,
-            situacao,
-            conta, 
-            day,
-            month,
+            tipo: 'entrada',
+            conta: 'caixa', 
+            day: `${day}/${month}/${year}`,
+            month: `${month}@${year}`,
             year, 
-            cnpj: activeCNPJ
+            cnpj: activeCNPJ,            
             }        
         console.log(values);
         await axios.post('/api/addFinanceiro', { values })
@@ -153,7 +126,7 @@ const handleChangeYear = (event) => {
               variant="outlined"
               size="small"
               sx={{                
-                maxWidth: '30%',
+                maxWidth: '35%',
               }}
             />
           </Box>
@@ -167,22 +140,25 @@ const handleChangeYear = (event) => {
         >
         
 
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} >
-          
-          
-          <RadioGroup aria-label="lancamento" name="radio-buttons-group"          
-          value={tipo}
-          onChange={handleChangeTipo}
-          >
-            <FormControlLabel value="lanche" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 40, }, }} label="Lanche" />
-            <FormControlLabel value="bebida" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 40, }, }}label="Bebida" />
-            <FormControlLabel value="sorvete" control={<Radio />} sx={{ '& .MuiSvgIcon-root': {
-            fontSize: 40, }, }}label="Sorvete" />            
-          </RadioGroup>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} > 
+         
           {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
           {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
+            
+          <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="quantidade"
+              label="Quantidade"
+              type="number"
+              id="quantidade" 
+              value={quantidade}
+              onChange={handleChangeQuantidade}             
+              autoComplete="off"
+              variant="standard"
+            />
 
             <TextField
               margin="normal"
