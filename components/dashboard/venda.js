@@ -52,7 +52,7 @@ const handleChangeYear = (event) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (descricao =='' || valor == '' || tipo == ''){
+    if (descricao =='' || valor == ''){
         setIsAlert(true)
         return
     }

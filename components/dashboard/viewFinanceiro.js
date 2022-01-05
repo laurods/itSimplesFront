@@ -14,6 +14,8 @@ const theme = createTheme();
 
 export default function DasCNPJ() {
     const { financeiroByCNPJ } = useContext(AuthContext);
+    const { all } = financeiroByCNPJ;
+    console.log(all);
     const teste= [];
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
