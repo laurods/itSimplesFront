@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import PrintIcon from '@material-ui/icons/Print';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
@@ -33,6 +34,23 @@ export default function DasCNPJ() {
     }
   return (
     <ThemeProvider theme={theme}>
+    <Box sx={{ flexGrow: 1 }}>
+         {/* SALDOS */}
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <TextField              
+              id="saldo"
+              label="saldo"
+              fullWidth
+              inputProps={{style: {fontSize: 40}}}
+              value = {anual[0].vlrTotal}
+              name="saldo"             
+              variant="outlined"
+            />     
+        </Grid>            
+        
+      </Grid>
+    </Box>
 
 <Box component="form"
               sx={{
@@ -42,13 +60,7 @@ export default function DasCNPJ() {
             }}
             >
 
-        <TextField              
-              id="saldo"
-              label="saldo"
-              name="saldo"             
-              variant="outlined"
-              size="small"
-            />         
+            
     </Box>     
 
       <TableContainer component={Paper} sx={{ mt: 2 }}>

@@ -9,6 +9,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
 import Alert from '@mui/material/Alert';
+import Grid from '@mui/material/Grid';
 
 import axios from 'axios';
 
@@ -82,14 +83,12 @@ const handleChangeYear = (event) => {
   return (
     <ThemeProvider theme={theme}>
       <Container component={Paper} maxWidth="xs">
-        <CssBaseline />
-        <Box component="form"
-              sx={{
-                width: '25ch',
-               fexDirection: 'row',
-               marginTop: 2,
-            }}
-            >
+      <CssBaseline />
+      <Box sx={{ flexGrow: 1 }}>
+
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          {/* datas */}
           <TextField              
               id="dia"
               label="dia"
@@ -132,8 +131,10 @@ const handleChangeYear = (event) => {
                 maxWidth: '35%',
               }}
             />
-
-              <Button
+        </Grid>
+        <Grid item xs={4}>
+          {/* botão salvar */}
+            <Button
               type="submit"
               variant="contained"
               size="large"
@@ -141,8 +142,14 @@ const handleChangeYear = (event) => {
               sx={{ mt: 3, mb: 2 }}
             >
               Salvar
-            </Button>
-          </Box>       
+            </Button>      
+        </Grid>                      
+        
+      </Grid>    
+
+      </Box>
+       
+             
 
           <Box
           sx={{
