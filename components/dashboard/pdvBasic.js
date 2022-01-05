@@ -81,7 +81,8 @@ const handleChangeYear = (event) => {
   };
 
   return (
-    <ThemeProvider theme={theme}>      
+    <ThemeProvider theme={theme}>
+      <Container component={Paper} maxWidth="xs">      
       <Box sx={{ flexGrow: 1 }}>
       <Grid>
         <Grid item xs={8}>
@@ -206,9 +207,10 @@ const handleChangeYear = (event) => {
             
             </Box>
             
-          </Box>     
+          </Box>
        
-      
+       
+      </Container>
     </ThemeProvider>
   );
 }
