@@ -54,7 +54,7 @@ export default function DasCNPJ() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {all ==='undefined' ? <></> : all.map((row) => (
+            {teste.map((row) => (
               <TableRow
                 key={row.dia}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
