@@ -19,7 +19,7 @@ export default function FormLancamento() {
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
-    const [quantidade, setQuantidade] = useState('1');
+    const [quantidade, setQuantidade] = useState('');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
     const [isAlert, setIsAlert] = useState(false);
@@ -30,7 +30,9 @@ export default function FormLancamento() {
     };
 
     const handleChangeDescricao = (event) => {
-        setDescricao(event.target.value);
+        const desc = event.target.value;
+        const descUpCase = desc.toUpperCase();
+        setDescricao(descUpCase);
     };
 
     const handleChangeValor = (event) => {
@@ -60,7 +62,7 @@ const handleChangeYear = (event) => {
 
         const values = {
             quantidade: parseFloat(quantidade.replace(",", ".")),
-            descricao: descricao.toUpperCase(),
+            descricao,
             valor : parseFloat(valor.replace(",", ".")),
             tipo: 'entrada',
             conta: 'caixa', 
@@ -73,7 +75,7 @@ const handleChangeYear = (event) => {
         await axios.post('/api/addFinanceiro', { values })
         setDescricao('');
         setValor('');
-        setQuantidade('1');
+        setQuantidade('');
         setIsAlertSave(true)
   };
 
@@ -83,7 +85,7 @@ const handleChangeYear = (event) => {
         <CssBaseline />
         <Box component="form"
               sx={{
-                width: '25ch',
+                width: '45%',
                fexDirection: 'row',
                marginTop: 2,
             }}
@@ -139,9 +141,27 @@ const handleChangeYear = (event) => {
             alignItems: 'center',
           }}
         >
-        
+        <Box component="form"
+              sx={{
+                width: '50%',
+               fexDirection: 'row',
+               marginTop: 2,
+            }}
+          >
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              size="large"
+              onClick={handleSubmit}
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Salvar
+            </Button>
 
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: -1 }} > 
+          </Box>
+
+          <Box component="form"  noValidate sx={{ mt: -1 }} > 
          
           {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
           {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
@@ -189,15 +209,7 @@ const handleChangeYear = (event) => {
               variant="standard"
             />
             
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              size="large"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Salvar
-            </Button>
+            
             
           </Box>
         </Box>
