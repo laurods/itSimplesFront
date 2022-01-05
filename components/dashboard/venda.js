@@ -132,18 +132,9 @@ const handleChangeYear = (event) => {
                 maxWidth: '35%',
               }}
             />
-          </Box>
-        
-        <Box component="form"
-              sx={{
-                width: '25ch',
-               fexDirection: 'row',
-               marginTop: 2,
-            }}
-          >
-            <Button
+
+              <Button
               type="submit"
-              fullWidth
               variant="contained"
               size="large"
               onClick={handleSubmit}
@@ -151,9 +142,16 @@ const handleChangeYear = (event) => {
             >
               Salvar
             </Button>
+          </Box>       
 
-          </Box>
-
+          <Box
+          sx={{
+            marginTop: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           <Box component="form"  noValidate sx={{ mt: -1 }} > 
          
           {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
@@ -202,7 +200,7 @@ const handleChangeYear = (event) => {
               variant="standard"
             />
             
-            
+            </Box>
             
           </Box>
        
