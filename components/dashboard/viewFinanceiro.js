@@ -20,7 +20,7 @@ export default function DasCNPJ() {
     const { all, saldos, anual, mensal, diario } = financeiroByCNPJ;
     console.log('all ');
     console.log(all);
-    const teste= [];
+    
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
     }
