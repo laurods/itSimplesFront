@@ -83,7 +83,7 @@ const handleChangeYear = (event) => {
   return (
     <ThemeProvider theme={theme}>
       <Container>      
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, mt: 2 }}>
       <Grid>
         <Grid item xs={8}>
           {/* datas */}
@@ -129,9 +129,6 @@ const handleChangeYear = (event) => {
                 maxWidth: '35%',
               }}
             />
-        </Grid>
-        <Grid item xs={4}>
-          {/* botão salvar */}
             <Button
               type="submit"
               variant="contained"
@@ -139,8 +136,9 @@ const handleChangeYear = (event) => {
               onClick={handleSubmit}              
             >
               Salvar
-            </Button>      
-        </Grid>                      
+            </Button>
+        </Grid>
+                            
         
       </Grid>
 
