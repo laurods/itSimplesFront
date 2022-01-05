@@ -81,12 +81,9 @@ const handleChangeYear = (event) => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component={Paper} maxWidth="xs">
-      <CssBaseline />
+    <ThemeProvider theme={theme}>      
       <Box sx={{ flexGrow: 1 }}>
-
-      <Grid container spacing={2}>
+      <Grid>
         <Grid item xs={8}>
           {/* datas */}
           <TextField              
@@ -159,7 +156,7 @@ const handleChangeYear = (event) => {
             alignItems: 'center',
           }}
         >
-          <Box component="form"  noValidate sx={{ mt: -1 }} > 
+          <Box component="form"  noValidate sx={{ mt: 1 }} > 
          
           {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
           {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
@@ -209,10 +206,9 @@ const handleChangeYear = (event) => {
             
             </Box>
             
-          </Box>
+          </Box>     
        
-       
-      </Container>
+      
     </ThemeProvider>
   );
 }
