@@ -16,8 +16,15 @@ import { AuthContext } from '../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { financeiroByCNPJ } = useContext(AuthContext);
-    const { all, saldos, anual, mensal, diario } = financeiroByCNPJ;
+    const { saldos, anual, mensal, diario, all } = useContext(AuthContext);    
+    console.log('saldos ');
+    console.log(saldos);
+    console.log('anual ');
+    console.log(anual);
+    console.log('mensal ');
+    console.log(mensal);
+    console.log('saldos ');
+    console.log(diario);
     console.log('all ');
     console.log(all);
     const teste = [];

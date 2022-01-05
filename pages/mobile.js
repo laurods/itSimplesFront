@@ -5,6 +5,7 @@ import { parseCookies } from 'nookies';
 import Login from '../components/login/login.js'
 import TopMobile from '../components/dashboard/topMobile';
 import ViewMain from '../components/dashboard/viewMainBasic';
+import { setRandomFallback } from 'bcryptjs';
 
 
 export default function Dashboard() {
@@ -17,7 +18,8 @@ export default function Dashboard() {
        setAnual,
        setMensal,
        setDiario,
-       setSaldos, 
+       setSaldos,
+       setAll, 
        isAuthenticated
        } = useContext(AuthContext);
      
@@ -38,7 +40,7 @@ export default function Dashboard() {
         const listFinanceiro = financeiro.data;
         console.log('objFinanceiro');
         console.log(listFinanceiro);
-        const {anual, diario, mensal, saldos } = listFinanceiro;         
+        const {anual, diario, mensal, saldos, all } = listFinanceiro;         
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         setMovimentosCNPJ(listMovimentos)
@@ -47,7 +49,8 @@ export default function Dashboard() {
         setAnual(anual)
         setMensal(mensal)
         setDiario(diario)
-        setSaldos(saldos)               
+        setSaldos(saldos)
+        setAll(all)               
       }
       loadAll();
     }, []);

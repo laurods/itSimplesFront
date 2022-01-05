@@ -15,6 +15,7 @@ export function AuthProvider({ children }) {
     const [mensal, setMensal] = useState([]);
     const [diario, setDiario] = useState([]);
     const [saldos, setSaldos] = useState([]);
+    const [all, setAll] = useState([]);
     const [CNPJsByUsers, setCNPJsByUsers] = useState([]);
     const [dasByCNPJ, setDasByCNPJ] = useState([]);
     const [movimentosCNPJ, setMovimentosCNPJ] = useState([]);
@@ -122,7 +123,8 @@ export function AuthProvider({ children }) {
             anual,
             mensal,
             diario,
-            saldos,         
+            saldos,
+            all,         
             signIn,
             addEmpresa,
             setCNPJsByUsers,
@@ -136,7 +138,8 @@ export function AuthProvider({ children }) {
             setAnual,
             setMensal,
             setDiario,
-            setSaldos,      
+            setSaldos,
+            setAll,      
             
              }}>
             {children}
