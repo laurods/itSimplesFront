@@ -129,16 +129,19 @@ const handleChangeYear = (event) => {
                 maxWidth: '35%',
               }}
             />
-            <Button
+            
+        </Grid>
+        <Grid item xs={8} sx={{ mt: 2 }}>
+        <Button
               type="submit"
               variant="contained"
+              fullWidth
               size="large"
               onClick={handleSubmit}              
             >
               Salvar
             </Button>
-        </Grid>
-                            
+        </Grid>                    
         
       </Grid>
 
