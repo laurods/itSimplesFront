@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { AuthContext } from '../../contexts/AuthContext';
 import TopMobile from '../../components/dashboard/topMobile';
-import Venda from '../../components/dashboard/venda';
+import PDV from '../../components/dashboard/pdvBasic';
 
 export default function Dashboard() {
   const { userId, setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ } = useContext(AuthContext);
@@ -13,7 +13,7 @@ export default function Dashboard() {
     return (
       <>
       <TopMobile />
-      <Venda />
+      <PDV />
       </>
     );
     
