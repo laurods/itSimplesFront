@@ -48,7 +48,21 @@ const client = new MongoClient(url);
                     cnpj: `${cnpj}`
                 }
             }, {$group: {
-                _id: '$month',
+                _id: '$year',
+                vlrTotal: {
+                  $sum: '$valor' 
+                  }
+              }}]
+
+         ).toArray();
+
+         const saldos = await financeiro.aggregate(
+            [
+                {$match: {
+                    cnpj: `${cnpj}`
+                }
+            }, {$group: {
+                _id: '$conta',
                 vlrTotal: {
                   $sum: '$valor' 
                   }
@@ -64,6 +78,7 @@ const client = new MongoClient(url);
          objMovimento['diario'] = diario;
          objMovimento['mensal'] = mensal;
          objMovimento['anual'] = anual;
+         objMovimento['saldos'] = all;
          objMovimento['all'] = all;
 
          res.status(200).json(objMovimento);

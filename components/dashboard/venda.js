@@ -60,7 +60,7 @@ const handleChangeYear = (event) => {
 
         const values = {
             quantidade: parseFloat(quantidade.replace(",", ".")),
-            descricao,
+            descricao: descricao.toUpperCase(),
             valor : parseFloat(valor.replace(",", ".")),
             tipo: 'entrada',
             conta: 'caixa', 
