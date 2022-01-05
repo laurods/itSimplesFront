@@ -50,7 +50,7 @@ const client = new MongoClient(url);
             }, {$group: {
                 _id: '$month',
                 vlrTotal: {
-                  $sum: '$year' 
+                  $sum: '$valor' 
                   }
               }}]
 
@@ -58,8 +58,8 @@ const client = new MongoClient(url);
 
 
 
-         const all = await financeiro.find({ cnpj: `${cnpj} `}).toArray()
-         
+         const all = await financeiro.find({ cnpj : cnpj }).toArray()
+
          const objMovimento = {};
          objMovimento['diario'] = diario;
          objMovimento['mensal'] = mensal;
