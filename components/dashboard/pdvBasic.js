@@ -130,39 +130,23 @@ const handleChangeYear = (event) => {
               }}
             />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           {/* botão salvar */}
             <Button
               type="submit"
               variant="contained"
               size="large"
-              onClick={handleSubmit}
-              sx={{ mt: 3, mb: 2 }}
+              onClick={handleSubmit}              
             >
               Salvar
             </Button>      
         </Grid>                      
         
-      </Grid>    
+      </Grid>
 
-      </Box>
-       
-             
-
-          <Box
-          sx={{
-            marginTop: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Box component="form"  noValidate sx={{ mt: 1 }} > 
-         
-          {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
-          {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
-            
-          <TextField
+      <Grid>
+        <Grid item xs={6}>
+        <TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
@@ -176,21 +160,10 @@ const handleChangeYear = (event) => {
               autoComplete="off"
               variant="standard"
             />
-
-            <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              id="descricao"
-              label="Descrição"
-              name="descricao"
-              value={descricao}
-              onChange={handleChangeDescricao}
-              autoComplete="off"
-              variant="standard"
-            />
-            <TextField
+          
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
@@ -204,11 +177,27 @@ const handleChangeYear = (event) => {
               autoComplete="off"
               variant="standard"
             />
-            
-            </Box>
-            
-          </Box>
-       
+               
+        </Grid>                      
+        
+      </Grid>    
+      {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
+      {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
+            <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              id="descricao"
+              label="Descrição"
+              name="descricao"
+              value={descricao}
+              onChange={handleChangeDescricao}
+              autoComplete="off"
+              variant="standard"
+            />     
+
+      </Box>      
        
       </Container>
     </ThemeProvider>
