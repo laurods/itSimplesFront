@@ -85,7 +85,7 @@ const handleChangeYear = (event) => {
         <CssBaseline />
         <Box component="form"
               sx={{
-                width: '45%',
+                width: '25ch',
                fexDirection: 'row',
                marginTop: 2,
             }}
@@ -133,17 +133,10 @@ const handleChangeYear = (event) => {
               }}
             />
           </Box>
-        <Box
-          sx={{
-            marginTop: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
+        
         <Box component="form"
               sx={{
-                width: '50%',
+                width: '25ch',
                fexDirection: 'row',
                marginTop: 2,
             }}
@@ -212,7 +205,7 @@ const handleChangeYear = (event) => {
             
             
           </Box>
-        </Box>
+       
        
       </Container>
     </ThemeProvider>
