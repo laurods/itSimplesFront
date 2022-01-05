@@ -20,7 +20,7 @@ const client = new MongoClient(url);
                     cnpj: `${cnpj}`
                 }
             }, {$group: {
-                dia: '$day',
+                _id: '$day',
                 vlrTotal: {
                   $sum: '$valor' 
                   }
