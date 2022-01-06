@@ -38,6 +38,7 @@ export default function DasCNPJ() {
               <TableRow
                 key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                inputProps={{style: {fontSize: 20}}}
               >
                 <TableCell component="th" scope="row">
                   {row._id}
