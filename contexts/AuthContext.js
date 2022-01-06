@@ -11,6 +11,7 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
     const [reportCNPJ, setReportCNPJ] = useState('');
     const [activeCNPJ, setActiveCNPJ] = useState('');
+    const [products, setProducts] = useState([]);
     const [anual, setAnual] = useState([]);
     const [mensal, setMensal] = useState([]);
     const [diario, setDiario] = useState([]);
@@ -124,7 +125,8 @@ export function AuthProvider({ children }) {
             mensal,
             diario,
             saldos,
-            all,         
+            all,
+            products,          
             signIn,
             addEmpresa,
             setCNPJsByUsers,
@@ -139,7 +141,8 @@ export function AuthProvider({ children }) {
             setMensal,
             setDiario,
             setSaldos,
-            setAll,      
+            setAll,
+            setProducts,      
             
              }}>
             {children}

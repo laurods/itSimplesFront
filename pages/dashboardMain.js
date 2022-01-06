@@ -7,7 +7,15 @@ import Top from '../components/dashboard/top.js';
 import Content from '../components/dashboard/content.js';
 
 export default function Dashboard() {
-     const {setCNPJsByUsers, setActiveCNPJ, setMovimentosCNPJ, setEntradasByCNPJ, setDasByCNPJ, isAuthenticated } = useContext(AuthContext);
+     const {
+       setCNPJsByUsers, 
+       setActiveCNPJ, 
+       setMovimentosCNPJ, 
+       setEntradasByCNPJ, 
+       setDasByCNPJ, 
+       isAuthenticated,
+       setProducts 
+      } = useContext(AuthContext);
      
     useEffect(() => {
       const loadAll = async() =>{
@@ -24,7 +32,7 @@ export default function Dashboard() {
         const listDasByCNPJ = dasByCNPJ.data;
         const products = await axios.post('/api/getAllProducts', { cnpj: listClients[0].cnpj });              
         const listProducts = products.data;
-        console.log(listProducts);        
+        setProducts(listProducts);        
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         setMovimentosCNPJ(listMovimentos)
