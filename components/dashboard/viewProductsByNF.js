@@ -34,7 +34,7 @@ export default function DasCNPJ() {
     <ThemeProvider theme={theme}>    
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={1}>
+        <Grid item xs={2}>
         <TextField
               margin="normal"
               required
@@ -42,14 +42,48 @@ export default function DasCNPJ() {
               fullWidth
               name="nf"
               label="Nota Fiscal"
-              type="number"
               id="nf" 
               value={nf}
               onChange={handleChangeNF}             
               autoComplete="off"
               variant="standard"
             />
-            <PrintIcon onClick={() => { handlePrint(row.movimento) }}/> 
+            
+        </Grid>
+        <Grid item xs={2}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="cnpj"
+              label="CNPJ"
+              id="cnpj" 
+              value=""
+              onChange={handleChangeNF}             
+              autoComplete="off"
+              variant="standard"
+            />
+            
+        </Grid>
+        <Grid item xs={2}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="cean"
+              label="Codigo Barras"
+              id="cean" 
+              value=""
+              onChange={handleChangeNF}             
+              autoComplete="off"
+              variant="standard"
+            />
+            
+        </Grid>
+        <Grid item xs={1}>
+        <PrintIcon onClick={() => { handlePrint(row.movimento) }}/> 
         </Grid>
 
         <Grid item xs={10}>
