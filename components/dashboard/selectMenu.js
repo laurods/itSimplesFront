@@ -23,7 +23,6 @@ export default function SelectMenu() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={menu}         
           onChange={handleChange}
         >
           {

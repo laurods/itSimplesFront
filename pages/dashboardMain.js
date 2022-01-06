@@ -21,7 +21,10 @@ export default function Dashboard() {
         const vendasByCNPJ = await axios.post('/api/salesBycnpj', { cnpj: listClients[0].cnpj });              
         const listVendasByCNPJ = vendasByCNPJ.data;
         const dasByCNPJ = await axios.post('/api/dasBycnpj', { cnpj: listClients[0].cnpj });              
-        const listDasByCNPJ = dasByCNPJ.data;        
+        const listDasByCNPJ = dasByCNPJ.data;
+        const products = await axios.post('/api/getAllProducts', { cnpj: listClients[0].cnpj });              
+        const listProducts = products.data;
+        console.log(listProducts);        
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         setMovimentosCNPJ(listMovimentos)

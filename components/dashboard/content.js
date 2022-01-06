@@ -86,6 +86,19 @@ export default function Content() {
           {/* vazio */}
         </Grid>
       </Grid>
+      {/* NF E PRODUTOS */}
+      <Grid container spacing={2}>
+        <Grid item xs={1}>
+          {/* vazio */}
+        </Grid>
+        <Grid item xs={10}>
+          
+        </Grid>
+        <Grid item xs={1}>
+          {/* vazio */}
+        </Grid>
+       
+      </Grid>
     </Box>
 
     
