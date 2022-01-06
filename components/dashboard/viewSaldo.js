@@ -33,7 +33,7 @@ export default function DasCNPJ() {
               <TableCell>Valor</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ fontSize: 34, fontWeight: 'medium' }}>
+          <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
             {saldos.map((row) => (
               <TableRow
                 key={row._id}

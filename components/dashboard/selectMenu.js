@@ -7,8 +7,10 @@ import Select from '@mui/material/Select';
 import Router from 'next/router'; 
 
 export default function SelectMenu() {
+  const [menu, setMenu] = useState('Principal');
   const handleChange = (event) => {
       console.log(event.target.value)
+      setMenu(event.target.value.innerHTML)
     Router.push(`${event.target.value}`);
   };
   
@@ -21,7 +23,7 @@ export default function SelectMenu() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value='Menu'         
+          value={listMenu}         
           onChange={handleChange}
         >
           {
