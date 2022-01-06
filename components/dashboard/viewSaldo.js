@@ -33,12 +33,11 @@ export default function DasCNPJ() {
               <TableCell>Valor</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody sx={{ fontSize: 34, fontWeight: 'medium' }}>
             {saldos.map((row) => (
               <TableRow
                 key={row._id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                inputProps={{style: {fontSize: 20}}}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
               >
                 <TableCell component="th" scope="row">
                   {row._id}
