@@ -9,6 +9,7 @@ import EntradasByCNPJ from './entradasByCNPJ';
 import FormEmpresa from './formEmpresa';
 import FormDespesa from './formDespesa';
 import FormEstoque from './formEstoque';
+import ViewProductsByNF from './viewProductsByNF'
 import UploadXML from './uploadXML';
 import UploadXLS from './uploadXLS';
 import UploadServiceXML from '../../services/uploadXML';
@@ -92,7 +93,7 @@ export default function Content() {
           {/* vazio */}
         </Grid>
         <Grid item xs={10}>
-          
+        <ViewProductsByNF />
         </Grid>
         <Grid item xs={1}>
           {/* vazio */}
