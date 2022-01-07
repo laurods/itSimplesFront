@@ -54,7 +54,7 @@ export default function DasCNPJ() {
     <ThemeProvider theme={theme}>    
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      <Grid item xs={1}>
+      <Grid item xs={3}>
         <TextField
               margin="normal"
               required
@@ -70,7 +70,7 @@ export default function DasCNPJ() {
             />
             
         </Grid>
-        <Grid item xs={1}>
+        <Grid item xs={2}>
         <TextField
               margin="normal"
               required
@@ -123,14 +123,8 @@ export default function DasCNPJ() {
             />
         <Grid item xs={1}>
         <SaveIcon onClick={() => { handlePrint(row.movimento) }} />
-        </Grid>
-        <Grid item xs={1}>
         <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
         </Grid>
-        
-        
-
-       
         </Grid>
 
         <Grid item xs={12}>
