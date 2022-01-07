@@ -29,10 +29,8 @@ export default function DasCNPJ() {
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const handleFrete = (event) => {
-        setFrete(event.target.value);
-        const valorFrete = parseFloat(event.target.value);
         console.log('valorFrete');
-        console.log(valorFrete);
+        console.log(frete);
         console.log('productsFiltered');
         console.log(productsFiltered);
         const totalProducts = productsFiltered.reduce((sum, product) => { // total dos produtos monofásicos vendidos
@@ -41,7 +39,7 @@ export default function DasCNPJ() {
 
           console.log('totalProducts');
           console.log(totalProducts); 
-        const percentualFrete = (valorFrete/totalProducts);
+        const percentualFrete = (frete/totalProducts);
         console.log('percentual frete');
         console.log(percentualFrete);
 
@@ -63,9 +61,11 @@ export default function DasCNPJ() {
 
         console.log('produtos frete');
         console.log(listProducts);
+    };
 
-        const filterProducts = products.filter(produto => produto.nf == event.target.value);
-        setProductsFiltered(filterProducts);
+    const handleFrete = (event) => {
+        const vFrete = event.target.value;        
+        setFrete(parseFloat(vFrete.replace(",", ".")));
     };
 
     const handleNF = (event) => {
