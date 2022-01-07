@@ -28,7 +28,7 @@ export default function DasCNPJ() {
     const [frete, setFrete] = useState('0.00');
     const [productsFiltered, setProductsFiltered] = useState([]);
 
-    const handleFrete = (event) => {
+    const calculeFrete = (event) => {
         console.log('valorFrete');
         console.log(frete);
         console.log('productsFiltered');
@@ -163,7 +163,7 @@ export default function DasCNPJ() {
             />
         
         <Grid item xs={1}>
-        <SaveIcon onClick={() => { handlePrint(row.movimento) }} />
+        <SaveIcon onClick={() => { calculeFrete  }} />
        
         </Grid>
         </Grid>
