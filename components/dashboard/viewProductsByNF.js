@@ -28,6 +28,41 @@ export default function DasCNPJ() {
     const [frete, setFrete] = useState('0.00');
     const [productsFiltered, setProductsFiltered] = useState([]);
 
+    const handleFrete = (event) => {
+        setFrete(event.target.value);
+        const valorFrete = parseFloat(event.target.value);
+        const totalProducts = productsFiltered.reduce((sum, product) => { // total dos produtos monofásicos vendidos
+            return sum + parseFloat(product.total);
+          }, 0);
+        const percentualFrete = (valorFrete/totalProducts);
+
+        const listProducts = productsFiltered.map((item) => {
+            return {
+                _id : item._id,
+                name: item.name,
+                quant: parseFloat(item.quant),
+                total: parseFloat(item.total),
+                ipi: item.ipi,
+                vDifICMS: item.vDifICMS,
+                vICMSST: item.vICMSST,
+                frete: parseFloat(item.total * percentualFrete),
+                custoTotal: parseFloat(item.custoTotal + (item.total * percentualFrete)),
+                custoUnitario: parseFloat((item.custoTotal + (item.total * percentualFrete) / item.quant)),
+
+            }
+        })
+
+        console.log('produtos frete');
+        console.log(listProducts);
+
+        await totalProducts.forEach(item => {
+             let frete = item.total * percentualFrete;
+
+          });
+        const filterProducts = products.filter(produto => produto.nf == event.target.value);
+        setProductsFiltered(filterProducts);
+    };
+
     const handleNF = (event) => {
         setNF(event.target.value);
         const filterProducts = products.filter(produto => produto.nf == event.target.value);
