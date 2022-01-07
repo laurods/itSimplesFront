@@ -111,7 +111,7 @@ export default function DasCNPJ() {
         <TextField
               margin="normal"
               required
-              inputProps={{style: {fontSize: 40}}}
+              inputProps={{style: {fontSize: 30}}}
               fullWidth
               name="frete"
               label="Frete"
