@@ -164,7 +164,7 @@ export default function DasCNPJ() {
             />
         
         <Grid item xs={1}>
-        <SaveIcon onClick={() => { calculeFrete  }} />
+        <SaveIcon onClick={calculeFrete} />
        
         </Grid>
         </Grid>
