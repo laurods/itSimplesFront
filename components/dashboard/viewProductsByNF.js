@@ -116,14 +116,15 @@ export default function DasCNPJ() {
               name="frete"
               label="Frete"
               id="frete" 
-              value={cean}
+              value={frete}
               onChange={handleCEAN}             
               autoComplete="off"
               variant="standard"
             />
+        
         <Grid item xs={1}>
         <SaveIcon onClick={() => { handlePrint(row.movimento) }} />
-        <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+       
         </Grid>
         </Grid>
 
@@ -135,7 +136,10 @@ export default function DasCNPJ() {
                     <TableHead>
                     <TableRow>
                         
-                        <TableCell>Produto</TableCell>
+                        <TableCell>
+                            
+                            <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+                        </TableCell>
                         <TableCell>Quant</TableCell>
                         <TableCell>Total</TableCell>
                         <TableCell>IPI</TableCell>
