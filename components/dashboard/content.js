@@ -53,22 +53,20 @@ export default function Content() {
         </Grid>               
         
       </Grid>
-       {/* CADASTROS */}
+      {/* NF E PRODUTOS */}
       <Grid container spacing={2}>
         <Grid item xs={1}>
           {/* vazio */}
         </Grid>
-        <Grid item xs={3}>
-          <FormDespesa />
+        <Grid item xs={10}>
+        <ViewProductsByNF />
         </Grid>
-        <Grid item xs={3}>
-          <FormEstoque />
-        </Grid>        
-        <Grid item xs={3}>
-          <FormEmpresa />
-        </Grid>        
-        
+        <Grid item xs={1}>
+          {/* vazio */}
+        </Grid>
+       
       </Grid>
+      
     {/* RELATORIOS */}
       <Grid container spacing={2}>
         <Grid item xs={1}>
@@ -87,19 +85,7 @@ export default function Content() {
           {/* vazio */}
         </Grid>
       </Grid>
-      {/* NF E PRODUTOS */}
-      <Grid container spacing={2}>
-        <Grid item xs={1}>
-          {/* vazio */}
-        </Grid>
-        <Grid item xs={10}>
-        <ViewProductsByNF />
-        </Grid>
-        <Grid item xs={1}>
-          {/* vazio */}
-        </Grid>
-       
-      </Grid>
+      
     </Box>
 
     

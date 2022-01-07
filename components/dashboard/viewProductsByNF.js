@@ -10,6 +10,7 @@ import PrintIcon from '@material-ui/icons/Print';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
 
@@ -18,14 +19,30 @@ const theme = createTheme();
 export default function DasCNPJ() {
     const { products } = useContext(AuthContext); 
 
-    const [nf, setNF] = useState('');
-    const [productsByNF, setProductsByNF] = useState([]);
     
-    const handleChangeNF = (event) => {
+    const [cnpjEmitente, setCnpjEmitente] = useState('');
+    const [nf, setNF] = useState('');
+    const [cean, setCEAN] = useState('');
+    const [productsFiltered, setProductsFiltered] = useState([]);
+
+    const handleNF = (event) => {
         setNF(event.target.value);
-        const filterProductsByNF = products.filter(produto => produto.nf == event.target.value);
-        setProductsByNF(filterProductsByNF);
+        const filterProducts = products.filter(produto => produto.nf == event.target.value);
+        setProductsFiltered(filterProducts);
     };
+    
+    const handleCNPJ = (event) => {
+        setCnpjEmitente(event.target.value);
+        const filterProducts = products.filter(produto => produto.cnpjEmitente == event.target.value);
+        setProductsFiltered(filterProducts);
+    };
+
+    const handleCEAN = (event) => {
+        setCEAN(event.target.value);
+        const filterProducts = products.filter(produto => produto.cean == event.target.value);
+        setProductsFiltered(filterProducts);
+    };
+
 
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
@@ -34,6 +51,22 @@ export default function DasCNPJ() {
     <ThemeProvider theme={theme}>    
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
+      <Grid item xs={2}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="cnpj"
+              label="CNPJ"
+              id="cnpj" 
+              value={cnpjEmitente}
+              onChange={handleCNPJ}             
+              autoComplete="off"
+              variant="standard"
+            />
+            
+        </Grid>
         <Grid item xs={2}>
         <TextField
               margin="normal"
@@ -44,28 +77,13 @@ export default function DasCNPJ() {
               label="Nota Fiscal"
               id="nf" 
               value={nf}
-              onChange={handleChangeNF}             
+              onChange={handleNF}             
               autoComplete="off"
               variant="standard"
             />
             
         </Grid>
-        <Grid item xs={2}>
-        <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              name="cnpj"
-              label="CNPJ"
-              id="cnpj" 
-              value=""
-              onChange={handleChangeNF}             
-              autoComplete="off"
-              variant="standard"
-            />
-            
-        </Grid>
+        
         <Grid item xs={2}>
         <TextField
               margin="normal"
@@ -75,18 +93,26 @@ export default function DasCNPJ() {
               name="cean"
               label="Codigo Barras"
               id="cean" 
-              value=""
-              onChange={handleChangeNF}             
+              value={cean}
+              onChange={handleCEAN}             
               autoComplete="off"
               variant="standard"
             />
             
         </Grid>
         <Grid item xs={1}>
-        <PrintIcon onClick={() => { handlePrint(row.movimento) }}/> 
+        <Button
+        type="submit"
+        variant="contained"
+        fullWidth
+        size="large"
+        onClick={() => { handlePrint(row.movimento) }}
+        >
+        <PrintIcon />        
+        </Button> 
         </Grid>
 
-        <Grid item xs={10}>
+        <Grid item xs={12}>
 
             <TableContainer component={Paper} sx={{ mt: 2 }}>
         
@@ -105,7 +131,7 @@ export default function DasCNPJ() {
                     </TableRow>
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {productsByNF.map((row) => (
+                    {productsFiltered.map((row) => (
                         <TableRow
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
