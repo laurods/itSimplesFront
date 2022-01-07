@@ -47,20 +47,21 @@ export default function DasCNPJ() {
             return {
                 _id : item._id,
                 name: item.name,
-                quant: parseFloat(item.quant),
-                total: parseFloat(item.total),
+                quant: (parseFloat(item.quant)).toFixed(2),
+                total: (parseFloat(item.total)).toFixed(2),
                 ipi: item.ipi,
                 vDifICMS: item.vDifICMS,
                 vICMSST: item.vICMSST,
-                frete: parseFloat(item.total * percentualFrete),
-                custoTotal: parseFloat(item.custoTotal + (item.total * percentualFrete)),
-                custoUnitario: parseFloat((item.custoTotal + (item.total * percentualFrete) / item.quant)),
+                frete: (parseFloat(item.total * percentualFrete)).toFixed(2),
+                custoTotal: (parseFloat(item.custoTotal + (item.total * percentualFrete))).toFixed(2),
+                custoUnitario: (parseFloat((item.custoTotal + (item.total * percentualFrete) / (parseFloat(item.quant))))).toFixed(2),
 
             }
         })
 
         console.log('produtos frete');
         console.log(listProducts);
+        setProductsFiltered(listProducts)
     };
 
     const handleFrete = (event) => {
@@ -186,6 +187,7 @@ export default function DasCNPJ() {
                         <TableCell>IPI</TableCell>
                         <TableCell>DIFAL</TableCell>
                         <TableCell>ICMSST</TableCell>
+                        <TableCell>Frete</TableCell>
                         <TableCell>Custo Total</TableCell>
                         <TableCell>Custo Unitário</TableCell>
                     </TableRow>
@@ -213,6 +215,9 @@ export default function DasCNPJ() {
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {(row.vICMSST)}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {(row.frete)}
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {(row.custoTotal)}
