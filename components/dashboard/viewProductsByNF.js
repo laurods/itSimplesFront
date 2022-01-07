@@ -31,9 +31,16 @@ export default function DasCNPJ() {
     const handleFrete = (event) => {
         setFrete(event.target.value);
         const valorFrete = parseFloat(event.target.value);
+        console.log('valorFrete');
+        console.log(valorFrete);
+        console.log('productsFiltered');
+        console.log(productsFiltered);
         const totalProducts = productsFiltered.reduce((sum, product) => { // total dos produtos monofásicos vendidos
             return sum + parseFloat(product.total);
           }, 0);
+
+          console.log('totalProducts');
+          console.log(totalProducts); 
         const percentualFrete = (valorFrete/totalProducts);
         console.log('percentual frete');
         console.log(percentualFrete);
