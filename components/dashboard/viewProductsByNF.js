@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import PrintIcon from '@material-ui/icons/Print';
+import EditIcon from '@mui/icons-material/Edit';
+import SaveIcon from '@mui/icons-material/Save';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
@@ -23,6 +25,7 @@ export default function DasCNPJ() {
     const [cnpjEmitente, setCnpjEmitente] = useState('');
     const [nf, setNF] = useState('');
     const [cean, setCEAN] = useState('');
+    const [frete, setFrete] = useState('0.00');
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const handleNF = (event) => {
@@ -101,15 +104,7 @@ export default function DasCNPJ() {
             
         </Grid>
         <Grid item xs={1}>
-        <Button
-        type="submit"
-        variant="contained"
-        fullWidth
-        size="large"
-        onClick={() => { handlePrint(row.movimento) }}
-        startIcon={<PrintIcon />}>        
-         Imprimir     
-        </Button> 
+         
         </Grid>
 
         <Grid item xs={2}>
@@ -121,7 +116,7 @@ export default function DasCNPJ() {
               name="frete"
               label="Frete"
               id="frete" 
-              value=""
+              value={cean}
               onChange={handleCEAN}             
               autoComplete="off"
               variant="standard"
@@ -129,11 +124,17 @@ export default function DasCNPJ() {
         <Button
         type="submit"
         variant="contained"
-        fullWidth
         size="large"
         onClick={() => { handlePrint(row.movimento) }}
-        startIcon={<PrintIcon />}>        
-         Imprimir     
+        startIcon={<SaveIcon />}> 
+        </Button>
+
+        <Button
+        type="submit"
+        variant="contained"
+        size="large"
+        onClick={() => { handlePrint(row.movimento) }}
+        startIcon={<PrintIcon />}> 
         </Button> 
         </Grid>
 
@@ -184,6 +185,12 @@ export default function DasCNPJ() {
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {(row.custoUnitario)}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {(row.custoUnitario)}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            <EditIcon/>
                         </TableCell>
 
                         </TableRow>
