@@ -35,6 +35,8 @@ export default function DasCNPJ() {
             return sum + parseFloat(product.total);
           }, 0);
         const percentualFrete = (valorFrete/totalProducts);
+        console.log('percentual frete');
+        console.log(percentualFrete);
 
         const listProducts = productsFiltered.map((item) => {
             return {
@@ -55,10 +57,6 @@ export default function DasCNPJ() {
         console.log('produtos frete');
         console.log(listProducts);
 
-        await totalProducts.forEach(item => {
-             let frete = item.total * percentualFrete;
-
-          });
         const filterProducts = products.filter(produto => produto.nf == event.target.value);
         setProductsFiltered(filterProducts);
     };
@@ -152,7 +150,7 @@ export default function DasCNPJ() {
               label="Frete"
               id="frete" 
               value={frete}
-              onChange={handleCEAN}             
+              onChange={handleFrete}             
               autoComplete="off"
               variant="standard"
             />
