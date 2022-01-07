@@ -51,7 +51,7 @@ export default function DasCNPJ() {
     <ThemeProvider theme={theme}>    
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      <Grid item xs={2}>
+      <Grid item xs={4}>
         <TextField
               margin="normal"
               required
@@ -84,7 +84,7 @@ export default function DasCNPJ() {
             
         </Grid>
         
-        <Grid item xs={2}>
+        <Grid item xs={3}>
         <TextField
               margin="normal"
               required
@@ -107,8 +107,33 @@ export default function DasCNPJ() {
         fullWidth
         size="large"
         onClick={() => { handlePrint(row.movimento) }}
-        >
-        <PrintIcon />        
+        startIcon={<PrintIcon />}>        
+         Imprimir     
+        </Button> 
+        </Grid>
+
+        <Grid item xs={2}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="frete"
+              label="Frete"
+              id="frete" 
+              value=""
+              onChange={handleCEAN}             
+              autoComplete="off"
+              variant="standard"
+            />
+        <Button
+        type="submit"
+        variant="contained"
+        fullWidth
+        size="large"
+        onClick={() => { handlePrint(row.movimento) }}
+        startIcon={<PrintIcon />}>        
+         Imprimir     
         </Button> 
         </Grid>
 
