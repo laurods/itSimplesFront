@@ -25,7 +25,7 @@ export default function DasCNPJ() {
     const [cnpjEmitente, setCnpjEmitente] = useState('');
     const [nf, setNF] = useState('');
     const [cean, setCEAN] = useState('');
-    const [frete, setFrete] = useState('0.00');
+    const [frete, setFrete] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const calculeFrete = (event) => {
@@ -39,7 +39,7 @@ export default function DasCNPJ() {
 
           console.log('totalProducts');
           console.log(totalProducts); 
-        const percentualFrete = (frete/totalProducts);
+        const percentualFrete = parseFloat(frete/totalProducts);
         console.log('percentual frete');
         console.log(percentualFrete);
 
@@ -64,8 +64,9 @@ export default function DasCNPJ() {
     };
 
     const handleFrete = (event) => {
-        const vFrete = event.target.value;        
-        setFrete(parseFloat(vFrete.replace(",", ".")));
+        const vFrete = (event.target.value);
+        const vlrFrete = vFrete.replace(",", ".");
+        setFrete(vlrFrete);
     };
 
     const handleNF = (event) => {
