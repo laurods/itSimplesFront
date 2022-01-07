@@ -54,11 +54,11 @@ export default function DasCNPJ() {
     <ThemeProvider theme={theme}>    
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      <Grid item xs={4}>
+      <Grid item xs={1}>
         <TextField
               margin="normal"
               required
-              inputProps={{style: {fontSize: 40}}}
+              inputProps={{style: {fontSize: 30}}}
               fullWidth
               name="cnpj"
               label="CNPJ"
@@ -70,11 +70,11 @@ export default function DasCNPJ() {
             />
             
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
         <TextField
               margin="normal"
               required
-              inputProps={{style: {fontSize: 40}}}
+              inputProps={{style: {fontSize: 30}}}
               fullWidth
               name="nf"
               label="Nota Fiscal"
@@ -91,7 +91,7 @@ export default function DasCNPJ() {
         <TextField
               margin="normal"
               required
-              inputProps={{style: {fontSize: 40}}}
+              inputProps={{style: {fontSize: 30}}}
               fullWidth
               name="cean"
               label="Codigo Barras"
@@ -121,21 +121,16 @@ export default function DasCNPJ() {
               autoComplete="off"
               variant="standard"
             />
-        <Button
-        type="submit"
-        variant="contained"
-        size="large"
-        onClick={() => { handlePrint(row.movimento) }}
-        startIcon={<SaveIcon />}> 
-        </Button>
+        <Grid item xs={1}>
+        <SaveIcon onClick={() => { handlePrint(row.movimento) }} />
+        </Grid>
+        <Grid item xs={1}>
+        <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+        </Grid>
+        
+        
 
-        <Button
-        type="submit"
-        variant="contained"
-        size="large"
-        onClick={() => { handlePrint(row.movimento) }}
-        startIcon={<PrintIcon />}> 
-        </Button> 
+       
         </Grid>
 
         <Grid item xs={12}>
