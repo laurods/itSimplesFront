@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import Top from '../../components/dashboard/top.js';
-import Content from '../../components/dashboard/content.js';
+import ContentXML from '../../components/dashboard/contentXML.js';
 
 export default function UploadXML() {
     const { isAuthenticated } = useContext(AuthContext);
@@ -9,7 +9,7 @@ export default function UploadXML() {
     return (      <>
       
       {isAuthenticated && <Top />}
-      {isAuthenticated && <Content />}       
+      {isAuthenticated && <ContentXML />}       
       </>
     );
     
