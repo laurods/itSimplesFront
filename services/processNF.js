@@ -127,7 +127,7 @@ const allIcms = products.map((item) => { // Padronizando os dados dos valores de
         ipi: allIPI[index].vIPI,
         pis: allPIS[index].vPIS,
         cofins: allCOFINS[index].vCOFINS,
-        frete: 0,
+        frete: '0',
         pDifICMS: parseInt(pIcmsRS - (allIcms[index].pICMS)), // percentual diferença ICMS (RS - 18% BASE)
         vDifICMS: ((parseInt(pIcmsRS - (allIcms[index].pICMS))/100) * parseFloat(allProducts[index].total)).toFixed(2),  // valor diferença ICMS
         vICMSST: parseFloat(allIcms[index].vICMSST).toFixed(2), //valor icms sustituição tributária
