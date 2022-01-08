@@ -14,7 +14,6 @@ export default function Dashboard() {
        setEntradasByCNPJ, 
        setDasByCNPJ, 
        isAuthenticated,
-       setProducts 
       } = useContext(AuthContext);
      
     useEffect(() => {
@@ -30,15 +29,11 @@ export default function Dashboard() {
         const listVendasByCNPJ = vendasByCNPJ.data;
         const dasByCNPJ = await axios.post('/api/dasBycnpj', { cnpj: listClients[0].cnpj });              
         const listDasByCNPJ = dasByCNPJ.data;
-        const products = await axios.post('/api/getAllProducts', { cnpj: listClients[0].cnpj });              
-        const listProducts = products.data;
-        setProducts(listProducts);        
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         setMovimentosCNPJ(listMovimentos)
         setEntradasByCNPJ(listEntradasByCNPJ)
-        setDasByCNPJ(listDasByCNPJ)
-        
+        setDasByCNPJ(listDasByCNPJ)      
                 
       }
       loadAll();

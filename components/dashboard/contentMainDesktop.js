@@ -5,7 +5,6 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import VendasByCNPJ from './vendasByCNPJ';
 import EntradasByCNPJ from './entradasByCNPJ';
-import ViewProductsByNF from './viewProductsByNF'
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -16,20 +15,8 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Content() {
   return (
-    <Box sx={{ flexGrow: 1 }}>  
-      {/* NF E PRODUTOS */}
-      <Grid container spacing={2}>
-        <Grid item xs={1}>
-          {/* vazio */}
-        </Grid>
-        <Grid item xs={10}>
-        <ViewProductsByNF />
-        </Grid>
-        <Grid item xs={1}>
-          {/* vazio */}
-        </Grid>
-       
-      </Grid>
+    <Box sx={{ flexGrow: 1 }}>
+    
       
     {/* RELATORIOS */}
       <Grid container spacing={2}>
