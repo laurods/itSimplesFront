@@ -3,14 +3,8 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import VendasByCNPJ from './vendasByCNPJ';
-import EntradasByCNPJ from './entradasByCNPJ';
-import ViewProductsByNF from './viewProductsByNF'
 import UploadXML from './uploadXML';
-import UploadXLS from './uploadXLS';
 import UploadServiceXML from '../../services/uploadXML';
-import UploadServiceXLS from '../../services/uploadXLS';
-import axios from 'axios';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -21,10 +15,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 async function uploadServiceXML(files) {
   UploadServiceXML.handleUpload(files)
-}
-
-async function uploadServiceXLS(files) {  
-  UploadServiceXLS.handleUpload(files)
 }
 
 export default function Content() {
@@ -40,21 +30,7 @@ export default function Content() {
         </Grid>
         <Grid item xs={1}>
           {/* vazio */}
-        </Grid>
-                   
-        
-      </Grid>
-      {/* NF E PRODUTOS */}
-      <Grid container spacing={2}>
-        <Grid item xs={1}>
-          {/* vazio */}
-        </Grid>
-        <Grid item xs={10}>
-        <ViewProductsByNF />
-        </Grid>
-        <Grid item xs={1}>
-          {/* vazio */}
-        </Grid>
+        </Grid>       
        
       </Grid>      
     
