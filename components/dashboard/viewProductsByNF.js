@@ -54,7 +54,7 @@ export default function DasCNPJ() {
                 vICMSST: item.vICMSST,
                 frete: (parseFloat(item.total * percentualFrete)).toFixed(2),
                 custoTotal: (parseFloat(item.custoTotal + (item.total * percentualFrete))).toFixed(2),
-                custoUnitario: (parseFloat((item.custoTotal + (item.total * percentualFrete) / (parseFloat(item.quant))))).toFixed(2),
+                custoUnitario: (parseFloat(((item.custoTotal + (item.total * percentualFrete)) / (parseFloat(item.quant))))).toFixed(2),
 
             }
         })
@@ -221,10 +221,7 @@ export default function DasCNPJ() {
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {(row.custoTotal)}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {(row.custoUnitario)}
-                        </TableCell>
+                        </TableCell>                        
                         <TableCell component="th" scope="row">
                             {(row.custoUnitario)}
                         </TableCell>
