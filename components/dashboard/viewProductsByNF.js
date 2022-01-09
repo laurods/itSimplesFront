@@ -139,9 +139,7 @@ export default function DasCNPJ() {
             
         </Grid>
         <Grid item xs={1}>
-            <Button variant="contained" onClick={calculeFrete}>
-                Calcular
-            </Button>
+            
         </Grid>
 
         <Grid item xs={1}>
@@ -159,9 +157,12 @@ export default function DasCNPJ() {
               variant="standard"
             />
         
-        <Grid item xs={1}>  
-        <Button variant="contained" onClick={calculeFrete}>
+        <Grid item xs={2}>  
+        <Button variant="contained" onClick={calculeFrete} size="small">
              Salvar
+        </Button>
+        <Button variant="contained" onClick={calculeFrete} size="small">
+                Calcular
         </Button>    
        
         </Grid>
