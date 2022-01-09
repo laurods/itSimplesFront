@@ -28,7 +28,11 @@ export default function DasCNPJ() {
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const calculeFrete = (event) => {
-        if (cnpjEmitente =='' || nf =='' || frete == '') return alert('Para Calcular Custo informe CNPJ, NF e FRETE')
+        if (cnpjEmitente =='' || nf =='' || frete == '') {
+            setCnpjEmitente('');
+            setNF('');
+            return alert('Para Calcular Custo informe CNPJ, NF e FRETE')
+        }
         const totalProducts = productsFiltered.reduce((sum, product) => { // total dos produtos monofásicos vendidos
             return sum + parseFloat(product.total);
           }, 0);
