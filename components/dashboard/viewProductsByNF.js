@@ -144,7 +144,7 @@ export default function DasCNPJ() {
         <TextField
               margin="normal"
               required
-              inputProps={{style: {fontSize: 25}}}
+              inputProps={{style: {fontSize: 30}}}
               fullWidth
               name="frete"
               label="Frete"
@@ -155,16 +155,19 @@ export default function DasCNPJ() {
               variant="standard"
             />
          </Grid>
-            <Grid item xs={1}>  
-            <Button variant="contained" onClick={calculeFrete} size="small">
-                Calcular
-            </Button>
+            <Grid item xs={1}>
+                <Box m={2} pt={3}>
+                    <Button variant="contained" onClick={calculeFrete} size="small">
+                        Calcular
+                    </Button>
+                </Box>
             </Grid>
             <Grid item xs={1}>
-            <Button variant="contained" size="small">
-                    Salvar
-            </Button>    
-        
+                <Box m={2} pt={3}>
+                    <Button variant="contained" size="small">
+                        Salvar
+                    </Button>
+                </Box>
             </Grid>
         
 
