@@ -138,11 +138,9 @@ export default function DasCNPJ() {
             />
             
         </Grid>
-        <Grid item xs={1}>
-            
-        </Grid>
+        
 
-        <Grid item xs={1}>
+        <Grid item xs={2}>
         <TextField
               margin="normal"
               required
@@ -156,19 +154,19 @@ export default function DasCNPJ() {
               autoComplete="off"
               variant="standard"
             />
-        
+         </Grid>
             <Grid item xs={1}>  
             <Button variant="contained" onClick={calculeFrete} size="small">
                 Calcular
             </Button>
             </Grid>
             <Grid item xs={1}>
-            <Button variant="contained" onClick={calculeFrete} size="small">
+            <Button variant="contained" size="small">
                     Salvar
             </Button>    
         
             </Grid>
-        </Grid>
+        
 
         <Grid item xs={12}>
 
