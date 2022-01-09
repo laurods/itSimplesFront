@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Router from 'next/router';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -30,8 +29,9 @@ export default function DasCNPJ() {
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const handleEdit = (_id) => {
-        console.log(_id)       
-      Router.push(`./${_id}`);
+        console.log(_id)
+        const oneProduct = productsFiltered.filter(produto => produto._id == _id);
+        console.log(oneProduct);
     };
 
     const calculeFrete = (event) => {
