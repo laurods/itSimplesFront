@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import CalculateIcon from '@@material-ui/icons/Calculate';
 import PrintIcon from '@material-ui/icons/Print';
 import EditIcon from '@material-ui/icons/Edit';
 import SaveIcon from '@material-ui/icons/Save';
@@ -157,7 +158,8 @@ export default function DasCNPJ() {
             />
         
         <Grid item xs={1}>
-        <SaveIcon onClick={calculeFrete} />
+        <CalculateIcon onClick={calculeFrete} />
+        <SaveIcon />
        
         </Grid>
         </Grid>
