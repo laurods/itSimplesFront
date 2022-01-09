@@ -139,14 +139,16 @@ export default function DasCNPJ() {
             
         </Grid>
         <Grid item xs={1}>
-         
+            <Button variant="contained" onClick={calculeFrete}>
+                Calcular
+            </Button>
         </Grid>
 
-        <Grid item xs={2}>
+        <Grid item xs={1}>
         <TextField
               margin="normal"
               required
-              inputProps={{style: {fontSize: 30}}}
+              inputProps={{style: {fontSize: 20}}}
               fullWidth
               name="frete"
               label="Frete"
@@ -158,12 +160,9 @@ export default function DasCNPJ() {
             />
         
         <Grid item xs={1}>  
-        <Button variant="contained" onClick={calculeFrete} endIcon={<SaveIcon />}>
-             Calcular
-        </Button>
-        <Button variant="contained" endIcon={<SaveIcon />}>
+        <Button variant="contained" onClick={calculeFrete}>
              Salvar
-        </Button>
+        </Button>    
        
         </Grid>
         </Grid>
