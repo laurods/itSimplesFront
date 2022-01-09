@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Router from 'next/router';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,7 +10,6 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import PrintIcon from '@material-ui/icons/Print';
 import EditIcon from '@material-ui/icons/Edit';
-import SaveIcon from '@material-ui/icons/Save';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
@@ -27,6 +27,11 @@ export default function DasCNPJ() {
     const [cean, setCEAN] = useState('');
     const [frete, setFrete] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
+
+    const handleEdit = (_id) => {
+        console.log(_id)       
+     // Router.push(`${event.target.value}`);
+    };
 
     const calculeFrete = (event) => {
         if (cnpjEmitente =='' || nf =='' || frete == '') {
@@ -230,7 +235,7 @@ export default function DasCNPJ() {
                             {(row.custoUnitario)}
                         </TableCell>
                         <TableCell component="th" scope="row">
-                            <EditIcon/>
+                            <EditIcon onClick={() => {handleEdit(row._id)}}/>
                         </TableCell>
 
                         </TableRow>
