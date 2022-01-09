@@ -15,6 +15,7 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
+import ViewProductById from '../dashboard/product/viewProductById'
 
 const theme = createTheme();
 
@@ -27,11 +28,14 @@ export default function DasCNPJ() {
     const [cean, setCEAN] = useState('');
     const [frete, setFrete] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
+    const [productsFilteredSelected, setProductsFilteredSelected] = useState([]);
+
 
     const handleEdit = (_id) => {
         console.log(_id)
         const oneProduct = productsFiltered.filter(produto => produto._id == _id);
         console.log(oneProduct);
+        setProductsFilteredSelected(oneProduct)
     };
 
     const calculeFrete = (event) => {
@@ -96,7 +100,8 @@ export default function DasCNPJ() {
     }
   return (
     <ThemeProvider theme={theme}>
-        <Container>    
+    <Container>
+    {!!productsFilteredSelected && <ViewProductById />}
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <Grid item xs={3}>
