@@ -14,7 +14,15 @@ export default function SelectMenu() {
     Router.push(`${event.target.value}`);
   };
   
-  const listMenu = [{id: '../mobile', name: 'Principal'}, {id: '/tela/pdv/basic', name: 'Vendas'}, {id: 30, name: 'Financeiro'}, {id: 40, name:'Resultado'}]
+  const listMenu = [
+      {id: '../../desktop', name: 'Principal'}, 
+      {id: '/tela/pdv/basic', name: 'Vendas'}, 
+      {id: '/tela/arquivo/uploadXMS', name: 'Arquivo Compras'}, 
+      {id: '/tela/arquivo/uploadXLS', name:'Arquivo Vendas'},
+      {id: '/tela/produto/compra', name:'Entrada Produtos'},
+      {id: '/tela/usuario/perfil', name:'Perfil'},
+      {id: '/tela/uteis/sair', name:'Sair'}
+    ]
   return (    
     <Box sx={{ minWidth: 120 }}>
      
