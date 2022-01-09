@@ -31,7 +31,7 @@ export default function DasCNPJ() {
 
     const handleEdit = (_id) => {
         console.log(_id)       
-      Router.push(`./id/${_id}`);
+      Router.push(`./${_id}`);
     };
 
     const calculeFrete = (event) => {
