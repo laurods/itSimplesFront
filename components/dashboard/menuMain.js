@@ -17,7 +17,7 @@ export default function SelectMenu() {
   const listMenu = [
       {id: '../../desktop', name: 'Principal'}, 
       {id: '/tela/pdv/basic', name: 'Vendas'}, 
-      {id: '/tela/arquivo/uploadXMS', name: 'Arquivo Compras'}, 
+      {id: '/tela/arquivo/uploadXML', name: 'Arquivo Compras'}, 
       {id: '/tela/arquivo/uploadXLS', name:'Arquivo Vendas'},
       {id: '/tela/produto/compra', name:'Entrada Produtos'},
       {id: '/tela/usuario/perfil', name:'Perfil'},

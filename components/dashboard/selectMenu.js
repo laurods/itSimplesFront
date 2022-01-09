@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -27,7 +28,13 @@ export default function SelectMenu() {
         >
           {
                     listMenu.map(
-                        item => (<MenuItem key={item.id} value={item.id}>{item.name}</MenuItem>)
+                        item => (
+                        <MenuItem key={item.id} value={item.id}>
+                          <Button fullWidth variant="contained">
+                            {item.name}
+                          </Button>
+                          
+                        </MenuItem>)
                     )
           }
         </Select>

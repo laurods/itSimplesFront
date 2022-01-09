@@ -32,16 +32,11 @@ export default function TopDashboard() {
           </Typography>          
           <Typography variant="h6" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
           {userEmail}
-          </Typography>
-          <Typography variant="h6">          
-          <MenuMain />
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom component="div">
-            Empresa
-          </Typography>
+          </Typography>         
           <Typography variant="h6">          
           <SelectCNPJ />
           </Typography>
+          <MenuMain />
           
         </Toolbar>
       </AppBar>
