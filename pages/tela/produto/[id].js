@@ -7,11 +7,13 @@ import ViewProductById from '../../../components/dashboard/product/viewProductBy
 export default function Dashboard() {
   const router = useRouter()
   const { id } = router.query;
+  console.log('id produto')
+      console.log(id)
    useEffect(() => {
     const loadAll = async() =>{
         console.log(id);
       const dataProduct = await axios.post('/api/getProductById', { id: id });
-      const theProduct = product.data;
+      const theProduct = dataProduct.data;
       console.log('dados do produto')
       console.log(theProduct) 
     }

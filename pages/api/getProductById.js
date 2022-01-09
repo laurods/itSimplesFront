@@ -10,7 +10,8 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const { id } = req.body;
-        console.log(user); 
+        console.log('id na API');
+        console.log(id); 
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("products");
