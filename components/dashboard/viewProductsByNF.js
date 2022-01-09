@@ -29,6 +29,7 @@ export default function DasCNPJ() {
     const [frete, setFrete] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
     const [productsFilteredSelected, setProductsFilteredSelected] = useState([]);
+    const [showViewProductById, setShowViewProductById] = useState(false);
 
 
     const handleEdit = (_id) => {
@@ -36,6 +37,7 @@ export default function DasCNPJ() {
         const oneProduct = productsFiltered.filter(produto => produto._id == _id);
         console.log(oneProduct);
         setProductsFilteredSelected(oneProduct)
+        setShowViewProductById(true)
     };
 
     const calculeFrete = (event) => {
@@ -101,7 +103,7 @@ export default function DasCNPJ() {
   return (
     <ThemeProvider theme={theme}>
     <Container>
-    {!!productsFilteredSelected && <ViewProductById />}
+    {!showViewProductById && <ViewProductById />}
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <Grid item xs={3}>
