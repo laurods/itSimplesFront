@@ -63,11 +63,11 @@ export default function DasCNPJ() {
         setFrete(vlrFrete);
     };
 
-    const handleNF = (event) => {
-        setNF(event.target.value);
+    const handleNF = (event) => {        
         if (cnpjEmitente =='') {
             return alert('Informe o CNPJ do Fornecedor')
         }
+        setNF(event.target.value);
         const filterProducts = products.filter(produto => produto.nf == event.target.value);
         setProductsFiltered(filterProducts);
     };
