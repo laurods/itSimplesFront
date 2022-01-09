@@ -13,6 +13,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
 
@@ -30,7 +31,7 @@ export default function DasCNPJ() {
 
     const handleEdit = (_id) => {
         console.log(_id)       
-     // Router.push(`${event.target.value}`);
+      Router.push(`./id/${_id}`);
     };
 
     const calculeFrete = (event) => {
@@ -94,7 +95,8 @@ export default function DasCNPJ() {
         reportByMovimentoAndCNPJ(movimento)
     }
   return (
-    <ThemeProvider theme={theme}>    
+    <ThemeProvider theme={theme}>
+        <Container>    
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <Grid item xs={3}>
@@ -247,7 +249,7 @@ export default function DasCNPJ() {
         
       </Grid>
     </Box>
-      
+    </Container>
     </ThemeProvider>
   );
 }
