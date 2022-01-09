@@ -12,7 +12,6 @@ import SaveIcon from '@material-ui/icons/Save';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
 
@@ -29,19 +28,11 @@ export default function DasCNPJ() {
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const calculeFrete = (event) => {
-        console.log('valorFrete');
-        console.log(frete);
-        console.log('productsFiltered');
-        console.log(productsFiltered);
+        if (cnpjEmitente =='' || nf =='' || frete == '') return alert('Para Calcular Custo informe CNPJ, NF e FRETE')
         const totalProducts = productsFiltered.reduce((sum, product) => { // total dos produtos monofásicos vendidos
             return sum + parseFloat(product.total);
           }, 0);
-
-          console.log('totalProducts');
-          console.log(totalProducts); 
         const percentualFrete = parseFloat(frete/totalProducts);
-        console.log('percentual frete');
-        console.log(percentualFrete);
 
         const listProducts = productsFiltered.map((item) => {
             return {
@@ -58,9 +49,6 @@ export default function DasCNPJ() {
 
             }
         })
-
-        console.log('produtos frete');
-        console.log(listProducts);
         setProductsFiltered(listProducts)
     };
 
