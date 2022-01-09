@@ -30,7 +30,7 @@ export default function DasCNPJ() {
     const [productsFiltered, setProductsFiltered] = useState([]);
     const [productsFilteredSelected, setProductsFilteredSelected] = useState([]);
     const [showViewProductById, setShowViewProductById] = useState(false);
-
+    console.log(showViewProductById);
 
     const handleEdit = (_id) => {
         console.log(_id)
