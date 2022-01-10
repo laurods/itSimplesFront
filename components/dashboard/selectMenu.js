@@ -13,7 +13,13 @@ export default function SelectMenu() {
     Router.push(`${event.target.value}`);
   };
   
-  const listMenu = [{id: '../mobile', name: 'Principal'}, {id: '/tela/pdv/basic', name: 'Vendas'}, {id: 30, name: 'Financeiro'}, {id: 40, name:'Resultado'}]
+  const listMenu = [
+    {id: '../mobile', name: 'Principal'}, 
+    {id: '/tela/pdv/basic', name: 'Vendas'}, 
+    {id: 30, name: 'Financeiro'}, 
+    {id: 40, name:'Resultado'},
+    {id: '/tela/produto/inventario', name: 'Inventário'}
+  ],
   return (    
     <Box sx={{ minWidth: 120 }}>
      

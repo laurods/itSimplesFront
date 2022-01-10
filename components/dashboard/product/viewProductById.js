@@ -15,7 +15,7 @@ import axios from 'axios';
 
 const theme = createTheme();
 export default function FormLancamento() {
-  const {activeCNPJ } = useContext(AuthContext);
+  const {theProductsFilteredSelected } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -85,52 +85,7 @@ const handleChangeYear = (event) => {
       <Container>      
       <Box sx={{ flexGrow: 1, mt: 2 }}>
       <Grid>
-        <Grid item xs={8}>
-          {/* datas */}
-          <TextField              
-              id="dia"
-              label="dia"
-              name="dia"
-              type="number"
-              value={day}
-              onChange={handleChangeDay}
-              autoComplete="off"
-              variant="outlined"
-              size="small"
-              sx={{                
-                maxWidth: '30%',
-              }}
-            />
-            <TextField              
-              id="mes"
-              label="mes"
-              name="mes"
-              type="number"
-              value={month}
-              onChange={handleChangeMonth}
-              autoComplete="off"
-              variant="outlined"
-              size="small"
-              sx={{                
-                maxWidth: '30%',
-              }}
-            />
-            <TextField              
-              id="ano"
-              label="ano"
-              name="ano"
-              type="number"
-              value={year}
-              onChange={handleChangeYear}
-              autoComplete="off"
-              variant="outlined"
-              size="small"
-              sx={{                
-                maxWidth: '35%',
-              }}
-            />
-            
-        </Grid>
+       
         <Grid item xs={8} sx={{ mt: 2 }}>
         <Button
               type="submit"
