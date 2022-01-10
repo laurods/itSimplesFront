@@ -19,7 +19,8 @@ export default function SelectMenu() {
     {id: 30, name: 'Financeiro'}, 
     {id: 40, name:'Resultado'},
     {id: '/tela/produto/inventario', name: 'Inventário'}
-  ],
+  ]
+  
   return (    
     <Box sx={{ minWidth: 120 }}>
      
