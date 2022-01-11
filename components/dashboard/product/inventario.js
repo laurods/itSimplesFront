@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import PrintIcon from '@material-ui/icons/Print';
 import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
@@ -73,8 +74,9 @@ export default function DasCNPJ() {
         const vPreco = (event.target.value);
         const vlrPreco = vPreco.replace(",", ".");  
         setPreco(parseFloat(vlrPreco));
+        handleTotal()
     };
-    const handleTotal = (event) => {
+    const handleTotal = () => {
         const vTotal = parseFloat(quant * preco)
         setTotal(vTotal);
     };
@@ -120,7 +122,7 @@ export default function DasCNPJ() {
             />
             
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={5}>
         <TextField
               margin="normal"
               required
@@ -151,17 +153,16 @@ export default function DasCNPJ() {
               variant="standard"
             />
          </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={1}>
             <TextField
               margin="normal"
-              required
+              disabled
               inputProps={{style: {fontSize: 30}}}
               fullWidth
               name="total"
               label="Total"
               id="total" 
-              value={total}
-              onChange={handleTotal}             
+              value={total}            
               autoComplete="off"
               variant="standard"
             />
@@ -217,7 +218,7 @@ export default function DasCNPJ() {
                             {(row.custoTotal)}
                         </TableCell>                        
                         <TableCell component="th" scope="row">
-                            <EditIcon onClick={() => {handleEdit(row.name)}}/>
+                            <DeleteIcon onClick={() => {handleEdit(row.name)}}/>
                         </TableCell>
 
                         </TableRow>
