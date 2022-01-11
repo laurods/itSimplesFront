@@ -30,7 +30,6 @@ export default function DasCNPJ() {
     const [quant, setQuant] = useState('');
     const [desc, setDesc] = useState('');    
     const [preco, setPreco] = useState('');
-    const [total, setTotal] = useState('');
     const [inventario, setInventario] = useState([]);
     const listProducts = [];
 
@@ -39,13 +38,13 @@ export default function DasCNPJ() {
             cean,
             cnpjDestinatario: activeCNPJ,
             cnpjEmitente: 'inventário',
-            custoTotal: total,
+            custoTotal: parseFloat(quant * preco),
             custoUnitario: preco,
             movimento:`${mes}@${ano}`,
             name: desc,
             nf: `${dia}@${mes}@${ano}`,
             quant,
-            total,
+            total: parseFloat(quant * preco),
         })
 
         console.log(listProducts)
@@ -74,11 +73,10 @@ export default function DasCNPJ() {
         const vPreco = (event.target.value);
         const vlrPreco = vPreco.replace(",", ".");  
         setPreco(parseFloat(vlrPreco));
-        handleTotal()
+        
     };
     const handleTotal = () => {
-        const vTotal = parseFloat(quant * preco)
-        setTotal(vTotal);
+        
     };
 
 
@@ -122,7 +120,7 @@ export default function DasCNPJ() {
             />
             
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={6}>
         <TextField
               margin="normal"
               required
@@ -153,22 +151,7 @@ export default function DasCNPJ() {
               variant="standard"
             />
          </Grid>
-            <Grid item xs={1}>
-            <TextField
-              margin="normal"
-              disabled
-              inputProps={{style: {fontSize: 30}}}
-              fullWidth
-              name="total"
-              label="Total"
-              id="total" 
-              value={total}            
-              autoComplete="off"
-              variant="standard"
-            />
-         
-                
-            </Grid>
+            
             <Grid item xs={1}>
                 <Box m={2} pt={3}>
                     <Button onClick = {addInventario} variant="contained" size="small">
@@ -191,9 +174,9 @@ export default function DasCNPJ() {
                             <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
                         </TableCell>
                         <TableCell>Quant</TableCell>
-                        <TableCell>Total</TableCell>
-                        <TableCell>Custo Total</TableCell>
                         <TableCell>Custo Unitário</TableCell>
+                        <TableCell>Total</TableCell>
+                        
                     </TableRow>
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
@@ -206,17 +189,11 @@ export default function DasCNPJ() {
                             {row.name}
                         </TableCell>
                         <TableCell component="th" scope="row">
-                            {(row.quant)}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {(row.total)}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
                             {(row.custoUnitario)}
                         </TableCell>
                         <TableCell component="th" scope="row">
-                            {(row.custoTotal)}
-                        </TableCell>                        
+                            {(row.total)}
+                        </TableCell>                    
                         <TableCell component="th" scope="row">
                             <DeleteIcon onClick={() => {handleEdit(row.name)}}/>
                         </TableCell>
