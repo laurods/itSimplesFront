@@ -32,7 +32,7 @@ export default function DasCNPJ() {
     const [preco, setPreco] = useState('');
     const [inventario, setInventario] = useState([]);   
     
-    const addInventario = (item) => {
+    const addInventario = () => {
         const product = {
             codigo: (inventario.length),
             cean,
@@ -68,7 +68,7 @@ export default function DasCNPJ() {
     
     const onKeyUp = (event) => {
         if (event.key === 'Enter') {
-          console.log('teclei');
+            addInventario()
         }
       }
     
@@ -178,7 +178,7 @@ export default function DasCNPJ() {
             <Grid item xs={1}>
                 <Box m={2} pt={3}>
                     <Button onClick = {addInventario} variant="contained" size="small">
-                        Adicionar
+                        Salvar
                     </Button>
                 </Box>
             </Grid>
