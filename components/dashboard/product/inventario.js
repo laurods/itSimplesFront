@@ -50,13 +50,13 @@ export default function DasCNPJ() {
         let listProducts = [products, ...inventario]
         console.log(listProducts)
         setListInventario(listProducts)
-        setCEAN('');
-        setQuant('');
-        setDesc('');
-        setPreco('');
+        // setCEAN('');
+        // setQuant('');
+        // setDesc('');
+        // setPreco('');
         document.getElementById("quant").focus();
     };
-
+    console.log(listInventario);
     
     const saveInventario = (event) => {
        
