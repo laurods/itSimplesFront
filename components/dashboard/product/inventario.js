@@ -74,7 +74,8 @@ export default function DasCNPJ() {
     };
 
     const handleDESC = (event) => {
-        setDesc(event.target.value);
+        const text = event.target.value
+        setDesc(text.toUpperCase());
     };
 
     const handlePreco = (event) => {
@@ -195,6 +196,9 @@ export default function DasCNPJ() {
                         >
                         <TableCell component="th" scope="row">
                             {row.name}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {(row.quant)}
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {(row.custoUnitario)}
