@@ -31,8 +31,8 @@ export default function DasCNPJ() {
     const [desc, setDesc] = useState('');    
     const [preco, setPreco] = useState('');
     const [inventario, setInventario] = useState([]);   
-    const products = new Set();
-    
+    //const products = new Set();
+    const products = [];
     const addInventario = (item) => {
         const product = {
             cean,
@@ -46,14 +46,13 @@ export default function DasCNPJ() {
             quant,
             total: parseFloat(quant * preco),
         };
-        products.add(product)
+        products.Push(product)
         console.log('inventario')
         console.log(inventario)
         console.log('products')
         console.log(products)
         //const listProducts = [products, ...inventario]
-        //console.log('listProducts')        
-        console.log(products)
+        //console.log('listProducts') 
         setInventario(products)
         setCEAN('');
         setQuant('');
