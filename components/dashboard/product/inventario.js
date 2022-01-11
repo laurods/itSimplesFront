@@ -31,6 +31,7 @@ export default function DasCNPJ() {
     const [desc, setDesc] = useState('');    
     const [preco, setPreco] = useState('');
     const [inventario, setInventario] = useState([]);
+    const [listInventario, setListInventario] = useState([]);
     const products = [];
 
     const addInventario = (item) => {
@@ -48,7 +49,7 @@ export default function DasCNPJ() {
         })
         let listProducts = [products, ...inventario]
         console.log(listProducts)
-        setInventario([products, ...inventario])
+        setListInventario(listProducts)
         setCEAN('');
         setQuant('');
         setDesc('');
@@ -186,7 +187,7 @@ export default function DasCNPJ() {
                     </TableRow>
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {inventario.map((row) => (
+                    {listInventario.map((row) => (
                         <TableRow
                         key={row.name}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
