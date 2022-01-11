@@ -49,6 +49,11 @@ export default function DasCNPJ() {
 
         console.log(listProducts)
         setInventario(listProducts)
+        setCEAN('');
+        setQuant('');
+        setDesc('');
+        setPreco('');
+        document.getElementById("quant").focus();
     };
 
     const saveInventario = (event) => {
