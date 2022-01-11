@@ -34,6 +34,7 @@ export default function DasCNPJ() {
     
     const addInventario = (item) => {
         const product = {
+            codigo: (inventario.length),
             cean,
             cnpjDestinatario: activeCNPJ,
             cnpjEmitente: 'inventário',
@@ -183,7 +184,7 @@ export default function DasCNPJ() {
                             <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
                         </TableCell>
                         <TableCell>Quant</TableCell>
-                        <TableCell>Custo Unitário</TableCell>
+                        <TableCell>Custo</TableCell>
                         <TableCell>Total</TableCell>
                         
                     </TableRow>
@@ -191,7 +192,7 @@ export default function DasCNPJ() {
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
                     {inventario.map((row) => (
                         <TableRow
-                        key={row.name}
+                        key={row.codigo}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
                         <TableCell component="th" scope="row">
