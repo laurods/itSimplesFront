@@ -46,7 +46,7 @@ export default function DasCNPJ() {
             quant,
             total: parseFloat(quant * preco),
         })
-        listProducts = [products, ...inventario]
+        let listProducts = [products, ...inventario]
         console.log(listProducts)
         setInventario(listProducts)
         setCEAN('');
