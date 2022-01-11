@@ -32,7 +32,6 @@ export default function DasCNPJ() {
     const [preco, setPreco] = useState('');
     const [inventario, setInventario] = useState([]);
     const products = [];
-    const listProducts = [];
 
     const addInventario = (item) => {
         products.push({
