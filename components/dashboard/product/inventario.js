@@ -32,8 +32,9 @@ export default function DasCNPJ() {
     const [preco, setPreco] = useState('');
     const [inventario, setInventario] = useState([]);   
     const products = [];
+    
     const addInventario = (item) => {
-        products.push({
+        const product = {
             cean,
             cnpjDestinatario: activeCNPJ,
             cnpjEmitente: 'inventário',
@@ -44,15 +45,16 @@ export default function DasCNPJ() {
             nf: `${dia}@${mes}@${ano}`,
             quant,
             total: parseFloat(quant * preco),
-        })
+        };
+        products.push(product)
         console.log('inventario')
         console.log(inventario)
         console.log('products')
         console.log(products)
-        const listProducts = [products, ...inventario]
-        console.log('listProducts')        
-        console.log(listProducts)
-        setInventario(listProducts)
+        //const listProducts = [products, ...inventario]
+        //console.log('listProducts')        
+        console.log(products)
+        setInventario(products)
         setCEAN('');
         setQuant('');
         setDesc('');
