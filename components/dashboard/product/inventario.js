@@ -58,6 +58,13 @@ export default function DasCNPJ() {
         document.getElementById("quant").focus();
         
     };
+
+    const handleDelete = (codigo) => { 
+        const listProducts = inventario.filter((item) => item.codigo != codigo)
+        console.log('listProducts')
+        console.log(listProducts) 
+        setInventario(listProducts)        
+    };
     
     
     const saveInventario = (event) => {
@@ -208,7 +215,7 @@ export default function DasCNPJ() {
                             {(row.total)}
                         </TableCell>                    
                         <TableCell component="th" scope="row">
-                            <DeleteIcon onClick={() => {handleEdit(row.name)}}/>
+                            <DeleteIcon onClick={() => {handleDelete(row.codigo)}}/>
                         </TableCell>
 
                         </TableRow>
