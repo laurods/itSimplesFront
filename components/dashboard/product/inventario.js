@@ -51,10 +51,10 @@ export default function DasCNPJ() {
         console.log(inventario)
         console.log('products')
         console.log(products)
-        const listProducts = [products, ...inventario]
+        const listProducts = [product, ...inventario]
         console.log('listProducts')
         console.log(listProducts) 
-        setInventario(products)
+        setInventario(listProducts)
         setCEAN('');
         setQuant('');
         setDesc('');
