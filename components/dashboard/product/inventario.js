@@ -66,6 +66,11 @@ export default function DasCNPJ() {
         setInventario(listProducts)        
     };
     
+    const onKeyUp = (event) => {
+        if (event.key === 'Enter') {
+          console.log('teclei');
+        }
+      }
     
     const saveInventario = (event) => {
        
@@ -163,7 +168,8 @@ export default function DasCNPJ() {
               label="Preco"
               id="preco" 
               value={preco}
-              onChange={handlePreco}             
+              onChange={handlePreco}
+              onKeyPress={onKeyUp}             
               autoComplete="off"
               variant="standard"
             />
