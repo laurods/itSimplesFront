@@ -26,7 +26,7 @@ export default function DasCNPJ() {
     const mes = dataAtual.getMonth() + 1;
     const ano = dataAtual.getFullYear()
     const [cean, setCEAN] = useState('');
-    const [quant, setCnpjQuant] = useState('');
+    const [quant, setQuant] = useState('');
     const [desc, setDesc] = useState('');    
     const [preco, setPreco] = useState('');
     const [total, setTotal] = useState('');
@@ -62,7 +62,7 @@ export default function DasCNPJ() {
     const handleQUANT = (event) => {        
         const vQuant = (event.target.value);
         const vlrQuant = vQuant.replace(",", ".");  
-        setNF(parseFloat(vlrQuant));
+        setQuant(parseFloat(vlrQuant));
     };
 
     const handleDESC = (event) => {
@@ -72,7 +72,7 @@ export default function DasCNPJ() {
     const handlePreco = (event) => {
         const vPreco = (event.target.value);
         const vlrPreco = vPreco.replace(",", ".");  
-        setNF(parseFloat(vlrPreco));
+        setPreco(parseFloat(vlrPreco));
     };
     const handleTotal = (event) => {
         const vTotal = parseFloat(quant * preco)
@@ -104,7 +104,7 @@ export default function DasCNPJ() {
             
         </Grid>
 
-      <Grid item xs={2}>
+      <Grid item xs={1}>
         <TextField
               margin="normal"
               required
@@ -136,7 +136,7 @@ export default function DasCNPJ() {
             />
             
         </Grid> 
-        <Grid item xs={2}>
+        <Grid item xs={1}>
         <TextField
               margin="normal"
               required
@@ -151,7 +151,7 @@ export default function DasCNPJ() {
               variant="standard"
             />
          </Grid>
-            <Grid item xs={1}>
+            <Grid item xs={2}>
             <TextField
               margin="normal"
               required
