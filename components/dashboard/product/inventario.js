@@ -47,7 +47,7 @@ export default function DasCNPJ() {
             total: parseFloat(quant * preco),
         })
 
-        console.log(listProducts)
+        
         setInventario(listProducts)
         setCEAN('');
         setQuant('');
@@ -56,6 +56,7 @@ export default function DasCNPJ() {
         document.getElementById("quant").focus();
     };
 
+    console.log(listProducts)
     const saveInventario = (event) => {
        
     };
