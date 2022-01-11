@@ -20,86 +20,67 @@ import ViewProductById from './viewProductById'
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { products, setTheProductsFilteredSelected } = useContext(AuthContext); 
-
-    
-    const [cnpjEmitente, setCnpjEmitente] = useState('');
-    const [nf, setNF] = useState('');
+    const { activeCNPJ } = useContext(AuthContext); 
+    const dataAtual = new Date();
+    const dia = dataAtual.getDate();
+    const mes = dataAtual.getMonth() + 1;
+    const ano = dataAtual.getFullYear()
     const [cean, setCEAN] = useState('');
-    const [frete, setFrete] = useState('');
-    const [productsFiltered, setProductsFiltered] = useState([]);
-    const [productsFilteredSelected, setProductsFilteredSelected] = useState([]);
-    const [showViewProductById, setShowViewProductById] = useState(false);
-    console.log(showViewProductById);
+    const [quant, setCnpjQuant] = useState('');
+    const [desc, setDesc] = useState('');    
+    const [preco, setPreco] = useState('');
+    const [total, setTotal] = useState('');
+    const [inventario, setInventario] = useState([]);
+    const listProducts = [];
 
-    const handleEdit = (_id) => {
-        console.log(_id)
-        const oneProduct = productsFiltered.filter(produto => produto._id == _id);
-        console.log(oneProduct);
-        setProductsFilteredSelected(oneProduct)
-        setTheProductsFilteredSelected(oneProduct)
-        setShowViewProductById(true)
-    };
-
-    const calculeFrete = (event) => {
-        if (cnpjEmitente =='' || nf =='' || frete == '') {
-            setCnpjEmitente('');
-            setNF('');
-            return alert('Para Calcular Custo informe CNPJ do fornecedor, NF e FRETE')
-        }
-        const totalProducts = productsFiltered.reduce((sum, product) => { // total dos produtos monofásicos vendidos
-            return sum + parseFloat(product.total);
-          }, 0);
-        const percentualFrete = parseFloat(frete/totalProducts);
-
-        const listProducts = productsFiltered.map((item) => {
-            return {
-                _id : item._id,
-                name: item.name,
-                quant: (parseFloat(item.quant)).toFixed(2),
-                total: (parseFloat(item.total)).toFixed(2),
-                ipi: item.ipi,
-                vDifICMS: item.vDifICMS,
-                vICMSST: item.vICMSST,
-                frete: (parseFloat(item.total * percentualFrete)).toFixed(2),
-                custoTotal: ((parseFloat(item.custoTotal)) + (parseFloat(item.total * percentualFrete))).toFixed(2),
-                custoUnitario: ((parseFloat(item.custoTotal + (item.total * percentualFrete))) / (parseFloat(item.quant))).toFixed(2),
-
-            }
+    const addInventario = (item) => {
+        listProducts.push({
+            cean,
+            cnpjDestinatario: activeCNPJ,
+            cnpjEmitente: 'inventário',
+            custoTotal: total,
+            custoUnitario: preco,
+            movimento:`${mes}@${ano}`,
+            name: desc,
+            nf: `${dia}@${mes}@${ano}`,
+            quant,
+            total,
         })
-        setProductsFiltered(listProducts)
+
+        console.log(listProducts)
+        setInventario(listProducts)
     };
 
-    const handleFrete = (event) => {
-        const vFrete = (event.target.value);
-        const vlrFrete = vFrete.replace(",", ".");
-        setFrete(vlrFrete);
-    };
-
-    const handleNF = (event) => {        
-        if (cnpjEmitente =='') {
-            return alert('Informe o CNPJ do Fornecedor')
-        }
-        setNF(event.target.value);
-        const filterProducts = products.filter(produto => produto.nf == event.target.value);
-        setProductsFiltered(filterProducts);
-    };
-    
-    const handleCNPJ = (event) => {
-        setCnpjEmitente(event.target.value);
-        const filterProducts = products.filter(produto => produto.cnpjEmitente == event.target.value);
-        setProductsFiltered(filterProducts);
+    const saveInventario = (event) => {
+       
     };
 
     const handleCEAN = (event) => {
         setCEAN(event.target.value);
-        const filterProducts = products.filter(produto => produto.cean == event.target.value);
-        setProductsFiltered(filterProducts);
+    };
+
+    const handleQUANT = (event) => {        
+        const vQuant = (event.target.value);
+        const vlrQuant = vQuant.replace(",", ".");  
+        setNF(parseFloat(vlrQuant));
+    };
+
+    const handleDESC = (event) => {
+        setDesc(event.target.value);
+    };
+
+    const handlePreco = (event) => {
+        const vPreco = (event.target.value);
+        const vlrPreco = vPreco.replace(",", ".");  
+        setNF(parseFloat(vlrPreco));
+    };
+    const handleTotal = (event) => {
+        const vTotal = parseFloat(quant * preco)
+        setTotal(vTotal);
     };
 
 
     const handlePrint = (movimento) => {
-        reportByMovimentoAndCNPJ(movimento)
     }
   return (
     <ThemeProvider theme={theme}>
@@ -108,39 +89,6 @@ export default function DasCNPJ() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <Grid item xs={3}>
-        <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 30}}}
-              fullWidth
-              name="cnpj"
-              label="CNPJ"
-              id="cnpj" 
-              value={cnpjEmitente}
-              onChange={handleCNPJ}             
-              autoComplete="off"
-              variant="standard"
-            />
-            
-        </Grid>
-        <Grid item xs={2}>
-        <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 30}}}
-              fullWidth
-              name="nf"
-              label="Nota Fiscal"
-              id="nf" 
-              value={nf}
-              onChange={handleNF}             
-              autoComplete="off"
-              variant="standard"
-            />
-            
-        </Grid>
-        
-        <Grid item xs={3}>
         <TextField
               margin="normal"
               required
@@ -156,34 +104,75 @@ export default function DasCNPJ() {
             />
             
         </Grid>
-        
 
+      <Grid item xs={2}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 30}}}
+              fullWidth
+              name="quant"
+              label="QUANT."
+              id="quant" 
+              value={quant}
+              onChange={handleQUANT}             
+              autoComplete="off"
+              variant="standard"
+            />
+            
+        </Grid>
+        <Grid item xs={4}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 30}}}
+              fullWidth
+              name="desc"
+              label="Descrição"
+              id="desc" 
+              value={desc}
+              onChange={handleDESC}             
+              autoComplete="off"
+              variant="standard"
+            />
+            
+        </Grid> 
         <Grid item xs={2}>
         <TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 30}}}
               fullWidth
-              name="frete"
-              label="Frete"
-              id="frete" 
-              value={frete}
-              onChange={handleFrete}             
+              name="preco"
+              label="Preco"
+              id="preco" 
+              value={preco}
+              onChange={handlePreco}             
               autoComplete="off"
               variant="standard"
             />
          </Grid>
             <Grid item xs={1}>
-                <Box m={2} pt={3}>
-                    <Button variant="contained" onClick={calculeFrete} size="small">
-                        Calcular
-                    </Button>
-                </Box>
+            <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 30}}}
+              fullWidth
+              name="total"
+              label="Total"
+              id="total" 
+              value={total}
+              onChange={handleTotal}             
+              autoComplete="off"
+              variant="standard"
+            />
+         
+                
             </Grid>
             <Grid item xs={1}>
                 <Box m={2} pt={3}>
-                    <Button variant="contained" size="small">
-                        Salvar
+                    <Button onClick = {addInventario} variant="contained" size="small">
+                        Adicionar
                     </Button>
                 </Box>
             </Grid>
@@ -203,18 +192,14 @@ export default function DasCNPJ() {
                         </TableCell>
                         <TableCell>Quant</TableCell>
                         <TableCell>Total</TableCell>
-                        <TableCell>IPI</TableCell>
-                        <TableCell>DIFAL</TableCell>
-                        <TableCell>ICMSST</TableCell>
-                        <TableCell>Frete</TableCell>
                         <TableCell>Custo Total</TableCell>
                         <TableCell>Custo Unitário</TableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {productsFiltered.map((row) => (
+                    {inventario.map((row) => (
                         <TableRow
-                        key={row._id}
+                        key={row.name}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
                         <TableCell component="th" scope="row">
@@ -227,25 +212,13 @@ export default function DasCNPJ() {
                             {(row.total)}
                         </TableCell>
                         <TableCell component="th" scope="row">
-                            {(row.ipi)}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {(row.vDifICMS)}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {(row.vICMSST)}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {(row.frete)}
+                            {(row.custoUnitario)}
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {(row.custoTotal)}
                         </TableCell>                        
                         <TableCell component="th" scope="row">
-                            {(row.custoUnitario)}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            <EditIcon onClick={() => {handleEdit(row._id)}}/>
+                            <EditIcon onClick={() => {handleEdit(row.name)}}/>
                         </TableCell>
 
                         </TableRow>
