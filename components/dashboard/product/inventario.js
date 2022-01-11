@@ -46,13 +46,13 @@ export default function DasCNPJ() {
             quant,
             total: parseFloat(quant * preco),
         };
-        products.Push(product)
+        products.push(product)
         console.log('inventario')
         console.log(inventario)
         console.log('products')
         console.log(products)
-        //const listProducts = [products, ...inventario]
-        //console.log('listProducts') 
+        const listProducts = [products, ...inventario]
+        console.log('listProducts') 
         setInventario(products)
         setCEAN('');
         setQuant('');
