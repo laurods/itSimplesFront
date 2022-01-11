@@ -30,7 +30,15 @@ export default function DasCNPJ() {
     const [quant, setQuant] = useState('');
     const [desc, setDesc] = useState('');    
     const [preco, setPreco] = useState('');
-    const [inventario, setInventario] = useState([]);   
+    const [inventario, setInventario] = useState([]);
+    
+    const listInventario = localStorage.getItem('@dosimples-app/inventario');
+    console.log('listInventario');
+    console.log(listInventario);
+
+    if (listInventario !== null) {
+        setInventario(listInventario)
+     }
     
     const addInventario = () => {
         const product = {
@@ -72,7 +80,8 @@ export default function DasCNPJ() {
         }
       }
     
-    const saveInventario = (event) => {
+    const saveInventario = () => {
+        localStorage.setItem('@dosimples-app/inventario', inventario);
        
     };
 
@@ -177,7 +186,7 @@ export default function DasCNPJ() {
             
             <Grid item xs={1}>
                 <Box m={2} pt={3}>
-                    <Button onClick = {addInventario} variant="contained" size="small">
+                    <Button onClick = {saveInventario} variant="contained" size="small">
                         Salvar
                     </Button>
                 </Box>
