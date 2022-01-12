@@ -35,13 +35,7 @@ export default function DasCNPJ() {
     const listAllProducts = localStorage.getItem('@dosimples-app/allProducts');
     console.log('listAllProducts');
     console.log(listAllProducts);
-    if (listAllProducts !== null) {
-        listAllProducts.map((item) =>{
-            console.log(item);
-        })
-    }else{
-        listAllProducts = [];
-    }
+    
     
     const addInventario = () => {
         const product = {
@@ -84,10 +78,16 @@ export default function DasCNPJ() {
       }
     
     const saveInventario = () => {
-        const allProducts = [...inventario, ...listAllProducts]
-        console.log('allProducts');
-        console.log(allProducts);
-        localStorage.setItem('@dosimples-app/allProducts', allProducts);
+        if (listAllProducts !== null) {
+            const allProducts = [...inventario, ...listAllProducts]
+            console.log('allProducts');
+            console.log(allProducts);
+            localStorage.setItem('@dosimples-app/allProducts', allProducts);
+            
+        }else{
+            localStorage.setItem('@dosimples-app/allProducts', [...inventario]);
+        }
+        
        
     };
 
