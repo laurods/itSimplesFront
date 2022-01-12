@@ -35,6 +35,11 @@ export default function DasCNPJ() {
     const listAllProducts = localStorage.getItem('@dosimples-app/allProducts');
     console.log('listAllProducts');
     console.log(listAllProducts);
+    if (listAllProducts !== null) {
+        listAllProducts.map((item) =>{
+            console.log(item);
+        })
+    }
     
     const addInventario = () => {
         const product = {
