@@ -32,13 +32,9 @@ export default function DasCNPJ() {
     const [preco, setPreco] = useState('');
     const [inventario, setInventario] = useState([]);
     
-    const listInventario = localStorage.getItem('@dosimples-app/inventario');
-    console.log('listInventario');
-    console.log(listInventario);
-
-    if (listInventario !== null) {
-        setInventario(listInventario)
-     }
+    const listAllProducts = localStorage.getItem('@dosimples-app/allProducts');
+    console.log('listAllProducts');
+    console.log(listAllProducts);
     
     const addInventario = () => {
         const product = {
@@ -81,7 +77,8 @@ export default function DasCNPJ() {
       }
     
     const saveInventario = () => {
-        localStorage.setItem('@dosimples-app/inventario', inventario);
+        const allProducts = [...inventario, listAllProducts]
+        localStorage.setItem('@dosimples-app/allProducts', allProducts);
        
     };
 
