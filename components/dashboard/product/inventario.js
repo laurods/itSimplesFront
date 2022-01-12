@@ -82,7 +82,7 @@ export default function DasCNPJ() {
       }
     
     const saveInventario = () => {
-        const allProducts = [...inventario, listAllProducts]
+        const allProducts = [...inventario, ...listAllProducts]
         console.log('allProducts');
         console.log(allProducts);
         localStorage.setItem('@dosimples-app/allProducts', allProducts);
