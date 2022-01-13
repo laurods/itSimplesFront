@@ -78,12 +78,17 @@ const handleChangeYear = (event) => {
         setValor('');
         setQuantidade('');
         setIsAlertSave(true)
+        setTimeout(() => {
+          setIsAlertSave(false)
+        }, 1000);
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Container>      
       <Box sx={{ flexGrow: 1, mt: 2 }}>
+      {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
+      {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
       <Grid>
         <Grid item xs={8}>
           {/* datas */}
@@ -163,6 +168,22 @@ const handleChangeYear = (event) => {
             />
           
         </Grid>
+        <Grid item xs={12}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              id="descricao"
+              label="Descrição"
+              name="descricao"
+              value={descricao}
+              onChange={handleChangeDescricao}
+              autoComplete="off"
+              variant="standard"
+            />  
+
+        </Grid>
         <Grid item xs={6}>
           <TextField
               margin="normal"
@@ -181,23 +202,7 @@ const handleChangeYear = (event) => {
                
         </Grid>                      
         
-      </Grid>    
-      {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
-      {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
-            <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              id="descricao"
-              label="Descrição"
-              name="descricao"
-              value={descricao}
-              onChange={handleChangeDescricao}
-              autoComplete="off"
-              variant="standard"
-            />     
-
+      </Grid>
       </Box>      
        
       </Container>
