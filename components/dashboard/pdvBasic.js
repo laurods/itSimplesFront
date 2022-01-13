@@ -90,7 +90,7 @@ const handleChangeYear = (event) => {
       {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
       {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
       <Grid container spacing={2}>        
-        <Grid item xs={4} md={4}>
+        <Grid item xs={6} md={6}>
           {/* datas */}
           <TextField              
               id="dia"
@@ -151,7 +151,7 @@ const handleChangeYear = (event) => {
       </Grid>
 
       <Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} md={6}>
         <TextField
               margin="normal"
               required
@@ -168,23 +168,8 @@ const handleChangeYear = (event) => {
             />
           
         </Grid>
-        <Grid item xs={12}>
-        <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              id="descricao"
-              label="Descrição"
-              name="descricao"
-              value={descricao}
-              onChange={handleChangeDescricao}
-              autoComplete="off"
-              variant="standard"
-            />  
 
-        </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} md={6}>
           <TextField
               margin="normal"
               required
@@ -200,7 +185,24 @@ const handleChangeYear = (event) => {
               variant="standard"
             />
                
-        </Grid>                      
+        </Grid>   
+        <Grid item xs={12} md={12}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              id="descricao"
+              label="Descrição"
+              name="descricao"
+              value={descricao}
+              onChange={handleChangeDescricao}
+              autoComplete="off"
+              variant="standard"
+            />  
+
+        </Grid>
+                           
         
       </Grid>
       </Box>      
