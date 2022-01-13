@@ -114,6 +114,11 @@ export function AuthProvider({ children }) {
 
     }
 
+    const telaCheia = () => {        
+        const elem = document.fullscreenElement;
+        element.requestFullscreen()
+    }
+
 
     return (
         <AuthContext.Provider value={{ 
@@ -151,7 +156,8 @@ export function AuthProvider({ children }) {
             setAll,
             setProducts,
             setTheProductsFilteredSelected,
-            sair     
+            sair,
+            telaCheia,     
             
              }}>
             {children}

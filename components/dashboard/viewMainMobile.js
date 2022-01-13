@@ -13,7 +13,7 @@ import Grid from '@mui/material/Grid';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../contexts/AuthContext';
-import Saldos from './viewSaldo';
+import ViewSaldos from './viewSaldo';
 
 const theme = createTheme();
 
@@ -24,7 +24,7 @@ export default function ViewMainMobile() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Saldos />    
+          <ViewSaldos />    
         </Grid>            
         
       </Grid>

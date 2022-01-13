@@ -12,6 +12,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 export default function TopDashboard() {
     const { userEmail } = useContext(AuthContext);
+    
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">

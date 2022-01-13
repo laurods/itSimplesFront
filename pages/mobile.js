@@ -20,7 +20,8 @@ export default function Dashboard() {
        setDiario,
        setSaldos,
        setAll, 
-       isAuthenticated
+       isAuthenticated,
+       telaCheia,
        } = useContext(AuthContext);
      
     useEffect(() => {
@@ -50,7 +51,8 @@ export default function Dashboard() {
         setMensal(mensal)
         setDiario(diario)
         setSaldos(saldos)
-        setAll(all)               
+        setAll(all)
+        telaCheia()               
       }
       loadAll();
     }, []);
