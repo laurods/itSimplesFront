@@ -1,19 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import PrintIcon from '@material-ui/icons/Print';
+import React from 'react';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AuthContext } from '../../contexts/AuthContext';
-import ViewSaldos from './viewSaldo';
+import ViewFinanceiroSaldo from './viewFinanceiroSaldo';
+import ViewFinanceiroDiario from './viewFinanceiroDiario';
 
 const theme = createTheme();
 
@@ -23,9 +13,13 @@ export default function ViewMainMobile() {
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <ViewSaldos />    
-        </Grid>            
+        <Grid item xs={12} md={12}>
+          <ViewFinanceiroSaldo />    
+        </Grid>
+
+        <Grid item xs={12} md={12}>
+          <ViewFinanceiroDiario />    
+        </Grid>             
         
       </Grid>
     </Box>
