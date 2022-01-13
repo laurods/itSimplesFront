@@ -16,7 +16,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { saldos } = useContext(AuthContext);    
+    const { diario } = useContext(AuthContext);    
     
     const handlePrint = (movimento) => {
         reportByMovimentoAndCNPJ(movimento)
@@ -29,12 +29,12 @@ export default function DasCNPJ() {
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell><PrintIcon onClick={() => { handlePrint(row.movimento) }}/></TableCell>
+              <TableCell>Dia</TableCell>
               <TableCell>Valor</TableCell>
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {saldos.map((row) => (
+            {diario.map((row) => (
               <TableRow
                 key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
