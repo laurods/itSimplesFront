@@ -11,7 +11,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 
 export default function TopDashboard() {
-    const { userEmail } = useContext(AuthContext);
+    const { userEmail, telaCheia } = useContext(AuthContext);
     
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -24,7 +24,7 @@ export default function TopDashboard() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <AccountBalanceWalletIcon />
+            <AccountBalanceWalletIcon onClick={telaCheia}/>
 
           </IconButton>                  
           <Typography variant="subtitle1" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
