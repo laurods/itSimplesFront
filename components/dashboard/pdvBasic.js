@@ -89,9 +89,8 @@ const handleChangeYear = (event) => {
       <Box sx={{ flexGrow: 1, mt: 2 }}>
       {isAlert && <Alert severity="warning" onClose={() => {setIsAlert(false)}}>Todos os campos devem ser preenchidos!</Alert>}
       {isAlertSave && <Alert severity="success" onClose={() => {setIsAlertSave(false)}}>Salvo com Sucesso!</Alert>}
-      <Grid item xs={12}>
-        
-        <Grid item xs={6}>
+      <Grid container spacing={2}>        
+        <Grid item xs={4} md={4}>
           {/* datas */}
           <TextField              
               id="dia"
@@ -137,7 +136,7 @@ const handleChangeYear = (event) => {
             />
             
         </Grid>
-        <Grid item xs={6} sx={{ mt: 2 }}>
+        <Grid item xs={6} md={6} >
         <Button
               type="submit"
               variant="contained"
