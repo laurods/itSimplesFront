@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import { parseCookies } from 'nookies';
 import Login from '../components/login/login.js'
 import TopMobile from '../components/dashboard/topMobile';
-import ViewMain from '../components/dashboard/viewMainBasic';
+import ViewMainMobile from '../components/dashboard/viewMainMobile';
 import { setRandomFallback } from 'bcryptjs';
 
 
@@ -59,7 +59,7 @@ export default function Dashboard() {
       <>
       {!isAuthenticated && <Login />}
       {isAuthenticated && <TopMobile />}
-      {isAuthenticated && <ViewMain />}  
+      {isAuthenticated && <ViewMainMobile />}  
       </>
     );
     

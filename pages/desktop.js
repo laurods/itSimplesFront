@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import { parseCookies } from 'nookies';
 import Login from '../components/login/login.js'
 import Top from '../components/dashboard/top.js';
-import ContentMainDesktop from '../components/dashboard/contentMainDesktop';
+import ViewMainDesktop from '../components/dashboard/viewMainDesktop';
 
 export default function Dashboard() {
      const {
@@ -43,7 +43,7 @@ export default function Dashboard() {
       <>
       {!isAuthenticated && <Login />}
       {isAuthenticated && <Top />}
-      {isAuthenticated && <ContentMainDesktop />}       
+      {isAuthenticated && <ViewMainDesktop />}       
       </>
     );
     
