@@ -150,7 +150,7 @@ const handleChangeYear = (event) => {
         
       </Grid>
 
-      <Grid>
+      <Grid container spacing={2}>
         <Grid item xs={6} md={6}>
         <TextField
               margin="normal"
