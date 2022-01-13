@@ -14,7 +14,7 @@ export default function SelectMenu() {
   };
   
   const listMenu = [
-    {id: 'mobile', name: 'Principal'}, 
+    {id: '../../mobile', name: 'Principal'}, 
     {id: '/tela/pdv/basic', name: 'Vendas'}, 
     {id: 30, name: 'Financeiro'}, 
     {id: 40, name:'Resultado'},
