@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect} from 'react';
-import { setCookie, parseCookies } from 'nookies';
+import { setCookie, parseCookies, destroyCookie } from 'nookies';
 import Router from 'next/router';
 //import api from '/services/api';
 import axios from 'axios';
@@ -107,7 +107,12 @@ export function AuthProvider({ children }) {
             query: { movimento, cnpj: reportCNPJ =='' ? activeCNPJ : reportCNPJ},
 
         })
-}
+    }
+    const sair = () => {        
+        destroyCookie(null, 'idUser');
+        destroyCookie(null, 'itToken');
+
+    }
 
 
     return (
@@ -145,7 +150,8 @@ export function AuthProvider({ children }) {
             setSaldos,
             setAll,
             setProducts,
-            setTheProductsFilteredSelected,      
+            setTheProductsFilteredSelected,
+            sair     
             
              }}>
             {children}

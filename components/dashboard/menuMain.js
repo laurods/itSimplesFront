@@ -21,6 +21,7 @@ export default function SelectMenu() {
       {id: '/tela/arquivo/uploadXLS', name:'Arquivo Vendas'},
       {id: '/tela/produto/compra', name:'Entrada Produtos'},
       {id: '/tela/usuario/perfil', name:'Perfil'},
+      {id: '/tela/produto/inventario', name: 'Inventário'},
       {id: '/tela/uteis/sair', name:'Sair'}
     ]
   return (    

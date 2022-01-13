@@ -32,7 +32,7 @@ export default function TopDashboard() {
           <Typography variant="h6">          
           <SelectMenu />
           </Typography>
-          <Button color="inherit">Sair</Button>
+          
         </Toolbar>
       </AppBar>
     </Box>
