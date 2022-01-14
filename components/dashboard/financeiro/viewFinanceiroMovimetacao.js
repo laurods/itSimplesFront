@@ -33,9 +33,14 @@ export default function DasCNPJ() {
     setYear(event.target.value);
   };
 
-  const handleFilter = async (event) => {
+  const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
+       console.log('all')
+       console.log(all)
+       console.log('dia')
+       console.log(dia)
        const allFiltered = all.filter((item) => item.day == dia)
+       console.log('allFiltered')
         console.log(allFiltered)
   }
   return (
