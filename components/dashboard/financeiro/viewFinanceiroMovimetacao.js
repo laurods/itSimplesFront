@@ -34,7 +34,9 @@ export default function DasCNPJ() {
   };
 
   const handleFilter = async (event) => {
-        console.log('filtrar')
+       const dia = `${day}/${month}/${year}`;
+       const allFiltered = all.filter((item) => item.day == dia)
+        console.log(allFiltered)
   }
   return (
     <ThemeProvider theme={theme}>
@@ -93,7 +95,7 @@ export default function DasCNPJ() {
               size="large"
               onClick={handleFilter}              
             >
-              Salvar
+              Atualizar
             </Button>
         </Grid>                    
         
