@@ -31,7 +31,7 @@ export default function FormLancamento() {
     const [isAlertSave, setIsAlertSave] = useState(false);
 
     const handleChangeTipo = (event) => {
-        setQuantidade(event.target.value);
+      setTipo(event.target.value);
     };
 
     const handleChangeDescricao = (event) => {
