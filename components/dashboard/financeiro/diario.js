@@ -76,7 +76,7 @@ const handleChangeYear = (event) => {
         const values = {
             quantidade: 0,
             descricao,
-            valor: vlr
+            valor: vlr,
             tipo,
             conta: 'caixa', 
             day: `${day}/${month}/${year}`,
