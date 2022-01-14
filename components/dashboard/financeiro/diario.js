@@ -64,6 +64,10 @@ const handleChangeYear = (event) => {
         return
     }
     
+    if (tipo !='' && tipo == 'saida'){
+      const vlr = (parseFloat(valor.replace(",", "."))) * (-1)
+      setValor(vlr)
+  }
 
         const values = {
             quantidade: 0,
@@ -84,7 +88,7 @@ const handleChangeYear = (event) => {
         setIsAlertSave(true)
         setTimeout(() => {
           setIsAlertSave(false)
-        }, 500);
+        }, 1000);
   };
 
   return (

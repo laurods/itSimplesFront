@@ -80,7 +80,7 @@ const handleChangeYear = (event) => {
         setIsAlertSave(true)
         setTimeout(() => {
           setIsAlertSave(false)
-        }, 500);
+        }, 1000);
   };
 
   return (
