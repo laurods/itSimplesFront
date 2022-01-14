@@ -64,16 +64,19 @@ const handleChangeYear = (event) => {
         return
     }
     
+    let vlr = 0;
     if (tipo == 'saida'){
-      const vlr = (parseFloat(valor.replace(",", "."))) * (-1);
-      console.log(vlr)
-      setValor(vlr)
-  }
+      vlr = (parseFloat(valor.replace(",", "."))) * (-1);
+            
+    }else{
+      vlr = (parseFloat(valor.replace(",", ".")));
+    }
 
+    console.log(vlr)
         const values = {
             quantidade: 0,
             descricao,
-            valor,
+            valor: vlr
             tipo,
             conta: 'caixa', 
             day: `${day}/${month}/${year}`,
