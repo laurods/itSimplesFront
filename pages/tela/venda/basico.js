@@ -1,13 +1,13 @@
 import React from 'react';
 import TopMobile from '../../../components/dashboard/topMobile';
-import FinanceiroDiario from '../../../components/dashboard/financeiro/diario';
+import VendaBasico from '../../../components/dashboard/venda/basico';
 
 export default function Diario() {
   
     return (
       <>
       <TopMobile />
-      <FinanceiroDiario />
+      <VendaBasico />
       </>
     );
     

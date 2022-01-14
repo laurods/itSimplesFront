@@ -15,7 +15,7 @@ export default function MenuMobile() {
   
   const listMenu = [
     {id: '../../mobile', name: 'Principal'}, 
-    {id: '/tela/pdv/basic', name: 'Vendas'}, 
+    {id: '/tela/venda/basico', name: 'Vendas'}, 
     {id: '/tela/financeiro/diario', name: 'Financeiro'}, 
     {id: '/tela/produto/movimento', name:'Estoque'},
     {id: '/tela/sair', name: 'Sair'}
