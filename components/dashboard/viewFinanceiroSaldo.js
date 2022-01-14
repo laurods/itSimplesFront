@@ -30,7 +30,7 @@ export default function DasCNPJ() {
           <TableHead>
             <TableRow>
               <TableCell><PrintIcon onClick={() => { handlePrint(row.movimento) }}/></TableCell>
-              <TableCell>Valor</TableCell>
+              <TableCell>Saldo Atual</TableCell>
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
