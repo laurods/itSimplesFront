@@ -5,16 +5,12 @@ import { parseCookies } from 'nookies';
 import Login from '../components/login/login.js'
 import TopMobile from '../components/dashboard/topMobile';
 import ViewMainMobile from '../components/dashboard/viewMainMobile';
-import { setRandomFallback } from 'bcryptjs';
 
 
 export default function Dashboard() {
      const {
        setCNPJsByUsers, 
-       setActiveCNPJ, 
-       setMovimentosCNPJ, 
-       setEntradasByCNPJ, 
-       setDasByCNPJ,
+       setActiveCNPJ,
        setAnual,
        setMensal,
        setDiario,
@@ -28,15 +24,7 @@ export default function Dashboard() {
       const loadAll = async() =>{
         const cookies = parseCookies()
         const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
-        const listClients = clients.data;
-        const movimentosByCNPJ = await axios.post('/api/movimentosbycnpj', { cnpj: listClients[0].cnpj });
-        const listMovimentos = movimentosByCNPJ.data;
-        const entradasByCNPJ = await axios.post('/api/entradasbycnpj', { cnpj: listClients[0].cnpj });        
-        const listEntradasByCNPJ = entradasByCNPJ.data;
-        const vendasByCNPJ = await axios.post('/api/salesBycnpj', { cnpj: listClients[0].cnpj });              
-        const listVendasByCNPJ = vendasByCNPJ.data;
-        const dasByCNPJ = await axios.post('/api/dasBycnpj', { cnpj: listClients[0].cnpj });              
-        const listDasByCNPJ = dasByCNPJ.data;
+        const listClients = clients.data;        
         const financeiro = await axios.post('/api/getFinanceiro', { cnpj: listClients[0].cnpj });              
         const listFinanceiro = financeiro.data;
         console.log('objFinanceiro');
@@ -44,9 +32,6 @@ export default function Dashboard() {
         const {anual, diario, mensal, saldos, all } = listFinanceiro;         
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
-        setMovimentosCNPJ(listMovimentos)
-        setEntradasByCNPJ(listEntradasByCNPJ)
-        setDasByCNPJ(listDasByCNPJ)
         setAnual(anual)
         setMensal(mensal)
         setDiario(diario)
