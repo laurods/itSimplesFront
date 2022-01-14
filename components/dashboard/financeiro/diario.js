@@ -10,6 +10,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Alert from '@mui/material/Alert';
 import Grid from '@mui/material/Grid';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import Radio from '@mui/material/Radio';
 
 import axios from 'axios';
 
@@ -152,20 +157,11 @@ const handleChangeYear = (event) => {
 
       <Grid container spacing={2}>
         <Grid item xs={6} md={6}>
-        <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              name="quantidade"
-              label="Quantidade"
-              type="number"
-              id="quantidade" 
-              value={quantidade}
-              onChange={handleChangeQuantidade}             
-              autoComplete="off"
-              variant="standard"
-            />
+        <FormLabel component="legend">Tipo</FormLabel>
+        <RadioGroup row aria-label="tipo" name="row-radio-buttons-group">
+          <FormControlLabel value="saida" control={<Radio />} label="Saida" />
+          <FormControlLabel value="entrada" control={<Radio />} label="Entrada" />          
+        </RadioGroup>
           
         </Grid>
 
