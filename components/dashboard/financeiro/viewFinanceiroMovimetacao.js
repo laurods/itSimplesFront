@@ -20,6 +20,7 @@ export default function DasCNPJ() {
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
+    const [filtered, setFiltered] = useState([]);
     
     const handleChangeDay = (event) => {
         setDay(event.target.value);
@@ -42,6 +43,7 @@ export default function DasCNPJ() {
        const allFiltered = all.filter((item) => item.day == dia)
        console.log('allFiltered')
         console.log(allFiltered)
+        setFiltered(allFiltered)
   }
   return (
     <ThemeProvider theme={theme}>
@@ -116,7 +118,7 @@ export default function DasCNPJ() {
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {all.map((row) => (
+            {filtered.map((row) => (
               <TableRow
                 key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
