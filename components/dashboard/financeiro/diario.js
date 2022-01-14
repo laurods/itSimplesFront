@@ -59,20 +59,21 @@ const handleChangeYear = (event) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (descricao =='' || valor == ''){
+    if (tipo =='' || descricao =='' || valor == ''){
         setIsAlert(true)
         return
     }
     
-    if (tipo !='' && tipo == 'saida'){
-      const vlr = (parseFloat(valor.replace(",", "."))) * (-1)
+    if (tipo == 'saida'){
+      const vlr = (parseFloat(valor.replace(",", "."))) * (-1);
+      console.log(vlr)
       setValor(vlr)
   }
 
         const values = {
             quantidade: 0,
             descricao,
-            valor : parseFloat(valor.replace(",", ".")),
+            valor,
             tipo,
             conta: 'caixa', 
             day: `${day}/${month}/${year}`,
