@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ViewFinanceiroSaldo from './viewFinanceiroSaldo';
 import ViewFinanceiroDiario from './viewFinanceiroDiario';
+import ViewFinanceiroMovimentacao from './../dashboard/financeiro/viewFinanceiroMovimetacao';
 
 const theme = createTheme();
 
@@ -19,6 +20,10 @@ export default function ViewMainMobile() {
 
         <Grid item xs={12} md={12}>
           <ViewFinanceiroDiario />    
+        </Grid>
+
+        <Grid item xs={12} md={12}>
+          <ViewFinanceiroMovimentacao />    
         </Grid>             
         
       </Grid>
