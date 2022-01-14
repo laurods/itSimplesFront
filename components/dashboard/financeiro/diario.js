@@ -80,7 +80,7 @@ const handleChangeYear = (event) => {
         
         setDescricao('');
         setValor('');
-        setQuantidade('');
+        setTipo('');
         setIsAlertSave(true)
         setTimeout(() => {
           setIsAlertSave(false)
