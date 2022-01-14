@@ -24,13 +24,13 @@ export default function FormLancamento() {
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
-    const [quantidade, setQuantidade] = useState('');
+    const [tipo, setTipo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [valor, setValor] = useState('');
     const [isAlert, setIsAlert] = useState(false);
     const [isAlertSave, setIsAlertSave] = useState(false);
 
-    const handleChangeQuantidade = (event) => {
+    const handleChangeTipo = (event) => {
         setQuantidade(event.target.value);
     };
 
@@ -66,10 +66,10 @@ const handleChangeYear = (event) => {
     
 
         const values = {
-            quantidade: parseFloat(quantidade.replace(",", ".")),
+            quantidade: 0,
             descricao,
             valor : parseFloat(valor.replace(",", ".")),
-            tipo: 'entrada',
+            tipo,
             conta: 'caixa', 
             day: `${day}/${month}/${year}`,
             month: `${month}@${year}`,
@@ -77,7 +77,7 @@ const handleChangeYear = (event) => {
             cnpj: activeCNPJ,            
             }        
         console.log(values);
-        await axios.post('/api/addFinanceiro', { values })
+        
         setDescricao('');
         setValor('');
         setQuantidade('');
@@ -157,7 +157,12 @@ const handleChangeYear = (event) => {
       <Grid container spacing={2}>
         <Grid item xs={6} md={6}>
         <FormLabel component="legend">Tipo</FormLabel>
-        <RadioGroup row aria-label="tipo" name="row-radio-buttons-group">
+        <RadioGroup 
+        row aria-label="tipo" 
+        name="row-radio-buttons-group"
+        value={tipo}
+        onChange={handleChangeTipo}
+        >
           <FormControlLabel value="saida" control={<Radio />} label="Saida" />
           <FormControlLabel value="entrada" control={<Radio />} label="Entrada" />          
         </RadioGroup>
