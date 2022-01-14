@@ -62,6 +62,8 @@ const handleChangeYear = (event) => {
     if (tipo =='' || descricao =='' || valor == ''){
         setIsAlert(true)
         return
+    }else{
+      setIsAlert(false)
     }
     
     let vlr = 0;
@@ -85,7 +87,7 @@ const handleChangeYear = (event) => {
             cnpj: activeCNPJ,            
             }        
         console.log(values);
-        
+        await axios.post('/api/addFinanceiro', { values })
         setDescricao('');
         setValor('');
         setTipo('');
