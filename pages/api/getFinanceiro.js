@@ -17,7 +17,8 @@ const client = new MongoClient(url);
          const diario = await financeiro.aggregate(
             [
                 {$match: {
-                    cnpj: `${cnpj}`
+                    cnpj: `${cnpj}`,
+                    categoria:'Venda'
                 }
             }, {$group: {
                 _id: '$day',

@@ -36,13 +36,7 @@ export default function DasCNPJ() {
 
   const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
-       console.log('all')
-       console.log(all)
-       console.log('dia')
-       console.log(dia)
        const allFiltered = all.filter((item) => item.day == dia)
-       console.log('allFiltered')
-        console.log(allFiltered)
         setFiltered(allFiltered)
   }
   return (
@@ -114,7 +108,7 @@ export default function DasCNPJ() {
           <TableHead>
             <TableRow>
               <TableCell>Descricao</TableCell>
-              <TableCell>Valor</TableCell>
+              <TableCell>Movimento Dia</TableCell>
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
