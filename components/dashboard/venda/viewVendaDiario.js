@@ -15,12 +15,14 @@ import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { all } = useContext(AuthContext);
+    const { all, diario } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [filtered, setFiltered] = useState([]);
+    const [vendaDiaFiltered, setVendaDiaFiltered] = useState([]);
+    
     
     const handleChangeDay = (event) => {
         setDay(event.target.value);
@@ -37,12 +39,15 @@ export default function DasCNPJ() {
   const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
        const allFiltered = all.filter((item) => item.day == dia)
+       const diarioFiltered = diario.filter((item) => item.day == dia)
+       console.log(diarioFiltered);
         setFiltered(allFiltered)
+        setVendaDiaFiltered(diarioFiltered)
   }
   return (
     <ThemeProvider theme={theme}>
         <Grid container spacing={2}>        
-        <Grid item xs={6} md={6}>
+        <Grid item xs={7} md={7}>
           {/* datas */}
           <TextField              
               id="dia"
@@ -86,9 +91,21 @@ export default function DasCNPJ() {
                 maxWidth: '35%',
               }}
             />
+            <TextField              
+              id="venda"
+              label="venda"
+              name="venda"
+              type="venda"
+              autoComplete="off"
+              variant="outlined"
+              size="small"
+              sx={{                
+                maxWidth: '35%',
+              }}
+            />
             
         </Grid>
-        <Grid item xs={6} md={6} >
+        <Grid item xs={5} md={5} >
         <Button
               type="submit"
               variant="contained"
@@ -96,7 +113,7 @@ export default function DasCNPJ() {
               size="large"
               onClick={handleFilter}              
             >
-              Financeiro
+              Vendas
             </Button>
         </Grid>                    
         
