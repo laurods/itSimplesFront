@@ -39,7 +39,7 @@ export default function DasCNPJ() {
   const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
        const allFiltered = all.filter((item) => item.day == dia)
-       const diarioFiltered = diario.filter((item) => item.day == dia)
+       const diarioFiltered = diario.filter((item) => item._id == dia)
        console.log(diarioFiltered);
         setFiltered(allFiltered)
         setVendaDiaFiltered(diarioFiltered)
@@ -47,7 +47,7 @@ export default function DasCNPJ() {
   return (
     <ThemeProvider theme={theme}>
         <Grid container spacing={2}>        
-        <Grid item xs={7} md={7}>
+        <Grid item xs={7} md={8}>
           {/* datas */}
           <TextField              
               id="dia"
@@ -105,7 +105,7 @@ export default function DasCNPJ() {
             />
             
         </Grid>
-        <Grid item xs={5} md={5} >
+        <Grid item xs={4} md={4} >
         <Button
               type="submit"
               variant="contained"
