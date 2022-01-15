@@ -38,7 +38,7 @@ export default function DasCNPJ() {
 
   const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
-       const allFiltered = all.filter((item) => item.day == dia)
+       const allFiltered = all.filter((item) => item.day == dia && item.categoria =='Venda')
        const diarioFiltered = diario.filter((item) => item._id == dia)
        console.log(diarioFiltered);
         setFiltered(allFiltered)
@@ -47,7 +47,7 @@ export default function DasCNPJ() {
   return (
     <ThemeProvider theme={theme}>
         <Grid container spacing={2}>        
-        <Grid item xs={7} md={8}>
+        <Grid item xs={6} md={6}>
           {/* datas */}
           <TextField              
               id="dia"
@@ -91,21 +91,10 @@ export default function DasCNPJ() {
                 maxWidth: '35%',
               }}
             />
-            <TextField              
-              id="venda"
-              label="venda"
-              name="venda"
-              type="venda"
-              autoComplete="off"
-              variant="outlined"
-              size="small"
-              sx={{                
-                maxWidth: '35%',
-              }}
-            />
+            
             
         </Grid>
-        <Grid item xs={4} md={4} >
+        <Grid item xs={6} md={6} >
         <Button
               type="submit"
               variant="contained"
@@ -124,8 +113,9 @@ export default function DasCNPJ() {
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Descricao</TableCell>
-              <TableCell>Movimento Dia</TableCell>
+              <TableCell>Vendas do dia R$ `${vendaDiaFiltered[0].vlrTotal}`</TableCell>
+              <TableCell>Quant</TableCell>
+              <TableCell>Valor</TableCell>
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
@@ -136,6 +126,9 @@ export default function DasCNPJ() {
               >
                 <TableCell component="th" scope="row">
                   {row.descricao}
+                </TableCell>
+                <TableCell component="th" scope="row">
+                  {row.quantidade}
                 </TableCell>
                 <TableCell component="th" scope="row">
                   {(row.valor).toFixed(2)}
