@@ -30,7 +30,7 @@ export default function DasCNPJ() {
           <TableHead>
             <TableRow>
               <TableCell>Dia</TableCell>
-              <TableCell>Saldo Diario</TableCell>
+              <TableCell>Vendas</TableCell>
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>

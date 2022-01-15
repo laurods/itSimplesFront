@@ -15,13 +15,12 @@ import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { all, diario } = useContext(AuthContext);
+    const { all } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [filtered, setFiltered] = useState([]);
-    const [vendaDiaFiltered, setVendaDiaFiltered] = useState([]);
     
     
     const handleChangeDay = (event) => {
@@ -38,11 +37,9 @@ export default function DasCNPJ() {
 
   const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
-       const allFiltered = all.filter((item) => item.day == dia && item.categoria =='Venda')
-       const diarioFiltered = diario.filter((item) => item._id == dia)
-       console.log(diarioFiltered);
+       const allFiltered = all.filter((item) => item.day == dia && item.categoria =='Venda')       
         setFiltered(allFiltered)
-        setVendaDiaFiltered(diarioFiltered)
+        
   }
   return (
     <ThemeProvider theme={theme}>

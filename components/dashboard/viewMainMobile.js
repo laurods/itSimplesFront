@@ -20,12 +20,14 @@ export default function ViewMainMobile() {
         </Grid>
 
         <Grid item xs={12} md={12}>
+          <ViewFinanceiroDiario />    
+        </Grid>
+        
+        <Grid item xs={12} md={12}>
           <ViewVendaDiario />    
         </Grid>
 
-        <Grid item xs={12} md={12}>
-          <ViewFinanceiroDiario />    
-        </Grid>
+        
 
         <Grid item xs={12} md={12}>
           <ViewFinanceiroMovimentacao />    
