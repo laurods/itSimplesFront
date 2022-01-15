@@ -113,7 +113,7 @@ export default function DasCNPJ() {
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Vendas do dia R$ `${vendaDiaFiltered[0].vlrTotal}`</TableCell>
+              <TableCell>Descricao</TableCell>
               <TableCell>Quant</TableCell>
               <TableCell>Valor</TableCell>
             </TableRow>
