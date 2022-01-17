@@ -45,6 +45,10 @@ export default function DasCNPJ() {
        setFinanceiorFiltered(allFinanceiroFiltered)
        setVendaFiltered(allVendaFiltered)
   }
+
+  const deleteFinanceiro = (id) => {
+      console.log(id);
+  }
   return (
     <ThemeProvider theme={theme}>
         <Grid container spacing={2}>
@@ -165,7 +169,11 @@ export default function DasCNPJ() {
                   {(row.valor).toFixed(2)}
                 </TableCell>
                 <TableCell component="th" scope="row">
-                  <Button variant="outlined" endIcon={<DeleteIcon />}></Button>
+                  <Button 
+                  variant="outlined" 
+                  endIcon={<DeleteIcon />}
+                  onClick={() => deleteFinanceiro(row._id)}
+                  ></Button>
               </TableCell>
 
               </TableRow>
