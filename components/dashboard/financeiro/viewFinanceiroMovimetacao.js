@@ -106,8 +106,8 @@ export default function DasCNPJ() {
         </Grid>                    
         
       </Grid>    
-      {!showTables && <div>
-      <TableContainer component={Paper} sx={{ mt: 2 }}>
+      
+      {!showTables && <TableContainer component={Paper} sx={{ mt: 2 }}>
       
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           
@@ -135,7 +135,7 @@ export default function DasCNPJ() {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer>}
 
 
       <TableContainer component={Paper} sx={{ mt: 2 }}>
@@ -166,7 +166,7 @@ export default function DasCNPJ() {
         </TableBody>
       </Table>
     </TableContainer>
-    </div>}
+    
     </ThemeProvider>
   );
 }
