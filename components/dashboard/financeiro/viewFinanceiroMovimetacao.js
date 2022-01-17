@@ -116,9 +116,9 @@ export default function DasCNPJ() {
           
           <TableHead>            
             <TableRow>              
-              <TableCell>Movimento Dia</TableCell>
+              <TableCell>Financeiro Dia</TableCell>
               <TableCell>
-                <Button variant="contained" endIcon={<SendIcon />}></Button>
+                <Button variant="outlined" endIcon={<SendIcon />}>Lista</Button>
               </TableCell>
             </TableRow>
           </TableHead>
@@ -150,9 +150,6 @@ export default function DasCNPJ() {
         <TableHead>
           <TableRow>
             <TableCell>Venda Dia</TableCell>
-            <TableCell>
-                <Button variant="contained" endIcon={<SendIcon />}></Button>
-              </TableCell>
           </TableRow>
         </TableHead>      
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
@@ -166,6 +163,9 @@ export default function DasCNPJ() {
               </TableCell>
               <TableCell component="th" scope="row">
                 {(row.vlrTotal).toFixed(2)}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                  <Button variant="contained" endIcon={<SendIcon />}>Itens</Button>
               </TableCell>
 
             </TableRow>
