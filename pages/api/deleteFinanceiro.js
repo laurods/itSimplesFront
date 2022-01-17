@@ -12,8 +12,7 @@ const client = new MongoClient(url);
         const { id } = req.body;
          await client.connect();         
          const db = client.db(dbName);
-         const financeiro = db.collection("financeiro");
-         financeiro.deleteOne( { "_id" : ObjectId("61e5b1d094726869f4b35aa4") } );
+         db.financeiro.deleteOne( { "_id" : ObjectId("61e5b1d094726869f4b35aa4") } );
 
          res.status(200).json({msg: "ok"});
 
