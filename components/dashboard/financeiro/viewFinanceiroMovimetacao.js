@@ -165,7 +165,7 @@ export default function DasCNPJ() {
                 {(row.vlrTotal).toFixed(2)}
               </TableCell>
               <TableCell component="th" scope="row">
-                  <Button variant="contained" endIcon={<SendIcon />}>Itens</Button>
+                  <Button variant="outlined" endIcon={<SendIcon />}>Itens</Button>
               </TableCell>
 
             </TableRow>
