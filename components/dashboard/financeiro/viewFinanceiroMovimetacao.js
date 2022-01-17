@@ -15,9 +15,8 @@ import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { all, diario } = useContext(AuthContext);
-    const dataAtual = new Date();
-    const [showTables, setShowTables] = useState(false);
+    const { all, diario, mensal } = useContext(AuthContext);
+    const dataAtual = new Date();        
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
@@ -107,7 +106,7 @@ export default function DasCNPJ() {
         
       </Grid>    
       
-      {!showTables && <TableContainer component={Paper} sx={{ mt: 2 }}>
+      <TableContainer component={Paper} sx={{ mt: 2 }}>
       
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           
@@ -135,7 +134,7 @@ export default function DasCNPJ() {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>}
+      </TableContainer>
 
 
       <TableContainer component={Paper} sx={{ mt: 2 }}>
@@ -150,6 +149,35 @@ export default function DasCNPJ() {
         </TableHead>      
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
           {vendaFiltered.map((row) => (
+            <TableRow
+              key={row._id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
+            >
+              <TableCell component="th" scope="row">
+                {row._id}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {(row.vlrTotal).toFixed(2)}
+              </TableCell>
+
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+
+    <TableContainer component={Paper} sx={{ mt: 2 }}>
+      
+      <Table sx={{ minWidth: 200 }} aria-label="simple table">
+      
+        <TableHead>
+          <TableRow>
+            <TableCell>Mês</TableCell>
+            <TableCell>Venda Mês</TableCell>
+          </TableRow>
+        </TableHead>      
+        <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+          {mensal.map((row) => (
             <TableRow
               key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
