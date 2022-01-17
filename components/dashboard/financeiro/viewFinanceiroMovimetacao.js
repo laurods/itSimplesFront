@@ -103,7 +103,36 @@ export default function DasCNPJ() {
             </Button>
         </Grid>                    
         
-      </Grid>    
+      </Grid>
+
+       <TableContainer component={Paper} sx={{ mt: 2 }}>
+      
+      <Table sx={{ minWidth: 200 }} aria-label="simple table">
+      
+        <TableHead>
+          <TableRow>
+            <TableCell>Mês</TableCell>
+            <TableCell>Venda Mês</TableCell>
+          </TableRow>
+        </TableHead>      
+        <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+          {mensal.map((row) => (
+            <TableRow
+              key={row._id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
+            >
+              <TableCell component="th" scope="row">
+                {row._id}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {(row.vlrTotal).toFixed(2)}
+              </TableCell>
+
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>    
       
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
@@ -165,34 +194,7 @@ export default function DasCNPJ() {
       </Table>
     </TableContainer>
 
-    <TableContainer component={Paper} sx={{ mt: 2 }}>
-      
-      <Table sx={{ minWidth: 200 }} aria-label="simple table">
-      
-        <TableHead>
-          <TableRow>
-            <TableCell>Mês</TableCell>
-            <TableCell>Venda Mês</TableCell>
-          </TableRow>
-        </TableHead>      
-        <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-          {mensal.map((row) => (
-            <TableRow
-              key={row._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
-            >
-              <TableCell component="th" scope="row">
-                {row._id}
-              </TableCell>
-              <TableCell component="th" scope="row">
-                {(row.vlrTotal).toFixed(2)}
-              </TableCell>
-
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+   
     
     </ThemeProvider>
   );
