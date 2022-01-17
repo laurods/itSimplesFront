@@ -1,4 +1,5 @@
 const { MongoClient } = require("mongodb");
+const { ObjectId } = require('mongodb')
  
 // Replace the following with your Atlas connection string                                                                                                                                        
 const url = process.env.MONGODB_URI
@@ -13,7 +14,7 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const financeiro = db.collection("financeiro");
-         financeiro.deleteOne( { "_id" : new ObjectId(id) } );
+         financeiro.deleteOne( { "_id" : ObjectId(id) } );
 
          res.status(200).json(id);
 
