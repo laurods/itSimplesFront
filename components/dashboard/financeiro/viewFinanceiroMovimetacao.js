@@ -49,7 +49,7 @@ export default function DasCNPJ() {
 
   const deleteFinanceiro = async (id) => {
       console.log(id);
-      await axios.post('/api/deleteFinanceiro', { id: id })
+      //await axios.post('/api/deleteFinanceiro', { id: id })
   }
   return (
     <ThemeProvider theme={theme}>
