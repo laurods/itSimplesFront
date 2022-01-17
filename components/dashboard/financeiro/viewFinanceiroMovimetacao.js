@@ -115,7 +115,7 @@ export default function DasCNPJ() {
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {financeiorFiltered.map((row) => (
+            {!!financeiorFiltered.map((row) => (
               <TableRow
                 key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
@@ -144,7 +144,7 @@ export default function DasCNPJ() {
           </TableRow>
         </TableHead>
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-          {vendaFiltered.map((row) => (
+          {!!vendaFiltered.map((row) => (
             <TableRow
               key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
