@@ -14,6 +14,7 @@ import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ViewVendaMensal from '../venda/viewVendaMensal'
 import { AuthContext } from '../../../contexts/AuthContext';
+import axios from 'axios';
 
 const theme = createTheme();
 
@@ -48,6 +49,7 @@ export default function DasCNPJ() {
 
   const deleteFinanceiro = (id) => {
       console.log(id);
+      await axios.post('/api/deleteFinanceiro', { id })
   }
   return (
     <ThemeProvider theme={theme}>
