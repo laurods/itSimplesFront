@@ -10,12 +10,13 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ViewVendaMensal from '../venda/viewVendaMensal'
 import { AuthContext } from '../../../contexts/AuthContext';
 
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { all, diario, mensal } = useContext(AuthContext);
+    const { all, diario } = useContext(AuthContext);
     const dataAtual = new Date();        
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -44,7 +45,8 @@ export default function DasCNPJ() {
   }
   return (
     <ThemeProvider theme={theme}>
-        <Grid container spacing={2}>        
+        <Grid container spacing={2}> 
+        <ViewVendaMensal />       
         <Grid item xs={6} md={6}>
           {/* datas */}
           <TextField              
@@ -103,36 +105,7 @@ export default function DasCNPJ() {
             </Button>
         </Grid>                    
         
-      </Grid>
-
-       <TableContainer component={Paper} sx={{ mt: 2 }}>
-      
-      <Table sx={{ minWidth: 200 }} aria-label="simple table">
-      
-        <TableHead>
-          <TableRow>
-            <TableCell>Mês</TableCell>
-            <TableCell>Venda Mês</TableCell>
-          </TableRow>
-        </TableHead>      
-        <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-          {mensal.map((row) => (
-            <TableRow
-              key={row._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
-            >
-              <TableCell component="th" scope="row">
-                {row._id}
-              </TableCell>
-              <TableCell component="th" scope="row">
-                {(row.vlrTotal).toFixed(2)}
-              </TableCell>
-
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>    
+      </Grid>     
       
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
