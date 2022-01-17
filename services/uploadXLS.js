@@ -10,7 +10,8 @@ const handleUpload = (files) => {
   };
   
 const processFile = (uploadedFile) => {  
-  processXLSService.processXLS(uploadedFile.file)
+  //processXLSService.processXLS(uploadedFile.file) processa compras
+  processXLSService.processXLS2(uploadedFile.file)
 };
 
 
