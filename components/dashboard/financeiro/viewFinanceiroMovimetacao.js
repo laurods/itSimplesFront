@@ -41,7 +41,6 @@ export default function DasCNPJ() {
        const allVendaFiltered = diario.filter((item) => item._id == dia)
        setFinanceiorFiltered(allFinanceiroFiltered)
        setVendaFiltered(allVendaFiltered)
-       setShowTables(true)
   }
   return (
     <ThemeProvider theme={theme}>

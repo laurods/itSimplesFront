@@ -32,7 +32,8 @@ const client = new MongoClient(url);
          const mensal = await financeiro.aggregate(
             [
                 {$match: {
-                    cnpj: `${cnpj}`
+                    cnpj: `${cnpj}`,
+                    categoria:'Venda'
                 }
             }, {$group: {
                 _id: '$month',
