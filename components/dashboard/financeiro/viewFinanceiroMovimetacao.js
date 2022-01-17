@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from '@material-ui/icons/Send';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ViewVendaMensal from '../venda/viewVendaMensal'
 import { AuthContext } from '../../../contexts/AuthContext';
