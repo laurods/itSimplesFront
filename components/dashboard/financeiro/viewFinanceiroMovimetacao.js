@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
+import SendIcon from '@mui/icons-material/Send';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ViewVendaMensal from '../venda/viewVendaMensal'
 import { AuthContext } from '../../../contexts/AuthContext';
@@ -47,7 +48,7 @@ export default function DasCNPJ() {
     <ThemeProvider theme={theme}>
         <Grid container spacing={2}>
         <Grid item xs={12} md={12}> 
-        <ViewVendaMensal />
+          <ViewVendaMensal />
         </Grid>       
         <Grid item xs={6} md={6}>
           {/* datas */}
@@ -117,6 +118,7 @@ export default function DasCNPJ() {
             <TableRow>
               <TableCell>Descricao</TableCell>
               <TableCell>Movimento Dia</TableCell>
+              <TableCell>Ver<SendIcon/></TableCell>
             </TableRow>
           </TableHead>
           
@@ -148,6 +150,7 @@ export default function DasCNPJ() {
           <TableRow>
             <TableCell>Dia</TableCell>
             <TableCell>Venda Dia</TableCell>
+            <TableCell>Ver<SendIcon/></TableCell>
           </TableRow>
         </TableHead>      
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
