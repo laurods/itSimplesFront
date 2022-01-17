@@ -45,8 +45,10 @@ export default function DasCNPJ() {
   }
   return (
     <ThemeProvider theme={theme}>
-        <Grid container spacing={2}> 
-        <ViewVendaMensal />       
+        <Grid container spacing={2}>
+        <Grid item xs={12} md={12}> 
+        <ViewVendaMensal />
+        </Grid>       
         <Grid item xs={6} md={6}>
           {/* datas */}
           <TextField              
