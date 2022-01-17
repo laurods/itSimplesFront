@@ -42,6 +42,7 @@ export default function DasCNPJ() {
        const allVendaFiltered = diario.filter((item) => item._id == dia)
        setFinanceiorFiltered(allFinanceiroFiltered)
        setVendaFiltered(allVendaFiltered)
+       setShowTables(true)
   }
   return (
     <ThemeProvider theme={theme}>
@@ -105,18 +106,18 @@ export default function DasCNPJ() {
         </Grid>                    
         
       </Grid>    
-
+      {!showTables && <div>
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
-          {!showTables &&
+          
           <TableHead>            
             <TableRow>
               <TableCell>Descricao</TableCell>
               <TableCell>Movimento Dia</TableCell>
             </TableRow>
           </TableHead>
-          }
+          
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
             {financeiorFiltered.map((row) => (
               <TableRow
@@ -140,14 +141,13 @@ export default function DasCNPJ() {
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
       <Table sx={{ minWidth: 200 }} aria-label="simple table">
-      {!showTables &&
+      
         <TableHead>
           <TableRow>
             <TableCell>Dia</TableCell>
             <TableCell>Venda Dia</TableCell>
           </TableRow>
-        </TableHead>
-      }
+        </TableHead>      
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
           {vendaFiltered.map((row) => (
             <TableRow
@@ -166,6 +166,7 @@ export default function DasCNPJ() {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>}
     </ThemeProvider>
   );
 }
