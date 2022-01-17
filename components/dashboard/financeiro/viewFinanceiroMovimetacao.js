@@ -115,11 +115,11 @@ export default function DasCNPJ() {
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
           
           <TableHead>            
-            <TableRow>
-              <TableCell>
-                <Button variant="contained" endIcon={<SendIcon />}>Lançamentos</Button>                
-              </TableCell>
+            <TableRow>              
               <TableCell>Movimento Dia</TableCell>
+              <TableCell>
+                <Button variant="contained" endIcon={<SendIcon />}></Button>
+              </TableCell>
             </TableRow>
           </TableHead>
           
@@ -149,10 +149,10 @@ export default function DasCNPJ() {
       
         <TableHead>
           <TableRow>
-            <TableCell>
-            <Button variant="contained" endIcon={<SendIcon />}>Produtos</Button>
-            </TableCell>
             <TableCell>Venda Dia</TableCell>
+            <TableCell>
+                <Button variant="contained" endIcon={<SendIcon />}></Button>
+              </TableCell>
           </TableRow>
         </TableHead>      
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
