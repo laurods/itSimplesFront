@@ -23,7 +23,7 @@ export default function DasCNPJ() {
       
         <TableHead>
           <TableRow>
-            <TableCell>Mês</TableCell>
+            <TableCell></TableCell>
             <TableCell>Venda Mês</TableCell>
           </TableRow>
         </TableHead>      

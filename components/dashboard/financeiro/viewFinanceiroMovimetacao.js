@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import SendIcon from '@material-ui/icons/Send';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ViewVendaMensal from '../venda/viewVendaMensal'
@@ -116,10 +117,7 @@ export default function DasCNPJ() {
           
           <TableHead>            
             <TableRow>              
-              <TableCell>Financeiro Dia</TableCell>
-              <TableCell>
-                <Button variant="outlined" endIcon={<SendIcon />}>Lista</Button>
-              </TableCell>
+              <TableCell>Financeiro Dia</TableCell>              
             </TableRow>
           </TableHead>
           
@@ -135,6 +133,9 @@ export default function DasCNPJ() {
                 <TableCell component="th" scope="row">
                   {(row.valor).toFixed(2)}
                 </TableCell>
+                <TableCell component="th" scope="row">
+                  <Button variant="outlined" endIcon={<DeleteIcon />}></Button>
+              </TableCell>
 
               </TableRow>
             ))}
