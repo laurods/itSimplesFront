@@ -21,6 +21,7 @@ export default function DasCNPJ() {
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [financeiorFiltered, setFinanceiorFiltered] = useState([]);
+    const [vendaFiltered, setVendaFiltered] = useState([]);
     
     const handleChangeDay = (event) => {
         setDay(event.target.value);
@@ -37,7 +38,9 @@ export default function DasCNPJ() {
   const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
        const allFinanceiroFiltered = all.filter((item) => item.day == dia && item.categoria =='Financeiro')
+       const allVendaFiltered = diario.filter((item) => item._id == dia)
        setFinanceiorFiltered(allFinanceiroFiltered)
+       setVendaFiltered(allVendaFiltered)
   }
   return (
     <ThemeProvider theme={theme}>
@@ -141,7 +144,7 @@ export default function DasCNPJ() {
           </TableRow>
         </TableHead>
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-          {diario.map((row) => (
+          {vendaFiltered.map((row) => (
             <TableRow
               key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
