@@ -47,7 +47,7 @@ export default function DasCNPJ() {
        setVendaFiltered(allVendaFiltered)
   }
 
-  const deleteFinanceiro = (id) => {
+  const deleteFinanceiro = async (id) => {
       console.log(id);
       await axios.post('/api/deleteFinanceiro', { id })
   }
