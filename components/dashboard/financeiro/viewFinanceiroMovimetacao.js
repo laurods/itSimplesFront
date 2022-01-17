@@ -17,6 +17,7 @@ const theme = createTheme();
 export default function DasCNPJ() {
     const { all, diario } = useContext(AuthContext);
     const dataAtual = new Date();
+    const [showTables, setShowTables] = useState(false);
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
@@ -108,14 +109,16 @@ export default function DasCNPJ() {
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
-          <TableHead>
+          {!showTables &&
+          <TableHead>            
             <TableRow>
               <TableCell>Descricao</TableCell>
               <TableCell>Movimento Dia</TableCell>
             </TableRow>
           </TableHead>
+          }
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {!!financeiorFiltered.map((row) => (
+            {financeiorFiltered.map((row) => (
               <TableRow
                 key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
@@ -137,14 +140,16 @@ export default function DasCNPJ() {
       <TableContainer component={Paper} sx={{ mt: 2 }}>
       
       <Table sx={{ minWidth: 200 }} aria-label="simple table">
+      {!showTables &&
         <TableHead>
           <TableRow>
             <TableCell>Dia</TableCell>
-            <TableCell>Venda do Dia</TableCell>
+            <TableCell>Venda Dia</TableCell>
           </TableRow>
         </TableHead>
+      }
         <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-          {!!vendaFiltered.map((row) => (
+          {vendaFiltered.map((row) => (
             <TableRow
               key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
