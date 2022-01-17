@@ -17,16 +17,7 @@ export default function ViewMainMobile() {
       <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
           <ViewFinanceiroSaldo />    
-        </Grid>
-
-        <Grid item xs={12} md={12}>
-          <ViewFinanceiroDiario />    
-        </Grid>
-        
-        <Grid item xs={12} md={12}>
-          <ViewVendaDiario />    
-        </Grid>
-
+        </Grid>     
         
 
         <Grid item xs={12} md={12}>

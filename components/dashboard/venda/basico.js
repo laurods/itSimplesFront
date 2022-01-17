@@ -71,7 +71,7 @@ const handleChangeYear = (event) => {
             month: `${month}@${year}`,
             year, 
             cnpj: activeCNPJ,
-            categoria:'Venda',            
+            categoria:'Venda',           
             }        
         console.log(values);
         await axios.post('/api/addFinanceiro', { values })

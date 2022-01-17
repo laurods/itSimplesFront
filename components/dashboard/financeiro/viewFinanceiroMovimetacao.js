@@ -15,12 +15,12 @@ import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function DasCNPJ() {
-    const { all } = useContext(AuthContext);
+    const { all, diario } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
-    const [filtered, setFiltered] = useState([]);
+    const [financeiorFiltered, setFinanceiorFiltered] = useState([]);
     
     const handleChangeDay = (event) => {
         setDay(event.target.value);
@@ -36,8 +36,8 @@ export default function DasCNPJ() {
 
   const handleFilter = () => {
        const dia = `${day}/${month}/${year}`;
-       const allFiltered = all.filter((item) => item.day == dia && item.categoria =='Financeiro')
-        setFiltered(allFiltered)
+       const allFinanceiroFiltered = all.filter((item) => item.day == dia && item.categoria =='Financeiro')
+       setFinanceiorFiltered(allFinanceiroFiltered)
   }
   return (
     <ThemeProvider theme={theme}>
@@ -96,7 +96,7 @@ export default function DasCNPJ() {
               size="large"
               onClick={handleFilter}              
             >
-              Financeiro
+              Atualizar
             </Button>
         </Grid>                    
         
@@ -112,7 +112,7 @@ export default function DasCNPJ() {
             </TableRow>
           </TableHead>
           <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {filtered.map((row) => (
+            {financeiorFiltered.map((row) => (
               <TableRow
                 key={row._id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
@@ -129,6 +129,35 @@ export default function DasCNPJ() {
           </TableBody>
         </Table>
       </TableContainer>
+
+
+      <TableContainer component={Paper} sx={{ mt: 2 }}>
+      
+      <Table sx={{ minWidth: 200 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Dia</TableCell>
+            <TableCell>Venda do Dia</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+          {diario.map((row) => (
+            <TableRow
+              key={row._id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
+            >
+              <TableCell component="th" scope="row">
+                {row._id}
+              </TableCell>
+              <TableCell component="th" scope="row">
+                {(row.vlrTotal).toFixed(2)}
+              </TableCell>
+
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
     </ThemeProvider>
   );
 }
