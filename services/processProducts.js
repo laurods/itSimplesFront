@@ -46,7 +46,7 @@ const processProductsXLS = async (dataProducts) => {
 const processProductsXLS2 = async (dataProducts) => {  
   
   await dataProducts.forEach(item => {
-    axios.post('/api/products', { item })
+    axios.post('/api/productsBasics', { item })
   });
   
 };

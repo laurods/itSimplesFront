@@ -45,11 +45,11 @@ const arrayXLS = await readXlsxFile(data).then((rows) => {
         codigo: String(row[0]),
         cean: String(row[1]),
         grupo: row[2],
-        produto: row[3],
+        nome: row[3],
         preco: row[4],
         custoUnitario: row[5],
         ficha: row[6],
-        cnpjDestinatario:row[7]
+        cnpj:row[7]
       };
       products.push(product);      
       
