@@ -15,9 +15,10 @@ export default function MenuMobile() {
   
   const listMenu = [
     {id: '../../mobile', name: 'Principal'}, 
-    {id: '/tela/venda/basico', name: 'Vendas'}, 
+    {id: '/tela/venda/basico', name: 'Vendas'},
+    {id: '/tela/produto/itens', name: 'Estoque'}, 
     {id: '/tela/financeiro/diario', name: 'Financeiro'}, 
-    {id: '/tela/produto/movimento', name:'Estoque'},
+    {id: '/tela/produto/movimento', name:'Compra'},
     {id: '/tela/sair', name: 'Sair'}
   ]
   
@@ -30,6 +31,7 @@ export default function MenuMobile() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           onChange={handleChange}
+          value={menu}
         >
           {
             listMenu.map(
