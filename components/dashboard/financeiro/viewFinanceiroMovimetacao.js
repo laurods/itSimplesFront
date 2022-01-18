@@ -47,15 +47,10 @@ export default function DasCNPJ() {
        setVendaFiltered(allVendaFiltered)
   }
 
-  const deleteFinanceiro = async (id) => {
-      console.log('id');
-      console.log(id);
-      console.log('financeiorFiltered');
-      console.log(financeiorFiltered);
-      const allFinanceiroFilteredDeleted = financeiorFiltered.filter((item) => item._id != id)
-      console.log('allFinanceiroFilteredDeleted');
-      console.log(allFinanceiroFilteredDeleted);
+  const deleteFinanceiro = async (id) => {      
       await axios.delete('/api/deleteFinanceiro', { data: {id: id} })
+      window.location.reload() // atualiza a pagina
+      handleFilter() // atualiza os registros da data
   }
   return (
     <ThemeProvider theme={theme}>
