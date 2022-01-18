@@ -13,7 +13,7 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("financeiro");
-         const del = await col.deleteOne( { _id : ObjectId("61e6c9fa9fe6b1acd1d5c3ec") }, );
+         const del = await col.deleteOne( { _id : ObjectId(`${id}`) }, );
          res.status(200).json({msg: "ok"});
 
         } catch (err) {
