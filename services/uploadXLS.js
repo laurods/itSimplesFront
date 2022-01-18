@@ -10,8 +10,8 @@ const handleUpload = (files) => {
   };
   
 const processFile = (uploadedFile) => {  
-  //processXLSService.processXLS(uploadedFile.file) processa compras
-  processXLSService.processXLS2(uploadedFile.file)
+  processXLSService.processXLS(uploadedFile.file) /*processa vendas via Xls padrão*/
+  //processXLSService.processXLS2(uploadedFile.file) processa cadastro basico de produtos (inventário inicial)
 };
 
 
