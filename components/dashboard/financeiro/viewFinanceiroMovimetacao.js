@@ -50,7 +50,7 @@ export default function DasCNPJ() {
   const deleteFinanceiro = async (id) => {      
       await axios.delete('/api/deleteFinanceiro', { data: {id: id} })
       window.location.reload() // atualiza a pagina
-      handleFilter() // atualiza os registros da data
+      handleFilter() 
   }
   return (
     <ThemeProvider theme={theme}>
