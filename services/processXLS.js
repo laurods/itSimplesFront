@@ -1,5 +1,4 @@
 import readXlsxFile from 'read-excel-file'
-import axios from 'axios';
 const processProductsService = require('./processProducts');
 
 const processXLS = async (data) => {
@@ -52,13 +51,12 @@ const arrayXLS = await readXlsxFile(data).then((rows) => {
         ficha: row[6],
         cnpjDestinatario:row[7]
       };
-      products.push(product);
-      axios.post('/api/products', { product })
+      products.push(product);      
       
   });
    console.log(products)
   
-  //processProductsService.processProductsXLS(productSold);
+  processProductsService.processProductsXLS2(products);
 })
 
 

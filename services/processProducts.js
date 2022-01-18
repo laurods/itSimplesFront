@@ -43,7 +43,16 @@ const processProductsXLS = async (dataProducts) => {
   processDASService.calculateDAS(dataProducts, filterProductdSubstitutes)
 };
 
+const processProductsXLS2 = async (dataProducts) => {  
+  
+  await dataProducts.forEach(item => {
+    axios.post('/api/products', { item })
+  });
+  
+};
+
 module.exports = {
   processProductsXML,
-  processProductsXLS
+  processProductsXLS,
+  processProductsXLS2
 };
