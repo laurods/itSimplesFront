@@ -12,7 +12,7 @@ const client = new MongoClient(url);
         const { id } = req.body;
          await client.connect();         
          const db = client.db(dbName);
-         db.collection("financeiro").deleteOne( { "_id" : "61e6c0017a5a0f15c8bf0f96" } );         
+         db.collection("financeiro").deleteOne( { day : "18/1/2022" } );         
 
          res.status(200).json({msg: "ok"});
 
