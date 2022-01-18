@@ -151,6 +151,41 @@ const handleChangeYear = (event) => {
       </Grid>
 
       <Grid container spacing={2}>
+      <Grid item xs={2} md={2}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="codigo"
+              label="codigo"
+              type="number"
+              id="codigo" 
+              value={quantidade}
+              onChange={handleChangeQuantidade}             
+              autoComplete="off"
+              variant="standard"
+            />
+          
+        </Grid>
+
+        <Grid item xs={10} md={10}>
+          <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="barras"
+              label="Codigo Barras"
+              type="number"
+              id="barras" 
+              value={valor}
+              onChange={handleChangeValor}             
+              autoComplete="off"
+              variant="standard"
+            />
+               
+        </Grid>  
         <Grid item xs={6} md={6}>
         <TextField
               margin="normal"
