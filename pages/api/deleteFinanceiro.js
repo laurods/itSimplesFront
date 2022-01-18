@@ -12,8 +12,8 @@ const client = new MongoClient(url);
         const { id } = req.body;
          await client.connect();         
          const db = client.db(dbName);
-         db.collection("financeiro").deleteOne( { day : "18/1/2022" } );         
-
+         const col = db.collection("financeiro");
+         const del = await col.deleteOne( { day : "18/1/2022" } );
          res.status(200).json({msg: "ok"});
 
         } catch (err) {
