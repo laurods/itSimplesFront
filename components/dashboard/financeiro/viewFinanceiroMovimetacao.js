@@ -48,7 +48,13 @@ export default function DasCNPJ() {
   }
 
   const deleteFinanceiro = async (id) => {
+      console.log('id');
       console.log(id);
+      console.log('financeiorFiltered');
+      console.log(financeiorFiltered);
+      const allFinanceiroFilteredDeleted = financeiorFiltered.filter((item) => item._id != id)
+      console.log('allFinanceiroFilteredDeleted');
+      console.log(allFinanceiroFilteredDeleted);
       await axios.delete('/api/deleteFinanceiro', { data: {id: id} })
   }
   return (
