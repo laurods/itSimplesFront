@@ -1,4 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import EditIcon from '@material-ui/icons/Edit';
+import PrintIcon from '@material-ui/icons/Print';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -8,9 +17,10 @@ import Grid from '@mui/material/Grid';
 
 import axios from 'axios';
 const theme = createTheme();
-export default function ComboBox(props) {
+export default function Itens(props) {
     const listProdutos = props.produtos;    
     console.log(listProdutos)
+    const [productsFiltered, setProductsFiltered] = useState([]);
   return (
     <ThemeProvider theme={theme}>
       <Container>      
@@ -31,7 +41,41 @@ export default function ComboBox(props) {
               variant="standard"
             />
                
-        </Grid>  
+        </Grid>
+        <Grid item xs={12}>
+
+            <TableContainer component={Paper} sx={{ mt: 2 }}>
+        
+                <Table sx={{ minWidth: 200 }} aria-label="simple table">
+                    <TableHead>
+                    <TableRow>
+                        
+                        <TableCell>
+                            
+                          <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
+                        </TableCell>
+                        <TableCell>Nome</TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+                    {productsFiltered.map((row) => (
+                        <TableRow
+                        key={row.codigo}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
+                        >
+                        <TableCell component="th" scope="row">
+                            {row.nome}
+                        </TableCell>                        
+                        <TableCell component="th" scope="row">
+                            <EditIcon onClick={() => {handleEdit(row.codigo)}}/>
+                        </TableCell>
+
+                        </TableRow>
+                    ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>             
+        </Grid>   
                 
         
       </Grid>
