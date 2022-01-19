@@ -25,8 +25,14 @@ export default function Itens(props) {
 
     const handleFilter = (event) => {
       setWord(event.target.value.toUpperCase())
+      console.log('word')
+      console.log(event.target.value);
       const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
-      setProductsFiltered(listProductsFiltered)        
+      setProductsFiltered(listProductsFiltered)
+      console.log('word')
+      console.log(event.target.value);
+      console.log('listProductsFiltered')
+      console.log(listProductsFiltered);        
   };
   return (
     <ThemeProvider theme={theme}>
