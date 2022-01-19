@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react';
-import { AuthContext } from '../../../contexts/AuthContext';
+import React, { useEffect } from 'react';
 import TopMobile from '../../../components/dashboard/topMobile';
 import Itens from '../../../components/dashboard/product/itens';
 
