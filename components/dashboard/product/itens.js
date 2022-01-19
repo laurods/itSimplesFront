@@ -24,12 +24,8 @@ export default function Itens(props) {
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const handleFilter = (event) => {
-      //let wordUpperCase = event.target.value.toUpperCase()
-      setWord(event.target.value)
-      console.log(event.target.value) 
-      const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value) )
-      console.log('listProductsFiltered')
-      console.log(listProductsFiltered) 
+      setWord(event.target.value.toUpperCase())
+      const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
       setProductsFiltered(listProductsFiltered)        
   };
   return (
@@ -60,15 +56,7 @@ export default function Itens(props) {
             <TableContainer component={Paper} sx={{ mt: 2 }}>
         
                 <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                    <TableHead>
-                    <TableRow>
-                        
-                        <TableCell>
-                            
-                          <PrintIcon onClick={() => { handlePrint(row.movimento) }}/>
-                        </TableCell>
-                        <TableCell>Nome</TableCell>
-                    </TableRow>
+                    <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
                     {productsFiltered.map((row) => (
