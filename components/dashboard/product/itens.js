@@ -18,8 +18,7 @@ import Grid from '@mui/material/Grid';
 import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
-    const listProdutos = props.produtos;    
-    console.log(listProdutos)
+    const listProdutos = props.produtos; 
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
 
@@ -31,6 +30,7 @@ export default function Itens(props) {
         console.log('event.target.value.length 2');
       console.log(event.target.value.length)
         setProductsFiltered([])
+        return
         }
       setWord(event.target.value.toUpperCase())
       const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
