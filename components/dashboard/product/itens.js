@@ -20,7 +20,15 @@ const theme = createTheme();
 export default function Itens(props) {
     const listProdutos = props.produtos;    
     console.log(listProdutos)
+    const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
+
+    const handleFilter = (event) => { 
+      const listProductsFiltered = listProdutos.filter((item) => item.nome == event.target.value)
+      console.log('listProductsFiltered')
+      console.log(listProductsFiltered) 
+      setProductsFiltered(listProductsFiltered)        
+  };
   return (
     <ThemeProvider theme={theme}>
       <Container>      
@@ -36,7 +44,9 @@ export default function Itens(props) {
               fullWidth
               name="produto"
               label="Produto"
-              id="produto"                           
+              id="produto"
+              value={word} 
+              onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
             />
