@@ -4,13 +4,21 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 export default function ComboBox(props) {
     const listProdutos = props.produtos;
-    console.log('listProdutos')
-    console.log(listProdutos)
+    const dataProducts = listProdutos.map((item) => {
+        const obj = {
+               label: item.nome,
+               codigo:item.codigo,
+
+        }
+        return obj
+    })
+    console.log('dataProducts')
+    console.log(dataProducts)
   return (
     <Autocomplete
       disablePortal
       id="combo-box-demo"
-      options={listProdutos}
+      options={dataProducts}
       sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Movie" />}
     />
