@@ -10,7 +10,7 @@ export default function ComboBox(props) {
     <Autocomplete
       disablePortal
       id="combo-box-demo"
-      options={top100Films}
+      options={listProdutos}
       sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Movie" />}
     />
