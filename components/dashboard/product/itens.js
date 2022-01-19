@@ -3,11 +3,11 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 
 import axios from 'axios';
-
+const theme = createTheme();
 export default function ComboBox(props) {
     const listProdutos = props.produtos;    
     console.log(listProdutos)
