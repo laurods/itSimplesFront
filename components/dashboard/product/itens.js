@@ -3,6 +3,9 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
 export default function ComboBox(props) {
+    const listProdutos = props.produtos;
+    console.log('listProdutos')
+    console.log(listProdutos)
   return (
     <Autocomplete
       disablePortal
