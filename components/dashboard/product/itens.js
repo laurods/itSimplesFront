@@ -22,20 +22,18 @@ export default function Itens(props) {
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
 
-    const handleFilter = (event) => {
-      console.log('event.target.value.length 1');
-      console.log(event.target.value.length)
+    const handleFilter = (event) => {      
+      setWord(event.target.value.toUpperCase())
+      const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
+      setProductsFiltered(listProductsFiltered)
 
       if(event.target.value.length == 0){
         console.log('event.target.value.length 2');
       console.log(event.target.value.length)
         setProductsFiltered([]);
-        setWord('');
-        return
+        setWord('');       
         }
-      setWord(event.target.value.toUpperCase())
-      const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
-      setProductsFiltered(listProductsFiltered)
+      
             
   };
   return (
