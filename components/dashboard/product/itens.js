@@ -1,5 +1,6 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 
 export default function ComboBox(props) {
@@ -15,13 +16,24 @@ export default function ComboBox(props) {
     console.log('dataProducts')
     console.log(dataProducts)
   return (
-    <Autocomplete
-      disablePortal
-      id="combo-box-demo"
-      options={dataProducts}
-      sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Movie" />}
-    />
+    <Stack spacing={2} sx={{ width: 300 }}>      
+      <Autocomplete
+        freeSolo
+        id="free-solo-2-demo"
+        disableClearable
+        options={listProdutos.map((option) => option.nome)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Search input"
+            InputProps={{
+              ...params.InputProps,
+              type: 'search',
+            }}
+          />
+        )}
+      />
+    </Stack>
   );
 }
 
