@@ -29,7 +29,8 @@ export default function Itens(props) {
       if(event.target.value.length == 0){
         console.log('event.target.value.length 2');
       console.log(event.target.value.length)
-        setProductsFiltered([])
+        setProductsFiltered([]);
+        setWord('');
         return
         }
       setWord(event.target.value.toUpperCase())
