@@ -24,6 +24,9 @@ export default function Itens(props) {
     const [productsFiltered, setProductsFiltered] = useState([]);
 
     const handleFilter = (event) => {
+      if(event.target.value == ""){
+        setProductsFiltered([])
+        }
       setWord(event.target.value.toUpperCase())
       console.log('word')
       console.log(event.target.value);
