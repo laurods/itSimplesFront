@@ -14,10 +14,14 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
+    const { all } = useContext(AuthContext);
+    console.log('all')
+    console.log(all)    
     const listProdutos = props.produtos; 
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
@@ -28,8 +32,6 @@ export default function Itens(props) {
       setProductsFiltered(listProductsFiltered)
 
       if(event.target.value.length == 0){
-        console.log('event.target.value.length 2');
-      console.log(event.target.value.length)
         setProductsFiltered([]);
         setWord('');       
         }
