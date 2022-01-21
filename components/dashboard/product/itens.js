@@ -49,14 +49,25 @@ export default function Itens(props) {
     setShowProduto(true)
 };
 
+const listIdIProductsFinanceiro = [];
+
 const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {      
   console.log('baixar estoque')  
   const objEstoque ={
     idItemFinanceiro: _id, idItemEstoque, nomeItemEstoque, quant: (-1 * (quant)) , descricao, dia, cnpj, mes
   }
-  console.log(objEstoque) 
-  console.log(productsFinanceiro.shift())
-  //setProductsFinanceiro([...prevProdutosFinanceiros])
+  console.log(objEstoque)
+  
+  listIdIProductsFinanceiro.push(_id)
+  console.log('listIdIProductsFinanceiro')
+  console.log(listIdIProductsFinanceiro)
+  const productsFiltered = ([...listIdIProductsFinanceiro]) => { 
+    return all.filter(product => listIdIProductsFinanceiro.includes(product._id));
+  }
+  const filterProductsSubstitutes = await productsFiltered(listIdIProductsFinanceiro);
+  console.log('filterProductsSubstitutes');
+  console.log(filterProductsSubstitutes);
+  setProductsFinanceiro(filterProductsSubstitutes)
  
 };
   return (
