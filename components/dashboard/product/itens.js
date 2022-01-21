@@ -56,7 +56,7 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
   }
   console.log(objEstoque)
   const prevProdutosFinanceiros =  productsFinanceiro.shift();
-  console.log([...prevProdutosFinanceiros])
+  console.log(prevProdutosFinanceiros)
   //setProductsFinanceiro([...prevProdutosFinanceiros])
  
 };
