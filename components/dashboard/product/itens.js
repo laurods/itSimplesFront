@@ -19,12 +19,12 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
-    const { all, setAll } = useContext(AuthContext);
+    const { all } = useContext(AuthContext);
     const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
     const [idItemEstoque, setIdItemEstoque] = useState('');
     const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
-    const [productsFiltered, setProductsFiltered] = useState([]);    
+    const [productsFiltered, setProductsFiltered] = useState([]);
 
 
     const handleFilter = (event) => {      
@@ -44,10 +44,10 @@ export default function Itens(props) {
     setNomeItemEstoque(nome)
 };
 
-const handleBaixarEstoque = (quant, descricao, dia, cnpj, mes) => {      
-  console.log('baixar estoque')
+const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {      
+  console.log('baixar estoque')  
   const objEstoque ={
-    idItemEstoque, nomeItemEstoque, quant, descricao, dia, cnpj, mes
+    idItemFinanceiro: _id, idItemEstoque, nomeItemEstoque, quant: (-1 * (quant)) , descricao, dia, cnpj, mes
   }
   console.log(objEstoque) 
  
@@ -83,7 +83,8 @@ const handleBaixarEstoque = (quant, descricao, dia, cnpj, mes) => {
               fullWidth
               name="estoque"
               label="Estoque"
-              id="estoque"                          
+              id="estoque"
+              value={nomeItemEstoque}                          
               autoComplete="off"
               variant="standard"
             />
@@ -124,6 +125,7 @@ const handleBaixarEstoque = (quant, descricao, dia, cnpj, mes) => {
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
                         <TableCell onClick={() => {handleBaixarEstoque(
+                          row._id,
                           row.quantidade,
                           row.descricao,
                           row.day,
