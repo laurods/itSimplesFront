@@ -51,7 +51,7 @@ export default function Itens(props) {
 
 const listIdIProductsFinanceiro = [];
 
-const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {      
+const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {      
   console.log('baixar estoque')  
   const objEstoque ={
     idItemFinanceiro: _id, idItemEstoque, nomeItemEstoque, quant: (-1 * (quant)) , descricao, dia, cnpj, mes
