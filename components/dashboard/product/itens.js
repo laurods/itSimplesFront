@@ -25,6 +25,8 @@ export default function Itens(props) {
     const listProdutos = props.produtos; 
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
+    const [movimentoFinanceiro, setMovimentoFinanceiro] = useState(!all ? all : []);
+
 
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
@@ -86,7 +88,37 @@ export default function Itens(props) {
                     </TableBody>
                 </Table>
             </TableContainer>             
-        </Grid>   
+        </Grid>
+
+        <Grid item xs={12}>
+
+            <TableContainer component={Paper} sx={{ mt: 2 }}>
+        
+                <Table sx={{ minWidth: 200 }} aria-label="simple table">
+                    <TableHead>                    
+                    </TableHead>
+                    <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+                    {movimentoFinanceiro.map((row) => (
+                        <TableRow
+                        key={row._id}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
+                        >
+                        <TableCell component="th" scope="row">
+                            {row.descricao}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {row.quantidade}
+                        </TableCell>                         
+                        <TableCell component="th" scope="row">
+                            <EditIcon onClick={() => {handleEdit(row.codigo)}}/>
+                        </TableCell>
+
+                        </TableRow>
+                    ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>             
+        </Grid>      
                 
         
       </Grid>
