@@ -46,7 +46,8 @@ const handleBaixarEstoque = (quant) => {
   console.log('baixar estoque')
   console.log(quant)
   const prevProducts = productsFinaceiro.shift();
-  setProductsFinaceiro(prevProducts)
+  console.log(prevProducts)
+  //setProductsFinaceiro(prevProducts)
 };
   return (
     <ThemeProvider theme={theme}>
