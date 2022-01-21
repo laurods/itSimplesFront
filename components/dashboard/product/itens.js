@@ -63,8 +63,8 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
 
       <Grid container spacing={2}>     
 
-        {!showProduto && <Grid item xs={12} md={12}>
-          <TextField
+         <Grid item xs={12} md={12}>
+         {!showProduto &&<TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
@@ -76,11 +76,9 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
-            />
-               
-        </Grid>}
-        <Grid item xs={6} md={6}>
-        {!showEstoque &&<TextField
+            />}
+
+           {!showEstoque &&<TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
@@ -91,9 +89,12 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
               value={nomeItemEstoque}                          
               autoComplete="off"
               variant="standard"
-            />}
+            />}    
+        </Grid>
+        <Grid item xs={6} md={6}>
+        
 
-            <TableContainer component={Paper} sx={{ mt: 2 }}>
+        {!showProduto &&<TableContainer component={Paper} sx={{ mt: 2 }}>
         
                 <Table sx={{ minWidth: 200 }} aria-label="simple table">
                     <TableHead>                    
@@ -112,7 +113,7 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
                     ))}
                     </TableBody>
                 </Table>
-            </TableContainer>             
+            </TableContainer> }            
         </Grid>
 
         <Grid item xs={6} md={6}>
