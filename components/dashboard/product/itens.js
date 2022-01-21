@@ -20,11 +20,10 @@ import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
     const { all } = useContext(AuthContext);
-    console.log('all')
-    console.log(all)    
     const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
+    const [productsFinaceiro, setProductsFinaceiro] = useState(all);
 
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
@@ -46,6 +45,8 @@ export default function Itens(props) {
 const handleBaixarEstoque = (quant) => {      
   console.log('baixar estoque')
   console.log(quant)
+  const prevProducts = productsFinaceiro.shift();
+  setProductsFinaceiro(prevProducts)
 };
   return (
     <ThemeProvider theme={theme}>
@@ -113,7 +114,7 @@ const handleBaixarEstoque = (quant) => {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {all.map((row) => (
+                    {productsFinaceiro.map((row) => (
                         <TableRow
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
