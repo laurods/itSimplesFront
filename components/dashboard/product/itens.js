@@ -47,11 +47,8 @@ export default function Itens(props) {
 
 const handleBaixarEstoque = (quant) => {      
   console.log('baixar estoque')
-  console.log(quant)
-  productsFinaceiro.shift();
-  console.log('productsFinaceiro 2')
-  console.log(productsFinaceiro)
-  setProductsFinaceiro(productsFinaceiro.shift())
+  console.log(quant)  
+  setProductsFinaceiro(all.shift())
 };
   return (
     <ThemeProvider theme={theme}>
