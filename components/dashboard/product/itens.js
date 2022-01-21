@@ -34,10 +34,19 @@ export default function Itens(props) {
       if(event.target.value.length == 0){
         setProductsFiltered([]);
         setWord('');       
-        }
-      
-            
+        } 
   };
+
+  const handleSelectItemEstoque = (id, nome) => {      
+    console.log('item estoque')
+    console.log(id)
+    console.log(nome)
+};
+
+const handleBaixarEstoque = (quant) => {      
+  console.log('baixar estoque')
+  console.log(quant)
+};
   return (
     <ThemeProvider theme={theme}>
       <Container>      
@@ -67,9 +76,9 @@ export default function Itens(props) {
               required
               inputProps={{style: {fontSize: 40}}}
               fullWidth
-              name="produto"
-              label="Produto"
-              id="produto"                          
+              name="estoque"
+              label="Estoque"
+              id="estoque"                          
               autoComplete="off"
               variant="standard"
             />
@@ -82,14 +91,11 @@ export default function Itens(props) {
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
                     {productsFiltered.map((row) => (
                         <TableRow
-                        key={row.codigo}
+                        key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
-                        <TableCell component="th" scope="row">
+                        <TableCell onClick={() => {handleSelectItemEstoque(row._id, row.nome )}} component="th" scope="row">
                             {row.nome}
-                        </TableCell>                        
-                        <TableCell component="th" scope="row">
-                            <EditIcon onClick={() => {handleEdit(row.codigo)}}/>
                         </TableCell>
 
                         </TableRow>
@@ -112,15 +118,12 @@ export default function Itens(props) {
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
-                        <TableCell component="th" scope="row">
+                        <TableCell onClick={() => {handleBaixarEstoque(row.quantidade)}} component="th" scope="row">
                             {row.descricao}
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {row.quantidade}
-                        </TableCell>                         
-                        <TableCell component="th" scope="row">
-                            <EditIcon onClick={() => {handleEdit(row.codigo)}}/>
-                        </TableCell>
+                        </TableCell> 
 
                         </TableRow>
                     ))}
