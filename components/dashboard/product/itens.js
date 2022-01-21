@@ -27,7 +27,7 @@ export default function Itens(props) {
     const [idItemEstoque, setIdItemEstoque] = useState('');
     const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
     const [productsFiltered, setProductsFiltered] = useState([]);
-    const [productsFinanceiro, setProductsFinanceiro] = useState([all]);
+    const [productsFinanceiro, setProductsFinanceiro] = useState(all);
 
 
     const handleFilter = (event) => {      
