@@ -21,8 +21,8 @@ const theme = createTheme();
 export default function Itens(props) {
     const { all } = useContext(AuthContext);
     const listProdutos = props.produtos;
-    const [showEstoque, setShowEstoque] = useState(false);
-    const [showProduto, setShowProduto] = useState(true);    
+    const [showEstoque, setShowEstoque] = useState(true);
+    const [showProduto, setShowProduto] = useState(false);    
     const [word, setWord] = useState('');
     const [idItemEstoque, setIdItemEstoque] = useState('');
     const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
@@ -44,8 +44,8 @@ export default function Itens(props) {
     console.log('item estoque')
     setIdItemEstoque(id)
     setNomeItemEstoque(nome)
-    setShowEstoque(true)
-    setShowProduto(false)
+    setShowEstoque(false)
+    setShowProduto(true)
 };
 
 const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {      
