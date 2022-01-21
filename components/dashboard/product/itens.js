@@ -23,7 +23,7 @@ export default function Itens(props) {
     const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
-    const [productsFinaceiro, setProductsFinaceiro] = useState(all);
+    //const [productsFinaceiro, setProductsFinaceiro] = useState(all);
 
     console.log('productsFinaceiro 1')
     console.log(productsFinaceiro)
@@ -49,7 +49,7 @@ const handleBaixarEstoque = (quant) => {
   console.log('baixar estoque')
   console.log(quant) 
   all.shift() 
-  setProductsFinaceiro(all)
+  //setProductsFinaceiro(all)
 };
   return (
     <ThemeProvider theme={theme}>
@@ -117,7 +117,7 @@ const handleBaixarEstoque = (quant) => {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {productsFinaceiro.map((row) => (
+                    {all.map((row) => (
                         <TableRow
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
