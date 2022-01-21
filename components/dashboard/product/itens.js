@@ -22,8 +22,9 @@ export default function Itens(props) {
     const { all, setAll } = useContext(AuthContext);
     const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
-    const [productsFiltered, setProductsFiltered] = useState([]);
-    //const [productsFinaceiro, setProductsFinaceiro] = useState(all);
+    const [idItemEstoque, setIdItemEstoque] = useState('');
+    const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
+    const [productsFiltered, setProductsFiltered] = useState([]);    
 
 
     const handleFilter = (event) => {      
@@ -39,16 +40,17 @@ export default function Itens(props) {
 
   const handleSelectItemEstoque = (id, nome) => {      
     console.log('item estoque')
-    console.log(id)
-    console.log(nome)
+    setIdItemEstoque(id)
+    setNomeItemEstoque(nome)
 };
 
-const handleBaixarEstoque = (quant) => {      
+const handleBaixarEstoque = (quant, descricao, dia, cnpj, mes) => {      
   console.log('baixar estoque')
-  console.log(quant) 
-  all.shift()  
-  setAll(all.shift()) 
-  //setProductsFinaceiro(all)
+  const objEstoque ={
+    idItemEstoque, nomeItemEstoque, quant, descricao, dia, cnpj, mes
+  }
+  console.log(objEstoque) 
+ 
 };
   return (
     <ThemeProvider theme={theme}>
@@ -121,7 +123,13 @@ const handleBaixarEstoque = (quant) => {
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
-                        <TableCell onClick={() => {handleBaixarEstoque(row.quantidade)}} component="th" scope="row">
+                        <TableCell onClick={() => {handleBaixarEstoque(
+                          row.quantidade,
+                          row.descricao,
+                          row.day,
+                          row.cnpj,
+                          row.month
+                          )}} component="th" scope="row">
                             {row.descricao}
                         </TableCell>
                         <TableCell component="th" scope="row">
