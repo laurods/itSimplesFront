@@ -62,7 +62,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   console.log('listIdIProductsFinanceiro')
   console.log(listIdIProductsFinanceiro)
   const productsFiltered = ([...listIdIProductsFinanceiro]) => { 
-    return all.filter(product => listIdIProductsFinanceiro.includes(product._id));
+    return all.filter(product => listIdIProductsFinanceiro.includes(!product._id));
   }
   const filterProductsSubstitutes = await productsFiltered(listIdIProductsFinanceiro);
   console.log('filterProductsSubstitutes');
