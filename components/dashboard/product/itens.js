@@ -20,7 +20,9 @@ import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
     const { all } = useContext(AuthContext);
-    const listProdutos = props.produtos;    
+    const listProdutos = props.produtos;
+    const [showEstoque, setShowEstoque] = useState(false);
+    const [showProduto, setShowProduto] = useState(true);    
     const [word, setWord] = useState('');
     const [idItemEstoque, setIdItemEstoque] = useState('');
     const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
@@ -42,6 +44,8 @@ export default function Itens(props) {
     console.log('item estoque')
     setIdItemEstoque(id)
     setNomeItemEstoque(nome)
+    setShowEstoque(true)
+    setShowProduto(false)
 };
 
 const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {      
@@ -59,7 +63,7 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
 
       <Grid container spacing={2}>     
 
-        <Grid item xs={12} md={12}>
+        {!showProduto && <Grid item xs={12} md={12}>
           <TextField
               margin="normal"
               required
@@ -74,9 +78,9 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
               variant="standard"
             />
                
-        </Grid>
+        </Grid>}
         <Grid item xs={6} md={6}>
-        <TextField
+        {!showEstoque &&<TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
@@ -87,7 +91,7 @@ const handleBaixarEstoque = (_id, quant, descricao, dia, cnpj, mes) => {
               value={nomeItemEstoque}                          
               autoComplete="off"
               variant="standard"
-            />
+            />}
 
             <TableContainer component={Paper} sx={{ mt: 2 }}>
         
