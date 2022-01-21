@@ -25,6 +25,9 @@ export default function Itens(props) {
     const [productsFiltered, setProductsFiltered] = useState([]);
     const [productsFinaceiro, setProductsFinaceiro] = useState(all);
 
+    console.log('productsFinaceiro 1')
+    console.log(productsFinaceiro)
+
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
       const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
@@ -45,8 +48,9 @@ export default function Itens(props) {
 const handleBaixarEstoque = (quant) => {      
   console.log('baixar estoque')
   console.log(quant)
-  const prevProducts = productsFinaceiro.shift();
-  console.log(prevProducts)
+  productsFinaceiro.shift();
+  console.log('productsFinaceiro 2')
+  console.log(productsFinaceiro)
   //setProductsFinaceiro(prevProducts)
 };
   return (
