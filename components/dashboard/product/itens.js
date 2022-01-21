@@ -22,7 +22,7 @@ export default function Itens(props) {
     const { all } = useContext(AuthContext);
     console.log('all')
     console.log(all)    
-    const listProdutos = props.produtos; 
+    const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
 
@@ -61,7 +61,18 @@ export default function Itens(props) {
             />
                
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={6} md={6}>
+        <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="produto"
+              label="Produto"
+              id="produto"                          
+              autoComplete="off"
+              variant="standard"
+            />
 
             <TableContainer component={Paper} sx={{ mt: 2 }}>
         
@@ -88,7 +99,7 @@ export default function Itens(props) {
             </TableContainer>             
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={6} md={6}>
 
             <TableContainer component={Paper} sx={{ mt: 2 }}>
         
