@@ -69,7 +69,7 @@ export default function Itens(props) {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {all.map((row) => (
+                    {productsFiltered.map((row) => (
                         <TableRow
                         key={row.codigo}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
@@ -96,7 +96,7 @@ export default function Itens(props) {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {movimentoFinanceiro.map((row) => (
+                    {all.map((row) => (
                         <TableRow
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
