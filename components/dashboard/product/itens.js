@@ -25,8 +25,6 @@ export default function Itens(props) {
     const listProdutos = props.produtos; 
     const [word, setWord] = useState('');
     const [productsFiltered, setProductsFiltered] = useState([]);
-    const [movimentoFinanceiro, setMovimentoFinanceiro] = useState(!all ? all : []);
-
 
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
@@ -71,7 +69,7 @@ export default function Itens(props) {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {productsFiltered.map((row) => (
+                    {all.map((row) => (
                         <TableRow
                         key={row.codigo}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
