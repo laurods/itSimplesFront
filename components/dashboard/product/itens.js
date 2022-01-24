@@ -19,7 +19,10 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
-    const { all } = useContext(AuthContext);
+    const { activeCNPJ } = useContext(AuthContext);
+    const financeiro = await axios.post('/api/getFinanceiro', { cnpj: activeCNPJ });              
+    const listFinanceiro = financeiro.data;
+    const { all } = listFinanceiro;
     const listProdutos = props.produtos;
     const listProdutsFinanceiro = all
     const [showEstoque, setShowEstoque] = useState(true);
