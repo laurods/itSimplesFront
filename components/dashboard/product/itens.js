@@ -19,7 +19,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
-    const { all } = useContext(AuthContext);
+    const { all, setAll } = useContext(AuthContext);
     const listProdutos = props.produtos;
     const [showEstoque, setShowEstoque] = useState(true);
     const [showProduto, setShowProduto] = useState(false);    
@@ -67,7 +67,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   const newList = all
   console.log('newList')
   console.log(newList)
-  setProductsFinanceiro(newList)
+  setAll(newList)
   
  
 };
