@@ -79,7 +79,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   setCnpjItemFinanceiro(cnpj)
   setMonthItemFinanceiro(mes)
   setShowTextFieldProduct(true)
-  document.getElementById("produto").onfocus;  
+  setWord('A')  
  
 };
   return (
