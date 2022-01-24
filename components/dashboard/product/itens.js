@@ -50,7 +50,14 @@ export default function Itens(props) {
     setShowProduto(true)
 
     const objEstoque ={
-      id, nome, idItemFinanceiro, idItemEstoque, nomeItemEstoque, quant: (-1 * (quant)) , descricao, dia, cnpj, mes
+      id, 
+      nome, 
+      idItemFinanceiro, 
+      quant: (-1 * (quantidadeItemFinanceiro)) , 
+      descricaoItemFinanceiro, 
+      dayItemFinanceiro, 
+      cnpjItemFinanceiro, 
+      monthItemFinanceiro
     }
     console.log('all.shift()');  
   console.log(all.shift());
