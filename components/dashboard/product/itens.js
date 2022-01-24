@@ -47,8 +47,8 @@ export default function Itens(props) {
 
   const handleSelectItemEstoque = (id, nome) => {      
     console.log('item estoque')
-    //setShowEstoque(false)
-    //setShowProduto(true)
+    setShowEstoque(false)
+    setShowProduto(true)
 
     const objEstoque ={
       id, 
