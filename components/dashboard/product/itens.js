@@ -124,7 +124,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                         >
                         <TableCell onClick={() => {handleSelectItemEstoque(row._id, row.nome )}} component="th" scope="row">
                             {row.nome}
-                        </TableCell>
+                        </TableCell>                        
 
                         </TableRow>
                     ))}
@@ -146,19 +146,24 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
-                        <TableCell onClick={() => {handleBaixarEstoque(
+                        <TableCell  component="th" scope="row">
+                            {row.descricao}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {row.quantidade}
+                        </TableCell>
+                        <button
+                        onClick={() => {handleBaixarEstoque(
                           row._id,
                           row.quantidade,
                           row.descricao,
                           row.day,
                           row.cnpj,
                           row.month
-                          )}} component="th" scope="row">
-                            {row.descricao}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {row.quantidade}
-                        </TableCell> 
+                          )}}
+                        >
+                          Salvar
+                        </button> 
 
                         </TableRow>
                     ))}
