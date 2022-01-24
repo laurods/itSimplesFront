@@ -54,8 +54,13 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   const objEstoque ={
     idItemFinanceiro: _id, idItemEstoque, nomeItemEstoque, quant: (-1 * (quant)) , descricao, dia, cnpj, mes
   }
-  console.log(objEstoque)  
   
+
+  console.log(objEstoque)
+  console.log('all');
+  console.log(all);
+  console.log('all.shift()');  
+  console.log(all.shift());
  
 };
   return (
