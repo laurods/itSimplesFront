@@ -22,6 +22,7 @@ export default function Itens(props) {
     const { all, setAll } = useContext(AuthContext);
     const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
+    const [showTextFieldProduct, setShowTextFieldProduct] = useState(false);
     const [idItemFinanceiro, setIdItemFinanceiro] = useState('');
     const [quantidadeItemFinanceiro, setQuantidadeItemFinanceiro] = useState('');
     const [descricaoItemFinanceiro, setDescricaoItemFinanceiro] = useState('');
@@ -74,7 +75,8 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   setDescricaoItemFinanceiro(descricao)
   setDayItemFinanceiro(dia)
   setCnpjItemFinanceiro(cnpj)
-  setMonthItemFinanceiro(mes)  
+  setMonthItemFinanceiro(mes)
+  setShowTextFieldProduct(true)  
  
 };
   return (
@@ -85,7 +87,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
       <Grid container spacing={2}>     
 
          <Grid item xs={12} md={12}>
-         <TextField
+         {!showTextFieldProduct &&<TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
@@ -97,7 +99,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
-            />
+            />}
 
            
         </Grid>
