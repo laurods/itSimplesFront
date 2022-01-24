@@ -18,7 +18,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 
 import axios from 'axios';
 const theme = createTheme();
-export default function Itens(props) {
+export default async function Itens(props) {
     const { activeCNPJ } = useContext(AuthContext);
     const financeiro = await axios.post('/api/getFinanceiro', { cnpj: activeCNPJ });              
     const listFinanceiro = financeiro.data;
