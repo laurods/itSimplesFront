@@ -31,7 +31,8 @@ export default function Itens(props) {
     const [monthItemFinanceiro, setMonthItemFinanceiro] = useState('');    
     const [productsFiltered, setProductsFiltered] = useState([]);;
 
-      
+     console.log('showTextFieldProduct')
+     console.log(showTextFieldProduct) 
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
       const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
