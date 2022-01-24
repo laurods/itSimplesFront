@@ -61,6 +61,9 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   console.log(all);
   console.log('all.shift()');  
   console.log(all.shift());
+  console.log('all2');
+  console.log(all);
+  
  
 };
   return (
