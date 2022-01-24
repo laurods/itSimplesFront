@@ -141,15 +141,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                     {all.map((row) => (
                         <TableRow
                         key={row._id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
-                        >
-                        <TableCell  component="th" scope="row">
-                            {row.descricao}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {row.quantidade}
-                        </TableCell>
-                        <button
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         onClick={() => {handleBaixarEstoque(
                           row._id,
                           row.quantidade,
@@ -157,11 +149,14 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                           row.day,
                           row.cnpj,
                           row.month
-                          )}}
+                          )}}                
                         >
-                          Salvar
-                        </button> 
-
+                        <TableCell  component="th" scope="row">
+                            {row.descricao}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {row.quantidade}
+                        </TableCell>                        
                         </TableRow>
                     ))}
                     </TableBody>
