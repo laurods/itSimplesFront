@@ -88,7 +88,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
       <Grid container spacing={2}>     
 
          <Grid item xs={12} md={12}>
-         {!showTextFieldProduct &&<TextField
+         {showTextFieldProduct &&<TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
