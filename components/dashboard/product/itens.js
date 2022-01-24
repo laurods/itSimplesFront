@@ -27,6 +27,7 @@ export default function Itens(props) {
     const [idItemEstoque, setIdItemEstoque] = useState('');
     const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
     const [productsFiltered, setProductsFiltered] = useState([]);
+    const [productsFinanceiro, setProductsFinanceiro] = useState(all);
 
 
     const handleFilter = (event) => {      
@@ -63,6 +64,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   console.log(all.shift());
   console.log('all2');
   console.log(all);
+  setProductsFinanceiro(all)
   
  
 };
@@ -134,7 +136,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {all.map((row) => (
+                    {productsFinanceiro.map((row) => (
                         <TableRow
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
