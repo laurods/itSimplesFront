@@ -101,6 +101,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
+              onFocus={true}
             />}
 
            
