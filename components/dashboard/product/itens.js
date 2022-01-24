@@ -78,7 +78,8 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   setDayItemFinanceiro(dia)
   setCnpjItemFinanceiro(cnpj)
   setMonthItemFinanceiro(mes)
-  setShowTextFieldProduct(true)  
+  setShowTextFieldProduct(true)
+  document.getElementById("produto").onfocus;  
  
 };
   return (
@@ -101,7 +102,6 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
-              onFocus={true}
             />}
 
            
