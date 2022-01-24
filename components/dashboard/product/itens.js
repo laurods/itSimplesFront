@@ -64,7 +64,10 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
   console.log(all.shift());
   console.log('all2');
   console.log(all);
-  setProductsFinanceiro(all)
+  const newList = all
+  console.log('newList')
+  console.log(newList)
+  setProductsFinanceiro(newList)
   
  
 };
