@@ -64,7 +64,8 @@ export default function Itens(props) {
   setAll(all)
   console.log(objEstoque)
    setProductsFiltered([]);
-   setWord('');       
+   setWord('');
+   setShowTextFieldProduct(false)       
     
 };
 
