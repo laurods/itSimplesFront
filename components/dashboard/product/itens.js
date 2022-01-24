@@ -46,6 +46,12 @@ export default function Itens(props) {
     setNomeItemEstoque(nome)
     setShowEstoque(false)
     setShowProduto(true)
+    console.log('all.shift()');  
+  console.log(all.shift());
+  console.log('all2');
+  console.log(all);
+  setAll(all)
+    
 };
 
 
@@ -104,7 +110,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
         </Grid>
         <Grid item xs={6} md={6}>
         
-
+            
         {!showProduto &&<TableContainer component={Paper} sx={{ mt: 2 }}>
         
                 <Table sx={{ minWidth: 200 }} aria-label="simple table">
