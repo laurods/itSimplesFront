@@ -24,11 +24,15 @@ export default function Itens(props) {
     const [showEstoque, setShowEstoque] = useState(true);
     const [showProduto, setShowProduto] = useState(false);    
     const [word, setWord] = useState('');
-    const [idItemEstoque, setIdItemEstoque] = useState('');
-    const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
+    const [idItemFinanceiro, setIdItemFinanceiro] = useState('');
+    const [quantidadeItemFinanceiro, setQuantidadeItemFinanceiro] = useState('');
+    const [descricaoItemFinanceiro, setDescricaoItemFinanceiro] = useState('');
+    const [dayItemFinanceiro, setDayItemFinanceiro] = useState('');
+    const [cnpjItemFinanceiro, setCnpjItemFinanceiro] = useState('');
+    const [monthItemFinanceiro, setMonthItemFinanceiro] = useState('');    
     const [productsFiltered, setProductsFiltered] = useState([]);;
 
-
+      
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
       const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
@@ -42,35 +46,30 @@ export default function Itens(props) {
 
   const handleSelectItemEstoque = (id, nome) => {      
     console.log('item estoque')
-    setIdItemEstoque(id)
-    setNomeItemEstoque(nome)
     setShowEstoque(false)
     setShowProduto(true)
+
+    const objEstoque ={
+      id, nome, idItemFinanceiro, idItemEstoque, nomeItemEstoque, quant: (-1 * (quant)) , descricao, dia, cnpj, mes
+    }
     console.log('all.shift()');  
   console.log(all.shift());
   console.log('all2');
   console.log(all);
   setAll(all)
+  console.log(objEstoque)
     
 };
 
 
 const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {      
-  console.log('baixar estoque')  
-  const objEstoque ={
-    idItemFinanceiro: _id, idItemEstoque, nomeItemEstoque, quant: (-1 * (quant)) , descricao, dia, cnpj, mes
-  }
-  
-
-  console.log(objEstoque)
-  console.log('all');
-  console.log(all);
-  console.log('all.shift()');  
-  console.log(all.shift());
-  console.log('all2');
-  console.log(all);
-  setAll(all)
-  
+  console.log('baixar estoque')
+  setIdItemFinanceiro(_id)
+  setQuantidadeItemFinanceiro(quant)
+  setDescricaoItemFinanceiro(descricao)
+  setDayItemFinanceiro(dia)
+  setCnpjItemFinanceiro(cnpj)
+  setMonthItemFinanceiro(mes)  
  
 };
   return (
