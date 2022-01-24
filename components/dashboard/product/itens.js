@@ -21,13 +21,14 @@ const theme = createTheme();
 export default function Itens(props) {
     const { all } = useContext(AuthContext);
     const listProdutos = props.produtos;
+    const listProdutsFinanceiro = all
     const [showEstoque, setShowEstoque] = useState(true);
     const [showProduto, setShowProduto] = useState(false);    
     const [word, setWord] = useState('');
     const [idItemEstoque, setIdItemEstoque] = useState('');
     const [nomeItemEstoque, setNomeItemEstoque] = useState('');    
     const [productsFiltered, setProductsFiltered] = useState([]);
-    const [productsFinanceiro, setProductsFinanceiro] = useState(all);
+    const [productsFinanceiro, setProductsFinanceiro] = useState(listProdutsFinanceiro);
 
 
     const handleFilter = (event) => {      
