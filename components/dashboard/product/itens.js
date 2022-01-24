@@ -24,6 +24,7 @@ export default function Itens(props) {
     const [showEstoque, setShowEstoque] = useState(true);
     const [showProduto, setShowProduto] = useState(false);    
     const [word, setWord] = useState('');
+    const [nomeItemEstoque, setNomeItemEstoque] = useState('');
     const [idItemFinanceiro, setIdItemFinanceiro] = useState('');
     const [quantidadeItemFinanceiro, setQuantidadeItemFinanceiro] = useState('');
     const [descricaoItemFinanceiro, setDescricaoItemFinanceiro] = useState('');
