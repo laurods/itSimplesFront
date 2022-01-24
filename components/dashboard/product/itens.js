@@ -20,11 +20,8 @@ import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
     const { all, setAll } = useContext(AuthContext);
-    const listProdutos = props.produtos;
-    const [showEstoque, setShowEstoque] = useState(true);
-    const [showProduto, setShowProduto] = useState(false);    
+    const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
-    const [nomeItemEstoque, setNomeItemEstoque] = useState('');
     const [idItemFinanceiro, setIdItemFinanceiro] = useState('');
     const [quantidadeItemFinanceiro, setQuantidadeItemFinanceiro] = useState('');
     const [descricaoItemFinanceiro, setDescricaoItemFinanceiro] = useState('');
@@ -47,9 +44,7 @@ export default function Itens(props) {
 
   const handleSelectItemEstoque = (id, nome) => {      
     console.log('item estoque')
-    setShowEstoque(false)
-    setShowProduto(true)
-
+   
     const objEstoque ={
       id, 
       nome, 
@@ -88,7 +83,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
       <Grid container spacing={2}>     
 
          <Grid item xs={12} md={12}>
-         {!showProduto &&<TextField
+         <TextField
               margin="normal"
               required
               inputProps={{style: {fontSize: 40}}}
@@ -100,25 +95,14 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
-            />}
+            />
 
-           {!showEstoque &&<TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              name="estoque"
-              label="Estoque"
-              id="estoque"
-              value={nomeItemEstoque}                          
-              autoComplete="off"
-              variant="standard"
-            />}    
+           
         </Grid>
         <Grid item xs={6} md={6}>
         
             
-        {!showProduto &&<TableContainer component={Paper} sx={{ mt: 2 }}>
+        <TableContainer component={Paper} sx={{ mt: 2 }}>
         
                 <Table sx={{ minWidth: 200 }} aria-label="simple table">
                     <TableHead>                    
@@ -137,7 +121,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                     ))}
                     </TableBody>
                 </Table>
-            </TableContainer> }            
+            </TableContainer>             
         </Grid>
 
         <Grid item xs={6} md={6}>
