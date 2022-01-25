@@ -15,7 +15,7 @@ const client = new MongoClient(url);
          await client.connect();
          const db = client.db(dbName);
          const col = db.collection("estoque");
-         const p = await col.insertOne( item );
+         const p = await col.insertOne( { item } );
 
          res.status(200).json({ msg: item });
 
