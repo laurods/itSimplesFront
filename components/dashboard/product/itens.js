@@ -44,7 +44,7 @@ export default function Itens(props) {
         } 
   };
 
-  const handleSelectItemEstoque = (id, nome) => {      
+  const handleSelectItemEstoque = async (id, nome) => {      
     console.log('item estoque')
    
     const objEstoque ={
@@ -65,7 +65,8 @@ export default function Itens(props) {
   console.log(objEstoque)
    setProductsFiltered([]);
    setWord('');
-   setShowTextFieldProduct(false)       
+   setShowTextFieldProduct(false)
+   await axios.post('/api/estoque/itens', { objEstoque })       
     
 };
 
