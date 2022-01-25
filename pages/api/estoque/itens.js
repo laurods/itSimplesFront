@@ -9,8 +9,8 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-        const  { values } = req.body;
-        const item = values;
+        const  { objEstoque } = req.body;
+        const item = objEstoque;
 
          await client.connect();
          const db = client.db(dbName);
