@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+const { MongoClient , ObjectId } = require("mongodb");
  
 // Replace the following with your Atlas connection string                                                                                                                                        
 const url = process.env.MONGODB_URI
@@ -16,6 +16,17 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("estoque");
          const p = await col.insertOne( item );
+
+         const col2 = db.collection("financeiro");
+         const p2 = await col.updateOne( 
+            { _id: ObjectId(`${item.idItemFinanceiro}`) },
+            {
+            $set: {
+                baixouEstoque: "sim",
+            },
+
+            }
+         );
 
          res.status(200).json({ msg: item });
 
