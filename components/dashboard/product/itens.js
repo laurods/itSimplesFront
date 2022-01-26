@@ -133,10 +133,16 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
         </Grid>
 
         <Grid item xs={6} md={6}>
-            <Box component={Paper} sx={{ mt: 2, border: '1px dashed grey' }}>
+        <TableContainer component={Paper} sx={{ mt: 2 }}>
+        
+        <Table sx={{ minWidth: 200 }} aria-label="simple table">
+            <TableHead>                    
+            </TableHead>
+            <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
             {produtosBaixarEstoque.map((row) => (
-                <Button
+                <TableRow
                 key={row._id}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 onClick={() => {handleBaixarEstoque(
                   row._id,
                   row.quantidade,
@@ -144,14 +150,19 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                   row.day,
                   row.cnpj,
                   row.month
-                  )}}
+                  )}}                
                 >
-                <p>{row.day}</p>
-                <p>{row.descricao}</p>
-                <p>{row.quantidade}</p>
-                </Button>
+                <TableCell  component="th" scope="row">                            
+                    {row.descricao}
+                </TableCell>
+                <TableCell component="th" scope="row">
+                    {row.quantidade}
+                </TableCell>                                              
+                </TableRow>
             ))}
-            </Box>
+            </TableBody>
+        </Table>
+          </TableContainer> 
                        
         </Grid>      
                 
