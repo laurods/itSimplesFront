@@ -107,7 +107,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
 
            
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={5} md={5}>
         
             
         <TableContainer component={Paper} sx={{ mt: 2 }}>
@@ -132,7 +132,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
             </TableContainer>             
         </Grid>
 
-        <Grid item xs={6} md={6}>
+        <Grid item xs={7} md={7}>
 
             <TableContainer component={Paper} sx={{ mt: 2 }}>
         
