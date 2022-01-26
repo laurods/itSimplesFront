@@ -19,7 +19,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
-    const { all, setAll, produtosBaixarEstoque, setProdutosBaixarEstoque} = useContext(AuthContext);
+    const { produtosBaixarEstoque, setProdutosBaixarEstoque} = useContext(AuthContext);
     console.log('produtosBaixarEstoque')
     console.log(produtosBaixarEstoque)
     const listProdutos = props.produtos;    
@@ -59,11 +59,9 @@ export default function Itens(props) {
       cnpjItemFinanceiro, 
       monthItemFinanceiro
     }
-    console.log('all.shift()');  
-  console.log(all.shift());
-  console.log('all2');
-  console.log(all);
-  setAll(all)
+    
+  console.log(produtosBaixarEstoque.shift());  
+  setProdutosBaixarEstoque(produtosBaixarEstoque)
   console.log(objEstoque)
    setProductsFiltered([]);
    setWord('');
@@ -142,7 +140,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {all.map((row) => (
+                    {produtosBaixarEstoque.map((row) => (
                         <TableRow
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
