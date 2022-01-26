@@ -19,7 +19,7 @@ const client = new MongoClient(url);
 
          const col2 = db.collection("financeiro");
          const p2 = await col2.updateOne( 
-            { _id:  ObjectId("61def07287dd7eeaa74253a7") },
+            { _id:  ObjectId(`${item.idItemFinanceiro}`) },
             {
             $set: {
                 "baixouEstoque": "sim",
