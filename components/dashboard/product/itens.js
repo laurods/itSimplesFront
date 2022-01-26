@@ -19,7 +19,9 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
 const theme = createTheme();
 export default function Itens(props) {
-    const { all, setAll } = useContext(AuthContext);
+    const { all, setAll, produtosBaixarEstoque, setProdutosBaixarEstoque} = useContext(AuthContext);
+    console.log('produtosBaixarEstoque')
+    console.log(produtosBaixarEstoque)
     const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
     const [showTextFieldProduct, setShowTextFieldProduct] = useState(false);

@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
     const [reportCNPJ, setReportCNPJ] = useState('');
     const [activeCNPJ, setActiveCNPJ] = useState('');
     const [theProductsFilteredSelected, setTheProductsFilteredSelected] = useState([]);
+    const [produtosBaixarEstoque, setProdutosBaixarEstoque] = useState([]);
     const [products, setProducts] = useState([]);
     const [anual, setAnual] = useState([]);
     const [mensal, setMensal] = useState([]);
@@ -148,7 +149,8 @@ export function AuthProvider({ children }) {
             saldos,
             all,
             products,
-            theProductsFilteredSelected,          
+            theProductsFilteredSelected,
+            produtosBaixarEstoque,          
             signIn,
             addEmpresa,
             setCNPJsByUsers,
@@ -167,7 +169,8 @@ export function AuthProvider({ children }) {
             setProducts,
             setTheProductsFilteredSelected,
             sair,
-            telaCheia,     
+            telaCheia,
+            setProdutosBaixarEstoque,     
             
              }}>
             {children}

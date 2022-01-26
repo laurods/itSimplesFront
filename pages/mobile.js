@@ -15,8 +15,9 @@ export default function Dashboard() {
        setMensal,
        setDiario,
        setSaldos,
+       setProdutosBaixarEstoque,
        setAll, 
-       isAuthenticated,
+       isAuthenticated,       
        
        } = useContext(AuthContext);
      
@@ -29,13 +30,14 @@ export default function Dashboard() {
         const listFinanceiro = financeiro.data;
         console.log('objFinanceiro');
         console.log(listFinanceiro);
-        const {anual, diario, mensal, saldos, all } = listFinanceiro;         
+        const {anual, diario, mensal, saldos, produtosBaixarEstoque, all } = listFinanceiro;         
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         setAnual(anual)
         setMensal(mensal)
         setDiario(diario)
         setSaldos(saldos)
+        setProdutosBaixarEstoque(produtosBaixarEstoque)
         setAll(all)
                        
       }

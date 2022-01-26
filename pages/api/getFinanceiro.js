@@ -71,7 +71,7 @@ const client = new MongoClient(url);
 
          ).toArray();
 
-
+         const produtosBaixarEstoque = await financeiro.find({ cnpj : cnpj, baixouEstoque: "nao" }).toArray()     
 
          const all = await financeiro.find({ cnpj : cnpj }).toArray()
 
@@ -80,6 +80,7 @@ const client = new MongoClient(url);
          objMovimento['mensal'] = mensal;
          objMovimento['anual'] = anual;
          objMovimento['saldos'] = saldos;
+         objMovimento['produtosBaixarEstoque'] = produtosBaixarEstoque;
          objMovimento['all'] = all;
 
          res.status(200).json(objMovimento);
