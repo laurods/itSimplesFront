@@ -158,6 +158,9 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                         </TableCell>
                         <TableCell component="th" scope="row">
                             {row.quantidade}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {row.day}
                         </TableCell>                        
                         </TableRow>
                     ))}
