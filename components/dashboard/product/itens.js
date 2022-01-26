@@ -94,6 +94,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
          {showTextFieldProduct &&<TextField
               margin="normal"
               required
+              autoFocus
               inputProps={{style: {fontSize: 40}}}
               fullWidth
               name="produto"
