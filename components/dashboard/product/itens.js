@@ -14,6 +14,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import { AuthContext } from '../../../contexts/AuthContext';
 
 import axios from 'axios';
@@ -133,37 +134,26 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
         </Grid>
 
         <Grid item xs={6} md={6}>
-
-            <TableContainer component={Paper} sx={{ mt: 2 }}>
-        
-                <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                    <TableHead>                    
-                    </TableHead>
-                    <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {produtosBaixarEstoque.map((row) => (
-                        <TableRow
-                        key={row._id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        onClick={() => {handleBaixarEstoque(
-                          row._id,
-                          row.quantidade,
-                          row.descricao,
-                          row.day,
-                          row.cnpj,
-                          row.month
-                          )}}                
-                        >
-                        <TableCell  component="th" scope="row">                            
-                            {row.descricao}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {row.quantidade}
-                        </TableCell>                                              
-                        </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>             
+            <Box component={Paper} sx={{ mt: 2, border: '1px dashed grey' }}>
+            {produtosBaixarEstoque.map((row) => (
+                <Button
+                key={row._id}
+                onClick={() => {handleBaixarEstoque(
+                  row._id,
+                  row.quantidade,
+                  row.descricao,
+                  row.day,
+                  row.cnpj,
+                  row.month
+                  )}}
+                >
+                <p>{row.day}</p>
+                <p>{row.descricao}</p>
+                <p>{row.quantidade}</p>
+                </Button>
+            ))}
+            </Box>
+                       
         </Grid>      
                 
         
