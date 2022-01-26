@@ -71,7 +71,9 @@ const client = new MongoClient(url);
 
          ).toArray();
 
-         const produtosBaixarEstoque = await financeiro.find({ cnpj : cnpj, baixouEstoque: "nao" }).toArray()     
+         const produtosBaixarEstoque = await financeiro.find(
+             { cnpj : cnpj, baixouEstoque: "nao", categoria: "Venda" }
+             ).toArray()     
 
          const all = await financeiro.find({ cnpj : cnpj }).toArray()
 
