@@ -153,8 +153,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
                           row.month
                           )}}                
                         >
-                        <TableCell  component="th" scope="row">
-                            {row.day}
+                        <TableCell  component="th" scope="row">                            
                             {row.descricao}
                         </TableCell>
                         <TableCell component="th" scope="row">
