@@ -16,18 +16,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("estoque");
          const p = await col.insertOne( item );
-
-         const col2 = db.collection("financeiro");
-         const p2 = await col2.updateOne( 
-            { _id:  ObjectId("61def07287dd7eeaa74253a7") },
-            {
-            $set: {
-                "baixouEstoque": "sim",
-            },
-
-            }
-         );
-
+         
          res.status(200).json({ msg: item });
 
         } catch (err) {
