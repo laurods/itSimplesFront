@@ -13,8 +13,6 @@ export default function Diario() {
           console.log(activeCNPJ)           
           const allProductsBasics = await axios.post('/api/produtos/getAllProductsBasics', { cnpj: activeCNPJ });              
           const listAllProductsBasics = allProductsBasics.data;
-          console.log('listAllProductsBasics')
-          console.log(listAllProductsBasics)
           setProdutos(listAllProductsBasics)
         }
         loadAll();
@@ -25,7 +23,7 @@ export default function Diario() {
     return (
       <>
       <TopMobile />
-      <Pdv />
+      <Pdv produtos={produtos}/>
       </>
     );
     

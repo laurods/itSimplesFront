@@ -17,7 +17,8 @@ import Grid from '@mui/material/Grid';
 
 
 const theme = createTheme();
-export default function PDV() {      
+export default function PDV(props) {
+    const listProdutos = props.produtos;      
     const [word, setWord] = useState('');
     const [quantidade, setQuantidade] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);
