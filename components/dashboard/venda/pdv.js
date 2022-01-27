@@ -25,8 +25,11 @@ export default function Itens(props) {
     const listProdutos = props.produtos;    
     const [word, setWord] = useState('');
     const [quantidade, setQuantidade] = useState('');   
-    const [productsFiltered, setProductsFiltered] = useState([]);;
-
+    const [productsFiltered, setProductsFiltered] = useState([]);
+    
+    const handleChangeQuantidade = (event) => {
+        setQuantidade(event.target.value);
+    };
     
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
