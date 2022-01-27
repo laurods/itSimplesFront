@@ -8,9 +8,7 @@ export default function Diario() {
   const { activeCNPJ } = useContext(AuthContext);
   const [produtos, setProdutos] = useState([]);
     useEffect(() => {
-        const loadAll = async() =>{  
-          console.log('activeCNPJ')
-          console.log(activeCNPJ)           
+        const loadAll = async() =>{         
           const allProductsBasics = await axios.post('/api/produtos/getAllProductsBasics', { cnpj: activeCNPJ });              
           const listAllProductsBasics = allProductsBasics.data;
           setProdutos(listAllProductsBasics)
