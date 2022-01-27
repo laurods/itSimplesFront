@@ -23,7 +23,8 @@ export default function Itens(props) {
     console.log('produtosBaixarEstoque')
     console.log(produtosBaixarEstoque)
     const listProdutos = props.produtos;    
-    const [word, setWord] = useState('');   
+    const [word, setWord] = useState('');
+    const [quantidade, setQuantidade] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);;
 
     
@@ -87,12 +88,25 @@ export default function Itens(props) {
            
         </Grid>
         <Grid item xs={6} md={6}>
-        
+            <TextField
+              margin="normal"
+              required
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="quantidade"
+              label="Quantidade"
+              type="number"
+              id="quantidade" 
+              value={quantidade}
+              onChange={handleChangeQuantidade}             
+              autoComplete="off"
+              variant="standard"
+            />
                        
         </Grid>
 
         <Grid item xs={6} md={6}>
-        
+           
             
         <TableContainer component={Paper} sx={{ mt: 2 }}>
         

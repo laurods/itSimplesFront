@@ -19,6 +19,7 @@ export default function MenuMobile() {
     {id: '/tela/produto/itens', name: 'Estoque'}, 
     {id: '/tela/financeiro/diario', name: 'Financeiro'}, 
     {id: '/tela/produto/movimento', name:'Compra'},
+    {id: '/tela/venda/pdv', name:'PDV'},
     {id: '/tela/sair', name: 'Sair'}
   ]
   
