@@ -11,7 +11,7 @@ export default function Diario() {
         const loadAll = async() =>{  
           console.log('activeCNPJ')
           console.log(activeCNPJ)           
-          const allProductsBasics = await axios.get('/api/produtos/getAllProductsBasics', { cnpj: activeCNPJ });              
+          const allProductsBasics = await axios.post('/api/produtos/getAllProductsBasics', { cnpj: activeCNPJ });              
           const listAllProductsBasics = allProductsBasics.data;
           console.log('listAllProductsBasics')
           console.log(listAllProductsBasics)

@@ -13,10 +13,9 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("productsBasics");
-         const products = await col.find({"cnpj": `${cnpj}`}).toArray(); 
+         const products = await col.find({"cnpj": cnpj }).toArray(); 
 
-         //res.status(200).json(products);
-         res.status(200).json(cnpj);
+         res.status(200).json(products);         
 
         } catch (err) {
          console.log(err.stack);
