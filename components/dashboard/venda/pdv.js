@@ -23,8 +23,7 @@ export default function Itens(props) {
     console.log('produtosBaixarEstoque')
     console.log(produtosBaixarEstoque)
     const listProdutos = props.produtos;    
-    const [word, setWord] = useState('');
-    const [showTextFieldProduct, setShowTextFieldProduct] = useState(false);
+    const [word, setWord] = useState('');    
     const [idItemFinanceiro, setIdItemFinanceiro] = useState('');
     const [quantidadeItemFinanceiro, setQuantidadeItemFinanceiro] = useState('');
     const [descricaoItemFinanceiro, setDescricaoItemFinanceiro] = useState('');
@@ -91,7 +90,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
       <Grid container spacing={2}>     
 
          <Grid item xs={12} md={12}>
-         {showTextFieldProduct &&<TextField
+         <TextField
               margin="normal"
               required
               autoFocus
@@ -104,10 +103,15 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
-            />}
+            />
 
            
         </Grid>
+        <Grid item xs={6} md={6}>
+        
+                       
+        </Grid>
+
         <Grid item xs={6} md={6}>
         
             
@@ -133,39 +137,7 @@ const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {
             </TableContainer>             
         </Grid>
 
-        <Grid item xs={6} md={6}>
-        <TableContainer component={Paper} sx={{ mt: 2 }}>
-        
-        <Table sx={{ minWidth: 200 }} aria-label="simple table">
-            <TableHead>                    
-            </TableHead>
-            <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {produtosBaixarEstoque.map((row) => (
-                <TableRow
-                key={row._id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                onClick={() => {handleBaixarEstoque(
-                  row._id,
-                  row.quantidade,
-                  row.descricao,
-                  row.day,
-                  row.cnpj,
-                  row.month
-                  )}}                
-                >
-                <TableCell  component="th" scope="row">                            
-                    {row.descricao}
-                </TableCell>
-                <TableCell component="th" scope="row">
-                    {row.quantidade}
-                </TableCell>                                              
-                </TableRow>
-            ))}
-            </TableBody>
-        </Table>
-          </TableContainer> 
-                       
-        </Grid>      
+             
                 
         
       </Grid>
