@@ -14,7 +14,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("productsBasics");
          const products = await col.find(
-             { cnpj: cnpj },
+             { cnpj: '999999' },
              { projection: {
                 cean: 1,
                 cnpj: 1,
