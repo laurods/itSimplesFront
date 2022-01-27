@@ -23,17 +23,10 @@ export default function Itens(props) {
     console.log('produtosBaixarEstoque')
     console.log(produtosBaixarEstoque)
     const listProdutos = props.produtos;    
-    const [word, setWord] = useState('');    
-    const [idItemFinanceiro, setIdItemFinanceiro] = useState('');
-    const [quantidadeItemFinanceiro, setQuantidadeItemFinanceiro] = useState('');
-    const [descricaoItemFinanceiro, setDescricaoItemFinanceiro] = useState('');
-    const [dayItemFinanceiro, setDayItemFinanceiro] = useState('');
-    const [cnpjItemFinanceiro, setCnpjItemFinanceiro] = useState('');
-    const [monthItemFinanceiro, setMonthItemFinanceiro] = useState('');    
+    const [word, setWord] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);;
 
-     console.log('showTextFieldProduct')
-     console.log(showTextFieldProduct) 
+    
     const handleFilter = (event) => {      
       setWord(event.target.value.toUpperCase())
       const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
@@ -64,24 +57,10 @@ export default function Itens(props) {
   console.log(objEstoque)
    setProductsFiltered([]);
    setWord('');
-   setShowTextFieldProduct(false)
    await axios.post('/api/estoque/itens', { objEstoque })       
     
 };
 
-
-const handleBaixarEstoque = async (_id, quant, descricao, dia, cnpj, mes) => {      
-  console.log('baixar estoque')
-  setIdItemFinanceiro(_id)
-  setQuantidadeItemFinanceiro(quant)
-  setDescricaoItemFinanceiro(descricao)
-  setDayItemFinanceiro(dia)
-  setCnpjItemFinanceiro(cnpj)
-  setMonthItemFinanceiro(mes)
-  setShowTextFieldProduct(true)
-   
- 
-};
   return (
     <ThemeProvider theme={theme}>
       <Container>      
