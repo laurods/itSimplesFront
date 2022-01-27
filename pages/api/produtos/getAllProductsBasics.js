@@ -13,8 +13,20 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("productsBasics");
-         const products = await col.find({ cnpj: cnpj }).toArray();     
-         
+         const products = await col.find(
+             { cnpj: cnpj },
+             { projection: {
+                cean: 1,
+                cnpj: 1,
+                custoUnitario: 1,
+                ficha: 1,
+                grupo: 1,
+                nome: 1,
+                preco: 1,
+                _id: 1}
+             }
+             ).toArray(); 
+
          res.status(200).json(products);
 
         } catch (err) {
