@@ -14,16 +14,10 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import { AuthContext } from '../../../contexts/AuthContext';
-import axios from 'axios';
+
 
 const theme = createTheme();
-export default async function PDV() {
-    const { activeCNPJ } = useContext(AuthContext);
-    const dataProdutos = await axios.post('/api/produtos/getAllProductsBasics', { cnpj: activeCNPJ });
-    const listProdutos = dataProdutos.data;
-    console.log('listProdutos');
-    console.log(listProdutos);    
+export default function PDV() {      
     const [word, setWord] = useState('');
     const [quantidade, setQuantidade] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);
