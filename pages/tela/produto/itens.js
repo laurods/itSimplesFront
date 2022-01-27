@@ -1,5 +1,4 @@
 import React, {  useState, useEffect, useContext } from 'react';
-import axios from 'axios';
 import TopMobile from '../../../components/dashboard/topMobile';
 import Itens from '../../../components/dashboard/product/itens';
 import { AuthContext } from '../../../contexts/AuthContext';
