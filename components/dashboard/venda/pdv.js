@@ -19,7 +19,7 @@ import Grid from '@mui/material/Grid';
 const theme = createTheme();
 export default function PDV(props) {
     const listProdutos = props.produtos;
-    const [showTextFieldProduct, setShowTextFieldProduct] = useState(true);      
+    const [show, setShow] = useState(true);      
     const [word, setWord] = useState('');
     const [quantidade, setQuantidade] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);
@@ -29,7 +29,8 @@ export default function PDV(props) {
         setQuantidade(event.target.value);
     };
     
-    const handleFilter = (event) => {      
+    const handleFilter = (event) => {
+      setShow(true)      
       setWord(event.target.value.toUpperCase())
       const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
       setProductsFiltered(listProductsFiltered)
@@ -67,7 +68,7 @@ export default function PDV(props) {
   console.log(objEstoque)
   setDataEstoque(objEstoque)
    setWord('');
-   setShowTextFieldProduct(false)
+   setShow(false)
    //await axios.post('/api/estoque/itens', { objEstoque })       
     
 };
@@ -80,7 +81,7 @@ export default function PDV(props) {
       <Grid container spacing={2}>     
 
          <Grid item xs={12} md={12}>
-         {showTextFieldProduct &&<TextField
+         <TextField
               margin="normal"
               required
               autoFocus
@@ -93,7 +94,7 @@ export default function PDV(props) {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
-            />}
+            />
 
            
         </Grid>
@@ -115,7 +116,7 @@ export default function PDV(props) {
                        
         </Grid>
 
-        <Grid item xs={6} md={6}>
+        {show && <Grid item xs={6} md={6}>
            
             
         <TableContainer component={Paper} sx={{ mt: 2 }}>
@@ -147,7 +148,7 @@ export default function PDV(props) {
                     </TableBody>
                 </Table>
             </TableContainer>             
-        </Grid>
+        </Grid>}
 
              
                 
