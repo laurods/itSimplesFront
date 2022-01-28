@@ -152,10 +152,27 @@ export default function PDV(props) {
         </Grid>}
 
         {!show &&<Grid item xs={6} md={6}>
+        
+        <TextField
+          label="Produto"
+          id="produto"
+          size="small"
+          value={dataEstoque.nome}
+        />
 
-        <TextField value={dataEstoque.nome} variant="standard" />
-        <TextField value={dataEstoque.preco} variant="standard" />
-          
+        <TextField
+          label="Preço"
+          id="preco"
+          size="small"
+          value={dataEstoque.preco}
+        />
+
+        <TextField
+          label="Total"
+          id="total"
+          size="small"
+          value={(dataEstoque.preco)*(quantidade)}
+        />  
           
         </Grid>}                    
              
