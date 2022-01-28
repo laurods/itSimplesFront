@@ -150,6 +150,13 @@ export default function PDV(props) {
             </TableContainer>             
         </Grid>}
 
+        {!show &&<Grid item xs={6} md={6}>
+
+        <TextField value={dataEstoque.nome} variant="standard" />
+        <TextField value={dataEstoque.preco} variant="standard" />
+          
+          
+        </Grid>}                    
              
                 
         
