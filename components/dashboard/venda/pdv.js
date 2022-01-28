@@ -18,10 +18,12 @@ import Grid from '@mui/material/Grid';
 
 const theme = createTheme();
 export default function PDV(props) {
-    const listProdutos = props.produtos;      
+    const listProdutos = props.produtos;
+    const [showTextFieldProduct, setShowTextFieldProduct] = useState(true);      
     const [word, setWord] = useState('');
     const [quantidade, setQuantidade] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);
+    const [dataEstoque, setDataEstoque] = useState({});
 
     const handleChangeQuantidade = (event) => {
         setQuantidade(event.target.value);
@@ -38,26 +40,35 @@ export default function PDV(props) {
         } 
   };
 
-  const handleSelectItemEstoque = async (id, nome) => {      
-    console.log('item estoque')
-   
+  const handleSelectItemEstoque = async (
+    id, 
+    cean,
+    cnpj,
+    nome,
+    custoUnitario,
+    ficha,
+    grupo,
+    preco,
+
+    ) => {      
+    console.log('item estoque')    
     const objEstoque ={
       id, 
-      nome, 
-      idItemFinanceiro, 
-      quant: (-1 * (quantidadeItemFinanceiro)) , 
-      descricaoItemFinanceiro, 
-      dayItemFinanceiro, 
-      cnpjItemFinanceiro, 
-      monthItemFinanceiro
+      cean,
+      cnpj,
+      nome,
+      custoUnitario,
+      ficha,
+      grupo,
+      preco,
+      //quant: (-1 * (quantidade)),
     }
-    
-  console.log(produtosBaixarEstoque.shift());  
-  setProdutosBaixarEstoque(produtosBaixarEstoque)
+
   console.log(objEstoque)
-   setProductsFiltered([]);
+  setDataEstoque(objEstoque)
    setWord('');
-   await axios.post('/api/estoque/itens', { objEstoque })       
+   setShowTextFieldProduct(false)
+   //await axios.post('/api/estoque/itens', { objEstoque })       
     
 };
 
@@ -69,7 +80,7 @@ export default function PDV(props) {
       <Grid container spacing={2}>     
 
          <Grid item xs={12} md={12}>
-         <TextField
+         {showTextFieldProduct &&<TextField
               margin="normal"
               required
               autoFocus
@@ -82,7 +93,7 @@ export default function PDV(props) {
               onChange={handleFilter}                          
               autoComplete="off"
               variant="standard"
-            />
+            />}
 
            
         </Grid>
@@ -118,7 +129,16 @@ export default function PDV(props) {
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
                         >
-                        <TableCell onClick={() => {handleSelectItemEstoque(row._id, row.nome )}} component="th" scope="row">
+                        <TableCell onClick={() => {handleSelectItemEstoque(
+                          row._id, 
+                          row.cean,
+                          row.cnpj,
+                          row.custoUnitario,
+                          row.ficha,
+                          row.grupo,
+                          row.nome,
+                          row.preco, 
+                          )}} component="th" scope="row">
                             {row.nome}
                         </TableCell>                        
 
