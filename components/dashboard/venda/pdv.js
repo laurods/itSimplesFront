@@ -45,10 +45,10 @@ export default function PDV(props) {
     id, 
     cean,
     cnpj,
-    nome,
     custoUnitario,
     ficha,
     grupo,
+    nome,
     preco,
 
     ) => {      
@@ -128,9 +128,8 @@ export default function PDV(props) {
                     {productsFiltered.map((row) => (
                         <TableRow
                         key={row._id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                
-                        >
-                        <TableCell onClick={() => {handleSelectItemEstoque(
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        onClick={() => {handleSelectItemEstoque(
                           row._id, 
                           row.cean,
                           row.cnpj,
@@ -139,7 +138,9 @@ export default function PDV(props) {
                           row.grupo,
                           row.nome,
                           row.preco, 
-                          )}} component="th" scope="row">
+                          )}}                 
+                        >
+                        <TableCell component="th" scope="row">
                             {row.nome}
                         </TableCell>                        
 
