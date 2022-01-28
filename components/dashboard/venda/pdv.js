@@ -56,11 +56,11 @@ export default function PDV(props) {
     const objEstoque ={
       id, 
       cean,
-      cnpj,
-      nome,
+      cnpj,      
       custoUnitario,
       ficha,
       grupo,
+      nome,
       preco,
       //quant: (-1 * (quantidade)),
     }
