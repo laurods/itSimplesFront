@@ -187,7 +187,13 @@ export default function PDV(props) {
          </Grid>
 
          <Grid item xs={1} md={1}>
-            <DeleteIcon sx={{ mt: 6 }}/>
+          <Button          
+            fullWidth
+            size="large" 
+            variant="contained" 
+            sx={{ mt: 5 }}
+            endIcon={<CheckCircleIcon />}>
+          </Button>             
          </Grid>
 
 
