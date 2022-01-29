@@ -100,7 +100,7 @@ export default function PDV(props) {
         </Grid>
        
 
-        {show && <Grid item xs={6} md={6}>
+        {show && <Grid item xs={12} md={12}>
            
             
         <TableContainer component={Paper} sx={{ mt: 2 }}>
