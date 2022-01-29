@@ -134,8 +134,8 @@ export default function PDV(props) {
                 </Table>
             </TableContainer>             
         </Grid>}
-
-        {!show &&<div>
+        </Grid>                   
+        {!show &&<Grid container spacing={2}>
           <Grid item xs={3} md={3}>
               <TextField
                 margin="normal"
@@ -183,11 +183,11 @@ export default function PDV(props) {
             variant="standard"
           />  
          </Grid> 
-        </div>}                    
+         </Grid>}                    
              
                 
         
-      </Grid>
+      
       </Box>      
        
       </Container>
