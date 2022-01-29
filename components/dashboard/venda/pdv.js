@@ -159,6 +159,8 @@ export default function PDV(props) {
             id="produto"
             size="small"
             value={dataEstoque.nome}
+            fullWidth
+            variant="standard"
           />
         </Grid>
         <Grid item xs={2} md={2}>
@@ -167,6 +169,8 @@ export default function PDV(props) {
             id="preco"
             size="small"
             value={dataEstoque.preco}
+            fullWidth
+            variant="standard"
           />
         </Grid>
         <Grid item xs={2} md={2}>
@@ -175,6 +179,8 @@ export default function PDV(props) {
             id="total"
             size="small"
             value={(dataEstoque.preco)*(quantidade)}
+            fullWidth
+            variant="standard"
           />  
          </Grid> 
         </div>}                    
