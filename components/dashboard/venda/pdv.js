@@ -142,7 +142,7 @@ export default function PDV(props) {
         </Grid>                   
         {!show &&<Grid container spacing={2}>
           
-          <Grid item xs={5} md={5}>
+          <Grid item xs={4} md={4}>
           <TextField
             disabled
             label="Produto"
@@ -186,7 +186,7 @@ export default function PDV(props) {
           />  
          </Grid>
 
-         <Grid item xs={1} md={1}>
+         <Grid item xs={2} md={2}>
             <DeleteIcon />
          </Grid>
 
