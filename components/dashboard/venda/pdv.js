@@ -197,7 +197,7 @@ export default function PDV(props) {
           fullWidth
           size="large" 
           variant="contained" 
-          inputProps={{style: {margin: 5}}}
+          sx={{ mt: 5 }}
           endIcon={<SendIcon />}>
               Salvar
         </Button>
