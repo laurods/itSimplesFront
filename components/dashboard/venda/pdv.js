@@ -10,6 +10,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import PrintIcon from '@material-ui/icons/Print';
 import SendIcon from '@material-ui/icons/Send';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -141,7 +142,7 @@ export default function PDV(props) {
         </Grid>                   
         {!show &&<Grid container spacing={2}>
           
-          <Grid item xs={6} md={6}>
+          <Grid item xs={5} md={5}>
           <TextField
             disabled
             label="Produto"
@@ -183,7 +184,13 @@ export default function PDV(props) {
             fullWidth
             variant="standard"
           />  
-         </Grid> 
+         </Grid>
+
+         <Grid item xs={1} md={1}>
+            <DeleteIcon />
+         </Grid>
+
+
          </Grid>}
 
 
