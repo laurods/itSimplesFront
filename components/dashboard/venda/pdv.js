@@ -187,7 +187,7 @@ export default function PDV(props) {
          </Grid>
 
          <Grid item xs={1} md={1}>
-            <DeleteIcon sx={{ mt: 3 }}/>
+            <DeleteIcon sx={{ mt: 6 }}/>
          </Grid>
 
 
@@ -195,7 +195,7 @@ export default function PDV(props) {
 
 
          {!show &&<Grid container spacing={2}>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={4} md={4}>
               <TextField
                 margin="normal"
                 required
@@ -212,7 +212,25 @@ export default function PDV(props) {
               />
                         
           </Grid>
-          <Grid item xs={6} md={6}>
+
+          <Grid item xs={3} md={3}>
+              <TextField
+                margin="normal"
+                disabled
+                inputProps={{style: {fontSize: 40}}}
+                fullWidth
+                name="total"
+                label="Total"
+                type="number"
+                id="total" 
+                value={quantidade}                          
+                autoComplete="off"
+                variant="standard"
+              />
+                        
+          </Grid>
+
+          <Grid item xs={5} md={5}>
             
           <Button          
           fullWidth
