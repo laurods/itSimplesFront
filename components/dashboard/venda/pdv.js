@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import EditIcon from '@material-ui/icons/Edit';
 import PrintIcon from '@material-ui/icons/Print';
 import SendIcon from '@material-ui/icons/Send';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -140,7 +141,7 @@ export default function PDV(props) {
         </Grid>                   
         {!show &&<Grid container spacing={2}>
           
-          <Grid item xs={8} md={8}>
+          <Grid item xs={6} md={6}>
           <TextField
             disabled
             label="Produto"
@@ -153,6 +154,7 @@ export default function PDV(props) {
         </Grid>
         <Grid item xs={2} md={2}>
           <TextField
+            disabled
             label="Quant"
             id="quant"
             size="small"
@@ -210,7 +212,7 @@ export default function PDV(props) {
           size="large" 
           variant="contained" 
           sx={{ mt: 5 }}
-          endIcon={<SendIcon />}>
+          endIcon={<CheckCircleIcon />}>
               Salvar
         </Button>
         </Grid>       
