@@ -22,7 +22,8 @@ export default function PDV(props) {
     const listProdutos = props.produtos;
     const [show, setShow] = useState(true);      
     const [word, setWord] = useState('');
-    const [quantidade, setQuantidade] = useState('');   
+    const [quantidade, setQuantidade] = useState(1);
+    const [preco, setPreco] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);
     const [dataEstoque, setDataEstoque] = useState({});
 
@@ -68,6 +69,7 @@ export default function PDV(props) {
 
   console.log(objEstoque)
   setDataEstoque(objEstoque)
+  setPreco(preco)
    setWord('');
    setShow(false)
    //await axios.post('/api/estoque/itens', { objEstoque })       
@@ -151,10 +153,20 @@ export default function PDV(props) {
         </Grid>
         <Grid item xs={2} md={2}>
           <TextField
+            label="Quant"
+            id="quant"
+            size="small"
+            value={quantidade}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={2} md={2}>
+          <TextField
             label="Preço"
             id="preco"
             size="small"
-            value={dataEstoque.preco}
+            value={preco.toFixed(2)}
             fullWidth
             variant="standard"
           />
@@ -165,7 +177,7 @@ export default function PDV(props) {
             label="Total"
             id="total"
             size="small"
-            value={(dataEstoque.preco)*(quantidade)}
+            value={((preco)*(quantidade)).toFixed(2)}
             fullWidth
             variant="standard"
           />  
