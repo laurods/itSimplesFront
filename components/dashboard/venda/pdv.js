@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import EditIcon from '@material-ui/icons/Edit';
 import PrintIcon from '@material-ui/icons/Print';
+import SendIcon from '@material-ui/icons/Send';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -136,25 +137,10 @@ export default function PDV(props) {
         </Grid>}
         </Grid>                   
         {!show &&<Grid container spacing={2}>
-          <Grid item xs={3} md={3}>
-              <TextField
-                margin="normal"
-                required
-                inputProps={{style: {fontSize: 40}}}
-                fullWidth
-                name="quantidade"
-                label="Quantidade"
-                type="number"
-                id="quantidade" 
-                value={quantidade}
-                onChange={handleChangeQuantidade}             
-                autoComplete="off"
-                variant="standard"
-              />
-                        
-          </Grid>
-          <Grid item xs={5} md={5}>
+          
+          <Grid item xs={5} md={8}>
           <TextField
+            disabled
             label="Produto"
             id="produto"
             size="small"
@@ -175,6 +161,7 @@ export default function PDV(props) {
         </Grid>
         <Grid item xs={2} md={2}>
           <TextField
+            disabled
             label="Total"
             id="total"
             size="small"
@@ -183,10 +170,34 @@ export default function PDV(props) {
             variant="standard"
           />  
          </Grid> 
-         </Grid>}                    
-             
-                
+         </Grid>}
+
+
+         {!show &&<Grid container spacing={2}>
+          <Grid item xs={6} md={6}>
+              <TextField
+                margin="normal"
+                required
+                inputProps={{style: {fontSize: 40}}}
+                fullWidth
+                name="quantidade"
+                label="Quantidade"
+                type="number"
+                id="quantidade" 
+                value={quantidade}
+                onChange={handleChangeQuantidade}             
+                autoComplete="off"
+                variant="standard"
+              />
+                        
+          </Grid>
+          <Grid item xs={6} md={6}>
+          <Button variant="contained" endIcon={<SendIcon />}>
+              Salvar
+        </Button>
+        </Grid>       
         
+         </Grid>} 
       
       </Box>      
        
