@@ -98,23 +98,7 @@ export default function PDV(props) {
 
            
         </Grid>
-        <Grid item xs={6} md={6}>
-            <TextField
-              margin="normal"
-              required
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              name="quantidade"
-              label="Quantidade"
-              type="number"
-              id="quantidade" 
-              value={quantidade}
-              onChange={handleChangeQuantidade}             
-              autoComplete="off"
-              variant="standard"
-            />
-                       
-        </Grid>
+       
 
         {show && <Grid item xs={6} md={6}>
            
@@ -151,29 +135,48 @@ export default function PDV(props) {
             </TableContainer>             
         </Grid>}
 
-        {!show &&<Grid item xs={6} md={6}>
-        
-        <TextField
-          label="Produto"
-          id="produto"
-          size="small"
-          value={dataEstoque.nome}
-        />
-
-        <TextField
-          label="Preço"
-          id="preco"
-          size="small"
-          value={dataEstoque.preco}
-        />
-
-        <TextField
-          label="Total"
-          id="total"
-          size="small"
-          value={(dataEstoque.preco)*(quantidade)}
-        />  
-          
+        {!show &&<Grid item xs={12} md={12}>
+          <Grid item xs={3} md={3}>
+              <TextField
+                margin="normal"
+                required
+                inputProps={{style: {fontSize: 40}}}
+                fullWidth
+                name="quantidade"
+                label="Quantidade"
+                type="number"
+                id="quantidade" 
+                value={quantidade}
+                onChange={handleChangeQuantidade}             
+                autoComplete="off"
+                variant="standard"
+              />
+                        
+          </Grid>
+          <Grid item xs={5} md={5}>
+          <TextField
+            label="Produto"
+            id="produto"
+            size="small"
+            value={dataEstoque.nome}
+          />
+        </Grid>
+        <Grid item xs={2} md={2}>
+          <TextField
+            label="Preço"
+            id="preco"
+            size="small"
+            value={dataEstoque.preco}
+          />
+        </Grid>
+        <Grid item xs={2} md={2}>
+          <TextField
+            label="Total"
+            id="total"
+            size="small"
+            value={(dataEstoque.preco)*(quantidade)}
+          />  
+         </Grid> 
         </Grid>}                    
              
                 
