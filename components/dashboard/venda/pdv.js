@@ -135,7 +135,7 @@ export default function PDV(props) {
             </TableContainer>             
         </Grid>}
 
-        {!show &&<Grid item xs={12} md={12}>
+        {!show &&<div>
           <Grid item xs={3} md={3}>
               <TextField
                 margin="normal"
@@ -177,7 +177,7 @@ export default function PDV(props) {
             value={(dataEstoque.preco)*(quantidade)}
           />  
          </Grid> 
-        </Grid>}                    
+        </div>}                    
              
                 
         
