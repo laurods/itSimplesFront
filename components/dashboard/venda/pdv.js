@@ -142,7 +142,7 @@ export default function PDV(props) {
         </Grid>                   
         {!show &&<Grid container spacing={2}>
           
-          <Grid item xs={5} md={5}>
+          <Grid item xs={6} md={6}>
           <TextField
             disabled
             label="Produto"
@@ -153,17 +153,7 @@ export default function PDV(props) {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={1} md={1}>
-          <TextField
-            disabled
-            label="Quant"
-            id="quant"
-            size="small"
-            value={quantidade}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
+        
         <Grid item xs={2} md={2}>
           <TextField
             label="Preço"
