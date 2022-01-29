@@ -153,7 +153,7 @@ export default function PDV(props) {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={2} md={2}>
+        <Grid item xs={1} md={1}>
           <TextField
             disabled
             label="Quant"
@@ -186,12 +186,12 @@ export default function PDV(props) {
           />  
          </Grid>
 
-         <Grid item xs={1} md={1}>
+         <Grid item xs={2} md={2}>
           <Button          
             fullWidth
             size="large" 
-            variant="contained" 
-            sx={{ mt: 5 }}
+            variant="outlined" 
+            sx={{ mt: 1 }}
             endIcon={<CheckCircleIcon />}>
           </Button>             
          </Grid>
