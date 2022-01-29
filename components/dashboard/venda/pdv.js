@@ -138,7 +138,7 @@ export default function PDV(props) {
         </Grid>                   
         {!show &&<Grid container spacing={2}>
           
-          <Grid item xs={5} md={8}>
+          <Grid item xs={8} md={8}>
           <TextField
             disabled
             label="Produto"
@@ -192,7 +192,13 @@ export default function PDV(props) {
                         
           </Grid>
           <Grid item xs={6} md={6}>
-          <Button variant="contained" endIcon={<SendIcon />}>
+            
+          <Button          
+          fullWidth
+          size="large" 
+          variant="contained" 
+          inputProps={{style: {margin: 5}}}
+          endIcon={<SendIcon />}>
               Salvar
         </Button>
         </Grid>       
