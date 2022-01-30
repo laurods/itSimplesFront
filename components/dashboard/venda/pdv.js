@@ -22,6 +22,10 @@ import Grid from '@mui/material/Grid';
 const theme = createTheme();
 export default function PDV(props) {
     const listProdutos = props.produtos;
+    const dataAtual = new Date();
+    const [day, setDay] = useState(dataAtual.getDate());
+    const [month, setMonth] = useState(dataAtual.getMonth() + 1);
+    const [year, setYear] = useState(dataAtual.getFullYear());
     const [show, setShow] = useState(true);      
     const [word, setWord] = useState('');
     const [quantidade, setQuantidade] = useState(1);
@@ -33,6 +37,9 @@ export default function PDV(props) {
       const total = preco * quantidade
       dataEstoque['total'] = total
       dataEstoque['estoque'] = (-1 * (quantidade))
+      dataEstoque['categoria'] = 'Venda'
+      dataEstoque['dia'] = `${day}/${month}/${year}`
+      dataEstoque['mes'] = `${month}/${year}`
       console.log('dataEstoque') 
       console.log(dataEstoque)
   };
