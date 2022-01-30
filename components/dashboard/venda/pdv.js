@@ -258,6 +258,37 @@ export default function PDV(props) {
           endIcon={<CheckCircleIcon />}>
               Salvar
         </Button>
+        </Grid>
+
+
+
+
+
+
+
+        <Grid item xs={12} md={12}>
+           
+            
+        <TableContainer component={Paper} sx={{ mt: 2 }}>
+        
+                <Table sx={{ minWidth: 200 }} aria-label="simple table">
+                    <TableHead>                    
+                    </TableHead>
+                    <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+                    {listEstoque.map((row) => (
+                        <TableRow
+                        key={row._id}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                      
+                        >
+                        <TableCell component="th" scope="row">
+                            {row.nome}
+                        </TableCell>                        
+
+                        </TableRow>
+                    ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>             
         </Grid>       
         
          </Grid>} 
