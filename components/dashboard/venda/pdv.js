@@ -32,6 +32,7 @@ export default function PDV(props) {
     const [preco, setPreco] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);
     const [dataEstoque, setDataEstoque] = useState({});
+    const [listEstoque, setListEstoque] = useState([]);
 
     const addListProducts = () => {
       const total = preco * quantidade
@@ -40,8 +41,11 @@ export default function PDV(props) {
       dataEstoque['categoria'] = 'Venda'
       dataEstoque['dia'] = `${day}/${month}/${year}`
       dataEstoque['mes'] = `${month}/${year}`
+      setListEstoque([...listEstoque, dataEstoque])
       console.log('dataEstoque') 
       console.log(dataEstoque)
+      console.log('listEstoque') 
+      console.log(listEstoque)
   };
     
     
