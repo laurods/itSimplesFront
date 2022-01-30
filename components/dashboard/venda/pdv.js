@@ -32,7 +32,8 @@ export default function PDV(props) {
     const addListProducts = () => {
       const total = preco * quantidade
       dataEstoque['total'] = total
-      console.log('dataEstoque')
+      dataEstoque['estoque'] = (-1 * (quantidade))
+      console.log('dataEstoque') 
       console.log(dataEstoque)
   };
     
