@@ -229,11 +229,43 @@ export default function PDV(props) {
                 variant="standard"
               />
                         
+          </Grid>
+
+          <Grid item xs={8} md={8}>
+              <TextField
+                margin="normal"
+                disabled
+                inputProps={{style: {fontSize: 40}}}
+                fullWidth
+                name="pagar"
+                label="Total a Pagar"
+                type="number"
+                id="pagar" 
+                value={quantidade}                          
+                autoComplete="off"
+                variant="standard"
+              />
+                        
           </Grid> 
 
         </Grid>}                     
 
+        <Grid container spacing={2}>              
+          
 
+          <Grid item xs={12} md={12}>
+            
+          <Button          
+          fullWidth
+          size="large" 
+          variant="contained" 
+          sx={{ mt: 5 }}
+          endIcon={<CheckCircleIcon />}>
+              Salvar
+          </Button>
+        </Grid>
+
+        </Grid>                   
 
         <Grid item xs={12} md={12}>           
             
@@ -258,37 +290,7 @@ export default function PDV(props) {
                 </Table>
             </TableContainer>             
         </Grid>
-        <Grid container spacing={2}>              
-        <Grid item xs={6} md={6}>
-              <TextField
-                margin="normal"
-                disabled
-                inputProps={{style: {fontSize: 40}}}
-                fullWidth
-                name="pagar"
-                label="Pagar"
-                type="number"
-                id="pagar" 
-                value={quantidade}                          
-                autoComplete="off"
-                variant="standard"
-              />
-                        
-          </Grid>
-
-          <Grid item xs={6} md={6}>
-            
-          <Button          
-          fullWidth
-          size="large" 
-          variant="contained" 
-          sx={{ mt: 5 }}
-          endIcon={<CheckCircleIcon />}>
-              Salvar
-          </Button>
-        </Grid>
-               
-        </Grid>
+        
          
       
       </Box>      
