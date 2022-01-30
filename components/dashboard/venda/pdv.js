@@ -29,6 +29,14 @@ export default function PDV(props) {
     const [productsFiltered, setProductsFiltered] = useState([]);
     const [dataEstoque, setDataEstoque] = useState({});
 
+    const addListProducts = () => {
+      const total = preco * quantidade
+      dataEstoque['total'] = total
+      console.log('dataEstoque')
+      console.log(dataEstoque)
+  };
+    
+    
     const handleChangeQuantidade = (event) => {
         setQuantidade(event.target.value);
     };
@@ -182,6 +190,7 @@ export default function PDV(props) {
             size="large" 
             variant="outlined" 
             sx={{ mt: 1 }}
+            onClick={addListProducts}
             endIcon={<CheckCircleIcon />}>
           </Button>             
          </Grid>
