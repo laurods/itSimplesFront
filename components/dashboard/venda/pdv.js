@@ -42,8 +42,7 @@ export default function PDV(props) {
       dataEstoque['dia'] = `${day}/${month}/${year}`
       dataEstoque['mes'] = `${month}/${year}`
       const prevListEstoque = [dataEstoque, ...listEstoque]
-      setListEstoque(prevListEstoque)
-      setDataEstoque({})
+      setListEstoque(prevListEstoque)      
       console.log('dataEstoque') 
       console.log(dataEstoque)
       console.log('listEstoque') 
