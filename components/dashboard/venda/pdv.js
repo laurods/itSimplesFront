@@ -258,7 +258,7 @@ export default function PDV(props) {
                 </Table>
             </TableContainer>             
         </Grid>
-
+        <Grid container spacing={2}>              
         <Grid item xs={6} md={6}>
               <TextField
                 margin="normal"
@@ -285,9 +285,10 @@ export default function PDV(props) {
           sx={{ mt: 5 }}
           endIcon={<CheckCircleIcon />}>
               Salvar
-        </Button>
-        </Grid>       
-        
+          </Button>
+        </Grid>
+               
+        </Grid>
          
       
       </Box>      
