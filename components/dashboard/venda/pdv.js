@@ -38,6 +38,7 @@ export default function PDV(props) {
       const total = preco * quantidade
       dataEstoque['total'] = total
       dataEstoque['estoque'] = (-1 * (quantidade))
+      dataEstoque['quantidade'] = quantidade
       dataEstoque['categoria'] = 'Venda'
       dataEstoque['dia'] = `${day}/${month}/${year}`
       dataEstoque['mes'] = `${month}/${year}`
@@ -282,7 +283,16 @@ export default function PDV(props) {
                         >
                         <TableCell component="th" scope="row">
                             {row.nome}
-                        </TableCell>                        
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {row.quantidade}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {row.preco}
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                            {row.total}
+                        </TableCell>                         
 
                         </TableRow>
                     ))}
