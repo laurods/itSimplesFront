@@ -67,33 +67,37 @@ export default function Entregas(props) {
         } 
   };
 
-  const handleSelectItemEstoque = async (
-    id, 
-    cean,
-    cnpj,
-    custoUnitario,
-    ficha,
-    grupo,
+  const handlehandlePrint = async (
+    _id, 
+    telefone,
     nome,
-    preco,
-
+    rua,
+    numero,
+    complemento,
+    bairro,
+    nascimento,
+    txEntrega,
+    pedido,
+    valorPedido,
     ) => {      
-    console.log('item estoque')    
-    const objEstoque ={
-      id, 
-      cean,
-      cnpj,      
-      custoUnitario,
-      ficha,
-      grupo,
-      nome,
-      preco,
-      //quant: (-1 * (quantidade)),
+    console.log('print')    
+    const objPrint ={
+        _id, 
+        telefone,
+        nome,
+        rua,
+        numero,
+        complemento,
+        bairro,
+        nascimento,
+        txEntrega,
+        pedido,
+        valorPedido,
     }
 
-  console.log(objEstoque)
-  setDataEstoque(objEstoque)
-  setPreco(preco)
+  console.log(objPrint)
+  //setDataEstoque(objEstoque)
+  //setPreco(preco)
    setWord('');
    setShow(false)
    //await axios.post('/api/estoque/itens', { objEstoque })       
@@ -139,17 +143,7 @@ export default function Entregas(props) {
                     {productsFiltered.map((row) => (
                         <TableRow
                         key={row._id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                        onClick={() => {handleSelectItemEstoque(
-                          row._id, 
-                          row.cean,
-                          row.cnpj,
-                          row.custoUnitario,
-                          row.ficha,
-                          row.grupo,
-                          row.nome,
-                          row.preco, 
-                          )}}                 
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                        
                         >
                         
                         <TableCell component="th" scope="row">
@@ -159,6 +153,19 @@ export default function Entregas(props) {
                             variant="contained"
                             color="success" 
                             endIcon={<PrintIcon/>}>
+                            onClick={() => {handlePrint(
+                            row._id, 
+                            row.telefone,
+                            row.nome,
+                            row.rua,
+                            row.numero,
+                            row.complemento,
+                            row.bairro,
+                            row.nascimento,
+                            row.txEntrega,
+                            row.pedido,
+                            row.valorPedido, 
+                            )}}
                             </Button>                        
                         </TableCell>                        
                         <TableCell component="th" scope="row">
