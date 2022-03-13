@@ -67,7 +67,7 @@ export default function Entregas(props) {
         } 
   };
 
-  const handlehandlePrint = async (
+  const handlePrint = async (
     _id, 
     telefone,
     nome,
