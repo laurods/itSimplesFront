@@ -28,6 +28,7 @@ export default function Entregas(props) {
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [show, setShow] = useState(true);      
     const [word, setWord] = useState('');
+    const [dataCustumer, setDataCustumer] = useState({});
     const [quantidade, setQuantidade] = useState(1);
     const [preco, setPreco] = useState('');   
     const [productsFiltered, setProductsFiltered] = useState([]);
@@ -81,7 +82,7 @@ export default function Entregas(props) {
     valorPedido,
     ) => {      
     console.log('print')    
-    const objPrint ={
+    const objCustumer ={
         _id, 
         telefone,
         nome,
@@ -95,8 +96,8 @@ export default function Entregas(props) {
         valorPedido,
     }
 
-  console.log(objPrint)
-  //setDataEstoque(objEstoque)
+  console.log(objCustumer)
+  setDataCustumer(objCustumer)
   //setPreco(preco)
    setWord('');
    setShow(false)
@@ -195,10 +196,10 @@ export default function Entregas(props) {
           <Grid item xs={6} md={6}>
           <TextField
             disabled
-            label="Produto"
-            id="produto"
+            label="Telefone"
+            id="telefone"
             size="small"
-            //value={dataEstoque.nome}
+            value={dataCustumer[0].telefone}
             fullWidth
             variant="standard"
           />
