@@ -159,7 +159,6 @@ export default function Entregas(props) {
                             variant="contained"
                             color="success" 
                             endIcon={<PrintIcon/>}>
-                                PRINT
                             </Button>                        
                         </TableCell>                        
                         <TableCell component="th" scope="row">
