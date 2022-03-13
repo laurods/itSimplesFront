@@ -20,6 +20,7 @@ export default function MenuMobile() {
     {id: '/tela/financeiro/diario', name: 'Financeiro'}, 
     {id: '/tela/produto/movimento', name:'Compra'},
     {id: '/tela/venda/pdv', name:'PDV'},
+    {id: '/tela/venda/entregas', name:'Entregas'},
     {id: '/tela/sair', name: 'Sair'}
   ]
   

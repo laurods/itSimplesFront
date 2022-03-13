@@ -40,7 +40,7 @@ export default function DasCNPJ() {
   };
 
   const handleFilter = () => {
-       const dia = `${day}/${month}/${year}`;
+       const dia = `${day}/${month}/${year}`;       
        const allFinanceiroFiltered = all.filter((item) => item.day == dia && item.categoria =='Financeiro')
        const allVendaFiltered = diario.filter((item) => item._id == dia)
        setFinanceiorFiltered(allFinanceiroFiltered)
