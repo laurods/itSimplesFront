@@ -289,57 +289,17 @@ export default function Entregas(props) {
           <Button          
             fullWidth
             size="large" 
-            variant="outlined" 
+            variant="contained" 
             sx={{ mt: 1 }}
             onClick={addListProducts}
             endIcon={<PrintIcon />}
-            value="Imprimir"
             >
-
+            Imprimir        
           </Button>             
          </Grid>
 
 
          </Grid>}
-
-
-         {!show &&<Grid container spacing={2}>
-          <Grid item xs={4} md={4}>
-              <TextField
-                margin="normal"
-                required
-                inputProps={{style: {fontSize: 40}}}
-                fullWidth
-                name="quantidade"
-                label="Quantidade"
-                type="number"
-                id="quantidade" 
-                //value={quantidade}
-                onChange={handleChangeQuantidade}             
-                autoComplete="off"
-                variant="standard"
-              />
-                        
-          </Grid>
-
-          <Grid item xs={8} md={8}>
-              <TextField
-                margin="normal"
-                disabled
-                inputProps={{style: {fontSize: 40}}}
-                fullWidth
-                name="pagar"
-                label="Total a Pagar"
-                type="number"
-                id="pagar" 
-                //value={quantidade}                          
-                autoComplete="off"
-                variant="standard"
-              />
-                        
-          </Grid> 
-
-        </Grid>}  
       </Box>      
        
       </Container>
