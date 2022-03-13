@@ -120,6 +120,7 @@ export default function Entregas(props) {
               fullWidth
               name="telefone"
               label="Telefone"
+              type="number"
               id="telefone"
               value={word} 
               onChange={handleFilter}                          
@@ -190,14 +191,13 @@ export default function Entregas(props) {
             </TableContainer>             
         </Grid>}
         </Grid>                   
-        {!show &&<Grid container spacing={2}>
+        {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
           
         <Grid item xs={3} md={3}>
           <TextField
             disabled
             label="Telefone"
             id="telefone"
-            size="small"
             value={dataCustumer.telefone}
             fullWidth
             variant="standard"
@@ -207,7 +207,6 @@ export default function Entregas(props) {
           <TextField
             label="Nome"
             id="nome"
-            size="small"
             value={dataCustumer.nome}
             fullWidth
             variant="standard"
@@ -217,7 +216,6 @@ export default function Entregas(props) {
           <TextField
             label="Rua"
             id="rua"
-            size="small"
             value={dataCustumer.rua}
             fullWidth
             variant="standard"
@@ -227,7 +225,6 @@ export default function Entregas(props) {
           <TextField
             label="Numero"
             id="numero"
-            size="small"
             value={dataCustumer.numero}
             fullWidth
             variant="standard"
@@ -237,7 +234,6 @@ export default function Entregas(props) {
           <TextField
             label="Complemento"
             id="complemento"
-            size="small"
             value={dataCustumer.complemento}
             fullWidth
             variant="standard"
@@ -247,7 +243,6 @@ export default function Entregas(props) {
           <TextField
             label="Bairro"
             id="bairro"
-            size="small"
             value={dataCustumer.bairro}
             fullWidth
             variant="standard"
@@ -257,7 +252,8 @@ export default function Entregas(props) {
           <TextField
             label="Pedido"
             id="pedido"
-            size="small"
+            multiline
+            maxRows={3}
             value={dataCustumer.pedido}
             fullWidth
             variant="standard"
@@ -267,7 +263,6 @@ export default function Entregas(props) {
           <TextField
             label="Taxa Entrega"
             id="txEntrega"
-            size="small"
             value={dataCustumer.txEntrega}
             fullWidth
             variant="standard"
@@ -277,7 +272,6 @@ export default function Entregas(props) {
           <TextField
             label="Valor Pedido"
             id="valorPedido"
-            size="small"
             value={dataCustumer.valorPedido}
             fullWidth
             variant="standard"
