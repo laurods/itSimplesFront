@@ -156,10 +156,10 @@ export default function Entregas(props) {
                             <Button          
                             fullWidth
                             size="large" 
-                            variant="contained" 
-                            sx={{ mt: 5 }}
+                            variant="contained"
+                            color="success" 
                             endIcon={<PrintIcon/>}>
-                                Imprimir
+                                PRINT
                             </Button>                        
                         </TableCell>                        
                         <TableCell component="th" scope="row">
