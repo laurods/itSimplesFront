@@ -152,7 +152,17 @@ export default function Entregas(props) {
                           )}}                 
                         >
                         <TableCell component="th" scope="row">{row.nome}</TableCell>                        
-                        <TableCell component="th" scope="row">{row.telefone}</TableCell>
+                        <TableCell component="th" scope="row">
+                            <Button          
+                            fullWidth
+                            size="large" 
+                            variant="contained"                            
+                            >
+                                {row.telefone}
+                            </Button>
+                            
+                            
+                        </TableCell>
                         <TableCell component="th" scope="row">{row.rua}</TableCell>
                         <TableCell component="th" scope="row">{row.numero}</TableCell>
                         <TableCell component="th" scope="row">{row.complemento}</TableCell>
