@@ -152,7 +152,7 @@ export default function Entregas(props) {
                             size="large" 
                             variant="contained"
                             color="success" 
-                            endIcon={<PrintIcon/>}>
+                            endIcon={<PrintIcon/>}
                             onClick={() => {handlePrint(
                             row._id, 
                             row.telefone,
@@ -166,6 +166,7 @@ export default function Entregas(props) {
                             row.pedido,
                             row.valorPedido, 
                             )}}
+                            >
                             </Button>                        
                         </TableCell>                        
                         <TableCell component="th" scope="row">
