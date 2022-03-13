@@ -198,7 +198,7 @@ export default function Entregas(props) {
             label="Produto"
             id="produto"
             size="small"
-            value={dataEstoque.nome}
+            //value={dataEstoque.nome}
             fullWidth
             variant="standard"
           />
@@ -209,7 +209,7 @@ export default function Entregas(props) {
             label="Preço"
             id="preco"
             size="small"
-            value={preco.toFixed(2)}
+            //value={preco.toFixed(2)}
             fullWidth
             variant="standard"
           />
@@ -220,7 +220,7 @@ export default function Entregas(props) {
             label="Total"
             id="total"
             size="small"
-            value={((preco)*(quantidade)).toFixed(2)}
+            //value={((preco)*(quantidade)).toFixed(2)}
             fullWidth
             variant="standard"
           />  
@@ -252,7 +252,7 @@ export default function Entregas(props) {
                 label="Quantidade"
                 type="number"
                 id="quantidade" 
-                value={quantidade}
+                //value={quantidade}
                 onChange={handleChangeQuantidade}             
                 autoComplete="off"
                 variant="standard"
@@ -270,67 +270,14 @@ export default function Entregas(props) {
                 label="Total a Pagar"
                 type="number"
                 id="pagar" 
-                value={quantidade}                          
+                //value={quantidade}                          
                 autoComplete="off"
                 variant="standard"
               />
                         
           </Grid> 
 
-        </Grid>}                     
-
-        <Grid container spacing={2}>              
-          
-
-          <Grid item xs={12} md={12}>
-            
-          <Button          
-          fullWidth
-          size="large" 
-          variant="contained" 
-          sx={{ mt: 5 }}
-          endIcon={<CheckCircleIcon />}>
-              Salvar
-          </Button>
-        </Grid>
-
-        </Grid>                   
-
-        <Grid item xs={12} md={12}>           
-            
-        <TableContainer component={Paper} sx={{ mt: 2 }}>
-        
-                <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                    <TableHead>                    
-                    </TableHead>
-                    <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {listEstoque.map((row) => (
-                        <TableRow
-                        key={row._id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                      
-                        >
-                        <TableCell component="th" scope="row">
-                            {row.nome}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {row.quantidade}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {row.preco}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                            {row.total}
-                        </TableCell>                         
-
-                        </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>             
-        </Grid>
-        
-         
-      
+        </Grid>}  
       </Box>      
        
       </Container>
