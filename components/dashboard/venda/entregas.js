@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import PrintIcon from '@material-ui/icons/Print';
 import EditIcon from '@material-ui/icons/Edit';
 import PrintIcon from '@material-ui/icons/Print';
 import SendIcon from '@material-ui/icons/Send';
@@ -151,7 +152,17 @@ export default function Entregas(props) {
                           row.preco, 
                           )}}                 
                         >
-                        <TableCell component="th" scope="row">{row.nome}</TableCell>                        
+                        
+                        <TableCell component="th" scope="row">
+                            <Button          
+                            fullWidth
+                            size="large" 
+                            variant="contained" 
+                            sx={{ mt: 5 }}
+                            endIcon={<PrintIcon/>}>
+                                Imprimir
+                            </Button>                        
+                        </TableCell>                        
                         <TableCell component="th" scope="row">
                             <Button          
                             fullWidth
@@ -160,9 +171,8 @@ export default function Entregas(props) {
                             >
                                 {row.telefone}
                             </Button>
-                            
-                            
                         </TableCell>
+                        <TableCell component="th" scope="row">{row.nome}</TableCell>
                         <TableCell component="th" scope="row">{row.rua}</TableCell>
                         <TableCell component="th" scope="row">{row.numero}</TableCell>
                         <TableCell component="th" scope="row">{row.complemento}</TableCell>
