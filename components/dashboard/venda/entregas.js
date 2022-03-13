@@ -20,8 +20,8 @@ import Grid from '@mui/material/Grid';
 
 
 const theme = createTheme();
-export default function PDV(props) {
-    const listProdutos = props.produtos;
+export default function Entregas(props) {
+    const listConsumers = props.consumers;
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -57,8 +57,8 @@ export default function PDV(props) {
     
     const handleFilter = (event) => {
       setShow(true)      
-      setWord(event.target.value.toUpperCase())
-      const listProductsFiltered = listProdutos.filter((item) => item.nome.includes(event.target.value.toUpperCase()) )
+      setWord(event.target.value)
+      const listProductsFiltered = listConsumers.filter((item) => item.telefone.includes(event.target.value) )
       setProductsFiltered(listProductsFiltered)
 
       if(event.target.value.length == 0){
