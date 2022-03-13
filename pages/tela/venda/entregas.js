@@ -9,9 +9,10 @@ export default function Diario() {
   const [produtos, setProdutos] = useState([]);
     useEffect(() => {
         const loadAll = async() =>{         
-          const allProductsBasics = await axios.post('/api/produtos/getAllProductsBasics', { cnpj: activeCNPJ });              
-          const listAllProductsBasics = allProductsBasics.data;
-          setProdutos(listAllProductsBasics)
+          const allConsumers = await axios.get('/api/consumidores/getAll');              
+          const listAllConsumers = allConsumers.data;
+          //setProdutos(listAllConsumers)
+          console.log(listAllConsumers)
         }
         loadAll();
       }, []);
