@@ -199,7 +199,7 @@ export default function Entregas(props) {
             label="Telefone"
             id="telefone"
             size="small"
-            value={dataCustumer[0].telefone}
+            value={dataCustumer.telefone}
             fullWidth
             variant="standard"
           />
