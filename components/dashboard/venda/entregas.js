@@ -26,7 +26,8 @@ export default function Entregas(props) {
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
-    const [show, setShow] = useState(true);      
+    const [show, setShow] = useState(true);
+    const [showTelefone, setShowTelefone] = useState(true);      
     const [word, setWord] = useState('');
     const [dataCustumer, setDataCustumer] = useState({});
     const [quantidade, setQuantidade] = useState(1);
@@ -95,12 +96,10 @@ export default function Entregas(props) {
         pedido,
         valorPedido,
     }
-
-  console.log(objCustumer)
   setDataCustumer(objCustumer)
-  //setPreco(preco)
    setWord('');
    setShow(false)
+   setShowTelefone(false)
    //await axios.post('/api/estoque/itens', { objEstoque })       
     
 };
@@ -112,7 +111,7 @@ export default function Entregas(props) {
 
       <Grid container spacing={2}>     
 
-         <Grid item xs={12} md={12}>
+      {showTelefone && <Grid item xs={12} md={12}>
          <TextField
               margin="normal"
               required
@@ -130,7 +129,7 @@ export default function Entregas(props) {
 
            
         </Grid>
-       
+       }
 
         {show && <Grid item xs={12} md={12}>
            
