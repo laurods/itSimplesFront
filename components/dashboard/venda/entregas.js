@@ -114,9 +114,9 @@ export default function PDV(props) {
               autoFocus
               inputProps={{style: {fontSize: 40}}}
               fullWidth
-              name="produto"
-              label="Produto"
-              id="produto"
+              name="telefone"
+              label="Telefone"
+              id="telefone"
               value={word} 
               onChange={handleFilter}                          
               autoComplete="off"
