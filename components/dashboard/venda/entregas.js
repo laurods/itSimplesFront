@@ -206,7 +206,6 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={9} md={9}>
           <TextField
-            disabled
             label="Nome"
             id="nome"
             size="small"
@@ -217,7 +216,6 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={9} md={9}>
           <TextField
-            disabled
             label="Rua"
             id="rua"
             size="small"
@@ -228,7 +226,6 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={3} md={3}>
           <TextField
-            disabled
             label="Numero"
             id="numero"
             size="small"
@@ -239,7 +236,6 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={6} md={6}>
           <TextField
-            disabled
             label="Complemento"
             id="complemento"
             size="small"
@@ -250,7 +246,6 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={6} md={6}>
           <TextField
-            disabled
             label="Bairro"
             id="bairro"
             size="small"
@@ -259,39 +254,48 @@ export default function Entregas(props) {
             variant="standard"
           />
         </Grid>
-
-
-        
-        <Grid item xs={2} md={2}>
+        <Grid item xs={12} md={12}>
           <TextField
-            label="Preço"
-            id="preco"
+            label="Pedido"
+            id="pedido"
             size="small"
-            //value={preco.toFixed(2)}
+            value={dataCustumer.pedido}
             fullWidth
             variant="standard"
           />
         </Grid>
-        <Grid item xs={2} md={2}>
+        <Grid item xs={6} md={6}>
           <TextField
-            disabled
-            label="Total"
-            id="total"
+            label="Taxa Entrega"
+            id="txEntrega"
             size="small"
-            //value={((preco)*(quantidade)).toFixed(2)}
+            value={dataCustumer.txEntrega}
             fullWidth
             variant="standard"
-          />  
-         </Grid>
+          />
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <TextField
+            label="Valor Pedido"
+            id="valorPedido"
+            size="small"
+            value={dataCustumer.valorPedido}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
 
-         <Grid item xs={2} md={2}>
+         <Grid item xs={12} md={12}>
           <Button          
             fullWidth
             size="large" 
             variant="outlined" 
             sx={{ mt: 1 }}
             onClick={addListProducts}
-            endIcon={<CheckCircleIcon />}>
+            endIcon={<PrintIcon />}
+            value="Imprimir"
+            >
+
           </Button>             
          </Grid>
 
