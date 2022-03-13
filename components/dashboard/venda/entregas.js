@@ -151,10 +151,12 @@ export default function Entregas(props) {
                           row.preco, 
                           )}}                 
                         >
-                        <TableCell component="th" scope="row">
-                            {row.nome}
-                        </TableCell>                        
-
+                        <TableCell component="th" scope="row">{row.nome}</TableCell>                        
+                        <TableCell component="th" scope="row">{row.telefone}</TableCell>
+                        <TableCell component="th" scope="row">{row.rua}</TableCell>
+                        <TableCell component="th" scope="row">{row.numero}</TableCell>
+                        <TableCell component="th" scope="row">{row.complemento}</TableCell>
+                        <TableCell component="th" scope="row">{row.bairro}</TableCell>    
                         </TableRow>
                     ))}
                     </TableBody>
