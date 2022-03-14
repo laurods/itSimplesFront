@@ -33,7 +33,7 @@ export default function Diario({ data }) {
     return (
       <>
       <TopMobile />
-      <Entregas consumers={ users }/>
+      <Entregas consumers={ data }/>
       </>
     );
     
