@@ -1,4 +1,6 @@
 import React, {  useState, useEffect, useContext } from 'react';
+import { getServerSideProps } from 'next';
+
 import TopMobile from '../../../components/dashboard/topMobile';
 import Entregas from '../../../components/dashboard/venda/entregas';
 import axios from 'axios';
