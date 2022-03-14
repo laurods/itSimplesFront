@@ -1,11 +1,22 @@
 import React, {  useState, useEffect, useContext } from 'react';
-import { GetServerSideProps } from 'next';
 
 import TopMobile from '../../../components/dashboard/topMobile';
 import Entregas from '../../../components/dashboard/venda/entregas';
 import axios from 'axios';
 
-export default function Diario({ listAllConsumers }) {   
+const fetchData = async () => await axios.get('/api/consumidores/getAll')
+.then(res => ({
+  error: false,
+  users: res.data,
+}))
+.catch(() => ({
+    error: true,
+    users: null,
+  }),
+);
+
+export default function Diario({ users, error }) {
+    
   ///const [consumers, setConsumers] = useState([]);
   /*
     useEffect(() => {
@@ -22,16 +33,16 @@ export default function Diario({ listAllConsumers }) {
     return (
       <>
       <TopMobile />
-      <Entregas consumers={listAllConsumers }/>
+      <Entregas consumers={ users }/>
       </>
     );
     
   }
 
-  export async function getServerSideProps() {
-    const allConsumers = await axios.get('/api/consumidores/getAll');              
-    const listAllConsumers = allConsumers.data;
+  export const getServerSideProps = async () => {
+    const data = await fetchData();
+  
     return {
-      props: { listAllConsumers }, // will be passed to the page component as props
-    }
+      props: data,
+    };
   }
