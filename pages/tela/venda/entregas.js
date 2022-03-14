@@ -4,7 +4,7 @@ import TopMobile from '../../../components/dashboard/topMobile';
 import Entregas from '../../../components/dashboard/venda/entregas';
 import axios from 'axios';
 
-const fetchData = async () => await axios.get('https://jsonplaceholder.typicode.com/users')
+const fetchData = async () => await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
 .then(res => ({
   error: false,
   users: res.data,
