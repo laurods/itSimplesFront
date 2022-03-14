@@ -7,15 +7,15 @@ import axios from 'axios';
 const fetchData = async () => await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
 .then(res => ({
   error: false,
-  users: res.data,
+  consumers: res.data,
 }))
 .catch(() => ({
     error: true,
-    users: null,
+    consumers: null,
   }),
 );
 
-export default function Diario({  users, error  }) {
+export default function Diario({  consumers, error  }) {
     
   ///const [consumers, setConsumers] = useState([]);
   /*
@@ -28,12 +28,12 @@ export default function Diario({  users, error  }) {
         loadAll();
       }, []);
     */
-     console.log(users)
+     console.log(consumers)
   
     return (
       <>
       <TopMobile />
-      <Entregas consumers={ users }/>
+      <Entregas consumers={ consumers }/>
       </>
     );
     
