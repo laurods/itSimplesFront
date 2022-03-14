@@ -15,7 +15,7 @@ const fetchData = async () => await axios.get('/api/consumidores/getAll')
   }),
 );
 
-export default function Diario({ users, error }) {
+export default function Diario({ data }) {
     
   ///const [consumers, setConsumers] = useState([]);
   /*
@@ -28,7 +28,7 @@ export default function Diario({ users, error }) {
         loadAll();
       }, []);
     */
-     console.log(users)
+     console.log(data)
   
     return (
       <>
