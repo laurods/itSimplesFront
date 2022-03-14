@@ -28,7 +28,7 @@ export default function Diario({ users, error }) {
         loadAll();
       }, []);
     */
-     
+     console.log(users)
   
     return (
       <>
