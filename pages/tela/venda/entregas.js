@@ -4,7 +4,7 @@ import TopMobile from '../../../components/dashboard/topMobile';
 import Entregas from '../../../components/dashboard/venda/entregas';
 import axios from 'axios';
 
-const fetchData = async () => await axios.get('/api/consumidores/getAll')
+const fetchData = async () => await axios.get('https://jsonplaceholder.typicode.com/users')
 .then(res => ({
   error: false,
   users: res.data,
@@ -15,7 +15,7 @@ const fetchData = async () => await axios.get('/api/consumidores/getAll')
   }),
 );
 
-export default function Diario({ data }) {
+export default function Diario({  users, error  }) {
     
   ///const [consumers, setConsumers] = useState([]);
   /*
@@ -28,12 +28,12 @@ export default function Diario({ data }) {
         loadAll();
       }, []);
     */
-     console.log(data)
+     console.log(users)
   
     return (
       <>
       <TopMobile />
-      <Entregas consumers={ data }/>
+      <Entregas consumers={ users }/>
       </>
     );
     
