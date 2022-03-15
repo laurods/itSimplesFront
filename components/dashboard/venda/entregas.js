@@ -53,20 +53,20 @@ export default function Entregas(props) {
   };
     
     
-    const handleChangeQuantidade = (event) => {
-        setQuantidade(event.target.value);
-    };
-    
-    const handleFilter = (event) => {
-      setShow(true)      
+    const handleWord = (event) => {
       setWord(event.target.value)
-      const listProductsFiltered = listConsumers.filter((item) => item.telefone.includes(event.target.value) )
-      setProductsFiltered(listProductsFiltered)
-
       if(event.target.value.length == 0){
         setProductsFiltered([]);
         setWord('');       
-        } 
+        }
+       if(word.length >= 8) {
+        handleFilter(word)
+       }
+    };
+    
+    const handleFilter = (word) => {      
+      const listProductsFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
+      setProductsFiltered(listProductsFiltered)      
   };
 
   const handlePrint = async (
@@ -123,7 +123,7 @@ export default function Entregas(props) {
               type="number"
               id="telefone"
               value={word} 
-              onChange={handleFilter}                          
+              onChange={handleWord}                          
               autoComplete="off"
               variant="standard"
             />
