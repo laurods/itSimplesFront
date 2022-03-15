@@ -27,7 +27,8 @@ export default function Entregas(props) {
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [show, setShow] = useState(true);
-    const [showTelefone, setShowTelefone] = useState(true);      
+    const [showTelefone, setShowTelefone] = useState(true);
+    const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
     const [dataCustumer, setDataCustumer] = useState({});
     const [quantidade, setQuantidade] = useState(1);
@@ -59,9 +60,6 @@ export default function Entregas(props) {
         setProductsFiltered([]);
         setWord('');       
         }
-       if(word.length >= 8) {
-        handleFilter(word)
-       }
     };
     
     const handleFilter = (word) => {      
@@ -112,6 +110,17 @@ export default function Entregas(props) {
       <Grid container spacing={2}>     
 
       {showTelefone && <Grid item xs={12} md={12}>
+      <Grid item xs={2} md={2}>
+          <TextField
+            disabled
+            label="DDD"
+            id="ddd"
+            value={DDD}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={9} md={9}>
          <TextField
               margin="normal"
               required
@@ -127,7 +136,18 @@ export default function Entregas(props) {
               autoComplete="off"
               variant="standard"
             />
+        </Grid>
 
+        <Grid item xs={1} md={1}>
+          <Button          
+            fullWidth
+            size="large" 
+            variant="contained"
+            color="success" 
+            onClick={ () => handleFilter(word)}
+          >
+          </Button>
+        </Grid>
            
         </Grid>
        }
