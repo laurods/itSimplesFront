@@ -109,10 +109,10 @@ export default function Entregas(props) {
 
       <Grid container spacing={2}>     
 
-      {showTelefone && <Grid item xs={12} md={12}>
+      {showTelefone && <Grid container spacing={2} sx={{ mt: 3 }}>
       <Grid item xs={2} md={2}>
           <TextField
-            disabled
+            inputProps={{style: {fontSize: 40}}}
             label="DDD"
             id="ddd"
             value={DDD}
@@ -139,13 +139,15 @@ export default function Entregas(props) {
         </Grid>
 
         <Grid item xs={1} md={1}>
-          <Button          
+          <Button
+            inputProps={{style: {fontSize: 40}}}          
             fullWidth
             size="large" 
             variant="contained"
             color="success" 
             onClick={ () => handleFilter(word)}
           >
+            OK
           </Button>
         </Grid>
            
