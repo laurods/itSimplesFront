@@ -109,17 +109,19 @@ export default function Entregas(props) {
 
       <Grid container spacing={2}>     
 
-      {showTelefone && <Grid container>
+      {showTelefone && <Grid container spacing={2} sx={{ mt: 3 }}>
       <Grid item xs={2} md={2}>
           <TextField
+            margin="normal"
+            required
             inputProps={{style: {fontSize: 40}}}
             label="DDD"
             id="ddd"
             value={DDD}
             fullWidth
+            variant="standard"
             type="number"
             autoComplete="off"
-            variant="standard"
           />
         </Grid>
         <Grid item xs={9} md={9}>
