@@ -226,7 +226,7 @@ export default function Entregas(props) {
             disabled
             label="Telefone"
             id="telefone"
-            value={dataCustumer.telefone}
+            value={custumer[0].telefone}
             fullWidth
             variant="standard"
           />
@@ -235,7 +235,7 @@ export default function Entregas(props) {
           <TextField
             label="Nome"
             id="nome"
-            value={dataCustumer.nome}
+            value={custumer[0].nome}
             fullWidth
             variant="standard"
           />
