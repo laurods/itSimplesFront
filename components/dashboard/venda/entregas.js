@@ -33,7 +33,7 @@ export default function Entregas(props) {
     const [dataCustumer, setDataCustumer] = useState({});
     const [quantidade, setQuantidade] = useState(1);
     const [preco, setPreco] = useState('');   
-    const [productsFiltered, setProductsFiltered] = useState([]);
+    const [custumer, setCustumer] = useState([]);
     const [dataEstoque, setDataEstoque] = useState({});
     const [listEstoque, setListEstoque] = useState([]);
 
@@ -57,14 +57,15 @@ export default function Entregas(props) {
     const handleWord = (event) => {
       setWord(event.target.value)
       if(event.target.value.length == 0){
-        setProductsFiltered([]);
+        setcustumer([]);
         setWord('');       
         }
     };
     
     const handleFilter = (word) => {      
-      const listProductsFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
-      setProductsFiltered(listProductsFiltered)      
+      const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
+      setCustumer(custumerFiltered)
+      console.log(custumer);      
   };
 
   const handlePrint = async (
@@ -167,7 +168,7 @@ export default function Entregas(props) {
                     <TableHead>                    
                     </TableHead>
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {productsFiltered.map((row) => (
+                    {custumer.map((row) => (
                         <TableRow
                         key={row._id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                        
@@ -216,7 +217,8 @@ export default function Entregas(props) {
                 </Table>
             </TableContainer>             
         </Grid>}
-        </Grid>                   
+        </Grid>
+        /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/                   
         {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
           
         <Grid item xs={3} md={3}>
@@ -319,6 +321,111 @@ export default function Entregas(props) {
 
 
          </Grid>}
+         /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+        /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/                   
+        {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
+          
+        <Grid item xs={3} md={3}>
+          <TextField
+            disabled
+            label="Telefone"
+            id="telefone"
+            value={dataCustumer.telefone}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={9} md={9}>
+          <TextField
+            label="Nome"
+            id="nome"
+            value={dataCustumer.nome}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={9} md={9}>
+          <TextField
+            label="Rua"
+            id="rua"
+            value={dataCustumer.rua}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={3} md={3}>
+          <TextField
+            label="Numero"
+            id="numero"
+            value={dataCustumer.numero}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <TextField
+            label="Complemento"
+            id="complemento"
+            value={dataCustumer.complemento}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <TextField
+            label="Bairro"
+            id="bairro"
+            value={dataCustumer.bairro}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <TextField
+            label="Pedido"
+            id="pedido"
+            multiline
+            maxRows={3}
+            value={dataCustumer.pedido}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <TextField
+            label="Taxa Entrega"
+            id="txEntrega"
+            value={dataCustumer.txEntrega}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <TextField
+            label="Valor Pedido"
+            id="valorPedido"
+            value={dataCustumer.valorPedido}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+
+         <Grid item xs={12} md={12}>
+          <Button          
+            fullWidth
+            size="large" 
+            variant="contained" 
+            sx={{ mt: 1 }}
+            onClick={addListProducts}
+            endIcon={<PrintIcon />}
+            >
+            Imprimir        
+          </Button>             
+         </Grid>
+
+
+         </Grid>}
+         /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
       </Box>      
        
       </Container>
