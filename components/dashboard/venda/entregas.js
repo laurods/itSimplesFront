@@ -33,7 +33,7 @@ export default function Entregas(props) {
     const [preco, setPreco] = useState('');
     const [dataEstoque, setDataEstoque] = useState({});
     const [listEstoque, setListEstoque] = useState([]);
-    const [custumer, setCustumer] = useState({});
+    const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
     const [nome, setNome] = useState('');
@@ -73,7 +73,7 @@ export default function Entregas(props) {
     
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
-      setCustumer(custumerFiltered[0])
+      setCustumer(custumerFiltered)
       console.log(custumer);
            
   };
@@ -235,7 +235,7 @@ export default function Entregas(props) {
             disabled
             label="Telefone"
             id="telefone"
-            value={custumer.telefone}
+            value={custumer[0].telefone}
             fullWidth
             variant="standard"
           />
@@ -246,7 +246,7 @@ export default function Entregas(props) {
             id="nome"
             name="Nome"
             onChange={handleText}
-            value={custumer.nome}
+            value={custumer[0].nome}
             fullWidth
             variant="standard"
           />
