@@ -30,10 +30,10 @@ export default function Entregas(props) {
     const [showTelefone, setShowTelefone] = useState(true);    
     const [dataCustumer, setDataCustumer] = useState({});
     const [quantidade, setQuantidade] = useState(1);
-    const [preco, setPreco] = useState('');   
-    const [custumer, setCustumer] = useState([]);
+    const [preco, setPreco] = useState('');
     const [dataEstoque, setDataEstoque] = useState({});
     const [listEstoque, setListEstoque] = useState([]);
+    const [custumer, setCustumer] = useState({});
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
     const [nome, setNome] = useState('');
@@ -58,7 +58,7 @@ export default function Entregas(props) {
     const handleWord = (event) => {
       setWord(event.target.value)
       if(event.target.value.length == 0){
-        setcustumer([]);
+        setCustumer([]);
         setWord('');       
         }
     };
@@ -67,15 +67,15 @@ export default function Entregas(props) {
       const name = event.target.name;
       console.log(name)
       console.log(event.target.value)
-      `set${name}`(event.target.value)
+      
       
     };
     
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
-      setCustumer(custumerFiltered)
+      setCustumer(custumerFiltered[0])
       console.log(custumer);
-      setNome(custumerFiltered[0].nome)      
+           
   };
 
   const handlePrint = async (
@@ -235,7 +235,7 @@ export default function Entregas(props) {
             disabled
             label="Telefone"
             id="telefone"
-            value={custumer[0].telefone}
+            value={custumer.telefone}
             fullWidth
             variant="standard"
           />
@@ -246,7 +246,7 @@ export default function Entregas(props) {
             id="nome"
             name="Nome"
             onChange={handleText}
-            value={nome}
+            value={custumer.nome}
             fullWidth
             variant="standard"
           />
