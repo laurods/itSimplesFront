@@ -27,15 +27,16 @@ export default function Entregas(props) {
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [show, setShow] = useState(true);
-    const [showTelefone, setShowTelefone] = useState(true);
-    const [DDD, setDDD] = useState('54');      
-    const [word, setWord] = useState('');
+    const [showTelefone, setShowTelefone] = useState(true);    
     const [dataCustumer, setDataCustumer] = useState({});
     const [quantidade, setQuantidade] = useState(1);
     const [preco, setPreco] = useState('');   
     const [custumer, setCustumer] = useState([]);
     const [dataEstoque, setDataEstoque] = useState({});
     const [listEstoque, setListEstoque] = useState([]);
+    const [DDD, setDDD] = useState('54');      
+    const [word, setWord] = useState('');
+    const [nome, setNome] = useState('');
 
     const addListProducts = () => {
       const total = preco * quantidade
@@ -61,11 +62,20 @@ export default function Entregas(props) {
         setWord('');       
         }
     };
+
+    const handleText = (event) => {
+      const name = event.target.name;
+      console.log(name)
+      console.log(event.target.value)
+      setNome(event.target.value)
+      
+    };
     
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
       setCustumer(custumerFiltered)
-      console.log(custumer);      
+      console.log(custumer);
+      setNome(custumerFiltered[0].nome)      
   };
 
   const handlePrint = async (
@@ -217,8 +227,7 @@ export default function Entregas(props) {
                 </Table>
             </TableContainer>             
         </Grid>}
-        </Grid>
-        /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/                   
+        </Grid>            
         {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
           
         <Grid item xs={3} md={3}>
@@ -235,7 +244,9 @@ export default function Entregas(props) {
           <TextField
             label="Nome"
             id="nome"
-            value={custumer[0].nome}
+            name="nome"
+            onChange={handleText}
+            value={nome}
             fullWidth
             variant="standard"
           />
@@ -321,111 +332,7 @@ export default function Entregas(props) {
 
 
          </Grid>}
-         /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-        /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/                   
-        {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
-          
-        <Grid item xs={3} md={3}>
-          <TextField
-            disabled
-            label="Telefone"
-            id="telefone"
-            value={dataCustumer.telefone}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={9} md={9}>
-          <TextField
-            label="Nome"
-            id="nome"
-            value={dataCustumer.nome}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={9} md={9}>
-          <TextField
-            label="Rua"
-            id="rua"
-            value={dataCustumer.rua}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={3} md={3}>
-          <TextField
-            label="Numero"
-            id="numero"
-            value={dataCustumer.numero}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={6} md={6}>
-          <TextField
-            label="Complemento"
-            id="complemento"
-            value={dataCustumer.complemento}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={6} md={6}>
-          <TextField
-            label="Bairro"
-            id="bairro"
-            value={dataCustumer.bairro}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} md={12}>
-          <TextField
-            label="Pedido"
-            id="pedido"
-            multiline
-            maxRows={3}
-            value={dataCustumer.pedido}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={6} md={6}>
-          <TextField
-            label="Taxa Entrega"
-            id="txEntrega"
-            value={dataCustumer.txEntrega}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={6} md={6}>
-          <TextField
-            label="Valor Pedido"
-            id="valorPedido"
-            value={dataCustumer.valorPedido}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-
-         <Grid item xs={12} md={12}>
-          <Button          
-            fullWidth
-            size="large" 
-            variant="contained" 
-            sx={{ mt: 1 }}
-            onClick={addListProducts}
-            endIcon={<PrintIcon />}
-            >
-            Imprimir        
-          </Button>             
-         </Grid>
-
-
-         </Grid>}
-         /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+        
       </Box>      
        
       </Container>
