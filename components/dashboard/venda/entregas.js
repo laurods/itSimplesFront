@@ -63,13 +63,7 @@ export default function Entregas(props) {
         }
     };
 
-    const handleText = (event) => {
-      const name = event.target.name;
-      console.log(name)
-      console.log(event.target.value)
-      
-      
-    };
+    const handleNome = (event) => { setNome(event.target.value) };
     
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
@@ -244,8 +238,7 @@ export default function Entregas(props) {
           <TextField
             label="Nome"
             id="nome"
-            name="Nome"
-            onChange={handleText}
+            onChange={handleNome}
             value={custumer[0].nome}
             fullWidth
             variant="standard"
