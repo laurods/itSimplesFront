@@ -68,6 +68,7 @@ export default function Entregas(props) {
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
       setCustumer(custumerFiltered)
+      setNome(custumerFiltered[0].nome)
       console.log(custumer);
            
   };
@@ -239,7 +240,7 @@ export default function Entregas(props) {
             label="Nome"
             id="nome"
             onChange={handleNome}
-            value={custumer[0].nome}
+            value={nome}
             fullWidth
             variant="standard"
           />
