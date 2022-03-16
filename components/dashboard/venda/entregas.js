@@ -69,7 +69,9 @@ export default function Entregas(props) {
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
       setCustumer(custumerFiltered)
       setNome(custumerFiltered[0].nome)
-      console.log(custumer);
+      setWord('');
+      setShow(false)
+      setShowTelefone(false)
            
   };
 
