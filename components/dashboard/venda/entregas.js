@@ -67,7 +67,7 @@ export default function Entregas(props) {
       const name = event.target.name;
       console.log(name)
       console.log(event.target.value)
-      setNome(event.target.value)
+      `set${name}`(event.target.value)
       
     };
     
@@ -244,7 +244,7 @@ export default function Entregas(props) {
           <TextField
             label="Nome"
             id="nome"
-            name="nome"
+            name="Nome"
             onChange={handleText}
             value={nome}
             fullWidth
