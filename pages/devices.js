@@ -4,13 +4,14 @@ import { AuthContext } from '../contexts/AuthContext';
 import { parseCookies } from 'nookies';
 import Login from '../components/login/login.js'
 import TopMobile from '../components/dashboard/topMobile';
-import ViewMainMobile from '../components/dashboard/viewMainMobile';
+import ViewMainDevice from '../components/dashboard/device/viewMainDevice';
 
 
 export default function Devices() {
      const {
        setCNPJsByUsers, 
-       setActiveCNPJ,        
+       setActiveCNPJ,
+       setDevices,        
        isAuthenticated,
        } = useContext(AuthContext);
      
@@ -20,7 +21,8 @@ export default function Devices() {
         const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
         const listClients = clients.data;
         const devices = await axios.get('/api/consumidores/getAll')
-        const listDevices = devices.data;       
+        const listDevices = devices.data;
+        setDevices(listDevices)       
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         console.log('CNPJ')
@@ -37,7 +39,7 @@ export default function Devices() {
       <>
       {!isAuthenticated && <Login />}
       {isAuthenticated && <TopMobile />}
-      {isAuthenticated && <ViewMainMobile />}  
+      {isAuthenticated && <ViewMainDevice />}  
       </>
     );
     
