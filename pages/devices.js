@@ -20,15 +20,22 @@ export default function Devices() {
         const cookies = parseCookies()
         const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
         const listClients = clients.data;
-        const devices = await axios.get('/api/consumidores/getAll')
+        const devices = await axios.get('/api/device/getAll')
         const listDevices = devices.data;
-        setDevices(listDevices)       
+        const cnpjs = listClients.map((item) => item.cnpj); // cnpjs das empresas dos usuarios
+        const devicesByUser = ([...cnpjs]) => { // compara os devices pelo CNPJ
+            return listDevices.filter(device => cnpjs.includes(device.CNPJ));
+          }
+          const filterDevices = await devicesByUser(cnpjs); // chama a função
+        setDevices(filterDevices)       
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         console.log('CNPJ')
         console.log(listClients[0].cnpj)
         console.log('List Clients')
         console.log(listClients)
+        console.log('filterDevices')
+        console.log(filterDevices) 
         console.log('List Devices')
         console.log(listDevices)                       
       }
