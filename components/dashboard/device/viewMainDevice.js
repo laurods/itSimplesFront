@@ -23,8 +23,6 @@ export default function ViewMainMobile() {
     const {
         devices,
         CNPJsByUsers,
-        activeCNPJ,       
-        isAuthenticated,
         } = useContext(AuthContext);
     
   return (
@@ -33,36 +31,46 @@ export default function ViewMainMobile() {
       <Grid container spacing={2}>
         <Grid item xs={1} md={1}>
         </Grid>
-        <Grid item xs={3} md={3}>
-        <TableContainer component={Paper} sx={{ mt: 2 }}>
-        
-        <Table sx={{ minWidth: 200 }} aria-label="simple table">
-            <TableHead>                    
-            </TableHead>
-            <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {CNPJsByUsers.map((row) => (
-                <TableRow
-                key={row.cnpj}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
-                >
-                <TableCell component="th" scope="row">
-                            <Button          
-                            fullWidth
-                            size="large" 
-                            variant="contained"                            
-                            >
-                                {row.name}
-                            </Button>
-                        </TableCell>
-                </TableRow>
-            ))}
-            </TableBody>
-        </Table>
-    </TableContainer>
-
-
+        <Grid item xs={2} md={2}>
+            <TableContainer component={Paper} sx={{ mt: 2 }}>
+            
+            <Table sx={{ minWidth: 200 }} aria-label="simple table">
+                <TableHead>                    
+                </TableHead>
+                <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+                {CNPJsByUsers.map((row) => (
+                    <TableRow
+                    key={row.cnpj}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
+                    >
+                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                    </TableRow>
+                ))}
+                </TableBody>
+            </Table>
+            </TableContainer>
         </Grid>
-        <Grid item xs={7} md={7}>           
+        <Grid item xs={8} md={8}>
+        <TableContainer component={Paper} sx={{ mt: 2 }}>            
+            <Table sx={{ minWidth: 200 }} aria-label="simple table">
+                <TableHead>                    
+                </TableHead>
+                <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
+                {devices.map((row) => (
+                    <TableRow
+                    key={row._id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
+                    >
+                    <TableCell component="th" scope="row">{row.Grupo}</TableCell>
+                    <TableCell component="th" scope="row">{row.IMEI}</TableCell>
+                    <TableCell component="th" scope="row">{row.Modelo}</TableCell>
+                    <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
+                    <TableCell component="th" scope="row">{row.Status}</TableCell>
+                    </TableRow>
+                ))}
+                </TableBody>
+            </Table>
+            </TableContainer>
         </Grid>
         <Grid item xs={1} md={1}>
         </Grid>             
