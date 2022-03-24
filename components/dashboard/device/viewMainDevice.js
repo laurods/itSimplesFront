@@ -20,10 +20,24 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewMainMobile() {
-    const {
-        devices,
-        CNPJsByUsers,
-        } = useContext(AuthContext);
+    const {devices, CNPJsByUsers,} = useContext(AuthContext);
+
+    const [device, setDevice] = useState([]);
+    const [word, setWord] = useState('');
+
+    const handleWord = (event) => {
+      setWord(event.target.value)
+      if(event.target.value.length == 0){
+      setWord('');       
+      }
+    };
+
+    const handleFilter = (word) => {      
+      const deviceFiltered = devices.filter((item) => item.Serial.includes(word) )
+      setDevice(deviceFiltered)
+      setWord('');
+      console.log(deviceFiltered)         
+  }
     
   return (
     <ThemeProvider theme={theme}>
@@ -51,28 +65,33 @@ export default function ViewMainMobile() {
             </TableContainer>
         </Grid>
         <Grid item xs={8} md={8}>
-        <TableContainer component={Paper} sx={{ mt: 2 }}>            
-            <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                <TableHead>                    
-                </TableHead>
-                <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                {devices.map((row) => (
-                    <TableRow
-                    key={row._id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
-                    >
-                    <TableCell component="th" scope="row">{row.Grupo}</TableCell>
-                    <TableCell component="th" scope="row">{row.IMEI}</TableCell>
-                    <TableCell component="th" scope="row">{row.Modelo}</TableCell>
-                    <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
-                    <TableCell component="th" scope="row">{row.Status}</TableCell>
-                    </TableRow>
-                ))}
-                </TableBody>
-            </Table>
-            </TableContainer>
+          <TextField
+              margin="normal"
+              required
+              autoFocus
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="serial"
+              label="Serial"
+              type="number"
+              id="serial"
+              value={word} 
+              onChange={handleWord}                          
+              autoComplete="off"
+              variant="standard"
+            />
         </Grid>
         <Grid item xs={1} md={1}>
+        <Button
+            inputProps={{style: {fontSize: 40}}}          
+            fullWidth
+            size="large" 
+            variant="contained"
+            color="success" 
+            onClick={ () => handleFilter(word)}
+          >
+            OK
+          </Button>
         </Grid>             
         
       </Grid>
