@@ -97,17 +97,19 @@ export default function ViewMainMobile() {
             OK
           </Button>
         </Grid>
-        <Grid item xs={2} md={2}>
-            <FormGroup>
-            <FormControlLabel control={<Checkbox defaultChecked />} label="COLETOR" />
-            <FormControlLabel control={<Checkbox />} label="TELEFONE" />
-          </FormGroup>
+        <Grid item xs={2} md={2}>            
         </Grid>           
       
       </Grid>
 
       <Grid container spacing={2}>
-        <Grid item xs={12} md={12}>
+      <Grid item xs={2} md={2}>
+            <FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked />} label="COLETOR" />
+            <FormControlLabel control={<Checkbox />} label="TELEFONE" />
+          </FormGroup>
+        </Grid>
+        <Grid item xs={8} md={8}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
@@ -118,7 +120,7 @@ export default function ViewMainMobile() {
                       key={row._id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                       >
-                      <TableCell component="th" scope="row">{row.Grupo}</TableCell>
+                      <TableCell component="th" scope="row">{row.Equipamento}</TableCell>
                       <TableCell component="th" scope="row">{row.IMEI}</TableCell>
                       <TableCell component="th" scope="row">{row.Modelo}</TableCell>
                       <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
@@ -128,6 +130,8 @@ export default function ViewMainMobile() {
                   </TableBody>
               </Table>
               </TableContainer>       
+        </Grid>
+        <Grid item xs={2} md={2}>            
         </Grid>
       </Grid>
     </Box>
