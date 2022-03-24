@@ -15,6 +15,8 @@ import SendIcon from '@material-ui/icons/Send';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@mui/material/Button';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -65,7 +67,7 @@ export default function ViewMainMobile() {
             </Table>
             </TableContainer>
         </Grid>
-        <Grid item xs={7} md={7}>
+        <Grid item xs={6} md={6}>
           <TextField
               margin="normal"
               required
@@ -95,10 +97,13 @@ export default function ViewMainMobile() {
             OK
           </Button>
         </Grid>
-        <Grid item xs={1} md={1}>
-        </Grid>             
-        <Checkbox label="COLETOR" defaultChecked />
-        <Checkbox label="TELEFONE"  />
+        <Grid item xs={2} md={2}>
+            <FormGroup>
+            <FormControlLabel control={<Checkbox defaultChecked />} label="COLETOR" />
+            <FormControlLabel disabled control={<Checkbox />} label="TELEFONE" />
+          </FormGroup>
+        </Grid>           
+      
       </Grid>
     </Box>
 
