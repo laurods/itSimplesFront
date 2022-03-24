@@ -25,7 +25,16 @@ const theme = createTheme();
 export default function ViewMainMobile() {
     const {devices} = useContext(AuthContext);
 
+    useEffect(() => {
+      const loadAll = async() =>{        
+        const dataDevice = devices.filter((item) => item.Equipamento.includes("COLETOR") )
+        setListDevice(dataDevice)                          
+      }
+      loadAll();
+    }, []);
+
     const [device, setDevice] = useState([]);
+    const [listDevice, setListDevice] = useState([]);
     const [word, setWord] = useState('');
 
     const handleWord = (event) => {
@@ -96,7 +105,7 @@ export default function ViewMainMobile() {
                   <TableHead>                    
                   </TableHead>
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {devices.map((row) => (
+                  {listDevice.map((row) => (
                       <TableRow
                       key={row._id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
