@@ -15,6 +15,7 @@ import SendIcon from '@material-ui/icons/Send';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
@@ -45,7 +46,7 @@ export default function ViewMainMobile() {
       <Grid container spacing={2}>
         <Grid item xs={1} md={1}>
         </Grid>
-        <Grid item xs={1} md={1}>
+        <Grid item xs={2} md={2}>
             <TableContainer component={Paper} sx={{ mt: 2 }}>
             
             <Table sx={{ minWidth: 200 }} aria-label="simple table">
@@ -93,8 +94,11 @@ export default function ViewMainMobile() {
           >
             OK
           </Button>
+        </Grid>
+        <Grid item xs={1} md={1}>
         </Grid>             
-        
+        <Checkbox label="COLETOR" defaultChecked />
+        <Checkbox label="TELEFONE"  />
       </Grid>
     </Box>
 
