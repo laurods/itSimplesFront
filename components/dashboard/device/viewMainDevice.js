@@ -86,7 +86,7 @@ export default function ViewMainMobile() {
         </Grid>
         <Grid item xs={1} md={1}>
         <Button
-            sx={{ mt: 2 }}
+            sx={{ mt: 5 }}
             inputProps={{style: {fontSize: 40}}}          
             fullWidth
             size="large" 
@@ -100,7 +100,7 @@ export default function ViewMainMobile() {
         <Grid item xs={2} md={2}>
             <FormGroup>
             <FormControlLabel control={<Checkbox defaultChecked />} label="COLETOR" />
-            <FormControlLabel disabled control={<Checkbox />} label="TELEFONE" />
+            <FormControlLabel control={<Checkbox />} label="TELEFONE" />
           </FormGroup>
         </Grid>           
       
