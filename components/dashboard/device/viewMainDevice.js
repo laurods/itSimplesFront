@@ -37,6 +37,9 @@ export default function ViewMainMobile() {
     const [listDevice, setListDevice] = useState([]);
     const [word, setWord] = useState('');
 
+    console.log('listDevice')
+    console.log(listDevice)
+
     const handleWord = (event) => {
       setWord(event.target.value)
       if(event.target.value.length == 0){
