@@ -25,20 +25,13 @@ const theme = createTheme();
 export default function ViewMainMobile() {
     const {devices} = useContext(AuthContext);
 
-    useEffect(() => {
-      const loadAll = async() =>{        
-        const dataDevice = devices.filter((item) => item.Equipamento.includes("COLETOR") )
-        setListDevice(dataDevice)                          
-      }
-      loadAll();
-    }, []);
-
     const [device, setDevice] = useState([]);
     const [listDevice, setListDevice] = useState([]);
     const [word, setWord] = useState('');
 
-    console.log('listDevice')
-    console.log(listDevice)
+    const handleCheck = (event) => {
+      console.log(event.target.value);
+    };
 
     const handleWord = (event) => {
       setWord(event.target.value)
@@ -98,8 +91,8 @@ export default function ViewMainMobile() {
       </Grid>
       <Grid item xs={2} md={2}>
             <FormGroup>
-            <FormControlLabel control={<Checkbox defaultChecked />} label="COLETOR" />
-            <FormControlLabel control={<Checkbox />} label="TELEFONE" />
+            <FormControlLabel onChange={handleCheck} control={<Checkbox />} value="COLETOR" label="COLETOR" />
+            <FormControlLabel onChange={handleCheck} control={<Checkbox />} value="TELEFONE" label="TELEFONE" />
           </FormGroup>
         </Grid>
         <Grid item xs={7} md={7}>
