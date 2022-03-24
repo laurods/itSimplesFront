@@ -45,7 +45,7 @@ export default function ViewMainMobile() {
       <Grid container spacing={2}>
         <Grid item xs={1} md={1}>
         </Grid>
-        <Grid item xs={2} md={2}>
+        <Grid item xs={1} md={1}>
             <TableContainer component={Paper} sx={{ mt: 2 }}>
             
             <Table sx={{ minWidth: 200 }} aria-label="simple table">
@@ -64,7 +64,7 @@ export default function ViewMainMobile() {
             </Table>
             </TableContainer>
         </Grid>
-        <Grid item xs={8} md={8}>
+        <Grid item xs={7} md={7}>
           <TextField
               margin="normal"
               required
@@ -83,6 +83,7 @@ export default function ViewMainMobile() {
         </Grid>
         <Grid item xs={1} md={1}>
         <Button
+            sx={{ mt: 2 }}
             inputProps={{style: {fontSize: 40}}}          
             fullWidth
             size="large" 
