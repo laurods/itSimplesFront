@@ -91,7 +91,6 @@ export default function ViewMainMobile() {
             fullWidth
             size="large" 
             variant="contained"
-            color="success" 
             onClick={ () => handleFilter(word)}
           >
             OK
@@ -103,13 +102,15 @@ export default function ViewMainMobile() {
       </Grid>
 
       <Grid container spacing={2}>
+      <Grid item xs={1} md={1}>
+      </Grid>
       <Grid item xs={2} md={2}>
             <FormGroup>
             <FormControlLabel control={<Checkbox defaultChecked />} label="COLETOR" />
             <FormControlLabel control={<Checkbox />} label="TELEFONE" />
           </FormGroup>
         </Grid>
-        <Grid item xs={8} md={8}>
+        <Grid item xs={7} md={7}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
