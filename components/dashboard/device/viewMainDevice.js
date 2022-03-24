@@ -23,7 +23,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewMainMobile() {
-    const {devices, CNPJsByUsers,} = useContext(AuthContext);
+    const {devices} = useContext(AuthContext);
 
     const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
@@ -46,27 +46,8 @@ export default function ViewMainMobile() {
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        <Grid item xs={1} md={1}>
-        </Grid>
-        <Grid item xs={2} md={2}>
-            <TableContainer component={Paper} sx={{ mt: 2 }}>
-            
-            <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                <TableHead>                    
-                </TableHead>
-                <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                {CNPJsByUsers.map((row) => (
-                    <TableRow
-                    key={row.cnpj}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
-                    >
-                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                    </TableRow>
-                ))}
-                </TableBody>
-            </Table>
-            </TableContainer>
-        </Grid>
+        <Grid item xs={3} md={3}>
+        </Grid>        
         <Grid item xs={6} md={6}>
           <TextField
               margin="normal"
@@ -76,7 +57,6 @@ export default function ViewMainMobile() {
               fullWidth
               name="serial"
               label="Serial"
-              type="number"
               id="serial"
               value={word} 
               onChange={handleWord}                          
