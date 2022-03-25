@@ -34,7 +34,7 @@ export default function ViewMainMobile() {
       console.log(event.target.value);
       const devicesFiltered = devices.filter((item) => item.Equipamento.includes(event.target.value) )
       console.log('devicesFiltered')
-      console.log(devicesFiltered)
+      setListDevice(devicesFiltered)
     };
 
     const handleWord = (event) => {
@@ -107,7 +107,7 @@ export default function ViewMainMobile() {
                   <TableHead>                    
                   </TableHead>
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {devices.map((row) => (
+                  {listDevice.map((row) => (
                       <TableRow
                       key={row._id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
