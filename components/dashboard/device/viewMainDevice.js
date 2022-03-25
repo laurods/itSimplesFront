@@ -30,11 +30,14 @@ export default function ViewMainMobile() {
     const [listDevice, setListDevice] = useState([]);
     const [word, setWord] = useState('');
 
+    const orderBySerial = (a, b) => {
+      return a.IMEI - b.IMEI
+    }
+
     const handleCheck = (event) => {
       console.log(event.target.value);
       const devicesFiltered = devices.filter((item) => item.Equipamento.includes(event.target.value) )
-      console.log('devicesFiltered')
-      setListDevice(devicesFiltered)
+      setListDevice(devicesFiltered.sort(orderBySerial))
     };
 
     const handleWord = (event) => {
@@ -112,8 +115,8 @@ export default function ViewMainMobile() {
                       key={row._id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                       >
-                      <TableCell component="th" scope="row">{row.Equipamento}</TableCell>
                       <TableCell component="th" scope="row">{row.IMEI}</TableCell>
+                      <TableCell component="th" scope="row">{row.Equipamento}</TableCell>                      
                       <TableCell component="th" scope="row">{row.Modelo}</TableCell>
                       <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
                       <TableCell component="th" scope="row">{row.Status}</TableCell>
