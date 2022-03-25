@@ -32,6 +32,9 @@ export default function ViewMainMobile() {
 
     const handleCheck = (event) => {
       console.log(event.target.value);
+      const devicesFiltered = devices.filter((item) => item.Equipamento.includes(event.target.value) )
+      console.log('devicesFiltered')
+      console.log(devicesFiltered)
     };
 
     const handleWord = (event) => {
