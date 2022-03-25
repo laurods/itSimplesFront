@@ -17,7 +17,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@mui/material/Button';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import Radio from '@mui/material/Radio';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
@@ -91,8 +91,8 @@ export default function ViewMainMobile() {
       </Grid>
       <Grid item xs={2} md={2}>
             <FormGroup>
-            <FormControlLabel onChange={handleCheck} control={<Checkbox />} value="COLETOR" label="COLETOR" />
-            <FormControlLabel onChange={handleCheck} control={<Checkbox />} value="TELEFONE" label="TELEFONE" />
+            <FormControlLabel onChange={handleCheck} control={<Radio />} value="COLETOR" label="COLETOR" />
+            <FormControlLabel onChange={handleCheck} control={<Radio />} value="TELEFONE" label="TELEFONE" />
           </FormGroup>
         </Grid>
         <Grid item xs={7} md={7}>
@@ -101,7 +101,7 @@ export default function ViewMainMobile() {
                   <TableHead>                    
                   </TableHead>
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {listDevice.map((row) => (
+                  {devices.map((row) => (
                       <TableRow
                       key={row._id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
