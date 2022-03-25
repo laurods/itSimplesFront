@@ -18,6 +18,7 @@ import Button from '@mui/material/Button';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
@@ -91,8 +92,10 @@ export default function ViewMainMobile() {
       </Grid>
       <Grid item xs={2} md={2}>
             <FormGroup>
-            <FormControlLabel onChange={handleCheck} control={<Radio />} value="COLETOR" label="COLETOR" />
-            <FormControlLabel onChange={handleCheck} control={<Radio />} value="TELEFONE" label="TELEFONE" />
+            <RadioGroup>
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="COLETOR" label="COLETOR" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="TELEFONE" label="TELEFONE" />
+            </RadioGroup>
           </FormGroup>
         </Grid>
         <Grid item xs={7} md={7}>
