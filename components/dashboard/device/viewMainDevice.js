@@ -113,7 +113,6 @@ export default function ViewMainMobile() {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                       >
                       <TableCell component="th" scope="row">{row.Equipamento}</TableCell>
-                      <TableCell component="th" scope="row">{row.Serial}</TableCell>
                       <TableCell component="th" scope="row">{row.IMEI}</TableCell>
                       <TableCell component="th" scope="row">{row.Modelo}</TableCell>
                       <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
