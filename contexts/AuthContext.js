@@ -26,6 +26,7 @@ export function AuthProvider({ children }) {
     const [entradasByCNPJ, setEntradasByCNPJ] = useState([]);
     const [userEmail, setUserEmail] = useState(null);
     const [userId, setUserId] = useState(null);
+    const [userRole, setUserRole] = useState(null);
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -40,6 +41,7 @@ export function AuthProvider({ children }) {
             console.log(decoded.id);
             setUserId(decoded.id);
             setUserEmail(decoded.email);
+            setUserRole(decoded.role);
             setIsAuthenticated(true);
         }
     }
@@ -137,7 +139,8 @@ export function AuthProvider({ children }) {
             showMessage, 
             loginMessage, 
             userId,
-            userEmail, 
+            userEmail,
+            userRole, 
             isAuthenticated,
             movimentosCNPJ,
             CNPJsByUsers,

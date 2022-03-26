@@ -24,10 +24,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ControlDevices() {
-    const {devices} = useContext(AuthContext);
+    const {devices, role} = useContext(AuthContext);
 
     const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
+    console.log(role)
 
     const handleWord = (event) => {
       setWord(event.target.value)
