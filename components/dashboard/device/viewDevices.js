@@ -26,7 +26,7 @@ const theme = createTheme();
 export default function ViewDevices() {
     const {devices} = useContext(AuthContext);
 
-    const [listDevice, setListDevice] = useState(devices.filter((item) => item.Equipamento.includes('COLETORES')));
+    const [listDevice, setListDevice] = useState(devices.filter((item) => item.Equipamento.includes('COLETOR')));
     const orderBySerial = (a, b) => {
       return a.IMEI - b.IMEI
     }
@@ -48,7 +48,7 @@ export default function ViewDevices() {
       </Grid>
       <Grid item xs={2} md={2}>
             <FormGroup>
-            <RadioGroup>
+            <RadioGroup defaultValue="COLETOR">
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="COLETOR" label="COLETOR" />
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="TELEFONE" label="TELEFONE" />
             </RadioGroup>
