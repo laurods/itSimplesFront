@@ -30,17 +30,15 @@ export default function ViewDevices() {
     const [listDevice, setListDevice] = useState([]);
     const orderBySerial = (a, b) => {
       return a.IMEI - b.IMEI
-    }
+    } 
+
     
     const handleCheck = async (event) => {
-        const allDevices = await axios.get('/api/devices/getAll')
+        const allDevices = await axios.post('/api/devices/getDevicesByCNPJ' , { cnpj: CNPJsByUsers })
         const dataDevices = allDevices.data;
         console.log('dataDevices')
         console.log(dataDevices)
-    //     const devicesByUser = ([...CNPJsByUsers]) => { // compara os devices pelo CNPJ
-    //         return dataDevices.filter(device => CNPJsByUsers.includes(device.CNPJ));
-    //       }         
-
+    //     
     //   console.log(event.target.value);
     //   const ListDevicesByUser = await devicesByUser();
       //const devicesFiltered = devicesByUser.filter((item) => item.Equipamento.includes(event.target.value) )
