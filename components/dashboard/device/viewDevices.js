@@ -42,8 +42,9 @@ export default function ViewDevices() {
           }         
 
       console.log(event.target.value);
-      const devicesFiltered = devicesByUser.filter((item) => item.Equipamento.includes(event.target.value) )
-      setListDevice(devicesFiltered.sort(orderBySerial))
+      const ListDevicesByUser = await devicesByUser();
+      //const devicesFiltered = devicesByUser.filter((item) => item.Equipamento.includes(event.target.value) )
+      setListDevice(ListDevicesByUser.sort(orderBySerial))
     };
 
     
