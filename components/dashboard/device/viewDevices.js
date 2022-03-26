@@ -31,7 +31,7 @@ export default function ViewDevices() {
       return a.IMEI - b.IMEI
     }
     
-    const handleCheck = (event) => {
+    const handleCheck = async (event) => {
         const allDevices = await axios.get('/api/devices/getAll')
         const dataDevices = allDevices.data;
         const devicesByUser = ([...CNPJsByUsers]) => { // compara os devices pelo CNPJ
