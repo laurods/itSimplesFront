@@ -28,6 +28,7 @@ export default function ControlDevices() {
 
     const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
+    console.log('view')
     console.log(userRole)
 
     const handleWord = (event) => {

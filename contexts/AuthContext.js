@@ -54,6 +54,8 @@ export function AuthProvider({ children }) {
     async function signIn(values) {
         axios.post('/api/login', values).then(res => {
             const {message, token, _id, role}  = res.data;
+            console.log('auth')
+            console.log(role)
 
             if(message) {
                 setloginMessage(message)
