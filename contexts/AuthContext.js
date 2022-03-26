@@ -53,7 +53,7 @@ export function AuthProvider({ children }) {
     
     async function signIn(values) {
         axios.post('/api/login', values).then(res => {
-            const {message, token, _id}  = res.data;
+            const {message, token, _id, role}  = res.data;
 
             if(message) {
                 setloginMessage(message)
@@ -70,6 +70,7 @@ export function AuthProvider({ children }) {
                     path: '/',
                 });
                 setUserId(_id);
+                setUserRole(role);
                 setIsAuthenticated(true);
                 window.location.reload() // atualiza a pagina
 

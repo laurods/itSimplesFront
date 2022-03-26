@@ -26,7 +26,7 @@ const client = new MongoClient(url);
             const jwtConfig = { expiresIn: 60 * 60 * 24 * 360, algorithm: 'HS256' };    
             const { _id, email, role } = people;
             const token = jwt.sign({ id: _id, email: email, role: role }, secret, jwtConfig);
-            return res.status(200).json({ token, _id });     
+            return res.status(200).json({ token, _id, role });     
         }
          res.status(200).json({ message: 'Senha incorreta!' });
 
