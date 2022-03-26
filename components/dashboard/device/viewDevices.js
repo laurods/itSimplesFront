@@ -24,17 +24,22 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewDevices() {
-    const {devices} = useContext(AuthContext);
+    const {devices, CNPJsByUsers} = useContext(AuthContext);
 
     const [listDevice, setListDevice] = useState([]);
     const orderBySerial = (a, b) => {
       return a.IMEI - b.IMEI
     }
-
-    setListDevice(devices.filter((item) => item.Equipamento.includes('COLETOR')))
+    
     const handleCheck = (event) => {
+        const allDevices = await axios.get('/api/devices/getAll')
+        const dataDevices = allDevices.data;
+        const devicesByUser = ([...CNPJsByUsers]) => { // compara os devices pelo CNPJ
+            return dataDevices.filter(device => CNPJsByUsers.includes(device.CNPJ));
+          }         
+
       console.log(event.target.value);
-      const devicesFiltered = devices.filter((item) => item.Equipamento.includes(event.target.value) )
+      const devicesFiltered = devicesByUser.filter((item) => item.Equipamento.includes(event.target.value) )
       setListDevice(devicesFiltered.sort(orderBySerial))
     };
 
