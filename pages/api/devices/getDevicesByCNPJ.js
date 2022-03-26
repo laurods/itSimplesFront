@@ -9,12 +9,12 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-        const { cnpj } = req.body;        
+        const { cnpj, equipamento } = req.body;        
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("devices");
          const devices = await col.find(
-            { "CNPJ" : cnpj },
+            { "CNPJ" : cnpj, "Equipamento": equipamento },
             {projection: { _id: 1, IMEI: 1, Modelo: 1, VLRLOCACAO: 1, Status: 1 }}
          ).toArray();     
          
