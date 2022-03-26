@@ -37,14 +37,14 @@ export default function ViewDevices() {
         const dataDevices = allDevices.data;
         console.log('dataDevices')
         console.log(dataDevices)
-        const devicesByUser = ([...CNPJsByUsers]) => { // compara os devices pelo CNPJ
-            return dataDevices.filter(device => CNPJsByUsers.includes(device.CNPJ));
-          }         
+    //     const devicesByUser = ([...CNPJsByUsers]) => { // compara os devices pelo CNPJ
+    //         return dataDevices.filter(device => CNPJsByUsers.includes(device.CNPJ));
+    //       }         
 
-      console.log(event.target.value);
-      const ListDevicesByUser = await devicesByUser();
+    //   console.log(event.target.value);
+    //   const ListDevicesByUser = await devicesByUser();
       //const devicesFiltered = devicesByUser.filter((item) => item.Equipamento.includes(event.target.value) )
-      setListDevice(ListDevicesByUser.sort(orderBySerial))
+      setListDevice(dataDevices.sort(orderBySerial))
     };
 
     
