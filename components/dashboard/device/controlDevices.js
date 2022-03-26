@@ -27,18 +27,7 @@ export default function ControlDevices() {
     const {devices} = useContext(AuthContext);
 
     const [device, setDevice] = useState([]);
-    const [listDevice, setListDevice] = useState([]);
     const [word, setWord] = useState('');
-
-    const orderBySerial = (a, b) => {
-      return a.IMEI - b.IMEI
-    }
-
-    const handleCheck = (event) => {
-      console.log(event.target.value);
-      const devicesFiltered = devices.filter((item) => item.Equipamento.includes(event.target.value) )
-      setListDevice(devicesFiltered.sort(orderBySerial))
-    };
 
     const handleWord = (event) => {
       setWord(event.target.value)
@@ -92,43 +81,7 @@ export default function ControlDevices() {
         </Grid>           
       
       </Grid>
-
-      <Grid container spacing={2}>
-      <Grid item xs={1} md={1}>
-      </Grid>
-      <Grid item xs={2} md={2}>
-            <FormGroup>
-            <RadioGroup>
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="COLETOR" label="COLETOR" />
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="TELEFONE" label="TELEFONE" />
-            </RadioGroup>
-          </FormGroup>
-        </Grid>
-        <Grid item xs={7} md={7}>
-          <TableContainer component={Paper} sx={{ mt: 2 }}>            
-              <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                  <TableHead>                    
-                  </TableHead>
-                  <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {listDevice.map((row) => (
-                      <TableRow
-                      key={row._id}
-                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
-                      >
-                      <TableCell component="th" scope="row">{row.IMEI}</TableCell>
-                      <TableCell component="th" scope="row">{row.Equipamento}</TableCell>                      
-                      <TableCell component="th" scope="row">{row.Modelo}</TableCell>
-                      <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
-                      <TableCell component="th" scope="row">{row.Status}</TableCell>
-                      </TableRow>
-                  ))}
-                  </TableBody>
-              </Table>
-              </TableContainer>       
-        </Grid>
-        <Grid item xs={2} md={2}>            
-        </Grid>
-      </Grid>
+  
     </Box>
 
     </ThemeProvider>

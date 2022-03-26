@@ -25,11 +25,8 @@ const theme = createTheme();
 
 export default function ViewDevices() {
     const {devices} = useContext(AuthContext);
-
-    const [device, setDevice] = useState([]);
+    
     const [listDevice, setListDevice] = useState([]);
-    const [word, setWord] = useState('');
-
     const orderBySerial = (a, b) => {
       return a.IMEI - b.IMEI
     }
@@ -40,58 +37,10 @@ export default function ViewDevices() {
       setListDevice(devicesFiltered.sort(orderBySerial))
     };
 
-    const handleWord = (event) => {
-      setWord(event.target.value)
-      if(event.target.value.length == 0){
-      setWord('');       
-      }
-    };
-
-    const handleFilter = (word) => {      
-      const deviceFiltered = devices.filter((item) => item.Serial.includes(word) )
-      setDevice(deviceFiltered)
-      setWord('');
-      console.log(deviceFiltered)         
-  }
     
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={3} md={3}>
-        </Grid>        
-        <Grid item xs={6} md={6}>
-          <TextField
-              margin="normal"
-              required
-              autoFocus
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
-              name="serial"
-              label="Serial"
-              id="serial"
-              value={word} 
-              onChange={handleWord}                          
-              autoComplete="off"
-              variant="standard"
-            />
-        </Grid>
-        <Grid item xs={1} md={1}>
-        <Button
-            sx={{ mt: 5 }}
-            inputProps={{style: {fontSize: 40}}}          
-            fullWidth
-            size="large" 
-            variant="contained"
-            onClick={ () => handleFilter(word)}
-          >
-            OK
-          </Button>
-        </Grid>
-        <Grid item xs={2} md={2}>            
-        </Grid>           
-      
-      </Grid>
 
       <Grid container spacing={2}>
       <Grid item xs={1} md={1}>
