@@ -26,12 +26,12 @@ const theme = createTheme();
 export default function ViewDevices() {
     const {devices} = useContext(AuthContext);
 
-    const [listDevice, setListDevice] = useState(devices.filter((item) => item.Equipamento.includes('COLETOR')));
+    const [listDevice, setListDevice] = useState([]);
     const orderBySerial = (a, b) => {
       return a.IMEI - b.IMEI
     }
 
-    //setListDevice(devices.filter((item) => item.Equipamento.includes('COLETORES')))
+    setListDevice(devices.filter((item) => item.Equipamento.includes('COLETOR')))
     const handleCheck = (event) => {
       console.log(event.target.value);
       const devicesFiltered = devices.filter((item) => item.Equipamento.includes(event.target.value) )
