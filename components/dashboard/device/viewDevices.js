@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
+import axios from 'axios';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Table from '@mui/material/Table';
@@ -34,6 +35,8 @@ export default function ViewDevices() {
     const handleCheck = async (event) => {
         const allDevices = await axios.get('/api/devices/getAll')
         const dataDevices = allDevices.data;
+        console.log('dataDevices')
+        console.log(dataDevices)
         const devicesByUser = ([...CNPJsByUsers]) => { // compara os devices pelo CNPJ
             return dataDevices.filter(device => CNPJsByUsers.includes(device.CNPJ));
           }         
@@ -53,7 +56,7 @@ export default function ViewDevices() {
       </Grid>
       <Grid item xs={2} md={2}>
             <FormGroup>
-            <RadioGroup defaultValue="COLETOR">
+            <RadioGroup>
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="COLETOR" label="COLETOR" />
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="TELEFONE" label="TELEFONE" />
             </RadioGroup>
