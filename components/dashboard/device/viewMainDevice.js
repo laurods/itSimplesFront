@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
