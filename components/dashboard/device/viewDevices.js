@@ -34,7 +34,7 @@ export default function ViewDevices() {
 
     
     const handleCheck = async (event) => {
-        const allDevices = await axios.post('/api/devices/getDevicesByCNPJ' , { cnpj: CNPJsByUsers })
+        const allDevices = await axios.post('/api/devices/getDevicesByCNPJ' , { cnpj: CNPJsByUsers[0].cnpj })
         console.log(CNPJsByUsers)
         const dataDevices = allDevices.data;
         console.log('dataDevices')
