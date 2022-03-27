@@ -40,12 +40,6 @@ export default function ViewDevices() {
         })
         console.log(CNPJsByUsers)
         const dataDevices = allDevices.data;
-        console.log('dataDevices')
-        console.log(dataDevices)
-    //     
-    //   console.log(event.target.value);
-    //   const ListDevicesByUser = await devicesByUser();
-      //const devicesFiltered = devicesByUser.filter((item) => item.Equipamento.includes(event.target.value) )
       setListDevice(dataDevices.sort(orderBySerial))
     };
 
