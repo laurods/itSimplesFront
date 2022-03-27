@@ -9,9 +9,9 @@ import ViewDevices from '../device/viewDevices';
 const theme = createTheme();
 
 export default function ViewMainDevice() {
-  const { role } = useContext(AuthContext);
+  const { userRole } = useContext(AuthContext);
   console.log('main')
-  console.log(role)
+  console.log(userRole)
   
   return (
     <ThemeProvider theme={theme}>
