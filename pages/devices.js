@@ -10,7 +10,8 @@ import ViewMainDevice from '../components/dashboard/device/viewMainDevice';
 export default function Devices() {
      const {
        setCNPJsByUsers, 
-       setActiveCNPJ,   
+       setActiveCNPJ,
+       setIsUserADM,   
        isAuthenticated,
        userRole
        } = useContext(AuthContext);
