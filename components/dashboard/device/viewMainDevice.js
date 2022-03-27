@@ -12,10 +12,10 @@ export default function ViewMainDevice() {
   const { userRole } = useContext(AuthContext);
   console.log('main')
   console.log(userRole)
-  const [showControlDevices, setShowControlDevices] = useState(false);
-  if(userRole === "adm"){
-    setShowControlDevices(true);
-  }
+  const [showControlDevices, setShowControlDevices] = useState(true);
+  // if(userRole === "adm"){
+  //   setShowControlDevices(true);
+  // }
   
   return (
     <ThemeProvider theme={theme}>
