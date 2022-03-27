@@ -13,8 +13,10 @@ export default function ViewMainDevice() {
   const [showControlDevice, setShowControlDevice] = useState(false);
   console.log('main')
   console.log(userRole)
-  if(userRole === 'adm'){
+  if(userRole == 'adm'){
     setShowControlDevice(true)
+  }else{
+    setShowControlDevice(false)
   }
   return (
     <ThemeProvider theme={theme}>
