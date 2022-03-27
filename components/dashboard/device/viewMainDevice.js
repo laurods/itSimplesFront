@@ -17,6 +17,7 @@ export default function ViewMainDevice() {
   //   setShowControlDevices(true);
   // }
   
+let situacaoEntrega =(userRole === "adm")? setShowControlDevices(true)  : setShowControlDevices(false);
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
