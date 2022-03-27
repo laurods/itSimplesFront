@@ -23,12 +23,9 @@ export default function Devices() {
         const listClients = clients.data;
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
-        const isADM = () => {
-          if(userRole === "adm") {
-            setIsUserADM(true)
-          }
-        }
-        isADM();
+        if(userRole === "adm") {
+          setIsUserADM(true)
+        }      
         console.log('CNPJ')
         console.log(listClients[0].cnpj)
         console.log('List Clients')
