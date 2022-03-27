@@ -26,8 +26,7 @@ export function AuthProvider({ children }) {
     const [entradasByCNPJ, setEntradasByCNPJ] = useState([]);
     const [userEmail, setUserEmail] = useState(null);
     const [userId, setUserId] = useState(null);
-    const [userRole, setUserRole] = useState(null);
-    const [userADM, setUserADM] = useState(false);
+    const [userRole, setUserRole] = useState(false);
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -72,15 +71,7 @@ export function AuthProvider({ children }) {
                 });
                 setUserId(_id);
                 setIsAuthenticated(true);
-                setUserRole(role);
-                console.log('ver adm')
-                console.log(role)
-                if(role === "adm"){
-                    console.log('ver adm2')
-                    console.log(role)
-                    setUserADM(true);
-                }
-                
+                setUserRole(role); 
                 window.location.reload() // atualiza a pagina
 
             }
@@ -155,7 +146,6 @@ export function AuthProvider({ children }) {
             movimentosCNPJ,
             CNPJsByUsers,
             activeCNPJ,
-            userADM,
             entradasByCNPJ,
             dasByCNPJ,
             anual,

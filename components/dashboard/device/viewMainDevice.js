@@ -9,15 +9,15 @@ import ViewDevices from '../device/viewDevices';
 const theme = createTheme();
 
 export default function ViewMainDevice() {
-  const { userADM } = useContext(AuthContext);
+  const { role } = useContext(AuthContext);
   console.log('main')
-  console.log(userADM)
+  console.log(role)
   
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        {userADM && <Grid item xs={12} md={12}>
+        {role && <Grid item xs={12} md={12}>
           <ControlDevices />    
         </Grid>}     
         
