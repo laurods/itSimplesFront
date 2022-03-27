@@ -73,7 +73,11 @@ export function AuthProvider({ children }) {
                 setUserId(_id);
                 setIsAuthenticated(true);
                 setUserRole(role);
-                if(role == 'adm'){
+                console.log('ver adm')
+                console.log(role)
+                if(role === "adm"){
+                    console.log('ver adm2')
+                    console.log(role)
                     setUserADM(true);
                 }
                 
