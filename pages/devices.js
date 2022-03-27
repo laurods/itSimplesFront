@@ -23,6 +23,9 @@ export default function Devices() {
         const listClients = clients.data;
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
+        console.log('aki')
+        console.log(userRole)
+
         if(userRole === "adm") {
           console.log('aki if')
           console.log(userRole)
