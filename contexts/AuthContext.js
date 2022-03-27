@@ -70,6 +70,10 @@ export function AuthProvider({ children }) {
                     maxAge: 60 * 60 * 24 * 360, // 1 ano
                     path: '/',
                 });
+                setCookie(undefined, 'roleUser', role, { // id
+                    maxAge: 60 * 60 * 24 * 360, // 1 ano
+                    path: '/',
+                });
                 setUserId(_id);
                 setIsAuthenticated(true);
                 setUserRole(role); 
