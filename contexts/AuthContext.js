@@ -26,7 +26,7 @@ export function AuthProvider({ children }) {
     const [entradasByCNPJ, setEntradasByCNPJ] = useState([]);
     const [userEmail, setUserEmail] = useState(null);
     const [userId, setUserId] = useState(null);
-    const [userRole, setUserRole] = useState(false);
+    const [userRole, setUserRole] = useState(null);
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
