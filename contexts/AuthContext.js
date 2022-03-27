@@ -27,6 +27,7 @@ export function AuthProvider({ children }) {
     const [userEmail, setUserEmail] = useState(null);
     const [userId, setUserId] = useState(null);
     const [userRole, setUserRole] = useState(null);
+    const [userADM, setUserADM] = useState(false);
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -70,8 +71,12 @@ export function AuthProvider({ children }) {
                     path: '/',
                 });
                 setUserId(_id);
-                setUserRole(role);
                 setIsAuthenticated(true);
+                setUserRole(role);
+                if(role == 'adm'){
+                    setUserADM(true);
+                }
+                
                 window.location.reload() // atualiza a pagina
 
             }
@@ -146,6 +151,7 @@ export function AuthProvider({ children }) {
             movimentosCNPJ,
             CNPJsByUsers,
             activeCNPJ,
+            userADM,
             entradasByCNPJ,
             dasByCNPJ,
             anual,
