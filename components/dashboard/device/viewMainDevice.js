@@ -13,16 +13,16 @@ export default function ViewMainDevice() {
   const [showControlDevice, setShowControlDevice] = useState(false);
   console.log('main')
   console.log(userRole)
-  if(userRole == 'adm'){
-    setShowControlDevice(true)
-  }
+  // if(userRole == 'adm'){
+  //   setShowControlDevice(true)
+  // }
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-        {showControlDevice && <Grid item xs={12} md={12}>
+         <Grid item xs={12} md={12}>
           <ControlDevices />    
-        </Grid>}     
+        </Grid>     
         
 
         <Grid item xs={12} md={12}>
