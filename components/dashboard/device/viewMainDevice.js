@@ -13,9 +13,9 @@ export default function ViewMainDevice() {
   const [showControlDevice, setShowControlDevice] = useState(false);
   console.log('main')
   console.log(userRole)
-  // if(userRole == 'adm'){
-  //   setShowControlDevice(true)
-  // }
+  if(userRole === 'adm'){
+    setShowControlDevice(true)
+  }
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
