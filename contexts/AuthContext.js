@@ -27,6 +27,7 @@ export function AuthProvider({ children }) {
     const [userEmail, setUserEmail] = useState(null);
     const [userId, setUserId] = useState(null);
     const [userRole, setUserRole] = useState(null);
+    const [isUserADM, setIsUserADM] = useState(false);
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -143,6 +144,7 @@ export function AuthProvider({ children }) {
             userEmail,
             userRole, 
             isAuthenticated,
+            isUserADM,
             movimentosCNPJ,
             CNPJsByUsers,
             activeCNPJ,
@@ -177,7 +179,8 @@ export function AuthProvider({ children }) {
             sair,
             telaCheia,
             setProdutosBaixarEstoque,
-            setDevices,     
+            setDevices,
+            setIsUserADM,     
             
              }}>
             {children}
