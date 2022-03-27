@@ -23,18 +23,9 @@ export default function Devices() {
         const listClients = clients.data;
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
-        console.log('aki')
-        console.log(cookies.roleUser)
-
         if(cookies.roleUser === "adm") {
-          console.log('aki if')
-          console.log(cookies.roleUser)
           setIsUserADM(true)
-        }      
-        console.log('CNPJ')
-        console.log(listClients[0].cnpj)
-        console.log('List Clients')
-        console.log(listClients)                 
+        }                
       }
       loadAll();
     }, []);
