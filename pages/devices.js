@@ -24,6 +24,8 @@ export default function Devices() {
         setCNPJsByUsers(listClients)
         setActiveCNPJ(listClients[0].cnpj)
         if(userRole === "adm") {
+          console.log('aki if')
+          console.log(userRole)
           setIsUserADM(true)
         }      
         console.log('CNPJ')
