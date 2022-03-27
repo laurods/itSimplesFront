@@ -20,7 +20,11 @@ export default function Devices() {
         const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
         const listClients = clients.data;
         setCNPJsByUsers(listClients)
-        setActiveCNPJ(listClients[0].cnpj)            
+        setActiveCNPJ(listClients[0].cnpj)
+        console.log('CNPJ')
+        console.log(listClients[0].cnpj)
+        console.log('List Clients')
+        console.log(listClients)                 
       }
       loadAll();
     }, []);

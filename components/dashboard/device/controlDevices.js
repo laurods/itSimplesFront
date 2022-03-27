@@ -24,7 +24,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ControlDevices() {
-    const {devices} = useContext(AuthContext);
+    const {activeCNPJ} = useContext(AuthContext);
 
     const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
@@ -37,10 +37,10 @@ export default function ControlDevices() {
     };
 
     const handleFilter = (word) => {      
-      const deviceFiltered = devices.filter((item) => item.Serial.includes(word) )
-      setDevice(deviceFiltered)
-      setWord('');
-      console.log(deviceFiltered)         
+      // const deviceFiltered = devices.filter((item) => item.Serial.includes(word) )
+      // setDevice(deviceFiltered)
+      // setWord('');
+      // console.log(deviceFiltered)         
   }
     
   return (
