@@ -86,7 +86,7 @@ export default function ControlDevices() {
       </Grid>
 
 
-      <Grid container spacing={2} sx={{ mt: 3 }}>
+      {device.length > 0 && <Grid container spacing={2} sx={{ mt: 3 }}>
         <Grid item xs={3} md={3}>
         </Grid>
 
@@ -99,10 +99,10 @@ export default function ControlDevices() {
             fullWidth
             variant="standard"
           />
-        </Grid> 
+        </Grid>
 
 
-      </Grid>
+      </Grid>}
   
     </Box>
 
