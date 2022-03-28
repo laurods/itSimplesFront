@@ -165,6 +165,21 @@ const handleCheck = async (event) => {
             variant="standard"
           />
         </Grid>
+      </Grid>}
+
+      {device.length > 0 &&<Grid container spacing={2} sx={{ mt: 3 }}>
+      <Grid item xs={3} md={3}>
+        </Grid>
+      <Grid item xs={5} md={5}>
+        <FormGroup>
+            <RadioGroup>
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando orçamento" label="Aguardando Orçamento" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando aprovação" label="Aguardando Aprovação" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aprovado" label="Aprovado" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Ativo" />
+            </RadioGroup>
+          </FormGroup>
+        </Grid>
 
         <Grid item xs={2} md={2}>
           <TextField
@@ -175,17 +190,6 @@ const handleCheck = async (event) => {
             onChange={handleObservacao}
             variant="standard"
           />
-        </Grid>
-
-        <Grid item xs={2} md={2}>
-        <FormGroup>
-            <RadioGroup>
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando orçamento" label="aguardando orçamento" />
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando aprovação" label="aguardando aprovação" />
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aprovado" label="aprovado" />
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="ativo" />
-            </RadioGroup>
-          </FormGroup>
         </Grid>
 
         <Grid item xs={1} md={1}>
@@ -210,7 +214,6 @@ const handleCheck = async (event) => {
             OK
           </Button>
         </Grid>
-
 
       </Grid>}
 
