@@ -32,6 +32,7 @@ export default function ControlDevices() {
 
     const [device, setDevice] = useState([]);
     const [observacao, setObservacao] = useState('');
+    const [documento, setDocumento] = useState('');
     const [word, setWord] = useState('');
     const [msg, setMsg] = useState('');
     const [showMsg, setShowMsg] = useState(false);
@@ -42,6 +43,14 @@ export default function ControlDevices() {
       if(event.target.value.length == 0){
       setWord('');       
       }
+    };
+
+    const handleObservacao = (event) => {
+      setObservacao(event.target.value) 
+    };
+
+    const handleDocumento = (event) => {
+      setDocumento(event.target.value) 
     };
 
     const handleGetDevice = async () => {      
@@ -160,6 +169,18 @@ export default function ControlDevices() {
             id="observacao"
             value={observacao}
             fullWidth
+            onChange={handleObservacao}
+            variant="standard"
+          />
+        </Grid>
+
+        <Grid item xs={1} md={1}>
+          <TextField
+            label="NF/OS"
+            id="documento"
+            value={documento}
+            fullWidth
+            onChange={handleDocumento}
             variant="standard"
           />
         </Grid>
