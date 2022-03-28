@@ -77,7 +77,8 @@ export default function ControlDevices() {
               autoComplete="off"
               variant="standard"
             />
-        </Grid>
+        </Grid>        
+
         <Grid item xs={1} md={1}>
         <Button
             sx={{ mt: 5 }}
@@ -97,10 +98,21 @@ export default function ControlDevices() {
 
 
       {device.length > 0 && <Grid container spacing={2} sx={{ mt: 3 }}>
-        <Grid item xs={3} md={3}>
+        <Grid item xs={2} md={2}>
         </Grid>
 
-        <Grid item xs={3} md={3}>
+        <Grid item xs={2} md={2}>
+          <TextField
+            disabled
+            label="Filial"
+            id="filial"
+            value={device[0].Grupo}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+
+        <Grid item xs={2} md={2}>
           <TextField
             disabled
             label="Serial"
@@ -109,8 +121,45 @@ export default function ControlDevices() {
             fullWidth
             variant="standard"
           />
-        </Grid> 
+        </Grid>
+
+        <Grid item xs={2} md={2}>
+          <TextField
+            disabled
+            label="Modelo"
+            id="modelo"
+            value={device[0].Modelo}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+
+        <Grid item xs={2} md={2}>
+          <TextField
+            disabled
+            label="Situação"
+            id="situacao"
+            value={device[0].Status}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+
+        <Grid item xs={2} md={2}>
+          <TextField
+            disabled
+            label="Locação"
+            id="locacao"
+            value={device[0].VLRLOCACAO}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+
+
       </Grid>}
+
+
       {showMsg && <Grid container spacing={2} sx={{ mt: 3 }}>
         <Grid item xs={3} md={3}>
         </Grid>

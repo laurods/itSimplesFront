@@ -15,7 +15,15 @@ const client = new MongoClient(url);
          const col = db.collection("devices");
          const device = await col.find(
             { "Serial" : serial },
-            {projection: { _id: 1, IMEI: 1, Modelo: 1, VLRLOCACAO: 1, Status: 1 }}
+            {projection: { 
+                _id: 1, 
+                IMEI: 1, 
+                Modelo: 1, 
+                VLRLOCACAO: 1, 
+                Status: 1,
+                Grupo: 1, 
+            }
+        }
          ).toArray();     
          
          res.status(200).json(device);
