@@ -26,21 +26,23 @@ const theme = createTheme();
 export default function ControlDevices() {
     const {activeCNPJ} = useContext(AuthContext);
 
-    const [device, setDevice] = useState([]);
+    const [device, setDevice] = useState({});
     const [word, setWord] = useState('');
 
-    const handleWord = (event) => {
-      setWord(event.target.value)
+    const handleWord = (event) => { 
+      setWord(event.target.value)      
       if(event.target.value.length == 0){
       setWord('');       
       }
     };
 
-    const handleFilter = (word) => {      
-      // const deviceFiltered = devices.filter((item) => item.Serial.includes(word) )
-      // setDevice(deviceFiltered)
-      // setWord('');
-      // console.log(deviceFiltered)         
+    const handleDevice = () => {      
+      const deviceBySerial = await axios.post('/api/devices/getDeviceBySerial' , { 
+        serial: word
+    })
+    const theDevice = deviceBySerial.data;
+    console.log(theDevice)
+    //setDevice(theDevice)        
   }
     
   return (
@@ -72,7 +74,7 @@ export default function ControlDevices() {
             fullWidth
             size="large" 
             variant="contained"
-            onClick={ () => handleFilter(word)}
+            onClick={ () => handleDevice()}
           >
             OK
           </Button>
@@ -80,6 +82,25 @@ export default function ControlDevices() {
         <Grid item xs={2} md={2}>            
         </Grid>           
       
+      </Grid>
+
+
+      <Grid container spacing={2} sx={{ mt: 3 }}>
+        <Grid item xs={3} md={3}>
+        </Grid>
+
+        <Grid item xs={3} md={3}>
+          <TextField
+            disabled
+            label="Serial"
+            id="serial"
+            value={word}
+            fullWidth
+            variant="standard"
+          />
+        </Grid> 
+
+
       </Grid>
   
     </Box>
