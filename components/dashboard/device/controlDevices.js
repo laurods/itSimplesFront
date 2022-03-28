@@ -3,6 +3,8 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -29,6 +31,7 @@ export default function ControlDevices() {
 
     const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
+    const [msg, setMsg] = useState('');
 
     const handleWord = (event) => { 
       setWord(event.target.value)      
@@ -42,6 +45,9 @@ export default function ControlDevices() {
         serial: word
     })
     const theDevice = deviceBySerial.data;
+    if (theDevice.length == 0){
+      setMsg('Equipamento não localizado. Verifique o código digitado!')
+    }
     console.log(theDevice)
     setDevice(theDevice)        
   }
@@ -95,15 +101,15 @@ export default function ControlDevices() {
             disabled
             label="Serial"
             id="serial"
-            value={device.IMEI}
+            value={device[0].IMEI}
             fullWidth
             variant="standard"
           />
-        </Grid>
-
-
-      </Grid>}
-  
+        </Grid> 
+      </Grid>}      
+        <Stack sx={{ width: '100%' }} spacing={2}>
+          <Alert severity="warning">{msg}</Alert>
+        </Stack>
     </Box>
 
     </ThemeProvider>
