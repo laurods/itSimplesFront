@@ -98,10 +98,10 @@ export default function ControlDevices() {
 
 
       {device.length > 0 && <Grid container spacing={2} sx={{ mt: 3 }}>
-        <Grid item xs={2} md={2}>
+        <Grid item xs={3} md={3}>
         </Grid>
 
-        <Grid item xs={2} md={2}>
+        <Grid item xs={1} md={1}>
           <TextField
             disabled
             label="Filial"
@@ -111,19 +111,9 @@ export default function ControlDevices() {
             variant="standard"
           />
         </Grid>
+        
 
-        <Grid item xs={2} md={2}>
-          <TextField
-            disabled
-            label="Serial"
-            id="serial"
-            value={device[0].IMEI}
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-
-        <Grid item xs={2} md={2}>
+        <Grid item xs={1} md={1}>
           <TextField
             disabled
             label="Modelo"
@@ -134,7 +124,7 @@ export default function ControlDevices() {
           />
         </Grid>
 
-        <Grid item xs={2} md={2}>
+        <Grid item xs={1} md={1}>
           <TextField
             disabled
             label="Situação"
@@ -145,7 +135,7 @@ export default function ControlDevices() {
           />
         </Grid>
 
-        <Grid item xs={2} md={2}>
+        <Grid item xs={1} md={1}>
           <TextField
             disabled
             label="Locação"
