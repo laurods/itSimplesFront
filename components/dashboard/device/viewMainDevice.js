@@ -20,9 +20,9 @@ export default function ViewMainDevice() {
         </Grid>}     
         
 
-        <Grid item xs={12} md={12}>
+        {!isUserADM &&<Grid item xs={12} md={12}>
           <ViewDevices />    
-        </Grid>             
+        </Grid>}             
         
       </Grid>
     </Box>
