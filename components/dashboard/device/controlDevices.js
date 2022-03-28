@@ -36,7 +36,7 @@ export default function ControlDevices() {
       }
     };
 
-    const handleDevice = () => {      
+    const handleDevice = async () => {      
       const deviceBySerial = await axios.post('/api/devices/getDeviceBySerial' , { 
         serial: word
     })
