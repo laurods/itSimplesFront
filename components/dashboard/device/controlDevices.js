@@ -27,7 +27,7 @@ const theme = createTheme();
 export default function ControlDevices() {
     const {activeCNPJ} = useContext(AuthContext);
 
-    const [device, setDevice] = useState({});
+    const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
 
     const handleWord = (event) => { 
@@ -43,7 +43,7 @@ export default function ControlDevices() {
     })
     const theDevice = deviceBySerial.data;
     console.log(theDevice)
-    //setDevice(theDevice)        
+    setDevice(theDevice)        
   }
     
   return (
@@ -95,7 +95,7 @@ export default function ControlDevices() {
             disabled
             label="Serial"
             id="serial"
-            value={word}
+            value={device[0].IMEI}
             fullWidth
             variant="standard"
           />
