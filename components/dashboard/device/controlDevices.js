@@ -31,6 +31,7 @@ export default function ControlDevices() {
     const {activeCNPJ} = useContext(AuthContext);
 
     const [device, setDevice] = useState([]);
+    const [observacao, setObservacao] = useState('');
     const [word, setWord] = useState('');
     const [msg, setMsg] = useState('');
     const [showMsg, setShowMsg] = useState(false);
@@ -43,10 +44,11 @@ export default function ControlDevices() {
       }
     };
 
-    const handleDevice = async () => {      
+    const handleGetDevice = async () => {      
       const deviceBySerial = await axios.post('/api/devices/getDeviceBySerial' , { 
         serial: word
-    })
+    })  
+
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
       setShowMsg(true)
@@ -55,6 +57,12 @@ export default function ControlDevices() {
     console.log(theDevice)
     setDevice(theDevice)        
   }
+
+  const handleSaveMovimento = async () => {      
+  //   const deviceBySerial = await axios.post('/api/devices/getDeviceBySerial' , { 
+  //     serial: word
+  // })      
+}
     
   return (
     <ThemeProvider theme={theme}>
@@ -86,7 +94,7 @@ export default function ControlDevices() {
             fullWidth
             size="large" 
             variant="contained"
-            onClick={ () => handleDevice()}
+            onClick={ () => handleGetDevice()}
           >
             OK
           </Button>
@@ -144,6 +152,28 @@ export default function ControlDevices() {
             fullWidth
             variant="standard"
           />
+        </Grid>
+
+        <Grid item xs={2} md={2}>
+          <TextField
+            label="Observação"
+            id="observacao"
+            value={observacao}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={1} md={1}>
+        <Button
+            sx={{ mt: 5 }}
+            inputProps={{style: {fontSize: 40}}}          
+            fullWidth
+            size="large" 
+            variant="contained"
+            onClick={ () => handleSaveMovimento()}
+          >
+            OK
+          </Button>
         </Grid>
 
 
