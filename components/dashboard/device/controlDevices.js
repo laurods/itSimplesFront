@@ -5,6 +5,10 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -72,6 +76,10 @@ export default function ControlDevices() {
   //     serial: word
   // })      
 }
+
+const handleCheck = async (event) => { 
+// setListDevice(dataDevices.sort(orderBySerial))
+};
     
   return (
     <ThemeProvider theme={theme}>
@@ -172,6 +180,17 @@ export default function ControlDevices() {
             onChange={handleObservacao}
             variant="standard"
           />
+        </Grid>
+
+        <Grid item xs={2} md={2}>
+        <FormGroup>
+            <RadioGroup>
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando orçamento" label="aguardando orçamento" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando aprovação" label="aguardando aprovação" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aprovado" label="aprovado" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="ativo" />
+            </RadioGroup>
+          </FormGroup>
         </Grid>
 
         <Grid item xs={1} md={1}>
