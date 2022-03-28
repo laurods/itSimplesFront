@@ -24,6 +24,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { FormatColorResetRounded } from '@material-ui/icons';
 const theme = createTheme();
 
 export default function ControlDevices() {
@@ -32,8 +33,10 @@ export default function ControlDevices() {
     const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
     const [msg, setMsg] = useState('');
+    const [showMsg, setShowMsg] = useState(false);
 
-    const handleWord = (event) => { 
+    const handleWord = (event) => {
+      setShowMsg(false) 
       setWord(event.target.value)      
       if(event.target.value.length == 0){
       setWord('');       
@@ -46,6 +49,7 @@ export default function ControlDevices() {
     })
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
+      setShowMsg(true)
       setMsg('Equipamento não localizado. Verifique o código digitado!')
     }
     console.log(theDevice)
@@ -106,10 +110,17 @@ export default function ControlDevices() {
             variant="standard"
           />
         </Grid> 
+      </Grid>}
+      {showMsg && <Grid container spacing={2} sx={{ mt: 3 }}>
+        <Grid item xs={3} md={3}>
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <Stack sx={{ width: '100%' }} spacing={2}>
+            <Alert severity="warning">{msg}</Alert>
+          </Stack>
+        </Grid>
       </Grid>}      
-        <Stack sx={{ width: '100%' }} spacing={2}>
-          <Alert severity="warning">{msg}</Alert>
-        </Stack>
+        
     </Box>
 
     </ThemeProvider>
