@@ -176,7 +176,7 @@ const handleCheck = async (event) => {
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando orçamento" label="Aguardando Orçamento" />
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando aprovação" label="Aguardando Aprovação" />
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="aprovado" label="Aprovado" />
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Ativo" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Devolvido" />
             </RadioGroup>
           </FormGroup>
         </Grid>
@@ -194,7 +194,7 @@ const handleCheck = async (event) => {
             value={observacao}
             fullWidth
             onChange={handleObservacao}
-            variant="standard"
+            variant="filled"
           />
         </Grid>
 
@@ -205,12 +205,12 @@ const handleCheck = async (event) => {
             value={documento}
             fullWidth
             onChange={handleDocumento}
-            variant="standard"
+            variant="filled"
           />
         </Grid>
         <Grid item xs={1} md={1}>
         <Button
-            sx={{ mt: 5 }}
+            sx={{ mt: 1 }}
             inputProps={{style: {fontSize: 40}}}          
             fullWidth
             size="large" 
