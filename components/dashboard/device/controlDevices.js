@@ -17,6 +17,7 @@ import PrintIcon from '@material-ui/icons/Print';
 import SendIcon from '@material-ui/icons/Send';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
+import SearchIcon from '@material-ui/icons/Search';
 import Button from '@mui/material/Button';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -108,7 +109,7 @@ const handleCheck = async (event) => {
             variant="contained"
             onClick={ () => handleGetDevice()}
           >
-            OK
+            <SearchIcon />
           </Button>
         </Grid>
         <Grid item xs={2} md={2}>            
