@@ -95,7 +95,7 @@ export default function ControlDevices() {
             disabled
             label="Serial"
             id="serial"
-            value={device[0].IMEI}
+            value={word}
             fullWidth
             variant="standard"
           />
