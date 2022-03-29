@@ -34,8 +34,10 @@ export default function ControlDevices() {
     const [device, setDevice] = useState([]);
     const [observacao, setObservacao] = useState('');
     const [documento, setDocumento] = useState('');
+    const [valor, setValor] = useState('');
     const [word, setWord] = useState('');
     const [msg, setMsg] = useState('');
+    const [situacao, setSituacao] = useState('');
     const [showMsg, setShowMsg] = useState(false);
 
     const handleWord = (event) => {
@@ -54,6 +56,14 @@ export default function ControlDevices() {
       setDocumento(event.target.value) 
     };
 
+    const handleValor = (event) => {
+      setValor(event.target.value) 
+    };
+
+    const handleCheck = async (event) => {
+      setSituacao(event.target.value)
+    };
+
     const handleGetDevice = async () => {      
       const deviceBySerial = await axios.post('/api/devices/getDeviceBySerial' , { 
         serial: word
@@ -69,14 +79,32 @@ export default function ControlDevices() {
   }
 
   const handleSaveMovimento = async () => {      
-  //   const deviceBySerial = await axios.post('/api/devices/getDeviceBySerial' , { 
+  //   const deviceBySerial = await axios.post('/api/devices/updateDevice' , { 
   //     serial: word
-  // })      
+  //     status: situacao 
+  // })
+  //   const deviceBySerial = await axios.post('/api/devices/insertManutencao' , { 
+  //     serial: word,
+  //     filial: device[0].Grupo,
+  //     observacao: observacao,
+  //     status: situacao,
+  //     documento: documento,
+  //     valor: valor,
+  // })
+  
+  const data = { 
+        serial: word,
+        filial: device[0].Grupo,
+        observacao: observacao,
+        status: situacao,
+        documento: documento,
+        valor: valor,
+    }
+
+    console.log(data)
 }
 
-const handleCheck = async (event) => { 
-// setListDevice(dataDevices.sort(orderBySerial))
-};
+
     
   return (
     <ThemeProvider theme={theme}>
@@ -175,9 +203,9 @@ const handleCheck = async (event) => {
       <Grid item xs={9} md={9}>
         <FormGroup>
             <RadioGroup row>
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando orçamento" label="Aguardando Orçamento" />
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aguardando aprovação" label="Aguardando Aprovação" />
-              <FormControlLabel onChange={handleCheck} control={<Radio />} value="aprovado" label="Aprovado" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Orçamento" label="Aguardando Orçamento" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="Aguardando Aprovação" />
+              <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Devolvido" />
             </RadioGroup>
           </FormGroup>
@@ -207,6 +235,16 @@ const handleCheck = async (event) => {
             value={documento}
             fullWidth
             onChange={handleDocumento}
+            variant="filled"
+          />
+        </Grid>
+        <Grid item xs={1} md={1}>
+          <TextField
+            label="Valor OS"
+            id="valor"
+            value={valor}
+            fullWidth
+            onChange={handleValor}
             variant="filled"
           />
         </Grid>
