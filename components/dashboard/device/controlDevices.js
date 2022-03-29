@@ -81,6 +81,7 @@ export default function ControlDevices() {
     }else{
       setDevice(theDevice) 
       setShowDevice(true)
+      document.getElementById("observacao").focus();
     }
     console.log(theDevice)
            
@@ -113,6 +114,7 @@ export default function ControlDevices() {
     setMsg('Salvo')
     setShowMsg(true)
     setShowOS(false);
+    document.getElementById("serial").focus();
     console.log(data)
 }
 
