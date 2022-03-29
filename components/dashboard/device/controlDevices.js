@@ -39,6 +39,7 @@ export default function ControlDevices() {
     const [msg, setMsg] = useState('');
     const [situacao, setSituacao] = useState('');
     const [showMsg, setShowMsg] = useState(false);
+    const [showOS, setShowOS] = useState(false);
 
     const handleWord = (event) => {
       setShowMsg(false) 
@@ -62,6 +63,9 @@ export default function ControlDevices() {
 
     const handleCheck = async (event) => {
       setSituacao(event.target.value)
+      if(event.target.value === "Aguardando Aprovação") {
+        setShowOS(true);
+      }
     };
 
     const handleGetDevice = async () => {      
@@ -228,17 +232,17 @@ export default function ControlDevices() {
           />
         </Grid>
 
-        <Grid item xs={1} md={1}>
+        {showOS && <Grid item xs={1} md={1}>
           <TextField
-            label="NF/OS"
+            label="OS"
             id="documento"
             value={documento}
             fullWidth
             onChange={handleDocumento}
             variant="filled"
           />
-        </Grid>
-        <Grid item xs={1} md={1}>
+        </Grid>}
+        {showOS && <Grid item xs={1} md={1}>
           <TextField
             label="Valor OS"
             id="valor"
@@ -247,7 +251,7 @@ export default function ControlDevices() {
             onChange={handleValor}
             variant="filled"
           />
-        </Grid>
+        </Grid>}
         <Grid item xs={1} md={1}>
         <Button
             sx={{ mt: 1 }}
