@@ -40,6 +40,7 @@ export default function ControlDevices() {
     const [situacao, setSituacao] = useState('');
     const [showMsg, setShowMsg] = useState(false);
     const [showOS, setShowOS] = useState(false);
+    const [showDevice, setShowDevice] = useState(false);
 
     const handleWord = (event) => {
       setShowMsg(false) 
@@ -77,9 +78,12 @@ export default function ControlDevices() {
     if (theDevice.length == 0){
       setShowMsg(true)
       setMsg('Equipamento não localizado. Verifique o código digitado!')
+    }else{
+      setDevice(theDevice) 
+      setShowDevice(true)
     }
     console.log(theDevice)
-    setDevice(theDevice)        
+           
   }
 
   const handleSaveMovimento = async () => {      
@@ -104,7 +108,10 @@ export default function ControlDevices() {
         documento: documento,
         valor: valor,
     }
-
+    setShowDevice(false)
+    setWord('')
+    setShowMsg('Salvo')
+    setShowMsg(true)
     console.log(data)
 }
 
@@ -151,7 +158,7 @@ export default function ControlDevices() {
       </Grid>
 
 
-      {device.length > 0 && <Grid container spacing={2} sx={{ mt: 3 }}>
+      {showDevice && <Grid container spacing={2} sx={{ mt: 3 }}>
         <Grid item xs={3} md={3}>
         </Grid>
 
