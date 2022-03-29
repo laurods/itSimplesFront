@@ -70,7 +70,7 @@ export default function ControlDevices() {
       setSituacao(event.target.value)
       if(event.target.value === "Aguardando Aprovação") {
         setShowOS(true);
-        document.getElementById("observacao").focus();
+        document.getElementById("documento").focus();
       }else{
         document.getElementById("observacao").focus();
       }
@@ -86,7 +86,6 @@ export default function ControlDevices() {
     if (theDevice.length == 0){
       setShowMsg(true)
       setMsg('Equipamento não localizado. Verifique o código digitado!')
-      document.getElementById("documento").focus();      
     }else{
       setDevice(theDevice) 
       setShowDevice(true)
