@@ -110,7 +110,7 @@ export default function ControlDevices() {
     }
     setShowDevice(false)
     setWord('')
-    setShowMsg('Salvo')
+    setMsg('Salvo')
     setShowMsg(true)
     console.log(data)
 }
@@ -208,7 +208,7 @@ export default function ControlDevices() {
         </Grid>
       </Grid>}
 
-      {device.length > 0 &&<Grid container spacing={2} sx={{ mt: 3 }}>
+      {showDevice &&<Grid container spacing={2} sx={{ mt: 3 }}>
       <Grid item xs={3} md={3}>
         </Grid>
       <Grid item xs={9} md={9}>
