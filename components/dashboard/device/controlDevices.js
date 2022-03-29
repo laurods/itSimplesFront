@@ -30,6 +30,10 @@ const theme = createTheme();
 
 export default function ControlDevices() {
     const {activeCNPJ} = useContext(AuthContext);
+    const dataAtual = new Date();
+    const [day, setDay] = useState(dataAtual.getDate());
+    const [month, setMonth] = useState(dataAtual.getMonth() + 1);
+    const [year, setYear] = useState(dataAtual.getFullYear());
 
     const [device, setDevice] = useState([]);
     const [observacao, setObservacao] = useState('');
@@ -66,7 +70,11 @@ export default function ControlDevices() {
       setSituacao(event.target.value)
       if(event.target.value === "Aguardando Aprovação") {
         setShowOS(true);
+        document.getElementById("observacao").focus();
+      }else{
+        document.getElementById("observacao").focus();
       }
+      
     };
 
     const handleGetDevice = async () => {      
@@ -78,6 +86,7 @@ export default function ControlDevices() {
     if (theDevice.length == 0){
       setShowMsg(true)
       setMsg('Equipamento não localizado. Verifique o código digitado!')
+      document.getElementById("documento").focus();      
     }else{
       setDevice(theDevice) 
       setShowDevice(true)
@@ -101,7 +110,8 @@ export default function ControlDevices() {
   //     valor: valor,
   // })
   
-  const data = { 
+  const data = {
+        dia: `${day}/${month}/${year}`, 
         serial: word,
         filial: device[0].Grupo,
         observacao: observacao,
