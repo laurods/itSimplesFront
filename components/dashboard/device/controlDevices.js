@@ -69,9 +69,12 @@ export default function ControlDevices() {
     const handleCheck = async (event) => {
       setSituacao(event.target.value)
       if(event.target.value === "Aguardando Aprovação") {
-        setShowOS(true);       
-      }
+        setShowOS(true);
+        document.getElementById("documento").focus();
+      }else{
         document.getElementById("observacao").focus();
+      }
+      
     };
 
     const handleGetDevice = async () => {      
