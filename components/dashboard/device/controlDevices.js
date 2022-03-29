@@ -112,6 +112,7 @@ export default function ControlDevices() {
     setShowDevice(false)
     setWord('')
     setMsg('Salvo')
+    setObservacao('')
     setShowMsg(true)
     setShowOS(false);
     document.getElementById("serial").focus();
