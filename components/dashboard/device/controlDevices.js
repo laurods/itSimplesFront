@@ -112,6 +112,7 @@ export default function ControlDevices() {
     setWord('')
     setMsg('Salvo')
     setShowMsg(true)
+    setShowOS(false);
     console.log(data)
 }
 
@@ -225,7 +226,7 @@ export default function ControlDevices() {
         </Grid>}
 
 
-        {device.length > 0 &&<Grid container spacing={2} sx={{ mt: 3 }}>
+        {showDevice &&<Grid container spacing={2} sx={{ mt: 3 }}>
         <Grid item xs={3} md={3}>
         </Grid>
         <Grid item xs={4} md={4}>
