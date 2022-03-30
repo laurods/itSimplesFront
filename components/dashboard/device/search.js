@@ -29,7 +29,7 @@ export default function SearchDevice() {
 
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
-      setShowMsgDevice(true)
+      setShowMsg(true)
       setMsg('Equipamento não localizado. Verifique o código digitado!')
     }else{
       setDevice(theDevice) 
@@ -72,7 +72,7 @@ export default function SearchDevice() {
             <SearchIcon />
           </Button>
         </Grid>
-        {showMsg && <Message />}
+        {showMsg && <Message msg={msg} />}
     </>
   );
 }
