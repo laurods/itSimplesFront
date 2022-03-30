@@ -30,6 +30,7 @@ export default function SearchDevice() {
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
       setShowMsg(true)
+      setShowDevice(false)
       setMsg('Equipamento não localizado. Verifique o código digitado!')
     }else{
       setDevice(theDevice) 
