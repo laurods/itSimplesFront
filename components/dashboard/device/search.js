@@ -1,18 +1,21 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
+import Message from './message'
 import Grid from '@mui/material/Grid';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 export default function SearchDevice() {
-  const {setDevice, setMsgDevice, setShowMsgDevice, setShowDevice} = useContext(AuthContext);
+  const {setDevice, setShowDevice} = useContext(AuthContext);
     //const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
+    const [msg, setMsg] = useState('');
+    const [showMsg, setShowMsg] = useState(false);
 
     const handleWord = (event) => {
-      setShowMsgDevice(false) 
+      setShowMsg(false) 
       setWord(event.target.value)      
       if(event.target.value.length == 0){
       setWord('');       
@@ -27,7 +30,7 @@ export default function SearchDevice() {
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
       setShowMsgDevice(true)
-      setMsgDevice('Equipamento não localizado. Verifique o código digitado!')
+      setMsg('Equipamento não localizado. Verifique o código digitado!')
     }else{
       setDevice(theDevice) 
       setShowDevice(true)
@@ -69,6 +72,7 @@ export default function SearchDevice() {
             <SearchIcon />
           </Button>
         </Grid>
+        {showMsg && <Message />}
     </>
   );
 }
