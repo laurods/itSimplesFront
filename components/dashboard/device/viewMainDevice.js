@@ -3,8 +3,8 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import ControlDevices from '../device/controlDevices'
-import ViewDevices from '../device/viewDevices';
+import Main from './main'
+import ViewDevices from './viewDevices';
 
 const theme = createTheme();
 
@@ -16,7 +16,7 @@ export default function ViewMainDevice() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         {isUserADM && <Grid item xs={12} md={12}>
-          <ControlDevices />    
+          <Main />    
         </Grid>}     
         
 
