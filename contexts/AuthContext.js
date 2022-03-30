@@ -15,6 +15,8 @@ export function AuthProvider({ children }) {
     const [produtosBaixarEstoque, setProdutosBaixarEstoque] = useState([]);
     const [products, setProducts] = useState([]);
     const [devices, setDevices] = useState([]);
+    const [device, setDevice] = useState([]);
+    const [msgDevice, setMsgDevice] = useState('');
     const [anual, setAnual] = useState([]);
     const [mensal, setMensal] = useState([]);
     const [diario, setDiario] = useState([]);
@@ -162,7 +164,11 @@ export function AuthProvider({ children }) {
             products,
             theProductsFilteredSelected,
             produtosBaixarEstoque,
-            devices,          
+            devices,
+            device,
+            msgDevice, 
+            setMsgDevice, 
+            setDevice,          
             signIn,
             addEmpresa,
             setCNPJsByUsers,

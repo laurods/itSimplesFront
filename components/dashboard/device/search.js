@@ -6,7 +6,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 export default function SearchDevice() {
-    const [device, setDevice] = useState([]);
+  const {setDevice, setMsgDevice, setShowMsgDevice, setShowDevice} = useContext(AuthContext);
+    //const [device, setDevice] = useState([]);
     const [word, setWord] = useState('');
 
     const handleWord = (event) => {
@@ -24,12 +25,12 @@ export default function SearchDevice() {
 
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
-      setShowMsg(true)
-      setMsg('Equipamento não localizado. Verifique o código digitado!')
+      setShowMsgDevice(true)
+      setMsgDevice('Equipamento não localizado. Verifique o código digitado!')
     }else{
       setDevice(theDevice) 
       setShowDevice(true)
-      document.getElementById("observacao").focus();
+      //document.getElementById("observacao").focus();
     }
     console.log(theDevice)
            
