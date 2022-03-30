@@ -12,7 +12,7 @@ export default function SearchDevice() {
     const [word, setWord] = useState('');
 
     const handleWord = (event) => {
-      setShowMsg(false) 
+      setShowMsgDevice(false) 
       setWord(event.target.value)      
       if(event.target.value.length == 0){
       setWord('');       
