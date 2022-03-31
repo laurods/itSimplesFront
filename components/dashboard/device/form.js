@@ -12,7 +12,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 
 export default function Form () {
-    const {device, setShowDevice, setMsg, setWord } = useContext(AuthContext);
+    const {device, setShowDevice, setMsg, setWord, setShowMsg } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -77,6 +77,7 @@ export default function Form () {
     setMsg('Salvo')
     setObservacao('')
     setShowOS(false);
+    setShowMsg(true)
     //document.getElementById("serial").focus();
     console.log(data)
 }

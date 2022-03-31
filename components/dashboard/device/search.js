@@ -13,6 +13,7 @@ export default function SearchDevice() {
     word,
     setMsg, 
     setWord,
+    setShowMsg,
   } = useContext(AuthContext);
     //const [device, setDevice] = useState([]);
     // const [word, setWord] = useState('');
@@ -20,7 +21,7 @@ export default function SearchDevice() {
     //const [showMsg, setShowMsg] = useState(false);
 
     const handleWord = (event) => {
-      setShowDevice(false) 
+      setShowMsg(false) 
       setWord(event.target.value)      
       if(event.target.value.length == 0){
       setWord('');       
@@ -34,7 +35,7 @@ export default function SearchDevice() {
 
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
-      setShowDevice(false)
+      setShowMsg(true)
       setMsg('Equipamento não localizado. Verifique o código digitado!')
     }else{
       setDevice(theDevice) 

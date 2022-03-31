@@ -10,14 +10,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function Main() {
-    const {showDevice} = useContext(AuthContext);
+    const {showDevice, showMsg } = useContext(AuthContext);
     
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Search />
-        {!showDevice && <Message />}
+        {showMsg && <Message />}
         {showDevice && <ViewDevice />}
         {showDevice && <Form />}
       </Grid>

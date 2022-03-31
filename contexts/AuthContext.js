@@ -17,6 +17,9 @@ export function AuthProvider({ children }) {
     const [devices, setDevices] = useState([]);
     const [device, setDevice] = useState([]);
     const [showDevice, setShowDevice] = useState(false);
+    const [word, setWord] = useState('');
+    const [msg, setMsg] = useState('');
+    const [showMsg, setShowMsg] = useState(false);
     const [anual, setAnual] = useState([]);
     const [mensal, setMensal] = useState([]);
     const [diario, setDiario] = useState([]);
@@ -166,7 +169,13 @@ export function AuthProvider({ children }) {
             produtosBaixarEstoque,
             devices,
             device,
-            showDevice, 
+            showDevice,
+            word,
+            msg,
+            showMsg, 
+            setShowMsg, 
+            setMsg, 
+            setWord, 
             setShowDevice,
             setDevice,          
             signIn,
