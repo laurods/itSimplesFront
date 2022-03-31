@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Search from './search'
 import ViewDevice from './viewDevice'
 import Form from './form'
+import Message from './message'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
@@ -16,6 +17,7 @@ export default function Main() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Search />
+        {!showDevice && <Message />}
         {showDevice && <ViewDevice />}
         {showDevice && <Form />}
       </Grid>
