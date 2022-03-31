@@ -12,7 +12,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import TextField from '@mui/material/TextField';
 
 export default function Form () {
-    const {device } = useContext(AuthContext);
+    const {device, setShowDevice } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
