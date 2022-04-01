@@ -62,6 +62,7 @@ export default function Form () {
             status: situacao,
             documento: documento,
             valor: valor,
+            cnpj: device[0].CNPJ
     })
   
 //   const data = {

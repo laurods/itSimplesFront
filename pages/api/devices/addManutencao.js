@@ -16,7 +16,8 @@ const client = new MongoClient(url);
             observacao,
             status,
             documento,
-            valor, 
+            valor,
+            cnpj, 
         } = req.body;
 
          await client.connect();
@@ -30,7 +31,8 @@ const client = new MongoClient(url);
                 observacao,
                 status,
                 documento,
-                valor, 
+                valor,
+                cnpj, 
             },
                         
         );
