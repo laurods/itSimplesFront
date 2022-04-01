@@ -125,6 +125,7 @@ export default function Form () {
             fullWidth
             onChange={handleDocumento}
             variant="filled"
+            autoComplete="off"
           />
         </Grid>}
         {showOS && <Grid item xs={1} md={1}>
@@ -135,6 +136,7 @@ export default function Form () {
             fullWidth
             onChange={handleValor}
             variant="filled"
+            autoComplete="off"
           />
         </Grid>}
         <Grid item xs={1} md={1}>
