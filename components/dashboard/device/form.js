@@ -54,32 +54,33 @@ export default function Form () {
   //     serial: word
   //     status: situacao 
   // })
-  //   const deviceBySerial = await axios.post('/api/devices/insertManutencao' , { 
-  //     serial: word,
-  //     filial: device[0].Grupo,
-  //     observacao: observacao,
-  //     status: situacao,
-  //     documento: documento,
-  //     valor: valor,
-  // })
+      await axios.post('/api/devices/addManutencao' , { 
+            dia: `${day}/${month}/${year}`, 
+            serial: device[0].IMEI,
+            filial: device[0].Grupo,
+            observacao: observacao,
+            status: situacao,
+            documento: documento,
+            valor: valor,
+    })
   
-  const data = {
-        dia: `${day}/${month}/${year}`, 
-        serial: device[0].IMEI,
-        filial: device[0].Grupo,
-        observacao: observacao,
-        status: situacao,
-        documento: documento,
-        valor: valor,
-    }
+//   const data = {
+//         dia: `${day}/${month}/${year}`, 
+//         serial: device[0].IMEI,
+//         filial: device[0].Grupo,
+//         observacao: observacao,
+//         status: situacao,
+//         documento: documento,
+//         valor: valor,
+//     }
     setShowDevice(false)
     setWord('')
     setMsg('Salvo')
     setObservacao('')
     setShowOS(false);
     setShowMsg(true)
-    //document.getElementById("serial").focus();
-    console.log(data)
+    document.getElementById("serial").focus();
+    //console.log(data)
 }
 
 
