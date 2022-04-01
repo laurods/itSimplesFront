@@ -21,7 +21,8 @@ const client = new MongoClient(url);
                 Modelo: 1, 
                 VLRLOCACAO: 1, 
                 Status: 1,
-                Grupo: 1, 
+                Grupo: 1,
+                CNPJ: 1, 
             }
         }
          ).toArray();     
