@@ -10,6 +10,7 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const  {
+            serial,
             status,
         } = req.body;
 
@@ -17,13 +18,13 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("manutencao");
          const p = await col.updateOne(
-             { serial },
-             { 
-                 $set:{
-                    status,
-                 }
-                 
-            },
+            { serial },
+            { 
+                $set:{
+                   status,
+                }
+                
+           },
                         
         );
 
