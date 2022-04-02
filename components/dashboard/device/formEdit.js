@@ -25,7 +25,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewDevices() {
-    const {devicesManutencao, setShowDevice, setWord, setMsg, setShowMsg,} = useContext(AuthContext);
+    const {devicesManutencao, setShowDevice, setWord, setMsg, setShowMsg, setShowFormEdit} = useContext(AuthContext);
 
     const [showOS, setShowOS] = useState(false);
     const [status, setStatus] = useState('');
