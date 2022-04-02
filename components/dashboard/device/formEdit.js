@@ -47,9 +47,20 @@ export default function ViewDevices() {
     const handleCheck = async (event) => {
         setStatus(event.target.value)
         if(event.target.value === 'Aguardando Aprovação') {
-          setShowOS(true);            
+          setShowOS(true);  
         }else{
-          setShowOS(false);
+            
+            setShowDevice(false)
+            setShowFormEdit(false)
+            setWord('')
+            setMsg('Salvo');
+            setShowMsg(true)
+            setShowOS(false);
+            document.getElementById("serial").focus();      
+               await axios.post('/api/devices/updateStatus' , { 
+                   serial: devicesManutencao[0].serial,
+                   status,
+             }) 
         }
     }
 
@@ -66,23 +77,7 @@ export default function ViewDevices() {
                status,
                documento,
                valor, 
-         })
-        //   const deviceBySerial = await axios.post('/api/devices/insertManutencao' , { 
-        //     serial: word,
-        //     filial: device[0].Grupo,
-        //     observacao: observacao,
-        //     status: situacao,
-        //     documento: documento,
-        //     valor: valor,
-        // })
-        
-        // const data = {             
-        //       serial: devicesManutencao[0].serial,
-        //       status,
-        //       documento,
-        //       valor,
-        //   }
-        
+         })       
           
       }
 
