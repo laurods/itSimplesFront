@@ -24,7 +24,7 @@ export default function Form () {
             dia: `${day}/${month}/${year}`, 
             serial: device[0].IMEI,
             filial: device[0].Grupo,
-            observacao: 'Aguardando Orçamento',
+            observacao: observacao,
             status: 'Aguardando Orçamento',
             documento: '',
             valor: '',

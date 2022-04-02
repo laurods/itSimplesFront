@@ -15,9 +15,11 @@ export default function ViewDevice() {
 
     const theDevice = deviceBySerial.data;
     if (theDevice.length == 0){
-      setShowForm(true)      
+      setShowForm(true)
+      document.getElementById("observacao").focus();      
     }else{
-      setShowFormEdit(true) 
+      setShowFormEdit(true)
+      document.getElementById("observacao").focus(); 
     }
     console.log(theDevice)
     }    
