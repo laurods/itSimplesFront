@@ -22,9 +22,12 @@ const client = new MongoClient(url);
          const p = await col.updateOne(
              { serial },
              { 
-                status,
-                documento,
-                valor, 
+                 $set:{
+                    status,
+                    documento,
+                    valor,
+                 }
+                 
             },
                         
         );
