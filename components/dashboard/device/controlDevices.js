@@ -232,7 +232,7 @@ export default function ControlDevices() {
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />
               <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Devolvido" />
             </RadioGroup>
-          </FormGroup>
+        </FormGroup>
         </Grid>
 
         </Grid>}

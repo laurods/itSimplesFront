@@ -29,13 +29,24 @@ export default function ViewDevices() {
 
     const orderBySerial = (a, b) => {
       return a.IMEI - b.IMEI
-    } 
+    }
+    
+    const handleCheck = async (event) => {
+        // setSituacao(event.target.value)
+        // if(event.target.value === "Aguardando Aprovação") {
+        //   setShowOS(true);
+        //   document.getElementById("documento").focus();
+        // }else{
+        //   document.getElementById("observacao").focus();
+        // }
+        
+    }
 
   return (
     <>
-      <Grid item xs={3} md={3}>
-       </Grid>    
-        <Grid item xs={6} md={6}>
+      <Grid item xs={1} md={1}>
+      </Grid>    
+        <Grid item xs={4} md={4}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
@@ -51,12 +62,23 @@ export default function ViewDevices() {
                       <TableCell component="th" scope="row">{row.status}</TableCell>
                       <TableCell component="th" scope="row">{row.documento}</TableCell>
                       <TableCell component="th" scope="row">{row.valor}</TableCell>
-                      <TableCell component="th" scope="row">{row.dia}</TableCell>
                       </TableRow>
                   ))}
                   </TableBody>
               </Table>
               </TableContainer>       
+        </Grid>
+
+        <Grid item xs={6} md={6}>
+            <FormGroup>
+                <RadioGroup row>
+                
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="Aguardando Aprovação" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="Reprovado" />                
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Devolvido" />
+                </RadioGroup>
+            </FormGroup>
         </Grid>
         </>   
   );
