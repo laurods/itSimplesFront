@@ -16,7 +16,7 @@ export default function Form () {
     const [observacao, setObservacao] = useState('');
 
     const handleObservacao = (event) => {
-      setObservacao(event.target.value) 
+      setObservacao((event.target.value).toUpperCase()) 
     };
 
   const handleSaveMovimento = async () => {
@@ -26,8 +26,8 @@ export default function Form () {
             filial: device[0].Grupo,
             observacao: 'Aguardando Orçamento',
             status: 'Aguardando Orçamento',
-            documento: documento,
-            valor: valor,
+            documento: '',
+            valor: '',
             cnpj: device[0].CNPJ
     })
     setShowDevice(false)
