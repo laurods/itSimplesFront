@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Search from './search'
 import ViewDevice from './viewDevice'
 import Form from './form'
+import FormEdit from './formEdit'
 import Message from './message'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
@@ -20,6 +21,7 @@ export default function Main() {
         {showMsg && <Message />}
         {showDevice && <ViewDevice />}
         {showForm && <Form />}
+        {showFormEdit && <FormEdit />}
       </Grid>
         
     </Box>

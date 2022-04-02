@@ -8,23 +8,23 @@ import Button from '@mui/material/Button';
 
 export default function ViewDevice() {
     const {device, setShowForm, setShowFormEdit, setDevicesManutencao} = useContext(AuthContext);
+
     const handleGetMovimento = async () => {      
       const deviceBySerial = await axios.post('/api/devices/getMovimentoBySerial' , { 
         serial: device[0].IMEI
-    })  
-
-    const theDevice = deviceBySerial.data;
-    if (theDevice.length == 0){ // se o coletor não estiver cadastrado na manutenção
-      setShowForm(true)
-      document.getElementById("observacao").focus();      
-    }else{ // se o coletor estiver cadastrado na manutenção
-      const allDevices = await axios.get('/api/devices/getAllManutencao')
-      console.log('allDevices')
-      console.log(allDevices.data)
-      setDevicesManutencao(allDevices.data)
-      setShowFormEdit(true)
-    }
-   
+    }) 
+      const theDevice = deviceBySerial.data;
+      if (theDevice.length == 0){ // se o coletor não estiver cadastrado na manutenção
+        setShowForm(true)
+        document.getElementById("observacao").focus();      
+      }else{ // se o coletor estiver cadastrado na manutenção
+        const allDevices = await axios.get('/api/devices/getAllManutencao')
+        console.log('allDevices')
+        console.log(allDevices.data)
+        setDevicesManutencao(allDevices.data)
+        setShowForm(false)
+        setShowFormEdit(true)
+      }   
     }    
   return (
     <>
