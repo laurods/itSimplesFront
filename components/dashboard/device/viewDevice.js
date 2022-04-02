@@ -3,6 +3,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import EditIcon from '@material-ui/icons/Edit';
+import Button from '@mui/material/Button';
 
 export default function ViewDevice() {
     const {device, setShowForm, setShowFormEdit} = useContext(AuthContext);
@@ -77,7 +78,7 @@ export default function ViewDevice() {
             variant="contained"
             onClick={ () => handleGetMovimento()}
           >
-            <SaveIcon />
+            <EditIcon />
           </Button>
         </Grid>      
     </>
