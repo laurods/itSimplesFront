@@ -44,9 +44,9 @@ export default function ViewDevices() {
 
   return (
     <>
-      <Grid item xs={1} md={1}>
+      <Grid item xs={3} md={3}>
       </Grid>    
-        <Grid item xs={4} md={4}>
+        <Grid item xs={6} md={6}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
@@ -68,6 +68,10 @@ export default function ViewDevices() {
               </Table>
               </TableContainer>       
         </Grid>
+        <Grid item xs={3} md={3}>
+        </Grid>
+       <Grid item xs={3} md={3}>
+       </Grid>
 
         <Grid item xs={6} md={6}>
             <FormGroup>
