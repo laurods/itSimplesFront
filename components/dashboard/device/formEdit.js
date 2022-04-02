@@ -25,22 +25,64 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewDevices() {
-    const {devicesManutencao} = useContext(AuthContext);
+    const {devicesManutencao, setShowDevice, setWord, setMsg, setShowMsg,} = useContext(AuthContext);
+
+    const [showOS, setShowOS] = useState(false);
+    const [situacao, setSituacao] = useState('');
+    const [documento, setDocumento] = useState('');
+    const [valor, setValor] = useState('');
+
+    const handleDocumento = (event) => {
+        setDocumento(event.target.value) 
+      };
+  
+      const handleValor = (event) => {
+        setValor(event.target.value) 
+      };
 
     const orderBySerial = (a, b) => {
       return a.IMEI - b.IMEI
     }
     
     const handleCheck = async (event) => {
-        // setSituacao(event.target.value)
-        // if(event.target.value === "Aguardando Aprovação") {
-        //   setShowOS(true);
-        //   document.getElementById("documento").focus();
-        // }else{
-        //   document.getElementById("observacao").focus();
-        // }
-        
+        setSituacao(event.target.value)
+        if(event.target.value === 'Aguardando Aprovação') {
+          setShowOS(true);            
+        }else{
+          setShowOS(false);
+        }
     }
+
+    const handleSaveMovimento = async () => {      
+        //   const deviceBySerial = await axios.post('/api/devices/updateDevice' , { 
+        //     serial: word
+        //     status: situacao 
+        // })
+        //   const deviceBySerial = await axios.post('/api/devices/insertManutencao' , { 
+        //     serial: word,
+        //     filial: device[0].Grupo,
+        //     observacao: observacao,
+        //     status: situacao,
+        //     documento: documento,
+        //     valor: valor,
+        // })
+        
+        const data = {             
+              serial: devicesManutencao[0].serial,
+              situacao,
+              status: situacao,
+              documento,
+              valor,
+          }
+          setShowDevice(false)
+          setWord('')
+          setMsg('Salvo')
+          setObservacao('')
+          setShowMsg(true)
+          setShowOS(false);
+          document.getElementById("serial").focus();
+          console.log(data)
+      }
 
   return (
     <>
@@ -71,7 +113,7 @@ export default function ViewDevices() {
         <Grid item xs={3} md={3}>
         </Grid>
        <Grid item xs={3} md={3}>
-       </Grid>
+        </Grid>
 
         <Grid item xs={6} md={6}>
             <FormGroup>
@@ -84,6 +126,43 @@ export default function ViewDevices() {
                 </RadioGroup>
             </FormGroup>
         </Grid>
+
+        <Grid item xs={3} md={3}>
+        </Grid>
+
+        {showOS && <Grid item xs={1} md={1}>
+          <TextField
+            label="OS"
+            id="documento"
+            value={documento}
+            fullWidth
+            onChange={handleDocumento}
+            variant="filled"
+          />
+        </Grid>}
+        {showOS && <Grid item xs={1} md={1}>
+          <TextField
+            label="Valor OS"
+            id="valor"
+            value={valor}
+            fullWidth
+            onChange={handleValor}
+            variant="filled"
+          />
+        </Grid>}
+        {showOS && <Grid item xs={1} md={1}>
+        <Button
+            sx={{ mt: 1 }}
+            inputProps={{style: {fontSize: 40}}}          
+            fullWidth
+            size="small" 
+            variant="outlined"
+            onClick={ () => handleSaveMovimento()}
+          >
+            <SaveIcon />
+          </Button>
+        </Grid>}
+
         </>   
   );
 }
