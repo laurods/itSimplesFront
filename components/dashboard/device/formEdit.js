@@ -63,7 +63,7 @@ export default function ViewDevices() {
             document.getElementById("serial").focus();      
                await axios.post('/api/devices/updateStatus' , { 
                    serial: devicesManutencao[0].serial,
-                   status,
+                   status:event.target.value,
              }) 
         }
     }
