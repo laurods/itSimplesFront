@@ -18,12 +18,12 @@ export default function ViewDevice() {
         setShowForm(true)
         document.getElementById("observacao").focus();      
       }else{ // se o coletor estiver cadastrado na manutenção
+        setShowForm(false)
+        setShowFormEdit(true)
         const allDevices = await axios.get('/api/devices/getAllManutencao')
         console.log('allDevices')
         console.log(allDevices.data)
-        setDevicesManutencao(allDevices.data)
-        setShowForm(false)
-        setShowFormEdit(true)
+        setDevicesManutencao(allDevices.data)        
       }   
     }    
   return (
