@@ -12,7 +12,7 @@ const client = new MongoClient(url);
         const { serial } = req.body;        
          await client.connect();         
          const db = client.db(dbName);
-         const col = db.collection("devices");
+         const col = db.collection("manutencao");
          const device = await col.find(
             { "serial" : serial },
             {projection: { _id: 1, serial: 1, observacao: 1, status: 1, documento: 1, valor: 1 }}
