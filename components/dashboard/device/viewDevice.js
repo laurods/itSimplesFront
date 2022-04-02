@@ -2,9 +2,23 @@ import React, { useContext} from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import EditIcon from '@material-ui/icons/Edit';
 
 export default function ViewDevice() {
-    const {device} = useContext(AuthContext);    
+    const {device, setShowForm, setShowFormEdit} = useContext(AuthContext);
+    const handleGetMovimento = async () => {      
+      const deviceBySerial = await axios.post('/api/devices/getMovimentoBySerial' , { 
+        serial: device[0].IMEI
+    })  
+
+    const theDevice = deviceBySerial.data;
+    if (theDevice.length == 0){
+      setShowForm(true)      
+    }else{
+      setShowFormEdit(true) 
+    }
+    console.log(theDevice)
+    }    
   return (
     <>
         <Grid item xs={3} md={3}>
@@ -53,6 +67,18 @@ export default function ViewDevice() {
             fullWidth
             variant="standard"
           />
+        </Grid>
+        <Grid item xs={1} md={1}>
+        <Button
+            sx={{ mt: 1 }}
+            inputProps={{style: {fontSize: 40}}}          
+            fullWidth
+            size="large" 
+            variant="contained"
+            onClick={ () => handleGetMovimento()}
+          >
+            <SaveIcon />
+          </Button>
         </Grid>      
     </>
   );

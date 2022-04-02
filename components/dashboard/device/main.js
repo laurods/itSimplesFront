@@ -10,7 +10,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function Main() {
-    const {showDevice, showMsg } = useContext(AuthContext);
+    const {showDevice, showMsg, showForm, showFormEdit } = useContext(AuthContext);
     
   return (
     <ThemeProvider theme={theme}>
@@ -19,7 +19,7 @@ export default function Main() {
         <Search />
         {showMsg && <Message />}
         {showDevice && <ViewDevice />}
-        {showDevice && <Form />}
+        {showForm && <Form />}
       </Grid>
         
     </Box>
