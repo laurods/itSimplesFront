@@ -74,6 +74,7 @@ export default function ViewDevices() {
               valor,
           }
           setShowDevice(false)
+          setShowFormEdit(false)
           setWord('')
           setMsg('Salvo');
           setShowMsg(true)
