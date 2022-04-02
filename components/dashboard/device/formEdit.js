@@ -12,7 +12,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import EditIcon from '@material-ui/icons/Edit';
 import PrintIcon from '@material-ui/icons/Print';
-import SendIcon from '@material-ui/icons/Send';
+import SaveIcon from '@material-ui/icons/Save';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@mui/material/Button';
@@ -28,7 +28,7 @@ export default function ViewDevices() {
     const {devicesManutencao, setShowDevice, setWord, setMsg, setShowMsg,} = useContext(AuthContext);
 
     const [showOS, setShowOS] = useState(false);
-    const [situacao, setSituacao] = useState('');
+    const [status, setStatus] = useState('');
     const [documento, setDocumento] = useState('');
     const [valor, setValor] = useState('');
 
@@ -45,7 +45,7 @@ export default function ViewDevices() {
     }
     
     const handleCheck = async (event) => {
-        setSituacao(event.target.value)
+        setStatus(event.target.value)
         if(event.target.value === 'Aguardando Aprovação') {
           setShowOS(true);            
         }else{
@@ -69,8 +69,7 @@ export default function ViewDevices() {
         
         const data = {             
               serial: devicesManutencao[0].serial,
-              situacao,
-              status: situacao,
+              status,
               documento,
               valor,
           }
