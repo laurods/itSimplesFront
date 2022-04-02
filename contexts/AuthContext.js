@@ -16,6 +16,7 @@ export function AuthProvider({ children }) {
     const [products, setProducts] = useState([]);
     const [devices, setDevices] = useState([]);
     const [device, setDevice] = useState([]);
+    const [devicesManutencao, setDevicesManutencao] = useState([]);
     const [showDevice, setShowDevice] = useState(false);
     const [word, setWord] = useState('');
     const [msg, setMsg] = useState('');
@@ -176,7 +177,9 @@ export function AuthProvider({ children }) {
             msg,
             showMsg,
             showForm,
-            showFormEdit, 
+            showFormEdit,
+            devicesManutencao, 
+            setDevicesManutencao, 
             setShowForm, 
             setShowMsg, 
             setMsg, 
