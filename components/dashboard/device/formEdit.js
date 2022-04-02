@@ -75,8 +75,7 @@ export default function ViewDevices() {
           }
           setShowDevice(false)
           setWord('')
-          setMsg('Salvo')
-          setObservacao('')
+          setMsg('Salvo');
           setShowMsg(true)
           setShowOS(false);
           document.getElementById("serial").focus();
@@ -126,6 +125,8 @@ export default function ViewDevices() {
             </FormGroup>
         </Grid>
 
+        <Grid item xs={3} md={3}>
+        </Grid>
         <Grid item xs={3} md={3}>
         </Grid>
 
