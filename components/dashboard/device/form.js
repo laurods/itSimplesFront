@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 export default function Form () {
-    const {device, setShowDevice, setMsg, setWord, setShowMsg } = useContext(AuthContext);
+    const {device, setShowDevice, setMsg, setWord, setShowMsg, setShowForm } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -20,6 +20,13 @@ export default function Form () {
     };
 
   const handleSaveMovimento = async () => {
+    setShowDevice(false)
+    setShowForm(false)
+    setWord('')
+    setMsg('Salvo')
+    setObservacao('')
+    setShowMsg(true)
+    document.getElementById("serial").focus();
       await axios.post('/api/devices/addManutencao' , { 
             dia: `${day}/${month}/${year}`, 
             serial: device[0].IMEI,
@@ -30,12 +37,7 @@ export default function Form () {
             valor: '',
             cnpj: device[0].CNPJ
     })
-    setShowDevice(false)
-    setWord('')
-    setMsg('Salvo')
-    setObservacao('')
-    setShowMsg(true)
-    document.getElementById("serial").focus();
+   
 }
 
 
