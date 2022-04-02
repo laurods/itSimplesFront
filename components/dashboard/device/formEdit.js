@@ -46,10 +46,14 @@ export default function ViewDevices() {
     
     const handleCheck = async (event) => {
         setStatus(event.target.value)
+        console.log(event.target.value)
         if(event.target.value === 'Aguardando Aprovação') {
+            console.log('if')
+            console.log(event.target.value)
           setShowOS(true);  
         }else{
-            
+            console.log('else')
+            console.log(event.target.value)
             setShowDevice(false)
             setShowFormEdit(false)
             setWord('')
