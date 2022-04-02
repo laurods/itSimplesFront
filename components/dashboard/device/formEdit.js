@@ -53,11 +53,20 @@ export default function ViewDevices() {
         }
     }
 
-    const handleSaveMovimento = async () => {      
-        //   const deviceBySerial = await axios.post('/api/devices/updateDevice' , { 
-        //     serial: word
-        //     status: situacao 
-        // })
+    const handleSaveMovimento = async () => {
+        setShowDevice(false)
+        setShowFormEdit(false)
+        setWord('')
+        setMsg('Salvo');
+        setShowMsg(true)
+        setShowOS(false);
+        document.getElementById("serial").focus();      
+           await axios.post('/api/devices/updateFull' , { 
+               serial: devicesManutencao[0].serial,
+               status,
+               documento,
+               valor, 
+         })
         //   const deviceBySerial = await axios.post('/api/devices/insertManutencao' , { 
         //     serial: word,
         //     filial: device[0].Grupo,
@@ -67,20 +76,14 @@ export default function ViewDevices() {
         //     valor: valor,
         // })
         
-        const data = {             
-              serial: devicesManutencao[0].serial,
-              status,
-              documento,
-              valor,
-          }
-          setShowDevice(false)
-          setShowFormEdit(false)
-          setWord('')
-          setMsg('Salvo');
-          setShowMsg(true)
-          setShowOS(false);
-          document.getElementById("serial").focus();
-          console.log(data)
+        // const data = {             
+        //       serial: devicesManutencao[0].serial,
+        //       status,
+        //       documento,
+        //       valor,
+        //   }
+        
+          
       }
 
   return (
