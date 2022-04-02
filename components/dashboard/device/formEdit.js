@@ -34,7 +34,7 @@ export default function ViewDevices() {
   return (
     <>
       <Grid item xs={3} md={3}>
-      </Grid>     
+       </Grid>    
         <Grid item xs={6} md={6}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
@@ -45,8 +45,7 @@ export default function ViewDevices() {
                       <TableRow
                       key={row._id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
-                      >
-                      <TableCell component="th" scope="row">{row.serial}</TableCell>                   
+                      >                                        
                       <TableCell component="th" scope="row">{row.filial}</TableCell>
                       <TableCell component="th" scope="row">{row.observacao}</TableCell>
                       <TableCell component="th" scope="row">{row.status}</TableCell>

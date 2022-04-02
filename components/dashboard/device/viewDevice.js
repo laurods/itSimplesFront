@@ -7,7 +7,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import Button from '@mui/material/Button';
 
 export default function ViewDevice() {
-    const {device, setShowForm, setShowFormEdit, setDevicesManutencao} = useContext(AuthContext);
+    const {device, setShowForm, setShowFormEdit, setDevicesManutencao, setShowDevice} = useContext(AuthContext);
 
     const handleGetMovimento = async () => {      
       const deviceBySerial = await axios.post('/api/devices/getMovimentoBySerial' , { 
@@ -18,7 +18,7 @@ export default function ViewDevice() {
         setShowForm(true)
         document.getElementById("observacao").focus();      
       }else{ // se o coletor estiver cadastrado na manutenção
-        setShowForm(false)
+        setShowDevice(false)
         setShowFormEdit(true)
         const allDevices = await axios.get('/api/devices/getAllManutencao')
         console.log('allDevices')
