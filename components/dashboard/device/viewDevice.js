@@ -1,5 +1,6 @@
 import React, { useContext} from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
+import axios from 'axios';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import EditIcon from '@material-ui/icons/Edit';
@@ -74,8 +75,8 @@ export default function ViewDevice() {
             sx={{ mt: 1 }}
             inputProps={{style: {fontSize: 40}}}          
             fullWidth
-            size="large" 
-            variant="contained"
+            size="small" 
+            variant="outlined"
             onClick={ () => handleGetMovimento()}
           >
             <EditIcon />
