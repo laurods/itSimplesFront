@@ -19,10 +19,12 @@ export default function Main() {
       <Grid container spacing={2}>
       <Grid item xs={1} md={1}>
       </Grid>
-      <Grid item xs={5} md={5}>
-        <Search />
+      <Search />
+      <Grid item xs={4} md={4}>
       </Grid>
-        
+      <Grid item xs={1} md={1}>
+      </Grid>
+      
         {/* {showMsg && <Message />}
         {showDevice && <ViewDevice />}
         {showForm && <Form />}

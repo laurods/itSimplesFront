@@ -43,13 +43,13 @@ export default function SearchDevice() {
   } 
   return (
         <>
-        <Grid item xs={10} md={10}>
+        <Grid item xs={4} md={4}>
           <TextField
               margin="normal"
               required
               autoFocus
               inputProps={{style: {fontSize: 40}}}
-              
+              fullWidth
               name="serial"
               label="Serial"
               id="serial"
@@ -65,7 +65,7 @@ export default function SearchDevice() {
         <Button
             sx={{ mt: 5 }}
             inputProps={{style: {fontSize: 40}}}          
-           
+            fullWidth
             size="large" 
             variant="contained"
             onClick={ () => handleGetDevice()}
