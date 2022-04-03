@@ -62,7 +62,7 @@ export default function SearchDevice() {
 
         <Grid item xs={2} md={2}>
         <Button
-            
+            sx={{ mt: 5 }}
             inputProps={{style: {fontSize: 40}}}          
             fullWidth
             size="large" 

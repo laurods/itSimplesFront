@@ -23,10 +23,10 @@ export default function Main() {
         <Search />
       </Grid>
         
-        {showMsg && <Message />}
+        {/* {showMsg && <Message />}
         {showDevice && <ViewDevice />}
         {showForm && <Form />}
-        {showFormEdit && <FormEdit />}
+        {showFormEdit && <FormEdit />} */}
       </Grid>
         
     </Box>
