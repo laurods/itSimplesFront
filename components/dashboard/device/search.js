@@ -15,10 +15,6 @@ export default function SearchDevice() {
     setWord,
     setShowMsg,
   } = useContext(AuthContext);
-    //const [device, setDevice] = useState([]);
-    // const [word, setWord] = useState('');
-    // const [msg, setMsg] = useState('');
-    //const [showMsg, setShowMsg] = useState(false);
 
     const handleWord = (event) => {
       setShowMsg(false) 
@@ -47,9 +43,7 @@ export default function SearchDevice() {
   } 
   return (
         <>
-        <Grid item xs={3} md={3}>
-        </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={4} md={4}>
           <TextField
               margin="normal"
               required
