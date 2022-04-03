@@ -44,10 +44,8 @@ export default function Form () {
     
   return (
       <>
-        <Grid container spacing={2} sx={{ mt: 3 }}>
-        <Grid item xs={3} md={3}>
-        </Grid>
-        <Grid item xs={4} md={4}>
+        
+        <Grid item xs={5} md={5}>
           <TextField
             label="Observação"
             id="observacao"
@@ -70,9 +68,6 @@ export default function Form () {
             <SaveIcon />
           </Button>
         </Grid>
-
-      </Grid>
-    
     </>
   );
 }

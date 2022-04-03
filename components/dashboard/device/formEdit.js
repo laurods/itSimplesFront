@@ -86,9 +86,7 @@ export default function ViewDevices() {
       }
 
   return (
-    <>
-      <Grid item xs={3} md={3}>
-      </Grid>    
+    <>         
         <Grid item xs={6} md={6}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
@@ -111,10 +109,6 @@ export default function ViewDevices() {
               </Table>
               </TableContainer>       
         </Grid>
-        <Grid item xs={3} md={3}>
-        </Grid>
-       <Grid item xs={3} md={3}>
-        </Grid>
 
         <Grid item xs={6} md={6}>
             <FormGroup>
@@ -126,11 +120,6 @@ export default function ViewDevices() {
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Devolvido" />
                 </RadioGroup>
             </FormGroup>
-        </Grid>
-
-        <Grid item xs={3} md={3}>
-        </Grid>
-        <Grid item xs={3} md={3}>
         </Grid>
 
         {showOS && <Grid item xs={1} md={1}>

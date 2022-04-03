@@ -28,8 +28,6 @@ export default function ViewDevice() {
     }    
   return (
     <>
-        <Grid item xs={3} md={3}>
-        </Grid>
 
         <Grid item xs={1} md={1}>
           <TextField

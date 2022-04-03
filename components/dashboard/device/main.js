@@ -18,17 +18,18 @@ export default function Main() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <Grid item xs={1} md={1}>
+        { /*espaço na esquerda*/}
       </Grid>
+      { /*conteudo grid 5 espaço no centro*/}
       <Search />
-      <Grid item xs={4} md={4}>
-      </Grid>
+      {showMsg && <Message />}
+      {showDevice && <ViewDevice />}
+      {showForm && <Form />}
+      {showFormEdit && <FormEdit />}      
+      { /*conteudo grid 4 espaço no centro*/} 
       <Grid item xs={1} md={1}>
+        { /*espaço na direita*/}
       </Grid>
-      
-        {/* {showMsg && <Message />}
-        {showDevice && <ViewDevice />}
-        {showForm && <Form />}
-        {showFormEdit && <FormEdit />} */}
       </Grid>
         
     </Box>
