@@ -43,7 +43,7 @@ export default function SearchDevice() {
   } 
   return (
         <>
-        <Grid item xs={8} md={8}>
+        <Grid item xs={10} md={10}>
           <TextField
               margin="normal"
               required
@@ -62,7 +62,7 @@ export default function SearchDevice() {
 
         <Grid item xs={2} md={2}>
         <Button
-            sx={{ mt: 5 }}
+            
             inputProps={{style: {fontSize: 40}}}          
             fullWidth
             size="large" 
