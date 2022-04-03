@@ -49,7 +49,6 @@ export default function SearchDevice() {
               required
               autoFocus
               inputProps={{style: {fontSize: 40}}}
-              fullWidth
               name="serial"
               label="Serial"
               id="serial"
