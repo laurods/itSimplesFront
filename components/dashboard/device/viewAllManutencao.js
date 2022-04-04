@@ -43,17 +43,17 @@ export default function ViewAllManutencao() {
     
   return (
    <>
-      <Grid item xs={6} md={6}>
+      <Grid item xs={12} md={12}>
             <FormGroup>
             <RadioGroup row>
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="Aguardando Aprovação" />
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="Reprovado" />                
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Devolvido" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="AA" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="RP" />                
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="AP" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="DV" />
             </RadioGroup>
           </FormGroup>
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={12}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
