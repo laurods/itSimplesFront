@@ -45,7 +45,7 @@ export default function ViewAllManutencao() {
    <>
       <Grid item xs={2} md={2}>
             <FormGroup>
-            <RadioGroup>
+            <RadioGroup row>
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="Aguardando Aprovação" />
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="Reprovado" />                
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />

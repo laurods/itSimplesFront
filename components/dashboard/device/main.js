@@ -23,7 +23,11 @@ export default function Main() {
       </Grid>
       { /*conteudo grid 5 espaço no centro*/}
       <Search />
-      <ViewAllManutencao />
+      <Grid item xs={5} md={5}>
+        { /*espaço na direita*/}
+        <ViewAllManutencao />
+      </Grid>
+      
       {showMsg && <Message />}
       {showDevice && <ViewDevice />}
       {showForm && <Form />}
