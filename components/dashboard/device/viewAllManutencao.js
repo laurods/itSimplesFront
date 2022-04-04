@@ -46,10 +46,10 @@ export default function ViewAllManutencao() {
       <Grid item xs={12} md={12}>
             <FormGroup>
             <RadioGroup row>
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="AA" />
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="RP" />                
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="AP" />
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="DV" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="Aguardando Aprovação" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="Reprovado" />                
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Devolvido" label="Devolvido" />
             </RadioGroup>
           </FormGroup>
         </Grid>
