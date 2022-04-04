@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Search from './search'
 import ViewDevice from './viewDevice'
+import ViewAllManutencao from './viewAllManutencao'
 import Form from './form'
 import FormEdit from './formEdit'
 import Message from './message'
@@ -22,6 +23,7 @@ export default function Main() {
       </Grid>
       { /*conteudo grid 5 espaço no centro*/}
       <Search />
+      <ViewAllManutencao />
       {showMsg && <Message />}
       {showDevice && <ViewDevice />}
       {showForm && <Form />}
