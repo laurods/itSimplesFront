@@ -43,7 +43,7 @@ export default function ViewAllManutencao() {
     
   return (
    <>
-      <Grid item xs={2} md={2}>
+      <Grid item xs={6} md={6}>
             <FormGroup>
             <RadioGroup row>
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="Aguardando Aprovação" />
@@ -53,7 +53,7 @@ export default function ViewAllManutencao() {
             </RadioGroup>
           </FormGroup>
         </Grid>
-        <Grid item xs={4} md={3}>
+        <Grid item xs={6} md={6}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
