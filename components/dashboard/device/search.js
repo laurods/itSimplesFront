@@ -43,14 +43,14 @@ export default function SearchDevice() {
   } 
   return (
         <>
-        <Grid item xs={1} md={1}></Grid>
-        <Grid item xs={11} md={11}>
+        
+        <Grid item xs={12} md={12}>
           <TextField
               margin="normal"
               required
               autoFocus
               inputProps={{style: {fontSize: 30}}}
-              //fullWidth
+              fullWidth
               name="serial"
               label="Serial"
               id="serial"
