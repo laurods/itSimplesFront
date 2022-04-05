@@ -18,18 +18,12 @@ export default function Main() {
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      <Grid item xs={1} md={1}>
-        { /*espaço na esquerda*/}
-      </Grid>
-      { /*conteudo grid 5 espaço no centro*/}
-      <Grid item xs={4} md={4}>
-          <Search />
-      </Grid>      
+      <Grid item xs={1} md={1}></Grid>
+      <Search /> 
       <Grid item xs={6} md={6}>
-        { /*espaço na direita*/}
         <ViewAllManutencao />
       </Grid>
-      
+      <Grid item xs={1} md={1}></Grid>
       {showMsg && <Message />}
       {showDevice && <ViewDevice />}
       {showForm && <Form />}
