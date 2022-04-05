@@ -109,8 +109,6 @@ export default function ViewDevices() {
               </Table>
               </TableContainer>       
         </Grid>
-        <Grid item xs={7} md={7}></Grid>
-
         <Grid item xs={5} md={5}>
             <FormGroup>
                 <RadioGroup row>
