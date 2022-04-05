@@ -87,7 +87,7 @@ export default function ViewDevices() {
 
   return (
     <>         
-        <Grid item xs={5} md={5}>
+        <Grid item xs={12} md={12}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
@@ -109,7 +109,7 @@ export default function ViewDevices() {
               </Table>
               </TableContainer>       
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={12}>
             <FormGroup>
                 <RadioGroup row>
                 
