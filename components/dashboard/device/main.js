@@ -20,18 +20,16 @@ export default function Main() {
       <Grid container spacing={2}>
       <Grid item xs={1} md={1}></Grid>
       <Search /> 
-      <Grid item xs={6} md={6}>
+      <Grid item xs={5} md={5}>
         <ViewAllManutencao />
       </Grid>
+      <Grid item xs={1} md={1}></Grid>
       <Grid item xs={1} md={1}></Grid>
       {showMsg && <Message />}
       {showDevice && <ViewDevice />}
       {showForm && <Form />}
       {showFormEdit && <FormEdit />}      
-      { /*conteudo grid 4 espaço no centro*/} 
-      <Grid item xs={1} md={1}>
-        { /*espaço na direita*/}
-      </Grid>
+      
       </Grid>
         
     </Box>
