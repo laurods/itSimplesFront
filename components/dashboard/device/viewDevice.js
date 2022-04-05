@@ -29,7 +29,7 @@ export default function ViewDevice() {
   return (
     <>
 
-        <Grid item xs={1} md={1}>
+        <Grid item xs={2} md={2}>
           <TextField
             disabled
             label="Filial"
@@ -41,7 +41,7 @@ export default function ViewDevice() {
         </Grid>
         
 
-        <Grid item xs={1} md={1}>
+        <Grid item xs={2} md={2}>
           <TextField
             disabled
             label="Modelo"
@@ -52,7 +52,7 @@ export default function ViewDevice() {
           />
         </Grid>
 
-        <Grid item xs={1} md={1}>
+        <Grid item xs={2} md={2}>
           <TextField
             disabled
             label="Situação"
@@ -63,7 +63,7 @@ export default function ViewDevice() {
           />
         </Grid>
 
-        <Grid item xs={1} md={1}>
+        <Grid item xs={2} md={2}>
           <TextField
             disabled
             label="Locação"
@@ -73,7 +73,7 @@ export default function ViewDevice() {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={1} md={1}>
+        <Grid item xs={2} md={2}>
         <Button
             sx={{ mt: 1 }}
             inputProps={{style: {fontSize: 40}}}          
