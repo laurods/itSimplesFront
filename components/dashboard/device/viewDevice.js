@@ -35,7 +35,6 @@ export default function ViewDevice() {
             label="Filial"
             id="filial"
             value={device[0].Grupo}
-            fullWidth
             variant="standard"
           />
         </Grid>
@@ -47,7 +46,6 @@ export default function ViewDevice() {
             label="Modelo"
             id="modelo"
             value={device[0].Modelo}
-            fullWidth
             variant="standard"
           />
         </Grid>
@@ -58,7 +56,6 @@ export default function ViewDevice() {
             label="Situação"
             id="situacao"
             value={device[0].Status}
-            fullWidth
             variant="standard"
           />
         </Grid>
@@ -69,15 +66,13 @@ export default function ViewDevice() {
             label="Locação"
             id="locacao"
             value={device[0].VLRLOCACAO}
-            fullWidth
             variant="standard"
           />
         </Grid>
         <Grid item xs={2} md={2}>
         <Button
             sx={{ mt: 1 }}
-            inputProps={{style: {fontSize: 40}}}          
-            fullWidth
+            inputProps={{style: {fontSize: 40}}}
             size="small" 
             variant="outlined"
             onClick={ () => handleGetMovimento()}
