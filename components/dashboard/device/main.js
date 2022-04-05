@@ -18,16 +18,17 @@ export default function Main() {
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      <Grid item xs={1} md={1}></Grid>
-      <Search /> 
       <Grid item xs={6} md={6}>
-        <ViewAllManutencao />
-      </Grid>
-      <Grid item xs={1} md={1}></Grid>
+      <Search />
       {showMsg && <Message />}
       {showDevice && <ViewDevice />}
       {showForm && <Form />}
-      {showFormEdit && <FormEdit />}      
+      {showFormEdit && <FormEdit />}
+      </Grid>  
+      <Grid item xs={6} md={6}>
+        <ViewAllManutencao />
+      </Grid>
+           
       
       </Grid>
         
