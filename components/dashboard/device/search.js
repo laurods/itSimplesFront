@@ -43,7 +43,7 @@ export default function SearchDevice() {
   } 
   return (
         <>
-        <Grid item xs={3} md={3}>
+        <Grid item xs={4} md={4}>
           <TextField
               margin="normal"
               required
