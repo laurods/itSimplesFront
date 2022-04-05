@@ -109,14 +109,14 @@ export default function ViewDevices() {
               </Table>
               </TableContainer>       
         </Grid>
-        <Grid item xs={5} md={5}>
+        <Grid item xs={6} md={6}>
             <FormGroup>
                 <RadioGroup row>
                 
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aguardando Aprovação" label="Aguardando Aprovação" />
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="Reprovado" />                
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />
-                <FormControlLabel onChange={handleCheck} control={<Radio />} value="ativo" label="Devolvido" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Devolvido" label="Devolvido" />
                 </RadioGroup>
             </FormGroup>
         </Grid>
