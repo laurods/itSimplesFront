@@ -29,7 +29,7 @@ export default function ViewDevice() {
   return (
     <>
 
-        <Grid item xs={2} md={2}>
+        <Grid item xs={12} md={12}>
           <TextField
             disabled
             label="Filial"
@@ -37,10 +37,6 @@ export default function ViewDevice() {
             value={device[0].Grupo}
             variant="standard"
           />
-        </Grid>
-        
-
-        <Grid item xs={2} md={2}>
           <TextField
             disabled
             label="Modelo"
@@ -48,29 +44,21 @@ export default function ViewDevice() {
             value={device[0].Modelo}
             variant="standard"
           />
-        </Grid>
-
-        <Grid item xs={2} md={2}>
-          <TextField
+           <TextField
             disabled
             label="Situação"
             id="situacao"
             value={device[0].Status}
             variant="standard"
           />
-        </Grid>
-
-        <Grid item xs={2} md={2}>
-          <TextField
+           <TextField
             disabled
             label="Locação"
             id="locacao"
             value={device[0].VLRLOCACAO}
             variant="standard"
           />
-        </Grid>
-        <Grid item xs={2} md={2}>
-        <Button
+          <Button
             sx={{ mt: 1 }}
             inputProps={{style: {fontSize: 40}}}
             size="small" 
@@ -79,7 +67,7 @@ export default function ViewDevice() {
           >
             <EditIcon />
           </Button>
-        </Grid>      
+        </Grid>     
     </>
   );
 }
