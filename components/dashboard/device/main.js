@@ -24,7 +24,6 @@ export default function Main() {
         <ViewAllManutencao />
       </Grid>
       <Grid item xs={1} md={1}></Grid>
-      <Grid item xs={1} md={1}></Grid>
       {showMsg && <Message />}
       {showDevice && <ViewDevice />}
       {showForm && <Form />}

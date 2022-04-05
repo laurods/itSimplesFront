@@ -53,7 +53,7 @@ export default function ViewAllManutencao() {
             </RadioGroup>
           </FormGroup>
         </Grid>
-        <Grid item xs={12} md={12}>
+        <Grid item xs={11} md={11}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
