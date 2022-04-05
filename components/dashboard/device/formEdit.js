@@ -121,38 +121,53 @@ export default function ViewDevices() {
             </FormGroup>
         </Grid>
 
-        {showOS && <Grid item xs={1} md={1}>
-          <TextField
-            label="OS"
-            id="documento"
-            value={documento}
-            fullWidth
-            onChange={handleDocumento}
-            variant="filled"
-          />
-        </Grid>}
-        {showOS && <Grid item xs={1} md={1}>
-          <TextField
-            label="Valor OS"
-            id="valor"
-            value={valor}
-            fullWidth
-            onChange={handleValor}
-            variant="filled"
-          />
-        </Grid>}
-        {showOS && <Grid item xs={1} md={1}>
-        <Button
-            sx={{ mt: 1 }}
-            inputProps={{style: {fontSize: 40}}}          
-            fullWidth
-            size="small" 
-            variant="outlined"
-            onClick={ () => handleSaveMovimento()}
-          >
-            <SaveIcon />
-          </Button>
-        </Grid>}
+        {showOS && <Grid item xs={12} md={12}>
+        <TableContainer component={Paper} sx={{ mt: 2 }}>            
+              <Table sx={{ minWidth: 200 }} aria-label="simple table">
+                  <TableHead>                    
+                  </TableHead>
+                  <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>                  
+                      <TableRow
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
+                      >                                        
+                      <TableCell component="th" scope="row">
+                        <TextField
+                          label="OS"
+                          id="documento"
+                          value={documento}
+                          fullWidth
+                          onChange={handleDocumento}
+                          variant="filled"
+                        />
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                          <TextField
+                            label="Valor OS"
+                            id="valor"
+                            value={valor}
+                            fullWidth
+                            onChange={handleValor}
+                            variant="filled"
+                          />
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                          <Button
+                            sx={{ mt: 1 }}
+                            inputProps={{style: {fontSize: 40}}}          
+                            fullWidth
+                            size="small" 
+                            variant="outlined"
+                            onClick={ () => handleSaveMovimento()}
+                          >
+                            <SaveIcon />
+                          </Button>
+                      </TableCell>                      
+                      </TableRow>
+                  
+                  </TableBody>
+              </Table>
+              </TableContainer> 
+        </Grid>} 
 
         </>   
   );
