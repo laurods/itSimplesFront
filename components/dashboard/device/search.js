@@ -43,13 +43,14 @@ export default function SearchDevice() {
   } 
   return (
         <>
-        <Grid item xs={8} md={8}>
+        <Grid item xs={1} md={1}></Grid>
+        <Grid item xs={11} md={11}>
           <TextField
               margin="normal"
               required
               autoFocus
-              inputProps={{style: {fontSize: 40}}}
-              fullWidth
+              inputProps={{style: {fontSize: 30}}}
+              //fullWidth
               name="serial"
               label="Serial"
               id="serial"
@@ -58,10 +59,21 @@ export default function SearchDevice() {
               autoComplete="off"
               variant="standard"
             />
+
+          <Button
+            sx={{ mt: 5 }}
+            // inputProps={{style: {fontSize: 40}}}          
+            // fullWidth
+            size="large" 
+            variant="contained"
+            onClick={ () => handleGetDevice()}
+          >
+            <SearchIcon />
+          </Button>
       
         </Grid>        
 
-        <Grid item xs={1} md={1}>
+        {/* <Grid item xs={1} md={1}>
         <Button
             sx={{ mt: 5 }}
             inputProps={{style: {fontSize: 40}}}          
@@ -72,7 +84,7 @@ export default function SearchDevice() {
           >
             <SearchIcon />
           </Button>
-        </Grid>
+        </Grid> */}
     </>
   );
 }
