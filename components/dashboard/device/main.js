@@ -23,7 +23,7 @@ export default function Main() {
       </Grid>
       { /*conteudo grid 5 espaço no centro*/}
       <Search />
-      <Grid item xs={5} md={5}>
+      <Grid item xs={6} md={6}>
         { /*espaço na direita*/}
         <ViewAllManutencao />
       </Grid>
