@@ -9,15 +9,21 @@ import TextField from '@mui/material/TextField';
 export default function SearchDevice() {
   const {
     setDevice, 
-    setShowDevice, 
+    setShowDevice,
+    setShowForm,
+    setShowFormEdit,
+    setShowMsg, 
     word,
     setMsg, 
     setWord,
-    setShowMsg,
+    
   } = useContext(AuthContext);
 
     const handleWord = (event) => {
-      setShowMsg(false) 
+      setShowMsg(false)
+      setShowDevice(false)
+      setShowForm(false)
+      setShowFormEdit(false) 
       setWord(event.target.value)      
       if(event.target.value.length == 0){
       setWord('');       
