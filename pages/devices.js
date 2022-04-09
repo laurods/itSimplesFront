@@ -32,7 +32,7 @@ export default function Devices() {
 
     return (
       <>
-      {!isLoading && <p>Carregando ..</p>}
+      {isLoading && <p>Carregando ..</p>}
       {!isAuthenticated && <Login />}
       {isAuthenticated && <TopMobile />}
       {isAuthenticated && <ViewMainDevice />}  
