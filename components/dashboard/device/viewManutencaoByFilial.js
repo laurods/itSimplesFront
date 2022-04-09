@@ -36,7 +36,9 @@ export default function ViewAllManutencao() {
         const allDevices = await axios.post('/api/devices/getMovimentoByCNPJ' , { 
             cnpj: activeCNPJ 
           })
-        setListDevice(allDevices.sort(orderBySerial))
+
+        const dataDevices = allDevices.data;
+        setListDevice(dataDevices.sort(orderBySerial))
     };
 
     

@@ -21,7 +21,7 @@ export default function ViewMainDevice() {
         </Grid>}     
         
         </Grid>
-        {!isUserADM && <Grid container spacing={2}>
+        {!isUserADM && <Grid container spacing={2} sx={{ margin: 2 }}>
         <Grid item xs={6} md={6}>
           <ViewDevices />    
         </Grid>
