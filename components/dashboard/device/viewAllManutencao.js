@@ -33,11 +33,18 @@ export default function ViewAllManutencao() {
 
     
     const handleCheck = async (event) => {
+      if(event.target.value ==="Todos"){
+        const all = await axios.post('/api/devices/getAllManutencao')
+        const allDeviceManutencao = all.data;
+        setListDevice(dataDevices.sort(orderBySerial))
+      }else{
         const allDevices = await axios.post('/api/devices/getMovimentoByStatus' , { 
-            status: event.target.value 
+          status: event.target.value 
         })
         const dataDevices = allDevices.data;
-      setListDevice(dataDevices.sort(orderBySerial))
+        setListDevice(dataDevices.sort(orderBySerial))
+      }
+   
     };
 
     
@@ -51,6 +58,7 @@ export default function ViewAllManutencao() {
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Reprovado" label="Reprovado" />                
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Aprovado" label="Aprovado" />
                 <FormControlLabel onChange={handleCheck} control={<Radio />} value="Devolvido" label="Devolvido" />
+                <FormControlLabel onChange={handleCheck} control={<Radio />} value="Todos" label="Todos" />
             </RadioGroup>
           </FormGroup>
         </Grid>
