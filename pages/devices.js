@@ -13,7 +13,7 @@ export default function Devices() {
        setActiveCNPJ,
        setIsUserADM,   
        isAuthenticated,
-       userRole
+       isLoading
        } = useContext(AuthContext);
      
     useEffect(() => {
@@ -32,6 +32,7 @@ export default function Devices() {
 
     return (
       <>
+      {!isLoading && <p>Carregando ..</p>}
       {!isAuthenticated && <Login />}
       {isAuthenticated && <TopMobile />}
       {isAuthenticated && <ViewMainDevice />}  

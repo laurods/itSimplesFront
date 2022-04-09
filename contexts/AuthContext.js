@@ -39,6 +39,8 @@ export function AuthProvider({ children }) {
     const [loginMessage, setloginMessage] = useState('');
     const [showMessage, setshowMessage] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+
     //const isAuthenticated = !!userId;
 
     const verifyToken = () =>{
@@ -52,6 +54,7 @@ export function AuthProvider({ children }) {
             setUserEmail(decoded.email);
             setUserRole(decoded.role);
             setIsAuthenticated(true);
+            setIsLoading(false)
         }
     }
 
