@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Main from './main'
 import ViewDevices from './viewDevices';
+import ViewManutencaoByFilial from './viewManutencaoByFilial';
 
 const theme = createTheme();
 
@@ -19,12 +20,16 @@ export default function ViewMainDevice() {
           <Main />    
         </Grid>}     
         
-
-        {!isUserADM &&<Grid item xs={12} md={12}>
+        </Grid>
+        {!isUserADM && <Grid container spacing={2}>
+        <Grid item xs={6} md={6}>
           <ViewDevices />    
-        </Grid>}             
+        </Grid>
+        <Grid item xs={6} md={6}>
+          <ViewManutencaoByFilial />    
+        </Grid>             
         
-      </Grid>
+      </Grid>}
     </Box>
 
     </ThemeProvider>
