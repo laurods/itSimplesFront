@@ -36,7 +36,7 @@ export default function ViewAllManutencao() {
       if(event.target.value ==="Todos"){
         const all = await axios.post('/api/devices/getAllManutencao')
         const allDeviceManutencao = all.data;
-        setListDevice(dataDevices.sort(orderBySerial))
+        setListDevice(allDeviceManutencao.sort(orderBySerial))
       }else{
         const allDevices = await axios.post('/api/devices/getMovimentoByStatus' , { 
           status: event.target.value 
