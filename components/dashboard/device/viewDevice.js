@@ -26,10 +26,10 @@ export default function ViewDevice() {
       }else{ // se o coletor estiver cadastrado na manutenção
         setShowDevice(false)
         setShowFormEdit(true)
-        const allDevices = await axios.get('/api/devices/getAllManutencao')
-        console.log('allDevices')
-        console.log(allDevices.data)
-        setDevicesManutencao(allDevices.data)        
+        // const allDevices = await axios.get('/api/devices/getMovimentoBy')
+        // console.log('allDevices')
+        // console.log(allDevices.data)
+        setDevicesManutencao(deviceBySerial.data)        
       }   
     }    
   return (
