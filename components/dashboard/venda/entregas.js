@@ -38,21 +38,21 @@ export default function Entregas(props) {
     const [word, setWord] = useState('');
     const [nome, setNome] = useState('');
 
-    const addListProducts = () => {
-      const total = preco * quantidade
-      dataEstoque['total'] = total
-      dataEstoque['estoque'] = (-1 * (quantidade))
-      dataEstoque['quantidade'] = quantidade
-      dataEstoque['categoria'] = 'Venda'
-      dataEstoque['dia'] = `${day}/${month}/${year}`
-      dataEstoque['mes'] = `${month}/${year}`
-      const prevListEstoque = [dataEstoque, ...listEstoque]
-      setListEstoque(prevListEstoque)      
-      console.log('dataEstoque') 
-      console.log(dataEstoque)
-      console.log('listEstoque') 
-      console.log(listEstoque)
-  };
+  //   const addListProducts = () => {
+  //     const total = preco * quantidade
+  //     dataEstoque['total'] = total
+  //     dataEstoque['estoque'] = (-1 * (quantidade))
+  //     dataEstoque['quantidade'] = quantidade
+  //     dataEstoque['categoria'] = 'Venda'
+  //     dataEstoque['dia'] = `${day}/${month}/${year}`
+  //     dataEstoque['mes'] = `${month}/${year}`
+  //     const prevListEstoque = [dataEstoque, ...listEstoque]
+  //     setListEstoque(prevListEstoque)      
+  //     console.log('dataEstoque') 
+  //     console.log(dataEstoque)
+  //     console.log('listEstoque') 
+  //     console.log(listEstoque)
+  // };
     
     
     const handleWord = (event) => {
@@ -103,6 +103,8 @@ export default function Entregas(props) {
         valorPedido,
     }
   setDataCustumer(objCustumer)
+  console.log('objCustumer')
+  console.log(objCustumer)
    setWord('');
    setShow(false)
    setShowTelefone(false)
@@ -319,7 +321,7 @@ export default function Entregas(props) {
             size="large" 
             variant="contained" 
             sx={{ mt: 1 }}
-            onClick={addListProducts}
+            onClick={handlePrint}
             endIcon={<PrintIcon />}
             >
             Imprimir        
