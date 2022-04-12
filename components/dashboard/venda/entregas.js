@@ -86,7 +86,7 @@ export default function Entregas(props) {
       setPedido(custumerFiltered[0].pedido)
       setTxEntrega(custumerFiltered[0].txEntrega)
       setValorPedido(custumerFiltered[0].txEntrega)
-      setWord('');
+      //setWord('');
       setShow(false)
       //setShowTelefone(false)
            
@@ -221,7 +221,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={6} md={2}>
           <TextField
             label="Bairro"
             id="bairro"
