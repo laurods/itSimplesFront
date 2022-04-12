@@ -29,14 +29,18 @@ export default function Entregas(props) {
     const [show, setShow] = useState(true);
     const [showTelefone, setShowTelefone] = useState(true);    
     const [dataCustumer, setDataCustumer] = useState({});
-    const [quantidade, setQuantidade] = useState(1);
-    const [preco, setPreco] = useState('');
-    const [dataEstoque, setDataEstoque] = useState({});
-    const [listEstoque, setListEstoque] = useState([]);
+   
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
     const [nome, setNome] = useState('');
+    const [rua, setRua] = useState('');
+    const [numero, setNumero] = useState('');
+    const [complemento, setComplemento] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [pedido, setPedido] = useState('');
+    const [txEntrega, setTxEntrega] = useState('');
+    const [valorPedido, setValorPedido] = useState('');
 
   //   const addListProducts = () => {
   //     const total = preco * quantidade
@@ -64,11 +68,25 @@ export default function Entregas(props) {
     };
 
     const handleNome = (event) => { setNome(event.target.value) };
+    const handleRua = (event) => { setRua(event.target.value) };
+    const handleNumero = (event) => { setNumero(event.target.value) };
+    const handleComplemento = (event) => { setComplemento(event.target.value) };
+    const handleBairro = (event) => { setBairro(event.target.value) };
+    const handlePedido = (event) => { setPedido(event.target.value) };
+    const handleTxEntrega = (event) => { setTxEntrega(event.target.value) };
+    const handleValorPedido = (event) => { setValorPedido(event.target.value) };
     
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
       setCustumer(custumerFiltered)
       setNome(custumerFiltered[0].nome)
+      setRua(custumerFiltered[0].rua)
+      setNumero(custumerFiltered[0].numero)
+      setComplemento(custumerFiltered[0].complemento)
+      setBairro(custumerFiltered[0].bairro)
+      setPedido(custumerFiltered[0].pedido)
+      setTxEntrega(custumerFiltered[0].txEntrega)
+      setValorPedido(custumerFiltered[0].txEntrega)
       setWord('');
       setShow(false)
       setShowTelefone(false)
@@ -253,7 +271,8 @@ export default function Entregas(props) {
           <TextField
             label="Rua"
             id="rua"
-            value={dataCustumer.rua}
+            onChange={handleRua}
+            value={rua}
             fullWidth
             variant="standard"
           />
@@ -262,7 +281,8 @@ export default function Entregas(props) {
           <TextField
             label="Numero"
             id="numero"
-            value={dataCustumer.numero}
+            onChange={handleNumero}
+            value={numero}
             fullWidth
             variant="standard"
           />
@@ -271,7 +291,8 @@ export default function Entregas(props) {
           <TextField
             label="Complemento"
             id="complemento"
-            value={dataCustumer.complemento}
+            onChange={handleComplemento}
+            value={complemento}
             fullWidth
             variant="standard"
           />
@@ -280,7 +301,8 @@ export default function Entregas(props) {
           <TextField
             label="Bairro"
             id="bairro"
-            value={dataCustumer.bairro}
+            onChange={handleBairro}
+            value={bairro}
             fullWidth
             variant="standard"
           />
@@ -291,7 +313,8 @@ export default function Entregas(props) {
             id="pedido"
             multiline
             maxRows={3}
-            value={dataCustumer.pedido}
+            onChange={handlePedido}
+            value={pedido}
             fullWidth
             variant="standard"
           />
@@ -300,7 +323,8 @@ export default function Entregas(props) {
           <TextField
             label="Taxa Entrega"
             id="txEntrega"
-            value={dataCustumer.txEntrega}
+            onChange={handleTxEntrega}
+            value={txEntrega}
             fullWidth
             variant="standard"
           />
@@ -309,7 +333,8 @@ export default function Entregas(props) {
           <TextField
             label="Valor Pedido"
             id="valorPedido"
-            value={dataCustumer.valorPedido}
+            onChange={handleValorPedido}
+            value={valorPedido}
             fullWidth
             variant="standard"
           />
