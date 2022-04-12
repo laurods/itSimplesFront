@@ -188,7 +188,7 @@ export default function Entregas(props) {
             onChange={handleNome}
             value={nome}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={9} md={6}>
@@ -198,7 +198,7 @@ export default function Entregas(props) {
             onChange={handleRua}
             value={rua}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={3} md={3}>
@@ -208,7 +208,7 @@ export default function Entregas(props) {
             onChange={handleNumero}
             value={numero}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={6} md={6}>
@@ -218,7 +218,7 @@ export default function Entregas(props) {
             onChange={handleComplemento}
             value={complemento}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={6} md={6}>
@@ -228,7 +228,7 @@ export default function Entregas(props) {
             onChange={handleBairro}
             value={bairro}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -240,7 +240,7 @@ export default function Entregas(props) {
             onChange={handlePedido}
             value={pedido}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={6} md={2}>
@@ -250,7 +250,7 @@ export default function Entregas(props) {
             onChange={handleTxEntrega}
             value={txEntrega}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={6} md={2}>
@@ -260,7 +260,7 @@ export default function Entregas(props) {
             onChange={handleValorPedido}
             value={valorPedido}
             fullWidth
-            variant="contained"
+            variant="outlined"
           />
         </Grid>
 
