@@ -87,7 +87,7 @@ export default function Entregas(props) {
       setTxEntrega(custumerFiltered[0].txEntrega)
       setValorPedido(custumerFiltered[0].txEntrega)
       setWord('');
-      //setShow(false)
+      setShow(false)
       //setShowTelefone(false)
            
   };
@@ -108,7 +108,7 @@ export default function Entregas(props) {
   console.log('objCustumer')
   console.log(objCustumer)
    setWord('');
-   //setShow(false)
+   setShow(false)
    //setShowTelefone(false)
    //await axios.post('/api/estoque/itens', { objEstoque })       
     
