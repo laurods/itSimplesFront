@@ -27,8 +27,7 @@ export default function Entregas(props) {
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [show, setShow] = useState(true);
-    const [showTelefone, setShowTelefone] = useState(true);    
-    const [dataCustumer, setDataCustumer] = useState({});
+    const [showTelefone, setShowTelefone] = useState(true);
    
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
@@ -93,34 +92,19 @@ export default function Entregas(props) {
            
   };
 
-  const handlePrint = async (
-    _id, 
-    telefone,
-    nome,
-    rua,
-    numero,
-    complemento,
-    bairro,
-    nascimento,
-    txEntrega,
-    pedido,
-    valorPedido,
-    ) => {      
+  const handlePrint = async () => {      
     console.log('print')    
     const objCustumer ={
-        _id, 
-        telefone,
-        nome,
-        rua,
-        numero,
-        complemento,
-        bairro,
-        nascimento,
-        txEntrega,
-        pedido,
-        valorPedido,
+        telefone: word,
+        nome: nome,
+        rua: rua,
+        numero: numero,
+        complemento: complemento,
+        bairro: bairro,
+        txEntrega: txEntrega,
+        pedido: pedido,
+        valorPedido: valorPedido,
     }
-  setDataCustumer(objCustumer)
   console.log('objCustumer')
   console.log(objCustumer)
    setWord('');
@@ -133,9 +117,7 @@ export default function Entregas(props) {
   return (
     <ThemeProvider theme={theme}>
       <Container>      
-      <Box sx={{ flexGrow: 1, mt: 2 }}>      
-
-      <Grid container spacing={2}>     
+      <Box sx={{ flexGrow: 1, mt: 2 }}>
 
       {showTelefone && <Grid container spacing={2} sx={{ mt: 3 }}>
       <Grid item xs={2} md={2}>
@@ -186,65 +168,7 @@ export default function Entregas(props) {
         </Grid>
        }
 
-        {show && <Grid item xs={12} md={12}>
-           
-            
-        <TableContainer component={Paper} sx={{ mt: 2 }}>
-        
-                <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                    <TableHead>                    
-                    </TableHead>
-                    <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                    {custumer.map((row) => (
-                        <TableRow
-                        key={row._id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                        
-                        >
-                        
-                        <TableCell component="th" scope="row">
-                            <Button          
-                            fullWidth
-                            size="large" 
-                            variant="contained"
-                            color="success" 
-                            endIcon={<PrintIcon/>}
-                            onClick={() => {handlePrint(
-                            row._id, 
-                            row.telefone,
-                            row.nome,
-                            row.rua,
-                            row.numero,
-                            row.complemento,
-                            row.bairro,
-                            row.nascimento,
-                            row.txEntrega,
-                            row.pedido,
-                            row.valorPedido, 
-                            )}}
-                            >
-                            </Button>                        
-                        </TableCell>                        
-                        <TableCell component="th" scope="row">
-                            <Button          
-                            fullWidth
-                            size="large" 
-                            variant="contained"                            
-                            >
-                                {row.telefone}
-                            </Button>
-                        </TableCell>
-                        <TableCell component="th" scope="row">{row.nome}</TableCell>
-                        <TableCell component="th" scope="row">{row.rua}</TableCell>
-                        <TableCell component="th" scope="row">{row.numero}</TableCell>
-                        <TableCell component="th" scope="row">{row.complemento}</TableCell>
-                        <TableCell component="th" scope="row">{row.bairro}</TableCell>    
-                        </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>             
-        </Grid>}
-        </Grid>            
+       
         {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
           
         <Grid item xs={3} md={3}>
