@@ -181,7 +181,7 @@ export default function Entregas(props) {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={9} md={4}>
+        <Grid item xs={9} md={3}>
           <TextField
             label="Nome"
             id="nome"
@@ -191,7 +191,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={9} md={6}>
+        <Grid item xs={9} md={4}>
           <TextField
             label="Rua"
             id="rua"
@@ -201,7 +201,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={3} md={3}>
+        <Grid item xs={3} md={1}>
           <TextField
             label="Numero"
             id="numero"
@@ -211,7 +211,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={6} md={2}>
           <TextField
             label="Complemento"
             id="complemento"
@@ -221,7 +221,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={6} md={3}>
           <TextField
             label="Bairro"
             id="bairro"
@@ -231,7 +231,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={5}>
           <TextField
             label="Pedido"
             id="pedido"
@@ -243,7 +243,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={2}>
+        <Grid item xs={6} md={1}>
           <TextField
             label="Taxa Entrega"
             id="txEntrega"
@@ -253,7 +253,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={2}>
+        <Grid item xs={6} md={1}>
           <TextField
             label="Valor Pedido"
             id="valorPedido"
