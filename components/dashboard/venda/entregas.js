@@ -87,8 +87,8 @@ export default function Entregas(props) {
       setTxEntrega(custumerFiltered[0].txEntrega)
       setValorPedido(custumerFiltered[0].txEntrega)
       setWord('');
-      setShow(false)
-      setShowTelefone(false)
+      //setShow(false)
+      //setShowTelefone(false)
            
   };
 
@@ -108,8 +108,8 @@ export default function Entregas(props) {
   console.log('objCustumer')
   console.log(objCustumer)
    setWord('');
-   setShow(false)
-   setShowTelefone(false)
+   //setShow(false)
+   //setShowTelefone(false)
    //await axios.post('/api/estoque/itens', { objEstoque })       
     
 };
@@ -171,7 +171,7 @@ export default function Entregas(props) {
        
         {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
           
-        <Grid item xs={3} md={2}>
+        {/* <Grid item xs={3} md={2}>
           <TextField
             disabled
             label="Telefone"
@@ -180,8 +180,8 @@ export default function Entregas(props) {
             fullWidth
             variant="standard"
           />
-        </Grid>
-        <Grid item xs={9} md={3}>
+        </Grid> */}
+        <Grid item xs={12} md={3}>
           <TextField
             label="Nome"
             id="nome"
@@ -245,7 +245,7 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={6} md={1}>
           <TextField
-            label="Taxa Entrega"
+            label="Entrega"
             id="txEntrega"
             onChange={handleTxEntrega}
             value={txEntrega}
@@ -253,9 +253,9 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={1}>
+        <Grid item xs={6} md={2}>
           <TextField
-            label="Valor Pedido"
+            label="Pedido"
             id="valorPedido"
             onChange={handleValorPedido}
             value={valorPedido}
