@@ -95,7 +95,7 @@ export default function Entregas(props) {
   const handlePrint = async () => {      
     console.log('print')    
     const objCustumer ={
-        telefone: word,
+        telefone: custumer[0].telefone,
         nome: nome,
         rua: rua,
         numero: numero,
@@ -171,7 +171,7 @@ export default function Entregas(props) {
        
         {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
           
-        <Grid item xs={3} md={3}>
+        <Grid item xs={3} md={2}>
           <TextField
             disabled
             label="Telefone"
@@ -181,24 +181,24 @@ export default function Entregas(props) {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={9} md={9}>
+        <Grid item xs={9} md={4}>
           <TextField
             label="Nome"
             id="nome"
             onChange={handleNome}
             value={nome}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
-        <Grid item xs={9} md={9}>
+        <Grid item xs={9} md={6}>
           <TextField
             label="Rua"
             id="rua"
             onChange={handleRua}
             value={rua}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
         <Grid item xs={3} md={3}>
@@ -208,7 +208,7 @@ export default function Entregas(props) {
             onChange={handleNumero}
             value={numero}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
         <Grid item xs={6} md={6}>
@@ -218,7 +218,7 @@ export default function Entregas(props) {
             onChange={handleComplemento}
             value={complemento}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
         <Grid item xs={6} md={6}>
@@ -228,10 +228,10 @@ export default function Entregas(props) {
             onChange={handleBairro}
             value={bairro}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
-        <Grid item xs={12} md={12}>
+        <Grid item xs={12} md={6}>
           <TextField
             label="Pedido"
             id="pedido"
@@ -240,31 +240,31 @@ export default function Entregas(props) {
             onChange={handlePedido}
             value={pedido}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={6} md={2}>
           <TextField
             label="Taxa Entrega"
             id="txEntrega"
             onChange={handleTxEntrega}
             value={txEntrega}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
-        <Grid item xs={6} md={6}>
+        <Grid item xs={6} md={2}>
           <TextField
             label="Valor Pedido"
             id="valorPedido"
             onChange={handleValorPedido}
             value={valorPedido}
             fullWidth
-            variant="standard"
+            variant="contained"
           />
         </Grid>
 
-         <Grid item xs={12} md={12}>
+         <Grid item xs={12} md={2}>
           <Button          
             fullWidth
             size="large" 
