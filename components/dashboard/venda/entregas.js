@@ -221,10 +221,10 @@ export default function Entregas(props) {
             onChange={handlePedido}
             value={pedido}
             fullWidth
-            variant="outlined"
+            variant="standard"
           />
         </Grid>
-        <Grid item xs={6} md={1}>
+        <Grid item xs={4} md={1}>
           <TextField
             label="Entrega"
             id="txEntrega"
@@ -234,12 +234,23 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={2}>
+        <Grid item xs={4} md={2}>
           <TextField
             label="Pedido"
             id="valorPedido"
             onChange={handleValorPedido}
             value={valorPedido}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+
+        <Grid item xs={4} md={2}>
+          <TextField
+            disabled
+            label="Pagar"
+            id="valorPagar"
+            value={valorPedido + txEntrega}
             fullWidth
             variant="outlined"
           />
