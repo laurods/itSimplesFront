@@ -87,16 +87,18 @@ export default function Entregas(props) {
     const handleTxEntrega = (event) => {
       if(event.target.value.length != 0){
         let vlrEntrega = event.target.value;
-        vlrEntrega.replace(",", ".");
-        console.log(vlrEntrega)
-        console.log('vlrEntrega')        
+        let vEntrega =  vlrEntrega.replace(",", ".");
         console.log('vlrEntrega')
+        console.log(vlrEntrega)               
+        console.log('vEntrega')
+        console.log(vEntrega)
         setTxEntrega(vlrEntrega)
         setValorPagar(txEntrega+valorPedido) 
-      }else{
-        let entrega = 0;
-        setTxEntrega(entrega)
+      }else{        
+        setTxEntrega('')
       }
+      
+
       
     };
     const handleValorPedido = (event) => {
