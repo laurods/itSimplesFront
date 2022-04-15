@@ -59,10 +59,20 @@ export default function Entregas(props) {
     
     
     const handleWord = (event) => {
+      const primeiroNumero = event.target.value.charAt(0);
       setWord(event.target.value)
       if(event.target.value.length == 0){
         setCustumer([]);
         setWord('');       
+        }
+      if(primeiroNumero != 9){ /* se primeiro numero for diferente de 9 é número fixo*/
+        if(event.target.value.length == 8){/*numero fixo tem 8 caracteres*/
+              handleFilter(event.target.value) /* chama a função filter*/
+          }              
+        }
+      /*-------------------------------*/
+      if(primeiroNumero == 9){ /* se primeiro numero for igual 9 é número celular*/
+              handleFilter(event.target.value) /* chama a função filter*/
         }
     };
 
