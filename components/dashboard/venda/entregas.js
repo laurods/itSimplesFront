@@ -91,6 +91,7 @@ export default function Entregas(props) {
         setTxEntrega(vEntrega) 
       }else{        
         setTxEntrega('')
+        setValorPagar('')
       }        
         calcularValorPagar()      
     };
@@ -102,6 +103,7 @@ export default function Entregas(props) {
         setValorPedido(vPedido)        
       }else{        
         setValorPedido('')
+        setValorPagar('')
       }
 
       calcularValorPagar()
@@ -255,11 +257,12 @@ export default function Entregas(props) {
             onChange={handlePedido}
             value={pedido}
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
         <Grid item xs={3} md={1}>
           <TextField
+            inputProps={{style: {fontSize: 40}}}
             label="Entrega"
             id="txEntrega"
             onChange={handleTxEntrega}
@@ -270,6 +273,7 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={3} md={1}>
           <TextField
+            inputProps={{style: {fontSize: 40}}}
             label="V.Pedido"
             id="valorPedido"
             onChange={handleValorPedido}
@@ -282,6 +286,7 @@ export default function Entregas(props) {
         <Grid item xs={3} md={1}>
           <TextField
             disabled
+            inputProps={{style: {fontSize: 40}}}
             label="Pagar"
             id="valorPagar"
             value={valorPagar}
