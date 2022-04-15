@@ -92,7 +92,7 @@ export default function Entregas(props) {
         console.log(vlrEntrega)               
         console.log('vEntrega')
         console.log(vEntrega)
-        setTxEntrega(vlrEntrega)
+        setTxEntrega(vEntrega)
         setValorPagar(txEntrega+valorPedido) 
       }else{        
         setTxEntrega('')
