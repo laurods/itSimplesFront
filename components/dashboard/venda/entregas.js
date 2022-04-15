@@ -88,11 +88,14 @@ export default function Entregas(props) {
       if(event.target.value.length != 0){
         let vlrEntrega = event.target.value;
         let vEntrega =  vlrEntrega.replace(",", ".");
-        setTxEntrega(vEntrega)
-        setValorPagar(txEntrega+valorPedido) 
+        setTxEntrega(vEntrega) 
       }else{        
         setTxEntrega('')
-      }       
+      }
+      if(valorPedido.length != 0 & txEntrega !=0 ){        
+        setValorPagar(txEntrega+valorPedido) 
+      }    
+      
     };
 
     const handleValorPedido = (event) => {
@@ -104,6 +107,10 @@ export default function Entregas(props) {
         setValorPedido('')
       }
 
+      if(valorPedido.length != 0 & txEntrega !=0 ){        
+        setValorPagar(txEntrega+valorPedido) 
+      }
+
     };
     
     const handleFilter = (word) => {      
@@ -113,10 +120,9 @@ export default function Entregas(props) {
       setRua(custumerFiltered[0].rua)
       setNumero(custumerFiltered[0].numero)
       setComplemento(custumerFiltered[0].complemento)
-      setBairro(custumerFiltered[0].bairro)
-      setPedido(custumerFiltered[0].pedido)
+      setBairro(custumerFiltered[0].bairro)      
       setTxEntrega(custumerFiltered[0].txEntrega)
-      setValorPedido(custumerFiltered[0].txEntrega)
+      
       //setWord('');
       setShow(false)
       //setShowTelefone(false)
