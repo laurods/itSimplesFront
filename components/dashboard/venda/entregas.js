@@ -160,6 +160,8 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
+            margin="normal"
+            required
             inputProps={{style: {fontSize: 40}}}
             label="Nome"
             id="nome"
@@ -169,7 +171,7 @@ export default function Entregas(props) {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={9} md={4}>
+        <Grid item xs={9} md={6}>
           <TextField
             label="Rua"
             id="rua"
@@ -199,7 +201,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={2}>
+        <Grid item xs={6} md={3}>
           <TextField
             label="Bairro"
             id="bairro"
