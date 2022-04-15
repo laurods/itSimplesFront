@@ -65,13 +65,10 @@ export default function Entregas(props) {
         setCustumer([]);
         setWord('');       
         }
-      if(primeiroNumero != 9){ /* se primeiro numero for diferente de 9 é número fixo*/
-        if(event.target.value.length == 8){/*numero fixo tem 8 caracteres*/
+      if(primeiroNumero != 9 & event.target.value.length == 8 ){ /* se primeiro numero for diferente de 9 é número fixo. Numero fixo tem 8 caracteres*/       
               handleFilter(event.target.value) /* chama a função filter*/
-          }              
         }
-      /*-------------------------------*/
-      if(primeiroNumero == 9){ /* se primeiro numero for igual 9 é número celular*/
+      if(primeiroNumero == 9 & event.target.value.length == 9){ /* se primeiro numero for igual 9 é número celular. Numero fixo tem  caracteres**/
               handleFilter(event.target.value) /* chama a função filter*/
         }
     };
