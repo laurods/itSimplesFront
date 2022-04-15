@@ -43,6 +43,7 @@ export default function Entregas(props) {
     const [pedido, setPedido] = useState('');
     const [txEntrega, setTxEntrega] = useState('');
     const [valorPedido, setValorPedido] = useState('');
+    const [valorPagar, setValorPagar] = useState('');
 
   //   const addListProducts = () => {
   //     const total = preco * quantidade
@@ -83,8 +84,18 @@ export default function Entregas(props) {
     const handleComplemento = (event) => { setComplemento(event.target.value) };
     const handleBairro = (event) => { setBairro(event.target.value) };
     const handlePedido = (event) => { setPedido(event.target.value) };
-    const handleTxEntrega = (event) => { setTxEntrega(event.target.value) };
-    const handleValorPedido = (event) => { setValorPedido(event.target.value) };
+    const handleTxEntrega = (event) => {
+       let vlrEntrega = event.target.value.replace(",", ".");
+       let vEntrega = parseFloat(vlrEntrega);
+      setTxEntrega(vEntrega)
+      setValorPagar(txEntrega+valorPedido) 
+    };
+    const handleValorPedido = (event) => {
+      let vlrPedido = event.target.value.replace(",", ".");
+      let vPedido = parseFloat(vlrPedido); 
+      setValorPedido(vPedido)
+      setValorPagar(txEntrega+valorPedido) 
+    };
     
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
@@ -215,7 +226,7 @@ export default function Entregas(props) {
           />
         </Grid>
         
-        <Grid item xs={12} md={5}>
+        <Grid item xs={12} md={6}>
           <TextField
             inputProps={{style: {fontSize: 40}}}
             label="Pedido"
@@ -254,13 +265,13 @@ export default function Entregas(props) {
             disabled
             label="Pagar"
             id="valorPagar"
-            value={parseFloat(valorPedido + txEntrega)}
+            value={valorPagar}
             fullWidth
             variant="outlined"
           />
         </Grid>
 
-        <Grid item xs={3} md={4}>
+        <Grid item xs={3} md={3}>
         <RadioGroup
           row
           aria-labelledby="demo-radio-buttons-group-label"
