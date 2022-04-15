@@ -262,13 +262,14 @@ export default function Entregas(props) {
 
         <Grid item xs={3} md={4}>
         <RadioGroup
+          row
           aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="female"
+          defaultValue="dinheiro"
           name="radio-buttons-group"
         >
-          <FormControlLabel value="female" control={<Radio />} label="Dinheiro" />
-          <FormControlLabel value="male" control={<Radio />} label="Cartão" />
-          <FormControlLabel value="other" control={<Radio />} label="Pix" />
+          <FormControlLabel value="dinheiro" control={<Radio />} label="Dinheiro" />
+          <FormControlLabel value="cartao" control={<Radio />} label="Cartão" />
+          <FormControlLabel value="pix" control={<Radio />} label="Pix" />
         </RadioGroup>
           
         </Grid>
