@@ -87,7 +87,7 @@ export default function Entregas(props) {
     const handleTxEntrega = (event) => {
       if(event.target.value.length != 0){
         let vlrEntrega = event.target.value;
-        vlrEntrega.replace(",", ".");
+        //vlrEntrega.replace(",", ".");
         console.log(vlrEntrega)
         console.log('vlrEntrega')
         let vEntrega = parseFloat(vlrEntrega);
