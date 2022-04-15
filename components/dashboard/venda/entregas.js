@@ -160,12 +160,13 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
+            inputProps={{style: {fontSize: 40}}}
             label="Nome"
             id="nome"
             onChange={handleNome}
             value={nome}
             fullWidth
-            variant="outlined"
+            variant="standard"
           />
         </Grid>
         <Grid item xs={9} md={4}>
