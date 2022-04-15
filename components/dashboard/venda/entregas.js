@@ -66,13 +66,14 @@ export default function Entregas(props) {
         setWord('');       
         }
       if(primeiroNumero != 9 & event.target.value.length == 8 ){ /* se primeiro numero for diferente de 9 é número fixo. Numero fixo tem 8 caracteres*/       
-              handleFilter(event.target.value) /* chama a função filter*/
+              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/
         }
       if(primeiroNumero == 9 & event.target.value.length == 9){ /* se primeiro numero for igual 9 é número celular. Numero fixo tem  caracteres**/
-              handleFilter(event.target.value) /* chama a função filter*/
+              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/
         }
     };
 
+    const handleDDD = (event) => { setDDD(event.target.value) };
     const handleNome = (event) => { setNome(event.target.value) };
     const handleRua = (event) => { setRua(event.target.value) };
     const handleNumero = (event) => { setNumero(event.target.value) };
@@ -135,9 +136,9 @@ export default function Entregas(props) {
             label="DDD"
             id="ddd"
             value={DDD}
+            onChange={handleDDD}
             fullWidth
             variant="standard"
-            type="number"
             autoComplete="off"
           />
         </Grid>
