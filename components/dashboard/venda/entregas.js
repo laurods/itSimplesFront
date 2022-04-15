@@ -295,7 +295,7 @@ export default function Entregas(props) {
           />
         </Grid>
 
-        <Grid item xs={3} md={3}>
+        <Grid item xs={6} md={6}>
         <RadioGroup
           row
           aria-labelledby="demo-radio-buttons-group-label"
@@ -309,7 +309,20 @@ export default function Entregas(props) {
           
         </Grid>
 
-         <Grid item xs={12} md={6}>
+         <Grid item xs={6} md={6}>
+          <Button          
+            fullWidth
+            size="large" 
+            variant="contained" 
+            sx={{ mt: 1 }}
+            onClick={calcularValorPagar}
+            endIcon={<CheckCircleIcon />}
+            >
+            Calcular        
+          </Button>             
+         </Grid>
+
+         <Grid item xs={6} md={6}>
           <Button          
             fullWidth
             size="large" 
