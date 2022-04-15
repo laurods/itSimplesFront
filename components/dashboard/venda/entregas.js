@@ -11,6 +11,9 @@ import PrintIcon from '@material-ui/icons/Print';
 import SendIcon from '@material-ui/icons/Send';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -214,6 +217,7 @@ export default function Entregas(props) {
         
         <Grid item xs={12} md={5}>
           <TextField
+            inputProps={{style: {fontSize: 40}}}
             label="Pedido"
             id="pedido"
             multiline
@@ -224,7 +228,7 @@ export default function Entregas(props) {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={4} md={1}>
+        <Grid item xs={3} md={1}>
           <TextField
             label="Entrega"
             id="txEntrega"
@@ -234,7 +238,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={4} md={2}>
+        <Grid item xs={3} md={1}>
           <TextField
             label="Pedido"
             id="valorPedido"
@@ -245,7 +249,7 @@ export default function Entregas(props) {
           />
         </Grid>
 
-        <Grid item xs={4} md={2}>
+        <Grid item xs={3} md={1}>
           <TextField
             disabled
             label="Pagar"
@@ -254,6 +258,19 @@ export default function Entregas(props) {
             fullWidth
             variant="outlined"
           />
+        </Grid>
+
+        <Grid item xs={3} md={2}>
+        <RadioGroup
+          aria-labelledby="demo-radio-buttons-group-label"
+          defaultValue="female"
+          name="radio-buttons-group"
+        >
+          <FormControlLabel value="female" control={<Radio />} label="Dinheiro" />
+          <FormControlLabel value="male" control={<Radio />} label="Cartão" />
+          <FormControlLabel value="other" control={<Radio />} label="Pix" />
+        </RadioGroup>
+          
         </Grid>
 
          <Grid item xs={12} md={2}>
