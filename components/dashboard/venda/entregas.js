@@ -262,7 +262,7 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={3} md={1}>
           <TextField
-            inputProps={{style: {fontSize: 40}}}
+            inputProps={{style: {fontSize: 25}}}
             label="Entrega"
             id="txEntrega"
             onChange={handleTxEntrega}
@@ -273,7 +273,7 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={3} md={1}>
           <TextField
-            inputProps={{style: {fontSize: 40}}}
+            inputProps={{style: {fontSize: 25}}}
             label="V.Pedido"
             id="valorPedido"
             onChange={handleValorPedido}
@@ -286,7 +286,7 @@ export default function Entregas(props) {
         <Grid item xs={3} md={1}>
           <TextField
             disabled
-            inputProps={{style: {fontSize: 40}}}
+            inputProps={{style: {fontSize: 25}}}
             label="Pagar"
             id="valorPagar"
             value={valorPagar}
