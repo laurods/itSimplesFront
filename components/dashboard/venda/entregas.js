@@ -91,11 +91,8 @@ export default function Entregas(props) {
         setTxEntrega(vEntrega) 
       }else{        
         setTxEntrega('')
-      }
-      if(valorPedido.length != 0 & txEntrega !=0 ){        
-        setValorPagar(txEntrega+valorPedido) 
-      }    
-      
+      }        
+        calcularValorPagar()      
     };
 
     const handleValorPedido = (event) => {
@@ -107,11 +104,18 @@ export default function Entregas(props) {
         setValorPedido('')
       }
 
-      if(valorPedido.length != 0 & txEntrega !=0 ){        
-        setValorPagar(txEntrega+valorPedido) 
-      }
+      calcularValorPagar()
 
     };
+
+    const calcularValorPagar = () =>{
+      if(valorPedido.length != 0 & txEntrega !=0 ){
+        let vTxEntrega = parseFloat(txEntrega)
+        let pedido = parseFloat(valorPedido)
+        let totalPagar = vTxEntrega + pedido      
+        setValorPagar(totalPagar)
+      } 
+    }
     
     const handleFilter = (word) => {      
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
