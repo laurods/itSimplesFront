@@ -88,24 +88,22 @@ export default function Entregas(props) {
       if(event.target.value.length != 0){
         let vlrEntrega = event.target.value;
         let vEntrega =  vlrEntrega.replace(",", ".");
-        console.log('vlrEntrega')
-        console.log(vlrEntrega)               
-        console.log('vEntrega')
-        console.log(vEntrega)
         setTxEntrega(vEntrega)
         setValorPagar(txEntrega+valorPedido) 
       }else{        
         setTxEntrega('')
-      }
-      
-
-      
+      }       
     };
+
     const handleValorPedido = (event) => {
-      let vlrPedido = event.target.value.replace(",", ".");
-      let vPedido = parseFloat(vlrPedido); 
-      setValorPedido(vPedido)
-      setValorPagar(txEntrega+valorPedido) 
+      if(event.target.value.length != 0){
+        let vlrPedido = event.target.value;
+        let vPedido =  vlrPedido.replace(",", ".");
+        setValorPedido(vPedido)        
+      }else{        
+        setValorPedido('')
+      }
+
     };
     
     const handleFilter = (word) => {      
