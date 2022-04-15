@@ -142,7 +142,7 @@ export default function Entregas(props) {
             autoComplete="off"
           />
         </Grid>
-        <Grid item xs={9} md={9}>
+        <Grid item xs={10} md={4}>
          <TextField
               margin="normal"
               required
@@ -151,7 +151,6 @@ export default function Entregas(props) {
               fullWidth
               name="telefone"
               label="Telefone"
-              type="number"
               id="telefone"
               value={word} 
               onChange={handleWord}                          
@@ -159,36 +158,110 @@ export default function Entregas(props) {
               variant="standard"
             />
         </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField
+            label="Nome"
+            id="nome"
+            onChange={handleNome}
+            value={nome}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item xs={9} md={4}>
+          <TextField
+            label="Rua"
+            id="rua"
+            onChange={handleRua}
+            value={rua}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item xs={3} md={1}>
+          <TextField
+            label="Numero"
+            id="numero"
+            onChange={handleNumero}
+            value={numero}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item xs={6} md={2}>
+          <TextField
+            label="Complemento"
+            id="complemento"
+            onChange={handleComplemento}
+            value={complemento}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item xs={6} md={2}>
+          <TextField
+            label="Bairro"
+            id="bairro"
+            onChange={handleBairro}
+            value={bairro}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+        
+        <Grid item xs={12} md={5}>
+          <TextField
+            label="Pedido"
+            id="pedido"
+            multiline
+            maxRows={3}
+            onChange={handlePedido}
+            value={pedido}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item xs={6} md={1}>
+          <TextField
+            label="Entrega"
+            id="txEntrega"
+            onChange={handleTxEntrega}
+            value={txEntrega}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+        <Grid item xs={6} md={2}>
+          <TextField
+            label="Pedido"
+            id="valorPedido"
+            onChange={handleValorPedido}
+            value={valorPedido}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
 
-        <Grid item xs={1} md={1}>
-          <Button
-            inputProps={{style: {fontSize: 40}}}          
+         <Grid item xs={12} md={2}>
+          <Button          
             fullWidth
             size="large" 
-            variant="contained"
-            color="success" 
-            onClick={ () => handleFilter(word)}
-          >
-            OK
-          </Button>
-        </Grid>
+            variant="contained" 
+            sx={{ mt: 1 }}
+            onClick={handlePrint}
+            endIcon={<PrintIcon />}
+            >
+            Imprimir        
+          </Button>             
+         </Grid>
+
            
         </Grid>
        }
 
        
-        {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
-          
-        {/* <Grid item xs={3} md={2}>
-          <TextField
-            disabled
-            label="Telefone"
-            id="telefone"
-            value={custumer[0].telefone}
-            fullWidth
-            variant="standard"
-          />
-        </Grid> */}
+        {/* {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
+       
         <Grid item xs={12} md={3}>
           <TextField
             label="Nome"
@@ -286,7 +359,7 @@ export default function Entregas(props) {
          </Grid>
 
 
-         </Grid>}
+         </Grid>} */}
         
       </Box>      
        
