@@ -85,29 +85,25 @@ export default function Entregas(props) {
     const handleBairro = (event) => { setBairro(event.target.value) };
     const handlePedido = (event) => { setPedido(event.target.value) };
     const handleTxEntrega = (event) => {
+      setValorPagar('')
       if(event.target.value.length != 0){
         let vlrEntrega = event.target.value;
         let vEntrega =  vlrEntrega.replace(",", ".");
         setTxEntrega(vEntrega) 
       }else{        
-        setTxEntrega('')
-        setValorPagar('')
-      }        
-        calcularValorPagar()      
+        setTxEntrega('')        
+      }      
     };
 
     const handleValorPedido = (event) => {
+      setValorPagar('')
       if(event.target.value.length != 0){
         let vlrPedido = event.target.value;
         let vPedido =  vlrPedido.replace(",", ".");
         setValorPedido(vPedido)        
       }else{        
-        setValorPedido('')
-        setValorPagar('')
+        setValorPedido('')        
       }
-
-      calcularValorPagar()
-
     };
 
     const calcularValorPagar = () =>{
@@ -309,7 +305,7 @@ export default function Entregas(props) {
           
         </Grid>
 
-         <Grid item xs={6} md={6}>
+         <Grid item xs={6} md={3}>
           <Button          
             fullWidth
             size="large" 
@@ -322,7 +318,7 @@ export default function Entregas(props) {
           </Button>             
          </Grid>
 
-         <Grid item xs={6} md={6}>
+         <Grid item xs={6} md={3}>
           <Button          
             fullWidth
             size="large" 
