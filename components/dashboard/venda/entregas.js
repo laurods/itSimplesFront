@@ -260,7 +260,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={3} md={1}>
+        <Grid item xs={3} md={2}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
             label="Entrega"
@@ -271,7 +271,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={3} md={1}>
+        <Grid item xs={3} md={2}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
             label="V.Pedido"
@@ -283,7 +283,7 @@ export default function Entregas(props) {
           />
         </Grid>
 
-        <Grid item xs={3} md={1}>
+        <Grid item xs={3} md={2}>
           <TextField
             disabled
             inputProps={{style: {fontSize: 25}}}
