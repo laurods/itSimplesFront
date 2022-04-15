@@ -240,7 +240,7 @@ export default function Entregas(props) {
         </Grid>
         <Grid item xs={3} md={1}>
           <TextField
-            label="Pedido"
+            label="V.Pedido"
             id="valorPedido"
             onChange={handleValorPedido}
             value={valorPedido}
@@ -254,13 +254,13 @@ export default function Entregas(props) {
             disabled
             label="Pagar"
             id="valorPagar"
-            value={valorPedido + txEntrega}
+            value={parseFloat(valorPedido + txEntrega)}
             fullWidth
             variant="outlined"
           />
         </Grid>
 
-        <Grid item xs={3} md={2}>
+        <Grid item xs={3} md={4}>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="female"
@@ -273,7 +273,7 @@ export default function Entregas(props) {
           
         </Grid>
 
-         <Grid item xs={12} md={2}>
+         <Grid item xs={12} md={6}>
           <Button          
             fullWidth
             size="large" 
