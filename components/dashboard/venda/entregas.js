@@ -344,20 +344,15 @@ export default function Entregas(props) {
        
         {!show && <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid 
-          item xs={12} md={12}
-          inputProps={
-            {
-              style: 
+          item xs={12} md={12}>
+            <div style={ 
               {
-                fontSize: 25,
-                 
+                color: 'red', 
+                margin: 0,
+                padding: 0,
               }
-            }
-          }
-          
-          
-          >
-            <div>
+             
+              }>
                  <p>Esquina Lanches</p>
                  <p>Telefone: {DDD}{word}</p>
                  <p>Nome: {nome}</p>
