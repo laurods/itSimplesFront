@@ -347,9 +347,10 @@ export default function Entregas(props) {
           item xs={12} md={12}>
             <div style={ 
               {
-                color: 'red', 
                 margin: 0,
                 padding: 0,
+                height: '11cm',
+
               }
              
               }>
