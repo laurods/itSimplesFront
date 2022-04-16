@@ -113,7 +113,8 @@ export default function Entregas(props) {
         let totalPagar = vTxEntrega + pedido      
         setValorPagar(totalPagar)
         setShow(false)
-      } 
+      }
+      handlePrint() 
     }
     
     const handleFilter = (word) => {      
