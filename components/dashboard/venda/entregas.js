@@ -114,7 +114,7 @@ export default function Entregas(props) {
         setValorPagar(totalPagar)
         setShow(false)
       }
-      handlePrint() 
+     
     }
     
     const handleFilter = (word) => {      
@@ -347,6 +347,17 @@ export default function Entregas(props) {
             <div>
                  <p>Telefone: `${DDD}${word}`,</p>
             </div>
+
+            <Button          
+            fullWidth
+            size="large" 
+            variant="contained" 
+            sx={{ mt: 1 }}
+            onClick={handlePrint}
+            endIcon={<PrintIcon />}
+            >
+            Imprimir        
+          </Button>
 
           </Grid>
         </Grid>}
