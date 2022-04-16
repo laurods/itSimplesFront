@@ -124,8 +124,10 @@ export default function Entregas(props) {
       setRua(custumerFiltered[0].rua)
       setNumero(custumerFiltered[0].numero)
       setComplemento(custumerFiltered[0].complemento)
-      setBairro(custumerFiltered[0].bairro)      
-      setTxEntrega(custumerFiltered[0].txEntrega)
+      setBairro(custumerFiltered[0].bairro)
+      let vlrEntrega = custumerFiltered[0].txEntrega;
+      let vEntrega =  vlrEntrega.replace(",", ".");
+      setTxEntrega(vEntrega)
       
       //setWord('');
       //setShow(false)
@@ -251,7 +253,7 @@ export default function Entregas(props) {
         
         <Grid item xs={12} md={6}>
           <TextField
-            inputProps={{style: {fontSize: 40}}}
+            inputProps={{style: {fontSize: 35}}}
             label="Pedido"
             id="pedido"
             multiline
@@ -348,9 +350,7 @@ export default function Entregas(props) {
             <div style={ 
               {
                 margin: 0,
-                padding: 0,
                 height: '11cm',
-
               }
              
               }>
