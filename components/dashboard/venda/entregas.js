@@ -345,19 +345,12 @@ export default function Entregas(props) {
         {!show && <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid item xs={12} md={12}>
             <div>
-                 <p>Telefone: `${DDD}${word}`,</p>
+                 <p>Telefone: {DDD}{word}</p>
             </div>
-
-            <Button          
-            fullWidth
-            size="large" 
-            variant="contained" 
-            sx={{ mt: 1 }}
+            <PrintIcon
             onClick={handlePrint}
-            endIcon={<PrintIcon />}
-            >
-            Imprimir        
-          </Button>
+            />
+
 
           </Grid>
         </Grid>}
