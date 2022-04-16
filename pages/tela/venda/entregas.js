@@ -31,8 +31,7 @@ export default function Diario({  consumers, error  }) {
      console.log(consumers)
   
     return (
-      <>
-      <TopMobile />
+      <>     
       <Entregas consumers={ consumers }/>
       </>
     );

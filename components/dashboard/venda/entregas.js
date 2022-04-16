@@ -345,7 +345,19 @@ export default function Entregas(props) {
         {!show && <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid item xs={12} md={12}>
             <div>
+                 <p>Esquina Lanches</p>
                  <p>Telefone: {DDD}{word}</p>
+                 <p>Nome: {nome}</p>
+                 <p>Rua: {rua}</p>
+                 <p>Numero: {numero}</p>
+                 <p>Complemento: {complemento}</p>
+                 <p>Bairro: {bairro}</p>
+                 <p>....................</p>
+                 <p>Pedido: {pedido}</p>
+                 <p>Taxa Entrega: {txEntrega}</p>
+                 <p>Valor Pedido: {valorPedido}</p>
+                 <p>Valor Pagar: {valorPagar}</p>
+
             </div>
             <PrintIcon
             onClick={handlePrint}
