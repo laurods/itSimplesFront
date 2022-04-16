@@ -131,25 +131,26 @@ export default function Entregas(props) {
            
   };
 
-  const handlePrint = async () => {      
-    console.log('print')    
-    const objCustumer ={
-        telefone: custumer[0].telefone,
-        nome: nome,
-        rua: rua,
-        numero: numero,
-        complemento: complemento,
-        bairro: bairro,
-        txEntrega: txEntrega,
-        pedido: pedido,
-        valorPedido: valorPedido,
-    }
-  console.log('objCustumer')
-  console.log(objCustumer)
-   setWord('');
-   setShow(false)
-   //setShowTelefone(false)
-   //await axios.post('/api/estoque/itens', { objEstoque })       
+  const handlePrint = async () => { 
+    window.print()     
+  //   console.log('print')    
+  //   const objCustumer ={
+  //       telefone: `${DDD}${word}`,
+  //       nome: nome,
+  //       rua: rua,
+  //       numero: numero,
+  //       complemento: complemento,
+  //       bairro: bairro,
+  //       txEntrega: txEntrega,
+  //       pedido: pedido,
+  //       valorPedido: valorPedido,
+  //   }
+  // console.log('objCustumer')
+  // console.log(objCustumer)
+  //  setWord('');
+  //  setShow(false)
+  //  //setShowTelefone(false)
+  //  //await axios.post('/api/estoque/itens', { objEstoque })       
     
 };
 
@@ -217,6 +218,7 @@ export default function Entregas(props) {
           <TextField
             label="Numero"
             id="numero"
+            type="number"
             onChange={handleNumero}
             value={numero}
             fullWidth
@@ -262,6 +264,7 @@ export default function Entregas(props) {
             inputProps={{style: {fontSize: 25}}}
             label="Entrega"
             id="txEntrega"
+            type="number"
             onChange={handleTxEntrega}
             value={txEntrega}
             fullWidth
@@ -273,6 +276,7 @@ export default function Entregas(props) {
             inputProps={{style: {fontSize: 25}}}
             label="V.Pedido"
             id="valorPedido"
+            type="number"
             onChange={handleValorPedido}
             value={valorPedido}
             fullWidth
