@@ -126,12 +126,13 @@ export default function Entregas(props) {
       setTxEntrega(custumerFiltered[0].txEntrega)
       
       //setWord('');
-      setShow(false)
+      //setShow(false)
       //setShowTelefone(false)
            
   };
 
   const handlePrint = async () => { 
+    setShow(false)
     window.print()     
   //   console.log('print')    
   //   const objCustumer ={
@@ -159,7 +160,7 @@ export default function Entregas(props) {
       <Container>      
       <Box sx={{ flexGrow: 1, mt: 2 }}>
 
-      {showTelefone && <Grid container spacing={2} sx={{ mt: 3 }}>
+      {show && <Grid container spacing={2} sx={{ mt: 3 }}>
       <Grid item xs={2} md={2}>
           <TextField
             margin="normal"
@@ -337,10 +338,16 @@ export default function Entregas(props) {
          </Grid>
 
            
-        </Grid>
-       }
-
+        </Grid>}
        
+        {!show && <Grid container spacing={2} sx={{ mt: 3 }}>
+          <Grid item xs={12} md={12}>
+            <div>
+                 <p>Telefone: `${DDD}${word}`,</p>
+            </div>
+
+          </Grid>
+        </Grid>}
         {/* {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
        
         <Grid item xs={12} md={3}>
