@@ -183,6 +183,7 @@ export default function Entregas(props) {
               name="telefone"
               label="Telefone"
               id="telefone"
+              type="number"
               value={word} 
               onChange={handleWord}                          
               autoComplete="off"
@@ -256,7 +257,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={3} md={2}>
+        <Grid item xs={4} md={2}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
             label="Entrega"
@@ -267,7 +268,7 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={3} md={2}>
+        <Grid item xs={4} md={2}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
             label="V.Pedido"
@@ -279,7 +280,7 @@ export default function Entregas(props) {
           />
         </Grid>
 
-        <Grid item xs={3} md={2}>
+        <Grid item xs={4} md={2}>
           <TextField
             disabled
             inputProps={{style: {fontSize: 25}}}
@@ -291,7 +292,7 @@ export default function Entregas(props) {
           />
         </Grid>
 
-        <Grid item xs={6} md={6}>
+        <Grid item xs={12} md={6}>
         <RadioGroup
           row
           aria-labelledby="demo-radio-buttons-group-label"
