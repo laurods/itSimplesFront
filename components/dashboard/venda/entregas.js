@@ -112,6 +112,7 @@ export default function Entregas(props) {
         let pedido = parseFloat(valorPedido)
         let totalPagar = vTxEntrega + pedido      
         setValorPagar(totalPagar)
+        setShow(false)
       } 
     }
     
@@ -132,7 +133,7 @@ export default function Entregas(props) {
   };
 
   const handlePrint = async () => { 
-    setShow(false)
+    
     window.print()     
   //   console.log('print')    
   //   const objCustumer ={
