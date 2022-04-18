@@ -29,8 +29,8 @@ export default function Entregas(props) {
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
     const [year, setYear] = useState(dataAtual.getFullYear());
-    const [show, setShow] = useState(true);
-    const [showTelefone, setShowTelefone] = useState(true);
+    const [show, setShow] = useState(true);    
+    const [showDados, setShowDados] = useState(false);
    
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
@@ -137,6 +137,7 @@ export default function Entregas(props) {
 
   const handleNew = async () => {
     setShow(true)
+    setWord('')
    }
 
   const handlePrint = async () => { 
@@ -200,7 +201,8 @@ export default function Entregas(props) {
               variant="standard"
             />
         </Grid>
-        <Grid item xs={12} md={6}>
+      
+         <Grid item xs={12} md={6}>
           <TextField
             margin="normal"
             required
@@ -344,7 +346,7 @@ export default function Entregas(props) {
             Imprimir        
           </Button>             
          </Grid>
-
+          
            
         </Grid>}
        
