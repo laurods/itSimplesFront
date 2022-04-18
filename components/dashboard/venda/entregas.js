@@ -388,19 +388,20 @@ export default function Entregas(props) {
              
               }>
                  <p>Esquina Lanches</p>
+                 <p>..................................</p>
                  <p>Telefone: {DDD}{word}</p>
                  <p>Nome: {nome}</p>
                  <p>Rua: {rua}</p>
                  <p>Numero: {numero}</p>
                  <p>Complemento: {complemento}</p>
                  <p>Bairro: {bairro}</p>
-                 <p>....................</p>
+                 <p>..................................</p>
                  <p>Pedido: {pedido}</p>
                  <p>Taxa Entrega: {txEntrega}</p>
                  <p>Valor Pedido: {valorPedido}</p>
                  <p>Valor Pagar: {valorPagar}</p>
-                 <p>
-                 <b></b>
+                 <p>..................................</p>
+                 <p>                 
                  <Button 
                  variant="text" 
                  onClick={handlePrint}
@@ -413,7 +414,7 @@ export default function Entregas(props) {
                  variant="text" 
                  onClick={handleNew}
                  endIcon={<CheckCircleIcon /> }
-                 >NOVO
+                 >NOVO PEDIDO
                  </Button>
                   
                    </p>
