@@ -275,7 +275,7 @@ export default function Entregas(props) {
         {showDados && <Grid item xs={12} md={6}>
           <TextField
             margin="normal"
-            inputProps={{style: {fontSize: 40}}}
+            inputProps={{style: {fontSize: 25}}}
             label="Pedido"
             id="pedido"
             multiline
@@ -283,7 +283,7 @@ export default function Entregas(props) {
             onChange={handlePedido}
             value={pedido}
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
        }
@@ -379,7 +379,6 @@ export default function Entregas(props) {
                 height: '15cm',
                 width: '10cm',
                 displayMode: "fullscreen",
-                border: "1px solid black",
                 pageBreakBefore: "always",
                                 
               }
