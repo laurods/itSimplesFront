@@ -67,7 +67,8 @@ export default function Entregas(props) {
       setWord(event.target.value)
       if(event.target.value.length == 0){
         setCustumer([]);
-        setWord('');       
+        setWord('');
+        setShowDados(false)       
         }
       if(primeiroNumero != 9 & event.target.value.length == 8 ){ /* se primeiro numero for diferente de 9 é número fixo. Numero fixo tem 8 caracteres*/       
               handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/
@@ -140,6 +141,7 @@ export default function Entregas(props) {
   const handleNew = async () => {
     setShow(true)
     setWord('')
+    setPedido('')
     setValorPedido('')
     setValorPagar('')
    }
