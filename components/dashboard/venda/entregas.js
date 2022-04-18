@@ -350,8 +350,11 @@ export default function Entregas(props) {
             <div style={ 
               {
                 margin: 0,
+                padding: 0,
                 height: '11cm',
-              }
+                displayMode: "fullscreen",
+                border: "5px solid black"
+              }              
              
               }>
                  <p>Esquina Lanches</p>
@@ -366,11 +369,10 @@ export default function Entregas(props) {
                  <p>Taxa Entrega: {txEntrega}</p>
                  <p>Valor Pedido: {valorPedido}</p>
                  <p>Valor Pagar: {valorPagar}</p>
-
+                 <p>CTROL P para Imprimir</p>
+                
             </div>
-            <PrintIcon
-            onClick={handlePrint}
-            />
+            
 
 
           </Grid>
