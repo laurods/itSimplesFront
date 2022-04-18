@@ -351,9 +351,11 @@ export default function Entregas(props) {
               {
                 margin: 0,
                 padding: 0,
-                height: '11cm',
+                height: '15cm',
+                width: '10cm',
                 displayMode: "fullscreen",
-                border: "5px solid black"
+                border: "1px solid black",
+                pageBreakAfter: "always",
               }              
              
               }>
