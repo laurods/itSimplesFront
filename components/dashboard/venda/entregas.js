@@ -400,13 +400,13 @@ export default function Entregas(props) {
                  <p>Valor Pedido: {valorPedido}</p>
                  <p>Valor Pagar: {valorPagar}</p>
                  <p>
-                   <PrintIcon onClick={handlePrint}/>
-                  <b>Para Imprimir pressione CTROL P</b> 
+                 <b>Para Imprimir pressione CTROL P</b> 
+                   <PrintIcon onClick={handlePrint}/>                  
                   </p>
                  <p>
-                  <b>NOVO</b>
-                   <CheckCircleIcon onClick={handleNew}
-                 /></p>
+                  <b>NOVO tecle ENTER</b>
+                   <CheckCircleIcon onClick={handleNew} onEnterKey={handleNew}/>
+                   </p>
                 
             </div>
             
