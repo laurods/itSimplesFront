@@ -135,6 +135,10 @@ export default function Entregas(props) {
            
   };
 
+  const handleNew = async () => {
+    setShow(true)
+   }
+
   const handlePrint = async () => { 
     
     window.print()     
@@ -355,8 +359,11 @@ export default function Entregas(props) {
                 width: '10cm',
                 displayMode: "fullscreen",
                 border: "1px solid black",
-                pageBreakAfter: "always",
-              }              
+                pageBreakBefore: "always",
+                                
+              }
+              
+                            
              
               }>
                  <p>Esquina Lanches</p>
@@ -372,6 +379,9 @@ export default function Entregas(props) {
                  <p>Valor Pedido: {valorPedido}</p>
                  <p>Valor Pagar: {valorPagar}</p>
                  <p>CTROL P para Imprimir</p>
+                 <p>
+                   <CheckCircleIcon onClick={handleNew}
+                 /></p>
                 
             </div>
             
