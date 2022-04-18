@@ -272,13 +272,27 @@ export default function Entregas(props) {
         {showDados && <Grid item xs={12} md={6}>
           <TextField
             margin="normal"
-            inputProps={{style: {fontSize: 35}}}
+            inputProps={{style: {fontSize: 40}}}
             label="Pedido"
             id="pedido"
             multiline
             maxRows={3}
             onChange={handlePedido}
             value={pedido}
+            fullWidth
+            variant="standard"
+          />
+        </Grid>
+       }
+       {showDados && <Grid item xs={4} md={2}>
+          <TextField
+            margin="normal"
+            inputProps={{style: {fontSize: 40}}}
+            label="V.Pedido"
+            id="valorPedido"
+            type="number"
+            onChange={handleValorPedido}
+            value={valorPedido}
             fullWidth
             variant="standard"
           />
@@ -297,19 +311,7 @@ export default function Entregas(props) {
           />
         </Grid>
        }        
-        {showDados && <Grid item xs={4} md={2}>
-          <TextField
-            inputProps={{style: {fontSize: 25}}}
-            label="V.Pedido"
-            id="valorPedido"
-            type="number"
-            onChange={handleValorPedido}
-            value={valorPedido}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-       }
+        
         {showDados && <Grid item xs={4} md={2}>
           <TextField
             disabled
