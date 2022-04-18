@@ -112,9 +112,7 @@ export default function Entregas(props) {
         let vTxEntrega = parseFloat(txEntrega)
         let pedido = parseFloat(valorPedido)
         let totalPagar = vTxEntrega + pedido      
-        setValorPagar(totalPagar)
-        setShow(false)
-        setShowDados(false)
+        setValorPagar(totalPagar)        
       }
      
     }
@@ -146,9 +144,14 @@ export default function Entregas(props) {
     setValorPagar('')
    }
 
+   const handleView = async () => {
+    setShow(false)
+    setShowDados(false)    
+   }
+
   const handlePrint = async () => { 
-    
-    window.print()     
+    window.print()
+       
   //   console.log('print')    
   //   const objCustumer ={
   //       telefone: `${DDD}${word}`,
@@ -286,15 +289,14 @@ export default function Entregas(props) {
        }
        {showDados && <Grid item xs={4} md={2}>
           <TextField
-            margin="normal"
-            inputProps={{style: {fontSize: 40}}}
+            inputProps={{style: {fontSize: 25}}}
             label="V.Pedido"
             id="valorPedido"
             type="number"
             onChange={handleValorPedido}
             value={valorPedido}
             fullWidth
-            variant="standard"
+            variant="outlined"
           />
         </Grid>
        }
@@ -357,10 +359,10 @@ export default function Entregas(props) {
             size="large" 
             variant="contained" 
             sx={{ mt: 1 }}
-            onClick={handlePrint}
-            endIcon={<PrintIcon />}
+            onClick={handleView}
+            endIcon={<SendIcon />}
             >
-            Imprimir        
+            Visualizar        
           </Button>             
          </Grid>
        }
@@ -397,8 +399,12 @@ export default function Entregas(props) {
                  <p>Taxa Entrega: {txEntrega}</p>
                  <p>Valor Pedido: {valorPedido}</p>
                  <p>Valor Pagar: {valorPagar}</p>
-                 <p>CTROL P para Imprimir</p>
                  <p>
+                   <PrintIcon onClick={handlePrint}/>
+                  <b>Para Imprimir pressione CTROL P</b> 
+                  </p>
+                 <p>
+                  <b>NOVO</b>
                    <CheckCircleIcon onClick={handleNew}
                  /></p>
                 
