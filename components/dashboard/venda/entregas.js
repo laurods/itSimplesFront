@@ -140,6 +140,8 @@ export default function Entregas(props) {
   const handleNew = async () => {
     setShow(true)
     setWord('')
+    setValorPedido('')
+    setValorPagar('')
    }
 
   const handlePrint = async () => { 
@@ -267,6 +269,7 @@ export default function Entregas(props) {
       }
         {showDados && <Grid item xs={12} md={6}>
           <TextField
+            margin="normal"
             inputProps={{style: {fontSize: 35}}}
             label="Pedido"
             id="pedido"
@@ -275,7 +278,7 @@ export default function Entregas(props) {
             onChange={handlePedido}
             value={pedido}
             fullWidth
-            variant="outlined"
+            variant="standard"
           />
         </Grid>
        }
