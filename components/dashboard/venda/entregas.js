@@ -113,6 +113,7 @@ export default function Entregas(props) {
         let totalPagar = vTxEntrega + pedido      
         setValorPagar(totalPagar)
         setShow(false)
+        setShowDados(false)
       }
      
     }
@@ -128,6 +129,7 @@ export default function Entregas(props) {
       let vlrEntrega = custumerFiltered[0].txEntrega;
       let vEntrega =  vlrEntrega.replace(",", ".");
       setTxEntrega(vEntrega)
+      setShowDados(true)
       
       //setWord('');
       //setShow(false)
@@ -201,8 +203,8 @@ export default function Entregas(props) {
               variant="standard"
             />
         </Grid>
-      
-         <Grid item xs={12} md={6}>
+        
+         {showDados &&<Grid item xs={12} md={6}>
           <TextField
             margin="normal"
             required
@@ -215,7 +217,9 @@ export default function Entregas(props) {
             variant="standard"
           />
         </Grid>
-        <Grid item xs={9} md={6}>
+        }
+      
+      {showDados && <Grid item xs={9} md={6}>
           <TextField
             label="Rua"
             id="rua"
@@ -225,7 +229,9 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={3} md={1}>
+      }
+
+      {showDados &&<Grid item xs={3} md={1}>
           <TextField
             label="Numero"
             id="numero"
@@ -236,19 +242,21 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={2}>
+      }
+        {showDados &&<Grid item xs={6} md={2}>
           <TextField
             label="Complemento"
             id="complemento"
             onChange={handleComplemento}
-            value={complemento}
+            value={complemento} 
             fullWidth
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={6} md={3}>
+        }
+        {showDados &&<Grid item xs={6} md={3}>
           <TextField
-            label="Bairro"
+            label="Bairro" 
             id="bairro"
             onChange={handleBairro}
             value={bairro}
@@ -256,8 +264,8 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        
-        <Grid item xs={12} md={6}>
+      }
+        {showDados && <Grid item xs={12} md={6}>
           <TextField
             inputProps={{style: {fontSize: 35}}}
             label="Pedido"
@@ -270,7 +278,8 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={4} md={2}>
+       }
+        {showDados && <Grid item xs={4} md={2}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
             label="Entrega"
@@ -282,7 +291,8 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-        <Grid item xs={4} md={2}>
+       }        
+        {showDados && <Grid item xs={4} md={2}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
             label="V.Pedido"
@@ -294,8 +304,8 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-
-        <Grid item xs={4} md={2}>
+       }
+        {showDados && <Grid item xs={4} md={2}>
           <TextField
             disabled
             inputProps={{style: {fontSize: 25}}}
@@ -306,8 +316,8 @@ export default function Entregas(props) {
             variant="outlined"
           />
         </Grid>
-
-        <Grid item xs={12} md={6}>
+      }
+        {showDados && <Grid item xs={12} md={6}>
         <RadioGroup
           row
           aria-labelledby="demo-radio-buttons-group-label"
@@ -320,8 +330,8 @@ export default function Entregas(props) {
         </RadioGroup>
           
         </Grid>
-
-         <Grid item xs={6} md={3}>
+       }
+         {showDados && <Grid item xs={6} md={3}>
           <Button          
             fullWidth
             size="large" 
@@ -333,8 +343,8 @@ export default function Entregas(props) {
             Calcular        
           </Button>             
          </Grid>
-
-         <Grid item xs={6} md={3}>
+        }
+         {showDados && <Grid item xs={6} md={3}>
           <Button          
             fullWidth
             size="large" 
@@ -346,7 +356,7 @@ export default function Entregas(props) {
             Imprimir        
           </Button>             
          </Grid>
-          
+       }
            
         </Grid>}
        
