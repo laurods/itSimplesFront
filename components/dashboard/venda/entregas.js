@@ -44,6 +44,7 @@ export default function Entregas(props) {
     const [txEntrega, setTxEntrega] = useState('');
     const [valorPedido, setValorPedido] = useState('');
     const [valorPagar, setValorPagar] = useState('');
+    const [tipoPagamento, setTipoPagamento] = useState('');
 
   //   const addListProducts = () => {
   //     const total = preco * quantidade
@@ -85,6 +86,7 @@ export default function Entregas(props) {
     const handleComplemento = (event) => { setComplemento(event.target.value) };
     const handleBairro = (event) => { setBairro(event.target.value) };
     const handlePedido = (event) => { setPedido(event.target.value) };
+    const handleTipoPagamento = (event) => { setTipoPagamento(event.target.value) };
     const handleTxEntrega = (event) => {
       setValorPagar('')
       if(event.target.value.length != 0){
@@ -152,8 +154,27 @@ export default function Entregas(props) {
    }
 
    const handleView = async () => {
-    setShow(false)
-    setShowDados(false)    
+     if(
+       DDD.length !=0 &
+       word.length !=0 &
+       nome.length !=0 &
+       rua.length !=0 &
+       numero.length !=0 &
+       complemento.length !=0 &
+       bairro.length !=0 &
+       pedido.length !=0 &
+       txEntrega.length !=0 &
+       valorPedido.length !=0 &
+       valorPagar.length !=0 &
+       tipoPagamento.length !=0
+     ){
+      setShow(false)
+      setShowDados(false)
+      calcularValorPagar()
+     }else{
+       alert('Todos os campos deve estar preenchidos')
+     }
+     
    }
 
   const handlePrint = async () => { 
@@ -339,9 +360,9 @@ export default function Entregas(props) {
           aria-labelledby="demo-radio-buttons-group-label"
           name="radio-buttons-group"
         >
-          <FormControlLabel onClick={calcularValorPagar} value="dinheiro" control={<Radio />} label="Dinheiro" />
-          <FormControlLabel onClick={calcularValorPagar} value="cartao" control={<Radio />} label="Cartão" />
-          <FormControlLabel onClick={calcularValorPagar} value="pix" control={<Radio />} label="Pix" />
+          <FormControlLabel onClick={handleTipoPagamento} value="dinheiro" control={<Radio />} label="Dinheiro" />
+          <FormControlLabel onClick={handleTipoPagamento} value="cartao" control={<Radio />} label="Cartão" />
+          <FormControlLabel onClick={handleTipoPagamento} value="pix" control={<Radio />} label="Pix" />
         </RadioGroup>
           
         </Grid>
@@ -405,6 +426,7 @@ export default function Entregas(props) {
                  <p>Taxa Entrega: {txEntrega}</p>
                  <p>Valor Pedido: {valorPedido}</p>
                  <p>Valor Pagar: {valorPagar}</p>
+                 <p>Pagamento: {tipoPagamento}</p>
                  <p>..................................</p>
                  <p>                 
                  <Button 
