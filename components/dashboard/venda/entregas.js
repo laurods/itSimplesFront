@@ -36,7 +36,8 @@ export default function Entregas(props) {
     const [txEntrega, setTxEntrega] = useState('');
     const [valorPedido, setValorPedido] = useState('');
     const [valorPagar, setValorPagar] = useState('');
-    const [tipoPagamento, setTipoPagamento] = useState('');    
+    const [tipoPagamento, setTipoPagamento] = useState('');
+    const [AddNewCustumer, setAddNewCustumer] = useState(false);     
     
     const handleWord = (event) => {
       const primeiroNumero = event.target.value.charAt(0);
@@ -97,6 +98,7 @@ export default function Entregas(props) {
     const handleFilter = (word) => {
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
       if(custumerFiltered.length == 0){
+        setAddNewCustumer(true)
         setCustumer('')
         setNome('')
         setRua('')
@@ -106,6 +108,7 @@ export default function Entregas(props) {
         setTxEntrega('')
         setShowDados(true)
       }else{
+        setAddNewCustumer(true)
         setCustumer(custumerFiltered)
         setNome(custumerFiltered[0].nome)
         setRua(custumerFiltered[0].rua)
@@ -145,53 +148,41 @@ export default function Entregas(props) {
      ){
       setShow(false)
       setShowDados(false)      
-      const dataPedido = {}
-      dataPedido['telefone'] = `${DDD}${word}`
-      dataPedido['nome'] = nome
-      dataPedido['rua'] = rua
-      dataPedido['numero'] = numero
-      dataPedido['complemento'] = complemento
-      dataPedido['bairro'] = bairro
-      dataPedido['pedido'] = pedido
-      dataPedido['txEntrega'] = txEntrega
-      dataPedido['valorPedido'] = valorPedido
-      dataPedido['valorPagar'] = valorPagar
-      dataPedido['tipoPagamento'] = tipoPagamento
-      dataPedido['dia'] = `${day}/${month}/${year}`
-      dataPedido['mes'] = `${month}/${year}`
-      console.log('dataPedido') 
-      console.log(dataPedido)
-      await axios.post('/api/consumidores/addPedido', { dataPedido })
-  
-      
+      sendData()       
      }else{
        alert('Todos os campos deve estar preenchidos')
      }
      
    }
 
+   const sendData = async () => {
+    const dataPedido = {}
+    dataPedido['telefone'] = `${DDD}${word}`
+    dataPedido['nome'] = nome
+    dataPedido['rua'] = rua
+    dataPedido['numero'] = numero
+    dataPedido['complemento'] = complemento
+    dataPedido['bairro'] = bairro
+    dataPedido['pedido'] = pedido
+    dataPedido['txEntrega'] = txEntrega
+    dataPedido['valorPedido'] = valorPedido
+    dataPedido['valorPagar'] = valorPagar
+    dataPedido['tipoPagamento'] = tipoPagamento
+    dataPedido['dia'] = `${day}/${month}/${year}`
+    dataPedido['mes'] = `${month}/${year}`
+    console.log('dataPedido') 
+    console.log(dataPedido)
+     if(AddNewCustumer){
+      await axios.post('/api/consumidores/addConsumidor', { dataPedido })
+     }else{
+      await axios.post('/api/consumidores/addPedido', { dataPedido })
+     }
+
+    }
+
+
   const handlePrint = async () => { 
     window.print()
-       
-  //   console.log('print')    
-  //   const objCustumer ={
-  //       telefone: `${DDD}${word}`,
-  //       nome: nome,
-  //       rua: rua,
-  //       numero: numero,
-  //       complemento: complemento,
-  //       bairro: bairro,
-  //       txEntrega: txEntrega,
-  //       pedido: pedido,
-  //       valorPedido: valorPedido,
-  //   }
-  // console.log('objCustumer')
-  // console.log(objCustumer)
-  //  setWord('');
-  //  setShow(false)
-  //  //setShowTelefone(false)
-  //  //await axios.post('/api/estoque/itens', { objEstoque })       
-    
 };
 
   return (
