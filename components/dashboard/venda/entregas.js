@@ -169,6 +169,7 @@ export default function Entregas(props) {
       dataPedido['mes'] = `${month}/${year}`
       console.log('dataPedido') 
       console.log(dataPedido)
+      await axios.post('/api/consumidores/addPedido', { dataPedido })
   
       
      }else{
