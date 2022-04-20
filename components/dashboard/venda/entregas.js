@@ -117,18 +117,31 @@ export default function Entregas(props) {
      
     }
     
-    const handleFilter = (word) => {      
+    const handleFilter = (word) => {
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
-      setCustumer(custumerFiltered)
-      setNome(custumerFiltered[0].nome)
-      setRua(custumerFiltered[0].rua)
-      setNumero(custumerFiltered[0].numero)
-      setComplemento(custumerFiltered[0].complemento)
-      setBairro(custumerFiltered[0].bairro)
-      let vlrEntrega = custumerFiltered[0].txEntrega;
-      let vEntrega =  vlrEntrega.replace(",", ".");
-      setTxEntrega(vEntrega)
-      setShowDados(true)
+      console.log('custumerFiltered.length')
+      console.log(custumerFiltered.length)
+      if(custumerFiltered.length == 0){
+        setCustumer('')
+        setNome('')
+        setRua('')
+        setNumero('')
+        setComplemento('')
+        setBairro('')
+        setTxEntrega('')
+        setShowDados(true)
+      }else{
+        setCustumer(custumerFiltered)
+        setNome(custumerFiltered[0].nome)
+        setRua(custumerFiltered[0].rua)
+        setNumero(custumerFiltered[0].numero)
+        setComplemento(custumerFiltered[0].complemento)
+        setBairro(custumerFiltered[0].bairro)
+        let vlrEntrega = custumerFiltered[0].txEntrega;
+        let vEntrega =  vlrEntrega.replace(",", ".");
+        setTxEntrega(vEntrega)
+        setShowDados(true)
+      }
       
       //setWord('');
       //setShow(false)
