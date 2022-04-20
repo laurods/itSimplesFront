@@ -44,24 +44,7 @@ export default function Entregas(props) {
     const [txEntrega, setTxEntrega] = useState('');
     const [valorPedido, setValorPedido] = useState('');
     const [valorPagar, setValorPagar] = useState('');
-    const [tipoPagamento, setTipoPagamento] = useState('');
-
-  //   const addListProducts = () => {
-  //     const total = preco * quantidade
-  //     dataEstoque['total'] = total
-  //     dataEstoque['estoque'] = (-1 * (quantidade))
-  //     dataEstoque['quantidade'] = quantidade
-  //     dataEstoque['categoria'] = 'Venda'
-  //     dataEstoque['dia'] = `${day}/${month}/${year}`
-  //     dataEstoque['mes'] = `${month}/${year}`
-  //     const prevListEstoque = [dataEstoque, ...listEstoque]
-  //     setListEstoque(prevListEstoque)      
-  //     console.log('dataEstoque') 
-  //     console.log(dataEstoque)
-  //     console.log('listEstoque') 
-  //     console.log(listEstoque)
-  // };
-    
+    const [tipoPagamento, setTipoPagamento] = useState('');    
     
     const handleWord = (event) => {
       const primeiroNumero = event.target.value.charAt(0);
@@ -169,8 +152,25 @@ export default function Entregas(props) {
        tipoPagamento.length !=0
      ){
       setShow(false)
-      setShowDados(false)
-      calcularValorPagar()
+      setShowDados(false)      
+      const dataPedido = {}
+      dataPedido['telefone'] = `${DDD}${word}`
+      dataPedido['nome'] = nome
+      dataPedido['rua'] = rua
+      dataPedido['numero'] = numero
+      dataPedido['complemento'] = complemento
+      dataPedido['bairro'] = bairro
+      dataPedido['pedido'] = pedido
+      dataPedido['txEntrega'] = txEntrega
+      dataPedido['valorPedido'] = valorPedido
+      dataPedido['valorPagar'] = valorPagar
+      dataPedido['tipoPagamento'] = tipoPagamento
+      dataPedido['dia'] = `${day}/${month}/${year}`
+      dataPedido['mes'] = `${month}/${year}`
+      console.log('dataPedido') 
+      console.log(dataPedido)
+  
+      
      }else{
        alert('Todos os campos deve estar preenchidos')
      }
