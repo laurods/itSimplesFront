@@ -119,8 +119,6 @@ export default function Entregas(props) {
     
     const handleFilter = (word) => {
       const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
-      console.log('custumerFiltered.length')
-      console.log(custumerFiltered.length)
       if(custumerFiltered.length == 0){
         setCustumer('')
         setNome('')
@@ -142,10 +140,6 @@ export default function Entregas(props) {
         setTxEntrega(vEntrega)
         setShowDados(true)
       }
-      
-      //setWord('');
-      //setShow(false)
-      //setShowTelefone(false)
            
   };
 
@@ -343,12 +337,11 @@ export default function Entregas(props) {
         <RadioGroup
           row
           aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="dinheiro"
           name="radio-buttons-group"
         >
-          <FormControlLabel value="dinheiro" control={<Radio />} label="Dinheiro" />
-          <FormControlLabel value="cartao" control={<Radio />} label="Cartão" />
-          <FormControlLabel value="pix" control={<Radio />} label="Pix" />
+          <FormControlLabel onClick={calcularValorPagar} value="dinheiro" control={<Radio />} label="Dinheiro" />
+          <FormControlLabel onClick={calcularValorPagar} value="cartao" control={<Radio />} label="Cartão" />
+          <FormControlLabel onClick={calcularValorPagar} value="pix" control={<Radio />} label="Pix" />
         </RadioGroup>
           
         </Grid>
