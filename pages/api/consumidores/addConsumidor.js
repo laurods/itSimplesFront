@@ -16,7 +16,8 @@ const client = new MongoClient(url);
             rua,
             numero,
             complemento,
-            bairro
+            bairro,
+            txEntrega,
         } = dataPedido;            
 
          await client.connect();
@@ -29,6 +30,7 @@ const client = new MongoClient(url);
             numero,
             complemento,
             bairro,
+            txEntrega,
             pedido: [dataPedido]
          });
 

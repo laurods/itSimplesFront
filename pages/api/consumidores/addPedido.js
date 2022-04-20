@@ -10,7 +10,7 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const  {dataPedido} = req.body;
-        const {telefone, nome, rua, numero, bairro, complemento } = dataPedido;
+        const {telefone, nome, rua, numero, bairro, complemento, txEntrega } = dataPedido;
          await client.connect();
          const db = client.db(dbName);
          const col = db.collection("consumidores");
@@ -23,6 +23,7 @@ const client = new MongoClient(url);
                     numero,
                     bairro,
                     complemento,
+                    txEntrega,
                 },
                 $push:{ pedido: dataPedido}
                 
