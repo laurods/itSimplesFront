@@ -56,13 +56,13 @@ export default function Entregas(props) {
     };
 
     const handleDDD = (event) => { setDDD(event.target.value) };
-    const handleNome = (event) => { setNome(event.target.value) };
-    const handleRua = (event) => { setRua(event.target.value) };
+    const handleNome = (event) => { setNome(event.target.value.toUpperCase()) };
+    const handleRua = (event) => { setRua(event.target.value.toUpperCase()) };
     const handleNumero = (event) => { setNumero(event.target.value) };
-    const handleComplemento = (event) => { setComplemento(event.target.value) };
-    const handleBairro = (event) => { setBairro(event.target.value) };
-    const handlePedido = (event) => { setPedido(event.target.value) };
-    const handleTipoPagamento = (event) => { setTipoPagamento(event.target.value) };
+    const handleComplemento = (event) => { setComplemento(event.target.value.toUpperCase()) };
+    const handleBairro = (event) => { setBairro(event.target.value.toUpperCase()) };
+    const handlePedido = (event) => { setPedido(event.target.value.toUpperCase()) };
+    const handleTipoPagamento = (event) => { setTipoPagamento(event.target.value.toUpperCase() };
     const handleTxEntrega = (event) => {
       setValorPagar('')
       if(event.target.value.length != 0){
@@ -233,6 +233,7 @@ export default function Entregas(props) {
             onChange={handleNome}
             value={nome}
             fullWidth
+            autoComplete='off'
             variant="standard"
           />
         </Grid>
@@ -245,6 +246,7 @@ export default function Entregas(props) {
             onChange={handleRua}
             value={rua}
             fullWidth
+            autoComplete='off'
             variant="outlined"
           />
         </Grid>
@@ -269,6 +271,7 @@ export default function Entregas(props) {
             onChange={handleComplemento}
             value={complemento} 
             fullWidth
+            autoComplete='off'
             variant="outlined"
           />
         </Grid>
@@ -280,6 +283,7 @@ export default function Entregas(props) {
             onChange={handleBairro}
             value={bairro}
             fullWidth
+            autoComplete='off'
             variant="outlined"
           />
         </Grid>
@@ -295,6 +299,7 @@ export default function Entregas(props) {
             onChange={handlePedido}
             value={pedido}
             fullWidth
+            autoComplete='off'
             variant="outlined"
           />
         </Grid>
