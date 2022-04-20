@@ -108,7 +108,7 @@ export default function Entregas(props) {
         setTxEntrega('')
         setShowDados(true)
       }else{
-        setAddNewCustumer(true)
+        setAddNewCustumer(false)
         setCustumer(custumerFiltered)
         setNome(custumerFiltered[0].nome)
         setRua(custumerFiltered[0].rua)
