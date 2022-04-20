@@ -62,7 +62,7 @@ export default function Entregas(props) {
     const handleComplemento = (event) => { setComplemento(event.target.value.toUpperCase()) };
     const handleBairro = (event) => { setBairro(event.target.value.toUpperCase()) };
     const handlePedido = (event) => { setPedido(event.target.value.toUpperCase()) };
-    const handleTipoPagamento = (event) => { setTipoPagamento(event.target.value.toUpperCase() };
+    const handleTipoPagamento = (event) => { setTipoPagamento(event.target.value.toUpperCase())};
     const handleTxEntrega = (event) => {
       setValorPagar('')
       if(event.target.value.length != 0){
