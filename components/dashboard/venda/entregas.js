@@ -157,10 +157,7 @@ export default function Entregas(props) {
      ){
       setShow(false)
       setShowDados(false)      
-      await sendData()
-      const newListCustumers = await hidrateDataConsumers();
-      setListConsumers(newListCustumers)
-
+      sendData() 
      }else{
        alert('Todos os campos deve estar preenchidos')
      }
@@ -186,6 +183,8 @@ export default function Entregas(props) {
     console.log(dataPedido)
      if(AddNewCustumer){
       await axios.post('/api/consumidores/addConsumidor', { dataPedido })
+      const newListCustumers = await hidrateDataConsumers();
+      setListConsumers(newListCustumers)
      }else{
       await axios.post('/api/consumidores/addPedido', { dataPedido })
      }
