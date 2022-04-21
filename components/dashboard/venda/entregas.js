@@ -183,24 +183,29 @@ export default function Entregas(props) {
     console.log(dataPedido)
      if(AddNewCustumer){
       await axios.post('/api/consumidores/addConsumidor', { dataPedido })
-      const newListCustumers = await hidrateDataConsumers();
+      const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
+      console.log('newListCustumers')
+      console.log(newListCustumers)
       setListConsumers(newListCustumers)
+      console.log('listConsumers')
+      console.log(listConsumers)
+
      }else{
       await axios.post('/api/consumidores/addPedido', { dataPedido })
      }
 
     }
 
-    const hidrateDataConsumers = async () => await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
-    .then(res => ({
-      error: false,
-      consumers: res.data,
-    }))
-    .catch(() => ({
-        error: true,
-        consumers: null,
-      }),
-    );
+    // const hidrateDataConsumers = async () => await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
+    // .then(res => ({
+    //   error: false,
+    //   consumers: res.data,
+    // }))
+    // .catch(() => ({
+    //     error: true,
+    //     consumers: null,
+    //   }),
+    // );
 
 
   const handlePrint = async () => { 
