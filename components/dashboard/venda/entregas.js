@@ -16,7 +16,7 @@ import Grid from '@mui/material/Grid';
 
 const theme = createTheme();
 export default function Entregas(props) {
-    const listConsumers = props.consumers;
+    //const listConsumers = props.consumers;
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -24,6 +24,7 @@ export default function Entregas(props) {
     const [show, setShow] = useState(true);    
     const [showDados, setShowDados] = useState(false);
    
+    const [listConsumers, setListConsumers] = useState(props.consumers);
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
@@ -156,7 +157,10 @@ export default function Entregas(props) {
      ){
       setShow(false)
       setShowDados(false)      
-      sendData()       
+      await sendData()
+      const newListCustumers = await hidrateDataConsumers();
+      setListConsumers(newListCustumers)
+
      }else{
        alert('Todos os campos deve estar preenchidos')
      }
@@ -187,6 +191,17 @@ export default function Entregas(props) {
      }
 
     }
+
+    const hidrateDataConsumers = async () => await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
+    .then(res => ({
+      error: false,
+      consumers: res.data,
+    }))
+    .catch(() => ({
+        error: true,
+        consumers: null,
+      }),
+    );
 
 
   const handlePrint = async () => { 
