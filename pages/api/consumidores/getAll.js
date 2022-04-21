@@ -12,7 +12,20 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("consumidores");
-         const consumidores = await col.find({}).toArray();     
+         const consumidores = await col.find(
+             {},
+             {projection: { 
+                 _id: 0, 
+                 telefone: 1, 
+                 nome: 1,
+                 rua: 1, 
+                 numero: 1,
+                 complemento: 1,
+                 bairro: 1,
+                 txEntrega: 1,
+                 }
+                }
+             ).toArray();     
          
          res.status(200).json(consumidores);
 
