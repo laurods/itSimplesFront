@@ -185,8 +185,8 @@ export default function Entregas(props) {
       await axios.post('/api/consumidores/addConsumidor', { dataPedido })
       const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
       console.log('newListCustumers')
-      console.log(newListCustumers)
-      setListConsumers(newListCustumers)
+      console.log(newListCustumers.data)
+      setListConsumers(newListCustumers.data)
       console.log('listConsumers')
       console.log(listConsumers)
 
