@@ -19,7 +19,7 @@ export default function Diario({  consumers, error  }) {
   
     return (
       <>     
-      {!isAuthenticated &&<Entregas consumers={ consumers }/>}
+      {isAuthenticated &&<Entregas consumers={ consumers }/>}
       </>
     );
     
