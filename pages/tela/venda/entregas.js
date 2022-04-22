@@ -31,7 +31,7 @@ export default function Diario({  consumers, error  }) {
       console.log(cookies.idUser)
       console.log('listClients')
       console.log(listClients)
-      //setActiveCNPJ(listClients[0].cnpj)
+      setActiveCNPJ(listClients[0].cnpj)
       
     }
     loadAll();
