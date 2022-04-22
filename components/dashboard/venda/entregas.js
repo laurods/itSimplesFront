@@ -138,8 +138,6 @@ export default function Entregas(props) {
         setNumero(custumerFiltered[0].numero)
         setComplemento(custumerFiltered[0].complemento)
         setBairro(custumerFiltered[0].bairro)
-        //let vlrEntrega = custumerFiltered[0].txEntrega;
-        //let vEntrega =  vlrEntrega.replace(",", ".");
         setTxEntrega(custumerFiltered[0].txEntrega)
         setShowDados(true)
       }
@@ -383,7 +381,7 @@ export default function Entregas(props) {
           
         </Grid>
        }
-         {showDados && <Grid item xs={6} md={3}>
+         {/* {showDados && <Grid item xs={6} md={3}>
           <Button          
             fullWidth
             size="large" 
@@ -395,8 +393,8 @@ export default function Entregas(props) {
             Calcular        
           </Button>             
          </Grid>
-        }
-         {showDados && <Grid item xs={6} md={3}>
+        } */}
+         {showDados && <Grid item xs={12} md={6}>
           <Button          
             fullWidth
             size="large" 
