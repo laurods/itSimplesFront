@@ -19,7 +19,7 @@ const fetchData = async () => await axios.get('https://it-simples-front.vercel.a
 );
 
 export default function Diario({  consumers, error  }) { 
-  const {isAuthenticated} = useContext(AuthContext);
+  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ} = useContext(AuthContext);
 
   useEffect(() => {
     const loadAll = async() =>{
