@@ -80,7 +80,12 @@ export default function Entregas(props) {
         setTxEntrega(vEntrega) 
       }else{        
         setTxEntrega('')        
-      }      
+      }
+      
+      if(event.target.value.length != 0 & valorPedido.length != 0){
+        let totalPagar = valorPedido + txEntrega;
+        setValorPagar(totalPagar)                
+      }
     };
 
     const handleValorPedido = (event) => {
@@ -88,10 +93,17 @@ export default function Entregas(props) {
       if(event.target.value.length != 0){
         let vlrPedido = event.target.value;
         let vPedido =  vlrPedido.replace(",", ".");
-        setValorPedido(vPedido)        
+        setValorPedido(vPedido)                
       }else{        
         setValorPedido('')        
       }
+
+      if(event.target.value.length != 0 & txEntrega.length != 0){
+        let totalPagar = valorPedido + txEntrega;
+        setValorPagar(totalPagar)                
+      }
+
+
     };
 
     const calcularValorPagar = () =>{
@@ -183,12 +195,8 @@ export default function Entregas(props) {
     console.log(dataPedido)
      if(AddNewCustumer){
       await axios.post('/api/consumidores/addConsumidor', { dataPedido })
-      const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
-      console.log('newListCustumers')
-      console.log(newListCustumers.data)
+      const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')     
       setListConsumers(newListCustumers.data)
-      console.log('listConsumers')
-      console.log(listConsumers)
 
      }else{
       await axios.post('/api/consumidores/addPedido', { dataPedido })
@@ -196,17 +204,7 @@ export default function Entregas(props) {
 
     }
 
-    // const hidrateDataConsumers = async () => await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')
-    // .then(res => ({
-    //   error: false,
-    //   consumers: res.data,
-    // }))
-    // .catch(() => ({
-    //     error: true,
-    //     consumers: null,
-    //   }),
-    // );
-
+   
 
   const handlePrint = async () => { 
     window.print()
