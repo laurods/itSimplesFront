@@ -401,9 +401,9 @@ export default function Entregas(props) {
             variant="contained" 
             sx={{ mt: 1 }}
             onClick={handleView}
-            endIcon={<SendIcon />}
+            endIcon={<CheckCircleIcon />}
             >
-            Visualizar        
+            Confirmar        
           </Button>             
          </Grid>
        }
