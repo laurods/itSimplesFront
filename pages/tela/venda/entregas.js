@@ -28,6 +28,8 @@ export default function Diario({  consumers, error  }) {
       const listClients = clients.data;
       setCNPJsByUsers(listClients)
       setActiveCNPJ(listClients[0].cnpj)
+      console.log('listClients')
+      console.log(listClients)
     }
     loadAll();
   }, []);
