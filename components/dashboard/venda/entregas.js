@@ -431,7 +431,7 @@ export default function Entregas(props) {
                             
              
               }>
-                 <p>Esquina Lanches</p>
+                 <p>{CNPJsByUsers[0].name}</p>
                  <p>..................................</p>
                  <p>Telefone: {DDD}{word}</p>
                  <p>Nome: {nome}</p>
