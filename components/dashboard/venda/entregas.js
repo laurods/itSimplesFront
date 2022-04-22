@@ -97,10 +97,8 @@ export default function Entregas(props) {
         const vlrPedido = event.target.value;
         const vPedido =  vlrPedido.replace(",", ".");
         const valorPedidoFloat = parseFloat(vPedido)        
-        if(txEntrega.length != 0){
-          let taxaEntregaString = txEntrega
-          let taxaEntrega = taxaEntregaString.replace(",", ".");
-          let taxaEntregaFloat = parseFloat(taxaEntrega)
+        if(txEntrega.length != 0){        
+          let taxaEntregaFloat = parseFloat(txEntrega)
           let totalPagar = valorPedidoFloat + taxaEntregaFloat;
           setValorPagar(totalPagar)
         }
