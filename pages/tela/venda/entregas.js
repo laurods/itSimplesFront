@@ -1,5 +1,6 @@
 import React, {  useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
+import { parseCookies } from 'nookies';
 import Entregas from '../../../components/dashboard/venda/entregas';
 import Login from '../../../components/login/login.js'
 import axios from 'axios';
