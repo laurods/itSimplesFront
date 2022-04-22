@@ -18,7 +18,9 @@ import Grid from '@mui/material/Grid';
 const theme = createTheme();
 export default function Entregas(props) {
     //const listConsumers = props.consumers;
-    const {isAuthenticated} = useContext(AuthContext);
+    const {isAuthenticated, CNPJsByUsers} = useContext(AuthContext);
+    console.log('CNPJsByUsers')
+    console.log(CNPJsByUsers)
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
