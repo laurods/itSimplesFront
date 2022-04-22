@@ -1,5 +1,5 @@
 import React, {  useState, useEffect, useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../../contexts/AuthContext';
 import Entregas from '../../../components/dashboard/venda/entregas';
 import axios from 'axios';
 
