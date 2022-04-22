@@ -78,15 +78,15 @@ export default function Entregas(props) {
         let vlrEntrega = event.target.value;
         let vEntrega =  vlrEntrega.replace(",", ".");
         const valorEntr = parseFloat(vEntrega)
-        setTxEntrega(valorEntr) 
+        setTxEntrega(valorEntr)
+        if(valorPedido.length != 0){
+          let totalPagar = valorEntr + valorPedido;
+          setValorPagar(totalPagar)
+        } 
       }else{        
         setTxEntrega('')        
-      }
+      }      
       
-      if(event.target.value.length != 0 & valorPedido.length != 0){
-        let totalPagar = valorPedido +  valorEntr;
-        setValorPagar(totalPagar)                
-      }
     };
 
     const handleValorPedido = (event) => {
@@ -95,16 +95,14 @@ export default function Entregas(props) {
         const vlrPedido = event.target.value;
         const vPedido =  vlrPedido.replace(",", ".");
         const valorPed = parseFloat(vPedido)
-        setValorPedido(valorPed)                
+        setValorPedido(valorPed)
+        if(txEntrega.length != 0){
+          let totalPagar = valorPed + txEntrega;
+          setValorPagar(totalPagar)
+        }                
       }else{        
         setValorPedido('')        
       }
-
-      if(event.target.value.length != 0 & txEntrega.length != 0){
-        let totalPagar = valorPed + txEntrega;
-        setValorPagar(totalPagar)                
-      }
-
 
     };
 
