@@ -139,9 +139,9 @@ export default function Entregas(props) {
         setNumero(custumerFiltered[0].numero)
         setComplemento(custumerFiltered[0].complemento)
         setBairro(custumerFiltered[0].bairro)
-        let vlrEntrega = custumerFiltered[0].txEntrega;
-        let vEntrega =  vlrEntrega.replace(",", ".");
-        setTxEntrega(vEntrega)
+        //let vlrEntrega = custumerFiltered[0].txEntrega;
+        //let vEntrega =  vlrEntrega.replace(",", ".");
+        setTxEntrega(custumerFiltered[0].txEntrega)
         setShowDados(true)
       }
            
