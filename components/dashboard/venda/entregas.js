@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import { AuthContext } from '../../../contexts/AuthContext';
 import PrintIcon from '@material-ui/icons/Print';
 import SendIcon from '@material-ui/icons/Send';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -17,6 +18,7 @@ import Grid from '@mui/material/Grid';
 const theme = createTheme();
 export default function Entregas(props) {
     //const listConsumers = props.consumers;
+    const {isAuthenticated} = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
