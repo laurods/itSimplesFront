@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import styles from '../../../styles.module.css'
 import { AuthContext } from '../../../contexts/AuthContext';
 import PrintIcon from '@material-ui/icons/Print';
 import SendIcon from '@material-ui/icons/Send';
@@ -417,7 +418,7 @@ export default function Entregas(props) {
         {!show && <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid 
           item xs={12} md={12}>
-            <div style={ 
+            {/* <div style={ 
               {
                 margin: 0,
                 padding: 0,
@@ -426,11 +427,10 @@ export default function Entregas(props) {
                 displayMode: "fullscreen",
                 pageBreakBefore: "always",
                                 
-              }
-              
-                            
+              }           
              
-              }>
+              }> */}
+              <div className={styles.page}>
                  <p>{CNPJsByUsers[0].name}</p>
                  <p>..................................</p>
                  <p>Telefone: {DDD}{word}</p>
