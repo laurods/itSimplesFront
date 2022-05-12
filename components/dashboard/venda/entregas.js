@@ -431,7 +431,7 @@ export default function Entregas(props) {
              
               }> */}
               <div className={styles.page}>
-                <div className={styles.page-inner}>
+                <div className={styles.pageInner}>
                  <p>{CNPJsByUsers[0].name}</p>
                  <p>..................................</p>
                  <p>Telefone: {DDD}{word}</p>
