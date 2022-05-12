@@ -432,20 +432,20 @@ export default function Entregas(props) {
               }> */}
               <div className={styles.page}>
                 <div className={styles.pageInner}>
-                 <span>{CNPJsByUsers[0].name}</span> <br/>
+                 <span><b>{CNPJsByUsers[0].name}</b></span> <br/>
                  <span>..................................</span> <br/>
-                 <span>Telefone: {DDD}{word}</span> <br/>
-                 <span>Nome: {nome}</span> <br/>
-                 <span>Rua: {rua}</span> <br/>
-                 <span>Numero: {numero}</span> <br/>
-                 <span>Complemento: {complemento}</span> <br/>
-                 <span>Bairro: {bairro}</span> <br/>
+                 <span>Telefone: <b>{DDD}{word}</b></span> <br/>
+                 <span>Nome: <b>{nome}</b></span> <br/>
+                 <span>Rua:<b>{rua}</b></span> <br/>
+                 <span>Numero: <b>{numero}</b></span> <br/>
+                 <span>Complemento: <b>{complemento}</b></span> <br/>
+                 <span>Bairro: <b>{bairro}</b></span> <br/>
                  <span>..................................</span> <br/>
-                 <span>Pedido: {pedido}</span> <br/>
-                 <span>Taxa Entrega: {txEntrega}</span> <br/>
-                 <span>Valor Pedido: {valorPedido}</span> <br/>
-                 <span>Valor Pagar: {valorPagar}</span> <br/>
-                 <span>Pagamento: {tipoPagamento}</span> <br/>
+                 <span>Pedido: <b>{pedido}</b></span> <br/>
+                 <span>Taxa Entrega: <b>{txEntrega}</b></span> <br/>
+                 <span>Valor Pedido: <b>{valorPedido}</b></span> <br/>
+                 <span>Valor Pagar: <b>{valorPagar}</b></span> <br/>
+                 <span>Pagamento: <b>{tipoPagamento}</b></span> <br/>
                  <span>..................................</span> <br/>
                  <span>                 
                  <Button 
