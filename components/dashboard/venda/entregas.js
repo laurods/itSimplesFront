@@ -436,8 +436,8 @@ export default function Entregas(props) {
                  <p>..................................</p>
                  <p className={styles.paragraph}>Telefone: {DDD}{word}</p>
                  <p className={styles.paragraph}>Nome: {nome}</p>
-                 <p>Rua: {rua}</p>
-                 <p>Numero: {numero}</p>
+                 <span>Rua: {rua}</span> <br/>
+                 <span>Numero: {numero}</span> <br/>
                  <p>Complemento: {complemento}</p>
                  <p>Bairro: {bairro}</p>
                  <p>..................................</p>
