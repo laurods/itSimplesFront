@@ -1,11 +1,3 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-* {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
 .page {
     width: 29cm;
     min-height: 7.5cm;
