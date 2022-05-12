@@ -14,10 +14,7 @@
     outline: 2cm #F4F3F1 solid;
 }
 
-.paragraph{
-     background: #F4F3F1;
-     padding: 0;
-}
+
 
 @page {
    /*size: A4;*/

@@ -432,30 +432,30 @@ export default function Entregas(props) {
               }> */}
               <div className={styles.page}>
                 <div className={styles.pageInner}>
-                 <p className={styles.paragraph}>{CNPJsByUsers[0].name}</p>
-                 <p>..................................</p>
-                 <p className={styles.paragraph}>Telefone: {DDD}{word}</p>
-                 <p className={styles.paragraph}>Nome: {nome}</p>
+                 <span>{CNPJsByUsers[0].name}</span> <br/>
+                 <span>..................................</span> <br/>
+                 <span>Telefone: {DDD}{word}</span> <br/>
+                 <span>Nome: {nome}</span> <br/>
                  <span>Rua: {rua}</span> <br/>
                  <span>Numero: {numero}</span> <br/>
-                 <p>Complemento: {complemento}</p>
-                 <p>Bairro: {bairro}</p>
-                 <p>..................................</p>
-                 <p>Pedido: {pedido}</p>
-                 <p>Taxa Entrega: {txEntrega}</p>
-                 <p>Valor Pedido: {valorPedido}</p>
-                 <p>Valor Pagar: {valorPagar}</p>
-                 <p>Pagamento: {tipoPagamento}</p>
-                 <p>..................................</p>
-                 <p>                 
+                 <span>Complemento: {complemento}</span> <br/>
+                 <span>Bairro: {bairro}</span> <br/>
+                 <span>..................................</span> <br/>
+                 <span>Pedido: {pedido}</span> <br/>
+                 <span>Taxa Entrega: {txEntrega}</span> <br/>
+                 <span>Valor Pedido: {valorPedido}</span> <br/>
+                 <span>Valor Pagar: {valorPagar}</span> <br/>
+                 <span>Pagamento: {tipoPagamento}</span> <br/>
+                 <span>..................................</span> <br/>
+                 <span>                 
                  <Button 
                  variant="text" 
                  onClick={handlePrint}
                  endIcon={<PrintIcon /> }
                  >Para Imprimir pressione CTROL P
                  </Button>          
-                  </p>
-                 <p>
+                 </span> <br/>
+                  <span>
                  <Button 
                  variant="text" 
                  onClick={handleNew}
@@ -463,7 +463,7 @@ export default function Entregas(props) {
                  >NOVO PEDIDO
                  </Button>
                   
-                   </p>
+                 </span> 
                 
               </div>
             </div>
