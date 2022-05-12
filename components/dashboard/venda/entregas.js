@@ -432,10 +432,10 @@ export default function Entregas(props) {
               }> */}
               <div className={styles.page}>
                 <div className={styles.pageInner}>
-                 <p>{CNPJsByUsers[0].name}</p>
+                 <p className={styles.paragraph}>{CNPJsByUsers[0].name}</p>
                  <p>..................................</p>
-                 <p>Telefone: {DDD}{word}</p>
-                 <p>Nome: {nome}</p>
+                 <p className={styles.paragraph}>Telefone: {DDD}{word}</p>
+                 <p className={styles.paragraph}>Nome: {nome}</p>
                  <p>Rua: {rua}</p>
                  <p>Numero: {numero}</p>
                  <p>Complemento: {complemento}</p>
