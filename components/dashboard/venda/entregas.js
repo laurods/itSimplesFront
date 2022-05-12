@@ -386,19 +386,7 @@ export default function Entregas(props) {
           
         </Grid>
        }
-         {/* {showDados && <Grid item xs={6} md={3}>
-          <Button          
-            fullWidth
-            size="large" 
-            variant="contained" 
-            sx={{ mt: 1 }}
-            onClick={calcularValorPagar}
-            endIcon={<CheckCircleIcon />}
-            >
-            Calcular        
-          </Button>             
-         </Grid>
-        } */}
+         
          {showDados && <Grid item xs={12} md={6}>
           <Button          
             fullWidth
@@ -418,18 +406,7 @@ export default function Entregas(props) {
         {!show && <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid 
           item xs={12} md={12}>
-            {/* <div style={ 
-              {
-                margin: 0,
-                padding: 0,
-                height: '15cm',
-                width: '10cm',
-                displayMode: "fullscreen",
-                pageBreakBefore: "always",
-                                
-              }           
-             
-              }> */}
+           
               <div className={styles.page}>
                 <div className={styles.pageInner}>
                  <span><b>{CNPJsByUsers[0].name}</b></span> <br/>
@@ -471,106 +448,7 @@ export default function Entregas(props) {
 
           </Grid>
         </Grid>}
-        {/* {!show &&<Grid container spacing={2} sx={{ mt: 3 }}>
        
-        <Grid item xs={12} md={3}>
-          <TextField
-            label="Nome"
-            id="nome"
-            onChange={handleNome}
-            value={nome}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={9} md={4}>
-          <TextField
-            label="Rua"
-            id="rua"
-            onChange={handleRua}
-            value={rua}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={3} md={1}>
-          <TextField
-            label="Numero"
-            id="numero"
-            onChange={handleNumero}
-            value={numero}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={6} md={2}>
-          <TextField
-            label="Complemento"
-            id="complemento"
-            onChange={handleComplemento}
-            value={complemento}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={6} md={2}>
-          <TextField
-            label="Bairro"
-            id="bairro"
-            onChange={handleBairro}
-            value={bairro}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12} md={5}>
-          <TextField
-            label="Pedido"
-            id="pedido"
-            multiline
-            maxRows={3}
-            onChange={handlePedido}
-            value={pedido}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={6} md={1}>
-          <TextField
-            label="Entrega"
-            id="txEntrega"
-            onChange={handleTxEntrega}
-            value={txEntrega}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={6} md={2}>
-          <TextField
-            label="Pedido"
-            id="valorPedido"
-            onChange={handleValorPedido}
-            value={valorPedido}
-            fullWidth
-            variant="outlined"
-          />
-        </Grid>
-
-         <Grid item xs={12} md={2}>
-          <Button          
-            fullWidth
-            size="large" 
-            variant="contained" 
-            sx={{ mt: 1 }}
-            onClick={handlePrint}
-            endIcon={<PrintIcon />}
-            >
-            Imprimir        
-          </Button>             
-         </Grid>
-
-
-         </Grid>} */}
         
       </Box>      
        
