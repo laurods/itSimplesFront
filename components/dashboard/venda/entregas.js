@@ -446,7 +446,7 @@ export default function Entregas(props) {
                  <span>Valor Pedido: <b>{valorPedido}</b></span> <br/>
                  <span>Valor Pagar: <b>{valorPagar}</b></span> <br/>
                  <span>Pagamento: <b>{tipoPagamento}</b></span> <br/>
-                 <span>..................................</span> <br/>
+                 <span>..................................</span> 
                  <span>                 
                  <Button 
                  variant="text" 
@@ -454,15 +454,14 @@ export default function Entregas(props) {
                  endIcon={<PrintIcon /> }
                  >Para Imprimir pressione CTROL P
                  </Button>          
-                 </span> <br/>
+                 </span> 
                   <span>
                  <Button 
                  variant="text" 
                  onClick={handleNew}
                  endIcon={<CheckCircleIcon /> }
                  >NOVO PEDIDO
-                 </Button>
-                  
+                 </Button>                  
                  </span> 
                 
               </div>
