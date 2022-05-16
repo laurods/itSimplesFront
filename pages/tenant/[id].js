@@ -1,5 +1,10 @@
-export default (req, res) => {
+import { useRouter } from 'next/router'
 
-    res.status(200).json({ message: `Welcome ${req.query.id}` })
-  
-  }
+const Post = () => {
+  const router = useRouter()
+  const { id } = router.query
+
+  return <p>Post: {id}</p>
+}
+
+export default Post
