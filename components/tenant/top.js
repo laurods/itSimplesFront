@@ -15,7 +15,7 @@ export default function TopDashboard() {
     
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color='#F57F17'>
+      <AppBar position="static">
         <Toolbar>
           <IconButton
             size="large"
