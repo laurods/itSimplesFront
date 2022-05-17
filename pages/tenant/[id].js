@@ -1,10 +1,16 @@
+import React, {useEffect, useState} from 'react';
 import { useRouter } from 'next/router'
+import Header from '../../components/tenant/header';
 
-const Post = () => {
+export default function Tenant() {
   const router = useRouter()
   const { id } = router.query
 
-  return <p>Post: {id}</p>
+  return (
+    <>    
+    <Header />
+    <p>Seu id é {id}</p> 
+    </>
+  );
 }
 
-export default Post
