@@ -3,8 +3,8 @@ import '../../tenant.module.css';
 
 export default({black})=>{
     return(
-        <header className={black ? 'black':''}>
-            <div className="header--logo">
+        <header className='myHeader'>
+            <div className='header--logo'>
                 {/* <a href="/">
                     <img src="/images/logobaggio960_960.png" alt="Logo Baggio Festas" />
                 </a> */}
