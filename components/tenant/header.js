@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../tenant.module.css';
+import styles from '../../styles.module.css';
 
 export default({black})=>{
     return(
-        <header className='myHeader'>
+        <header className={styles.myHeader}>
             <div className='header--logo'>
                 {/* <a href="/">
                     <img src="/images/logobaggio960_960.png" alt="Logo Baggio Festas" />
