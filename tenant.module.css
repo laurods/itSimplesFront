@@ -107,24 +107,24 @@
 .myHeader.black{
     background-color: #dc3458ff;
 }
-.header--logo{
+.headerLogo{
     height: 70px;
 }
-.header--logo img{
+.headerLogo img{
     height: 100%;
 }
-.header--user{
+.headerUser{
     height: 35px;
 }
-.header--user img{
+.headerUser img{
     height: 100%;
     border-radius: 3px;
 }
 
-.header--seach{
+.headerSeach{
     height: 70px;
 }
-.header--seach input{
+.headerSeach input{
     height: 35px;
     font-size: 15px;
     margin-top: 15px;
@@ -137,7 +137,7 @@
 }
 
   @media (max-width:760px){
-    .header--seach input{        
+    .headerSeach input{        
         min-width: 300px;        
     }
     .itemRow--left,
