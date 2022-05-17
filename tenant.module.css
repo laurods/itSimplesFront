@@ -129,10 +129,9 @@
     font-size: 15px;
     margin-top: 15px;
     border-radius: 8px;
-    border:"solid 1px gray";
-    
+    border:"solid 1px gray";    
     min-width: 400px;
-    color:white;
+    color: gray;
     background-color: inherit;
 }
 

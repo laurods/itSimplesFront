@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useRouter } from 'next/router'
-import Header from '../../components/tenant/header';
+import Top from '../../components/tenant/top';
 
 export default function Tenant() {
   const router = useRouter()
@@ -8,8 +8,8 @@ export default function Tenant() {
 
   return (
     <>    
-    <Header />
-    <p>Seu id é {id}</p> 
+    <Top />
+    
     </>
   );
 }
