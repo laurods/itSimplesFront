@@ -135,10 +135,6 @@
     color:white;
     background-color: inherit;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color:white;
-    opacity: 1; /* Firefox */
-  }
 
   @media (max-width:760px){
     .header--seach input{        
