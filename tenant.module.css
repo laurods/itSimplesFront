@@ -1,7 +1,7 @@
 .lists{
   margin-top:-150px;
 }
-footer{
+.myFooter{
   margin:50x 0;
   text-align: center;
 }
@@ -90,7 +90,7 @@ footer{
 
 /*Header*/
 
-header{
+.myHeader{
     position: fixed;
     z-index: 999;
     top: 0;
@@ -104,7 +104,7 @@ header{
     background: transparent;
     transition: all ease 0.5s;
 }
-header.black{
+.myHeader.black{
     background-color: #dc3458ff;
 }
 .header--logo{
