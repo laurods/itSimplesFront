@@ -11,11 +11,11 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 
 export default function TopDashboard() {
-    const { userEmail, telaCheia } = useContext(AuthContext);
+    const { telaCheia } = useContext(AuthContext);
     
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" color='#F57F17'>
         <Toolbar>
           <IconButton
             size="large"
@@ -28,7 +28,7 @@ export default function TopDashboard() {
 
           </IconButton>                  
           <Typography variant="subtitle1" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
-          {userEmail}
+          Fale Conosco pelo whats 54.8100.6560
           </Typography>         
           <Typography variant="h6">          
           <Menu />
