@@ -33,10 +33,8 @@ export default function ViewAll(props) {
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
 
-      <Grid container spacing={2}>
-      <Grid item xs={1} md={1}>
-      </Grid>      
-        <Grid item xs={7} md={7}>
+      <Grid container spacing={2}>          
+        <Grid item xs={8} md={8}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
@@ -47,6 +45,14 @@ export default function ViewAll(props) {
                       key={row.telefone}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                       >
+                      <TableCell component="th" scope="row">
+                      <Button 
+                        variant="text" 
+                        endIcon={<CheckCircleIcon /> }
+                        >IMPRIMIR
+                 </Button>
+                      
+                      </TableCell>     
                       <TableCell component="th" scope="row">{row.telefone}</TableCell>                   
                       <TableCell component="th" scope="row">{row.nome}</TableCell>
                       <TableCell component="th" scope="row">{row.rua}</TableCell>
