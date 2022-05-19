@@ -29,6 +29,10 @@ export default function ViewAll(props) {
     console.log(props.listConsumers)
     const allConsumers = props.listConsumers;
     const listConsumers = allConsumers.slice(0, 10);
+
+    const sendCustumer = () => {
+        props.handleSetCustumer()
+    }
     
   return (
     <ThemeProvider theme={theme}>
@@ -50,7 +54,7 @@ export default function ViewAll(props) {
                       <Button 
                         variant="text" 
                         endIcon={<PrintIcon /> }
-                        onClick={props.handleSetCustumer()}
+                        onClick={sendCustumer}
                         >
                      {row.telefone}
                  </Button>
