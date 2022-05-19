@@ -27,7 +27,7 @@ const theme = createTheme();
 export default function ViewAll(props) {
     console.log('props.listConsumers')
     console.log(props.listConsumers)
-    const listConsumers = [];
+    const listConsumers = props.listConsumers;
     
   return (
     <ThemeProvider theme={theme}>
@@ -44,13 +44,14 @@ export default function ViewAll(props) {
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
                   {listConsumers.map((row) => (
                       <TableRow
-                      key={row._id}
+                      key={row.telefone}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                       >
-                      <TableCell component="th" scope="row">{row.nome}</TableCell>                   
-                      <TableCell component="th" scope="row">{row.Modelo}</TableCell>
-                      <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
-                      <TableCell component="th" scope="row">{row.Status}</TableCell>
+                      <TableCell component="th" scope="row">{row.telefone}</TableCell>                   
+                      <TableCell component="th" scope="row">{row.nome}</TableCell>
+                      <TableCell component="th" scope="row">{row.rua}</TableCell>
+                      <TableCell component="th" scope="row">{row.numero}</TableCell>
+                      <TableCell component="th" scope="row">{row.bairro}</TableCell>
                       </TableRow>
                   ))}
                   </TableBody>
