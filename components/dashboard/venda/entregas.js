@@ -225,6 +225,8 @@ export default function Entregas(props) {
 
 const handleSetCustumer = (dataCustumer) => {
   console.log('teste')
+  console.log('dataCustumer')
+  console.log(dataCustumer)
 }
 
   return (

@@ -31,9 +31,9 @@ export default function ViewAll(props) {
     const listConsumers = allConsumers.slice(0, 10);
 
     const sendCustumer = (row) => {
-        props.handleSetCustumer()
-        console.log('row')
-        console.log(row)
+        props.handleSetCustumer(row)
+        // console.log('row')
+        // console.log(row)
     }
     
   return (
