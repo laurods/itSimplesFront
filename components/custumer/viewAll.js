@@ -50,14 +50,16 @@ export default function ViewAll(props) {
                       <Button 
                         variant="text" 
                         endIcon={<PrintIcon /> }
+                        onClick={props.handleSetCustumer()}
                         >
+                     {row.telefone}
                  </Button>
                       
-                      </TableCell>     
-                      <TableCell component="th" scope="row">{row.telefone}</TableCell>                   
+                      </TableCell>      
                       <TableCell component="th" scope="row">{row.nome}</TableCell>
                       <TableCell component="th" scope="row">{row.rua}</TableCell>
                       <TableCell component="th" scope="row">{row.numero}</TableCell>
+                      <TableCell component="th" scope="row">{row.complemento}</TableCell>
                       <TableCell component="th" scope="row">{row.bairro}</TableCell>
                       </TableRow>
                   ))}

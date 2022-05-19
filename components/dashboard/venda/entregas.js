@@ -223,6 +223,10 @@ export default function Entregas(props) {
     window.print()
 };
 
+const handleSetCustumer = (dataCustumer) => {
+  console.log('teste')
+}
+
   return (
     <ThemeProvider theme={theme}>
       <Container>      
@@ -457,7 +461,7 @@ export default function Entregas(props) {
           </Grid>
         </Grid>}
 
-        <ViewAll listConsumers={listConsumers}/>
+        <ViewAll listConsumers={listConsumers} handleSetCustumer={handleSetCustumer}/>
        
         
       </Box>      
