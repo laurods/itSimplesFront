@@ -30,8 +30,10 @@ export default function ViewAll(props) {
     const allConsumers = props.listConsumers;
     const listConsumers = allConsumers.slice(0, 10);
 
-    const sendCustumer = () => {
+    const sendCustumer = (row) => {
         props.handleSetCustumer()
+        console.log('row')
+        console.log(row)
     }
     
   return (
@@ -54,7 +56,7 @@ export default function ViewAll(props) {
                       <Button 
                         variant="text" 
                         endIcon={<PrintIcon /> }
-                        onClick={sendCustumer}
+                        onClick={sendCustumer(row)}
                         >
                      {row.telefone}
                  </Button>
