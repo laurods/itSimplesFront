@@ -29,6 +29,7 @@ export default function Entregas(props) {
     const [year, setYear] = useState(dataAtual.getFullYear());
     const [show, setShow] = useState(true);    
     const [showDados, setShowDados] = useState(false);
+    const [showViewAll, setShowViewAll] = useState(true);
    
     const [listConsumers, setListConsumers] = useState(props.consumers);
     const [custumer, setCustumer] = useState([]);
@@ -48,6 +49,7 @@ export default function Entregas(props) {
     
     const handleWord = (event) => {
       const primeiroNumero = event.target.value.charAt(0);
+      setShowViewAll(true)
       setWord(event.target.value)
       handleFilterViewAll(event.target.value)
       if(event.target.value.length == 0){
@@ -159,6 +161,7 @@ export default function Entregas(props) {
 
   const handleNew = async () => {
     setShow(true)
+    setShowViewAll(true)
     setWord('')
     setPedido('')
     setValorPedido('')
@@ -236,6 +239,7 @@ const handleSetCustumer = (dataCustumer) => {
   setBairro(dataCustumer.bairro)
   setTxEntrega(dataCustumer.txEntrega)
   setShowDados(true)
+  setShowViewAll(false)
 }
 
   return (
@@ -472,7 +476,7 @@ const handleSetCustumer = (dataCustumer) => {
           </Grid>
         </Grid>}
 
-        <ViewAll listConsumers={listConsumers} handleSetCustumer={handleSetCustumer}/>
+        {showViewAll && <ViewAll listConsumers={listConsumers} handleSetCustumer={handleSetCustumer}/>}
        
         
       </Box>      
