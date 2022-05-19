@@ -14,6 +14,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
+import ViewAll from '../../custumer/viewAll'
 
 
 const theme = createTheme();
@@ -448,6 +449,8 @@ export default function Entregas(props) {
 
           </Grid>
         </Grid>}
+
+        <ViewAll />
        
         
       </Box>      
