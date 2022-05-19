@@ -227,6 +227,15 @@ const handleSetCustumer = (dataCustumer) => {
   console.log('teste')
   console.log('dataCustumer')
   console.log(dataCustumer)
+  setAddNewCustumer(false)
+  //setCustumer(custumerFiltered)
+  setNome(dataCustumer.nome)
+  setRua(dataCustumer.rua)
+  setNumero(dataCustumer.numero)
+  setComplemento(dataCustumer.complemento)
+  setBairro(dataCustumer.bairro)
+  setTxEntrega(dataCustumer.txEntrega)
+  setShowDados(true)
 }
 
   return (

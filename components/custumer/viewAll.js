@@ -32,8 +32,6 @@ export default function ViewAll(props) {
 
     const sendCustumer = (row) => {
         props.handleSetCustumer(row)
-        // console.log('row')
-        // console.log(row)
     }
     
   return (
