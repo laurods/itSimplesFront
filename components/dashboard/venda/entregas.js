@@ -238,6 +238,7 @@ const handleSetCustumer = (dataCustumer) => {
   console.log(dataCustumer)
   setAddNewCustumer(false)
   //setCustumer(custumerFiltered)
+  setWord(dataCustumer.telefone)
   setNome(dataCustumer.nome)
   setRua(dataCustumer.rua)
   setNumero(dataCustumer.numero)
