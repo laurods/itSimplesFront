@@ -450,7 +450,7 @@ export default function Entregas(props) {
           </Grid>
         </Grid>}
 
-        <ViewAll />
+        <ViewAll listConsumers={listConsumers}/>
        
         
       </Box>      

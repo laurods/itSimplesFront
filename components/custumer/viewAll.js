@@ -24,8 +24,9 @@ import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
-export default function ViewAll() {
-
+export default function ViewAll(props) {
+    console.log('props.listConsumers')
+    console.log(props.listConsumers)
     const listConsumers = [];
     
   return (
@@ -46,7 +47,7 @@ export default function ViewAll() {
                       key={row._id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                       >
-                      <TableCell component="th" scope="row">{row.IMEI}</TableCell>                   
+                      <TableCell component="th" scope="row">{row.nome}</TableCell>                   
                       <TableCell component="th" scope="row">{row.Modelo}</TableCell>
                       <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
                       <TableCell component="th" scope="row">{row.Status}</TableCell>
