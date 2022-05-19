@@ -56,7 +56,7 @@ export default function ViewAll(props) {
                       <Button 
                         variant="text" 
                         endIcon={<PrintIcon /> }
-                        onClick={sendCustumer(row)}
+                        onClick={() => sendCustumer(row)}
                         >
                      {row.telefone}
                  </Button>
