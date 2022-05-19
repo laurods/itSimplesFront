@@ -58,18 +58,22 @@ export default function Entregas(props) {
         setShowDados(false)       
         }
       if(primeiroNumero != 9 & event.target.value.length == 8 ){ /* se primeiro numero for diferente de 9 é número fixo. Numero fixo tem 8 caracteres*/       
-              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/              
+              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/
+              setShowViewAll(false)              
         }
       if(primeiroNumero == 9 & event.target.value.length == 9){ /* se primeiro numero for igual 9 é número celular. Numero fixo tem  caracteres**/
-              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/             
+              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/ 
+              setShowViewAll(false)            
         }
         /* Valida para usuário não cadastrar consumidores com quantidade de numeros de telefone errado*/
       if(primeiroNumero == 9 & event.target.value.length != 9){ 
-            setShowDados(false)              
+            setShowDados(false) 
+            setShowViewAll(false)             
       }
       /* Valida para usuário não cadastrar consumidores com quantidade de numeros de telefone errado*/
       if(primeiroNumero != 9 & event.target.value.length != 8){ 
-        setShowDados(false)              
+        setShowDados(false)
+        setShowViewAll(false)              
       }
     };
 
@@ -145,6 +149,7 @@ export default function Entregas(props) {
         setBairro('')
         setTxEntrega('')
         setShowDados(true)
+        
       }else{
         setAddNewCustumer(false)
         setCustumer(custumerFiltered)
@@ -184,7 +189,8 @@ export default function Entregas(props) {
        tipoPagamento.length !=0
      ){
       setShow(false)
-      setShowDados(false)      
+      setShowDados(false)
+      setShowViewAll(false)      
       sendData() 
      }else{
        alert('Todos os campos deve estar preenchidos')
