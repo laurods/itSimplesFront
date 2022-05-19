@@ -19,7 +19,7 @@ import ViewAll from '../../custumer/viewAll'
 
 const theme = createTheme();
 export default function Entregas(props) {
-    //const listConsumers = props.consumers;
+    const allConsumers = props.consumers;
     const {isAuthenticated, CNPJsByUsers} = useContext(AuthContext);
     console.log('CNPJsByUsers')
     console.log(CNPJsByUsers)
@@ -49,6 +49,7 @@ export default function Entregas(props) {
     const handleWord = (event) => {
       const primeiroNumero = event.target.value.charAt(0);
       setWord(event.target.value)
+      handleFilterViewAll(event.target.value)
       if(event.target.value.length == 0){
         setCustumer([]);
         setWord('');
@@ -122,6 +123,12 @@ export default function Entregas(props) {
         setValorPagar(totalPagar)        
       }
      
+    }
+
+    const handleFilterViewAll = (word) => {
+      const filteredCustumer = allConsumers.filter((item) => item.telefone.includes(word) )
+      setListConsumers(filteredCustumer)
+
     }
     
     const handleFilter = (word) => {
