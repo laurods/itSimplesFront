@@ -27,14 +27,15 @@ const theme = createTheme();
 export default function ViewAll(props) {
     console.log('props.listConsumers')
     console.log(props.listConsumers)
-    const listConsumers = props.listConsumers;
+    const allConsumers = props.listConsumers;
+    const listConsumers = allConsumers.slice(0, 10);
     
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
 
       <Grid container spacing={2}>          
-        <Grid item xs={8} md={8}>
+        <Grid item xs={8} md={10}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
@@ -48,8 +49,8 @@ export default function ViewAll(props) {
                       <TableCell component="th" scope="row">
                       <Button 
                         variant="text" 
-                        endIcon={<CheckCircleIcon /> }
-                        >IMPRIMIR
+                        endIcon={<PrintIcon /> }
+                        >
                  </Button>
                       
                       </TableCell>     
