@@ -76,12 +76,7 @@ export default function Entregas(props) {
       }
     };
 
-    const handleNomeRuaBairro = (event) => {
-      setShowViewAll(true)
-      setNomeRuaBairro(event.target.value)
-      handleFilterNomeRuaBairro(event.target.value)      
-    };
-
+   
 
     const handleDDD = (event) => { setDDD(event.target.value) };
     const handleNome = (event) => { setNome(event.target.value.toUpperCase()) };
@@ -137,9 +132,15 @@ export default function Entregas(props) {
 
 
 
-  const handleFilterNomeRuaBairro = (nomeRuaBairro) => {
-    const filteredCustumer = allConsumers.filter((item) => item.nome.includes(nomeRuaBairro) )
+  const handleFilterNomeRuaBairro = (event) => {
+      setShowViewAll(true)
+      setNomeRuaBairro(event.target.value)
+    const filteredCustumer = allConsumers.filter((item) => item.nome.includes(event.target.value) )
       setListConsumers(filteredCustumer)
+
+      console.log('event.target.value')
+      console.log(event.target.value)
+      Console.log(filteredCustumer)
          
 };
 
@@ -269,7 +270,7 @@ const handleSetCustumer = (dataCustumer) => {
               label="Nome | Rua | Bairro"
               id="telefone"
               value={nomeRuaBairro} 
-              onChange={handleNomeRuaBairro}                          
+              onChange={handleFilterNomeRuaBairro}                          
               autoComplete="off"
               variant="standard"
             />

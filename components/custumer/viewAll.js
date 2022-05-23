@@ -39,7 +39,7 @@ export default function ViewAll(props) {
     <Box sx={{ flexGrow: 1 }}>
 
       <Grid container spacing={2}>          
-        <Grid item xs={8} md={10}>
+        <Grid item xs={8} md={12}>
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                    
