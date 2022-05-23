@@ -145,7 +145,6 @@ export default function Entregas(props) {
        numero.length !=0 &
        complemento.length !=0 &
        bairro.length !=0 &
-       pedido.length !=0 &
        txEntrega.length !=0 
      ){
       setShow(false)
