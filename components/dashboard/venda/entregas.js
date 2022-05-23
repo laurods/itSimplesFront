@@ -138,29 +138,8 @@ export default function Entregas(props) {
 
 
   const handleFilterNomeRuaBairro = (nomeRuaBairro) => {
-    const custumerFiltered = listConsumers.filter((item) => item.nome.includes(nomeRuaBairro) )
-    if(custumerFiltered.length == 0){
-      setAddNewCustumer(true)
-      setCustumer('')
-      setNome('')
-      setRua('')
-      setNumero('')
-      setComplemento('')
-      setBairro('')
-      setTxEntrega('')
-      setShowDados(true)
-      
-    }else{
-      setAddNewCustumer(false)
-      setCustumer(custumerFiltered)
-      setNome(custumerFiltered[0].nome)
-      setRua(custumerFiltered[0].rua)
-      setNumero(custumerFiltered[0].numero)
-      setComplemento(custumerFiltered[0].complemento)
-      setBairro(custumerFiltered[0].bairro)
-      setTxEntrega(custumerFiltered[0].txEntrega)
-      setShowDados(true)
-    }
+    const filteredCustumer = allConsumers.filter((item) => item.nome.includes(nomeRuaBairro) )
+      setListConsumers(filteredCustumer)
          
 };
 
@@ -261,7 +240,7 @@ const handleSetCustumer = (dataCustumer) => {
             autoComplete="off"
           />
         </Grid>
-        <Grid item xs={5} md={2}>
+        <Grid item xs={5} md={5}>
          <TextField
               margin="normal"
               required
@@ -279,7 +258,7 @@ const handleSetCustumer = (dataCustumer) => {
             />
         </Grid>
 
-        <Grid item xs={5} md={2}>
+        <Grid item xs={5} md={5}>
          <TextField
               margin="normal"
               required
