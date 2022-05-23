@@ -82,50 +82,17 @@ export default function Entregas(props) {
     const handleComplemento = (event) => { setComplemento(event.target.value.toUpperCase()) };
     const handleBairro = (event) => { setBairro(event.target.value.toUpperCase()) };
     const handleTxEntrega = (event) => {
-      setValorPagar('')
       if(event.target.value.length != 0){
         let vlrEntrega = event.target.value;
         let vEntrega =  vlrEntrega.replace(",", ".");
         const valorEntregaFloat = parseFloat(vEntrega)
-        setTxEntrega(valorEntregaFloat)
-        if(valorPedido.length != 0){
-          let valorPedidoFloat = parseFloat(valorPedido)
-          let totalPagar = valorEntregaFloat + valorPedidoFloat;
-          setValorPagar(totalPagar)
-        } 
+        setTxEntrega(valorEntregaFloat)        
       }else{        
         setTxEntrega('')        
       }      
       
-    };
+    };  
 
-    const handleValorPedido = (event) => {
-      setValorPagar('')
-      if(event.target.value.length != 0){
-        const vlrPedido = event.target.value;
-        const vPedido =  vlrPedido.replace(",", ".");
-        const valorPedidoFloat = parseFloat(vPedido)        
-        if(txEntrega.length != 0){        
-          let taxaEntregaFloat = parseFloat(txEntrega)
-          let totalPagar = valorPedidoFloat + taxaEntregaFloat;
-          setValorPagar(totalPagar)
-        }
-        setValorPedido(valorPedidoFloat)                
-      }else{        
-        setValorPedido('')        
-      }
-
-    };
-
-    const calcularValorPagar = () =>{
-      if(valorPedido.length != 0 & txEntrega !=0 ){
-        let vTxEntrega = parseFloat(txEntrega)
-        let pedido = parseFloat(valorPedido)
-        let totalPagar = vTxEntrega + pedido      
-        setValorPagar(totalPagar)        
-      }
-     
-    }
 
     const handleFilterViewAll = (word) => {
       const filteredCustumer = allConsumers.filter((item) => item.telefone.includes(word) )
