@@ -234,7 +234,10 @@ const handleSetCustumerAndView = (dataCustumer) => {
   setComplemento(dataCustumer.complemento)
   setBairro(dataCustumer.bairro)
   setTxEntrega(dataCustumer.txEntrega)
-  handleView();
+      setShow(false)
+      setShowDados(false)
+      setShowViewAll(false)      
+      sendData()
 
 }
 
