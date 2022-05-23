@@ -140,7 +140,7 @@ export default function Entregas(props) {
 
       console.log('event.target.value')
       console.log(event.target.value)
-      Console.log(filteredCustumer)
+      console.log(filteredCustumer)
          
 };
 
