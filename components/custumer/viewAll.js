@@ -33,6 +33,10 @@ export default function ViewAll(props) {
     const sendCustumer = (row) => {
         props.handleSetCustumer(row)
     }
+
+    const sendCustumerAndView = (row) => {
+      props.handleSetCustumerAndView(row)
+  }
     
   return (
     <ThemeProvider theme={theme}>
@@ -54,7 +58,7 @@ export default function ViewAll(props) {
                       <Button 
                         variant="text" 
                         endIcon={<PrintIcon /> }
-                        onClick={() => sendCustumer(row)}
+                        onClick={() => sendCustumerAndView(row)}
                         >
                      {row.telefone}
                       </Button>                      

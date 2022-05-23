@@ -221,6 +221,23 @@ const handleSetCustumer = (dataCustumer) => {
   setShowViewAll(false)
 }
 
+const handleSetCustumerAndView = (dataCustumer) => {
+  console.log('teste')
+  console.log('dataCustumer')
+  console.log(dataCustumer)
+  setAddNewCustumer(false)
+  //setCustumer(custumerFiltered)
+  setWord(dataCustumer.telefone)
+  setNome(dataCustumer.nome)
+  setRua(dataCustumer.rua)
+  setNumero(dataCustumer.numero)
+  setComplemento(dataCustumer.complemento)
+  setBairro(dataCustumer.bairro)
+  setTxEntrega(dataCustumer.txEntrega)
+  handleView();
+
+}
+
   return (
     <ThemeProvider theme={theme}>
       <Container>      
@@ -416,7 +433,12 @@ const handleSetCustumer = (dataCustumer) => {
           </Grid>
         </Grid>}
 
-        {showViewAll && <ViewAll listConsumers={listConsumers} handleSetCustumer={handleSetCustumer}/>}
+        {showViewAll && <ViewAll 
+        listConsumers={listConsumers} 
+        handleSetCustumer={handleSetCustumer}
+        handleSetCustumerAndView={handleSetCustumerAndView}
+        
+        />}
        
         
       </Box>      
