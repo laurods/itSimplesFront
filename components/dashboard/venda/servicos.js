@@ -43,6 +43,8 @@ export default function Entregas(props) {
     const [pedido, setPedido] = useState('');
     const [txEntrega, setTxEntrega] = useState('');
     const [valorPedido, setValorPedido] = useState('');
+    const [valorPagar, setValorPagar] = useState('');
+    const [tipoPagamento, setTipoPagamento] = useState('');
     const [AddNewCustumer, setAddNewCustumer] = useState(false);     
     
     const handleWord = (event) => {
@@ -81,6 +83,8 @@ export default function Entregas(props) {
     const handleNumero = (event) => { setNumero(event.target.value) };
     const handleComplemento = (event) => { setComplemento(event.target.value.toUpperCase()) };
     const handleBairro = (event) => { setBairro(event.target.value.toUpperCase()) };
+    const handlePedido = (event) => { setPedido(event.target.value.toUpperCase()) };
+    const handleTipoPagamento = (event) => { setTipoPagamento(event.target.value.toUpperCase())};
     const handleTxEntrega = (event) => {
       setValorPagar('')
       if(event.target.value.length != 0){
@@ -179,7 +183,10 @@ export default function Entregas(props) {
        complemento.length !=0 &
        bairro.length !=0 &
        pedido.length !=0 &
-       txEntrega.length !=0 
+       txEntrega.length !=0 &
+       valorPedido.length !=0 &
+       valorPagar.length !=0 &
+       tipoPagamento.length !=0
      ){
       setShow(false)
       setShowDados(false)
@@ -199,7 +206,11 @@ export default function Entregas(props) {
     dataPedido['numero'] = numero
     dataPedido['complemento'] = complemento
     dataPedido['bairro'] = bairro
+    dataPedido['pedido'] = pedido
     dataPedido['txEntrega'] = txEntrega
+    dataPedido['valorPedido'] = valorPedido
+    dataPedido['valorPagar'] = valorPagar
+    dataPedido['tipoPagamento'] = tipoPagamento
     dataPedido['dia'] = `${day}/${month}/${year}`
     dataPedido['mes'] = `${month}/${year}`
     console.log('dataPedido') 
@@ -341,7 +352,35 @@ const handleSetCustumer = (dataCustumer) => {
           />
         </Grid>
       }
-      
+        {showDados && <Grid item xs={12} md={6}>
+          <TextField
+            margin="normal"
+            inputProps={{style: {fontSize: 25}}}
+            label="Pedido"
+            id="pedido"
+            multiline
+            maxRows={3}
+            onChange={handlePedido}
+            value={pedido}
+            fullWidth
+            autoComplete='off'
+            variant="outlined"
+          />
+        </Grid>
+       }
+       {showDados && <Grid item xs={4} md={2}>
+          <TextField
+            inputProps={{style: {fontSize: 25}}}
+            label="V.Pedido"
+            id="valorPedido"
+            type="number"
+            onChange={handleValorPedido}
+            value={valorPedido}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+       }
         {showDados && <Grid item xs={4} md={2}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
@@ -356,8 +395,31 @@ const handleSetCustumer = (dataCustumer) => {
         </Grid>
        }        
         
-        
-        
+        {showDados && <Grid item xs={4} md={2}>
+          <TextField
+            disabled
+            inputProps={{style: {fontSize: 25}}}
+            label="Pagar"
+            id="valorPagar"
+            value={valorPagar}
+            fullWidth
+            variant="outlined"
+          />
+        </Grid>
+      }
+        {showDados && <Grid item xs={12} md={6}>
+        <RadioGroup
+          row
+          aria-labelledby="demo-radio-buttons-group-label"
+          name="radio-buttons-group"
+        >
+          <FormControlLabel onClick={handleTipoPagamento} value="dinheiro" control={<Radio />} label="Dinheiro" />
+          <FormControlLabel onClick={handleTipoPagamento} value="cartao" control={<Radio />} label="Cartão" />
+          <FormControlLabel onClick={handleTipoPagamento} value="pix" control={<Radio />} label="Pix" />
+        </RadioGroup>
+          
+        </Grid>
+       }
          
          {showDados && <Grid item xs={12} md={6}>
           <Button          
@@ -389,7 +451,12 @@ const handleSetCustumer = (dataCustumer) => {
                  <span>Numero: <b>{numero}</b></span> <br/>
                  <span>Complemento: <b>{complemento}</b></span> <br/>
                  <span>Bairro: <b>{bairro}</b></span> <br/>
+                 <span>..................................</span> <br/>
+                 <span>Pedido: <b>{pedido}</b></span> <br/>
                  <span>Taxa Entrega: <b>{txEntrega}</b></span> <br/>
+                 <span>Valor Pedido: <b>{valorPedido}</b></span> <br/>
+                 <span>Valor Pagar: <b>{valorPagar}</b></span> <br/>
+                 <span>Pagamento: <b>{tipoPagamento}</b></span> <br/>
                  <span>..................................</span><br/> 
                  <span>                 
                  <Button 
