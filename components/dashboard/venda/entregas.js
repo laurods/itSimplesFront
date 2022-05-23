@@ -141,6 +141,10 @@ export default function Entregas(props) {
       console.log('event.target.value')
       console.log(event.target.value)
       console.log(filteredCustumer)
+      console.log('filteredCustumer')
+      console.log(filteredCustumer)
+      console.log('allConsumers')
+      console.log(allConsumers)
          
 };
 
