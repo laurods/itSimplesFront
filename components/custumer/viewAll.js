@@ -57,14 +57,22 @@ export default function ViewAll(props) {
                         onClick={() => sendCustumer(row)}
                         >
                      {row.telefone}
-                 </Button>
-                      
-                      </TableCell>      
-                      <TableCell component="th" scope="row">{row.nome}</TableCell>
+                      </Button>                      
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                      <Button 
+                        variant="text" 
+                        endIcon={<EditIcon /> }
+                        onClick={() => sendCustumer(row)}
+                        >
+                       {row.nome}
+                      </Button>                      
+                      </TableCell>
                       <TableCell component="th" scope="row">{row.rua}</TableCell>
                       <TableCell component="th" scope="row">{row.numero}</TableCell>
                       <TableCell component="th" scope="row">{row.complemento}</TableCell>
                       <TableCell component="th" scope="row">{row.bairro}</TableCell>
+                      <TableCell component="th" scope="row">{row.txEntrega}</TableCell>
                       </TableRow>
                   ))}
                   </TableBody>

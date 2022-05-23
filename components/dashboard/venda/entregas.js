@@ -141,11 +141,6 @@ export default function Entregas(props) {
     || item.bairro.includes(event.target.value.toUpperCase())
     )
       setListConsumers(filteredCustumer)
-      console.log('event.target.value')
-      console.log(event.target.value)
-      console.log(filteredCustumer)
-      console.log('filteredCustumer')
-      console.log(filteredCustumer)
          
 };
 
