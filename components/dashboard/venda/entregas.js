@@ -35,6 +35,7 @@ export default function Entregas(props) {
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
+    const [nomeRuaBairro, setNomeRuaBairro] = useState('');
     const [nome, setNome] = useState('');
     const [rua, setRua] = useState('');
     const [numero, setNumero] = useState('');
@@ -74,6 +75,13 @@ export default function Entregas(props) {
                      
       }
     };
+
+    const handleNomeRuaBairro = (event) => {
+      setShowViewAll(true)
+      setNomeRuaBairro(event.target.value)
+      handleFilterNomeRuaBairro(event.target.value)      
+    };
+
 
     const handleDDD = (event) => { setDDD(event.target.value) };
     const handleNome = (event) => { setNome(event.target.value.toUpperCase()) };
@@ -126,6 +134,35 @@ export default function Entregas(props) {
       }
            
   };
+
+
+
+  const handleFilterNomeRuaBairro = (nomeRuaBairro) => {
+    const custumerFiltered = listConsumers.filter((item) => item.nome.includes(nomeRuaBairro) )
+    if(custumerFiltered.length == 0){
+      setAddNewCustumer(true)
+      setCustumer('')
+      setNome('')
+      setRua('')
+      setNumero('')
+      setComplemento('')
+      setBairro('')
+      setTxEntrega('')
+      setShowDados(true)
+      
+    }else{
+      setAddNewCustumer(false)
+      setCustumer(custumerFiltered)
+      setNome(custumerFiltered[0].nome)
+      setRua(custumerFiltered[0].rua)
+      setNumero(custumerFiltered[0].numero)
+      setComplemento(custumerFiltered[0].complemento)
+      setBairro(custumerFiltered[0].bairro)
+      setTxEntrega(custumerFiltered[0].txEntrega)
+      setShowDados(true)
+    }
+         
+};
 
   const handleNew = async () => {
     setShow(true)
@@ -224,7 +261,7 @@ const handleSetCustumer = (dataCustumer) => {
             autoComplete="off"
           />
         </Grid>
-        <Grid item xs={10} md={4}>
+        <Grid item xs={5} md={2}>
          <TextField
               margin="normal"
               required
@@ -237,6 +274,23 @@ const handleSetCustumer = (dataCustumer) => {
               type="number"
               value={word} 
               onChange={handleWord}                          
+              autoComplete="off"
+              variant="standard"
+            />
+        </Grid>
+
+        <Grid item xs={5} md={2}>
+         <TextField
+              margin="normal"
+              required
+              autoFocus
+              inputProps={{style: {fontSize: 40}}}
+              fullWidth
+              name="nomeRuaBairro"
+              label="Nome | Rua | Bairro"
+              id="telefone"
+              value={nomeRuaBairro} 
+              onChange={handleNomeRuaBairro}                          
               autoComplete="off"
               variant="standard"
             />
