@@ -186,10 +186,7 @@ export default function Entregas(props) {
     dataPedido['txEntrega'] = txEntrega
     dataPedido['dia'] = `${day}/${month}/${year}`
     dataPedido['mes'] = `${month}/${year}`
-    console.log('dataPedido') 
-    console.log(dataPedido)
-    console.log('AddNewCustumer') 
-    console.log(AddNewCustumer)
+   
      if(AddNewCustumer){
       await axios.post('/api/consumidores/addConsumidor', { dataPedido })
 
@@ -198,9 +195,7 @@ export default function Entregas(props) {
       console.log(resDataPedido.data)
      }
      const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll');
-     const newListCustumersUpdated = await newListCustumers.data;
-     console.log('newListCustumersUpdated')
-     console.log(newListCustumersUpdated)      
+     const newListCustumersUpdated = await newListCustumers.data;           
      setConsumers(newListCustumersUpdated)
 
     }
@@ -216,7 +211,6 @@ const handleSetCustumer = (dataCustumer) => {
   console.log('dataCustumer')
   console.log(dataCustumer)
   setAddNewCustumer(false)
-  //setCustumer(custumerFiltered)
   setWord(dataCustumer.telefone)
   setNome(dataCustumer.nome)
   setRua(dataCustumer.rua)
@@ -229,11 +223,7 @@ const handleSetCustumer = (dataCustumer) => {
 }
 
 const handleSetCustumerAndView = (dataCustumer) => {
-  console.log('teste')
-  console.log('dataCustumer')
-  console.log(dataCustumer)
   setAddNewCustumer(false)
-  //setCustumer(custumerFiltered)
   setWord(dataCustumer.telefone)
   setNome(dataCustumer.nome)
   setRua(dataCustumer.rua)
@@ -286,7 +276,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
             />
         </Grid>
 
-        <Grid item xs={5} md={5}>
+        {!showDados &&<Grid item xs={5} md={5}>
          <TextField
               margin="normal"
               required
@@ -302,7 +292,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
               variant="standard"
             />
         </Grid>
-        
+        }
          {showDados &&<Grid item xs={12} md={6}>
           <TextField
             margin="normal"
