@@ -15,7 +15,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("consumidores");
          const p = await col.updateOne(
-            { telefone: '54999985528' },
+            { telefone },
             { 
                 $set:{
                     nome,
