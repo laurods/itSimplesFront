@@ -89,6 +89,8 @@ export default function Entregas(props) {
         let vlrEntrega = event.target.value;
         let vEntrega =  vlrEntrega.replace(",", ".");
         const valorEntregaFloat = parseFloat(vEntrega)
+        console.log('valorEntregaFloat');
+        console.log(valorEntregaFloat);
         setTxEntrega(valorEntregaFloat)        
       }else{        
         setTxEntrega('')        
@@ -149,8 +151,7 @@ export default function Entregas(props) {
     setShowViewAll(true)
     setWord('')
     setPedido('')
-    setValorPedido('')
-    setValorPagar('')
+   
    }
 
    const handleView = async () => {
