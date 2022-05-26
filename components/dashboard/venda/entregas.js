@@ -258,7 +258,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
             autoComplete="off"
           />
         </Grid>
-        <Grid item xs={5} md={5}>
+        <Grid item xs={5} md={4}>
          <TextField
               margin="normal"
               required
