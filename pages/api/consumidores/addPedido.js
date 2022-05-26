@@ -9,7 +9,7 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-        const  {dataPedido} = req.body;
+        const  dataPedido = req.body;
         const {telefone, nome, rua, numero, bairro, complemento, txEntrega } = dataPedido;
          await client.connect();
          const db = client.db(dbName);
