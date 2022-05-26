@@ -188,6 +188,8 @@ export default function Entregas(props) {
     dataPedido['mes'] = `${month}/${year}`
     console.log('dataPedido') 
     console.log(dataPedido)
+    console.log('AddNewCustumer') 
+    console.log(AddNewCustumer)
      if(AddNewCustumer){
       await axios.post('/api/consumidores/addConsumidor', { dataPedido })
       const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')     
