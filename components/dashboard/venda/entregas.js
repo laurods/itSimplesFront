@@ -192,13 +192,13 @@ export default function Entregas(props) {
     console.log(AddNewCustumer)
      if(AddNewCustumer){
       await axios.post('/api/consumidores/addConsumidor', { dataPedido })
-      const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')     
-      setListConsumers(newListCustumers.data)
-
+      
      }else{
       const resDataPedido = await axios.post('/api/consumidores/addPedido', dataPedido)
       console.log(resDataPedido.data)
      }
+     const newListCustumers = await axios.get('https://it-simples-front.vercel.app/api/consumidores/getAll')     
+     setListConsumers(newListCustumers.data)
 
     }
 
