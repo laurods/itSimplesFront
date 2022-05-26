@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from '../../../styles.module.css'
 import { AuthContext } from '../../../contexts/AuthContext';
 import PrintIcon from '@material-ui/icons/Print';
-import SendIcon from '@material-ui/icons/Send';
+import SaveIcon from '@material-ui/icons/Save';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -293,7 +293,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
             />
         </Grid>
         }
-         {showDados &&<Grid item xs={12} md={6}>
+         {showDados &&<Grid item xs={12} md={5}>
           <TextField
             margin="normal"
             required
@@ -359,7 +359,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
         </Grid>
       }
       
-        {showDados && <Grid item xs={4} md={2}>
+        {showDados && <Grid item xs={4} md={1}>
           <TextField
             inputProps={{style: {fontSize: 25}}}
             label="Entrega"
@@ -376,16 +376,16 @@ const handleSetCustumerAndView = (dataCustumer) => {
         
         
          
-         {showDados && <Grid item xs={12} md={6}>
+         {showDados && <Grid item xs={12} md={1}>
           <Button          
             fullWidth
             size="large" 
             variant="contained" 
             sx={{ mt: 1 }}
             onClick={handleView}
-            endIcon={<CheckCircleIcon />}
+            endIcon={<SaveIcon />}
             >
-            Confirmar        
+                   
           </Button>             
          </Grid>
        }
