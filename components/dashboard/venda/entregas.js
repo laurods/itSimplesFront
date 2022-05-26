@@ -201,7 +201,7 @@ export default function Entregas(props) {
      const newListCustumersUpdated = await newListCustumers.data;
      console.log('newListCustumersUpdated')
      console.log(newListCustumersUpdated)      
-     setListConsumers(newListCustumersUpdated)
+     setConsumers(newListCustumersUpdated)
 
     }
 
