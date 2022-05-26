@@ -31,7 +31,7 @@ const client = new MongoClient(url);
                         
         );
 
-         res.status(200).json({ msg: 'Salvo' });
+         res.status(200).json({ msg: 'Salvo', dataPedido: dataPedido });
 
         } catch (err) {
          console.log(err.stack);
