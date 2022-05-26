@@ -309,7 +309,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
         </Grid>
         }
       
-      {showDados && <Grid item xs={9} md={6}>
+      {showDados && <Grid item xs={9} md={4}>
           <TextField
             label="Rua"
             id="rua"
