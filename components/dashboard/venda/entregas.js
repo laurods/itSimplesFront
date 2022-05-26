@@ -196,7 +196,7 @@ export default function Entregas(props) {
       setListConsumers(newListCustumers.data)
 
      }else{
-      const resDataPedido = await axios.post('/api/consumidores/addPedido', { dataPedido })
+      const resDataPedido = await axios.post('/api/consumidores/addPedido', dataPedido)
       console.log(resDataPedido.data)
      }
 
