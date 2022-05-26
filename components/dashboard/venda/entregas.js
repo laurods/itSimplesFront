@@ -148,9 +148,8 @@ export default function Entregas(props) {
 
   const handleNew = async () => {
     setShow(true)
-    setShowViewAll(true)
-    setWord('')
-    setPedido('')
+    //setShowViewAll(true)
+    setWord('')   
    
    }
 
@@ -360,8 +359,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
       }
       
         {showDados && <Grid item xs={4} md={1}>
-          <TextField
-            inputProps={{style: {fontSize: 25}}}
+          <TextField            
             label="Entrega"
             id="txEntrega"
             type="number"
