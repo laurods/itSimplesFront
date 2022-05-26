@@ -19,7 +19,7 @@ const fetchData = async () => await axios.get('https://it-simples-front.vercel.a
 );
 
 export default function Diario({  consumers, error  }) { 
-  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ} = useContext(AuthContext);
+  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setConsumers} = useContext(AuthContext);
 
   useEffect(() => {
     const loadAll = async() =>{
@@ -28,6 +28,7 @@ export default function Diario({  consumers, error  }) {
       const listClients = clients.data;
       setCNPJsByUsers(listClients)
       setActiveCNPJ(listClients[0].cnpj)
+      setConsumers(consumers)
       
     }
     loadAll();
@@ -35,7 +36,7 @@ export default function Diario({  consumers, error  }) {
   
     return (
       <>     
-      {isAuthenticated &&<Entregas consumers={ consumers }/>}
+      {isAuthenticated &&<Entregas />}
       {!isAuthenticated && <Login />}
       </>
     );

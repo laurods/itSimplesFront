@@ -19,8 +19,8 @@ import ViewAll from '../../custumer/viewAll'
 
 const theme = createTheme();
 export default function Entregas(props) {
-    const allConsumers = props.consumers;
-    const {isAuthenticated, CNPJsByUsers} = useContext(AuthContext);
+    //const allConsumers = props.consumers;
+    const {isAuthenticated, CNPJsByUsers, consumers, setConsumers, } = useContext(AuthContext);
     console.log('CNPJsByUsers')
     console.log(CNPJsByUsers)
     const dataAtual = new Date();
@@ -31,7 +31,7 @@ export default function Entregas(props) {
     const [showDados, setShowDados] = useState(false);
     const [showViewAll, setShowViewAll] = useState(true);
    
-    const [listConsumers, setListConsumers] = useState(props.consumers);
+    const [listConsumers, setListConsumers] = useState(consumers);
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
@@ -100,7 +100,7 @@ export default function Entregas(props) {
 
 
     const handleFilterViewAll = (word) => {
-      const filteredCustumer = allConsumers.filter((item) => item.telefone.includes(word) )
+      const filteredCustumer = consumers.filter((item) => item.telefone.includes(word) )
       setListConsumers(filteredCustumer)
 
     }
@@ -137,7 +137,7 @@ export default function Entregas(props) {
   const handleFilterNomeRuaBairro = (event) => {
       setShowViewAll(true)
       setNomeRuaBairro(event.target.value.toUpperCase())
-    const filteredCustumer = allConsumers.filter((item) => 
+    const filteredCustumer = consumers.filter((item) => 
     item.nome.includes(event.target.value.toUpperCase()) 
     || item.rua.includes(event.target.value.toUpperCase())
     || item.bairro.includes(event.target.value.toUpperCase())
