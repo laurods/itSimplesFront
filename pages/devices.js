@@ -8,18 +8,18 @@ import Seach from '../components/dashboard/device/topSearch'
 const fetchData = async () => await axios.get('https://it-simples-front.vercel.app/api/devices/getAll')
 .then(res => ({
   error: false,
-  devices: res.data,
+  allDevices: res.data,
 }))
 .catch(() => ({
     error: true,
-    devices: null,
+    allDevices: null,
   }),
 );
 
 
 
 
-export default function Devices({  devices, error  }) { 
+export default function Devices({  allDevices, error  }) { 
   const {setDevices, devices} = useContext(AuthContext);
   const [list, setList] = useState([]);
 
@@ -42,9 +42,9 @@ export default function Devices({  devices, error  }) {
 
   useEffect(() => {
     const loadAll = async() =>{      
-      setDevices(devices)
-      console.log('setDevices')
-      console.log(devices)      
+      setDevices(allDevices)
+      console.log('allDevicess')
+      console.log(allDevices)      
     }
     loadAll();
   }, []);
