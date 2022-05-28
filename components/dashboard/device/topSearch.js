@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 
 
 const theme = createTheme();
-export default function Seach() {
+export default function TopSearch() {
     const [serial, setSerial] = useState('');
     const [text, setText] = useState('');
     
