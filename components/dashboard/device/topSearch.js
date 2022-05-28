@@ -4,24 +4,37 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 
 const theme = createTheme();
 export default function TopSearch(props) {
+    const {devices} = useContext(AuthContext);
     const [serial, setSerial] = useState('');
     const [textSearch, setTextSearch] = useState('');
+    const [list, setList] = useState([]);
 
     const handleSerial = (event) => { 
         setSerial(event.target.value)
-        props.handleFilterSerial(event.target.value) 
+        const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(serial) )
+        setList(filteredDevicesBySerial)
+        console.log('filteredDevicesBySerial')
+        console.log(filteredDevicesBySerial)
     };
 
     const handleTextSearch = (event) => { 
         setTextSearch(event.target.value.toUpperCase())
-        props.handleFilterText(event.target.value.toUpperCase()) 
+        const filteredDevicesByTextSearch = devices.filter((item) => 
+        item.CNPJ.includes(event.target.value) 
+        || item.Grupo.includes(event.target.value.toUpperCase())
+        )
+        setList(filteredDevicesByTextSearch)
+        console.log('filteredDevicesByTextSearch')
+        console.log(filteredDevicesByTextSearch) 
     };    
-      
+   
     
+ 
   return (
     <ThemeProvider theme={theme}>
       <Container>      

@@ -20,29 +20,7 @@ const fetchData = async () => await axios.get('https://it-simples-front.vercel.a
 
 
 export default function Devices({  allDevices, error  }) { 
-  const {setDevices, devices} = useContext(AuthContext);
-  const [list, setList] = useState([]);
-
-  const handleFilterText = (textSearch) => {
-    const filteredDevicesByTextSearch = devices.filter((item) => 
-    item.CNPJ.includes(textSearch) 
-    || item.Grupo.includes(textSearch)
-    )
-    setList(filteredDevicesByTextSearch)
-    console.log('filteredDevicesByTextSearch')
-    console.log(filteredDevicesByTextSearch)
-  }
-
-  const handleFilterSerial = (serial) => {
-    console.log('serial')
-    console.log(serial)
-    console.log('devices')
-    console.log(devices)
-    // const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(serial) )
-    // setList(filteredDevicesBySerial)
-    // console.log('filteredDevicesBySerial')
-    // console.log(filteredDevicesBySerial)
-  }
+  const {setDevices} = useContext(AuthContext);
 
   useEffect(() => {
     const loadAll = async() =>{      
@@ -55,10 +33,7 @@ export default function Devices({  allDevices, error  }) {
   
     return (
       <>     
-      <Seach 
-      handleFilterText={handleFilterText}
-      handleFilterSerial={handleFilterSerial}      
-      />
+      <Seach />
       
       </>
     );
