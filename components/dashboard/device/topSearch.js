@@ -36,7 +36,7 @@ export default function TopSearch(props) {
               inputProps={{style: {fontSize: 40}}}
               fullWidth
               name="serial"
-              label="Serial"
+              label="Serial | IMEI"
               id="serial"
               type="number"
               value={serial}

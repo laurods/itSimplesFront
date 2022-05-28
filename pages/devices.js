@@ -34,10 +34,14 @@ export default function Devices({  allDevices, error  }) {
   }
 
   const handleFilterSerial = (serial) => {
-    const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(serial) )
-    setList(filteredDevicesBySerial)
-    console.log('filteredDevicesBySerial')
-    console.log(filteredDevicesBySerial)
+    console.log('serial')
+    console.log(serial)
+    console.log('devices')
+    console.log(devices)
+    // const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(serial) )
+    // setList(filteredDevicesBySerial)
+    // console.log('filteredDevicesBySerial')
+    // console.log(filteredDevicesBySerial)
   }
 
   useEffect(() => {
