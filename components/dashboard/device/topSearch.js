@@ -16,7 +16,9 @@ export default function TopSearch(props) {
 
     const handleSerial = (event) => { 
         setSerial(event.target.value)
-        const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(serial) )
+        console.log('devices')
+        console.log(devices)
+        const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(event.target.value) )
         setList(filteredDevicesBySerial)
         console.log('filteredDevicesBySerial')
         console.log(filteredDevicesBySerial)
