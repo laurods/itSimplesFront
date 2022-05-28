@@ -9,19 +9,13 @@ import { AuthContext } from '../../../contexts/AuthContext';
 
 const theme = createTheme();
 export default function TopSearch(props) {
-    const {devices} = useContext(AuthContext);
+    const {devices, setListDevices} = useContext(AuthContext);
     const [serial, setSerial] = useState('');
     const [textSearch, setTextSearch] = useState('');
-    const [list, setList] = useState([]);
-
     const handleSerial = (event) => { 
         setSerial(event.target.value)
-        console.log('devices')
-        console.log(devices)
         const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(event.target.value) )
-        setList(filteredDevicesBySerial)
-        console.log('filteredDevicesBySerial')
-        console.log(filteredDevicesBySerial)
+        setListDevices(filteredDevicesBySerial)
     };
 
     const handleTextSearch = (event) => { 
@@ -30,9 +24,7 @@ export default function TopSearch(props) {
         item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
         )
-        setList(filteredDevicesByTextSearch)
-        console.log('filteredDevicesByTextSearch')
-        console.log(filteredDevicesByTextSearch) 
+        setListDevices(filteredDevicesByTextSearch)
     };    
    
     

@@ -15,6 +15,7 @@ export function AuthProvider({ children }) {
     const [produtosBaixarEstoque, setProdutosBaixarEstoque] = useState([]);
     const [products, setProducts] = useState([]);
     const [devices, setDevices] = useState([]);
+    const [listDevices, setListDevices] = useState([]);
     const [device, setDevice] = useState([]);
     const [consumers, setConsumers] = useState([]);
     const [devicesManutencao, setDevicesManutencao] = useState([]);
@@ -183,7 +184,9 @@ export function AuthProvider({ children }) {
             showForm,
             showFormEdit,
             devicesManutencao,
-            consumers, 
+            consumers,
+            listDevices, 
+            setListDevices, 
             setConsumers, 
             setDevicesManutencao, 
             setShowForm, 

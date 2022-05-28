@@ -1,7 +1,8 @@
 import React, {  useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
-import Seach from '../components/dashboard/device/topSearch'
+import Search from '../components/dashboard/device/topSearch';
+import ListDevices from '../components/dashboard/device/listDevices'
 
 
 
@@ -33,7 +34,8 @@ export default function Devices({  allDevices, error  }) {
   
     return (
       <>     
-      <Seach />
+      <Search />
+      <ListDevices />
       
       </>
     );
