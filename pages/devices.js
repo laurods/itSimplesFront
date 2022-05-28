@@ -1,7 +1,7 @@
 import React, {  useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
-import Seach from '../components/dashboard/device/search'
+import Seach from '../components/dashboard/device/seach'
 
 
 
