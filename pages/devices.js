@@ -20,7 +20,7 @@ const fetchData = async () => await axios.get('https://it-simples-front.vercel.a
 
 
 export default function Devices({  devices, error  }) { 
-  const {setDevices} = useContext(AuthContext);
+  const {setDevices, devices} = useContext(AuthContext);
   const [list, setList] = useState([]);
 
   const handleFilterText = (textSearch) => {
@@ -34,7 +34,7 @@ export default function Devices({  devices, error  }) {
   }
 
   const handleFilterSerial = (serial) => {
-    const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(word) )
+    const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(serial) )
     setList(filteredDevicesBySerial)
     console.log('filteredDevicesBySerial')
     console.log(filteredDevicesBySerial)
