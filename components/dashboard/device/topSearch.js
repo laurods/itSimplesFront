@@ -7,9 +7,20 @@ import Grid from '@mui/material/Grid';
 
 
 const theme = createTheme();
-export default function TopSearch() {
+export default function TopSearch(props) {
     const [serial, setSerial] = useState('');
-    const [text, setText] = useState('');
+    const [textSearch, setTextSearch] = useState('');
+
+    const handleSerial = (event) => { 
+        setSerial(event.target.value)
+        props.handleFilterSerial(event.target.value) 
+    };
+
+    const handleTextSearch = (event) => { 
+        setTextSearch(event.target.value.toUpperCase())
+        props.handleFilterText(event.target.value.toUpperCase()) 
+    };    
+      
     
   return (
     <ThemeProvider theme={theme}>
@@ -24,11 +35,12 @@ export default function TopSearch() {
               autoFocus
               inputProps={{style: {fontSize: 40}}}
               fullWidth
-              name="telefone"
-              label="Telefone"
-              id="telefone"
+              name="serial"
+              label="Serial"
+              id="serial"
               type="number"
-              value={serial}                      
+              value={serial}
+              onChange={handleSerial}                      
               autoComplete="off"
               variant="standard"
             />
@@ -41,10 +53,11 @@ export default function TopSearch() {
               autoFocus
               inputProps={{style: {fontSize: 40}}}
               fullWidth
-              name="nomeRuaBairro"
-              label="CNPJ | Filial"
-              id="telefone"
-              value={text}            
+              name="filial"
+              label="CNPJ | Cidade"
+              id="filial"
+              value={textSearch}
+              onChange={handleTextSearch}            
               autoComplete="off"
               variant="standard"
             />
