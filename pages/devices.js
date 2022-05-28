@@ -1,42 +1,46 @@
-import React, { useContext, useEffect } from 'react';
-import axios from 'axios';
+import React, {  useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
-import { parseCookies } from 'nookies';
-import Login from '../components/login/login.js'
-import TopMobile from '../components/dashboard/topMobile';
-import ViewMainDevice from '../components/dashboard/device/viewMainDevice';
+import axios from 'axios';
+import Seach from '../components/dashboard/device/search'
 
 
-export default function Devices() {
-     const {
-       setCNPJsByUsers, 
-       setActiveCNPJ,
-       setIsUserADM,   
-       isAuthenticated,
-       isLoading
-       } = useContext(AuthContext);
-     
-    useEffect(() => {
-      const loadAll = async() =>{
-        const cookies = parseCookies()
-        const clients = await axios.post('/api/cnpjbyuser', { user: cookies.idUser });        
-        const listClients = clients.data;
-        setCNPJsByUsers(listClients)
-        setActiveCNPJ(listClients[0].cnpj)
-        if(cookies.roleUser === "adm") {
-          setIsUserADM(true)
-        }                
-      }
-      loadAll();
-    }, []);
 
+const fetchData = async () => await axios.get('https://it-simples-front.vercel.app/api/devices/getAll')
+.then(res => ({
+  error: false,
+  devices: res.data,
+}))
+.catch(() => ({
+    error: true,
+    devices: null,
+  }),
+);
+
+export default function Devices({  devices, error  }) { 
+  const {setDevices} = useContext(AuthContext);
+
+  useEffect(() => {
+    const loadAll = async() =>{      
+      setDevices(devices)
+      console.log('setDevices')
+      console.log(devices)      
+    }
+    loadAll();
+  }, []);
+  
     return (
-      <>
-      {isLoading && <p>Carregando ..</p>}
-      {!isAuthenticated && <Login />}
-      {isAuthenticated && <TopMobile />}
-      {isAuthenticated && <ViewMainDevice />}  
+      <>     
+      <Seach />
+      
       </>
     );
     
-}
+  }
+
+  export const getServerSideProps = async () => {
+    const data = await fetchData();
+  
+    return {
+      props: data,
+    };
+  }
