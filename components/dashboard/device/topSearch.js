@@ -14,14 +14,18 @@ export default function TopSearch(props) {
     const [textSearch, setTextSearch] = useState('');
     const handleSerial = (event) => { 
         setSerial(event.target.value)
-        const filteredDevicesBySerial = devices.filter((item) => item.Serial.includes(event.target.value) )
+        const filteredDevicesBySerial = devices.filter((item) => 
+        item.Equipamento.includes('COLETOR') 
+        || item.Serial.includes(event.target.value)
+        )
         setListDevices(filteredDevicesBySerial)
     };
 
     const handleTextSearch = (event) => { 
         setTextSearch(event.target.value.toUpperCase())
         const filteredDevicesByTextSearch = devices.filter((item) => 
-        item.CNPJ.includes(event.target.value) 
+        item.Equipamento.includes('COLETOR')
+        || item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
         )
         setListDevices(filteredDevicesByTextSearch)
