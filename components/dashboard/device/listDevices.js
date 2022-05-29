@@ -37,7 +37,7 @@ export default function ListDevices() {
                       </TableCell>
                       <TableCell component="th" scope="row">{row.Grupo}</TableCell>                      
                       <TableCell component="th" scope="row">{row.Status}</TableCell>
-                      <TableCell component="th" scope="row">{row.VLRLOCACAO.toFixed(2)}</TableCell>
+                      <TableCell component="th" scope="row">{row.VLRLOCACAO}</TableCell>
                       <TableCell component="th" scope="row">{row.Serial}</TableCell>
                       </TableRow>
                   ))}
