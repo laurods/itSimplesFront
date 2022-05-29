@@ -22,7 +22,8 @@ const client = new MongoClient(url);
                 Serial: 1, 
                 Modelo: 1, 
                 VLRLOCACAO: 1,
-                Equipamento: 1, 
+                Equipamento: 1,
+                CNPJ:1, 
                 Status: 1 
             }
         }
