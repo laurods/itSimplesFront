@@ -21,6 +21,11 @@ export default function TopSearch(props) {
         )         
 
         setListDevices(filteredDevicesByTextSearch)
+
+        const filteredLocados = filteredDevicesByTextSearch.filter((item) => item.Status.includes('LOCADO') )
+        console.log('filteredLocados')
+        console.log(filteredLocados)
+      
     };    
    
     
