@@ -30,7 +30,9 @@ export default function TopSearch(props) {
 
         const filteredDevicesByTextSearchOrdered = filteredDevicesByTextSearch.sort((a, b) => { // ordenar em ordem de status
           return a.Status - b.Status;
-      });
+        });
+        console.log('filteredDevicesByTextSearchOrdered')
+        console.log(filteredDevicesByTextSearchOrdered)
         setListDevices(filteredDevicesByTextSearchOrdered)
     };    
    
