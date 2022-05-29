@@ -9,16 +9,8 @@ import { AuthContext } from '../../../contexts/AuthContext';
 
 const theme = createTheme();
 export default function TopSearch(props) {
-    const {devices, setListDevices} = useContext(AuthContext);
-    const [serial, setSerial] = useState('');
-    const [textSearch, setTextSearch] = useState('');
-    const handleSerial = (event) => { 
-        setSerial(event.target.value)
-        const filteredDevicesBySerial = devices.filter((item) =>
-        item.Serial.includes(event.target.value)
-        )
-        setListDevices(filteredDevicesBySerial)
-    };
+    const {devices, setListDevices} = useContext(AuthContext);    
+    const [textSearch, setTextSearch] = useState('');  
 
     const handleTextSearch = (event) => { 
         setTextSearch(event.target.value.toUpperCase())
@@ -26,14 +18,11 @@ export default function TopSearch(props) {
         item.Serial.includes(event.target.value) 
         || item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
-        )
+        ).sort((a,b) => a.Status - b.Status)
 
-        const filteredDevicesByTextSearchOrdered = filteredDevicesByTextSearch.sort((a, b) => { // ordenar em ordem de status
-          return a.Status - b.Status;
-        });
-        console.log('filteredDevicesByTextSearchOrdered')
-        console.log(filteredDevicesByTextSearchOrdered)
-        setListDevices(filteredDevicesByTextSearchOrdered)
+        console.log('filteredDevicesByTextSearch')
+        console.log(filteredDevicesByTextSearch)
+        setListDevices(filteredDevicesByTextSearch)
     };    
    
     
