@@ -27,7 +27,7 @@ export default function TopSearch(props) {
         const filteredLocados = filteredDevicesByTextSearch.filter((item) => item.Status.includes('LOCADO') )
         const filteredProprio = filteredDevicesByTextSearch.filter((item) => item.Status.includes('PROPRIO') )
         const sumLocacao = filteredLocados.reduce(function (total, currentValue) {
-          return total + currentValue.num;
+          return total + currentValue.VLRLOCACAO;
       }, 0);
         setQtLocado(filteredLocados.length)
         setQtProprio(filteredProprio.length)
