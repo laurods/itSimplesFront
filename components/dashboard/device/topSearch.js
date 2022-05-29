@@ -10,7 +10,9 @@ import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 export default function TopSearch(props) {
     const {devices, setListDevices} = useContext(AuthContext);    
-    const [textSearch, setTextSearch] = useState('');  
+    const [textSearch, setTextSearch] = useState('');
+    const [qtProprio, setQtProprio] = useState('0');
+    const [qtLocado, setQtLocado] = useState('0');   
 
     const handleTextSearch = (event) => { 
         setTextSearch(event.target.value.toUpperCase())
@@ -23,6 +25,9 @@ export default function TopSearch(props) {
         setListDevices(filteredDevicesByTextSearch)
 
         const filteredLocados = filteredDevicesByTextSearch.filter((item) => item.Status.includes('LOCADO') )
+        const filteredProprio = filteredDevicesByTextSearch.filter((item) => item.Status.includes('PROPRIO') )
+        setQtLocado(filteredLocados.length)
+        setQtProprio(filteredProprio.length)
         console.log('filteredLocados')
         console.log(filteredLocados)
       
@@ -65,7 +70,7 @@ export default function TopSearch(props) {
               label="QUANT. PROPRIOS"
               id="proprios"
               type="number"
-              value="0"                     
+              value={qtProprio}                      
               autoComplete="off"
               variant="standard"
             />
@@ -81,7 +86,7 @@ export default function TopSearch(props) {
               label="QUANT. LOCADOS"
               id="locados"
               type="number"
-              value="0"                     
+              value={qtLocado}                     
               autoComplete="off"
               variant="standard"
             />
