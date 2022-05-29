@@ -28,7 +28,7 @@ export default function Devices({  allDevices, error  }) {
   useEffect(() => {
     const loadAll = async() =>{
       
-      setDevices(allDevices.sort(orderByStatus))
+      setDevices(allDevices.sort(orderByStatus()))
       console.log('allDevicess')
       console.log(allDevices)      
     }
