@@ -27,6 +27,10 @@ export default function TopSearch(props) {
         || item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
         )
+
+        filteredDevicesByTextSearch.sort((a, b) => { // ordenar em ordem de status
+          return a.Status - b.Status;
+      });
         setListDevices(filteredDevicesByTextSearch)
     };    
    
