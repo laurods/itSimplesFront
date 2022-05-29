@@ -18,13 +18,9 @@ export default function TopSearch(props) {
         item.Serial.includes(event.target.value) 
         || item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
-        )
+        )         
 
-        const orderByStatus = (a, b) => {
-          return a.Status - b.Status
-        } 
-
-        setListDevices(filteredDevicesByTextSearch.sort(orderByStatus))
+        setListDevices(filteredDevicesByTextSearch)
     };    
    
     

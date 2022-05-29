@@ -14,6 +14,7 @@ const theme = createTheme();
 
 export default function ListDevices() { 
     const {listDevices} = useContext(AuthContext);   
+  
     
   return (
     <ThemeProvider theme={theme}>
