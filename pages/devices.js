@@ -6,7 +6,7 @@ import ListDevices from '../components/dashboard/device/listDevices'
 
 
 
-const fetchData = async () => await axios.get('https://it-simples-front.vercel.app/api/devices/getAll')
+const fetchData = async () => await axios.get('https://it-simples-front.vercel.app/api/devices/getDevicesByEquipamento')
 .then(res => ({
   error: false,
   allDevices: res.data,
