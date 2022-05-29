@@ -18,7 +18,7 @@ export default function TopSearch(props) {
         item.Serial.includes(event.target.value) 
         || item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
-        ).sort((a,b) => a.Status - b.Status)
+        ).sort((a,b) => a.item.Status - b.item.Status)
 
         console.log('filteredDevicesByTextSearch')
         console.log(filteredDevicesByTextSearch)
