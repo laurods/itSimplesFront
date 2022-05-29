@@ -18,11 +18,13 @@ export default function TopSearch(props) {
         item.Serial.includes(event.target.value) 
         || item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
-        ).sort((a,b) => a.item.Status - b.item.Status)
+        )
 
-        console.log('filteredDevicesByTextSearch')
-        console.log(filteredDevicesByTextSearch)
-        setListDevices(filteredDevicesByTextSearch)
+        const orderByStatus = (a, b) => {
+          return a.Status - b.Status
+        } 
+
+        setListDevices(filteredDevicesByTextSearch.sort(orderByStatus))
     };    
    
     
