@@ -33,7 +33,7 @@ export default function TopSearch(props) {
       }, 0);
         setQtLocado(filteredLocados.length)
         setQtProprio(filteredProprio.length)
-        setTotalLocacao(sumLocacao)
+        setTotalLocacao(sumLocacao.toFixed(2))
         const sumColetores = (parseInt(filteredProprio.length) + parseInt(filteredLocados.length))
         setTotalColetores(sumColetores)
     };    
@@ -48,7 +48,7 @@ export default function TopSearch(props) {
       <Grid container spacing={2} sx={{ mt: 3 }}>   
         
 
-        <Grid item xs={4} md={4}>
+        <Grid item xs={6} md={6}>
          <TextField
               margin="normal"
               required
@@ -79,14 +79,14 @@ export default function TopSearch(props) {
               variant="standard"
             />
         </Grid>
-        <Grid item xs={2} md={2}>
+        <Grid item xs={1} md={1}>
          <TextField
               margin="normal"
               disabled              
               inputProps={{style: {fontSize: 40}}}
               fullWidth
               name="proprios"
-              label="QUANT. PROPRIOS"
+              label="PROPRIOS"
               id="proprios"
               type="number"
               value={qtProprio}                      
@@ -95,14 +95,14 @@ export default function TopSearch(props) {
             />
         </Grid>
 
-         <Grid item xs={2} md={2}>
+         <Grid item xs={1} md={1}>
          <TextField
               margin="normal"
               disabled              
               inputProps={{style: {fontSize: 40}}}
               fullWidth
               name="locados"
-              label="QUANT. LOCADOS"
+              label="LOCADOS"
               id="locados"
               type="number"
               value={qtLocado}                     
