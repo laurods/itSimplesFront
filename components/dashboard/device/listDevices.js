@@ -8,12 +8,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function ListDevices() { 
-    const {listDevices} = useContext(AuthContext);   
+    const {listDevices} = useContext(AuthContext);  
   
     
   return (
@@ -22,9 +23,10 @@ export default function ListDevices() {
 
       <Grid container spacing={2}>          
         <Grid item xs={8} md={12}>
+
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                  <TableHead>                    
+                  <TableHead>                                   
                   </TableHead>
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
                   {listDevices.map((row) => (

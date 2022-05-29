@@ -17,9 +17,7 @@ const fetchData = async () => await axios.get('https://it-simples-front.vercel.a
   }),
 );
 
-const orderByStatus = (a, b) => {
-  return a.Status - b.Status
-}
+
 
 
 export default function Devices({  allDevices, error  }) { 
@@ -28,7 +26,7 @@ export default function Devices({  allDevices, error  }) {
   useEffect(() => {
     const loadAll = async() =>{
       
-      setDevices(allDevices.sort(orderByStatus))
+      setDevices(allDevices)
       console.log('allDevicess')
       console.log(allDevices)      
     }

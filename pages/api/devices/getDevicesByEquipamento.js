@@ -27,7 +27,7 @@ const client = new MongoClient(url);
                 Status: 1 
             }
         }
-         ).toArray();     
+         ).sort({Status: 1}).toArray();     
          
          res.status(200).json(devices);
 
