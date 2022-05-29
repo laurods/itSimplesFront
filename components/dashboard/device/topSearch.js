@@ -22,8 +22,9 @@ export default function TopSearch(props) {
 
     const handleTextSearch = (event) => { 
         setTextSearch(event.target.value.toUpperCase())
-        const filteredDevicesByTextSearch = devices.filter((item) => 
-        item.CNPJ.includes(event.target.value) 
+        const filteredDevicesByTextSearch = devices.filter((item) =>
+        item.Serial.includes(event.target.value) 
+        || item.CNPJ.includes(event.target.value) 
         || item.Grupo.includes(event.target.value.toUpperCase())
         )
         setListDevices(filteredDevicesByTextSearch)
@@ -49,7 +50,7 @@ export default function TopSearch(props) {
               id="serial"
               type="number"
               value={serial}
-              onChange={handleSerial}                      
+              onChange={handleTextSearch}                      
               autoComplete="off"
               variant="standard"
             />
