@@ -21,8 +21,8 @@ export default function ListDevices() {
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-      <Grid item xs={2} md={2}></Grid>          
-        <Grid item xs={8} md={8}>
+      <Grid item xs={1} md={1}></Grid>          
+        <Grid item xs={10} md={10}>
 
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
@@ -48,7 +48,7 @@ export default function ListDevices() {
               </Table>
               </TableContainer>       
         </Grid>
-        <Grid item xs={2} md={2}>            
+        <Grid item xs={1} md={1}>            
         </Grid>
       </Grid>
     </Box>
