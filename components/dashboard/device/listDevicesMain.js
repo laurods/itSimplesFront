@@ -20,10 +20,9 @@ export default function ListDevices() {
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ flexGrow: 1 }}>
-
-      <Grid container spacing={2}>          
+      <Grid container spacing={2}>
+      <Grid item xs={2} md={2}></Grid>           
         <Grid item xs={8} md={8}>
-
           <TableContainer component={Paper} sx={{ mt: 2 }}>            
               <Table sx={{ minWidth: 200 }} aria-label="simple table">
                   <TableHead>                                   
