@@ -14,7 +14,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function ListDevices() { 
-    const {listDevices, isUserADM} = useContext(AuthContext);  
+    const {listDevices} = useContext(AuthContext);  
   
     
   return (
