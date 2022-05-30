@@ -19,7 +19,7 @@ export default function ListDevices() {
     
   return (
     <ThemeProvider theme={theme}>
-    {isUserADM && <Box sx={{ flexGrow: 1 }}>
+     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <Grid item xs={1} md={1}></Grid>           
         <Grid item xs={10} md={10}>
@@ -50,7 +50,7 @@ export default function ListDevices() {
         <Grid item xs={1} md={1}>            
         </Grid>
       </Grid>
-    </Box>}
+    </Box>
 
     </ThemeProvider>
   );

@@ -7,7 +7,8 @@ import ListDevicesMain from '../components/dashboard/device/listDevicesMain';
 
 
 export default function Devices() {
-     const {setIsUserADM, isAuthenticated } = useContext(AuthContext);
+     const {setIsUserADM, isAuthenticated, isUserADM } = useContext(AuthContext);
+     console.log(isUserADM)
      
     useEffect(() => {
       const loadAll = async() =>{
