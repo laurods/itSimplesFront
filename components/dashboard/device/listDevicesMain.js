@@ -14,12 +14,14 @@ import { AuthContext } from '../../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function ListDevices() { 
-    const {listDevices} = useContext(AuthContext);  
+    const {listDevices, isUserADM} = useContext(AuthContext);
+    console.log('isUserADM')
+    console.log(isUserADM)  
   
     
   return (
     <ThemeProvider theme={theme}>
-     <Box sx={{ flexGrow: 1 }}>
+     {isUserADM && <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <Grid item xs={1} md={1}></Grid>           
         <Grid item xs={10} md={10}>
@@ -50,7 +52,7 @@ export default function ListDevices() {
         <Grid item xs={1} md={1}>            
         </Grid>
       </Grid>
-    </Box>
+    </Box>}
 
     </ThemeProvider>
   );
