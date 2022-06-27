@@ -40,7 +40,7 @@ export default function ViewMainMobile() {
                             color="primary" 
                             sx={{ mt: 5 }}
                         >
-                                Ventilação/Exaustão
+                                Ar Condicionado
                         </Button>
                     </Grid>
                     <Grid item xs={6} md={6}>
