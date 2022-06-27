@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
 import Top from '../components/arcondicionado/top';
-import ViewMainMobile from '../components/dashboard/viewMainMobile';
+import Main from '../components/arcondicionado/main';
 
 
 export default function Dashboard() {
@@ -23,7 +23,7 @@ export default function Dashboard() {
       <>
       
       <Top />
-      <ViewMainMobile />  
+      <Main />  
       </>
     );
     
