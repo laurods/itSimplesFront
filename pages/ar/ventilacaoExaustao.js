@@ -17,7 +17,7 @@ export default function ventilacaoExaustao() {
         <Top />
         <Container>             
             <Box sx={{ flexGrow: 1, mt: 2 }}>
-            <TextField id="outlined-basic" label="Disabled" variant="outlined" defaultValue="Ventilação Exaustão" />
+            <TextField id="outlined-basic" label="Tela" variant="outlined" defaultValue="Ventilação Exaustão" disabled />
             <TableVentilacaoExaustao />
             </Box>
         </Container>
