@@ -27,7 +27,7 @@ export default function TableVentilacaoExaustao() {
    
   return (   
     <>
-          <TextField id="standard-basic" label="Digite o grupo" variant="standard" fullWidth/>
+          <TextField sx={{ flexGrow: 1, mt: 2 }}  type="search"  variant="filled" fullWidth margin="normal" color="warning" focused/>
            <TableContainer component={Paper} sx={{ mt: 2 }}>        
                 <Table sx={{ minWidth: 200 }} aria-label="simple table">                   
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
