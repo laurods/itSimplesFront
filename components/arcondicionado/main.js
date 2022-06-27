@@ -12,13 +12,13 @@ export default function ViewMainMobile() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={6} md={6}>
-             <div>Sistema de Ventilação/Exaustão</div>
+             <div>Ventilação/Exaustão</div>
         </Grid>
         <Grid item xs={6} md={6}>
-             <div>Sistema de Ar Condicionado</div>
+             <div>Ar Condicionado</div>
         </Grid>
         <Grid item xs={6} md={6}>
-             <div>Indiretos</div>
+             <div>Custos Indiretos</div>
         </Grid>
         <Grid item xs={6} md={6}>
              <div>Resumo Custos Indiretos</div>
