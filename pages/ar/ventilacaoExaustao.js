@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Top from '../components/arcondicionado/top';
+import Top from '../../components/arcondicionado/top';
 
 const theme = createTheme();
 
