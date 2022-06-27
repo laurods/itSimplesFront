@@ -5,6 +5,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
 import EditIcon from '@material-ui/icons/Edit';
 
 export default function TableVentilacaoExaustao() {
@@ -25,7 +26,9 @@ export default function TableVentilacaoExaustao() {
      ]
    
   return (   
-            <TableContainer component={Paper} sx={{ mt: 2 }}>        
+    <>
+          <TextField id="standard-basic" label="Digite o grupo" variant="standard" fullWidth/>
+           <TableContainer component={Paper} sx={{ mt: 2 }}>        
                 <Table sx={{ minWidth: 200 }} aria-label="simple table">                   
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
                     {items.map((row) => (
@@ -41,7 +44,10 @@ export default function TableVentilacaoExaustao() {
                     ))}
                     </TableBody>
                 </Table>
-            </TableContainer>            
+            </TableContainer>  
+    
+    </>
+                   
      
   );
 }
