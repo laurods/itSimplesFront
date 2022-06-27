@@ -6,22 +6,8 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { ListItemAvatar } from '@mui/material';
 
-export default function AccordionVentilacaoExaustao() {
-    const items = [
-       {name: 'VENTILADORES'},
-       {name:'FILTRAGEM'},
-       {name:'COIFAS E CAPTORES'},
-       {name:'FILTROS'},
-       {name:'CORTINA DE AR'},
-       {name:'AMORTECEDORES DE VIBRAÇÃO'},
-       {name:'SUPORTES'},
-       {name:'DUTOS EM CHAPA'},
-       {name:'DUTOS EM MPU'},
-       {name:'OUTROS'},
-       {name:'DIFUSÃO DE AR'},
-       {name:'PAINEIS ELETRICOS'},
-       {name:'REDES ELETRICAS'},
-    ]
+export default function AccordionVentilacaoExaustao(props) {
+    const{ name } = props
   return (
     <div>
       {
@@ -33,7 +19,7 @@ export default function AccordionVentilacaoExaustao() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>{item.name}</Typography>
+                  <Typography>{name}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   
