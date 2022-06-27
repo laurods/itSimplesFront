@@ -11,7 +11,7 @@ const theme = createTheme();
 export default function ViewMainMobile() {
     const handleLink = (event) => {
         console.log(event.target.value)        
-      //Router.push(`${event.target.value}`);
+      Router.push(`${event.target.value}`);
     };
     
   return (
@@ -23,10 +23,10 @@ export default function ViewMainMobile() {
                         <Button          
                         fullWidth
                         size="large" 
-                        variant="contained"
+                        variant="outlined"
                         color="success"
                         onClick={handleLink}
-                        value='/pages/ar/ventilacaoExaustao' 
+                        value='/ar/ventilacaoExaustao' 
                         sx={{ mt: 5 }}
                     >
                             Ventilação/Exaustão
@@ -36,7 +36,7 @@ export default function ViewMainMobile() {
                         <Button          
                             fullWidth
                             size="large" 
-                            variant="contained"
+                            variant="outlined"
                             color="primary" 
                             sx={{ mt: 5 }}
                         >
