@@ -8,37 +8,40 @@ import { ListItemAvatar } from '@mui/material';
 
 export default function AccordionVentilacaoExaustao() {
     const items = [
-       'VENTILADORES',
-       'FILTRAGEM',
-       'COIFAS E CAPTORES',
-       'FILTROS',
-       'CORTINA DE AR',
-       'AMORTECEDORES DE VIBRAÇÃO',
-       'SUPORTES',
-       'DUTOS EM CHAPA',
-       'DUTOS EM MPU',
-       'OUTROS',
-       'DIFUSÃO DE AR',
-       'PAINEIS ELETRICOS',
-       'REDES ELETRICAS',
+       {name: 'VENTILADORES'},
+       {name:'FILTRAGEM'},
+       {name:'COIFAS E CAPTORES'},
+       {name:'FILTROS'},
+       {name:'CORTINA DE AR'},
+       {name:'AMORTECEDORES DE VIBRAÇÃO'},
+       {name:'SUPORTES'},
+       {name:'DUTOS EM CHAPA'},
+       {name:'DUTOS EM MPU'},
+       {name:'OUTROS'},
+       {name:'DIFUSÃO DE AR'},
+       {name:'PAINEIS ELETRICOS'},
+       {name:'REDES ELETRICAS'},
     ]
   return (
     <div>
-        {items.map((item) => {
-               <Accordion>
-               <AccordionSummary
-                 expandIcon={<ExpandMoreIcon />}
-                 aria-controls="panel1a-content"
-                 id="panel1a-header"
-               >
-                 <Typography>{item}</Typography>
-               </AccordionSummary>
-               <AccordionDetails>
-                 
-               </AccordionDetails>
-             </Accordion>
-            
-        })}
+      {
+        items.map(
+            item => {
+                <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>{item.name}</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  
+                </AccordionDetails>
+              </Accordion>
+            }
+        )
+      }
    
       
       
