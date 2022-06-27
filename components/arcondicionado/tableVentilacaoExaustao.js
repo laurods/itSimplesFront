@@ -25,8 +25,7 @@ export default function TableVentilacaoExaustao() {
      ]
    
   return (   
-            <TableContainer component={Paper} sx={{ mt: 2 }}>
-        
+            <TableContainer component={Paper} sx={{ mt: 2 }}>        
                 <Table sx={{ minWidth: 200 }} aria-label="simple table">                   
                     <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
                     {items.map((row) => (
@@ -36,10 +35,6 @@ export default function TableVentilacaoExaustao() {
                         >
                         <TableCell component="th" scope="row">
                             {row.name}
-                        </TableCell>
-                        
-                        <TableCell component="th" scope="row">
-                            <EditIcon />
                         </TableCell>
 
                         </TableRow>

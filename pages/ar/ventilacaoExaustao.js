@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Top from '../../components/arcondicionado/top';
@@ -17,7 +17,8 @@ export default function ventilacaoExaustao() {
         <Top />
         <Container>             
             <Box sx={{ flexGrow: 1, mt: 2 }}>
-                <TableVentilacaoExaustao />
+            <TextField id="outlined-basic" label="Disabled" variant="outlined" defaultValue="Ventilação Exaustão" />
+            <TableVentilacaoExaustao />
             </Box>
         </Container>
     </ThemeProvider>
