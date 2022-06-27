@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
-import TopMobile from '../components/dashboard/topMobile';
+import Top from '../components/arcondicionado/top';
 import ViewMainMobile from '../components/dashboard/viewMainMobile';
 
 
@@ -22,7 +22,7 @@ export default function Dashboard() {
     return (
       <>
       
-      <TopMobile />
+      <Top />
       <ViewMainMobile />  
       </>
     );
