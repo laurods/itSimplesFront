@@ -75,7 +75,7 @@ export default function TelaLevantamento(props) {
             <TextField
                 margin="normal"
                 required
-                label="COMPRIMENTO UNITÁRIO"
+                label="COMPR. UNITÁRIO"
                 id="comprimentoUnitario"
                 onChange={(event => setComprimentoUnitario(event.target.value.toUpperCase()))}
                 value={comprimentoUnitario}
@@ -89,7 +89,7 @@ export default function TelaLevantamento(props) {
             <TextField
                 margin="normal"
                 required
-                label="COMPRIMENTO TOTAL"
+                label="COMPR. TOTAL"
                 id="comprimentoTotal"
                 onChange={(event => setComprimentoTotal(event.target.value.toUpperCase()))}
                 value={comprimentoTotal}
@@ -154,7 +154,7 @@ export default function TelaLevantamento(props) {
             <TextField
                 margin="normal"
                 required
-                label="MAQUINA POR PAVIMENTO"
+                label="MAQ. POR PAVIMENTO"
                 id="maquinaporpavimento"
                 onChange={(event => setMaquinaPavimento(event.target.value.toUpperCase()))}
                 value={maquinaPavimento}
@@ -167,7 +167,7 @@ export default function TelaLevantamento(props) {
             <TextField
                 margin="normal"
                 required
-                label="QUANTIDADE DE PAVIMENTOS"
+                label="QUANT. DE PAVIMENTOS"
                 id="quantidadePavimento"
                 onChange={(event => setQuantidadePavimento(event.target.value.toUpperCase()))}
                 value={quantidadePavimento}
