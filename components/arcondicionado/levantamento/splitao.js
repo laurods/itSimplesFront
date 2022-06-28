@@ -85,7 +85,7 @@ export default function TelaLevantamento(props) {
             />
             </Grid>
 
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -95,10 +95,10 @@ export default function TelaLevantamento(props) {
                 value={comprimentoTotal}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -108,10 +108,10 @@ export default function TelaLevantamento(props) {
                 value={linhaLiq}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -121,10 +121,10 @@ export default function TelaLevantamento(props) {
                 value={linhaSuc}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -134,10 +134,10 @@ export default function TelaLevantamento(props) {
                 value={tubo}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -147,10 +147,10 @@ export default function TelaLevantamento(props) {
                 value={caboPP}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -160,10 +160,10 @@ export default function TelaLevantamento(props) {
                 value={maquinaPavimento}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -173,10 +173,10 @@ export default function TelaLevantamento(props) {
                 value={quantidadePavimento}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-            <Grid item xs={1} md={1}>            
+            <Grid item xs={3} md={3}>            
             <Button          
                 fullWidth
                 size="large" 
@@ -184,6 +184,7 @@ export default function TelaLevantamento(props) {
                 sx={{ mt: 1 }}               
                 endIcon={<SaveIcon />}
                 >
+                Salvar
                     
             </Button>
             </Grid> 
