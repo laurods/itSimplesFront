@@ -33,7 +33,7 @@ export default function TelaLevantamento(props) {
                 value={tag}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="filled"
             />
             </Grid>
             <Grid item xs={2} md={2}>
@@ -46,11 +46,17 @@ export default function TelaLevantamento(props) {
                 value={capacidadetr}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="filled"
             />
             </Grid>
             <Grid item xs={1} md={1}>
-            <Button          
+            <SaveIcon 
+                fullWidth
+                size="large" 
+                variant="contained" 
+                sx={{ mt: 1 }} 
+            />
+            {/* <Button          
                 fullWidth
                 size="large" 
                 variant="contained" 
@@ -58,7 +64,7 @@ export default function TelaLevantamento(props) {
                 endIcon={<SaveIcon />}
                 >
                     
-            </Button>             
+            </Button>              */}
             </Grid> 
         </Grid>
         
