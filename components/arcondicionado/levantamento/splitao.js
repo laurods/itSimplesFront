@@ -23,11 +23,10 @@ export default function TelaLevantamento(props) {
       <Box sx={{ flexGrow: 1, mt: 2 }}>
 
       <Grid container spacing={2} sx={{ mt: 3 }}>      
-            <Grid item xs={1} md={1}>
+            <Grid item xs={2} md={2}>
             <TextField
                 margin="normal"
                 required
-                inputProps={{style: {fontSize: 40}}}
                 label="TAG"
                 id="tag"
                 onChange={(event => setTag(event.target.value.toUpperCase()))}
@@ -37,11 +36,10 @@ export default function TelaLevantamento(props) {
                 variant="outlined"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={2} md={2}>
             <TextField
                 margin="normal"
                 required
-                inputProps={{style: {fontSize: 40}}}
                 label="Capacidade TR"
                 id="capacidadetr"
                 onChange={(event => setCapacidadetr(event.target.value.toUpperCase()))}
