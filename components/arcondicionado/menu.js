@@ -15,7 +15,7 @@ export default function MenuMobile() {
   
   const listMenu = [
     {id: '../../arcondicionado', name: 'Principal'}, 
-    {id: '/ar/levantamento/splitao', name: 'Splitao'},
+    {id: '/ar/splitao', name: 'Splitao'},
     {id: '/ar/splits', name: 'Splits'}, 
     {id: '/ar/vrf', name: 'VRF'}, 
     {id: '/ar/ventilacao', name:'Dutos Ventilação'},

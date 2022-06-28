@@ -9,7 +9,7 @@ export default function Levantamento() {
 
   return (
     <>    
-    <div> levantamento de:  </div>
+    <div> levantamento de: {levantamento} </div>
     
     </>
   );
