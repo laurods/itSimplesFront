@@ -31,8 +31,8 @@ export default function TableVentilacaoExaustao() {
      const handleFilter = (event) => {
         setText(event.target.value.toUpperCase())
       const filteredData = items.filter((item) => 
-      item.name.includes(event.target.value.toUpperCase()) 
-      || item.id.includes(event.target.value)
+      item.id.includes(event.target.value.toUpperCase()) 
+      || item.name.includes(event.target.value.toUpperCase())
       )
       console.log('filteredData')
       console.log(filteredData)
