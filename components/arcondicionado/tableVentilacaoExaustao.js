@@ -34,7 +34,10 @@ export default function TableVentilacaoExaustao() {
       item.name.includes(event.target.value.toUpperCase()) 
       || item.id.includes(event.target.value)
       )
-        
+      console.log('filteredData')
+      console.log(filteredData)
+      console.log('event.target') 
+      event.target.value.toUpperCase() 
      setData(filteredData)
            
   };   
