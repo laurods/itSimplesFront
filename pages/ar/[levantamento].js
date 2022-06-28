@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Top from '../../components/arcondicionado/top';
+import Splitao from '../../components/arcondicionado/levantamento/splitao'
 
 const theme = createTheme();
 
@@ -17,7 +18,8 @@ export default function Levantamento() {
         <Top />
         <Container>             
             <Box sx={{ flexGrow: 1, mt: 2 }}>
-            <TextField id="outlined-basic" label="Tela" variant="outlined" defaultValue={`Levantamento de ${levantamento}`} disabled />            
+            <TextField id="outlined-basic" label="Tela" variant="outlined" defaultValue={`Levantamento de ${levantamento}`} disabled />
+            <Splitao />            
             </Box>
         </Container>
     </ThemeProvider>
