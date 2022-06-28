@@ -33,10 +33,13 @@ export default function TelaLevantamento(props) {
       <Box sx={{ flexGrow: 1, mt: 2 }}>
 
       <Grid container spacing={2} sx={{ mt: 3 }}>
-            <Grid item xs={4} md={4}>
-                <Typography variant="subtitle2" component="div">          
-                    TAG
-                </Typography>
+            <Grid item xs={2} md={2}>
+            <TextField
+                margin="normal"
+                disabled
+                value="TAG"
+                variant="standard"
+            />
             </Grid>      
             <Grid item xs={2} md={2}>
             <TextField
@@ -49,10 +52,13 @@ export default function TelaLevantamento(props) {
                 variant="outlined"
             />
             </Grid>
-            <Grid item xs={4} md={4}>
-                <Typography variant="subtitle2" component="div">          
-                    CAPACIDADE TR
-                </Typography>
+            <Grid item xs={2} md={2}>
+            <TextField
+                margin="normal"
+                disabled
+                value="CAPACIDADE (TR)"
+                variant="standard"
+            />
             </Grid>
             <Grid item xs={2} md={2}>
             <TextField
@@ -66,7 +72,15 @@ export default function TelaLevantamento(props) {
                 variant="outlined"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={2} md={2}>
+            <TextField
+                margin="normal"
+                disabled
+                value="AMBIENTE"
+                variant="standard"
+            />
+            </Grid>
+            <Grid item xs={2} md={2}>
             <TextField
                 margin="normal"
                 required
