@@ -45,7 +45,7 @@ export default function TelaLevantamento(props) {
                 label="Capacidade TR"
                 id="capacidadetr"
                 onChange={(event => setCapacidadetr(event.target.value.toUpperCase()))}
-                value={tag}
+                value={capacidadetr}
                 fullWidth
                 autoComplete='off'
                 variant="outlined"
@@ -56,8 +56,7 @@ export default function TelaLevantamento(props) {
                 fullWidth
                 size="large" 
                 variant="contained" 
-                sx={{ mt: 1 }}
-                onClick={handleView}
+                sx={{ mt: 1 }}               
                 endIcon={<SaveIcon />}
                 >
                     
