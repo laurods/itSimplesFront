@@ -33,7 +33,7 @@ export default function TelaLevantamento(props) {
       <Box sx={{ flexGrow: 1, mt: 2 }}>
 
       <Grid container spacing={2} sx={{ mt: 3 }}>                 
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
@@ -45,7 +45,7 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>          
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
@@ -58,11 +58,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>         
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Ambiente"
+                label="AMBIENTE"
                 id="ambiente"
                 onChange={(event => setAmbiente(event.target.value.toUpperCase()))}
                 value={ambiente}
@@ -71,11 +71,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Comprimento Unitário"
+                label="COMPRIMENTO UNITÁRIO"
                 id="comprimentoUnitario"
                 onChange={(event => setComprimentoUnitario(event.target.value.toUpperCase()))}
                 value={comprimentoUnitario}
@@ -85,11 +85,11 @@ export default function TelaLevantamento(props) {
             />
             </Grid>
 
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Compr. Total"
+                label="COMPRIMENTO TOTAL"
                 id="comprimentoTotal"
                 onChange={(event => setComprimentoTotal(event.target.value.toUpperCase()))}
                 value={comprimentoTotal}
@@ -98,11 +98,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Linha Liq"
+                label="LINHA LIQ"
                 id="linhaLiq"
                 onChange={(event => setLinhaLiq(event.target.value.toUpperCase()))}
                 value={linhaLiq}
@@ -111,11 +111,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Linha Suc"
+                label="LINHA SUC"
                 id="linhaSuc"
                 onChange={(event => setLinhaSuc(event.target.value.toUpperCase()))}
                 value={linhaSuc}
@@ -124,11 +124,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Tubo"
+                label="TUBO"
                 id="tubo"
                 onChange={(event => setTubo(event.target.value.toUpperCase()))}
                 value={tubo}
@@ -137,11 +137,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Cabo PP"
+                label="CABO PP"
                 id="cabopp"
                 onChange={(event => setCaboPP(event.target.value.toUpperCase()))}
                 value={caboPP}
@@ -150,11 +150,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Maquina Por Pavimento"
+                label="MAQUINA POR PAVIMENTO"
                 id="maquinaporpavimento"
                 onChange={(event => setMaquinaPavimento(event.target.value.toUpperCase()))}
                 value={maquinaPavimento}
@@ -163,11 +163,11 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>
+            <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
                 required
-                label="Quantidade de Pavimento"
+                label="QUANTIDADE DE PAVIMENTOS"
                 id="quantidadePavimento"
                 onChange={(event => setQuantidadePavimento(event.target.value.toUpperCase()))}
                 value={quantidadePavimento}
@@ -176,7 +176,7 @@ export default function TelaLevantamento(props) {
                 variant="standard"
             />
             </Grid>
-            <Grid item xs={3} md={3}>            
+            <Grid item xs={6} md={2}>           
             <Button          
                 fullWidth
                 size="large" 
