@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Top from '../../components/arcondicionado/top';
 
+const theme = createTheme();
 
 export default function Levantamento() {
   const router = useRouter()
