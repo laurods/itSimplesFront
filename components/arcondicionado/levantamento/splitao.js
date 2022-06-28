@@ -33,12 +33,12 @@ export default function TelaLevantamento(props) {
       <Box sx={{ flexGrow: 1, mt: 2 }}>
 
       <Grid container spacing={2} sx={{ mt: 3 }}>
-            <Grid item xs={6} md={6}>
-                <Typography variant="subtitle1" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
+            <Grid item xs={3} md={3}>
+                <Typography variant="subtitle1" gutterBottom component="div">          
                     TAG
                 </Typography>
             </Grid>      
-            <Grid item xs={6} md={6}>
+            <Grid item xs={9} md={9}>
             <TextField
                 margin="normal"
                 required
@@ -46,12 +46,16 @@ export default function TelaLevantamento(props) {
                 id="tag"
                 onChange={(event => setTag(event.target.value.toUpperCase()))}
                 value={tag}
-                fullWidth
                 autoComplete='off'
                 variant="outlined"
             />
             </Grid>
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
+                <Typography variant="subtitle1" gutterBottom component="div">          
+                    CAPACIDADE TR
+                </Typography>
+            </Grid>
+            <Grid item xs={9} md={9}>
             <TextField
                 margin="normal"
                 required
