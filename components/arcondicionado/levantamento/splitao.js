@@ -32,55 +32,33 @@ export default function TelaLevantamento(props) {
       <Container>      
       <Box sx={{ flexGrow: 1, mt: 2 }}>
 
-      <Grid container spacing={2} sx={{ mt: 3 }}>
-            <Grid item xs={2} md={2}>
-            <TextField
-                margin="normal"
-                disabled
-                value="TAG"
-                variant="standard"
-            />
-            </Grid>      
-            <Grid item xs={2} md={2}>
+      <Grid container spacing={2} sx={{ mt: 3 }}>                 
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
+                label="TAG"
                 id="tag"
                 onChange={(event => setTag(event.target.value.toUpperCase()))}
                 value={tag}
                 autoComplete='off'
-                variant="outlined"
-            />
-            </Grid>
-            <Grid item xs={2} md={2}>
-            <TextField
-                margin="normal"
-                disabled
-                value="CAPACIDADE (TR)"
                 variant="standard"
             />
-            </Grid>
-            <Grid item xs={2} md={2}>
+            </Grid>          
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
+                label="CAPACIDADE (TR)"
                 id="capacidadetr"
                 onChange={(event => setCapacidadetr(event.target.value.toUpperCase()))}
                 value={capacidadetr}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
-            />
-            </Grid>
-            <Grid item xs={2} md={2}>
-            <TextField
-                margin="normal"
-                disabled
-                value="AMBIENTE"
                 variant="standard"
             />
-            </Grid>
-            <Grid item xs={2} md={2}>
+            </Grid>         
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
@@ -90,21 +68,20 @@ export default function TelaLevantamento(props) {
                 value={ambiente}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
-
-            <Grid item xs={1} md={1}>
+            <Grid item xs={3} md={3}>
             <TextField
                 margin="normal"
                 required
-                label="Compr. Unit"
+                label="Comprimento Unitário"
                 id="comprimentoUnitario"
                 onChange={(event => setComprimentoUnitario(event.target.value.toUpperCase()))}
                 value={comprimentoUnitario}
                 fullWidth
                 autoComplete='off'
-                variant="outlined"
+                variant="standard"
             />
             </Grid>
 
