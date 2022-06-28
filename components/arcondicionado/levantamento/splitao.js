@@ -15,6 +15,11 @@ import Grid from '@mui/material/Grid';
 
 const theme = createTheme();
 export default function TelaLevantamento(props) {
+    const [maquinas, setMaquinas] = useState('');
+    const [totalTR, setTotalTR] = useState('');
+    const [totalComprimentoUnitario, setTotalComprimentoUnitario] = useState('');
+    const [comprimentoGeral, setComprimentoGeral] = useState('');
+    const [totalCaboPP, setTotalCaboPP] = useState('');
     const [tag, setTag] = useState('');
     const [capacidadetr, setCapacidadetr] = useState('');
     const [ambiente, setAmbiente] = useState('');
@@ -32,11 +37,60 @@ export default function TelaLevantamento(props) {
       <Container>      
       <Box sx={{ flexGrow: 1, mt: 2 }}>
 
-      <Grid container spacing={2} sx={{ mt: 3 }}>                 
+      <Grid container spacing={2} sx={{ mt: 3 }}>
+         <Grid item xs={6} md={4}>
+            <TextField
+                margin="normal"
+                label="Quant. Maquinas"
+                onChange={(event => setMaquinas(event.target.value.toUpperCase()))}
+                value={maquinas}
+                autoComplete='off'
+                variant="standard"
+            />
+            </Grid>
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
+                disabled
+                label="Total TR"
+                value={totalTR}
+                autoComplete='off'
+                variant="outlined"
+            />
+            </Grid>
+            <Grid item xs={6} md={2}>
+            <TextField
+                margin="normal"
+                disabled
+                label="Compr. Unit. (m)"
+                value={totalComprimentoUnitario}
+                autoComplete='off'
+                variant="outlined"
+            />
+            </Grid>
+            <Grid item xs={6} md={2}>
+            <TextField
+                margin="normal"
+                disabled
+                label="Compr. Total (m)"
+                value={comprimentoGeral}
+                autoComplete='off'
+                variant="outlined"
+            />
+            </Grid>
+            <Grid item xs={6} md={2}>
+            <TextField
+                margin="normal"
+                disabled
+                label="Total Cabo PP"
+                value={totalCaboPP}
+                autoComplete='off'
+                variant="outlined"
+            />
+            </Grid>                  
+            <Grid item xs={6} md={2}>
+            <TextField
+                margin="normal"
                 label="TAG"
                 id="tag"
                 onChange={(event => setTag(event.target.value.toUpperCase()))}
@@ -48,7 +102,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="CAPACIDADE (TR)"
                 id="capacidadetr"
                 onChange={(event => setCapacidadetr(event.target.value.toUpperCase()))}
@@ -61,7 +114,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="AMBIENTE"
                 id="ambiente"
                 onChange={(event => setAmbiente(event.target.value.toUpperCase()))}
@@ -74,7 +126,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="COMPR. UNITÁRIO"
                 id="comprimentoUnitario"
                 onChange={(event => setComprimentoUnitario(event.target.value.toUpperCase()))}
@@ -88,7 +139,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="COMPR. TOTAL"
                 id="comprimentoTotal"
                 onChange={(event => setComprimentoTotal(event.target.value.toUpperCase()))}
@@ -101,7 +151,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="LINHA LIQ"
                 id="linhaLiq"
                 onChange={(event => setLinhaLiq(event.target.value.toUpperCase()))}
@@ -114,7 +163,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="LINHA SUC"
                 id="linhaSuc"
                 onChange={(event => setLinhaSuc(event.target.value.toUpperCase()))}
@@ -127,7 +175,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="TUBO"
                 id="tubo"
                 onChange={(event => setTubo(event.target.value.toUpperCase()))}
@@ -140,7 +187,6 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
                 label="CABO PP"
                 id="cabopp"
                 onChange={(event => setCaboPP(event.target.value.toUpperCase()))}
@@ -153,8 +199,7 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
-                label="MAQ. POR PAVIMENTO"
+                label="MAQ. PAVIMENTO"
                 id="maquinaporpavimento"
                 onChange={(event => setMaquinaPavimento(event.target.value.toUpperCase()))}
                 value={maquinaPavimento}
@@ -166,8 +211,7 @@ export default function TelaLevantamento(props) {
             <Grid item xs={6} md={2}>
             <TextField
                 margin="normal"
-                required
-                label="QUANT. DE PAVIMENTOS"
+                label="QUANT. PAVIMENTOS"
                 id="quantidadePavimento"
                 onChange={(event => setQuantidadePavimento(event.target.value.toUpperCase()))}
                 value={quantidadePavimento}
