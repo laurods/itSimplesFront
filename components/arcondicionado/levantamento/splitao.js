@@ -25,7 +25,7 @@ export default function TelaLevantamento(props) {
     const [tubo, setTubo] = useState('');
     const [caboPP, setCaboPP] = useState('');
     const [maquinaPavimento, setMaquinaPavimento] = useState('');
-    const [quantiadePavimento, setQuantidadePavimento] = useState('');  
+    const [quantidadePavimento, setQuantidadePavimento] = useState('');  
 
   return (
     <ThemeProvider theme={theme}>
