@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Top from '../../components/hotel/top';
+import Q01 from '../../components/hotel/questions/q01';
 
 const theme = createTheme();
 
@@ -18,7 +19,7 @@ export default function Levantamento() {
         <Top />
         <Container>                         
             <Box sx={{ flexGrow: 1, mt: 2 }}>            
-                        
+               <Q01 />         
             </Box>
         </Container>
     </ThemeProvider>
