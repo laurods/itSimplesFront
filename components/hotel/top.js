@@ -41,11 +41,11 @@ export default function Top() {
                 Olá, ficamos muito felizes em ter você com a gente!
                 </Typography>
                 <Typography variant="body2">
-                Gostaríamos de saber como foi sua experiencia. 
+                Queremos saber como foi sua experiencia. 
                 <br />
                 Ouvir você nos ajuda a aprimorar o seu atendimento, sempre!
                 <br />
-                São apenas 8 perguntas que você pode responder em menos de 1 minuto.                
+                Apenas 8 etapas que você pode responder em menos de 1 minuto.                
                 </Typography>
                
             </CardContent>
