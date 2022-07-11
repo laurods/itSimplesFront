@@ -5,9 +5,7 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Top from '../../components/hotel/top';
-import Content from '../../components/hotel/content'
-import Q01 from '../../components/hotel/questions/q01';
-import Q02 from '../../components/hotel/questions/q02';
+import Content from '../../components/hotel/content';
 
 
 const theme = createTheme();

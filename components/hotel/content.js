@@ -10,6 +10,7 @@ const [count, setCount] = useState(2)
 const [click, setClick] = useState(0)
 const [quantQuestions, setQuantQuestions] = useState(questions.data[0].questions.length)
 
+
 const handleAnswer = () =>{  
   let countClick = click + 1;
   setClick(countClick)
@@ -21,7 +22,6 @@ const handleAnswer = () =>{
     setClick(0)        
   }
 }
-    
   return (    
     <>
       {
@@ -34,6 +34,7 @@ const handleAnswer = () =>{
                 questions={item.questions} 
                 answers={item.answers}
                 handleAnswer={handleAnswer}
+                show = {questions.data.length == item.codigo ? true : false }
               />                          
               )
             )
