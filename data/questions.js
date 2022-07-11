@@ -9,7 +9,7 @@ export default{
     },
     {
     "codigo": '2',
-    "mainQuestion": 'Por favor, avalie o processo do check-in:',
+    "mainQuestion": 'Avalie o processo do check-in:',
     "questions": [
         'O processo do check-in foi rápido e eficiente.',
         'A equipe foi cortês',
@@ -19,7 +19,7 @@ export default{
     },
     {
     "codigo": '3',
-    "mainQuestion": 'Por favor, avalie o seu quarto:',
+    "mainQuestion": 'Avalie o seu quarto:',
     "questions": [
         'Foi mobiliado adequadamente',
         'Era limpo e confortável',
@@ -30,7 +30,7 @@ export default{
     },
     {
     "codigo": '4',
-    "mainQuestion": 'Por favor, avalie os nossos funcionários:',
+    "mainQuestion": 'Avalie os nossos funcionários:',
     "questions": [
         'Equipe de arrumação foi Simpática e confiável',
         'Segurança estava disponível, se necessário',
@@ -42,7 +42,7 @@ export default{
     },
     {
     "codigo": '5',
-    "mainQuestion": 'Por favor, avalie nosso janta:',
+    "mainQuestion": 'Avalie nosso janta:',
     "questions": [
         'Serviço de quarto entregou o pedido correto',
         'A comida foi boa',
@@ -55,7 +55,7 @@ export default{
     },
     {
     "codigo": '6',
-    "mainQuestion": 'Por favor, avalie o nosso processo de check-out:',
+    "mainQuestion": 'Avalie o nosso processo de check-out:',
     "questions": [
         'Recebi uma conta completa e correta',
         'O processo do check-out foi rápido e eficiente',

@@ -12,6 +12,7 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { AuthContext } from '../../contexts/AuthContext';
 
 
+
 export default function Top() {
     const { telaCheia } = useContext(AuthContext);
     
@@ -33,24 +34,7 @@ export default function Top() {
            Blue Tree Hotels
           </Typography>
         </Toolbar>
-      </AppBar>
-      <Grid item xs={12} md={6}>
-        <Card>
-            <CardContent sx={{ flex: 1 }}>
-                <Typography variant="subtitle2" component="div">
-                Olá, ficamos muito felizes em ter você com a gente!
-                </Typography>
-                <Typography variant="body2">
-                Queremos saber como foi sua experiencia. 
-                <br />
-                Ouvir você nos ajuda a aprimorar o seu atendimento, sempre!
-                <br />
-                Apenas 8 etapas que você pode responder em menos de 1 minuto.                
-                </Typography>
-               
-            </CardContent>
-        </Card>
-      </Grid>
+      </AppBar>      
     </Box>
   );
 }
