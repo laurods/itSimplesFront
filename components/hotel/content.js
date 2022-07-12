@@ -24,7 +24,7 @@ objQuizz['idHotel'] = idHotel
 objQuizz['reserva'] = reserva
 objQuizz['quizzes'] = quizzes
 objQuizz['sugest'] = sugest
-const resDataQuizz = await axios.post('/api/hotel/addAnswer', { objQuizz })
+const resDataQuizz = await axios.post('/api/hotel/addAnswer',  objQuizz )
 console.log(resDataQuizz.data)
 }
 
