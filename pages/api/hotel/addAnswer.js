@@ -25,7 +25,7 @@ const client = new MongoClient(url);
                 $push:{ quizzes: quizzes}
                 
            },
-                        
+           { upsert: true }            
         );
 
          res.status(200).json({ msg: 'Salvo', objQuizz});
