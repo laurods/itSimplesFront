@@ -28,7 +28,7 @@ const client = new MongoClient(url);
            { upsert: true }            
         );
 
-         res.status(200).json({ msg: 'Salvo', quizzes});
+         res.status(200).json({ msg: 'Salvo'});
 
         } catch (err) {
          console.log(err.stack);
