@@ -22,9 +22,8 @@ const client = new MongoClient(url);
                     idHotel,
                     reserva,
                     sugest,
+                    quizzes
                 },
-                $push:{ quizzes: quizzes }
-                
            },
            { upsert: true }            
         );
