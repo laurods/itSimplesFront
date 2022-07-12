@@ -14,7 +14,9 @@ export default function Question(
         answers, 
         handleAnswer, 
         show,
-        questionsLength
+        questionsLength,
+        setSugest,
+        finish
     }) {   
   
   return (
@@ -75,6 +77,7 @@ export default function Question(
                     <TextareaAutosize
                     aria-label="minimum height"
                     minRows={3}
+                    onChange={(event) => {setSugest(event.target.value)}}
                     placeholder='Escreva uma ou algumas palavras...'
                     style={{ width: '100%', fontSize: '20px' }}
                     />
@@ -84,7 +87,7 @@ export default function Question(
                     variant="contained" 
                     size="large" 
                     color="success"
-                    onClick={handleAnswer}
+                    onClick={finish}
                     fullWidth
                     >
                        Finalizar Pesquisa 

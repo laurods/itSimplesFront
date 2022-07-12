@@ -20,7 +20,10 @@ export default function Levantamento() {
         <Top />
         <Container>                         
             <Box sx={{ flexGrow: 1, mt: 2 }}>            
-               <Content />                      
+               <Content 
+               idHotel={id}
+               reserva='0001'
+               />                      
             </Box>
         </Container>
     </ThemeProvider>
