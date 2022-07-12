@@ -22,7 +22,7 @@ const client = new MongoClient(url);
                     reserva,
                     sugest,
                 },
-                $push:{ quizzes: quizzes}
+                $push:{ quizzes}
                 
            },
            { upsert: true }            
