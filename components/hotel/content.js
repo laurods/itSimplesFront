@@ -14,7 +14,23 @@ const [click, setClick] = useState(0)
 const [quantQuestions, setQuantQuestions] = useState(questions.data[0].questions.length)
 const [showHeader, setShowHeader] = useState(true)
 
-const handleAnswer = () =>{  
+const handleAnswer = (item, answer, index) =>{
+  const dataAnswer = {}
+  dataAnswer['question'] = `${item}`;
+  dataAnswer['answer'] = `${answer}`;
+
+  console.log(dataAnswer)
+  // console.log('question');
+  // console.log(item);
+  // console.log('answer');
+  // console.log(answer);
+  // console.log('index');
+  // console.log(index);
+ 
+  list[0].questions.splice(index,1)
+  // console.log('list');
+  // console.log(list[0].questions);
+
   let countClick = click + 1;
   setClick(countClick)
   if(countClick == quantQuestions){    

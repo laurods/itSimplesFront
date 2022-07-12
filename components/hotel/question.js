@@ -26,7 +26,7 @@ export default function Question(
             </Typography> 
         </Grid>        
         {questions.map(
-            item => (
+            (item, index) => (
             <>
                 <Grid item xs={12} md={12} key={item.codigo}>
                     <Typography variant="subtitle1" component="div">          
@@ -41,7 +41,7 @@ export default function Question(
                     variant="outlined" 
                     size="large" 
                     color={answer == 'Não'? "error" : "info"}
-                    onClick={handleAnswer}
+                    onClick={() => {handleAnswer(item, answer, index)}}
                     fullWidth
                     >
                         {answer}
@@ -76,7 +76,7 @@ export default function Question(
                     aria-label="minimum height"
                     minRows={3}
                     placeholder='Escreva uma ou algumas palavras...'
-                    style={{ width: '100%' }}
+                    style={{ width: '100%', fontSize: '20px' }}
                     />
                 </Grid>
                 <Grid item xs={12} md={12}>

@@ -3,7 +3,7 @@ export default{
     {
      "codigo": '1',
      "mainQuestion": 'Ao entrar no nosso hotel?',
-     "questions": ['Você se sentiu bem-vindo?'],
+     "questions": ['Você se sentiu bem-vindo(a)?'],
      "answers": ['Sim', 'Não'],
 
     },
@@ -57,7 +57,7 @@ export default{
     "codigo": '6',
     "mainQuestion": 'Avalie o nosso processo de check-out:',
     "questions": [
-        'Recebi uma conta completa e correta',
+        'Recebeu a conta completa e correta',
         'O processo do check-out foi rápido e eficiente',
     ],
     "answers": ['Sim', 'Não'],
