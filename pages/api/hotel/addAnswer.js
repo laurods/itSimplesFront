@@ -11,7 +11,7 @@ const client = new MongoClient(url);
     try {
         const objQuizz = req.body;
         const { idControl, idHotel, reserva, quizzes, sugest } = objQuizz;
-        const { arrQuiz }  = quizzes
+        
          await client.connect();
          const db = client.db(dbName);
          const col = db.collection("answers");
@@ -23,13 +23,13 @@ const client = new MongoClient(url);
                     reserva,
                     sugest,
                 },
-                $push:{ arrQuiz }
+                $push:{ quizzes: quizzes }
                 
            },
            { upsert: true }            
         );
 
-         res.status(200).json({ msg: 'Salvo', arrQuiz});
+         res.status(200).json({ msg: 'Salvo', quizzes});
 
         } catch (err) {
          console.log(err.stack);
