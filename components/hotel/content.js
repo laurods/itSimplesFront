@@ -18,7 +18,7 @@ const [quizzes, setQuizzes] = useState([])
 const [sugest, setSugest] = useState('')
 const objQuizz = {}
 
-const finish = async () => {
+const finish = async () => { 
 objQuizz['idControl'] = `${idHotel}-${reserva}`;
 objQuizz['idHotel'] = idHotel
 objQuizz['reserva'] = reserva
@@ -29,7 +29,7 @@ console.log(resDataQuizz.data)
 }
 
 
-const handleAnswer = (item, answer, index) =>{  
+const handleAnswer = (item, answer, index, codigo) =>{  
   const dataAnswer = {}  
   dataAnswer['question'] = item
   dataAnswer['answer'] = answer
@@ -46,10 +46,11 @@ const handleAnswer = (item, answer, index) =>{
     setClick(0);
     setShowHeader(false)        
   }
+
 }
   return (    
     <>
-      {showHeader && <Header />}
+      {/* {showHeader && <Header />} */}
       <Divider />
       {
         list.map(
@@ -60,11 +61,12 @@ const handleAnswer = (item, answer, index) =>{
                 mainQuestion={item.mainQuestion}
                 questions={item.questions} 
                 answers={item.answers}
-                handleAnswer={handleAnswer}
-                show = {questions.data.length == item.codigo ? true : false }
+                handleAnswer={handleAnswer}                
                 questionsLength = {questions.data.length}
                 setSugest = {setSugest}
                 finish = {finish}
+                showFinish = {questions.data.length == item.codigo ? true : false }
+                showQuestion ={questions.data.length != item.codigo ? true : false }                
               />                          
               )
             )

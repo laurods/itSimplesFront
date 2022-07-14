@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
@@ -12,16 +12,28 @@ export default function Question(
         mainQuestion, 
         questions, 
         answers, 
-        handleAnswer, 
-        show,
+        handleAnswer,        
         questionsLength,
         setSugest,
-        finish
+        finish,
+        showQuestion,
+        showFinish,        
     }) {   
   
+    const [showBox, setShowBox] = useState(true)
+
+    const handleBox = () => {
+        setShowBox(false)
+        finish()
+    }
+
+    const handleReload = () => {
+        location.reload();
+    }
   return (
-    <Box>              
-    {!show && <Grid container spacing={2}>
+    <>
+    {showBox && <Box>              
+    {showQuestion && <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
             <Typography variant="h6" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
                 {codigo}/{questionsLength}. {mainQuestion}
@@ -43,7 +55,7 @@ export default function Question(
                     variant="outlined" 
                     size="large" 
                     color={answer == 'Não'? "error" : "info"}
-                    onClick={() => {handleAnswer(item, answer, index)}}
+                    onClick={() => {handleAnswer(item, answer, index, codigo)}}
                     fullWidth
                     >
                         {answer}
@@ -59,7 +71,7 @@ export default function Question(
     </Grid>
     }
 
-    {show && <Grid container spacing={2}>
+    {showFinish && <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
             <Typography variant="h6" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
                 {codigo}/8. {mainQuestion}
@@ -84,10 +96,10 @@ export default function Question(
                 </Grid>
                 <Grid item xs={12} md={12}>
                     <Button 
-                    variant="contained" 
+                    variant="outlined" 
                     size="large" 
                     color="success"
-                    onClick={finish}
+                    onClick={handleBox}
                     fullWidth
                     >
                        Finalizar Pesquisa 
@@ -99,8 +111,36 @@ export default function Question(
        
     </Grid>
     }
-   
     </Box>
+    }
+
+{!showBox &&<Box>
+        <Grid container spacing={2}>
+            <Grid item xs={12} md={12}>
+                <Typography variant="h6" component="div" align='center'>          
+                    Sua opinião é muito importante.
+                    <br/>
+                    Agradecemos o feedback.
+                </Typography>
+            </Grid>
+            
+            <Grid item xs={12} md={12}>
+                <Button 
+                variant="outlined" 
+                size="large" 
+                color="info"                    
+                fullWidth
+                onClick={handleReload}
+                >
+                Refazer 
+                </Button>
+            </Grid>    
+            
+        
+        </Grid>
+    </Box>
+    }
+    </>
   );
 }
 
