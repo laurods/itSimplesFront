@@ -13,7 +13,7 @@ export default function Dashboard({dataQuizz}) {
     const [chat1Total, setChat1Total] = useState('');
     const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
     const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
-    setChat1Total(totalNo + totalYes )
+    //setChat1Total(totalNo + totalYes )
     setChat1No(totalNo)
     setChat1Yes(totalYes)
     console.log(chat1Yes)
