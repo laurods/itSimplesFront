@@ -18,10 +18,15 @@ export default function Dashboard({dataQuizz}) {
     console.log(totalNo + totalYes )
 
     const useStyles = makeStyles(theme => ({
-        root: {
+        yes: {
           height: theme.spacing(4),
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: 'blue',
         },
+
+        no: {
+            height: theme.spacing(4),
+            backgroundColor: 'red',
+          },
       }));
 
     const classes = useStyles();
@@ -29,22 +34,22 @@ export default function Dashboard({dataQuizz}) {
     <Box sx={{ flexGrow: 1 }}>
       
       <Grid container spacing={2}>
-        <Grid item xs={6}>            
+        <Grid item xs={12}>            
           <p>Sim</p>          
           <LinearProgress 
           variant="determinate" 
           classes={{
-            root: classes.root,
+            root: classes.yes,
           }}
           />          
         </Grid>
-        <Grid item xs={6}>            
+        <Grid item xs={12}>            
           <p>Não</p>
           <LinearProgress 
           variant="determinate" 
           value={totalNo} 
           classes={{
-            root: classes.root,
+            root: classes.no,
           }}
           />          
         </Grid>
