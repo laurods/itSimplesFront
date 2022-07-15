@@ -20,12 +20,15 @@ export default function Dashboard({dataQuizz}) {
     const useStyles = makeStyles(theme => ({
         yes: {
           height: theme.spacing(4),
-          color: 'blue',
+          backgroundColor: theme.palette.background.default,
+          fill: 'blue',
+          
         },
 
         no: {
             height: theme.spacing(4),
-            color: 'red',
+            backgroundColor: theme.palette.background.default,
+            fill: '#1c87c9',
           },
       }));
 
@@ -35,16 +38,15 @@ export default function Dashboard({dataQuizz}) {
       
       <Grid container spacing={2}>
         <Grid item xs={12}>            
-          <p>Sim</p>          
+          <p>Sim {((totalYes)/(totalNo + totalYes))*100} %</p>          
           <LinearProgress 
-          variant="determinate" 
+          variant="determinate"
+          value={totalYes} 
           classes={{
             root: classes.yes,
           }}
-          />          
-        </Grid>
-        <Grid item xs={12}>            
-          <p>Não</p>
+          />
+          <p>Não {((totalNo)/(totalNo + totalYes))*100}</p>
           <LinearProgress 
           variant="determinate" 
           value={totalNo} 
@@ -53,6 +55,7 @@ export default function Dashboard({dataQuizz}) {
           }}
           />          
         </Grid>
+        
                      
         
       </Grid>
