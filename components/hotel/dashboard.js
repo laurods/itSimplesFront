@@ -29,7 +29,7 @@ export default function Dashboard({dataQuizz}) {
     <Box sx={{ flexGrow: 1 }}>
       
       <Grid container spacing={2}>
-        <Grid item xs={6}>            
+        <Grid item xs={12}>            
           <p>Sim {Math.round(((totalYes)/(totalNo + totalYes))*100)} %</p>          
           <LinearProgress 
           variant="determinate"
@@ -40,7 +40,7 @@ export default function Dashboard({dataQuizz}) {
           }}          
           />          
         </Grid>
-        <Grid item xs={6}>          
+        <Grid item xs={12}>          
           <p>Não {Math.round(((totalNo)/(totalNo + totalYes))*100)} %</p>
           <LinearProgress 
           variant="determinate"
