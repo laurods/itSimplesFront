@@ -22,11 +22,11 @@ export default function Dashboard({dataQuizz}) {
       <Grid container spacing={2}>
         <Grid item xs={6}>            
           <p>Sim</p>          
-          <LinearProgress color="secondary" value={totalYes} />          
+          <LinearProgress variant="determinate" color="secondary" value={totalYes} />          
         </Grid>
         <Grid item xs={6}>            
           <p>Não</p>
-          <LinearProgress color="primary" value={totalNo} />          
+          <LinearProgress variant="determinate" color="primary" value={totalNo} />          
         </Grid>
                      
         
