@@ -16,6 +16,9 @@ export default function Dashboard({dataQuizz}) {
     setChat1Total(totalNo + totalYes )
     setChat1No(totalNo)
     setChat1Yes(totalYes)
+    console.log(chat1Yes)
+    console.log(chat1No)
+    console.log(chat1Total)
     
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -23,11 +26,11 @@ export default function Dashboard({dataQuizz}) {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <p>Dashboard</p>
-          <Chart1 
+          {/* <Chart1 
           yes={chat1Yes}
           no={chat1No}
           total={chat1Total}
-          />
+          /> */}
         </Grid>
                      
         
