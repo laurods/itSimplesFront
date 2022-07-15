@@ -20,12 +20,12 @@ export default function Dashboard({dataQuizz}) {
     const useStyles = makeStyles(theme => ({
         yes: {
           height: theme.spacing(4),
-          backgroundColor: 'blue',
+          color: 'blue',
         },
 
         no: {
             height: theme.spacing(4),
-            backgroundColor: 'red',
+            color: 'red',
           },
       }));
 
