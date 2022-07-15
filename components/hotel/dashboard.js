@@ -25,7 +25,7 @@ export default function Dashboard({dataQuizz}) {
       <Grid container spacing={2}>
         <Grid item xs={12}>
                     
-          <p>Sim {Math.round(((totalYes)/(totalNo + totalYes))*100)} %</p>          
+          <span>Sim {Math.round(((totalYes)/(totalNo + totalYes))*100)} %</span>          
           <LinearProgress 
           variant="determinate"
           color ="primary"
@@ -33,10 +33,8 @@ export default function Dashboard({dataQuizz}) {
           classes={{
             root: classes.root,
           }}          
-          />          
-        </Grid>
-        <Grid item xs={12}>          
-          <p>Não {Math.round(((totalNo)/(totalNo + totalYes))*100)} %</p>
+          />
+          <span>Não {Math.round(((totalNo)/(totalNo + totalYes))*100)} %</span>
           <LinearProgress 
           variant="determinate"
           color="secondary"
@@ -45,7 +43,7 @@ export default function Dashboard({dataQuizz}) {
             root: classes.root,
           }}
           />          
-        </Grid>
+        </Grid>        
       </Grid>
       
     </Box>
