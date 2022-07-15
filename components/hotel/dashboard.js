@@ -34,7 +34,7 @@ export default function Dashboard({dataQuizz}) {
           <LinearProgress 
           variant="determinate"
           color ="primary"
-          valueBuffer={100}
+          valueBuffer={42}
           value={totalYes} 
           classes={{
             root: classes.root,
@@ -46,7 +46,7 @@ export default function Dashboard({dataQuizz}) {
           <LinearProgress 
           variant="determinate"
           color="secondary"
-          valueBuffer={100} 
+          valueBuffer={42} 
           value={totalNo} 
           classes={{
             root: classes.root,
