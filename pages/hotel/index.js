@@ -8,7 +8,8 @@ import axios from 'axios';
 
 export default function Index() { 
   const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ} = useContext(AuthContext);
-  const {dataQuizz, setDataQuizz} = useState([]);
+  const [dataQuizz, setDataQuizz] = useState([]);
+  
 
   useEffect(() => {
     const loadAll = async() =>{
