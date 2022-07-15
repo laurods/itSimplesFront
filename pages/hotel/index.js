@@ -8,6 +8,7 @@ import axios from 'axios';
 
 export default function Index() { 
   const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ} = useContext(AuthContext);
+  const {dataQuizz, setDataQuizz} = useState([]);
 
   useEffect(() => {
     const loadAll = async() =>{
@@ -16,6 +17,7 @@ export default function Index() {
       const listClients = clients.data;
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listClients[0].cnpj });              
       const listQuizzes = quizzes.data;
+      setDataQuizz(listQuizzes)
       setCNPJsByUsers(listClients)
       setActiveCNPJ(listClients[0].cnpj)
       
@@ -26,7 +28,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<Dashboard quizzes = {listQuizzes}/>}
+      {isAuthenticated &&<Dashboard dataQuizz = {dataQuizz}/>}
       {!isAuthenticated && <Login />}
       </>
     );
