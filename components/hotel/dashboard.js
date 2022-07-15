@@ -7,18 +7,12 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import Chart1 from './chart1';
 
-export default function Dashboard({dataQuizz}) {
-    const [chat1Yes, setChat1Yes] = useState('');
-    const [chat1No, setChat1No] = useState('');
-    const [chat1Total, setChat1Total] = useState('');
+export default function Dashboard({dataQuizz}) {      
     const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
-    const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
-    //setChat1Total(totalNo + totalYes )
-    setChat1No(totalNo)
-    setChat1Yes(totalYes)
-    console.log(chat1Yes)
-    console.log(chat1No)
-    console.log(chat1Total)
+    const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);   
+    console.log(totalNo)
+    console.log(totalYes)
+    console.log(totalNo + totalYes )
     
   return (
     <Box sx={{ flexGrow: 1 }}>
