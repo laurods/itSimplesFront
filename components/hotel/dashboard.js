@@ -8,6 +8,9 @@ import axios from 'axios';
 export default function Dashboard({dataQuizz}) {
     console.log('dataQuizz')
     console.log(dataQuizz)
+    const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
+    console.log('totalNo');
+    console.log(totalNo);
   return (
     <Box sx={{ flexGrow: 1 }}>
       

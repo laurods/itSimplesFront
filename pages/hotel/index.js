@@ -20,8 +20,7 @@ export default function Index() {
       const listQuizzes = quizzes.data;
       setDataQuizz(listQuizzes)
       setCNPJsByUsers(listClients)
-      setActiveCNPJ(listClients[0].cnpj)
-      
+      setActiveCNPJ(listClients[0].cnpj)     
       
     }
     loadAll();
