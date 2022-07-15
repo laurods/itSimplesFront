@@ -13,7 +13,7 @@ export default function Chart1({yes, no, total}) {
     console.log(total)
   return (
     <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-      <CircularProgress variant="determinate" {...total} />
+      {/* <CircularProgress variant="determinate" {...total} /> */}
       <Box
         sx={{
           top: 0,
