@@ -16,7 +16,7 @@ const client = new MongoClient(url);
          const dataQuizzes = db.collection("answers");
          const quizzes = await dataQuizzes.aggregate(
             [
-                { $match : { idHotel : '1'} },
+                { $match : { idHotel : '89823918000199'} },
                 { $addFields: {
                     answerYesCount: {
                         $size: {

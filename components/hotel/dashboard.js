@@ -5,7 +5,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 
-export default function Dashboard() {
+export default function Dashboard({quizzes}) {
+    console.log('quizzes')
+    console.log(quizzes)
   return (
     <Box sx={{ flexGrow: 1 }}>
       
