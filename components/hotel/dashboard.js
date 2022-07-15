@@ -29,7 +29,7 @@ export default function Dashboard({dataQuizz}) {
           <LinearProgress 
           variant="determinate"
           color ="primary"
-          value={totalYes} 
+          value={Math.round(((totalYes)/(totalNo + totalYes))*100)} 
           classes={{
             root: classes.root,
           }}          
@@ -40,7 +40,7 @@ export default function Dashboard({dataQuizz}) {
           <LinearProgress 
           variant="determinate"
           color="secondary"
-          value={totalNo} 
+          value={Math.round(((totalNo)/(totalNo + totalYes))*100)} 
           classes={{
             root: classes.root,
           }}
