@@ -9,8 +9,11 @@ export default function Dashboard({dataQuizz}) {
     console.log('dataQuizz')
     console.log(dataQuizz)
     const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
+    const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
     console.log('totalNo');
     console.log(totalNo);
+    console.log('totalYes');
+    console.log(totalYes);
   return (
     <Box sx={{ flexGrow: 1 }}>
       
