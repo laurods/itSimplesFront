@@ -40,7 +40,9 @@ const client = new MongoClient(url);
             }
         ]
 
-         ).toArray();         
+         ).toArray();
+         
+         
 
          res.status(200).json(quizzes);
 
