@@ -8,21 +8,26 @@ import axios from 'axios';
 import Chart1 from './chart1';
 
 export default function Dashboard({dataQuizz}) {
-    console.log('dataQuizz')
-    console.log(dataQuizz)
+    const [chat1Yes, setChat1Yes] = useState('');
+    const [chat1No, setChat1No] = useState('');
+    const [chat1Total, setChat1Total] = useState('');
     const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
     const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
-    console.log('totalNo');
-    console.log(totalNo);
-    console.log('totalYes');
-    console.log(totalYes);
+    setChat1Total(totalNo + totalYes )
+    setChat1No(totalNo)
+    setChat1Yes(totalYes)
+    
   return (
     <Box sx={{ flexGrow: 1 }}>
       
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <p>Dashboard</p>
-          <Chart1 />
+          <Chart1 
+          yes={chat1Yes}
+          no={chat1No}
+          total={chat1Total}
+          />
         </Grid>
                      
         

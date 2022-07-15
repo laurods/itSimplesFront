@@ -4,10 +4,16 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-function Chart1(props) {
+export default function Chart1({yes, no, total}) {
+    console.log('yes')
+    console.log(yes)
+    console.log('no')
+    console.log(no)
+    console.log('total')
+    console.log(total)
   return (
     <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-      <CircularProgress variant="determinate" {...props} />
+      <CircularProgress variant="determinate" {...total} />
       <Box
         sx={{
           top: 0,
@@ -21,33 +27,9 @@ function Chart1(props) {
         }}
       >
         <Typography variant="caption" component="div" color="text.secondary">
-          {`${Math.round(props.value)}%`}
+          {`${Math.round(yes/total)}%`}
         </Typography>
       </Box>
     </Box>
   );
-}
-
-Chart1.propTypes = {
-  /**
-   * The value of the progress indicator for the determinate variant.
-   * Value between 0 and 100.
-   * @default 0
-   */
-  value: PropTypes.number.isRequired,
-};
-
-export default function CircularStatic() {
-  const [progress, setProgress] = React.useState(10);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-    }, 800);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
-
-  return <Chart1 value={progress} />;
 }
