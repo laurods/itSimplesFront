@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
+import { makeStyles, } from '@material-ui/core/styles';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -15,18 +16,37 @@ export default function Dashboard({dataQuizz}) {
     console.log(totalNo)
     console.log(totalYes)
     console.log(totalNo + totalYes )
-    
+
+    const useStyles = makeStyles(theme => ({
+        root: {
+          height: theme.spacing(4),
+          backgroundColor: theme.palette.background.default,
+        },
+      }));
+
+    const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1 }}>
       
       <Grid container spacing={2}>
         <Grid item xs={6}>            
           <p>Sim</p>          
-          <LinearProgress variant="determinate" color="secondary" value={totalYes} />          
+          <LinearProgress 
+          variant="determinate" 
+          classes={{
+            root: classes.root,
+          }}
+          />          
         </Grid>
         <Grid item xs={6}>            
           <p>Não</p>
-          <LinearProgress variant="determinate" color="primary" value={totalNo} />          
+          <LinearProgress 
+          variant="determinate" 
+          value={totalNo} 
+          classes={{
+            root: classes.root,
+          }}
+          />          
         </Grid>
                      
         
