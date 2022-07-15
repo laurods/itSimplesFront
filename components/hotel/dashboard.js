@@ -14,11 +14,14 @@ export default function Dashboard({dataQuizz}) {
           height: theme.spacing(4),
           backgroundColor: theme.palette.background.default,
         },
+        box: {
+            backgroundColor: theme.palette.background.default,
+          },
       }));
 
     const classes = useStyles();
   return (
-    <Box sx={{ width: '100%' }}>      
+    <Box className={classes.box}>      
       <Grid container spacing={2}>
         <Grid item xs={12}>
                     
