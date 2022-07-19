@@ -17,16 +17,16 @@ export default function Chat1({dataQuizz}) {
       })      
       });
 
-      const countFeedBack = (question, answer) =>{
+      const countFeedBack = (question) =>{
         const yes = feedback.reduce((accumulator, obj) => {
-            if (obj.question =='Você se sentiu bem-vindo(a)?' && obj.answer=='Sim') {
+            if (obj.question == question && obj.answer=='Sim') {
               return accumulator + 1;
             }
           
             return accumulator;
           }, 0);
         const no = feedback.reduce((accumulator, obj) => {
-            if (obj.question =='Você se sentiu bem-vindo(a)?' && obj.answer=='Não') {
+            if (obj.question ==question && obj.answer=='Não') {
               return accumulator + 1;
         }
           
@@ -40,7 +40,7 @@ export default function Chat1({dataQuizz}) {
           })
 
       }
-      countFeedBack();    
+      countFeedBack('Você se sentiu bem-vindo(a)?');    
    console.log('feedback')
    console.log(feedback)
 
