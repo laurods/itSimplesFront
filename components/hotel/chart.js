@@ -31,12 +31,14 @@ export default function Chat1({dataQuizz}) {
           
             return accumulator;
           }, 0);
-
-          listFeedBack.push({
-            question: question,
-            answerYes:yes,
-            answerNo: no, 
-          })
+        if(yes > 0 || no > 0  ){
+            listFeedBack.push({
+                question: question,
+                answerYes:yes,
+                answerNo: no, 
+              })
+        }
+          
 
       }
 
@@ -46,9 +48,7 @@ export default function Chat1({dataQuizz}) {
             countFeedBack(question);
         })
     });
-    //   countFeedBack('Você se sentiu bem-vindo(a)?');
-    //   countFeedBack('O processo do check-in foi rápido e eficiente.');
-    //   countFeedBack('Registro de reserva estava correto'); 
+     
 
    console.log('listFeedBack')
    console.log(listFeedBack)
