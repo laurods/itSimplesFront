@@ -20,7 +20,7 @@ export default function Chat1({dataQuizz}) {
 
     const classes = useStyles();
     console.log('dataQuizz')
-    console.log(dataQuizz.quizzes)
+    console.log(dataQuizz)
     
   return (
     <Box className={classes.box}>      
