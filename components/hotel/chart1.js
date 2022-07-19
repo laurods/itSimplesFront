@@ -5,7 +5,8 @@ import { makeStyles, } from '@material-ui/core/styles';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 
-export default function Chat1({dataQuizz}) {        
+export default function Chat1({dataQuizz}) {
+    const { quizzes } = dataQuizz;        
     const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
     const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
     const useStyles = makeStyles(theme => ({
@@ -21,6 +22,8 @@ export default function Chat1({dataQuizz}) {
     const classes = useStyles();
     console.log('dataQuizz')
     console.log(dataQuizz)
+    console.log('quizzes')
+    console.log(quizzes)
     
   return (
     <Box className={classes.box}>      
