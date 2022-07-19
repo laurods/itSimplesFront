@@ -8,6 +8,9 @@ export default function Chat1({dataQuizz}) {
     console.log(dataQuizz)
     const listDataQuiz = dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{
+        return {
+            question
+        }
       })      
       });
    console.log('listDataQuiz')
