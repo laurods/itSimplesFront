@@ -5,8 +5,7 @@ import { makeStyles, } from '@material-ui/core/styles';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 
-export default function Chat1({dataQuizz}) {
-    const [question, setQestion] = useState('');           
+export default function Chat1({dataQuizz}) {             
     const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
     const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
     const useStyles = makeStyles(theme => ({
@@ -25,10 +24,7 @@ export default function Chat1({dataQuizz}) {
     console.log('dataQuizz')
     console.log(dataQuizz)
     dataQuizz.map(({quizzes})=>{      
-      quizzes.map(({question, answer})=>{
-        if(question === 'Você se sentiu bem-vindo(a)?') {
-          setQestion(question)
-        }
+      quizzes.map(({question, answer})=>{        
         if(question === 'Você se sentiu bem-vindo(a)?' && answer ==='Sim') {
           qYes.push(answer)
         }
@@ -44,7 +40,7 @@ export default function Chat1({dataQuizz}) {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
-            {question}
+            Você se sentiu bem-vindo(a)?
           </Typography>                    
           <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>          
           <LinearProgress 
