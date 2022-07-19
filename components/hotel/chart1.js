@@ -49,16 +49,16 @@ export default function Chat1({dataQuizz}) {
           <LinearProgress 
           variant="determinate"
           color ="primary"
-          value={Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} 
+          value={Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} 
           classes={{
             root: classes.root,
           }}          
           />
-          <span>Não {Math.round(((totalNo)/(totalNo + totalYes))*100)} %</span>
+          <span>Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %</span>
           <LinearProgress 
           variant="determinate"
           color="secondary"
-          value={Math.round(((totalNo)/(totalNo + totalYes))*100)} 
+          value={Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} 
           classes={{
             root: classes.root,
           }}
