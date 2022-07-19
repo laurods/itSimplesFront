@@ -2,11 +2,14 @@ import React, {  useState, useEffect, useContext } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import questions from '../../data/questions' /* lista de perguntas e respostas*/
+import quizz from '../../data/questions' /* lista de perguntas e respostas*/
 
-export default function Chat1({dataQuizz}) {   
-    console.log('questions.data')
-    console.log(questions.data)
+export default function Chat1({dataQuizz}) {
+    const { questions } = quizz.data  
+    console.log('quizz.data')
+    console.log(quizz.data)
+    console.log('questions')
+    console.log(questions)
     
     const feedback = [];
     const listFeedBack = [];
