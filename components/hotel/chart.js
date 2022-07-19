@@ -5,10 +5,9 @@ import Typography from '@mui/material/Typography';
 
 export default function Chat1({dataQuizz}) {
     console.log('dataQuizz')
-    console.log(dataQuizz)    
-    const yes =[];
-    const no = [];
+    console.log(dataQuizz)
     const feedback = [];
+    const listFeedBack = [];
     const listDataQuiz = dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{
         feedback.push({
@@ -17,18 +16,36 @@ export default function Chat1({dataQuizz}) {
         })        
       })      
       });
-      const q1Yes = feedback.reduce((accumulator, obj) => {
-        if (obj.question =='Você se sentiu bem-vindo(a)?' && obj.answer=='Sim') {
-          return accumulator + 1;
+
+      const countFeedBack = (question, answer) =>{
+        const yes = feedback.reduce((accumulator, obj) => {
+            if (obj.question =='Você se sentiu bem-vindo(a)?' && obj.answer=='Sim') {
+              return accumulator + 1;
+            }
+          
+            return accumulator;
+          }, 0);
+        const no = feedback.reduce((accumulator, obj) => {
+            if (obj.question =='Você se sentiu bem-vindo(a)?' && obj.answer=='Não') {
+              return accumulator + 1;
         }
-      
-        return accumulator;
-      }, 0);
+          
+            return accumulator;
+          }, 0);
+
+          listFeedBack.push({
+            question:'Você se sentiu bem-vindo(a)?',
+            answerYes:yes,
+            answerNo: no, 
+          })
+
+      }
+      countFeedBack();    
    console.log('feedback')
    console.log(feedback)
 
-   console.log('q1Yes')
-   console.log(q1Yes)
+   console.log('listFeedBack')
+   console.log(listFeedBack)
     
   return (
     <Box>      
