@@ -2,12 +2,11 @@ import React, {  useState, useEffect, useContext } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import questions from '../../data/questions' /* lista de perguntas e respostas*/
 
 export default function Chat1({dataQuizz}) {
-    if(dataQuizz.length > 0){
-        console.log('dataQuizz[0].quizzes')
-        console.log(dataQuizz[0].quizzes)
-    }
+    console.log('questions')
+    console.log(questions)
     
     const feedback = [];
     const listFeedBack = [];
