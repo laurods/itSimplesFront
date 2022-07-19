@@ -5,6 +5,10 @@ import Typography from '@mui/material/Typography';
 import questions from '../../data/questions' /* lista de perguntas e respostas*/
 
 export default function Chat1({dataQuizz}) {
+    const { data } = questions
+    const { questions } = data
+    console.log('data')
+    console.log(data)
     console.log('questions')
     console.log(questions)
     
