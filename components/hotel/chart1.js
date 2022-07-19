@@ -30,12 +30,12 @@ export default function Chat1({dataQuizz}) {
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" component="div">          
-          Sim: {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)}%
+          Sim: {qYes.length} | {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)}%
           </Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" component="div">          
-          Não: {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)}%
+          Não: {qNo.length} | {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)}%
           </Typography>
         </Grid>        
       </Grid>

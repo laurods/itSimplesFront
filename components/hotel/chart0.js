@@ -23,7 +23,7 @@ export default function Chat1({dataQuizz}) {
     <Box className={classes.box}>      
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Typography variant="subtitle1" component="div">          
+          <Typography variant="h6" component="div">          
             Total de respostas {totalYes + totalNo}
           </Typography>                    
           <span>Avaliações Positivas:{totalYes} | {Math.round(((totalYes)/(totalYes + totalNo))*100)}%</span>          
