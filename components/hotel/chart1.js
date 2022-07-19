@@ -40,24 +40,8 @@ export default function Chat1({dataQuizz}) {
           <Typography variant="subtitle1" component="div">          
             Você se sentiu bem-vindo(a)?
           </Typography>                    
-          <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>          
-          <LinearProgress 
-          variant="determinate"
-          color ="primary"
-          value={Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} 
-          classes={{
-            root: classes.root,
-          }}          
-          />
+          <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>
           <span>Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %</span>
-          <LinearProgress 
-          variant="determinate"
-          color="secondary"
-          value={Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} 
-          classes={{
-            root: classes.root,
-          }}
-          />          
         </Grid>        
       </Grid>
       

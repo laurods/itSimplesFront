@@ -38,24 +38,10 @@ export default function Chat3({dataQuizz}) {
           <Typography variant="subtitle1" component="div">          
           Registro de reserva estava correto.
           </Typography>                    
-          <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>          
-          <LinearProgress 
-          variant="determinate"
-          color ="primary"
-          value={Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} 
-          classes={{
-            root: classes.root,
-          }}          
-          />
+          <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>         
+          
           <span>Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %</span>
-          <LinearProgress 
-          variant="determinate"
-          color="secondary"
-          value={Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} 
-          classes={{
-            root: classes.root,
-          }}
-          />          
+                   
         </Grid>        
       </Grid>
       
