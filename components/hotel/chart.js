@@ -4,8 +4,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 export default function Chat1({dataQuizz}) {
-    console.log('dataQuizz')
-    console.log(dataQuizz)
+    console.log('dataQuizz[0]')
+    console.log(dataQuizz[0])
     const feedback = [];
     const listFeedBack = [];
     const listDataQuiz = dataQuizz.map(({quizzes})=>{      
