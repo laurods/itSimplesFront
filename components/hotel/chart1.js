@@ -33,9 +33,9 @@ export default function Chat1({dataQuizz}) {
       })      
       });
       console.log('qYes')
-      console.log(qYes)
+      console.log(qYes.length)
       console.log('qNo')
-      console.log(qNo)
+      console.log(qNo.length)
    
     
   return (
