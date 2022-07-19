@@ -7,10 +7,8 @@ import quizz from '../../data/questions' /* lista de perguntas e respostas*/
 export default function Chat1({dataQuizz}) {
     console.log('quizz.data')
     console.log(quizz.data)
-    quizz.data.map(({questions})=>{      
-        questions.map(({question})=>{
-          console.log(question)        
-        })      
+    quizz.data.map(({questions})=>{ 
+        console.log(questions)
     });
     
     const feedback = [];
