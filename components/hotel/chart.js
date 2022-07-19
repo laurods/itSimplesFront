@@ -8,8 +8,8 @@ export default function Chat1({dataQuizz}) {
     const { questions } = quizz.data  
     console.log('quizz.data')
     console.log(quizz.data)
-    console.log('questions')
-    console.log(questions)
+    console.log('quizz.data.questions')
+    console.log(quizz.data.questions)
     
     const feedback = [];
     const listFeedBack = [];
