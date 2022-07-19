@@ -1,24 +1,11 @@
 import React, {  useState, useEffect, useContext } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { makeStyles, } from '@material-ui/core/styles';
-import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 
-export default function Chat2({dataQuizz}) { 
-    const useStyles = makeStyles(theme => ({
-        root: {
-          height: theme.spacing(4),
-          backgroundColor: theme.palette.background.default,
-        },
-        box: {
-            backgroundColor: theme.palette.background.default,
-          },
-      }));
-    
+export default function Chat2({dataQuizz}) {     
     const qYes = [];
     const qNo = [];
-    const classes = useStyles();
     dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{        
         if(question === 'O processo do check-in foi rápido e eficiente.' && answer ==='Sim') {
@@ -32,7 +19,7 @@ export default function Chat2({dataQuizz}) {
    
     
   return (
-    <Box className={classes.box}>      
+    <Box>      
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
@@ -41,12 +28,12 @@ export default function Chat2({dataQuizz}) {
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" component="div">          
-          Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %
+          Sim: {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)}%
           </Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" component="div">          
-          Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %
+          Não: {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)}%
           </Typography>
         </Grid>        
       </Grid>

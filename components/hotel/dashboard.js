@@ -1,5 +1,6 @@
 import React, {  useState, useEffect, useContext } from 'react';
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Chat0 from './chart0'
 import Chat1 from './chart1'
@@ -13,12 +14,15 @@ export default function Dashboard({dataQuizz}) {
         <Grid item xs={12}>
           <Chat0 dataQuizz={dataQuizz}/>
         </Grid>
+        <Divider />
         <Grid item xs={12}>
           <Chat1 dataQuizz={dataQuizz}/>
         </Grid>
+        <Divider />
         <Grid item xs={12}>
           <Chat2 dataQuizz={dataQuizz}/>
         </Grid>
+        <Divider />
         <Grid item xs={12}>
           <Chat3 dataQuizz={dataQuizz}/>
         </Grid>        

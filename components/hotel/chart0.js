@@ -24,9 +24,9 @@ export default function Chat1({dataQuizz}) {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
-            Geral
+            Total de respostas {totalYes + totalNo}
           </Typography>                    
-          <span>Avaliações Positivas {Math.round(((totalYes)/(totalYes + totalNo))*100)} %</span>          
+          <span>Avaliações Positivas:{totalYes} | {Math.round(((totalYes)/(totalYes + totalNo))*100)}%</span>          
           <LinearProgress 
           variant="determinate"
           color ="primary"
@@ -35,7 +35,7 @@ export default function Chat1({dataQuizz}) {
             root: classes.root,
           }}          
           />
-          <span>Avaliações Negativas {Math.round(((totalNo)/(totalYes + totalNo))*100)} %</span>
+          <span>Avaliações Negativas:{totalNo} | {Math.round(((totalNo)/(totalYes + totalNo))*100)} %</span>
           <LinearProgress 
           variant="determinate"
           color="secondary"
