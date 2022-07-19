@@ -22,8 +22,11 @@ export default function Chat1({dataQuizz}) {
     const classes = useStyles();
     console.log('dataQuizz')
     console.log(dataQuizz)
-    console.log('quizzes')
-    console.log(quizzes)
+    const dataQuizList = dataQuizz.map((item => {
+      item.quizzes
+    }))
+    console.log('dataQuizList')
+    console.log(dataQuizList)
     
   return (
     <Box className={classes.box}>      
