@@ -5,8 +5,8 @@ import Typography from '@mui/material/Typography';
 import questions from '../../data/questions' /* lista de perguntas e respostas*/
 
 export default function Chat1({dataQuizz}) {   
-    console.log('questions.data.questions')
-    console.log(questions.data.questions)
+    console.log('questions.data')
+    console.log(questions.data)
     
     const feedback = [];
     const listFeedBack = [];
