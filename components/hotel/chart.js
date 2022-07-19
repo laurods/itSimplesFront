@@ -8,7 +8,9 @@ export default function Chat1({dataQuizz}) {
     console.log('quizz.data')
     console.log(quizz.data)
     quizz.data.map(({questions})=>{ 
-        console.log(questions)
+        questions.forEach(question =>{
+            console.log(question)
+        })
     });
     
     const feedback = [];
