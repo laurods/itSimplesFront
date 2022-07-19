@@ -45,11 +45,11 @@ export default function Chat1({dataQuizz}) {
           <Typography variant="subtitle1" component="div">          
             
           </Typography>                    
-          <span>Sim {Math.round(((totalYes)/(totalNo + totalYes))*100)} %</span>          
+          <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>          
           <LinearProgress 
           variant="determinate"
           color ="primary"
-          value={Math.round(((totalYes)/(totalNo + totalYes))*100)} 
+          value={Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} 
           classes={{
             root: classes.root,
           }}          
