@@ -5,11 +5,13 @@ import Typography from '@mui/material/Typography';
 import quizz from '../../data/questions' /* lista de perguntas e respostas*/
 
 export default function Chat1({dataQuizz}) {
-    const { questions } = quizz.data  
     console.log('quizz.data')
     console.log(quizz.data)
-    console.log('quizz.data.questions')
-    console.log(quizz.data.questions)
+    quizz.data.map(({questions})=>{      
+        questions.map(({question})=>{
+          console.log(question)        
+        })      
+    });
     
     const feedback = [];
     const listFeedBack = [];
