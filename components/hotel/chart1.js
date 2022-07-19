@@ -22,7 +22,7 @@ export default function Chat1({dataQuizz}) {
     
   return (
     <Box>      
-      <Grid>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
             Você se sentiu bem-vindo(a)?

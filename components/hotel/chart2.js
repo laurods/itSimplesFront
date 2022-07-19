@@ -20,7 +20,7 @@ export default function Chat2({dataQuizz}) {
     
   return (
     <Box>      
-      <Grid>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
           O processo do check-in foi rápido e eficiente.
