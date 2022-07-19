@@ -21,8 +21,8 @@ export default function Chat1({dataQuizz}) {
     const classes = useStyles();
     console.log('dataQuizz')
     console.log(dataQuizz)
-    dataQuizz.map(({quizzes: {question}})=>{
-      console.log(`questions ${question}`); 
+    dataQuizz.map(({quizzes})=>{
+      console.log(`quizzes ${quizzes}`); 
       
       });
    
