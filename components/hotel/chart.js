@@ -17,9 +17,18 @@ export default function Chat1({dataQuizz}) {
         })        
       })      
       });
-   
+      const q1Yes = feedback.reduce((accumulator, obj) => {
+        if (obj.question =='Você se sentiu bem-vindo(a)?' && obj.answer=='Sim') {
+          return accumulator + 1;
+        }
+      
+        return accumulator;
+      }, 0);
    console.log('feedback')
    console.log(feedback)
+
+   console.log('q1Yes')
+   console.log(q1Yes)
     
   return (
     <Box>      
