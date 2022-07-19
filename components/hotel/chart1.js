@@ -22,7 +22,10 @@ export default function Chat1({dataQuizz}) {
     console.log('dataQuizz')
     console.log(dataQuizz)
     dataQuizz.map(({quizzes})=>{
-      console.log(`quizzes ${quizzes.question}`); 
+      quizzes.map(({question})=>{
+        console.log('question')
+        console.log(question)
+      })
       
       });
    
