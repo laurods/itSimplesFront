@@ -20,13 +20,13 @@ export default function Chat1({dataQuizz}) {
 
     const classes = useStyles();
     console.log('dataQuizz')
-    console.log(dataQuizz[0].quizzes[0].question)
+    console.log(dataQuizz[0])
   return (
     <Box className={classes.box}>      
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
-            {dataQuizz[0].quizzes[0].question}
+            
           </Typography>                    
           <span>Sim {Math.round(((totalYes)/(totalNo + totalYes))*100)} %</span>          
           <LinearProgress 
