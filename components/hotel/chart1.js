@@ -23,7 +23,7 @@ export default function Chat1({dataQuizz}) {
     console.log('dataQuizz')
     console.log(dataQuizz)
     const dataQuizList = dataQuizz.map((item => {
-      item.quizzes
+      item
     }))
     console.log('dataQuizList')
     console.log(dataQuizList)
