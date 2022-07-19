@@ -37,13 +37,21 @@ export default function Chat2({dataQuizz}) {
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
           O processo do check-in foi rápido e eficiente.
-          </Typography>                    
-          <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>
-          <span>Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %</span>
-          
-          />          
+          </Typography> 
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant="h6" component="div">          
+          Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant="h6" component="div">          
+          Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %
+          </Typography>
         </Grid>        
       </Grid>
+
+
       
     </Box>
 

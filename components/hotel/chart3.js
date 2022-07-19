@@ -37,11 +37,17 @@ export default function Chat3({dataQuizz}) {
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
           Registro de reserva estava correto.
-          </Typography>                    
-          <span>Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %</span>         
-          
-          <span>Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %</span>
-                   
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant="h6" component="div">          
+          Sim {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)} %
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <Typography variant="h6" component="div">          
+          Não {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)} %
+          </Typography>
         </Grid>        
       </Grid>
       
