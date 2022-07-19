@@ -17,7 +17,7 @@ export default function Chat1({dataQuizz}) {
       });
    
    console.log('feedback')
-   console.log(feedbackz)
+   console.log(feedback)
     
   return (
     <Box>      
