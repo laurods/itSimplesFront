@@ -18,7 +18,7 @@ export default function Chat1({dataQuizz}) {
           },
       }));
    
-    
+      const classes = useStyles();
   return (
     <Box className={classes.box}>      
       <Grid container spacing={2}>
