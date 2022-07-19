@@ -1,35 +1,52 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import CircularProgress from '@mui/material/CircularProgress';
-import Typography from '@mui/material/Typography';
+import React, {  useState, useEffect, useContext } from 'react';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import { makeStyles, } from '@material-ui/core/styles';
+import LinearProgress from '@mui/material/LinearProgress';
 
-export default function Chart1({yes, no, total}) {
-    console.log('yes')
-    console.log(yes)
-    console.log('no')
-    console.log(no)
-    console.log('total')
-    console.log(total)
+export default function Chat1({dataQuizz}) {      
+    const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
+    const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
+
+    const useStyles = makeStyles(theme => ({
+        root: {
+          height: theme.spacing(4),
+          backgroundColor: theme.palette.background.default,
+        },
+        box: {
+            backgroundColor: theme.palette.background.default,
+          },
+      }));
+
+    const classes = useStyles();
   return (
-    <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-      {/* <CircularProgress variant="determinate" {...total} /> */}
-      <Box
-        sx={{
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          position: 'absolute',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Typography variant="caption" component="div" color="text.secondary">
-          {`${Math.round(yes/total)}%`}
-        </Typography>
-      </Box>
+    <Box className={classes.box}>      
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+                    
+          <span>Sim {Math.round(((totalYes)/(totalNo + totalYes))*100)} %</span>          
+          <LinearProgress 
+          variant="determinate"
+          color ="primary"
+          value={Math.round(((totalYes)/(totalNo + totalYes))*100)} 
+          classes={{
+            root: classes.root,
+          }}          
+          />
+          <span>Não {Math.round(((totalNo)/(totalNo + totalYes))*100)} %</span>
+          <LinearProgress 
+          variant="determinate"
+          color="secondary"
+          value={Math.round(((totalNo)/(totalNo + totalYes))*100)} 
+          classes={{
+            root: classes.root,
+          }}
+          />          
+        </Grid>        
+      </Grid>
+      
     </Box>
+
+    
   );
 }
