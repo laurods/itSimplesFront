@@ -21,10 +21,10 @@ export default function Chat3({dataQuizz}) {
     const classes = useStyles();
     dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{        
-        if(question === 'Registro de reserva estava correto.' && answer ==='Sim') {
+        if(question === 'Registro de reserva estava correto' && answer ==='Sim') {
           qYes.push(answer)
         }
-        if(question === 'Registro de reserva estava correto.' && answer ==='Não') {
+        if(question === 'Registro de reserva estava correto' && answer ==='Não') {
           qNo.push(answer)
         }
       })      
