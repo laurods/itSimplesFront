@@ -17,17 +17,25 @@ export default function Chat1({dataQuizz}) {
             backgroundColor: theme.palette.background.default,
           },
       }));
-
+    const qYes = [];
+    const qNo = [];
     const classes = useStyles();
     console.log('dataQuizz')
     console.log(dataQuizz)
     dataQuizz.map(({quizzes})=>{
-      quizzes.map(({question})=>{
-        console.log('question')
-        console.log(question)
-      })
-      
+      quizzes.map(({question, answer})=>{
+        if(question === 'Você se sentiu bem-vindo(a)?' && answer ==='Sim') {
+          qYes.push(answer)
+        }
+        if(question === 'Você se sentiu bem-vindo(a)?' && answer ==='Não') {
+          qNo.push(answer)
+        }
+      })      
       });
+      console.log('qYes')
+      console.log(qYes)
+      console.log('qNo')
+      console.log(qNo)
    
     
   return (
