@@ -6,12 +6,16 @@ import Typography from '@mui/material/Typography';
 export default function Chat1({dataQuizz}) {
     console.log('dataQuizz')
     console.log(dataQuizz)
+    console.log('dataQuizz[0].quizzes')
+    console.log(dataQuizz[0].quizzes)
+    const yes =[];
+    const no = [];
     const feedback = [];
     const listDataQuiz = dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{
         feedback.push({
             question: question,
-            answer:answer 
+            answer:answer            
         })        
       })      
       });
