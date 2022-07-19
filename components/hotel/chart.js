@@ -34,15 +34,15 @@ export default function Chat1({dataQuizz}) {
           }, 0);
 
           listFeedBack.push({
-            question:'Você se sentiu bem-vindo(a)?',
+            question: question,
             answerYes:yes,
             answerNo: no, 
           })
 
       }
-      countFeedBack('Você se sentiu bem-vindo(a)?');    
-   console.log('feedback')
-   console.log(feedback)
+      countFeedBack('Você se sentiu bem-vindo(a)?');
+      countFeedBack('O processo do check-in foi rápido e eficiente.');
+      countFeedBack('Registro de reserva estava correto'); 
 
    console.log('listFeedBack')
    console.log(listFeedBack)
