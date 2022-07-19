@@ -5,14 +5,6 @@ import Typography from '@mui/material/Typography';
 import quizz from '../../data/questions' /* lista de perguntas e respostas*/
 
 export default function Chat1({dataQuizz}) {
-    console.log('quizz.data')
-    console.log(quizz.data)
-    quizz.data.map(({questions})=>{ 
-        questions.forEach(question =>{
-            console.log(question)
-        })
-    });
-    
     const feedback = [];
     const listFeedBack = [];
     const listDataQuiz = dataQuizz.map(({quizzes})=>{      
@@ -47,9 +39,16 @@ export default function Chat1({dataQuizz}) {
           })
 
       }
-      countFeedBack('Você se sentiu bem-vindo(a)?');
-      countFeedBack('O processo do check-in foi rápido e eficiente.');
-      countFeedBack('Registro de reserva estava correto'); 
+
+      quizz.data.map(({questions})=>{ 
+        questions.forEach(question =>{
+            //console.log(question)
+            countFeedBack(question);
+        })
+    });
+    //   countFeedBack('Você se sentiu bem-vindo(a)?');
+    //   countFeedBack('O processo do check-in foi rápido e eficiente.');
+    //   countFeedBack('Registro de reserva estava correto'); 
 
    console.log('listFeedBack')
    console.log(listFeedBack)
