@@ -12,17 +12,17 @@ export default function Chat1({dataQuizz}) {
     console.log(dataQuizz)
     dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{        
-        if(question === 'Como você avaliaria a sua experiência no nosso hotel:') {
+        if(question === 'Como foi sua experiência em nosso hotel:') {
           if(answer ==='Ruim'){
             qRuim.push(answer)
           }
           if(answer ==='Regular'){
             qRegular.push(answer)
           }
-          if(answer ==='Bom'){
+          if(answer ==='Boa'){
             qBom.push(answer)
           }
-          if(answer ==='Ótimo'){
+          if(answer ==='Ótima'){
             qOtimo.push(answer)
           }          
           
@@ -35,8 +35,8 @@ export default function Chat1({dataQuizz}) {
     <Box>      
       <Grid container sx={{ mt: 2 }}>
         <Grid item xs={12}>
-          <Typography variant="subtitle1" component="div">          
-          Como você avaliaria a sua experiência no nosso hotel:
+          <Typography variant="h6" component="div">          
+          Como foi sua experiência em nosso hotel:
           </Typography>
         </Grid>
         {qRuim.length > 0 && <Grid item xs={3}>
@@ -51,12 +51,12 @@ export default function Chat1({dataQuizz}) {
         </Grid>}
         {qBom.length > 0 && <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
-          Bom: {qBom.length} | {Math.round(((qBom.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
+          Boa: {qBom.length} | {Math.round(((qBom.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
         </Grid>}
         {qOtimo.length > 0 && <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
-          Ótimo: {qOtimo.length} | {Math.round(((qOtimo.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
+          Ótima: {qOtimo.length} | {Math.round(((qOtimo.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
         </Grid>}
                

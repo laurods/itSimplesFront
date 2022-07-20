@@ -64,12 +64,12 @@ export default{
     {
     "codigo": '7',
     "mainQuestion": ' Em geral',
-    "questions": ['Como você avaliaria a sua experiência no nosso hotel:'],
+    "questions": ['Como foi sua experiência em nosso hotel:'],
     "answers": [
         'Ruim',
         'Regular',
-        'Bom',
-        'Ótimo',
+        'Boa',
+        'Ótima',
     ],
     },
 

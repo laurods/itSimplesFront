@@ -2,8 +2,19 @@ import React, {  useState, useEffect, useContext } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { makeStyles, } from '@material-ui/core/styles';
 
-export default function Chat({listFeedBack}) {   
+export default function Chat({listFeedBack}) { 
+  const useStyles = makeStyles(theme => ({
+    root: {      
+      backgroundColor: theme.palette.background.default,
+    },
+    box: {
+        borderRadius:'solid, 1px, black'
+      },
+  }));
+
+  const classes = useStyles();  
     
   return (
     <Box>
@@ -12,7 +23,7 @@ export default function Chat({listFeedBack}) {
         listFeedBack.map(
           item => (
             <>
-              <Grid item xs={12} key={item.question} sx={{ mt: 2 }}>
+              <Grid item xs={12} key={item.question} sx={{ mt: 2 }} className={classes.root}>
               <Typography variant="subtitle1" component="div">          
                 {item.question}
               </Typography>
