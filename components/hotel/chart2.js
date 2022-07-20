@@ -5,9 +5,8 @@ import Typography from '@mui/material/Typography';
 
 export default function Chat2({dataQuizz}) {     
     const listSugest = [];
-    dataQuizz.map(({sugest})=>{      
-        console.log('sugest')
-        console.log(sugest)      
+    dataQuizz.map(({sugest})=>{
+        listSugest.push(sugest)      
       });
    
     
@@ -15,9 +14,24 @@ export default function Chat2({dataQuizz}) {
     <Box>      
       <Grid container>
         <Grid item xs={12}>
-          <Typography variant="subtitle1" component="div">          
+          <Typography variant="h6" component="div">          
           Sugestões:
-          </Typography> 
+          </Typography>
+          {
+        listSugest.map(
+          item => (
+            <>
+              <Grid item xs={12} key={item} sx={{ mt: 2 }}>
+              <Typography variant="subtitle1" component="div">          
+                {item}
+              </Typography>
+            </Grid>            
+            </>                         
+              )
+            )
+      }       
+
+
         </Grid>
                 
       </Grid>
