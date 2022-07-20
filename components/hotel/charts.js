@@ -3,7 +3,7 @@ import quizz from '../../data/questions' /* lista de perguntas e respostas*/
 import Chart from './chart'
 
 
-export default function Chat1({dataQuizz}) {
+export default function Charts({dataQuizz}) {
     const feedback = [];
     const listFeedBack = [];
     const listDataQuiz = dataQuizz.map(({quizzes})=>{      

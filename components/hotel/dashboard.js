@@ -27,12 +27,9 @@ export default function Dashboard({dataQuizz}) {
             </Grid>
             <Grid item xs={12}>
               <Chat3 dataQuizz={dataQuizz}/>
-            </Grid>
-            <Grid item xs={12}>
-              <Chart dataQuizz={dataQuizz}/>
-            </Grid>        
+            </Grid>                  
           </Grid>
-          <Charts />
+          <Charts dataQuizz={dataQuizz} />
         </Box>
     </Container> 
     </ThemeProvider>
