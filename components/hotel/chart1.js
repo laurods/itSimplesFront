@@ -39,26 +39,26 @@ export default function Chat1({dataQuizz}) {
           Como você avaliaria a sua experiência no nosso hotel:
           </Typography>
         </Grid>
-        <Grid item xs={3}>
+        {qRuim.length > 0 && <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
           Ruim: {qRuim.length} | {Math.round(((qRuim.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
-        </Grid>
-        <Grid item xs={3}>
+        </Grid>}
+        {qRegular.length> 0 && <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
           Regular: {qRegular.length} | {Math.round(((qRegular.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
-        </Grid>
-        <Grid item xs={3}>
+        </Grid>}
+        {qBom.length > 0 && <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
           Bom: {qBom.length} | {Math.round(((qBom.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
-        </Grid>
-        <Grid item xs={3}>
+        </Grid>}
+        {qOtimo.length > 0 && <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
           Ótimo: {qOtimo.length} | {Math.round(((qOtimo.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
-        </Grid>
+        </Grid>}
                
       </Grid>
       
