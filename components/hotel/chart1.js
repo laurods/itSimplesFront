@@ -4,18 +4,33 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 export default function Chat1({dataQuizz}) {
-    const qYes = [];
-    const qNo = [];
+    const qRuim = [];
+    const qRegular = [];
+    const qBom = [];
+    const qOtimo = [];
+    const qExcelente = [];
     console.log('dataQuizz')
     console.log(dataQuizz)
     dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{        
-        if(question === 'Você se sentiu bem-vindo(a)?' && answer ==='Sim') {
-          qYes.push(answer)
-        }
-        if(question === 'Você se sentiu bem-vindo(a)?' && answer ==='Não') {
-          qNo.push(answer)
-        }
+        if(question === 'Como você avaliaria a sua experiência no nosso hotel:') {
+          if(answer ==='Ruim'){
+            qRuim.push(answer)
+          }
+          if(answer ==='Regular'){
+            qRegular.push(answer)
+          }
+          if(answer ==='Bom'){
+            qBom.push(answer)
+          }
+          if(answer ==='Ótimo'){
+            qOtimo.push(answer)
+          }
+          if(answer ==='Excelente'){
+            qExcelente.push(answer)
+          }
+          
+        }        
       })      
       });
    
@@ -25,17 +40,32 @@ export default function Chat1({dataQuizz}) {
       <Grid container>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
-            Você se sentiu bem-vindo(a)?
+          Como você avaliaria a sua experiência no nosso hotel:
           </Typography>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={2}>
           <Typography variant="subtitle2" component="div">          
-          Sim: {qYes.length} | {Math.round(((qYes.length)/(qYes.length + qNo.length))*100)}%
+          Ruim: {qRuim.length} | {Math.round(((qRuim.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
           </Typography>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={2}>
           <Typography variant="subtitle2" component="div">          
-          Não: {qNo.length} | {Math.round(((qNo.length)/(qYes.length + qNo.length))*100)}%
+          Regular: {qRegular.length} | {Math.round(((qRegular.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
+          </Typography>
+        </Grid>
+        <Grid item xs={2}>
+          <Typography variant="subtitle2" component="div">          
+          Bom: {qBom.length} | {Math.round(((qBom.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
+          </Typography>
+        </Grid>
+        <Grid item xs={2}>
+          <Typography variant="subtitle2" component="div">          
+          Ótimo: {qOtimo.length} | {Math.round(((qOtimo.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
+          </Typography>
+        </Grid>
+        <Grid item xs={2}>
+          <Typography variant="subtitle2" component="div">          
+          Excelente: {qExcelente.length} | {Math.round(((qExcelente.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
           </Typography>
         </Grid>        
       </Grid>
