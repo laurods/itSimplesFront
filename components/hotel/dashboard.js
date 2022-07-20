@@ -8,7 +8,6 @@ import Charts from './charts'
 import Chart0 from './chart0'
 import Chart1 from './chart1'
 import Chart2 from './chart2'
-import Chat3 from './chart3'
 const theme = createTheme();
 
 export default function Dashboard({dataQuizz}) {
