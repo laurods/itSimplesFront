@@ -8,7 +8,6 @@ export default function Chat1({dataQuizz}) {
     const qRegular = [];
     const qBom = [];
     const qOtimo = [];
-    const qExcelente = [];
     console.log('dataQuizz')
     console.log(dataQuizz)
     dataQuizz.map(({quizzes})=>{      
@@ -25,10 +24,7 @@ export default function Chat1({dataQuizz}) {
           }
           if(answer ==='Ótimo'){
             qOtimo.push(answer)
-          }
-          if(answer ==='Excelente'){
-            qExcelente.push(answer)
-          }
+          }          
           
         }        
       })      
@@ -43,31 +39,27 @@ export default function Chat1({dataQuizz}) {
           Como você avaliaria a sua experiência no nosso hotel:
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
-          Ruim: {qRuim.length} | {Math.round(((qRuim.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
+          Ruim: {qRuim.length} | {Math.round(((qRuim.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
-          Regular: {qRegular.length} | {Math.round(((qRegular.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
+          Regular: {qRegular.length} | {Math.round(((qRegular.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
-          Bom: {qBom.length} | {Math.round(((qBom.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
+          Bom: {qBom.length} | {Math.round(((qBom.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Typography variant="subtitle2" component="div">          
-          Ótimo: {qOtimo.length} | {Math.round(((qOtimo.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
+          Ótimo: {qOtimo.length} | {Math.round(((qOtimo.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
         </Grid>
-        <Grid item xs={2}>
-          <Typography variant="subtitle2" component="div">          
-          Excelente: {qExcelente.length} | {Math.round(((qExcelente.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length + qExcelente.length ))*100)}%
-          </Typography>
-        </Grid>        
+               
       </Grid>
       
     </Box>

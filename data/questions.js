@@ -24,7 +24,7 @@ export default{
         'Foi mobiliado adequadamente',
         'Era limpo e confortável',
         'Cama e roupas de cama foram confortáveis',
-        'Banheiro foi limpo e totalmente equipado'
+        'Banheiro estava limpo e totalmente equipado'
     ],
     "answers": ['Sim', 'Não'],
     },
@@ -42,11 +42,10 @@ export default{
     },
     {
     "codigo": '5',
-    "mainQuestion": 'Avalie nosso janta:',
+    "mainQuestion": 'Avalie nossa janta/Café:',
     "questions": [
         'Serviço de quarto entregou o pedido correto',
         'A comida foi boa',
-        'Responderam todas às suas dúvidas',
         'A equipe do restaurante foi cortês',
         'Oferta de alimentos e bebidas foi ampla',
         'Preços eram adequados',
@@ -71,7 +70,6 @@ export default{
         'Regular',
         'Bom',
         'Ótimo',
-        'Excelente'
     ],
     },
 

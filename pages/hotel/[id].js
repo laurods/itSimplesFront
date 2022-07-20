@@ -22,7 +22,7 @@ export default function Levantamento() {
             <Box sx={{ flexGrow: 1, mt: 2 }}>            
                <Content 
                idHotel={id}
-               reserva='0002'
+               reserva='0000'
                />                      
             </Box>
         </Container>
