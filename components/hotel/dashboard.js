@@ -12,9 +12,9 @@ const theme = createTheme();
 
 export default function Dashboard({dataQuizz}) {
   return (
-    <ThemeProvider theme={theme}>
-      <Top/>
-      <Container> 
+    <ThemeProvider theme={theme}>      
+      <Container>
+        <Top/> 
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
           <Grid spacing={2}>
             <Grid item xs={12}>
