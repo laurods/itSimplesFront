@@ -35,7 +35,7 @@ export default function Chat1({dataQuizz}) {
             root: classes.root,
           }}          
           />
-          <span>Negativas: {totalNo} | {Math.round(((totalNo)/(totalYes + totalNo))*100)} %</span>
+          <span>Negativas: {totalNo} | {Math.round(((totalNo)/(totalYes + totalNo))*100)}%</span>
           <LinearProgress 
           variant="determinate"
           color="secondary"

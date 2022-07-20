@@ -13,21 +13,26 @@ export default function Chat({listFeedBack}) {
         listFeedBack.map(
           item => (
             <>
-              <Grid item xs={12} key={item.question}>
+              <Grid item xs={12} key={item.question} sx={{ mt: 2 }}>
               <Typography variant="subtitle1" component="div">          
                 {item.question}
               </Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Typography variant="subtitle2" component="div">          
-              Sim:{item.answerYes}
+              Avaliações: {Math.round(((item.answerYes + item.answerNo)))} 
               </Typography>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Typography variant="subtitle2" component="div">          
-              Não:{item.answerNo} 
+              Sim: {item.answerYes} | {Math.round(((item.answerYes)/(item.answerYes + item.answerNo))*100)}% 
               </Typography>
             </Grid>
+            {item.answerNo > 0 &&<Grid item xs={4}>
+              <Typography variant="subtitle2" component="div">          
+              Não: {item.answerNo} | {Math.round(((item.answerNo)/(item.answerYes + item.answerNo))*100)}%
+              </Typography>
+            </Grid>}
             </>                         
               )
             )
