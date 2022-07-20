@@ -20,12 +20,10 @@ export default function Chat2({dataQuizz}) {
           {
         listSugest.map(
           item => (
-            <>
-              <Grid item xs={12} key={item} sx={{ mt: 2 }}>
+            <>              
               <Typography variant="subtitle1" component="div">          
                 {item}
-              </Typography>
-            </Grid>            
+              </Typography>                    
             </>                         
               )
             )

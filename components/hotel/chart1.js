@@ -33,7 +33,7 @@ export default function Chat1({dataQuizz}) {
     
   return (
     <Box>      
-      <Grid container>
+      <Grid container sx={{ mt: 2 }}>
         <Grid item xs={12}>
           <Typography variant="subtitle1" component="div">          
           Como você avaliaria a sua experiência no nosso hotel:
