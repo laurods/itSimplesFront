@@ -12,7 +12,7 @@ export default function Chat2({dataQuizz}) {
     
   return (
     <Box>      
-      <Grid container>
+      <Grid container sx={{ mt: 2 }}>
         <Grid item xs={12}>
           <Typography variant="h6" component="div">          
           Sugestões:
