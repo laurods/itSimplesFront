@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Chart from './chart'
+import Charts from './charts'
 import Chat0 from './chart0'
 import Chat1 from './chart1'
 import Chat2 from './chart2'
@@ -32,7 +32,7 @@ export default function Dashboard({dataQuizz}) {
               <Chart dataQuizz={dataQuizz}/>
             </Grid>        
           </Grid>
-          
+          <Charts />
         </Box>
     </Container> 
     </ThemeProvider>
