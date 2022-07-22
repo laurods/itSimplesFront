@@ -7,6 +7,7 @@ import Top from './top';
 import ImageApto from './imageApto';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import Router from 'next/router';
 const theme = createTheme();
 
@@ -39,7 +40,12 @@ export default function Initial({activeCNPJ}) {
         <Top/> 
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
           <Grid container spacing={2}>
-            <Grid item xs={6}>
+            <Grid item xs={12}>
+                <Typography variant="subtitle2" component="div">          
+                        Hóspede responde no hotel.
+                </Typography>
+            </Grid>
+            <Grid item xs={8}>
               <TextField
                 margin="normal"
                 required
@@ -53,7 +59,7 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
                 <Button
                     sx={{ mt: 5 }} 
                     variant="outlined" 
@@ -64,11 +70,16 @@ export default function Initial({activeCNPJ}) {
                         Começar
                 </Button>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12}>
+                <Typography variant="subtitle2" component="div">          
+                        Hóspede responde remotamente.
+                </Typography>
+            </Grid>
+            <Grid item xs={8}>
               <TextField
                 margin="normal"
                 required
-                inputProps={{style: {fontSize: 40}}}
+                inputProps={{style: {fontSize: 30}}}
                 label="Whats ou E-mail"
                 id="contato"
                 value={contato}
@@ -78,7 +89,7 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>           
-            <Grid item xs={3}>
+            <Grid item xs={4}>
                 <Button
                     sx={{ mt: 5 }} 
                     variant="outlined" 
