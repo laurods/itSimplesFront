@@ -27,7 +27,7 @@ export default function Initial({activeCNPJ}) {
       <Container>
         <Top/> 
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
-          <Grid spacing={2}>
+          <Grid container spacing={2}>
             <Grid item xs={6}>
               <TextField
                 margin="normal"

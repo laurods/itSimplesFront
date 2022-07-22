@@ -12,10 +12,6 @@ const theme = createTheme();
 export default function Levantamento() {
   const router = useRouter()
   const { reserva, cnpj } = router.query
-  console.log('reserva')
-  console.log(reserva)
-  console.log('cnpj')
-  console.log(cnpj)
 
   return (
     <ThemeProvider theme={theme}>
@@ -23,8 +19,8 @@ export default function Levantamento() {
         <Container>                         
             <Box sx={{ flexGrow: 1, mt: 2 }}>            
                <Content 
-               idHotel={'01'}
-               reserva='0000'
+               idHotel={cnpj}
+               reserva={reserva}
                />                      
             </Box>
         </Container>
