@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useRouter } from 'next/router'
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Top from '../../components/hotel/top';
@@ -12,8 +11,11 @@ const theme = createTheme();
 
 export default function Levantamento() {
   const router = useRouter()
-  const { id } = router.query
-  console.log(id)
+  const { reserva, cnpj } = router.query
+  console.log('reserva')
+  console.log(reserva)
+  console.log('cnpj')
+  console.log(cnpj)
 
   return (
     <ThemeProvider theme={theme}>

@@ -13,16 +13,14 @@ const theme = createTheme();
 export default function Initial({activeCNPJ}) {
     const [reserva, setReserva] = useState('')
 
-    const send = () => {
-        console.log(activeCNPJ);
-        console.log(reserva);
-        // Router.push(
-        //     {
-        //         pathname:'https://it-simples-front.vercel.app/hotel/[id]',
-        //         query: { reserva: reserva, cnpj: activeCNPJ },
+    const send = () => {       
+        Router.push(
+            {
+                pathname:'https://it-simples-front.vercel.app/hotel/[id]',
+                query: { reserva: reserva, cnpj: activeCNPJ },
     
-        //     }
-        // )
+            }
+        )
     }
   return (
     <ThemeProvider theme={theme}>      
@@ -53,10 +51,12 @@ export default function Initial({activeCNPJ}) {
                     >
                         Continuar
                 </Button>
+            </Grid>
+            <Grid item xs={12}>
+                <ImageApto />
             </Grid>                          
           </Grid>         
         </Box>
-        <ImageApto />
     </Container> 
     </ThemeProvider>
     
