@@ -43,7 +43,8 @@ export default function Initial({activeCNPJ}) {
                 />
             </Grid>
             <Grid item xs={6}>
-                <Button 
+                <Button
+                    sx={{ mt: 5 }} 
                     variant="outlined" 
                     size="large"                    
                     fullWidth
@@ -51,11 +52,9 @@ export default function Initial({activeCNPJ}) {
                     >
                         Continuar
                 </Button>
-            </Grid>
-            <Grid item xs={12}>
-                <ImageApto />
             </Grid>                          
-          </Grid>         
+          </Grid>
+          <ImageApto />         
         </Box>
     </Container> 
     </ThemeProvider>
