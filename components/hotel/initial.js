@@ -40,7 +40,7 @@ export default function Initial({activeCNPJ}) {
         <Top/> 
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
           <Grid container>            
-            <Grid item xs={8}>
+            <Grid item xs={12}>
                 <Typography variant="subtitle2" component="div">          
                         Hóspede responde no hotel.
                 </Typography>  
@@ -57,7 +57,7 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12}>
                 <Button
                     sx={{ mt: 5 }} 
                     variant="outlined" 
