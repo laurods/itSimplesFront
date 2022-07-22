@@ -13,7 +13,7 @@ const theme = createTheme();
 export default function Initial({activeCNPJ}) {
     const [reserva, setReserva] = useState('')
 
-    const send = () => {       
+    const start = () => {       
         Router.push(
             {
                 pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}`,
@@ -21,6 +21,21 @@ export default function Initial({activeCNPJ}) {
     
             }
         )
+    }
+
+    const send = () => {
+        const text = `Ol&aacute;, sou assistente virtual do hotel Luar Atl&acirc;ntico. Ficamos felizes em ter voc&ecirc; com a gente!
+        Queremos saber como foi sua experi&ecirc;ncia. S&atilde;o apenas 8 etapas que voc&ecirc; pode responder em menos de 1 minuto.
+        Vamos l&aacute;? Clique aqui para come&ccedil;ar.`;
+
+        Router.push(
+            {
+                pathname:`https://api.whatsapp.com/send?phone=5554999572366&text=${text}`,
+
+            }
+        )
+
+
     }
   return (
     <ThemeProvider theme={theme}>      
@@ -42,15 +57,27 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={3}>
                 <Button
                     sx={{ mt: 5 }} 
                     variant="outlined" 
                     size="large"                    
                     fullWidth
+                    onClick={start}
+                    >
+                        Começar
+                </Button>
+            </Grid>
+            <Grid item xs={3}>
+                <Button
+                    sx={{ mt: 5 }} 
+                    variant="outlined" 
+                    size="large"
+                    color="success"                    
+                    fullWidth
                     onClick={send}
                     >
-                        Continuar
+                        Whatsapp
                 </Button>
             </Grid>                          
           </Grid>
