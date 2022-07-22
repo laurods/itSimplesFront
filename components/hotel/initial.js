@@ -7,10 +7,23 @@ import Top from './top';
 import ImageApto from './imageApto';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Router from 'next/router';
 const theme = createTheme();
 
 export default function Initial({activeCNPJ}) {
     const [reserva, setReserva] = useState('')
+
+    const send = () => {
+        console.log(activeCNPJ);
+        console.log(reserva);
+        // Router.push(
+        //     {
+        //         pathname:'https://it-simples-front.vercel.app/hotel/[id]',
+        //         query: { reserva: reserva, cnpj: activeCNPJ },
+    
+        //     }
+        // )
+    }
   return (
     <ThemeProvider theme={theme}>      
       <Container>
@@ -18,7 +31,6 @@ export default function Initial({activeCNPJ}) {
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
           <Grid spacing={2}>
             <Grid item xs={6}>
-              n. reserva - cnpj {activeCNPJ}
               <TextField
                 margin="normal"
                 required
@@ -37,6 +49,7 @@ export default function Initial({activeCNPJ}) {
                     variant="outlined" 
                     size="large"                    
                     fullWidth
+                    onClick={send}
                     >
                         Continuar
                 </Button>
