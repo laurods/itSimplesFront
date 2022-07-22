@@ -12,6 +12,7 @@ const theme = createTheme();
 
 export default function Initial({activeCNPJ}) {
     const [reserva, setReserva] = useState('')
+    const [contato, setContato] = useState('')
 
     const start = () => {       
         Router.push(
@@ -24,17 +25,12 @@ export default function Initial({activeCNPJ}) {
     }
 
     const send = () => {
-        const text = `Ol&aacute;, sou assistente virtual do hotel Luar Atl&acirc;ntico. Ficamos felizes em ter voc&ecirc; com a gente!
-        Queremos saber como foi sua experi&ecirc;ncia. S&atilde;o apenas 8 etapas que voc&ecirc; pode responder em menos de 1 minuto.
-        Vamos l&aacute;? Clique aqui para come&ccedil;ar.`;
-
-        Router.push(
-            {
-                pathname:`https://api.whatsapp.com/send?phone=5554999572366&text=${text}`,
-
-            }
-        )
-
+        console.log('contato')
+        console.log(contato)
+        console.log('reserva')
+        console.log(reserva)
+        console.log('cnpj')
+        console.log(activeCNPJ)
 
     }
   return (
@@ -57,7 +53,7 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={6}>
                 <Button
                     sx={{ mt: 5 }} 
                     variant="outlined" 
@@ -68,6 +64,20 @@ export default function Initial({activeCNPJ}) {
                         Começar
                 </Button>
             </Grid>
+            <Grid item xs={6}>
+              <TextField
+                margin="normal"
+                required
+                inputProps={{style: {fontSize: 40}}}
+                label="Whats ou E-mail"
+                id="contato"
+                value={contato}
+                onChange={(event) => {setContato(event.target.value)}}
+                fullWidth
+                variant="standard"
+                autoComplete="off"
+                />
+            </Grid>           
             <Grid item xs={3}>
                 <Button
                     sx={{ mt: 5 }} 
@@ -77,7 +87,7 @@ export default function Initial({activeCNPJ}) {
                     fullWidth
                     onClick={send}
                     >
-                        Whatsapp
+                        Enviar
                 </Button>
             </Grid>                          
           </Grid>
