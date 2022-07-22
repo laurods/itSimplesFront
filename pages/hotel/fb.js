@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 export default function Index() { 
-  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ} = useContext(AuthContext);
+  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ, activeCNPJ} = useContext(AuthContext);
   
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<Initial/>}
+      {isAuthenticated &&<Initial activeCNPJ={activeCNPJ}/>}
       {!isAuthenticated && <Login />}
       </>
     );
