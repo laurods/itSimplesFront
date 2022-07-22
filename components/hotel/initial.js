@@ -39,13 +39,11 @@ export default function Initial({activeCNPJ}) {
       <Container>
         <Top/> 
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
-          <Grid container spacing={2}>
+          <Grid container spacing={2}>            
             <Grid item xs={12}>
                 <Typography variant="subtitle2" component="div">          
                         Hóspede responde no hotel.
-                </Typography>
-            </Grid>
-            <Grid item xs={8}>
+                </Typography>  
               <TextField
                 margin="normal"
                 required
@@ -59,7 +57,7 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12}>
                 <Button
                     sx={{ mt: 5 }} 
                     variant="outlined" 
@@ -71,11 +69,9 @@ export default function Initial({activeCNPJ}) {
                 </Button>
             </Grid>
             <Grid item xs={12}>
-                <Typography variant="subtitle2" component="div">          
+            <Typography variant="subtitle2" component="div">          
                         Hóspede responde remotamente.
-                </Typography>
-            </Grid>
-            <Grid item xs={8}>
+                </Typography>  
               <TextField
                 margin="normal"
                 required
@@ -89,7 +85,7 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>           
-            <Grid item xs={4}>
+            <Grid item xs={12}>
                 <Button
                     sx={{ mt: 5 }} 
                     variant="outlined" 
