@@ -12,10 +12,13 @@ const theme = createTheme();
 export default function Levantamento() {
   const router = useRouter()
   const { id } = router.query
-  const reserva = id.slice(14,5);
-  const cnpj = id.slice(0, 14);
+  const codigo = String(id)
+  const reserva = codigo.slice(codigo.indexOf("@") + 1);
+  const cnpj = codigo.slice(codigo.indexOf("@") - 1);
   console.log('id')
   console.log(id)
+  console.log('codigo')
+  console.log(codigo)
   console.log('reserva')
   console.log(reserva)
   console.log('cnpj')
