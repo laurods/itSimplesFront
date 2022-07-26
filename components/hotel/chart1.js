@@ -8,8 +8,6 @@ export default function Chat1({dataQuizz}) {
     const qRegular = [];
     const qBom = [];
     const qOtimo = [];
-    console.log('dataQuizz')
-    console.log(dataQuizz)
     dataQuizz.map(({quizzes})=>{      
       quizzes.map(({question, answer})=>{        
         if(question === 'Como foi sua experiência em nosso hotel:') {
@@ -37,6 +35,11 @@ export default function Chat1({dataQuizz}) {
         <Grid item xs={12}>
           <Typography variant="h6" component="div">          
           Como foi sua experiência em nosso hotel:
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="subtitle1" component="div">          
+          Avaliações: {(qRuim.length + qRegular.length + qBom.length + qOtimo.length)} 
           </Typography>
         </Grid>
         {qRuim.length > 0 && <Grid item xs={3}>

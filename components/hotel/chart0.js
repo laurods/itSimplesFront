@@ -24,7 +24,7 @@ export default function Chat1({dataQuizz}) {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h6" component="div">          
-            Total de Avaliações: {totalYes + totalNo}
+            Total de Respostas: {totalYes + totalNo}
           </Typography>                    
           <span>Positivas: {totalYes} | {Math.round(((totalYes)/(totalYes + totalNo))*100)}%</span>          
           <LinearProgress 

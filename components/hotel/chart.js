@@ -27,18 +27,13 @@ export default function Chat({listFeedBack}) {
               <Typography variant="subtitle1" component="div">          
                 {item.question}
               </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography variant="subtitle2" component="div">          
-              Avaliações: {Math.round(((item.answerYes + item.answerNo)))} 
-              </Typography>
-            </Grid>
-            <Grid item xs={4}>
+            </Grid>            
+            <Grid item xs={6}>
               <Typography variant="subtitle2" component="div">          
               Sim: {item.answerYes} | {Math.round(((item.answerYes)/(item.answerYes + item.answerNo))*100)}% 
               </Typography>
             </Grid>
-            {item.answerNo > 0 &&<Grid item xs={4}>
+            {item.answerNo > 0 &&<Grid item xs={6}>
               <Typography variant="subtitle2" component="div">          
               Não: {item.answerNo} | {Math.round(((item.answerNo)/(item.answerYes + item.answerNo))*100)}%
               </Typography>
