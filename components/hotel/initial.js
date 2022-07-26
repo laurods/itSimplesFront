@@ -7,7 +7,6 @@ import Top from './top';
 import ImageApto from './imageApto';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
 import Router from 'next/router';
 const theme = createTheme();
 
@@ -41,9 +40,6 @@ export default function Initial({activeCNPJ}) {
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
           <Grid container>            
             <Grid item xs={12}>
-                <Typography variant="subtitle2" component="div">          
-                        Hóspede responde no hotel.
-                </Typography>  
               <TextField
                 margin="normal"
                 required
@@ -58,20 +54,6 @@ export default function Initial({activeCNPJ}) {
                 />
             </Grid>
             <Grid item xs={12}>
-                <Button
-                    sx={{ mt: 5 }} 
-                    variant="outlined" 
-                    size="large"                    
-                    fullWidth
-                    onClick={start}
-                    >
-                        Começar
-                </Button>
-            </Grid>
-            <Grid item xs={12}>
-            <Typography variant="subtitle2" component="div">          
-                        Hóspede responde remotamente.
-                </Typography>  
               <TextField
                 margin="normal"
                 required
@@ -84,8 +66,19 @@ export default function Initial({activeCNPJ}) {
                 variant="standard"
                 autoComplete="off"
                 />
+            </Grid>            
+            <Grid item xs={6}>
+                <Button
+                    sx={{ mt: 5 }} 
+                    variant="outlined" 
+                    size="large"                    
+                    fullWidth
+                    onClick={start}
+                    >
+                        Começar
+                </Button>
             </Grid>           
-            <Grid item xs={12}>
+            <Grid item xs={6}>
                 <Button                    
                     variant="outlined" 
                     size="large"
