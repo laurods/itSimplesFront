@@ -16,7 +16,7 @@ import Menu from './menu';
 
 
 export default function Top() {
-    const { telaCheia, tenantName } = useContext(AuthContext);
+    const { telaCheia, tenantName, isAuthenticated } = useContext(AuthContext);
     
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -36,7 +36,7 @@ export default function Top() {
            {tenantName}
           </Typography>
           <Typography variant="h6">          
-          <Menu />
+          {isAuthenticated && <Menu />}
           </Typography>
         </Toolbar>
       </AppBar>      
