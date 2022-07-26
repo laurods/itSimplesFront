@@ -10,12 +10,13 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const { cnpj } = req.body;
-         
+         console.log('cnpj')
+         console.log(cnpj)
          await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("cnpj");
          const tenant = await col.find(
-            { cnpj },
+            { cnpj: '89823918000199' },
             {projection: { _id: 0, name: 1 }}
             ).toArray();     
          
