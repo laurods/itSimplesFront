@@ -14,7 +14,7 @@ export default function Levantamento() {
   const { id } = router.query
   const codigo = String(id)
   const reserva = codigo.slice(codigo.indexOf("@") + 1);
-  const cnpj = codigo.slice(codigo.indexOf("@") - 14);
+  const cnpj = codigo.slice(0, 14);
   console.log('id')
   console.log(id)
   console.log('codigo')
