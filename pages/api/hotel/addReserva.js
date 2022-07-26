@@ -10,7 +10,7 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const objReserva = req.body;
-        const { idControl, idHotel, reserva, contato } = objReserva;
+        const { idControl, idHotel, reserva, contato, link } = objReserva;
         
          await client.connect();
          const db = client.db(dbName);
@@ -22,6 +22,7 @@ const client = new MongoClient(url);
                     idHotel,
                     reserva,
                     contato,
+                    link,
                 },
            },
            { upsert: true }            

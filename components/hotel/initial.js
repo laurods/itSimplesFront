@@ -19,10 +19,13 @@ export default function Initial({activeCNPJ}) {
     const start = () => {       
         Router.push(
             {
-                pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}`,
-                query: { reserva: reserva, cnpj: activeCNPJ },
-    
+                pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
             }
+            // {
+            //   pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}`,
+            //   query: { reserva: reserva, cnpj: activeCNPJ },
+  
+            // }
         )
     }
 
