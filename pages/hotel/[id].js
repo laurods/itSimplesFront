@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useContext } from 'react';
 import { useRouter } from 'next/router'
 import axios from 'axios';
 import Box from '@mui/material/Box';
