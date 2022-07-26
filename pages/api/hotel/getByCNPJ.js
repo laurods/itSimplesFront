@@ -20,7 +20,7 @@ const client = new MongoClient(url);
             {projection: { _id: 0, name: 1 }}
             ).toArray();     
          
-         res.status(200).json(tenant);
+         res.status(200).json({tenant, cnpj});
 
         } catch (err) {
          console.log(err.stack);
