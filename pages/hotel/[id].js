@@ -10,15 +10,17 @@ import Content from '../../components/hotel/content';
 
 const theme = createTheme();
 
-export default function Levantamento() {   
+export default function Levantamento() {
+  const [cnpjTenant, setCnpjTenant] = useState('')
+  const router = useRouter()
+  const { id } = router.query
+  const codigo = String(id)
+  const reserva = codigo.slice(codigo.indexOf("@") + 1);
+  const cnpj = codigo.slice(0, 14);
+  setCnpjTenant(cnpj)
   useEffect(() => {
-    const loadAll = async() =>{
-      const router = useRouter()
-      const { id } = router.query
-      const codigo = String(id)
-      const reserva = codigo.slice(codigo.indexOf("@") + 1);
-      const cnpj = codigo.slice(0, 14);
-      const dataTenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getByCNPJ', { cnpj: cnpj });
+    const loadAll = async() =>{     
+      const dataTenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getByCNPJ', { cnpj: cnpjTenant });
       const tenantName = dataTenant.data;
       console.log('tenantName')
       console.log(tenantName) 
