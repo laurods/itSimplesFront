@@ -13,6 +13,7 @@ const theme = createTheme();
 export default function Initial({activeCNPJ}) {
     const [reserva, setReserva] = useState('')
     const [contato, setContato] = useState('')
+    const objReserva = {}
 
     const start = () => {       
         Router.push(
@@ -35,6 +36,7 @@ export default function Initial({activeCNPJ}) {
       objReserva['idHotel'] = activeCNPJ
       objReserva['reserva'] = reserva
       objReserva['contato'] = contato
+      objReserva['link'] = `https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
       await axios.post('/api/hotel/addReserva',  objReserva )
       
       
@@ -44,8 +46,8 @@ export default function Initial({activeCNPJ}) {
     <ThemeProvider theme={theme}>      
       <Container>
         <Top/> 
-        <Box sx={{ flexGrow: 1, mt: 2 }}>      
-          <Grid container>            
+        <Box>      
+          <Grid container spacing={2}>            
             <Grid item xs={12}>
               <TextField
                 margin="normal"
