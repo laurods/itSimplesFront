@@ -18,11 +18,9 @@ export default function Index() {
       const listClients = clients.data;
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listClients[0].cnpj });              
       const listQuizzes = quizzes.data;
-      const tenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getNameByCNPJ', { cnpj: listClients[0].cnpj });              
-      const dataTenant = tenant.data;
-      console.log('dataTenant')
-      console.log(dataTenant)
-      setTenantName(nameTenant.name)
+      console.log('listClients')
+      console.log(listClients)
+      //setTenantName(nameTenant.name)
       setDataQuizz(listQuizzes)
       setCNPJsByUsers(listClients)
       setActiveCNPJ(listClients[0].cnpj)     
