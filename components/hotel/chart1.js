@@ -31,7 +31,7 @@ export default function Chat1({dataQuizz}) {
 
       const useStyles = makeStyles(theme => ({
         root: {      
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: '#ef5350',
         },
       }));
     
