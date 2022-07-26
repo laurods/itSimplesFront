@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useRouter } from 'next/router'
+import axios from 'axios';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -15,6 +16,10 @@ export default function Levantamento() {
   const codigo = String(id)
   const reserva = codigo.slice(codigo.indexOf("@") + 1);
   const cnpj = codigo.slice(0, 14);
+  const dataTenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getByCNPJ', { cnpj: cnpj });
+  const tenantName = dataTenant.data;
+  console.log('tenantName')
+  console.log(tenantName)
 
 
   return (

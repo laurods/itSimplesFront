@@ -17,6 +17,7 @@ import Menu from './menu';
 
 export default function Top() {
     const { telaCheia, tenantName, isAuthenticated } = useContext(AuthContext);
+   
     
   return (
     <Box sx={{ flexGrow: 1 }}>
