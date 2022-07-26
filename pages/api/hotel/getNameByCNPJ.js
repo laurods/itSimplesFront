@@ -15,7 +15,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const dataTenant = db.collection("cnpj");
          const tenant = await dataTenant.findOne(
-            {cnpj: cnpj},
+            {cnpj: '89823918000199'},
             {_id: 0, name: 1}
             ).toArray();
 
