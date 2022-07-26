@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 import { AuthContext } from '../../contexts/AuthContext';
+import Menu from './menu';
 
 
 
@@ -33,6 +34,9 @@ export default function Top() {
           </IconButton>                  
           <Typography variant="h5" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
            {tenantName}
+          </Typography>
+          <Typography variant="h6">          
+          <Menu />
           </Typography>
         </Toolbar>
       </AppBar>      
