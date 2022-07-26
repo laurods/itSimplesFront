@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 export default function Index() { 
-  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ, activeCNPJ} = useContext(AuthContext);
+  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ, activeCNPJ, setTenantName} = useContext(AuthContext);
   
 
   useEffect(() => {
@@ -17,6 +17,7 @@ export default function Index() {
       const listClients = clients.data;
       setCNPJsByUsers(listClients)
       setActiveCNPJ(listClients[0].cnpj)
+      setTenantName(listClients[0].name)
     }
     loadAll();
   }, []);
