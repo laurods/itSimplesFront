@@ -11,6 +11,7 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
     const [reportCNPJ, setReportCNPJ] = useState('');
     const [activeCNPJ, setActiveCNPJ] = useState('');
+    const [tenantName, setTenantName] = useState('');
     const [theProductsFilteredSelected, setTheProductsFilteredSelected] = useState([]);
     const [produtosBaixarEstoque, setProdutosBaixarEstoque] = useState([]);
     const [products, setProducts] = useState([]);
@@ -185,7 +186,9 @@ export function AuthProvider({ children }) {
             showFormEdit,
             devicesManutencao,
             consumers,
-            listDevices, 
+            listDevices,
+            tenantName, 
+            setTenantName, 
             setListDevices, 
             setConsumers, 
             setDevicesManutencao, 

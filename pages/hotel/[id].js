@@ -15,14 +15,6 @@ export default function Levantamento() {
   const codigo = String(id)
   const reserva = codigo.slice(codigo.indexOf("@") + 1);
   const cnpj = codigo.slice(0, 14);
-  console.log('id')
-  console.log(id)
-  console.log('codigo')
-  console.log(codigo)
-  console.log('reserva')
-  console.log(reserva)
-  console.log('cnpj')
-  console.log(cnpj)
 
 
   return (

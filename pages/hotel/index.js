@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 export default function Index() { 
-  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ} = useContext(AuthContext);
+  const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setTenantName} = useContext(AuthContext);
   const [dataQuizz, setDataQuizz] = useState([]);
   
 
@@ -18,6 +18,9 @@ export default function Index() {
       const listClients = clients.data;
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listClients[0].cnpj });              
       const listQuizzes = quizzes.data;
+      const tenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getNameByCNPJ', { cnpj: listClients[0].cnpj });              
+      const nameTenant = tenant.data;
+      setTenantName(nameTenant)
       setDataQuizz(listQuizzes)
       setCNPJsByUsers(listClients)
       setActiveCNPJ(listClients[0].cnpj)     

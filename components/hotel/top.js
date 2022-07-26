@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,7 +15,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 
 
 export default function Top() {
-    const { telaCheia } = useContext(AuthContext);
+    const { telaCheia, tenantName } = useContext(AuthContext);
     
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -31,7 +32,7 @@ export default function Top() {
 
           </IconButton>                  
           <Typography variant="h5" gutterBottom component="div" sx={{ flexGrow: 1 }}>          
-           Blue Tree Hotels
+           {tenantName}
           </Typography>
         </Toolbar>
       </AppBar>      
