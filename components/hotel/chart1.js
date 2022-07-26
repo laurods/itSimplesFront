@@ -29,15 +29,6 @@ export default function Chat1({dataQuizz}) {
       })      
       });
 
-      const useStyles = makeStyles(theme => ({
-        root: {      
-          backgroundColor: '#ef5350',
-        },
-      }));
-    
-      const classes = useStyles(); 
-   
-    
   return (
     <Box>      
       <Grid container sx={{ mt: 2 }}>
@@ -51,7 +42,7 @@ export default function Chat1({dataQuizz}) {
           Avaliações: {(qRuim.length + qRegular.length + qBom.length + qOtimo.length)} 
           </Typography>
         </Grid>
-         <Grid item xs={6} className={classes.root}>
+         <Grid item xs={6}>
           <Typography variant="subtitle2" component="div">          
           Ruim: {qRuim.length} | {Math.round(((qRuim.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
@@ -66,7 +57,7 @@ export default function Chat1({dataQuizz}) {
           Boa: {qBom.length} | {Math.round(((qBom.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
         </Grid>
-         <Grid item xs={6} className={classes.root}>
+         <Grid item xs={6}>
           <Typography variant="subtitle2" component="div">          
           Ótima: {qOtimo.length} | {Math.round(((qOtimo.length)/(qRuim.length + qRegular.length + qBom.length + qOtimo.length))*100)}%
           </Typography>
