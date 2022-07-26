@@ -24,13 +24,20 @@ export default function Initial({activeCNPJ}) {
         )
     }
 
-    const send = () => {
-        console.log('contato')
-        console.log(contato)
-        console.log('reserva')
-        console.log(reserva)
-        console.log('cnpj')
-        console.log(activeCNPJ)
+    const send = async () => {
+        // console.log('contato')
+        // console.log(contato)
+        // console.log('reserva')
+        // console.log(reserva)
+        // console.log('cnpj')
+        // console.log(activeCNPJ)
+      objReserva['idControl'] = `${activeCNPJ}-${reserva}`;
+      objReserva['idHotel'] = activeCNPJ
+      objReserva['reserva'] = reserva
+      objReserva['contato'] = contato
+      await axios.post('/api/hotel/addReserva',  objReserva )
+      
+      
 
     }
   return (
@@ -69,7 +76,6 @@ export default function Initial({activeCNPJ}) {
             </Grid>            
             <Grid item xs={6}>
                 <Button
-                    sx={{ mt: 5 }} 
                     variant="outlined" 
                     size="large"                    
                     fullWidth
