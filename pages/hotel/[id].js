@@ -21,7 +21,10 @@ export default function Levantamento() {
     const tenant = dataTenant.data;
     console.log('tenantName')
     console.log(tenant)
-    setTenantName(tenant[0].name)
+    if(tenant.length > 0){
+      setTenantName(tenant[0].name)
+    }
+    
   }
   getName();
   
