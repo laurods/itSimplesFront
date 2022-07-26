@@ -15,11 +15,17 @@ export default function Levantamento() {
   const { id } = router.query
   const codigo = String(id)
   const reserva = codigo.slice(codigo.indexOf("@") + 1);
-  const cnpj = codigo.slice(0, 14);
-  const dataTenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getByCNPJ', { cnpj: cnpj });
-  const tenantName = dataTenant.data;
-  console.log('tenantName')
-  console.log(tenantName)
+  const cnpj = codigo.slice(0, 14);  
+  useEffect(() => {
+    const loadAll = async() =>{
+      const dataTenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getByCNPJ', { cnpj: cnpj });
+      const tenantName = dataTenant.data;
+      console.log('tenantName')
+      console.log(tenantName) 
+    }
+    loadAll();
+  }, []);
+  
 
 
   return (
