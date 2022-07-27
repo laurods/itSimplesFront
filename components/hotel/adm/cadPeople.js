@@ -26,7 +26,7 @@ export default function CadPeople() {
         objPeople['email'] = email;
         objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa';
 
-       const people =  await axios.post('/api/hotel/addPeople',  objPeople)
+       const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
        console.log('people.data')
        console.log(people.data) 
         }
