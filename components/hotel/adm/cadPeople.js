@@ -25,10 +25,15 @@ export default function CadPeople() {
         objPeople['name'] = name;
         objPeople['email'] = email;
         objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa';
-
-       const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
-       console.log('people.data')
-       console.log(people.data) 
+        const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
+            console.log('people.data')
+            console.log(people.data)
+            if(people.data.length > 0){
+                alert('Email já existente')
+            }else{
+                alert('Sucesso')
+            }
+             
         }
             
     //   objPeople['name'] = name;
