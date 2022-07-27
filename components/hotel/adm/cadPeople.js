@@ -17,16 +17,20 @@ export default function CadPeople() {
         console.log(email)
         console.log('nome')
         console.log(name)
-        if(name.length === 0 | contato.length === 0){
+        if(name.length === 0 | email.length === 0){
             alert('Preencha os campos')
         }
+
+        if(name.length !== 0 | email.length !== 0){
         objPeople['name'] = name;
         objPeople['email'] = email;
         objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa';
 
        const people =  await axios.post('/api/hotel/addPeople',  objPeople)
        console.log('people.data')
-       console.log(people.data)     
+       console.log(people.data) 
+        }
+            
     //   objPeople['name'] = name;
     //   objPeople['contato'] = contato;
     //   objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa'
