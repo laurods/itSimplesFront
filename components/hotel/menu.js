@@ -8,7 +8,6 @@ import Router from 'next/router';
 export default function MenuMobile() {
   const [menu, setMenu] = useState('Principal');
   const handleChange = (event) => {
-      console.log(event.target.value)
       setMenu(event.target.innerHTML)
     Router.push(`${event.target.value}`);
   };
