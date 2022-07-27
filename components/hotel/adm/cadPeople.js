@@ -13,10 +13,6 @@ export default function CadPeople() {
     const objPeople = {}
 
     const save = async () => {
-        console.log('email')
-        console.log(email)
-        console.log('nome')
-        console.log(name)
         if(name.length === 0 | email.length === 0){
             alert('Preencha os campos')
         }
@@ -26,23 +22,15 @@ export default function CadPeople() {
         objPeople['email'] = email;
         objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa';
         const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
-            console.log('people.data')
-            console.log(people.data)
             if(people.data.length > 0){
                 alert('Email já existente')
             }else{
-                alert('Sucesso')
+                const newPeople = await axios.post('/api/hotel/addPeople',  objPeople )
+                console.log(newPeople.data)
+                //alert(newPeople.data)
             }
              
         }
-            
-    //   objPeople['name'] = name;
-    //   objPeople['contato'] = contato;
-    //   objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa'
-    //   await axios.post('/api/hotel/addPeople',  objPeople )
-      
-      
-
     }
   return (
         <Box>      
