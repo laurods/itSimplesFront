@@ -28,13 +28,12 @@ export default function CadTenant() {
         const tenant =  await axios.post('/api/hotel/getByCNPJ',  objTenant)
             if(tenant.data.length > 0){
                 alert('CNPJ já existente')
-            }else{
-                console.log('cadastrar')
-                // const newTenant = await axios.post('/api/hotel/addPeople',  objTenant )
-                // alert(newTenant.data.msg)
-                // setCNPJ('');
-                // setName('');
-                // setContato('');
+            }else{                
+                const newTenant = await axios.post('/api/hotel/addTenant',  objTenant )
+                alert(newTenant.data.msg)
+                setCNPJ('');
+                setName('');
+                setContato('');
             }
         }
     }
