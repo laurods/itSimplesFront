@@ -16,7 +16,7 @@ export default function CadPeople() {
         console.log('contato')
         console.log(contato)
         console.log('nome')
-        console.log(nome)     
+        console.log(name)     
     //   objPeople['name'] = name;
     //   objPeople['contato'] = contato;
     //   objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa'
@@ -32,7 +32,7 @@ export default function CadPeople() {
               <TextField
                 margin="normal"
                 required
-                inputProps={{style: {fontSize: 40}}}
+                inputProps={{style: {fontSize: 25}}}
                 label="Nome"
                 id="name"
                 value={name}

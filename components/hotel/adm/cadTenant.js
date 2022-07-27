@@ -20,7 +20,7 @@ export default function CadTenant() {
         console.log('contato')
         console.log(contato)
         console.log('nome')
-        console.log(nome)
+        console.log(name)
     //   objTenant['control'] = '6236cba1ee860b11eaebadd0'         
     //   objTenant['name'] = name;
     //   objTenant['contato'] = contato;
@@ -37,10 +37,10 @@ export default function CadTenant() {
               <TextField
                 margin="normal"
                 required
-                inputProps={{style: {fontSize: 40}}}
+                inputProps={{style: {fontSize: 25}}}
                 label="CNPJ"
                 id="cnpj"
-                value={name}
+                value={cnpj}
                 onChange={(event) => {setCNPJ(event.target.value)}}
                 fullWidth
                 variant="standard"
@@ -51,7 +51,7 @@ export default function CadTenant() {
               <TextField
                 margin="normal"
                 required
-                inputProps={{style: {fontSize: 40}}}
+                inputProps={{style: {fontSize: 25}}}
                 label="Nome"
                 id="name"
                 value={name}
