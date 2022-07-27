@@ -8,53 +8,54 @@ import TextField from '@mui/material/TextField';
 import Router from 'next/router';
 const theme = createTheme();
 
-export default function CadTenant({activeCNPJ}) {
-    const [reserva, setReserva] = useState('')
+export default function CadTenant() {
+    const [cnpj, setCNPJ] = useState('')
+    const [name, setName] = useState('')
     const [contato, setContato] = useState('')
-    const objReserva = {}
+    const objTenant = {}
 
-    const start = () => {       
-        Router.push(
-            {
-                pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
-            }
-            // {
-            //   pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}`,
-            //   query: { reserva: reserva, cnpj: activeCNPJ },
-  
-            // }
-        )
-    }
-
-    const send = async () => {
-        // console.log('contato')
-        // console.log(contato)
-        // console.log('reserva')
-        // console.log(reserva)
-        // console.log('cnpj')
-        // console.log(activeCNPJ)
-      objReserva['idControl'] = `${activeCNPJ}-${reserva}`;
-      objReserva['idHotel'] = activeCNPJ
-      objReserva['reserva'] = reserva
-      objReserva['contato'] = contato
-      objReserva['link'] = `https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
-      await axios.post('/api/hotel/addReserva',  objReserva )
+    const save = async () => {
+        console.log('CNPJ')
+        console.log(cnpj)
+        console.log('contato')
+        console.log(contato)
+        console.log('nome')
+        console.log(nome)
+    //   objTenant['control'] = '6236cba1ee860b11eaebadd0'         
+    //   objTenant['name'] = name;
+    //   objTenant['contato'] = contato;
+    //   objTenant['user'] = '6236cba1ee860b11eaebadd0'
+    //   await axios.post('/api/hotel/addPeople',  objPeople )
       
       
 
     }
   return (    
         <Box>      
-          <Grid container spacing={2}>            
+          <Grid container spacing={2}>
+          <Grid item xs={12}>
+              <TextField
+                margin="normal"
+                required
+                inputProps={{style: {fontSize: 40}}}
+                label="CNPJ"
+                id="cnpj"
+                value={name}
+                onChange={(event) => {setCNPJ(event.target.value)}}
+                fullWidth
+                variant="standard"
+                autoComplete="off"
+                />
+            </Grid>            
             <Grid item xs={12}>
               <TextField
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 40}}}
-                label="Tenant"
-                id="reserva"
-                value={reserva}
-                onChange={(event) => {setReserva(event.target.value)}}
+                label="Nome"
+                id="name"
+                value={name}
+                onChange={(event) => {setName(event.target.value)}}
                 fullWidth
                 variant="standard"
                 autoComplete="off"
@@ -74,27 +75,17 @@ export default function CadTenant({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>            
-            <Grid item xs={6}>
+            <Grid item xs={12}>
                 <Button
                     variant="outlined" 
                     size="large"                    
                     fullWidth
-                    onClick={start}
+                    onClick={save}
                     >
-                        Começar
+                        Cadastrar
                 </Button>
             </Grid>           
-            <Grid item xs={6}>
-                <Button                    
-                    variant="outlined" 
-                    size="large"
-                    color="success"                    
-                    fullWidth
-                    onClick={send}
-                    >
-                        Enviar
-                </Button>
-            </Grid>                          
+                                      
           </Grid>      
         </Box>
     

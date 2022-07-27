@@ -1,45 +1,26 @@
-import React, {  useState, useEffect, useContext } from 'react';
+import React, {  useState } from 'react';
 import axios from 'axios';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Router from 'next/router';
 const theme = createTheme();
 
-export default function CadPeople({activeCNPJ}) {
-    const [reserva, setReserva] = useState('')
+export default function CadPeople() {
+    const [name, setName] = useState('')
     const [contato, setContato] = useState('')
-    const objReserva = {}
+    const objPeople = {}
 
-    const start = () => {       
-        Router.push(
-            {
-                pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
-            }
-            // {
-            //   pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}`,
-            //   query: { reserva: reserva, cnpj: activeCNPJ },
-  
-            // }
-        )
-    }
-
-    const send = async () => {
-        // console.log('contato')
-        // console.log(contato)
-        // console.log('reserva')
-        // console.log(reserva)
-        // console.log('cnpj')
-        // console.log(activeCNPJ)
-      objReserva['idControl'] = `${activeCNPJ}-${reserva}`;
-      objReserva['idHotel'] = activeCNPJ
-      objReserva['reserva'] = reserva
-      objReserva['contato'] = contato
-      objReserva['link'] = `https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
-      await axios.post('/api/hotel/addReserva',  objReserva )
+    const save = async () => {
+        console.log('contato')
+        console.log(contato)
+        console.log('nome')
+        console.log(nome)     
+    //   objPeople['name'] = name;
+    //   objPeople['contato'] = contato;
+    //   objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa'
+    //   await axios.post('/api/hotel/addPeople',  objPeople )
       
       
 
@@ -52,10 +33,10 @@ export default function CadPeople({activeCNPJ}) {
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 40}}}
-                label="People"
-                id="reserva"
-                value={reserva}
-                onChange={(event) => {setReserva(event.target.value)}}
+                label="Nome"
+                id="name"
+                value={name}
+                onChange={(event) => {setName(event.target.value)}}
                 fullWidth
                 variant="standard"
                 autoComplete="off"
@@ -74,26 +55,16 @@ export default function CadPeople({activeCNPJ}) {
                 variant="standard"
                 autoComplete="off"
                 />
-            </Grid>            
-            <Grid item xs={6}>
-                <Button
-                    variant="outlined" 
-                    size="large"                    
-                    fullWidth
-                    onClick={start}
-                    >
-                        Começar
-                </Button>
-            </Grid>           
-            <Grid item xs={6}>
+            </Grid>  
+            <Grid item xs={12}>
                 <Button                    
                     variant="outlined" 
                     size="large"
                     color="success"                    
                     fullWidth
-                    onClick={send}
+                    onClick={save}
                     >
-                        Enviar
+                        Cadastrar
                 </Button>
             </Grid>                          
           </Grid>    
