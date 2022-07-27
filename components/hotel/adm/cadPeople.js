@@ -9,14 +9,24 @@ const theme = createTheme();
 
 export default function CadPeople() {
     const [name, setName] = useState('')
-    const [contato, setContato] = useState('')
+    const [email, setEmail] = useState('')
     const objPeople = {}
 
     const save = async () => {
-        console.log('contato')
-        console.log(contato)
+        console.log('email')
+        console.log(email)
         console.log('nome')
-        console.log(name)     
+        console.log(name)
+        if(name.length === 0 | contato.length === 0){
+            alert('Preencha os campos')
+        }
+        objPeople['name'] = name;
+        objPeople['email'] = email;
+        objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa';
+
+       const people =  await axios.post('/api/hotel/addPeople',  objPeople)
+       console.log('people.data')
+       console.log(people.data)     
     //   objPeople['name'] = name;
     //   objPeople['contato'] = contato;
     //   objPeople['password'] = '$2b$05$XyU4YgnDatraJH1KXVYUj.j3mzBZrn3JgCB1MCbrrG9X0bhAZfgqa'
@@ -47,10 +57,10 @@ export default function CadPeople() {
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 25}}}
-                label="Whats ou E-mail"
+                label="E-mail"
                 id="contato"
-                value={contato}
-                onChange={(event) => {setContato(event.target.value)}}
+                value={email}
+                onChange={(event) => {setEmail(event.target.value)}}
                 fullWidth
                 variant="standard"
                 autoComplete="off"
