@@ -26,8 +26,10 @@ export default function CadPeople() {
                 alert('Email já existente')
             }else{
                 const newPeople = await axios.post('/api/hotel/addPeople',  objPeople )
-                console.log(newPeople.data)
-                //alert(newPeople.data)
+                //console.log(newPeople.data.msg)
+                alert(newPeople.data.msg)
+                setName('');
+                setEmail('');
             }
              
         }
