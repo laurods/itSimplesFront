@@ -15,20 +15,26 @@ export default function CadTenant() {
     const objTenant = {}
 
     const save = async () => {
-        console.log('CNPJ')
-        console.log(cnpj)
-        console.log('contato')
-        console.log(contato)
-        console.log('nome')
-        console.log(name)
-    //   objTenant['control'] = '6236cba1ee860b11eaebadd0'         
-    //   objTenant['name'] = name;
-    //   objTenant['contato'] = contato;
-    //   objTenant['user'] = '6236cba1ee860b11eaebadd0'
-    //   await axios.post('/api/hotel/addPeople',  objPeople )
-      
-      
+        if(cnpj.length === 0 | name.length === 0 | contato.length === 0){
+            alert('Preencha os campos')
+        }
 
+        if(cnpj.length !== 0 | name.length !== 0 | contato.length === 0 ){
+           objTenant['control'] = `6236cba1ee860b11eaebadd0.${cnpj}`         
+           objTenant['name'] = name;
+           objTenant['contato'] = contato;
+           objTenant['user'] = '6236cba1ee860b11eaebadd0'
+        const tenant =  await axios.post('/api/hotel/getByEmail',  objPeople)
+            if(tenant.data.length > 0){
+                alert('Email já existente')
+            }else{
+                const newTenant = await axios.post('/api/hotel/addPeople',  objTenant )
+                alert(newTenant.data.msg)
+                setCNPJ('');
+                setName('');
+                setContato('');
+            }
+        }
     }
   return (    
         <Box>      
