@@ -24,7 +24,7 @@ export default function CadTenant() {
            objTenant['name'] = name;
            objTenant['contato'] = contato;
            objTenant['user'] = '6236cba1ee860b11eaebadd0'
-        const tenant =  await axios.post('/api/hotel/getByEmail',  objPeople)
+        const tenant =  await axios.post('/api/hotel/getByEmail',  objTenant)
             if(tenant.data.length > 0){
                 alert('Email já existente')
             }else{
