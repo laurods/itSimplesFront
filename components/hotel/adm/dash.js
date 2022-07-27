@@ -3,16 +3,17 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Top from '../top';
+import Top from './top';
 import CadPeople from './cadPeople';
 import CadTenant from './cadTenant';
 const theme = createTheme();
 
 export default function Dash() {
   return (
-    <ThemeProvider theme={theme}>      
+    <ThemeProvider theme={theme}>
+      <Top/>       
       <Container>
-        <Top/> 
+        
         <Box>      
           <Grid container spacing={2}>            
             <Grid item xs={12}>
