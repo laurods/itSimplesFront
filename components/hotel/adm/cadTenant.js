@@ -20,19 +20,21 @@ export default function CadTenant() {
         }
 
         if(cnpj.length !== 0 | name.length !== 0 | contato.length === 0 ){
-           objTenant['control'] = `6236cba1ee860b11eaebadd0.${cnpj}`         
+           objTenant['control'] = `6236cba1ee860b11eaebadd0.${cnpj}`
+           objTenant['cnpj'] = cnpj;         
            objTenant['name'] = name;
            objTenant['contato'] = contato;
            objTenant['user'] = '6236cba1ee860b11eaebadd0'
         const tenant =  await axios.post('/api/hotel/getByCNPJ',  objTenant)
             if(tenant.data.length > 0){
-                alert('Email já existente')
+                alert('CNPJ já existente')
             }else{
-                const newTenant = await axios.post('/api/hotel/addPeople',  objTenant )
-                alert(newTenant.data.msg)
-                setCNPJ('');
-                setName('');
-                setContato('');
+                console.log('cadastrar')
+                // const newTenant = await axios.post('/api/hotel/addPeople',  objTenant )
+                // alert(newTenant.data.msg)
+                // setCNPJ('');
+                // setName('');
+                // setContato('');
             }
         }
     }
