@@ -16,7 +16,7 @@ export default function Index() {
       const cookies = parseCookies()
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/tenant/getTenantByUserId', { user: cookies.idUser }); 
       const listTenants = tenants.data;
-      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listClients[0].cnpj });              
+      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listTenants[0].cnpj });              
       const listQuizzes = quizzes.data;      
       setDataQuizz(listQuizzes)
       setCNPJsByUsers(listTenants)
