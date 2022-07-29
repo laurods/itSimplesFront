@@ -27,27 +27,16 @@ export default function CadVinculo() {
         if(txtPeople.length === 0){
             alert('Preencha os campos')
         }
-
         if(txtPeople.length !== 0){
         objPeople['email'] = txtPeople;
         const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
-        console.log('people');
-        console.log(people);
             if(people.data.length > 0){
-                console.log('people.data[0].email')
-                console.log(people.data[0].email)
-                console.log('people.data[0].name')
-                console.log(people.data[0].name)
-                console.log('people.data[0]._id')
-                console.log(people.data[0]._id)
+                setIdPeople(people.data[0]._id)
+                setNamePeople(people.data[0].name)
+                setEmail(people.data[0].email)
             }else{
                 alert('Email não existente')
-                // const newPeople = await axios.post('/api/hotel/addPeople',  objPeople )
-                // alert(newPeople.data.msg)
-                // setName('');
-                // setEmail('');
             }
-             
         }
 
     }
@@ -86,8 +75,7 @@ export default function CadVinculo() {
             <Grid item xs={10}>
               <TextField
                 margin="normal"
-                required
-                inputProps={{style: {fontSize: 25}}}
+                required                
                 label="E-mail"
                 id="email"
                 value={txtPeople}
@@ -113,8 +101,7 @@ export default function CadVinculo() {
             <Grid item xs={10}>
               <TextField
                 margin="normal"
-                required
-                inputProps={{style: {fontSize: 25}}}
+                required                
                 label="CNPJ"
                 id="cnpj"
                 value={txTenant}
@@ -135,7 +122,29 @@ export default function CadVinculo() {
                     >
                         <SendIcon />
                 </Button>
-            </Grid>           
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                margin="normal"
+                disabled        
+                label="People"
+                id="people"
+                value={namePeople}
+                fullWidth
+                variant="outlined"
+                />
+            </Grid>
+            <Grid item xs={12}>
+            <TextField
+                margin="normal"
+                disabled        
+                label="Tenant"
+                id="tenant"
+                value={nameTenant}
+                fullWidth
+                variant="outlined"
+                />
+            </Grid>             
                                       
           </Grid>      
         </Box>
