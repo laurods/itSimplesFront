@@ -17,7 +17,7 @@ export default function Levantamento() {
   const reserva = codigo.slice(codigo.indexOf("@") + 1);
   const cnpj = codigo.slice(0, 14);
   const getName = async () => {
-    const dataTenant = await axios.post('https://it-simples-front.vercel.app/api/hotel/getByCNPJ', { cnpj: cnpj });
+    const dataTenant = await axios.post('https://it-simples-front.vercel.app/api/tenant/getTenantByCNPJ', { cnpj: cnpj });
     const tenant = dataTenant.data;
     if(tenant.length > 0){
       setTenantName(tenant[0].name)

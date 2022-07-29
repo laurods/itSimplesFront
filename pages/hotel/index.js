@@ -14,14 +14,14 @@ export default function Index() {
   useEffect(() => {
     const loadAll = async() =>{
       const cookies = parseCookies()
-      const clients = await axios.post('https://it-simples-front.vercel.app/api/cnpjbyuser', { user: cookies.idUser });              
-      const listClients = clients.data;
+      const tenants = await axios.post('https://it-simples-front.vercel.app/api/tenant/getTenantByUserId', { user: cookies.idUser }); 
+      const listTenants = tenants.data;
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listClients[0].cnpj });              
       const listQuizzes = quizzes.data;      
       setDataQuizz(listQuizzes)
-      setCNPJsByUsers(listClients)
-      setActiveCNPJ(listClients[0].cnpj)
-      setTenantName(listClients[0].name)     
+      setCNPJsByUsers(listTenants)
+      setActiveCNPJ(listTenants[0].cnpj)
+      setTenantName(listTenants[0].name)     
       
     }
     loadAll();
