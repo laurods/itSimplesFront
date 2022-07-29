@@ -20,9 +20,30 @@ export default function CadVinculo() {
     const [nameTenant, setNameTenant] = useState('')
     const [contato, setContato] = useState('')
     const objTenant = {}
+    const objPeople = {}
 
     const searchPeople = async () => {
         console.log(txtPeople)
+        if(txtPeople.length === 0){
+            alert('Preencha os campos')
+        }
+
+        if(txtPeople.length !== 0){
+        objPeople['email'] = email;
+        const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
+            if(people.data.length > 0){
+                console.log('people.data')
+                console.log(people.data)
+                
+            }else{
+                alert('Email não existente')
+                // const newPeople = await axios.post('/api/hotel/addPeople',  objPeople )
+                // alert(newPeople.data.msg)
+                // setName('');
+                // setEmail('');
+            }
+             
+        }
 
     }
 
@@ -62,12 +83,12 @@ export default function CadVinculo() {
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 25}}}
-                label="People"
-                id="people"
+                label="E-mail"
+                id="email"
                 value={txtPeople}
                 onChange={(event) => {setTxtPeople(event.target.value)}}
                 fullWidth
-                variant="standard"
+                variant="outlined"
                 autoComplete="off"
                 />
             </Grid>            
@@ -89,12 +110,12 @@ export default function CadVinculo() {
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 25}}}
-                label="Tenant"
-                id="tenant"
+                label="CNPJ"
+                id="cnpj"
                 value={txTenant}
                 onChange={(event) => {setTexTenant(event.target.value)}}
                 fullWidth
-                variant="standard"
+                variant="outlined"
                 autoComplete="off"
                 />
             </Grid>            
