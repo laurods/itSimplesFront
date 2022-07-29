@@ -50,28 +50,15 @@ export default function CadVinculo() {
     }
 
     const save = async () => {
-        // if(idPeople.length === 0 | idTenant.length === 0){
-        //     alert('Preencha os campos')
-        // }
-
-        // if(cnpj.length !== 0 | nameTenant.length !== 0 | contato.length === 0 ){
-        //    objTenant['control'] = `${idPeople}.${cnpj}`
-        //    objTenant['cnpj'] = cnpj;         
-        //    objTenant['name'] = nameTenant;
-        //    objTenant['contato'] = contato;
-        //    objTenant['user'] = idPeople
-        // const tenant =  await axios.post('/api/hotel/getTenantByControl',  objTenant)
-        //     if(tenant.data.length > 0){
-        //         alert('CNPJ control já existente')
-        //     }else{
-        //         console.log('cadastrar')                
-        //         // const newTenant = await axios.post('/api/hotel/addTenant',  objTenant )
-        //         // alert(newTenant.data.msg)
-        //         // setCNPJ('');
-        //         // setName('');
-        //         // setContato('');
-        //     }
-        // }
+        if(cnpj.length === 0 | idPeople.length === 0){
+            alert('Preencha os campos')
+        }
+        if(cnpj.length !== 0 | idPeople.length !== 0 ){
+           objTenant['cnpj'] = cnpj;
+           objTenant['user'] = idPeople
+        const updateTenant =  await axios.post('/api/tenant/updateAddUser',  objTenant)
+            console.log(updateTenant.data)
+         }
     }
   return (    
         <Box>      
