@@ -5,7 +5,6 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import SendIcon from '@material-ui/icons/Send';
 import Router from 'next/router';
 const theme = createTheme();
 
@@ -23,10 +22,6 @@ export default function CadVinculo() {
     const objPeople = {}
 
     const search = async () => {
-        console.log('txtPeople')
-        console.log(txtPeople)
-        console.log('txTenant')
-        console.log(txTenant)
         if(txtPeople.length === 0 | txTenant.length === 0){
             alert('Preencha os campos')
         }
@@ -45,13 +40,10 @@ export default function CadVinculo() {
         objTenant['cnpj'] = txTenant;
         const tenant =  await axios.post('/api/tenant/getTenantByCNPJ',  objTenant)
             if(tenant.data.length > 0){
-                console.log('tenant.data[0]')
-                console.log(tenant.data[0])
-                // setIdPeople(people.data[0]._id)
-                // setNamePeople(people.data[0].name)
-                // setEmail(people.data[0].email)
+                setCNPJ(tenant.data[0].cnpj)
+                setNameTenant(tenant.data[0].name)
             }else{
-                    alert('CNPJ não existente')
+                alert('CNPJ não existente')
             }
         }
 
