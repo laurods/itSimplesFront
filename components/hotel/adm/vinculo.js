@@ -9,86 +9,93 @@ import Router from 'next/router';
 const theme = createTheme();
 
 export default function CadTenant() {
+    const [idPeople, setIdPeople] = useState('')
+    const [namePeople, setNamePeople] = useState('')
+    const [email, setEmail] = useState('')    
     const [cnpj, setCNPJ] = useState('')
-    const [name, setName] = useState('')
+    const [idTenant, setIdTenant] = useState('')
+    const [nameTenant, setNameTenant] = useState('')
     const [contato, setContato] = useState('')
     const objTenant = {}
 
+    const searchPeople = async () => {
+
+    }
+
     const save = async () => {
-        if(cnpj.length === 0 | name.length === 0 | contato.length === 0){
+        if(idPeople.length === 0 | idTenant.length === 0){
             alert('Preencha os campos')
         }
 
-        if(cnpj.length !== 0 | name.length !== 0 | contato.length === 0 ){           
+        if(cnpj.length !== 0 | nameTenant.length !== 0 | contato.length === 0 ){
+           objTenant['control'] = `${idPeople}.${cnpj}`
            objTenant['cnpj'] = cnpj;         
-           objTenant['name'] = name;
+           objTenant['name'] = nameTenant;
            objTenant['contato'] = contato;
-           objTenant['user'] = '6236cba1ee860b11eaebadd0'
+           objTenant['user'] = idPeople
         const tenant =  await axios.post('/api/hotel/getTenantByControl',  objTenant)
             if(tenant.data.length > 0){
                 alert('CNPJ control já existente')
-            }else{                
-                const newTenant = await axios.post('/api/hotel/addTenant',  objTenant )
-                alert(newTenant.data.msg)
-                setCNPJ('');
-                setName('');
-                setContato('');
+            }else{
+                console.log('cadastrar')                
+                // const newTenant = await axios.post('/api/hotel/addTenant',  objTenant )
+                // alert(newTenant.data.msg)
+                // setCNPJ('');
+                // setName('');
+                // setContato('');
             }
         }
     }
   return (    
         <Box>      
-          <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid container spacing={2}>         
+            <Grid item xs={10}>
               <TextField
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 25}}}
-                label="CNPJ"
-                id="cnpj"
-                value={cnpj}
-                onChange={(event) => {setCNPJ(event.target.value)}}
+                label="E-mail"
+                id="email"
+                value={email}
+                onChange={(event) => {setEmail(event.target.value)}}
                 fullWidth
                 variant="standard"
                 autoComplete="off"
                 />
             </Grid>            
-            <Grid item xs={12}>
-              <TextField
-                margin="normal"
-                required
-                inputProps={{style: {fontSize: 25}}}
-                label="Nome"
-                id="name"
-                value={name}
-                onChange={(event) => {setName(event.target.value)}}
-                fullWidth
-                variant="standard"
-                autoComplete="off"
-                />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                margin="normal"
-                required
-                inputProps={{style: {fontSize: 25}}}
-                label="Whats ou E-mail"
-                id="contato"
-                value={contato}
-                onChange={(event) => {setContato(event.target.value)}}
-                fullWidth
-                variant="standard"
-                autoComplete="off"
-                />
-            </Grid>            
-            <Grid item xs={12}>
+            <Grid item xs={2}>
                 <Button
                     variant="outlined" 
                     size="large"                    
                     fullWidth
-                    onClick={save}
+                    onClick={searchPeople}
                     >
-                        Cadastrar
+                        Buscar
+                </Button>
+            </Grid>
+
+            <Grid item xs={10}>
+              <TextField
+                margin="normal"
+                required
+                inputProps={{style: {fontSize: 25}}}
+                label="E-mail"
+                id="email"
+                value={email}
+                onChange={(event) => {setEmail(event.target.value)}}
+                fullWidth
+                variant="standard"
+                autoComplete="off"
+                />
+            </Grid>            
+            <Grid item xs={2}>
+                <Button
+                    variant="outlined" 
+                    size="large"                    
+                    fullWidth
+                    onClick={searchPeople}
+                    >
+                        Buscar
                 </Button>
             </Grid>           
                                       

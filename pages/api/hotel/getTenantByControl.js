@@ -9,23 +9,20 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-        const objTenant = req.body;
-        const { cnpj, name, contato, user } = objTenant;
-        
-         await client.connect();
+        const { cnpj } = req.body;
+         await client.connect();         
          const db = client.db(dbName);
          const col = db.collection("tenant");
-         const p = await col.insertOne(            
-            {                
-                cnpj,
-                name,
-                contato,
-                users: [user]                  
-           },
-                  
-        );
-
-         res.status(200).json({ msg: `${name}. Salvo com sucesso!`});
+         const tenant = await col.find(
+            { cnpj },
+            {projection: { 
+                _id: 0,
+                cnpj: 1, 
+                name: 1 
+            }}
+            ).toArray();     
+         
+         res.status(200).json(tenant);
 
         } catch (err) {
          console.log(err.stack);
@@ -35,4 +32,3 @@ const client = new MongoClient(url);
         await client.close();
     }
 }
-
