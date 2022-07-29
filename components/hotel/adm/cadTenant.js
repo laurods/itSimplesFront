@@ -56,7 +56,6 @@ export default function CadTenant() {
             <Grid item xs={12}>
               <TextField
                 margin="normal"
-                required
                 inputProps={{style: {fontSize: 25}}}
                 label="Nome"
                 id="name"
@@ -70,7 +69,6 @@ export default function CadTenant() {
             <Grid item xs={12}>
               <TextField
                 margin="normal"
-                required
                 inputProps={{style: {fontSize: 25}}}
                 label="Whats ou E-mail"
                 id="contato"

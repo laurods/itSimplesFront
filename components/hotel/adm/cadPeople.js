@@ -39,7 +39,6 @@ export default function CadPeople() {
             <Grid item xs={12}>
               <TextField
                 margin="normal"
-                required
                 inputProps={{style: {fontSize: 25}}}
                 label="Nome"
                 id="name"
@@ -53,7 +52,6 @@ export default function CadPeople() {
             <Grid item xs={12}>
               <TextField
                 margin="normal"
-                required
                 inputProps={{style: {fontSize: 25}}}
                 label="E-mail"
                 id="contato"

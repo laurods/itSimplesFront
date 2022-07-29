@@ -78,28 +78,26 @@ export default function CadVinculo() {
           <Grid container spacing={2}>         
             <Grid item xs={12}>
               <TextField
-                margin="normal"
-                required                
+                margin="normal"        
                 label="E-mail"
                 id="email"
                 value={txtPeople}
                 onChange={(event) => {setTxtPeople(event.target.value)}}
                 fullWidth
-                variant="outlined"
+                variant="standard"
                 autoComplete="off"
                 />
             </Grid>
 
             <Grid item xs={12}>
               <TextField
-                margin="normal"
-                required                
+                margin="normal"         
                 label="CNPJ"
                 id="cnpj"
                 value={txTenant}
                 onChange={(event) => {setTexTenant(event.target.value)}}
                 fullWidth
-                variant="outlined"
+                variant="standard"
                 autoComplete="off"
                 />
             </Grid>            
@@ -118,24 +116,14 @@ export default function CadVinculo() {
               <TextField
                 margin="normal"
                 disabled        
-                label="People"
+                label="Vincular People/Tenant"
                 id="people"
-                value={namePeople}
+                value={`${namePeople} - ${nameTenant}`}
                 fullWidth
                 variant="outlined"
                 />
             </Grid>
-            <Grid item xs={12}>
-            <TextField
-                margin="normal"
-                disabled        
-                label="Tenant"
-                id="tenant"
-                value={nameTenant}
-                fullWidth
-                variant="outlined"
-                />
-            </Grid>
+            
             <Grid item xs={12}>
                 <Button
                     variant="outlined" 
