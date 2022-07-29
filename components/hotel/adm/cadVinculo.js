@@ -43,7 +43,7 @@ export default function CadVinculo() {
         }
         if(txTenant.length !== 0){
         objTenant['cnpj'] = txTenant;
-        const tenant =  await axios.post('/api/tenant/getTenantByCNPJ',  objPeople)
+        const tenant =  await axios.post('/api/tenant/getTenantByCNPJ',  objTenant)
             if(tenant.data.length > 0){
                 console.log('tenant.data[0]')
                 console.log(tenant.data[0])
