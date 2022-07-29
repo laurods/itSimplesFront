@@ -2,9 +2,10 @@ import * as React from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import CadPeople from './cadPeople';
+import CadTenant from './cadTenant';
+import CadVinculo from './cadVinculo';
 
 export default function Main() {
   return (
@@ -20,10 +21,10 @@ export default function Main() {
                 value='Cadastro Pessoa'
                 fullWidth
                 variant="outlined"
-                />
+            />
         </AccordionSummary>
         <AccordionDetails>
-                <CadPeople />
+            <CadPeople />
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -31,22 +32,34 @@ export default function Main() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Accordion 2</Typography>
+          <TextField
+                margin="normal"
+                disabled
+                value='Cadastro Empresa'
+                fullWidth
+                variant="outlined"
+            />
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+            <CadTenant />
         </AccordionDetails>
       </Accordion>
-      <Accordion disabled>
+      <Accordion>
         <AccordionSummary
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography>Disabled Accordion</Typography>
+         <TextField
+                margin="normal"
+                disabled
+                value='Vincular Pessoa/Empresa'
+                fullWidth
+                variant="outlined"
+            />
         </AccordionSummary>
+        <AccordionDetails>
+            <CadVinculo />
+        </AccordionDetails>
       </Accordion>
     </div>
   );

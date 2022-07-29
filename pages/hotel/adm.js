@@ -1,7 +1,7 @@
 import React, {  useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { parseCookies } from 'nookies';
-import Dash from '../../components/hotel/adm/dash';
+import Top from '../../components/hotel/adm/top';
 import Main from '../../components/hotel/adm/main';
 import Login from '../../components/login/login';
 import axios from 'axios';
@@ -24,7 +24,8 @@ export default function Index() {
   }, []);
   
     return (
-      <>     
+      <>
+      {isAuthenticated && <Top/>}     
       {isAuthenticated && <Main/>}
       {!isAuthenticated && <Login />}
       </>
