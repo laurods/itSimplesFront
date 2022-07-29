@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from '@mui/material/Send';
 import Router from 'next/router';
 const theme = createTheme();
 
