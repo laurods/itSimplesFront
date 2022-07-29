@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import SendIcon from '@mui/icons-material/Send';
 import Router from 'next/router';
 const theme = createTheme();
 
@@ -72,12 +73,14 @@ export default function CadVinculo() {
             </Grid>            
             <Grid item xs={2}>
                 <Button
+                    sx={{mt: 5}}
                     variant="outlined" 
                     size="large"                    
                     fullWidth
                     onClick={searchPeople}
+                    
                     >
-                        Buscar
+                        <SendIcon />
                 </Button>
             </Grid>
 
@@ -97,12 +100,14 @@ export default function CadVinculo() {
             </Grid>            
             <Grid item xs={2}>
                 <Button
+                    sx={{mt: 5}}
                     variant="outlined" 
                     size="large"                    
                     fullWidth
+                    color='success'
                     onClick={searchTenant}
                     >
-                        Buscar
+                        <SendIcon />
                 </Button>
             </Grid>           
                                       
