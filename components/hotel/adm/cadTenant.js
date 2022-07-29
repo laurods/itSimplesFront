@@ -24,11 +24,11 @@ export default function CadTenant() {
            objTenant['name'] = name;
            objTenant['contato'] = contato;
            objTenant['user'] = '6236cba1ee860b11eaebadd0'
-        const tenant =  await axios.post('/api/hotel/getTenantByControl',  objTenant)
+        const tenant =  await axios.post('/api/tenant/getTenantByCNPJ',  objTenant)
             if(tenant.data.length > 0){
                 alert('CNPJ control já existente')
             }else{                
-                const newTenant = await axios.post('/api/hotel/addTenant',  objTenant )
+                const newTenant = await axios.post('/api/tenant/addTenant',  objTenant )
                 alert(newTenant.data.msg)
                 setCNPJ('');
                 setName('');
