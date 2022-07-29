@@ -31,10 +31,11 @@ export default function CadVinculo() {
         if(txtPeople.length !== 0){
         objPeople['email'] = email;
         const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
+        console.log('people');
+        console.log(people);
             if(people.data.length > 0){
                 console.log('people.data')
                 console.log(people.data)
-                
             }else{
                 alert('Email não existente')
                 // const newPeople = await axios.post('/api/hotel/addPeople',  objPeople )
