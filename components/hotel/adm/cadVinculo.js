@@ -22,9 +22,12 @@ export default function CadVinculo() {
     const objTenant = {}
     const objPeople = {}
 
-    const searchPeople = async () => {
+    const search = async () => {
+        console.log('txtPeople')
         console.log(txtPeople)
-        if(txtPeople.length === 0){
+        console.log('txTenant')
+        console.log(txTenant)
+        if(txtPeople.length === 0 | txTenant.length === 0){
             alert('Preencha os campos')
         }
         if(txtPeople.length !== 0){
@@ -38,11 +41,20 @@ export default function CadVinculo() {
                 alert('Email não existente')
             }
         }
+        if(txTenant.length !== 0){
+        objTenant['cnpj'] = txTenant;
+        const tenant =  await axios.post('/api/tenant/getTenantByCNPJ',  objPeople)
+            if(tenant.data.length > 0){
+                console.log('tenant.data[0]')
+                console.log(tenant.data[0])
+                // setIdPeople(people.data[0]._id)
+                // setNamePeople(people.data[0].name)
+                // setEmail(people.data[0].email)
+            }else{
+                    alert('CNPJ não existente')
+            }
+        }
 
-    }
-
-    const searchTenant = async () => {
-        console.log(txTenant)
     }
 
     const save = async () => {
@@ -72,7 +84,7 @@ export default function CadVinculo() {
   return (    
         <Box>      
           <Grid container spacing={2}>         
-            <Grid item xs={10}>
+            <Grid item xs={12}>
               <TextField
                 margin="normal"
                 required                
@@ -84,21 +96,9 @@ export default function CadVinculo() {
                 variant="outlined"
                 autoComplete="off"
                 />
-            </Grid>            
-            <Grid item xs={2}>
-                <Button
-                    sx={{mt: 5}}
-                    variant="outlined" 
-                    size="large"                    
-                    fullWidth
-                    onClick={searchPeople}
-                    
-                    >
-                        <SendIcon />
-                </Button>
             </Grid>
 
-            <Grid item xs={10}>
+            <Grid item xs={12}>
               <TextField
                 margin="normal"
                 required                
@@ -111,16 +111,15 @@ export default function CadVinculo() {
                 autoComplete="off"
                 />
             </Grid>            
-            <Grid item xs={2}>
+            <Grid item xs={12}>
                 <Button
-                    sx={{mt: 5}}
                     variant="outlined" 
                     size="large"                    
                     fullWidth
-                    color='success'
-                    onClick={searchTenant}
+                    color='primary'
+                    onClick={search}
                     >
-                        <SendIcon />
+                        Buscar
                 </Button>
             </Grid>
             <Grid item xs={12}>
@@ -144,6 +143,17 @@ export default function CadVinculo() {
                 fullWidth
                 variant="outlined"
                 />
+            </Grid>
+            <Grid item xs={12}>
+                <Button
+                    variant="outlined" 
+                    size="large"                    
+                    fullWidth
+                    color='success'
+                    onClick={save}
+                    >
+                        Salvar
+                </Button>
             </Grid>             
                                       
           </Grid>      
