@@ -30,7 +30,7 @@ export default function CadVinculo() {
 
         if(txtPeople.length !== 0){
         objPeople['email'] = email;
-        const people =  await axios.post('/api/hotel/getByEmail',  objPeople)
+        const people =  await axios.post('/api/hotel/getByEmail',  { email })
         console.log('people');
         console.log(people);
             if(people.data.length > 0){
