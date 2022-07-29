@@ -18,6 +18,8 @@ export default function Index() {
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/tenant/getTenantByUserId', { user: cookies.idUser });              
       const listClients = clients.data;
       const listTenants = tenants.data;
+      console.log('cookies.idUser')
+      console.log(cookies.idUser)
       console.log('listTenants')
       console.log(listTenants)
       setCNPJsByUsers(listClients)
