@@ -34,8 +34,12 @@ export default function CadVinculo() {
         console.log('people');
         console.log(people);
             if(people.data.length > 0){
-                console.log('people.data')
-                console.log(people.data)
+                console.log('people.data[0].email')
+                console.log(people.data[0].email)
+                console.log('people.data[0].name')
+                console.log(people.data[0].name)
+                console.log('people.data[0]._id')
+                console.log(people.data[0]._id)
             }else{
                 alert('Email não existente')
                 // const newPeople = await axios.post('/api/hotel/addPeople',  objPeople )
