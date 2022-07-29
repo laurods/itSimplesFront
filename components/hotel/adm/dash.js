@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Top from './top';
 import CadPeople from './cadPeople';
 import CadTenant from './cadTenant';
+import CadVinculo from './cadVinculo';
 const theme = createTheme();
 
 export default function Dash() {
@@ -21,6 +22,9 @@ export default function Dash() {
             </Grid>
             <Grid item xs={12}>
               <CadTenant />
+            </Grid>
+            <Grid item xs={12}>
+              <CadVinculo />
             </Grid>               
           </Grid>      
         </Box>

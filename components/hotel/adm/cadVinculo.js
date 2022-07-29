@@ -8,7 +8,9 @@ import TextField from '@mui/material/TextField';
 import Router from 'next/router';
 const theme = createTheme();
 
-export default function CadTenant() {
+export default function CadVinculo() {
+    const [txtPeople, setTxtPeople] = useState('')
+    const [txTenant, setTexTenant] = useState('')
     const [idPeople, setIdPeople] = useState('')
     const [namePeople, setNamePeople] = useState('')
     const [email, setEmail] = useState('')    
@@ -19,32 +21,37 @@ export default function CadTenant() {
     const objTenant = {}
 
     const searchPeople = async () => {
+        console.log(txtPeople)
 
     }
 
-    const save = async () => {
-        if(idPeople.length === 0 | idTenant.length === 0){
-            alert('Preencha os campos')
-        }
+    const searchTenant = async () => {
+        console.log(txTenant)
+    }
 
-        if(cnpj.length !== 0 | nameTenant.length !== 0 | contato.length === 0 ){
-           objTenant['control'] = `${idPeople}.${cnpj}`
-           objTenant['cnpj'] = cnpj;         
-           objTenant['name'] = nameTenant;
-           objTenant['contato'] = contato;
-           objTenant['user'] = idPeople
-        const tenant =  await axios.post('/api/hotel/getTenantByControl',  objTenant)
-            if(tenant.data.length > 0){
-                alert('CNPJ control já existente')
-            }else{
-                console.log('cadastrar')                
-                // const newTenant = await axios.post('/api/hotel/addTenant',  objTenant )
-                // alert(newTenant.data.msg)
-                // setCNPJ('');
-                // setName('');
-                // setContato('');
-            }
-        }
+    const save = async () => {
+        // if(idPeople.length === 0 | idTenant.length === 0){
+        //     alert('Preencha os campos')
+        // }
+
+        // if(cnpj.length !== 0 | nameTenant.length !== 0 | contato.length === 0 ){
+        //    objTenant['control'] = `${idPeople}.${cnpj}`
+        //    objTenant['cnpj'] = cnpj;         
+        //    objTenant['name'] = nameTenant;
+        //    objTenant['contato'] = contato;
+        //    objTenant['user'] = idPeople
+        // const tenant =  await axios.post('/api/hotel/getTenantByControl',  objTenant)
+        //     if(tenant.data.length > 0){
+        //         alert('CNPJ control já existente')
+        //     }else{
+        //         console.log('cadastrar')                
+        //         // const newTenant = await axios.post('/api/hotel/addTenant',  objTenant )
+        //         // alert(newTenant.data.msg)
+        //         // setCNPJ('');
+        //         // setName('');
+        //         // setContato('');
+        //     }
+        // }
     }
   return (    
         <Box>      
@@ -54,10 +61,10 @@ export default function CadTenant() {
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 25}}}
-                label="E-mail"
-                id="email"
-                value={email}
-                onChange={(event) => {setEmail(event.target.value)}}
+                label="People"
+                id="people"
+                value={txtPeople}
+                onChange={(event) => {setTxtPeople(event.target.value)}}
                 fullWidth
                 variant="standard"
                 autoComplete="off"
@@ -79,10 +86,10 @@ export default function CadTenant() {
                 margin="normal"
                 required
                 inputProps={{style: {fontSize: 25}}}
-                label="E-mail"
-                id="email"
-                value={email}
-                onChange={(event) => {setEmail(event.target.value)}}
+                label="Tenant"
+                id="tenant"
+                value={txTenant}
+                onChange={(event) => {setTexTenant(event.target.value)}}
                 fullWidth
                 variant="standard"
                 autoComplete="off"
@@ -93,7 +100,7 @@ export default function CadTenant() {
                     variant="outlined" 
                     size="large"                    
                     fullWidth
-                    onClick={searchPeople}
+                    onClick={searchTenant}
                     >
                         Buscar
                 </Button>
