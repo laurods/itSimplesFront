@@ -21,21 +21,10 @@ export default function Initial({activeCNPJ}) {
             {
                 pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
             }
-            // {
-            //   pathname:`https://it-simples-front.vercel.app/hotel/${activeCNPJ}`,
-            //   query: { reserva: reserva, cnpj: activeCNPJ },
-  
-            // }
         )
     }
 
     const send = async () => {
-        // console.log('contato')
-        // console.log(contato)
-        // console.log('reserva')
-        // console.log(reserva)
-        // console.log('cnpj')
-        // console.log(activeCNPJ)
       objReserva['idControl'] = `${activeCNPJ}-${reserva}`;
       objReserva['idHotel'] = activeCNPJ
       objReserva['reserva'] = reserva
@@ -47,9 +36,9 @@ export default function Initial({activeCNPJ}) {
 
     }
   return (
-    <ThemeProvider theme={theme}>      
+    <ThemeProvider theme={theme}>
+      <Top/>       
       <Container>
-        <Top/> 
         <Box>      
           <Grid container spacing={2}>            
             <Grid item xs={12}>
@@ -80,7 +69,7 @@ export default function Initial({activeCNPJ}) {
                 autoComplete="off"
                 />
             </Grid>            
-            <Grid item xs={6}>
+            {/* <Grid item xs={6}>
                 <Button
                     variant="outlined" 
                     size="large"                    
@@ -89,8 +78,8 @@ export default function Initial({activeCNPJ}) {
                     >
                         Começar
                 </Button>
-            </Grid>           
-            <Grid item xs={6}>
+            </Grid>            */}
+            <Grid item xs={12}>
                 <Button                    
                     variant="outlined" 
                     size="large"
