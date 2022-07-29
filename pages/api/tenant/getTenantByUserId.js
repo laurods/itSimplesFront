@@ -14,7 +14,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("tenant");
          const tenants = await col.find(
-            { users: [user] },
+            { users: {$elemMatch: {user}} },
             {projection: { _id: 0, name: 1, cnpj: 1 }}
             ).toArray();     
          
