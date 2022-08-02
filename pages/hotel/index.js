@@ -54,7 +54,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<Dashboard dataQuizz = {dataQuizz}/>}
+      {isAuthenticated &&<Dashboard dataQuizz = {dataQuizz} dataFeedback = {dataFeedback}/>}
       {!isAuthenticated && <Login />}
       </>
     );

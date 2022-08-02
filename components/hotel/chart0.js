@@ -5,37 +5,40 @@ import { makeStyles, } from '@material-ui/core/styles';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 
-export default function Chat0({dataQuizz}) {
+export default function Chat0({dataFeedback}) {
     const totalNo = [];
     const totalYes = [];
-    const FeedBack = [];
-    console.log("dataQuizz[0]")
-    console.log(dataQuizz[0])
-    if(dataQuizz.length > 0) {
-      console.log("dataQuizz[0].quizzes")
-      console.log(dataQuizz[0].quizzes)
-      const listQuiz = dataQuizz[0].quizzes;
-      listQuiz.map((item)=>{
-        item.map(({question, answer})=>{
-          // FeedBack.push({
-          //     question: question,
-          //     answer:answer            
-          // })
-          if(answer === 'Sim'){
-            totalYes.push(answer)
-          }
-          if(answer === 'Não'){
-            totalNo.push(answer)
-          }        
-        })        
-      })    
-      // console.log('FeedBack');
-      // console.log(FeedBack);
+    if(dataFeedback.length > 0) {
+      dataFeedback.map(({question, answer})=>{
+        // FeedBack.push({
+        //     question: question,
+        //     answer:answer            
+        // })
+        if(answer === 'Sim'){
+          totalYes.push(answer)
+        }
+        if(answer === 'Não'){
+          totalNo.push(answer)
+        }        
+      }) 
 
-      console.log('totalNo.length');
-      console.log(totalNo.length);
-      console.log('totalYes.length');
-      console.log(totalYes.length);      
+
+      // const listQuiz = dataQuizz[0].quizzes;
+      // listQuiz.map((item)=>{
+      //   item.map(({question, answer})=>{
+      //     // FeedBack.push({
+      //     //     question: question,
+      //     //     answer:answer            
+      //     // })
+      //     if(answer === 'Sim'){
+      //       totalYes.push(answer)
+      //     }
+      //     if(answer === 'Não'){
+      //       totalNo.push(answer)
+      //     }        
+      //   })        
+      // })    
+       
     } 
                 
     // const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);

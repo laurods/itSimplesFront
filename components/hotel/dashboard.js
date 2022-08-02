@@ -10,7 +10,7 @@ import Chart1 from './chart1'
 import Chart2 from './chart2'
 const theme = createTheme();
 
-export default function Dashboard({dataQuizz}) {
+export default function Dashboard({dataQuizz, dataFeedback}) {
   return (
     <ThemeProvider theme={theme}>
       <Top/>       
@@ -18,7 +18,7 @@ export default function Dashboard({dataQuizz}) {
         <Box sx={{ flexGrow: 1, mt: 2 }}>      
           <Grid spacing={2}>
             <Grid item xs={12}>
-              <Chart0 dataQuizz={dataQuizz}/>
+              <Chart0 dataFeedback = {dataFeedback}/>
             </Grid>
             <Grid item xs={12}>
               <Chart1 dataQuizz={dataQuizz}/>
