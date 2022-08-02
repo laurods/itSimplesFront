@@ -24,11 +24,7 @@ const client = new MongoClient(url);
                            $filter : {
                               input : '$quizzes',
                               as : 'quizz',
-                              cond : {
-                                 $and : [
-                                    { $eq : [ "$$quizz.answer", "Sim" ] }
-                                 ]
-                              }
+                              cond: { $eq: ['$$quizz.answer', 'Sim']}
                            }
                         }
                     }
