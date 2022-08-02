@@ -16,7 +16,7 @@ const client = new MongoClient(url);
          const db = client.db(dbName);
          const col = db.collection("tenant");
          const p = await col.updateOne(
-            { idHotel },
+            { cnpj: idHotel },
             { 
                 $push:{ quizzes: quizzes}
            },
