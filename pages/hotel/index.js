@@ -38,7 +38,7 @@ export default function Index() {
         })        
       })  
       console.log('dataFeedback')
-      console.log(dataFeedback)
+      console.log(FeedBack)
       console.log('listQuizzes')
       console.log(listQuizzes)
       setDataFeedback(FeedBack)       
