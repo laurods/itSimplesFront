@@ -17,19 +17,25 @@ export default function Chat0({dataQuizz}) {
       const listQuiz = dataQuizz[0].quizzes;
       listQuiz.map((item)=>{
         item.map(({question, answer})=>{
-          FeedBack.push({
-              question: question,
-              answer:answer            
-          })        
+          // FeedBack.push({
+          //     question: question,
+          //     answer:answer            
+          // })
+          if(answer === 'Sim'){
+            totalYes.push(answer)
+          }
+          if(answer === 'Não'){
+            totalNo.push(answer)
+          }        
         })        
       })    
-      console.log('FeedBack');
-      console.log(FeedBack);
+      // console.log('FeedBack');
+      // console.log(FeedBack);
 
-      // console.log('totalNo.length');
-      // console.log(totalNo.length);
-      // console.log('totalYes.length');
-      // console.log(totalYes.length);      
+      console.log('totalNo.length');
+      console.log(totalNo.length);
+      console.log('totalYes.length');
+      console.log(totalYes.length);      
     } 
                 
     // const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
