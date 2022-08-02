@@ -17,27 +17,23 @@ const client = new MongoClient(url);
          const quizzes = await dataQuizzes.aggregate(
             [
                 { $match : { cnpj } },
-                { $addFields: {
-                    answerYesCount: {
-                        $size: {
-                            $filter: {
-                            input: '$quizzes',
-                            as: 'quizz',
-                            cond: { $eq: ['$$quizz.answer', 'Sim']}
-                            }
-                        }
-                    },
-                    answerNoCount: {
-                        $size: {
-                            $filter: {
-                            input: '$quizzes',
-                            as: 'quizz',
-                            cond: { $eq: ['$$quizz.answer', 'Não'] }
-                            }
+                {
+                    $project : {
+                        cnpj : 1, contato : 1, name: 1, 
+                        answerYesCount : {
+                           $filter : {
+                              input : '$quizzes',
+                              as : 'quizz',
+                              cond : {
+                                 $and : [
+                                    { $eq : [ "$$quizz.answer", "Sim" ] }
+                                 ]
+                              }
+                           }
                         }
                     }
-                }
-            }
+                 }
+                
         ]
 
          ).toArray();
