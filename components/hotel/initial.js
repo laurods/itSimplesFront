@@ -31,10 +31,8 @@ export default function Initial({activeCNPJ}) {
       objReserva['contato'] = contato
       objReserva['link'] = `https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
       await axios.post('/api/hotel/addReserva',  objReserva )
-      
-      
-
     }
+    
   return (
     <ThemeProvider theme={theme}>
       <Top/>       
