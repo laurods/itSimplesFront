@@ -6,12 +6,26 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 
 export default function Chat0({dataQuizz}) {
-    const totalNo = 0;
-    const totalYes = 0;
-    if(dataQuizz.length > 0 ){
-      console.log("dataQuizz")
-      console.log(dataQuizz[0].quizzes) 
-    }
+    const totalNo = [];
+    const totalYes = [];
+      if(dataQuizz.length > 0){
+        const quizzes = dataQuizz[0].quizzes;
+        quizzes.map(({question, answer})=>{
+          if(answer ==='Não'){
+            totalNo.push(answer)
+          }
+          if(answer ==='Sim'){
+            totalYes.push(answer)
+          }    
+        });
+
+
+      }  
+      console.log('totalNo.length');
+      console.log(totalNo.length);
+      console.log('totalYes.length');
+      console.log(totalYes.length);      
+     
                 
     // const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
     // const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
