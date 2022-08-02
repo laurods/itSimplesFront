@@ -16,7 +16,7 @@ const client = new MongoClient(url);
          const dataQuizzes = db.collection("tenant");
          const quizzes = await dataQuizzes.aggregate(
             [
-                { $match : { cnpj : '89823918000199'} },
+                { $match : { cnpj } },
                 { $addFields: {
                     answerYesCount: {
                         $size: {
