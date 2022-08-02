@@ -8,7 +8,6 @@ import axios from 'axios';
 
 export default function Index() { 
   const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setTenantName} = useContext(AuthContext);
-  const [dataQuizz, setDataQuizz] = useState([]);
   const [dataFeedback, setDataFeedback] = useState([]);
   const [dataSuggest, setDataSuggest] = useState([]);
   
@@ -19,10 +18,7 @@ export default function Index() {
       const cookies = parseCookies()
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/tenant/getTenantByUserId', { user: cookies.idUser }); 
       const listTenants = tenants.data;
-      //const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listTenants[0].cnpj });              
-      //const listQuizzes = quizzes.data;
-      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: listTenants[0].cnpj });              
-      const listQuizzes = quizzes.data;
+      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: listTenants[0].cnpj });
       const listQuiz = quizzes.data[0].quizzes;
       const listSuggest = quizzes.data[0].suggests;
       listQuiz.map((item)=>{
@@ -34,8 +30,7 @@ export default function Index() {
         })        
       })
       setDataSuggest(listSuggest)
-      setDataFeedback(FeedBack)       
-      setDataQuizz(listQuizzes)
+      setDataFeedback(FeedBack)
       setCNPJsByUsers(listTenants)
       setActiveCNPJ(listTenants[0].cnpj)
       setTenantName(listTenants[0].name) 
