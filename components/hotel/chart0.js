@@ -13,9 +13,9 @@ export default function Chat0({dataQuizz}) {
     if(dataQuizz.length > 0) {
       console.log("dataQuizz[0].quizzes")
       console.log(dataQuizz[0].quizzes)
-      const listQuizzes = dataQuizz[0].quizzes;    
-    listQuizzes.map(({quizzes})=>{      
-      quizzes.map(({ answer})=>{
+      const [ quizzes ] = dataQuizz[0].quizzes;    
+    quizzes.map(({item})=>{      
+      item.map(({ answer})=>{
           if(answer ==='Não'){
             totalNo.push(answer)
           }
