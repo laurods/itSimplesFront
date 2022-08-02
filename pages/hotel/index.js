@@ -16,8 +16,12 @@ export default function Index() {
       const cookies = parseCookies()
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/tenant/getTenantByUserId', { user: cookies.idUser }); 
       const listTenants = tenants.data;
-      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listTenants[0].cnpj });              
-      const listQuizzes = quizzes.data;      
+      //const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listTenants[0].cnpj });              
+      //const listQuizzes = quizzes.data;
+      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: listTenants[0].cnpj });              
+      const listQuizzes = quizzes.data;
+      console.log('listQuizzes')
+      console.log(listQuizzes)       
       setDataQuizz(listQuizzes)
       setCNPJsByUsers(listTenants)
       setActiveCNPJ(listTenants[0].cnpj)
