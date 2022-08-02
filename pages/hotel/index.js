@@ -30,17 +30,9 @@ export default function Index() {
           FeedBack.push({
               question: question,
               answer:answer            
-          })
-          // if(answer === 'Sim'){
-          //   totalYes.push(answer)
-          // }
-          // if(answer === 'Não'){
-          //   totalNo.push(answer)
-          // }        
+          })      
         })        
-      })  
-      console.log('listSuggest')
-      console.log(listSuggest)
+      })
       setDataSuggest(listSuggest)
       setDataFeedback(FeedBack)       
       setDataQuizz(listQuizzes)
@@ -55,7 +47,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<Dashboard dataQuizz = {dataQuizz} dataFeedback = {dataFeedback} dataSuggest = { dataSuggest }/>}
+      {isAuthenticated &&<Dashboard dataFeedback = {dataFeedback} dataSuggest = { dataSuggest }/>}
       {!isAuthenticated && <Login />}
       </>
     );

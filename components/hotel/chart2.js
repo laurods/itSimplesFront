@@ -3,12 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-export default function Chat2({dataSuggest}) {     
-    // const listSugest = [];
-    // dataQuizz.map(({sugest})=>{
-    //     listSugest.push(sugest)      
-    //   });
-   
+export default function Chat2({dataSuggest}) {
     
   return (
     <Box>      

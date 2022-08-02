@@ -10,7 +10,7 @@ import Chart1 from './chart1'
 import Chart2 from './chart2'
 const theme = createTheme();
 
-export default function Dashboard({dataQuizz, dataFeedback, dataSuggest}) {
+export default function Dashboard({dataFeedback, dataSuggest}) {
   return (
     <ThemeProvider theme={theme}>
       <Top/>       
