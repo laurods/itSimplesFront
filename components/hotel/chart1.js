@@ -9,7 +9,7 @@ export default function Chat1({dataFeedback}) {
     const qRegular = [];
     const qBom = [];
     const qOtimo = [];
-    if(dataFeedback.length > 0) {
+    
       dataFeedback.map(({ answer })=>{      
         if(answer ==='Ruim'){
           qRuim.push(answer)
@@ -24,7 +24,7 @@ export default function Chat1({dataFeedback}) {
           qOtimo.push(answer)
         }         
       })
-    }
+    
     // dataQuizz.map(({quizzes})=>{      
     //   quizzes.map(({question, answer})=>{        
     //     if(question === 'Como foi sua experiência em nosso hotel:') {
