@@ -3,11 +3,11 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-export default function Chat2({dataQuizz}) {     
-    const listSugest = [];
-    dataQuizz.map(({sugest})=>{
-        listSugest.push(sugest)      
-      });
+export default function Chat2({dataSuggest}) {     
+    // const listSugest = [];
+    // dataQuizz.map(({sugest})=>{
+    //     listSugest.push(sugest)      
+    //   });
    
     
   return (
@@ -18,7 +18,7 @@ export default function Chat2({dataQuizz}) {
           Sugestões:
           </Typography>
           {
-        listSugest.map(
+        dataSuggest.map(
           item => (
             <>              
               <Typography variant="subtitle1" component="div">          

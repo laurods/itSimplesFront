@@ -24,26 +24,7 @@ export default function Chat1({dataFeedback}) {
           qOtimo.push(answer)
         }         
       })
-    } 
-    // dataQuizz.map(({quizzes})=>{      
-    //   quizzes.map(({question, answer})=>{        
-    //     if(question === 'Como foi sua experiência em nosso hotel:') {
-    //       if(answer ==='Ruim'){
-    //         qRuim.push(answer)
-    //       }
-    //       if(answer ==='Regular'){
-    //         qRegular.push(answer)
-    //       }
-    //       if(answer ==='Boa'){
-    //         qBom.push(answer)
-    //       }
-    //       if(answer ==='Ótima'){
-    //         qOtimo.push(answer)
-    //       }          
-          
-    //     }        
-    //   })      
-    //   });
+    }
 
 
   return (

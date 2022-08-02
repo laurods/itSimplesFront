@@ -10,6 +10,7 @@ export default function Index() {
   const {isAuthenticated, setCNPJsByUsers, setActiveCNPJ, setTenantName} = useContext(AuthContext);
   const [dataQuizz, setDataQuizz] = useState([]);
   const [dataFeedback, setDataFeedback] = useState([]);
+  const [dataSuggest, setDataSuggest] = useState([]);
   
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Index() {
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: listTenants[0].cnpj });              
       const listQuizzes = quizzes.data;
       const listQuiz = quizzes.data[0].quizzes;
+      const listSuggest = quizzes.data[0].suggests;
       listQuiz.map((item)=>{
         item.map(({question, answer})=>{
           FeedBack.push({
@@ -37,10 +39,9 @@ export default function Index() {
           // }        
         })        
       })  
-      console.log('dataFeedback')
-      console.log(FeedBack)
-      console.log('listQuizzes')
-      console.log(listQuizzes)
+      console.log('listSuggest')
+      console.log(listSuggest)
+      setDataSuggest(listSuggest)
       setDataFeedback(FeedBack)       
       setDataQuizz(listQuizzes)
       setCNPJsByUsers(listTenants)
@@ -54,7 +55,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<Dashboard dataQuizz = {dataQuizz} dataFeedback = {dataFeedback}/>}
+      {isAuthenticated &&<Dashboard dataQuizz = {dataQuizz} dataFeedback = {dataFeedback} dataSuggest = { dataSuggest }/>}
       {!isAuthenticated && <Login />}
       </>
     );
