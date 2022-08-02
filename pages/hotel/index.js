@@ -19,7 +19,7 @@ export default function Index() {
       //const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getAnswersById', { id: listTenants[0].cnpj });              
       //const listQuizzes = quizzes.data;
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: listTenants[0].cnpj });              
-      const listQuizzes = quizzes.data[0].quizzes;
+      const listQuizzes = quizzes.data;
       console.log('listQuizzes')
       console.log(listQuizzes)       
       setDataQuizz(listQuizzes)
