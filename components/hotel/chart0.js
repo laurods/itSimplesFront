@@ -8,26 +8,26 @@ import Typography from '@mui/material/Typography';
 export default function Chat0({dataQuizz}) {
     const totalNo = [];
     const totalYes = [];
+    const FeedBack = [];
     console.log("dataQuizz[0]")
     console.log(dataQuizz[0])
     if(dataQuizz.length > 0) {
       console.log("dataQuizz[0].quizzes")
       console.log(dataQuizz[0].quizzes)
-      const [ quizzes ] = dataQuizz[0].quizzes;    
-    quizzes.map(({item})=>{      
-      item.map(({ answer})=>{
-          if(answer ==='Não'){
-            totalNo.push(answer)
-          }
-          if(answer ==='Sim'){
-            totalYes.push(answer)
-          }
-      })      
-      }); 
-      console.log('totalNo.length');
-      console.log(totalNo.length);
-      console.log('totalYes.length');
-      console.log(totalYes.length);      
+      const listQuiz = dataQuizz[0].quizzes;
+      listQuiz.map(({question, answer})=>{
+        FeedBack.push({
+            question: question,
+            answer:answer            
+        })        
+      })    
+      console.log('FeedBack');
+      console.log(FeedBack);
+
+      // console.log('totalNo.length');
+      // console.log(totalNo.length);
+      // console.log('totalYes.length');
+      // console.log(totalYes.length);      
     } 
                 
     // const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
