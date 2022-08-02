@@ -27,7 +27,7 @@ export default function Dashboard({dataQuizz, dataFeedback, dataSuggest}) {
               <Chart2 dataSuggest={dataSuggest}/>
             </Grid>                
           </Grid>
-          <Charts dataQuizz={dataQuizz} />
+          <Charts dataFeedback={dataFeedback} />
         </Box>
     </Container> 
     </ThemeProvider>
