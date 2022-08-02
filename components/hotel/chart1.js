@@ -4,30 +4,47 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { makeStyles, } from '@material-ui/core/styles';
 
-export default function Chat1({dataQuizz}) {
+export default function Chat1({dataFeedback}) {
     const qRuim = [];
     const qRegular = [];
     const qBom = [];
     const qOtimo = [];
-    dataQuizz.map(({quizzes})=>{      
-      quizzes.map(({question, answer})=>{        
-        if(question === 'Como foi sua experiência em nosso hotel:') {
-          if(answer ==='Ruim'){
-            qRuim.push(answer)
-          }
-          if(answer ==='Regular'){
-            qRegular.push(answer)
-          }
-          if(answer ==='Boa'){
-            qBom.push(answer)
-          }
-          if(answer ==='Ótima'){
-            qOtimo.push(answer)
-          }          
+    if(dataFeedback.length > 0) {
+      dataFeedback.map(({ answer })=>{      
+        if(answer ==='Ruim'){
+          qRuim.push(answer)
+        }
+        if(answer ==='Regular'){
+          qRegular.push(answer)
+        }
+        if(answer ==='Boa'){
+          qBom.push(answer)
+        }
+        if(answer ==='Ótima'){
+          qOtimo.push(answer)
+        }         
+      })
+    }
+    // dataQuizz.map(({quizzes})=>{      
+    //   quizzes.map(({question, answer})=>{        
+    //     if(question === 'Como foi sua experiência em nosso hotel:') {
+    //       if(answer ==='Ruim'){
+    //         qRuim.push(answer)
+    //       }
+    //       if(answer ==='Regular'){
+    //         qRegular.push(answer)
+    //       }
+    //       if(answer ==='Boa'){
+    //         qBom.push(answer)
+    //       }
+    //       if(answer ==='Ótima'){
+    //         qOtimo.push(answer)
+    //       }          
           
-        }        
-      })      
-      });
+    //     }        
+    //   })      
+    //   });
+
 
   return (
     <Box>      

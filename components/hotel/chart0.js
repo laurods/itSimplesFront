@@ -9,11 +9,7 @@ export default function Chat0({dataFeedback}) {
     const totalNo = [];
     const totalYes = [];
     if(dataFeedback.length > 0) {
-      dataFeedback.map(({question, answer})=>{
-        // FeedBack.push({
-        //     question: question,
-        //     answer:answer            
-        // })
+      dataFeedback.map(({ answer })=>{      
         if(answer === 'Sim'){
           totalYes.push(answer)
         }
@@ -21,28 +17,9 @@ export default function Chat0({dataFeedback}) {
           totalNo.push(answer)
         }        
       }) 
-
-
-      // const listQuiz = dataQuizz[0].quizzes;
-      // listQuiz.map((item)=>{
-      //   item.map(({question, answer})=>{
-      //     // FeedBack.push({
-      //     //     question: question,
-      //     //     answer:answer            
-      //     // })
-      //     if(answer === 'Sim'){
-      //       totalYes.push(answer)
-      //     }
-      //     if(answer === 'Não'){
-      //       totalNo.push(answer)
-      //     }        
-      //   })        
-      // })    
        
     } 
-                
-    // const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
-    // const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
+       
     const useStyles = makeStyles(theme => ({
         root: {
           height: theme.spacing(4),
