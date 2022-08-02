@@ -19,7 +19,7 @@ const client = new MongoClient(url);
                 { $match : { cnpj } },
                 {
                     $project : {
-                        cnpj : 1, contato : 1, name: 1, 
+                        cnpj : 1, contato : 1, name: 1, quizzes: 1, 
                         answerYesCount : {
                            $filter : {
                               input : '$quizzes',
