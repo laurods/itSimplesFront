@@ -14,38 +14,23 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const dataQuizzes = db.collection("tenant");
-         const quizzes = await dataQuizzes.aggregate(
+         const tenantData = await dataQuizzes.find(
             [
-                { $match : { cnpj } },
-                { $addFields: {
-                    answerYesCount: {
-                        $size: {
-                            $filter: {
-                            input: '$quizzes',
-                            as: 'quizz',
-                            cond: { $eq: ['$$quizz.answer', 'Sim']}
-                            }
-                        }
-                    },
-                    answerNoCount: {
-                        $size: {
-                            $filter: {
-                            input: '$quizzes',
-                            as: 'quizz',
-                            cond: { $eq: ['$$quizz.answer', 'Não'] }
-                            }
-                        }
-                    }
-                }
-            }
+                { cnpj },
+                {projection: { 
+                    _id: 0,
+                    name: 1,
+                    contato: 1,
+                    quizzes: 1,
+                }} 
                 
-        ]
+            ]
 
          ).toArray();
          
          
 
-         res.status(200).json(quizzes);
+         res.status(200).json(tenantData);
 
         } catch (err) {
          console.log(err.stack);
