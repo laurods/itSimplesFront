@@ -56,22 +56,22 @@ export default function Chat0({dataQuizz}) {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h6" component="div">          
-            Total de Respostas: {totalYes + totalNo}
+            Total de Respostas: {totalYes.length + totalNo.length}
           </Typography>                    
-          <span>Positivas: {totalYes} | {Math.round(((totalYes)/(totalYes + totalNo))*100)}%</span>          
+          <span>Positivas: {totalYes.length} | {Math.round(((totalYes.length)/(totalYes.length + totalNo.length))*100)}%</span>          
           <LinearProgress 
           variant="determinate"
           color ="primary"
-          value={Math.round(((totalYes)/(totalYes + totalNo))*100)} 
+          value={Math.round(((totalYes.length)/(totalYes.length + totalNo.length))*100)} 
           classes={{
             root: classes.root,
           }}          
           />
-          <span>Negativas: {totalNo} | {Math.round(((totalNo)/(totalYes + totalNo))*100)}%</span>
+          <span>Negativas: {totalNo.length} | {Math.round(((totalNo.length)/(totalYes.length + totalNo.length))*100)}%</span>
           <LinearProgress 
           variant="determinate"
           color="secondary"
-          value={Math.round(((totalNo)/(totalYes + totalNo))*100)} 
+          value={Math.round(((totalNo.length)/(totalYes.length + totalNo.length))*100)} 
           classes={{
             root: classes.root,
           }}
