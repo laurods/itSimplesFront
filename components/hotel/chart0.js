@@ -8,8 +8,11 @@ import Typography from '@mui/material/Typography';
 export default function Chat0({dataQuizz}) {
     const totalNo = 0;
     const totalYes = 0;
-    console.log("dataQuizz")
-    console.log(dataQuizz[0])             
+    if(dataQuizz.length > 0 ){
+      console.log("dataQuizz")
+      console.log(dataQuizz[0].quizzes) 
+    }
+                
     // const totalNo = dataQuizz.reduce((sum, item) => sum + item.answerNoCount, 0);
     // const totalYes = dataQuizz.reduce((sum, item) => sum + item.answerYesCount, 0);
     const useStyles = makeStyles(theme => ({
