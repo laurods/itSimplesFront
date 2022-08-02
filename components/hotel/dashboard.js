@@ -21,7 +21,7 @@ export default function Dashboard({dataQuizz, dataFeedback}) {
               <Chart0 dataFeedback = {dataFeedback}/>
             </Grid>
             <Grid item xs={12}>
-              <Chart1 dataQuizz={dataFeedback}/>
+              <Chart1 dataFeedback={dataFeedback}/>
             </Grid>
             <Grid item xs={12}>
               <Chart2 dataQuizz={dataQuizz}/>
