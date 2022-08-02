@@ -15,11 +15,8 @@ export default function Chat0({dataQuizz}) {
       console.log("dataQuizz[0].quizzes")
       console.log(dataQuizz[0].quizzes)
       const listQuiz = dataQuizz[0].quizzes;
-      listQuiz.map(({question, answer})=>{
-        FeedBack.push({
-            question: question,
-            answer:answer            
-        })        
+      listQuiz.map((item)=>{
+        FeedBack.push(item)        
       })    
       console.log('FeedBack');
       console.log(FeedBack);
