@@ -10,6 +10,8 @@ export default function Chat0({dataQuizz}) {
     const totalYes = [];
       if(dataQuizz.length > 0){
         const quizzes = dataQuizz[0].quizzes;
+        console.log('quizzes')
+        console.log(quizzes)
         quizzes.map(({question, answer})=>{
           if(answer ==='Não'){
             totalNo.push(answer)
