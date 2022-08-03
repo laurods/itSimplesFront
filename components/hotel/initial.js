@@ -25,6 +25,10 @@ export default function Initial({activeCNPJ}) {
     }
 
     const send = async () => {
+      if(reserva.length === 0 | contato.length === 0){
+        alert('Preencha todos os campos!');
+      }
+      if(reserva.length > 0 | contato.length > 0){
       objReserva['idControl'] = `${activeCNPJ}-${reserva}`;
       objReserva['idHotel'] = activeCNPJ
       objReserva['reserva'] = reserva
@@ -35,6 +39,8 @@ export default function Initial({activeCNPJ}) {
       alert(resData.data.msg);
       setReserva('');
       setContato('');
+      }
+      
 
     }
     
@@ -47,7 +53,6 @@ export default function Initial({activeCNPJ}) {
             <Grid item xs={12}>
               <TextField
                 margin="normal"
-                required
                 inputProps={{style: {fontSize: 40}}}
                 label="N. Reserva"
                 id="reserva"
@@ -61,7 +66,6 @@ export default function Initial({activeCNPJ}) {
             <Grid item xs={12}>
               <TextField
                 margin="normal"
-                required
                 inputProps={{style: {fontSize: 25}}}
                 label="Whats ou E-mail"
                 id="contato"
