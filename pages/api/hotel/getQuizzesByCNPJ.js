@@ -27,17 +27,6 @@ const client = new MongoClient(url);
                 payment: 1,
             }}
          );
-        
-        //  const tenantData = await dataQuizzes.aggregate(
-        //     [
-        //         { $match : { cnpj } },
-               
-                
-        //     ]
-
-        //  ).toArray();
-         
-         
 
          res.status(200).json(tenantData);
 

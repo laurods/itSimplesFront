@@ -21,10 +21,6 @@ export default function Index() {
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: listTenants[0].cnpj });
       const listQuiz = quizzes.data.quizzes;
       const listSuggest = quizzes.data.suggests;
-      console.log('listQuiz')
-      console.log(listQuiz)
-      // const listQuiz = quizzes.data[0].quizzes;
-      // const listSuggest = quizzes.data[0].suggests;
       listQuiz.map((item)=>{
         item.map(({question, answer})=>{
           FeedBack.push({

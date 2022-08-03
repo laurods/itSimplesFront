@@ -10,7 +10,7 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const objQuizz = req.body;
-        const { idHotel, quizzes } = objQuizz;
+        const { idHotel, quizzes, sugest } = objQuizz;
         
          await client.connect();
          const db = client.db(dbName);
@@ -18,7 +18,7 @@ const client = new MongoClient(url);
          const p = await col.updateOne(
             { cnpj: idHotel },
             { 
-                $push:{ quizzes: quizzes}
+                $push:{ quizzes: quizzes, suggests: sugest}
            },
                        
         );
