@@ -30,7 +30,11 @@ export default function Initial({activeCNPJ}) {
       objReserva['reserva'] = reserva
       objReserva['contato'] = contato
       objReserva['link'] = `https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
-      await axios.post('/api/hotel/addReserva',  objReserva )
+      console.log('objReserva')
+      console.log(objReserva)
+      const resData = await axios.post('/api/hotel/addReserva',  objReserva )
+      console.log('resData.data')
+      console.log(resData.data)
     }
     
   return (

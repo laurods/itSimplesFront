@@ -23,7 +23,7 @@ const client = new MongoClient(url);
                        
         );
 
-         res.status(200).json({ msg: 'Salvo'});
+         res.status(200).json({ msg: `Reserva ${reserva} enviada.`});
 
         } catch (err) {
          console.log(err.stack);
