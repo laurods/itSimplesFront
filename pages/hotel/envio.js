@@ -35,7 +35,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<Dashboard dataFeedback = {dataFeedback} dataSuggest = { dataSuggest }/>}
+      {isAuthenticated &&<Dashboard />}
       {!isAuthenticated && <Login />}
       </>
     );
