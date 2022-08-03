@@ -15,19 +15,21 @@ export default function Index() {
     const loadAll = async() =>{
       const list = [];
       const reservas = await axios.post('https://it-simples-front.vercel.app/api/hotel/getReservasAll');
-      const listReservas = reservas.data;
-      console.log('listReservas')
-      console.log(listReservas)
-    //   listReservas.map((item)=>{
-    //     item.map(({question, answer})=>{
-    //       list.push({
-    //           question: question,
-    //           answer:answer            
-    //       })      
-    //     })        
-    //   })
-    //   setReservas(list) 
-          
+      const listReservas = reservas.data;      
+      listReservas.map((item)=>{
+        item.map(({idControl, idHotel, contato, link,reserva})=>{
+          list.push({
+              idControl,
+              idHotel,              
+              contato,
+              link,
+              reserva,
+          })      
+        })        
+      })
+      setReservas(list) 
+      console.log('list')
+      console.log(list)    
       
     }
     loadAll();
