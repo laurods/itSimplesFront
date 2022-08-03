@@ -18,8 +18,9 @@ export default function Index() {
       const listReservas = reservas.data;
       console.log('listReservas')
       console.log(listReservas)      
-      listReservas.map((item)=>{
-        console.log(item);
+      listReservas.map(({reservas})=>{
+        console.log('reservas');
+        console.log(reservas);
         // item.map(({idControl, idHotel, contato, link,reserva})=>{
         //   list.push({
         //       idControl,
