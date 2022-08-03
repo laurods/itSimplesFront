@@ -14,8 +14,16 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const dataQuizzes = db.collection("tenant");
-          const tenantData = dataQuizzes.aggregate(
-                { $match : { cnpj } },
+          const tenantData = await dataQuizzes.findOne(
+            { cnpj },
+            {projection: { 
+                _id: 1,
+                cnpj: 1,
+                contato: 1,
+                users: 1,
+                quizzes: 1,
+                suggests: 1,
+            }}
          );
         
         //  const tenantData = await dataQuizzes.aggregate(
