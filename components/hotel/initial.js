@@ -28,7 +28,7 @@ export default function Initial({activeCNPJ}) {
       if(reserva.length === 0 | contato.length === 0){
         alert('Preencha todos os campos!');
       }
-      if(reserva.length > 0 | contato.length > 0){
+      if(reserva.length > 0 & contato.length > 0){
       objReserva['idControl'] = `${activeCNPJ}-${reserva}`;
       objReserva['idHotel'] = activeCNPJ
       objReserva['reserva'] = reserva
