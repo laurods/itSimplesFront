@@ -14,18 +14,13 @@ const client = new MongoClient(url);
         
          await client.connect();
          const db = client.db(dbName);
-         const col = db.collection("reserva");
+         const col = db.collection("tenant");
          const p = await col.updateOne(
-            { idControl },
+            { idHotel },
             { 
-                $set:{
-                    idHotel,
-                    reserva,
-                    contato,
-                    link,
-                },
+                $push:{ reservas: objReserva}
            },
-           { upsert: true }            
+                       
         );
 
          res.status(200).json({ msg: 'Salvo'});
