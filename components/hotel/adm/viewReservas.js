@@ -15,7 +15,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewReservas({reservas}) {
-    const updateStatus = async (idControl) => {
+    const updateStatus = async (objData) => {
+        console.log('objData')
+        console.log(objData)
         const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva');
         console.log(updateStatus.data.msg)        
     }
@@ -38,7 +40,7 @@ export default function ViewReservas({reservas}) {
                       <Button 
                         variant="text" 
                         endIcon={<CheckCircleIcon /> }
-                        onClick={() => updateStatus(row.idControl)}
+                        onClick={() => updateStatus({cnpj: row.idHotel, reserva: row.reserva})}
                         >
                       </Button>                      
                       </TableCell>
