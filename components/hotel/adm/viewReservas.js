@@ -23,7 +23,7 @@ import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
-export default function ViewReservas({list}) {
+export default function ViewReservas({reservas}) {
     
   return (
     <ThemeProvider theme={theme}>
@@ -35,7 +35,7 @@ export default function ViewReservas({list}) {
                   <TableHead>                    
                   </TableHead>
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {list.map((row, index) => (
+                  {reservas.map((row, index) => (
                       <TableRow
                       key={index}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       

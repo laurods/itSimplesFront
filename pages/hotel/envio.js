@@ -39,7 +39,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<ViewReservas list={list}/>}
+      {isAuthenticated &&<ViewReservas reservas={reservas}/>}
       {!isAuthenticated && <Login />}
       </>
     );
