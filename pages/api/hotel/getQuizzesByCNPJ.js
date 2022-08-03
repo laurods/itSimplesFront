@@ -23,6 +23,8 @@ const client = new MongoClient(url);
                 users: 1,
                 quizzes: 1,
                 suggests: 1,
+                reservas: 1,
+                payment: 1,
             }}
          );
         
