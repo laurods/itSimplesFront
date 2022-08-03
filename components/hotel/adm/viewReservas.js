@@ -16,8 +16,8 @@ const theme = createTheme();
 
 export default function ViewReservas({reservas}) {
     const updateStatus = (idControl) => {
-        console.log('idControl')
-        console.log(idControl)
+        const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva');
+        console.log(updateStatus.data.msg)        
     }
     
   return (
