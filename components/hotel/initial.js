@@ -9,9 +9,11 @@ import ImageApto from './imageApto';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Router from 'next/router';
+import { AuthContext } from '../../contexts/AuthContext';
 const theme = createTheme();
 
 export default function Initial({activeCNPJ}) {
+  const { tenantName } = useContext(AuthContext);
     const [reserva, setReserva] = useState('')
     const [contato, setContato] = useState('')
     const objReserva = {}
@@ -33,6 +35,7 @@ export default function Initial({activeCNPJ}) {
       objReserva['idHotel'] = activeCNPJ
       objReserva['reserva'] = reserva
       objReserva['contato'] = contato
+      objReserva['message'] = `Olá, nós do ${tenantName} ficamos felizes em ter você com a gente!. Queremos saber como foi sua experiência. São apenas 8 etapas que você pode responder em menos de 1 minuto. Vamos lá? Clique no link abaixo para começar.`;
       objReserva['link'] = `https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
       objReserva['status'] = 'Pendente'
       const resData = await axios.post('/api/hotel/addReserva',  objReserva )

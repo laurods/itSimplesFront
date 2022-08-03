@@ -27,8 +27,9 @@ export default function ViewReservas({reservas}) {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                 >
                     <TableCell component="th" scope="row">{row.contato}</TableCell>
-                      <TableCell component="th" scope="row">{row.link}</TableCell>
-                      </TableRow>
+                    <TableCell component="th" scope="row">{row.link}</TableCell>
+                    <TableCell component="th" scope="row">{row.message}</TableCell>
+                </TableRow>
                   ))}
             </TableBody>
         </Table>

@@ -20,13 +20,14 @@ export default function Index() {
       const reservas = await axios.post('https://it-simples-front.vercel.app/api/hotel/getReservasAll');
       const listReservas = reservas.data;
       listReservas.map(({reservas})=>{
-        reservas.map(({idControl, idHotel, contato, link,reserva, status})=>{
+        reservas.map(({idControl, idHotel, contato, link,reserva, message, status})=>{
           list.push({
               idControl,
               idHotel,              
               contato,
               link,
               reserva,
+              message,
               status,
           })      
         })        
