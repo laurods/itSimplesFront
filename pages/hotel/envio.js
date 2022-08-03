@@ -35,7 +35,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<Dashboard />}
+      {isAuthenticated &&<p>List</p>}
       {!isAuthenticated && <Login />}
       </>
     );
