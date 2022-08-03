@@ -14,6 +14,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewReservas({reservas}) {
+    const updateStatus = (idControl) => {
+        console.log('idControl')
+        console.log(idControl)
+    }
     
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>            
@@ -29,6 +33,14 @@ export default function ViewReservas({reservas}) {
                     <TableCell component="th" scope="row">{row.contato}</TableCell>
                     <TableCell component="th" scope="row">{row.link}</TableCell>
                     <TableCell component="th" scope="row">{row.message}</TableCell>
+                    <TableCell component="th" scope="row">
+                      <Button 
+                        variant="text" 
+                        endIcon={<CheckCircleIcon /> }
+                        onClick={() => updateStatus(row.idControl)}
+                        >
+                      </Button>                      
+                      </TableCell>
                 </TableRow>
                   ))}
             </TableBody>

@@ -16,7 +16,7 @@ export default function Initial({activeCNPJ}) {
   const { tenantName } = useContext(AuthContext);
     const [reserva, setReserva] = useState('')
     const [contato, setContato] = useState('')
-    const message = `Olá, nós do ${tenantName} ficamos felizes em ter você com a gente!. Queremos saber como foi sua experiência. São apenas 8 etapas que você pode responder em menos de 1 minuto. Vamos lá? Clique no link abaixo para começar.`
+    const message = `Olá, nós do ${tenantName} ficamos felizes em ter você com a gente! Queremos saber como foi sua experiência. São apenas 8 etapas que você pode responder em menos de 1 minuto. Vamos lá? Clique no link abaixo para começar.`
     const objReserva = {}
 
     const start = () => {       
