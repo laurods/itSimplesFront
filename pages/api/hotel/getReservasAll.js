@@ -12,19 +12,7 @@ const client = new MongoClient(url);
          await client.connect();         
          const db = client.db(dbName);
          const dataReservas = db.collection("tenant");
-          const tenantData = await dataReservas.find(
-            {},
-            {projection: { 
-                _id: 0,
-                cnpj: 0,
-                contato: 0,
-                users: 0,
-                quizzes: 0,
-                suggests: 0,
-                reservas: 1,
-                payment: 0,
-            }}
-         ).toArray();
+          const tenantData = await dataReservas.find({}).toArray();
 
          res.status(200).json(tenantData);
 
