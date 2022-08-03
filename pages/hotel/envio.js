@@ -1,7 +1,7 @@
 import React, {  useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import { parseCookies } from 'nookies';
-import Dashboard from '../../components/hotel/dashboard';
+import ViewReservas from '../../components/hotel/adm/viewReservas';
 import Login from '../../components/login/login';
 import axios from 'axios';
 
@@ -16,18 +16,15 @@ export default function Index() {
       const list = [];
       const reservas = await axios.post('https://it-simples-front.vercel.app/api/hotel/getReservasAll');
       const listReservas = reservas.data;
-      console.log('listReservas')
-      console.log(listReservas)      
       listReservas.map(({reservas})=>{
-        console.log('reservas');
-        console.log(reservas);
-        reservas.map(({idControl, idHotel, contato, link,reserva})=>{
+        reservas.map(({idControl, idHotel, contato, link,reserva, status})=>{
           list.push({
               idControl,
               idHotel,              
               contato,
               link,
               reserva,
+              status,
           })      
         })        
       })
@@ -42,7 +39,7 @@ export default function Index() {
   
     return (
       <>     
-      {isAuthenticated &&<p>List</p>}
+      {isAuthenticated &&<ViewReservas list={list}/>}
       {!isAuthenticated && <Login />}
       </>
     );
