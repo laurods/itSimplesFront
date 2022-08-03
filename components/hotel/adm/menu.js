@@ -15,8 +15,8 @@ export default function MenuMobile() {
   const listMenu = [
     {id: '/hotel/', name: 'Principal'}, 
     {id: '/hotel/fb', name: 'Questionário'},
-    {id: '/hotel/adm', name: 'Cadastro'},
-    {id: '/hotel/vinculo', name: 'Vinculo'},
+    {id: '/hotel/adm', name: 'Cadastros'},
+    {id: '/hotel/envio', name: 'Envios'},
     {id: '/tela/sair', name: 'Sair'}
   ]
   
