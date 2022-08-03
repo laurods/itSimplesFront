@@ -20,7 +20,11 @@ const client = new MongoClient(url);
                 cnpj,
                 name,
                 contato,
-                users: [user]                  
+                users: [user],
+                quizzes: [],
+                suggests: [],
+                reservas: [],
+                payment: [],                  
            },
                   
         );

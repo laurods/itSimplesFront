@@ -19,16 +19,19 @@ export default function Index() {
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/tenant/getTenantByUserId', { user: cookies.idUser }); 
       const listTenants = tenants.data;
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: listTenants[0].cnpj });
-      const listQuiz = quizzes.data[0].quizzes;
-      const listSuggest = quizzes.data[0].suggests;
-      listQuiz.map((item)=>{
-        item.map(({question, answer})=>{
-          FeedBack.push({
-              question: question,
-              answer:answer            
-          })      
-        })        
-      })
+      const listQuiz = quizzes.data;
+      console.log('listQuiz')
+      console.log(listQuiz)
+      // const listQuiz = quizzes.data[0].quizzes;
+      // const listSuggest = quizzes.data[0].suggests;
+      // listQuiz.map((item)=>{
+      //   item.map(({question, answer})=>{
+      //     FeedBack.push({
+      //         question: question,
+      //         answer:answer            
+      //     })      
+      //   })        
+      // })
       setDataSuggest(listSuggest)
       setDataFeedback(FeedBack)
       setCNPJsByUsers(listTenants)
