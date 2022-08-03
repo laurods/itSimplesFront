@@ -21,17 +21,19 @@ export default function Index() {
       listReservas.map(({reservas})=>{
         console.log('reservas');
         console.log(reservas);
-        // item.map(({idControl, idHotel, contato, link,reserva})=>{
-        //   list.push({
-        //       idControl,
-        //       idHotel,              
-        //       contato,
-        //       link,
-        //       reserva,
-        //   })      
-        // })        
+        reservas.map(({idControl, idHotel, contato, link,reserva})=>{
+          list.push({
+              idControl,
+              idHotel,              
+              contato,
+              link,
+              reserva,
+          })      
+        })        
       })
-      //setReservas(list) 
+      setReservas(list)
+      console.log('list');
+      console.log(list); 
           
       
     }
