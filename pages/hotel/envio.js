@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import { AuthContext } from '../../contexts/AuthContext';
 import ViewReservas from '../../components/hotel/adm/viewReservas';
 import Login from '../../components/login/login';
+import Top from '../../components/hotel/adm/top';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
@@ -45,6 +46,7 @@ export default function Index() {
   
     return (     
        <ThemeProvider theme={theme}>
+        <Top />
        <Box sx={{ flexGrow: 1 }}>
          <Grid container spacing={2}>          
            <Grid item xs={12} md={12}>
