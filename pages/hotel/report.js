@@ -51,7 +51,7 @@ export default function Report() {
         <Container>
           <Box sx={{ flexGrow: 1, mt: 2 }}>
               {isAuthenticated &&<div>
-                <Grid spacing={2}>
+                <Grid container spacing={2}>
                   <Grid item xs={9} md={9}>
                     <TextField
                       margin="normal"
