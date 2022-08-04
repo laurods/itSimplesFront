@@ -21,9 +21,7 @@ export default function ViewReservas({reservas, setReservas}) {
         if(updateStatus.data.msg === 'Atualizado'){
           console.log('objData')
           console.log(objData)
-          console.log('objData.cod')
-          console.log(objData.cod)
-          const filteredReservas = reservas.filter((item) => item.reserva.includes(objData.reserva) );
+          const filteredReservas = reservas.filter((item) => !item.reserva.includes(objData.reserva) );
           setReservas(filteredReservas)
         }        
     }
@@ -46,7 +44,7 @@ export default function ViewReservas({reservas, setReservas}) {
                       <Button 
                         variant="text" 
                         endIcon={<CheckCircleIcon /> }
-                        onClick={() => updateStatus({cod: index, cnpj: row.idHotel, reserva: row.reserva})}
+                        onClick={() => updateStatus({cnpj: row.idHotel, reserva: row.reserva})}
                         >
                       </Button>                      
                       </TableCell>
