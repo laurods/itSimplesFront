@@ -6,19 +6,21 @@ import Login from '../../components/login/login';
 import axios from 'axios';
 
 
-export default function Report() { 
+export default function Report() {
+  const router = useRouter() 
   const {isAuthenticated} = useContext(AuthContext);   
   const [dataFeedback, setDataFeedback] = useState([]);
   const [dataSuggest, setDataSuggest] = useState([]);
-  const router = useRouter()
-  const { cnpj } = router.query
+  const [id, setId] = useState(router.query.cnpj)
+  
+  //const { cnpj } = router.query
       console.log('cnpj')
-      console.log(cnpj)
+      console.log(router.query.cnpj)
   useEffect(() => {  
     const loadAll = async() =>{
       
       const FeedBack = [];
-      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: '89823918000199' });
+      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: id });
       const listQuiz = quizzes.data.quizzes;
       const listSuggest = quizzes.data.suggests;
       if(listQuiz.length > 0) {
