@@ -44,7 +44,7 @@ export default function ViewReservas({reservas, setReservas}) {
                       <Button 
                         variant="text" 
                         endIcon={<CheckCircleIcon /> }
-                        onClick={() => updateStatus({id: idControl, cnpj: row.idHotel, reserva: row.reserva})}
+                        onClick={() => updateStatus({id: row.idControl, cnpj: row.idHotel, reserva: row.reserva})}
                         >
                       </Button>                      
                       </TableCell>
