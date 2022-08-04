@@ -21,12 +21,12 @@ export default function ViewTenants({dataTenants}) {
             {dataTenants.map((row, index) => (
                 <TableRow
                 key={index}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                onClick={() => handleTenant(row)}                                       
                 >
                     <TableCell 
                       component="th" 
-                      scope="row">{row.name}
-                      onClick={() => handleTenant(row)}
+                      scope="row">{row.name}                      
                     </TableCell>
                 </TableRow>
                   ))}
