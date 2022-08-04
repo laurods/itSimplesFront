@@ -19,10 +19,10 @@ export default function ViewReservas({reservas, setReservas}) {
         const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva', objData);
         alert(updateStatus.data.msg)
         if(updateStatus.data.msg === 'Atualizado'){
-          console.log('objData')
-          console.log(objData)
-          const filteredReservas = reservas.filter((item) => !item.reserva.includes(objData.reserva) );
+          const filteredReservas = reservas.filter((item) => !item.idControl.includes(objData.id) );
           setReservas(filteredReservas)
+        }else{
+          alert('Houve erro. Verifique')
         }        
     }
     
@@ -44,7 +44,7 @@ export default function ViewReservas({reservas, setReservas}) {
                       <Button 
                         variant="text" 
                         endIcon={<CheckCircleIcon /> }
-                        onClick={() => updateStatus({cnpj: row.idHotel, reserva: row.reserva})}
+                        onClick={() => updateStatus({id: idControl, cnpj: row.idHotel, reserva: row.reserva})}
                         >
                       </Button>                      
                       </TableCell>
