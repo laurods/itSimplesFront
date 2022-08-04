@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField';
 import SendIcon from '@material-ui/icons/Send';
 import Login from '../../components/login/login';
 import ViewTenants from '../../components/hotel/adm/viewTenants';
+import Chart0 from '../../components/hotel/chart0'
 
 const theme = createTheme();
 
@@ -29,25 +30,6 @@ export default function Report() {
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesAll');
       const listTenants = tenants.data;
       setDataTenants(tenants.data)
-      if(listTenants.length > 0) {
-        listTenants.map((tenant)=>{
-          console.log('tenant')
-          console.log(tenant)
-
-          // item.map(({question, answer})=>{
-          //   FeedBack.push({
-          //       question: question,
-          //       answer:answer            
-          //   })      
-          // })        
-        })
-        // setDataSuggest(listSuggest)
-        // setDataFeedback(FeedBack)
-
-      }
-     
-          
-      
     }
     loadAll();
   }, []);
@@ -58,7 +40,7 @@ export default function Report() {
           <Box sx={{ flexGrow: 1, mt: 2 }}>
               {isAuthenticated &&<div>
                 <Grid container spacing={2}>
-                  <Grid item xs={12} md={8}>
+                  <Grid item md={8}>
                     <TextField
                       margin="normal"
                       inputProps={{style: {fontSize: 40}}}
@@ -72,12 +54,15 @@ export default function Report() {
                     />
                     
                   </Grid>
-                  <Grid item xs={12} md={8}>
+                  <Grid item md={8}>
                     <ViewTenants 
                     dataTenants = {dataTenants}
                     setDataFeedback = {setDataFeedback}
                     setDataSuggest = {setDataSuggest}
                     />                    
+                  </Grid>
+                  <Grid item md={12}>
+                      <Chart0 dataFeedback = {dataFeedback}/>                  
                   </Grid>
                  
                 </Grid>

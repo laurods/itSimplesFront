@@ -10,8 +10,6 @@ import Paper from '@mui/material/Paper';
 export default function ViewTenants({dataTenants, setDataFeedback, setDataSuggest}) {
   const FeedBack = [];     
   const handleTenant = ({cnpj, name, quizzes, suggests }) => {
-    console.log('quizzes')
-    console.log(quizzes)
     quizzes.map((quizz)=>{
     quizz.map(({question, answer})=>{
       FeedBack.push({
@@ -20,10 +18,8 @@ export default function ViewTenants({dataTenants, setDataFeedback, setDataSugges
       })      
       })
     })
-    console.log('FeedBack')
-    console.log(FeedBack)
-    console.log('suggests')
-    console.log(suggests)
+    setDataFeedback(FeedBack)
+    setDataSuggest(suggests)
   }
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>            
