@@ -13,7 +13,7 @@ export default function Report() {
     const loadAll = async() =>{      
       const FeedBack = [];
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesAll');
-      const listTenants = quizzes.data;
+      const listTenants = tenants.data;
       console.log('listTenants')
       console.log(listTenants)
       // const listQuiz = quizzes.data.quizzes;
