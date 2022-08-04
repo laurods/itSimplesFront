@@ -1,12 +1,20 @@
 import React, {  useState, useEffect, useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthContext';
-import Dashboard from '../../components/hotel/dashboard';
-import Login from '../../components/login/login';
 import axios from 'axios';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AuthContext } from '../../contexts/AuthContext';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import SendIcon from '@material-ui/icons/Send';
+import Login from '../../components/login/login';
+const theme = createTheme();
 
 
 export default function Report() {
-  const {isAuthenticated} = useContext(AuthContext);   
+  const {isAuthenticated} = useContext(AuthContext);
+  const [text, setText] = useState('')   
   const [dataFeedback, setDataFeedback] = useState([]);
   const [dataSuggest, setDataSuggest] = useState([]);
   useEffect(() => {  
@@ -39,10 +47,41 @@ export default function Report() {
   }, []);
   
     return (
-      <>     
-      {isAuthenticated &&<Dashboard dataFeedback = {dataFeedback} dataSuggest = { dataSuggest }/>}
-      {!isAuthenticated && <Login />}
-      </>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Box sx={{ flexGrow: 1, mt: 2 }}>
+              {isAuthenticated &&<div>
+                <Grid spacing={2}>
+                  <Grid item xs={10}>
+                    <TextField
+                      margin="normal"
+                      inputProps={{style: {fontSize: 40}}}
+                      label="Pesquisa"
+                      id="text"
+                      value={text}
+                      //onChange={(event) => {setReserva(event.target.value)}}
+                      fullWidth
+                      variant="standard"
+                      autoComplete="off"
+                    />
+                    
+                  </Grid>
+                  <Grid item xs={2}>
+                      <Button 
+                        variant="text" 
+                        endIcon={<SendIcon /> }
+                        //onClick={() => sendCustumer(row)}
+                        >
+                       Buscar
+                      </Button>
+                  </Grid>
+                </Grid>
+          
+              </div>}
+            {!isAuthenticated && <Login />}
+          </Box>        
+        </Container>
+      </ThemeProvider>
     );
     
   }
