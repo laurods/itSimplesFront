@@ -20,6 +20,9 @@ export default function Report() {
   const [dataFeedback, setDataFeedback] = useState([]);
   const [dataSuggest, setDataSuggest] = useState([]);
   const [dataTenants, setDataTenants] = useState([]);
+
+  
+
   useEffect(() => {  
     const loadAll = async() =>{      
       const FeedBack = [];

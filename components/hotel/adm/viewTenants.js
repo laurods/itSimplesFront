@@ -8,7 +8,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 export default function ViewTenants({dataTenants}) {     
-    
+  const handleTenant = (tenant) => {
+    console.log('tenant')
+    console.log(tenant)
+  }
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>            
         <Table sx={{ minWidth: 200 }} aria-label="simple table">
@@ -20,7 +23,11 @@ export default function ViewTenants({dataTenants}) {
                 key={index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                 >
-                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                    <TableCell 
+                      component="th" 
+                      scope="row">{row.name}
+                      onClick={() => handleTenant(row)}
+                    </TableCell>
                 </TableRow>
                   ))}
             </TableBody>
