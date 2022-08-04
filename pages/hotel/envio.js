@@ -36,9 +36,6 @@ export default function Index() {
         })        
       })
       setReservas(list)
-      console.log('list');
-      console.log(list); 
-          
       
     }
     loadAll();
