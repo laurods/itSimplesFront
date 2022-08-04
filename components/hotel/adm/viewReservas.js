@@ -14,14 +14,13 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
-export default function ViewReservas({reservas}) {
-    const [dataList, setDataList] = useState(reservas)    
+export default function ViewReservas({reservas, setReservas}) {     
     const updateStatus = async (objData) => {
         const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva', objData);
         alert(updateStatus.data.msg)
         if(updateStatus.data.msg === 'Atualizado'){
           const filteredReservas = reservas.filter((item) => item.reserva.includes(!objData.reserva) );
-          setDataList(filteredReservas)
+          setReservas(filteredReservas)
         }        
     }
     
@@ -31,7 +30,7 @@ export default function ViewReservas({reservas}) {
             <TableHead>                    
             </TableHead>
             <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {dataList.map((row, index) => (
+            {reservas.map((row, index) => (
                 <TableRow
                 key={index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
