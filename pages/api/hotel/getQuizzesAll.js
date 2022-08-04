@@ -17,6 +17,7 @@ const client = new MongoClient(url);
             cnpj: 1,
             name: 1,
             quizzes: 1,
+            suggests: 1,
         } }).toArray();
 
          res.status(200).json(tenantData);

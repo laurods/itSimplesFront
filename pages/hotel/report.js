@@ -14,23 +14,23 @@ export default function Report() {
       const FeedBack = [];
       const tenants = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesAll');
       const listTenants = tenants.data;
-      console.log('listTenants')
-      console.log(listTenants)
-      // const listQuiz = quizzes.data.quizzes;
-      // const listSuggest = quizzes.data.suggests;
-      // if(listQuiz.length > 0) {
-      //   listQuiz.map((item)=>{
-      //     item.map(({question, answer})=>{
-      //       FeedBack.push({
-      //           question: question,
-      //           answer:answer            
-      //       })      
-      //     })        
-      //   })
-      //   setDataSuggest(listSuggest)
-      //   setDataFeedback(FeedBack)
+      
+      if(listTenants.length > 0) {
+        listTenants.map((tenant)=>{
+          console.log('tenant')
+          console.log(tenant)
 
-      // }
+          // item.map(({question, answer})=>{
+          //   FeedBack.push({
+          //       question: question,
+          //       answer:answer            
+          //   })      
+          // })        
+        })
+        // setDataSuggest(listSuggest)
+        // setDataFeedback(FeedBack)
+
+      }
      
           
       
