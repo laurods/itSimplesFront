@@ -10,12 +10,12 @@ export default function Report() {
   const {isAuthenticated} = useContext(AuthContext);   
   const [dataFeedback, setDataFeedback] = useState([]);
   const [dataSuggest, setDataSuggest] = useState([]);
-  useEffect(() => {
-    const router = useRouter()
-    const { cnpj } = router.query
-    console.log('cnpj')
-    console.log(cnpj)
+  useEffect(() => {  
     const loadAll = async() =>{
+      const router = useRouter()
+      const { cnpj } = router.query
+      console.log('cnpj')
+      console.log(cnpj)
       const FeedBack = [];
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: cnpj });
       const listQuiz = quizzes.data.quizzes;
