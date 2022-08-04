@@ -12,12 +12,14 @@ export default function ViewTenants({dataTenants, setDataFeedback, setDataSugges
   const handleTenant = ({cnpj, name, quizzes, suggests }) => {
     console.log('quizzes')
     console.log(quizzes)
-    quizzes.map(({question, answer})=>{
+    quizzes.map((quizz)=>{
+    quizz.map(({question, answer})=>{
       FeedBack.push({
         question: question,
         answer:answer            
       })      
       })
+    })
     console.log('FeedBack')
     console.log(FeedBack)
     console.log('suggests')
