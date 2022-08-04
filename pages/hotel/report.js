@@ -6,7 +6,9 @@ import axios from 'axios';
 
 
 export default function Report() { 
-  const {isAuthenticated, activeCNPJ} = useContext(AuthContext);  
+  const {isAuthenticated, activeCNPJ} = useContext(AuthContext);
+  console.log('activeCNPJ')
+  console.log(activeCNPJ)  
   const [dataFeedback, setDataFeedback] = useState([]);
   const [dataSuggest, setDataSuggest] = useState([]);
   useEffect(() => {
@@ -15,16 +17,20 @@ export default function Report() {
       const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: activeCNPJ });
       const listQuiz = quizzes.data.quizzes;
       const listSuggest = quizzes.data.suggests;
-      listQuiz.map((item)=>{
-        item.map(({question, answer})=>{
-          FeedBack.push({
-              question: question,
-              answer:answer            
-          })      
-        })        
-      })
-      setDataSuggest(listSuggest)
-      setDataFeedback(FeedBack)
+      if(listQuiz.length > 0) {
+        listQuiz.map((item)=>{
+          item.map(({question, answer})=>{
+            FeedBack.push({
+                question: question,
+                answer:answer            
+            })      
+          })        
+        })
+        setDataSuggest(listSuggest)
+        setDataFeedback(FeedBack)
+
+      }
+     
           
       
     }
