@@ -8,9 +8,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 export default function ViewTenants({dataTenants}) {     
-  const handleTenant = (tenant) => {
-    console.log('tenant')
-    console.log(tenant)
+  const handleTenant = ({cnpj, name, quizzes, suggests }) => {
+    console.log('quizzes')
+    console.log(quizzes)
   }
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>            
