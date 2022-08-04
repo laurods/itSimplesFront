@@ -20,7 +20,11 @@ const theme = createTheme();
 
 export default function Report() {
   const {isAuthenticated} = useContext(AuthContext);
-  const [text, setText] = useState('')   
+  const [text, setText] = useState('')
+  const [name, setName] = useState('')
+  const [cnpj, setCNPJ] = useState('')
+  const [showReport, setShowReport] = useState(false)
+  const [showSearch, setShowSearch] = useState(true)   
   const [dataFeedback, setDataFeedback] = useState([]);
   const [dataSuggest, setDataSuggest] = useState([]);
   const [dataTenants, setDataTenants] = useState([]);
@@ -42,9 +46,10 @@ export default function Report() {
         <Container>
           <Box sx={{ flexGrow: 1, mt: 2 }}>
               {isAuthenticated &&<div>
+                
                 <Grid container spacing={2}>
-                  <Grid item xs={8}>
-                    <TextField
+                   <Grid item xs={8}>
+                   {showSearch &&<TextField
                       margin="normal"
                       inputProps={{style: {fontSize: 40}}}
                       label="Pesquisa"
@@ -54,27 +59,30 @@ export default function Report() {
                       fullWidth
                       variant="standard"
                       autoComplete="off"
-                    />
+                    />}
                     
                   </Grid>
                   <Grid item xs={8}>
-                    <ViewTenants 
+                  {showSearch && <ViewTenants 
                     dataTenants = {dataTenants}
                     setDataFeedback = {setDataFeedback}
                     setDataSuggest = {setDataSuggest}
-                    />                    
+                    />}                    
+                  </Grid>            
+                  <Grid item xs={8}>
+                    {showReport && <p>Empresa: {name} | CNPJ: { cnpj }</p>}                    
                   </Grid>
                   <Grid item xs={12}>
-                      <Chart0 dataFeedback = {dataFeedback}/>                  
+                  {showReport && <Chart0 dataFeedback = {dataFeedback}/> }                 
                   </Grid>
                   <Grid item xs={12}>
-                    <Chart1 dataFeedback={dataFeedback}/>
+                  {showReport && <Chart1 dataFeedback={dataFeedback}/>}
                   </Grid>
                 <Grid item xs={12}>
-                   <Chart2 dataSuggest={dataSuggest}/>
+                {showReport && <Chart2 dataSuggest={dataSuggest}/>}
                 </Grid>                
                 <Grid>
-                  <Charts dataFeedback={dataFeedback} />
+                {showReport && <Charts dataFeedback={dataFeedback} />}
                 </Grid>
                 </Grid>
           

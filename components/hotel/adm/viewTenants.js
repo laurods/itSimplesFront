@@ -7,7 +7,16 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function ViewTenants({dataTenants, setDataFeedback, setDataSuggest}) {
+export default function ViewTenants(
+  {
+    dataTenants, 
+    setDataFeedback, 
+    setDataSuggest,
+    setName,
+    setCNPJ,
+    setShowReport,
+    setShowSearch,
+  }) {
   const FeedBack = [];     
   const handleTenant = ({cnpj, name, quizzes, suggests }) => {
     quizzes.map((quizz)=>{
@@ -20,6 +29,10 @@ export default function ViewTenants({dataTenants, setDataFeedback, setDataSugges
     })
     setDataFeedback(FeedBack)
     setDataSuggest(suggests)
+    setName(name)
+    setCNPJ(cnpj)
+    setShowReport(true)
+    setShowSearch(false)
   }
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>            
