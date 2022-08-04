@@ -15,11 +15,14 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewReservas({reservas}) {
+    const [list, setList] = useState(reservas)
     const updateStatus = async (objData) => {
-        console.log('objData')
-        console.log(objData)
         const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva', objData);
-        console.log(updateStatus.data.msg)        
+        alert(updateStatus.data.msg)
+        if(updateStatus.data.msg === 'Atualizado'){
+          const filteredReservas = reservas.filter((item) => item.reserva.includes(!objData.reserva) );
+          setList(filteredReservas)
+        }        
     }
     
   return (
@@ -28,14 +31,14 @@ export default function ViewReservas({reservas}) {
             <TableHead>                    
             </TableHead>
             <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-            {reservas.map((row, index) => (
+            {list.map((row, index) => (
                 <TableRow
                 key={index}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
                 >
                     <TableCell component="th" scope="row">{row.contato}</TableCell>
-                    <TableCell component="th" scope="row">{row.link}</TableCell>
                     <TableCell component="th" scope="row">{row.message}</TableCell>
+                    <TableCell component="th" scope="row">{row.link}</TableCell>
                     <TableCell component="th" scope="row">
                       <Button 
                         variant="text" 

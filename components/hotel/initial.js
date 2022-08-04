@@ -39,8 +39,6 @@ export default function Initial({activeCNPJ}) {
       objReserva['message'] = message;
       objReserva['link'] = `https://it-simples-front.vercel.app/hotel/${activeCNPJ}@${reserva}`
       objReserva['status'] = 'Pendente';
-      console.log('objReserva');
-      console.log(objReserva);
       const resData = await axios.post('/api/hotel/addReserva',  objReserva )
       alert(resData.data.msg);
       setReserva('');
