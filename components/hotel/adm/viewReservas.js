@@ -19,6 +19,10 @@ export default function ViewReservas({reservas, setReservas}) {
         const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva', objData);
         alert(updateStatus.data.msg)
         if(updateStatus.data.msg === 'Atualizado'){
+          console.log('objData')
+          console.log(objData)
+          console.log('objData.reserva')
+          console.log(objData.reserva)
           const filteredReservas = reservas.filter((item) => item.reserva.includes(!objData.reserva) );
           setReservas(filteredReservas)
         }        
