@@ -73,7 +73,11 @@ export default function Report() {
                     
                   </Grid>
                   <Grid item xs={12} md={8}>
-                    <ViewTenants dataTenants = {dataTenants}/>                    
+                    <ViewTenants 
+                    dataTenants = {dataTenants}
+                    setDataFeedback = {setDataFeedback}
+                    setDataSuggest = {setDataSuggest}
+                    />                    
                   </Grid>
                  
                 </Grid>

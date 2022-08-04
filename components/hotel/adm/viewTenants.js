@@ -7,10 +7,19 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function ViewTenants({dataTenants}) {     
+export default function ViewTenants({dataTenants, setDataFeedback, setDataSuggest}) {
+  const FeedBack = [];     
   const handleTenant = ({cnpj, name, quizzes, suggests }) => {
-    console.log('quizzes')
-    console.log(quizzes)
+    quizzes.map(({question, answer})=>{
+      FeedBack.push({
+        question: question,
+        answer:answer            
+      })      
+      })
+    console.log('FeedBack')
+    console.log(FeedBack)
+    console.log('suggests')
+    console.log(suggests)
   }
   return (
     <TableContainer component={Paper} sx={{ mt: 2 }}>            
