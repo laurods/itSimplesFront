@@ -21,7 +21,8 @@ export default function Index() {
       const listReservas = reservas.data;
       listReservas.map(({reservas})=>{
         reservas.map(({idControl, idHotel, contato, link,reserva, message, status})=>{
-          list.push({
+          if(status === 'Pendente'){
+            list.push({
               idControl,
               idHotel,              
               contato,
@@ -29,7 +30,8 @@ export default function Index() {
               reserva,
               message,
               status,
-          })      
+          })
+          }    
         })        
       })
       setReservas(list)
