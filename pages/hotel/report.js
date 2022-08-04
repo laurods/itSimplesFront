@@ -67,6 +67,10 @@ export default function Report() {
                     dataTenants = {dataTenants}
                     setDataFeedback = {setDataFeedback}
                     setDataSuggest = {setDataSuggest}
+                    setName = {setName}
+                    setCNPJ = {setCNPJ}
+                    setShowReport = {setShowReport}
+                    setShowSearch = {setShowSearch}
                     />}                    
                   </Grid>            
                   <Grid item xs={8}>
