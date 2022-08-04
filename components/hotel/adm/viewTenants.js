@@ -10,6 +10,8 @@ import Paper from '@mui/material/Paper';
 export default function ViewTenants({dataTenants, setDataFeedback, setDataSuggest}) {
   const FeedBack = [];     
   const handleTenant = ({cnpj, name, quizzes, suggests }) => {
+    console.log('quizzes')
+    console.log(quizzes)
     quizzes.map(({question, answer})=>{
       FeedBack.push({
         question: question,
