@@ -15,7 +15,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewReservas({reservas}) {
-    const [list, setList] = useState(reservas)
+    const [list, setList] = useState([])
+    setList(reservas)
     const updateStatus = async (objData) => {
         const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva', objData);
         alert(updateStatus.data.msg)
