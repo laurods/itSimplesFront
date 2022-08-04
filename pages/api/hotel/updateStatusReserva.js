@@ -9,12 +9,12 @@ const client = new MongoClient(url);
                       
  module.exports = async (req, res) => {
     try {
-        //const { cnpj, idControl } = req.body;
+         const { cnpj, reserva } = req.body;
          await client.connect();         
          const db = client.db(dbName);
          const dataReservas = db.collection("tenant");
           const tenantData = await dataReservas.updateOne(
-            {cnpj: '89823918000199', 'reservas.reserva':'0008'}, 
+            {cnpj: cnpj, 'reservas.reserva':reserva}, 
             {$set: {'reservas.$.status': 'Enviado'}}
             )
 

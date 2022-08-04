@@ -18,7 +18,7 @@ export default function ViewReservas({reservas}) {
     const updateStatus = async (objData) => {
         console.log('objData')
         console.log(objData)
-        const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva');
+        const updateStatus = await axios.post('https://it-simples-front.vercel.app/api/hotel/updateStatusReserva', objData);
         console.log(updateStatus.data.msg)        
     }
     
