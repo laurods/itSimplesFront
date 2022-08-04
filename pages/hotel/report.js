@@ -52,7 +52,7 @@ export default function Report() {
           <Box sx={{ flexGrow: 1, mt: 2 }}>
               {isAuthenticated &&<div>
                 <Grid spacing={2}>
-                  <Grid item xs={9}>
+                  <Grid item xs={9} md={9}>
                     <TextField
                       margin="normal"
                       inputProps={{style: {fontSize: 40}}}
@@ -66,7 +66,7 @@ export default function Report() {
                     />
                     
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={3} md={3}>
                       <Button 
                         variant="text" 
                         endIcon={<SendIcon /> }
