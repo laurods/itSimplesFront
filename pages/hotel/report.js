@@ -20,7 +20,7 @@ export default function Report() {
     const loadAll = async() =>{
       
       const FeedBack = [];
-      const quizzes = await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: id });
+      const quizzes = id.length > 0 ? await axios.post('https://it-simples-front.vercel.app/api/hotel/getQuizzesByCNPJ', { cnpj: id }) : false;
       const listQuiz = quizzes.data.quizzes;
       const listSuggest = quizzes.data.suggests;
       if(listQuiz.length > 0) {
