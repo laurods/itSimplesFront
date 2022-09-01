@@ -247,7 +247,6 @@ const keyUpHandler = (event) => {
       handleFilterViewAll(word)
     }
     if (event.code === "Backspace") {
-        alert(`Backspace`);
         setListDataConsumers([])
       }
   };
