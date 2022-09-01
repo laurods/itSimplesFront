@@ -51,8 +51,8 @@ export default function Entregas(props) {
       setShowViewAll(true)
       setWord(event.target.value)
       handleFilterViewAll(event.target.value)
-      console.log('event.target.value')
-      console.log(event.target.value)
+      console.log('event.target.value.length')
+      console.log(event.target.value.length)
       if(event.target.value.length == 0){
         setCustumer([]);
         setWord('');
@@ -76,6 +76,9 @@ export default function Entregas(props) {
         setShowDados(false)
                      
       }
+
+      console.log('custumer')
+      console.log(custumer)
     };
 
    
