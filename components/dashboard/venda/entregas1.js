@@ -442,13 +442,20 @@ const handleSetCustumerAndView = (dataCustumer) => {
         
         /> */}
 
+       { word.length > 0 ? (
         <ul>
             {listDataConsumers.map(row => {
-                <li key={row.telefone}>
-                    {row.nome}
-                </li>
-            })}
+                return(
+                    <li key={row.telefone}>{row.nome}</li>
+                )
+            }
+
+            )
+
+            }
         </ul>
+
+       ): <span></span>}
 
     
         
