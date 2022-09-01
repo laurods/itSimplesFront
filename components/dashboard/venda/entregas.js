@@ -19,7 +19,7 @@ import ViewAll from '../../custumer/viewAll'
 
 const theme = createTheme();
 export default function Entregas() {
-    const {CNPJsByUsers, consumers, setConsumers, setListConsumers } = useContext(AuthContext);
+    const {CNPJsByUsers, consumers, setConsumers, listConsumers, setListConsumers } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -445,12 +445,12 @@ const keyUpHandler = (event) => {
           </Grid>
         </Grid>}
 
-        <ViewAll 
+        {listConsumers.length > 0 && <ViewAll 
         //listConsumers={listConsumers}
         handleSetCustumer={handleSetCustumer}
         handleSetCustumerAndView={handleSetCustumerAndView}
         
-        />
+        />}
 
     
         

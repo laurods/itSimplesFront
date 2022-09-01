@@ -24,7 +24,7 @@ import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
-export default function ViewAll() {
+export default function ViewAll(props) {
   const {listConsumers} = useContext(AuthContext);
     //const dataConsumers = listConsumers.slice(0, 10);
     console.log('listConsumers')
