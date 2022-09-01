@@ -137,12 +137,16 @@ export default function Entregas(props) {
   const handleFilterNomeRuaBairro = (event) => {
       setShowViewAll(true)
       setNomeRuaBairro(event.target.value.toUpperCase())
-    const filteredCustumer = consumers.filter((item) => 
+      if(event.target.value.length == 0){
+        setCustumer([]);       
+      }
+
+    const filteredCustumerByNomeRuaBairro = consumers.filter((item) => 
     item.nome.includes(event.target.value.toUpperCase()) 
     || item.rua.includes(event.target.value.toUpperCase())
     || item.bairro.includes(event.target.value.toUpperCase())
     )
-      setListConsumers(filteredCustumer)
+    setListConsumers(filteredCustumerByNomeRuaBairro)
          
 };
 
