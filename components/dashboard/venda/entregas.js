@@ -47,8 +47,7 @@ export default function Entregas() {
     const handleWord = (event) => {
       const primeiroNumero = event.target.value.charAt(0);
       setShowViewAll(true)
-      setWord(event.target.value)
-      handleFilterViewAll(event.target.value)     
+      setWord(event.target.value)           
       if(event.target.value.length == 0){        
         setCustumer([]);       
         setWord('');
@@ -222,6 +221,7 @@ const handleSetCustumer = (dataCustumer) => {
   setTxEntrega(dataCustumer.txEntrega)
   setShowDados(true)
   setShowViewAll(false)
+  setListConsumers([])
 }
 
 const handleSetCustumerAndView = (dataCustumer) => {
@@ -233,10 +233,11 @@ const handleSetCustumerAndView = (dataCustumer) => {
   setComplemento(dataCustumer.complemento)
   setBairro(dataCustumer.bairro)
   setTxEntrega(dataCustumer.txEntrega)
-      setShow(false)
-      setShowDados(false)
-      setShowViewAll(false)      
-      sendData()
+  setShow(false)
+  setShowDados(false)
+  setShowViewAll(false)      
+  sendData()
+  setListConsumers([])
 
 }
 
