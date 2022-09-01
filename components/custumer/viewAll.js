@@ -50,7 +50,7 @@ export default function ViewAll(props) {
                   <TableHead>                    
                   </TableHead>
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {props.listConsumers.map((row) => (
+                  {dataConsumers.map((row) => (
                       <TableRow
                       key={row.telefone}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       

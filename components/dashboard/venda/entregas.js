@@ -18,8 +18,7 @@ import ViewAll from '../../custumer/viewAll'
 
 
 const theme = createTheme();
-export default function Entregas(props) {
-    //const allConsumers = props.consumers;
+export default function Entregas() {
     const {isAuthenticated, CNPJsByUsers, consumers, setConsumers, } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
