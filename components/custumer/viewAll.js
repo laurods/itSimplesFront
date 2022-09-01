@@ -25,9 +25,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewAll(props) {
-    
-    const allConsumers = props.listConsumers;
-    const dataConsumers = allConsumers.slice(0, 10);
+  const {listConsumers} = useContext(AuthContext);
+    //const allConsumers = props.listConsumers;
+    const dataConsumers = listConsumers.slice(0, 10);
     console.log('dataConsumers')
     console.log(dataConsumers)
 

@@ -19,7 +19,7 @@ import ViewAll from '../../custumer/viewAll'
 
 const theme = createTheme();
 export default function Entregas() {
-    const {isAuthenticated, CNPJsByUsers, consumers, setConsumers, } = useContext(AuthContext);
+    const {CNPJsByUsers, consumers, setConsumers, setListConsumers } = useContext(AuthContext);
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
@@ -29,7 +29,7 @@ export default function Entregas() {
     const [showViewAll, setShowViewAll] = useState(true);
    
     //const [listConsumers, setListConsumers] = useState(consumers);
-    const [listConsumers, setListConsumers] = useState([]);
+    //const [listConsumers, setListConsumers] = useState([]);
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
@@ -100,6 +100,7 @@ export default function Entregas() {
 
     const handleFilterViewAll = (phone) => {
         const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
+        //setListConsumers(filteredCustumer)
         setListConsumers(filteredCustumer)
       
 
@@ -433,7 +434,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
         </Grid>}
 
         <ViewAll 
-        listConsumers={listConsumers}
+        //listConsumers={listConsumers}
         handleSetCustumer={handleSetCustumer}
         handleSetCustumerAndView={handleSetCustumerAndView}
         
