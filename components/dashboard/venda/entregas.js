@@ -51,7 +51,7 @@ export default function Entregas(props) {
       const primeiroNumero = event.target.value.charAt(0);
       setShowViewAll(true)
       setWord(event.target.value)
-      //handleFilterViewAll(event.target.value)     
+      handleFilterViewAll(event.target.value)     
       if(event.target.value.length == 0){        
         setCustumer([]);        
         setWord('');
@@ -78,7 +78,7 @@ export default function Entregas(props) {
       }
     };
 
-    const filteredDataCostumers = word.length > 0 ? consumers.filter((item) => item.telefone.includes(word) ) : []   
+    //const filteredDataCostumers = word.length > 0 ? consumers.filter((item) => item.telefone.includes(word) ) : []   
 
     const handleDDD = (event) => { setDDD(event.target.value) };
     const handleNome = (event) => { setNome(event.target.value.toUpperCase()) };
@@ -102,13 +102,8 @@ export default function Entregas(props) {
 
 
     const handleFilterViewAll = (phone) => {
-      setListConsumers([])
-      if(phone.length !=0){
         const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
-        console.log('filteredCustumer')
-        console.log(filteredCustumer)
         setListConsumers(filteredCustumer)
-      }
       
 
     }
@@ -146,11 +141,6 @@ export default function Entregas(props) {
   const handleFilterNomeRuaBairro = (event) => {
       setShowViewAll(true)
       setNomeRuaBairro(event.target.value.toUpperCase())
-      if(event.target.value.length == 0){
-        setCustumer([]);
-        setShowViewAll(false)       
-      }
-
     const filteredCustumerByNomeRuaBairro = consumers.filter((item) => 
     item.nome.includes(event.target.value.toUpperCase()) 
     || item.rua.includes(event.target.value.toUpperCase())
@@ -446,8 +436,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
         </Grid>}
 
         <ViewAll 
-        //listConsumers={listConsumers}
-        listConsumers={filteredDataCostumers} 
+        listConsumers={listConsumers}
         handleSetCustumer={handleSetCustumer}
         handleSetCustumerAndView={handleSetCustumerAndView}
         
