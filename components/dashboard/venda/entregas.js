@@ -445,13 +445,13 @@ const handleSetCustumerAndView = (dataCustumer) => {
           </Grid>
         </Grid>}
 
-        {showViewAll && <ViewAll 
+        <ViewAll 
         //listConsumers={listConsumers}
         listConsumers={filteredDataCostumers} 
         handleSetCustumer={handleSetCustumer}
         handleSetCustumerAndView={handleSetCustumerAndView}
         
-        />}
+        />
 
     
         
