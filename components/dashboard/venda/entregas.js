@@ -54,6 +54,7 @@ export default function Entregas(props) {
       console.log('event.target.value.length')
       console.log(event.target.value.length)
       if(event.target.value.length == 0){
+        console.log('teste')
         setCustumer([]);        
         setWord('');
         setShowDados(false)       
