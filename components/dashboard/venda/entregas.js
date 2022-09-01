@@ -104,10 +104,14 @@ export default function Entregas(props) {
 
 
     const handleFilterViewAll = (phone) => {
-      const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
-      console.log('filteredCustumer')
-      console.log(filteredCustumer)
-      setListConsumers(filteredCustumer)
+      setListConsumers([])
+      if(phone.length !=0){
+        const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
+        console.log('filteredCustumer')
+        console.log(filteredCustumer)
+        setListConsumers(filteredCustumer)
+      }
+      
 
     }
     
