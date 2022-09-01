@@ -50,7 +50,7 @@ export default function Entregas() {
       setWord(event.target.value)       
       //handleFilterViewAll(event.target.value)     
       if(event.target.value.length == 0){        
-        setCustumer([]);        
+        setCustumer([]);       
         setWord('');
         setShowDados(false)
         setShowViewAll(false)       
@@ -244,9 +244,12 @@ const handleSetCustumerAndView = (dataCustumer) => {
 }
 const keyUpHandler = (event) => {
     if (event.code === "Enter") {
-      alert(`enter`);
       handleFilterViewAll(word)
     }
+    if (event.code === "Backspace") {
+        alert(`Backspace`);
+        setListDataConsumers([])
+      }
   };
 
 
@@ -454,7 +457,7 @@ const keyUpHandler = (event) => {
         
         /> */}
 
-       { word.length > 0 ? (
+       { listDataConsumers.length > 0 ? (
         <ul>
             {listDataConsumers.map(row => {
                 return(
