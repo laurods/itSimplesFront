@@ -50,7 +50,7 @@ export default function Entregas() {
       setWord(event.target.value)
       handleFilterViewAll(event.target.value)     
       if(event.target.value.length == 0){        
-        setCustumer([]);        
+        setCustumer([]);       
         setWord('');
         setShowDados(false)
         setShowViewAll(false)       
@@ -240,6 +240,12 @@ const handleSetCustumerAndView = (dataCustumer) => {
 
 }
 
+const keyUpHandler = (event) => {
+  if (event.code === "Backspace") {
+    setListConsumers([])
+    }
+};
+
   return (
     <ThemeProvider theme={theme}>
       <Container>      
@@ -272,7 +278,8 @@ const handleSetCustumerAndView = (dataCustumer) => {
               id="telefone"
               type="number"
               value={word} 
-              onChange={handleWord}                          
+              onChange={handleWord}
+              onKeyUp={keyUpHandler}                          
               autoComplete="off"
               variant="standard"
             />
