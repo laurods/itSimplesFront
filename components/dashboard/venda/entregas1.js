@@ -275,7 +275,8 @@ const handleSetCustumerAndView = (dataCustumer) => {
               id="telefone"
               type="number"
               value={word} 
-              onChange={handleWord}                          
+              //onChange={handleWord}
+              onChange={e => setWord(e.target.value)}                          
               autoComplete="off"
               variant="standard"
             />
