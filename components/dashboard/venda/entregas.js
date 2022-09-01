@@ -119,7 +119,7 @@ export default function Entregas() {
         setComplemento('')
         setBairro('')
         setTxEntrega('')
-        setShowDados(false)
+        setShowDados(true)
         
       }else{
         setAddNewCustumer(false)
