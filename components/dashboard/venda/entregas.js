@@ -136,13 +136,16 @@ export default function Entregas() {
 
 
 
-  const handleFilterNomeRuaBairro = (event) => {
-      setShowViewAll(true)
-      setNomeRuaBairro(event.target.value.toUpperCase())
-    const filteredCustumerByNomeRuaBairro = consumers.filter((item) => 
-    item.nome.includes(event.target.value.toUpperCase()) 
-    || item.rua.includes(event.target.value.toUpperCase())
-    || item.bairro.includes(event.target.value.toUpperCase())
+  const handleFilterNomeRuaBairro = (text) => {
+      //setShowViewAll(true)
+      //setNomeRuaBairro(event.target.value.toUpperCase())
+    const filteredCustumerByNomeRuaBairro = consumers.filter((item) =>
+    item.nome.includes(text.toUpperCase()) 
+    || item.rua.includes(text.toUpperCase())
+    || item.bairro.includes(text.toUpperCase()) 
+    // item.nome.includes(event.target.value.toUpperCase()) 
+    // || item.rua.includes(event.target.value.toUpperCase())
+    // || item.bairro.includes(event.target.value.toUpperCase())
     )
     setListConsumers(filteredCustumerByNomeRuaBairro)
          
@@ -241,7 +244,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
 
 }
 
-const keyUpHandler = (event) => {
+const keyUpHandlerPhone = (event) => {
   if (event.code === "Enter") {
     handleFilterViewAll(word)
   }
@@ -249,6 +252,17 @@ const keyUpHandler = (event) => {
     setListConsumers([])
     }
 };
+
+const keyUpHandlerNomeRuaBairro = (event) => {
+  if (event.code === "Enter") {
+    handleFilterNomeRuaBairro(nomeRuaBairro)
+  }
+  if (event.code === "Backspace") {
+    setListConsumers([])
+    }
+};
+
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -284,7 +298,7 @@ const keyUpHandler = (event) => {
               value={word} 
               //onChange={handleWord}
               onChange={e => setWord(e.target.value)}
-              onKeyUp={keyUpHandler}                          
+              onKeyUp={keyUpHandlerPhone}                          
               autoComplete="off"
               variant="standard"
             />
@@ -301,7 +315,9 @@ const keyUpHandler = (event) => {
               label="Nome | Rua | Bairro"
               id="telefone"
               value={nomeRuaBairro} 
-              onChange={handleFilterNomeRuaBairro}                          
+              //onChange={handleFilterNomeRuaBairro}
+              onChange={e => setNomeRuaBairro(e.target.value)}
+              onKeyUp={keyUpHandlerNomeRuaBairro}                          
               autoComplete="off"
               variant="standard"
             />
