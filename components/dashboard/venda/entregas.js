@@ -54,8 +54,7 @@ export default function Entregas(props) {
       console.log('event.target.value.length')
       console.log(event.target.value.length)
       if(event.target.value.length == 0){
-        //setCustumer([]);
-        setListConsumers([])
+        setCustumer([]);        
         setWord('');
         setShowDados(false)       
         }
@@ -80,8 +79,6 @@ export default function Entregas(props) {
 
       console.log('custumer')
       console.log(custumer)
-      console.log('listConsumers')
-      console.log(listConsumers)
     };
 
    
