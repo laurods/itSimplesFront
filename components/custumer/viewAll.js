@@ -25,10 +25,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewAll(props) {
-    //console.log('props.listConsumers')
-    //console.log(props.listConsumers)
+    
     const allConsumers = props.listConsumers;
     const dataConsumers = allConsumers.slice(0, 10);
+    console.log('dataConsumers')
+    console.log(dataConsumers)
 
     const sendCustumer = (row) => {
         props.handleSetCustumer(row)
