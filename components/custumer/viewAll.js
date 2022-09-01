@@ -28,7 +28,7 @@ export default function ViewAll(props) {
     //console.log('props.listConsumers')
     //console.log(props.listConsumers)
     const allConsumers = props.listConsumers;
-    const listConsumers = allConsumers.slice(0, 10);
+    const dataConsumers = allConsumers.slice(0, 10);
 
     const sendCustumer = (row) => {
         props.handleSetCustumer(row)
@@ -49,7 +49,7 @@ export default function ViewAll(props) {
                   <TableHead>                    
                   </TableHead>
                   <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {listConsumers.map((row) => (
+                  {dataConsumers.map((row) => (
                       <TableRow
                       key={row.telefone}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
