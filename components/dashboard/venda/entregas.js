@@ -44,31 +44,29 @@ export default function Entregas() {
     const [valorPedido, setValorPedido] = useState('');
     const [AddNewCustumer, setAddNewCustumer] = useState(false);     
     
-    const handleWord = (event) => {
-      const primeiroNumero = event.target.value.charAt(0);
-      setShowViewAll(true)
-      setWord(event.target.value)           
-      if(event.target.value.length == 0){        
+    const handleWord = (number) => {
+      const primeiroNumero = number.charAt(0);
+      if(number.length == 0){        
         setCustumer([]);       
         setWord('');
         setShowDados(false)
         setShowViewAll(false)       
         }
-      if(primeiroNumero != 9 & event.target.value.length == 8 ){ /* se primeiro numero for diferente de 9 é número fixo. Numero fixo tem 8 caracteres*/       
-              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/
+      if(primeiroNumero != 9 & number.length == 8 ){ /* se primeiro numero for diferente de 9 é número fixo. Numero fixo tem 8 caracteres*/       
+              handleFilter(`${DDD}${number}`) /* chama a função filter*/
                             
         }
-      if(primeiroNumero == 9 & event.target.value.length == 9){ /* se primeiro numero for igual 9 é número celular. Numero fixo tem  caracteres**/
-              handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/ 
+      if(primeiroNumero == 9 & number.length == 9){ /* se primeiro numero for igual 9 é número celular. Numero fixo tem  caracteres**/
+              handleFilter(`${DDD}${number}`) /* chama a função filter*/ 
                           
         }
         /* Valida para usuário não cadastrar consumidores com quantidade de numeros de telefone errado*/
-      if(primeiroNumero == 9 & event.target.value.length != 9){ 
+      if(primeiroNumero == 9 & number.length != 9){ 
             setShowDados(false) 
                          
       }
       /* Valida para usuário não cadastrar consumidores com quantidade de numeros de telefone errado*/
-      if(primeiroNumero != 9 & event.target.value.length != 8){ 
+      if(primeiroNumero != 9 & number.length != 8){ 
         setShowDados(false)
                      
       }
@@ -247,6 +245,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
 const keyUpHandlerPhone = (event) => {
   if (event.code === "Enter") {
     handleFilterViewAll(word)
+    handleWord(word)
   }
   if (event.code === "Backspace") {
     setListConsumers([])
