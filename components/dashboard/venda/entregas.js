@@ -241,6 +241,9 @@ const handleSetCustumerAndView = (dataCustumer) => {
 }
 
 const keyUpHandler = (event) => {
+  if (event.code === "Enter") {
+    handleFilterViewAll(word)
+  }
   if (event.code === "Backspace") {
     setListConsumers([])
     }
@@ -278,7 +281,8 @@ const keyUpHandler = (event) => {
               id="telefone"
               type="number"
               value={word} 
-              onChange={handleWord}
+              //onChange={handleWord}
+              onChange={e => setWord(e.target.value)}
               onKeyUp={keyUpHandler}                          
               autoComplete="off"
               variant="standard"
