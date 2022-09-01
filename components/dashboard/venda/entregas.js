@@ -54,8 +54,7 @@ export default function Entregas(props) {
       handleFilterViewAll(event.target.value)
       console.log('event.target.value.length')
       console.log(event.target.value.length)
-      if(event.target.value.length == 0){
-        console.log('teste')
+      if(event.target.value.length == 0){        
         setCustumer([]);        
         setWord('');
         setShowDados(false)
@@ -107,8 +106,8 @@ export default function Entregas(props) {
     };  
 
 
-    const handleFilterViewAll = (word) => {
-      const filteredCustumer = consumers.filter((item) => item.telefone.includes(word) )
+    const handleFilterViewAll = (text) => {
+      const filteredCustumer = consumers.filter((item) => item.telefone.includes(text) )
       setListConsumers(filteredCustumer)
 
     }
