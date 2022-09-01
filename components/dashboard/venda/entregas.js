@@ -249,6 +249,7 @@ const keyUpHandlerPhone = (event) => {
   }
   if (event.code === "Backspace") {
     setListConsumers([])
+    setShowDados(false)
     }
 };
 
@@ -258,6 +259,7 @@ const keyUpHandlerNomeRuaBairro = (event) => {
   }
   if (event.code === "Backspace") {
     setListConsumers([])
+    setShowDados(false)
     }
 };
 
