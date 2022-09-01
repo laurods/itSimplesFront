@@ -51,9 +51,7 @@ export default function Entregas(props) {
       const primeiroNumero = event.target.value.charAt(0);
       setShowViewAll(true)
       setWord(event.target.value)
-      handleFilterViewAll(event.target.value)
-      console.log('event.target.value.length')
-      console.log(event.target.value.length)
+      //handleFilterViewAll(event.target.value)     
       if(event.target.value.length == 0){        
         setCustumer([]);        
         setWord('');
@@ -80,7 +78,7 @@ export default function Entregas(props) {
       }
     };
 
-   
+    const filteredDataCostumers = word.length > 0 ? consumers.filter((item) => item.telefone.includes(word) ) : []   
 
     const handleDDD = (event) => { setDDD(event.target.value) };
     const handleNome = (event) => { setNome(event.target.value.toUpperCase()) };
@@ -448,7 +446,8 @@ const handleSetCustumerAndView = (dataCustumer) => {
         </Grid>}
 
         {showViewAll && <ViewAll 
-        listConsumers={listConsumers} 
+        //listConsumers={listConsumers}
+        listConsumers={filteredDataCostumers} 
         handleSetCustumer={handleSetCustumer}
         handleSetCustumerAndView={handleSetCustumerAndView}
         
