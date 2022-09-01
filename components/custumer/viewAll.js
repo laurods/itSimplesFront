@@ -24,12 +24,11 @@ import TextField from '@mui/material/TextField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
-export default function ViewAll(props) {
+export default function ViewAll() {
   const {listConsumers} = useContext(AuthContext);
-    //const allConsumers = props.listConsumers;
-    const dataConsumers = listConsumers.slice(0, 10);
-    console.log('dataConsumers')
-    console.log(dataConsumers)
+    //const dataConsumers = listConsumers.slice(0, 10);
+    console.log('listConsumers')
+    console.log(listConsumers)
 
     const sendCustumer = (row) => {
         props.handleSetCustumer(row)

@@ -100,8 +100,9 @@ export default function Entregas() {
 
     const handleFilterViewAll = (phone) => {
         const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
+        const dataConsumers = filteredCustumer.slice(0, 10);
         //setListConsumers(filteredCustumer)
-        setListConsumers(filteredCustumer)
+        setListConsumers(dataConsumers)
       
 
     }
