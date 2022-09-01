@@ -14,16 +14,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import EditIcon from '@material-ui/icons/Edit';
-
-
 import ViewAll from '../../custumer/viewAll'
 
 
@@ -453,59 +443,14 @@ const handleSetCustumerAndView = (dataCustumer) => {
           </Grid>
         </Grid>}
 
-        {/* {showViewAll && <ViewAll 
+        {showViewAll && <ViewAll 
         listConsumers={listConsumers} 
         handleSetCustumer={handleSetCustumer}
         handleSetCustumerAndView={handleSetCustumerAndView}
         
-        />} */}
+        />}
 
-    {showViewAll && <Grid container spacing={2} sx={{ mt: 3 }}>
-          <Grid 
-          item xs={8} md={12}>          
-             <TableContainer component={Paper} sx={{ mt: 2 }}>            
-              <Table sx={{ minWidth: 200 }} aria-label="simple table">
-                  <TableHead>                    
-                  </TableHead>
-                  <TableBody sx={{ fontSize: 45, fontWeight: 'medium' }}>
-                  {listConsumers.map((row) => (
-                      <TableRow
-                      key={row.telefone}
-                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}                                       
-                      >
-                      <TableCell component="th" scope="row">
-                      <Button 
-                        variant="text" 
-                        endIcon={<PrintIcon /> }
-                        onClick={() => handleSetCustumerAndView(row)}
-                        >
-                     {row.telefone}
-                      </Button>                      
-                      </TableCell>
-                      <TableCell component="th" scope="row">
-                      <Button 
-                        variant="text" 
-                        endIcon={<EditIcon /> }
-                        onClick={() => handleSetCustumer(row)}
-                        >
-                       {row.nome}
-                      </Button>                      
-                      </TableCell>
-                      <TableCell component="th" scope="row">{row.rua}</TableCell>
-                      <TableCell component="th" scope="row">{row.numero}</TableCell>
-                      <TableCell component="th" scope="row">{row.complemento}</TableCell>
-                      <TableCell component="th" scope="row">{row.bairro}</TableCell>
-                      <TableCell component="th" scope="row">{row.txEntrega}</TableCell>
-                      </TableRow>
-                  ))}
-                  </TableBody>
-              </Table>
-              </TableContainer>
-            
-
-
-          </Grid>
-        </Grid>}
+    
         
       </Box>      
        
