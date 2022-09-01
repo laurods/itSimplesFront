@@ -106,15 +106,15 @@ export default function Entregas(props) {
     };  
 
 
-    const handleFilterViewAll = (text) => {
-      const filteredCustumer = consumers.filter((item) => item.telefone.includes(text) )
+    const handleFilterViewAll = (phone) => {
+      const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
       setListConsumers(filteredCustumer)
 
     }
     
-    const handleFilter = (word) => {
+    const handleFilter = (fone) => {
       //const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
-      const custumerFiltered = consumers.filter((item) => item.telefone.includes(word) )
+      const custumerFiltered = consumers.filter((item) => item.telefone.includes(fone) )
       if(custumerFiltered.length == 0){
         setAddNewCustumer(true)
         setCustumer('')
