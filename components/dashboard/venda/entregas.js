@@ -309,7 +309,6 @@ const keyUpHandlerNomeRuaBairro = (event) => {
          <TextField
               margin="normal"
               required
-              autoFocus
               inputProps={{style: {fontSize: 40}}}
               fullWidth
               name="nomeRuaBairro"
