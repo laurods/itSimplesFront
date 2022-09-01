@@ -181,7 +181,7 @@ export default function Entregas() {
 
    const sendData = async () => {
     const dataPedido = {}
-    dataPedido['telefone'] = `${DDD}${word}`
+    dataPedido['telefone'] = `${word}`
     dataPedido['nome'] = nome
     dataPedido['rua'] = rua
     dataPedido['numero'] = numero
