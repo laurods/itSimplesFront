@@ -113,7 +113,8 @@ export default function Entregas(props) {
     }
     
     const handleFilter = (word) => {
-      const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
+      //const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
+      const custumerFiltered = consumers.filter((item) => item.telefone.includes(word) )
       if(custumerFiltered.length == 0){
         setAddNewCustumer(true)
         setCustumer('')
