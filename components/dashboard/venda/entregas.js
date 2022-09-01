@@ -106,8 +106,8 @@ export default function Entregas() {
     const handleFilter = (fone) => {
       console.log('fone')
       console.log(fone)
-      //const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(word) )
-      const custumerFiltered = consumers.filter((item) => item.telefone.includes(fone) )
+      const custumerFiltered = listConsumers.filter((item) => item.telefone.includes(fone) )
+      //const custumerFiltered = consumers.filter((item) => item.telefone.includes(fone) )
       console.log('custumerFiltered')
       console.log(custumerFiltered)
       if(custumerFiltered.length == 0){
