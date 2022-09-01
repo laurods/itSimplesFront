@@ -29,7 +29,7 @@ export default function Entregas() {
     const [showViewAll, setShowViewAll] = useState(true);
    
     //const [listConsumers, setListConsumers] = useState(consumers);
-    //const [listConsumers, setListConsumers] = useState([]);
+    const [listDataConsumers, setListDataConsumers] = useState([]);
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
@@ -97,15 +97,15 @@ export default function Entregas() {
       
     };  
 
-    const listDataConsumers = word.length > 0 ? consumers.filter((item) => item.telefone.includes(word) ) : []
-    console.log('listDataConsumers')
-    console.log(listDataConsumers)
+    //const listDataConsumers = word.length > 0 ? consumers.filter((item) => item.telefone.includes(word) ) : []
+    //console.log('listDataConsumers')
+    //console.log(listDataConsumers)
     
     const handleFilterViewAll = (phone) => {
         const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
         const dataConsumers = filteredCustumer.slice(0, 10);
         //setListConsumers(filteredCustumer)
-        setListConsumers(dataConsumers)
+        setListDataConsumers(dataConsumers)
       
 
     }
@@ -242,6 +242,13 @@ const handleSetCustumerAndView = (dataCustumer) => {
       sendData()
 
 }
+const keyUpHandler = (event) => {
+    if (event.code === "Enter") {
+      alert(`enter`);
+      handleFilterViewAll(word)
+    }
+  };
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -276,7 +283,9 @@ const handleSetCustumerAndView = (dataCustumer) => {
               type="number"
               value={word} 
               //onChange={handleWord}
-              onChange={e => setWord(e.target.value)}                          
+              onChange={e => setWord(e.target.value)}
+              onKeyUp={keyUpHandler}
+                                        
               autoComplete="off"
               variant="standard"
             />
