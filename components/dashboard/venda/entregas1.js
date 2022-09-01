@@ -98,6 +98,8 @@ export default function Entregas() {
     };  
 
     const listDataConsumers = word.length > 0 ? consumers.filter((item) => item.telefone.includes(word) ) : []
+    console.log('listDataConsumers')
+    console.log(listDataConsumers)
     
     const handleFilterViewAll = (phone) => {
         const filteredCustumer = consumers.filter((item) => item.telefone.includes(phone) )
