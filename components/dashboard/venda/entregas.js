@@ -21,8 +21,6 @@ const theme = createTheme();
 export default function Entregas(props) {
     //const allConsumers = props.consumers;
     const {isAuthenticated, CNPJsByUsers, consumers, setConsumers, } = useContext(AuthContext);
-    console.log('CNPJsByUsers')
-    console.log(CNPJsByUsers)
     const dataAtual = new Date();
     const [day, setDay] = useState(dataAtual.getDate());
     const [month, setMonth] = useState(dataAtual.getMonth() + 1);
