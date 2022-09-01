@@ -51,6 +51,8 @@ export default function Entregas(props) {
       setShowViewAll(true)
       setWord(event.target.value)
       handleFilterViewAll(event.target.value)
+      console.log('event.target.value')
+      console.log(event.target.value)
       if(event.target.value.length == 0){
         setCustumer([]);
         setWord('');

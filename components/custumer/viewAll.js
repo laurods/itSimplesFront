@@ -25,8 +25,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function ViewAll(props) {
-    console.log('props.listConsumers')
-    console.log(props.listConsumers)
+    //console.log('props.listConsumers')
+    //console.log(props.listConsumers)
     const allConsumers = props.listConsumers;
     const listConsumers = allConsumers.slice(0, 10);
 
