@@ -31,7 +31,8 @@ export default function Entregas(props) {
     const [showDados, setShowDados] = useState(false);
     const [showViewAll, setShowViewAll] = useState(true);
    
-    const [listConsumers, setListConsumers] = useState(consumers);
+    //const [listConsumers, setListConsumers] = useState(consumers);
+    const [listConsumers, setListConsumers] = useState([]);
     const [custumer, setCustumer] = useState([]);
     const [DDD, setDDD] = useState('54');      
     const [word, setWord] = useState('');
