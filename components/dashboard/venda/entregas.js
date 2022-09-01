@@ -460,7 +460,7 @@ const handleSetCustumerAndView = (dataCustumer) => {
         
         />} */}
 
-    {!showViewAll && <Grid container spacing={2} sx={{ mt: 3 }}>
+    {showViewAll && <Grid container spacing={2} sx={{ mt: 3 }}>
           <Grid 
           item xs={8} md={12}>          
              <TableContainer component={Paper} sx={{ mt: 2 }}>            
