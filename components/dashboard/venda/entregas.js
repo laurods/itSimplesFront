@@ -57,7 +57,8 @@ export default function Entregas(props) {
         console.log('teste')
         setCustumer([]);        
         setWord('');
-        setShowDados(false)       
+        setShowDados(false)
+        setShowViewAll(false)       
         }
       if(primeiroNumero != 9 & event.target.value.length == 8 ){ /* se primeiro numero for diferente de 9 é número fixo. Numero fixo tem 8 caracteres*/       
               handleFilter(`${DDD}${event.target.value}`) /* chama a função filter*/
