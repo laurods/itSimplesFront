@@ -122,20 +122,6 @@ export default function Question(
                     Agradecemos o feedback.
                 </Typography>
             </Grid>
-            
-            <Grid item xs={12} md={12}>
-                <Button 
-                variant="outlined" 
-                size="large" 
-                color="info"                    
-                fullWidth
-                onClick={handleReload}
-                >
-                Refazer 
-                </Button>
-            </Grid>    
-            
-        
         </Grid>
     </Box>
     }
