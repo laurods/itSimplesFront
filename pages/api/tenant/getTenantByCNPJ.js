@@ -18,7 +18,8 @@ const client = new MongoClient(url);
             {projection: { 
                 _id: 0,
                 cnpj: 1, 
-                name: 1 
+                name: 1,
+                quizzes: 1 
             }}
             ).toArray();     
          
