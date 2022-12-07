@@ -19,7 +19,8 @@ const client = new MongoClient(url);
                 _id: 0,
                 cnpj: 1, 
                 name: 1,
-                quizzes: 1 
+                quizzes: 1,
+                questions: 1, 
             }}
             ).toArray();     
          
