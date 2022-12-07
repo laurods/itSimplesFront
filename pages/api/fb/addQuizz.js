@@ -18,7 +18,8 @@ const client = new MongoClient(url);
          const p = await col.updateOne(
             { cnpj: cnpj },
             { 
-                $push:{ quizzes: quizzes}
+                //$push:{ quizzes: quizzes}
+                $push:{ quizzes: {id:'0', rating: 1}}
            },
                        
         );
