@@ -25,7 +25,7 @@ const client = new MongoClient(url);
                        
         );
 
-        return res.status(200).json({ msg: 'Salvo', cnpj: cnpj, quizzes: quizzes});
+        res.status(200).json({ quizzes: quizzes});
 
         } catch (err) {
          console.log(err.stack);
