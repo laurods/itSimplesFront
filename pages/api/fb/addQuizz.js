@@ -10,6 +10,10 @@ const client = new MongoClient(url);
  module.exports = async (req, res) => {
     try {
         const { cnpj, quizzes } = req.body;
+        console.log('cnpj')
+        console.log(cnpj);
+        console.log('quizzes');
+        consolog.log(quizzes)
         //const { cnpj, quizzes } = objQuizz;
         
          await client.connect();
