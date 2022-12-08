@@ -17,10 +17,10 @@ const client = new MongoClient(url);
          const col = db.collection("tenant");
          const p = await col.updateOne(
             //{ cnpj: cnpj },
-            { cnpj: '89823918000198' },
+            //{ cnpj: '89823918000198' },
             { 
-                //$push:{ quizzes: quizzes}
-                $push:{ quizzes: {id:'0', rating: 1}}
+                $push:{ quizzes: quizzes}
+                //$push:{ quizzes: {id:'0', rating: 1}}
            },
                        
         );
